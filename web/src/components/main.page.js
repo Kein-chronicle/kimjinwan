@@ -16,7 +16,8 @@ import Contact from './content/contact'
 function MainPage() {
 
     const wrapStyle = {
-        paddingTop: "5rem"
+        paddingTop: "5rem",
+        paddingBottom:'5rem' 
     }
 
     return (
