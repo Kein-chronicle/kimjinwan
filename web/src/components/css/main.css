@@ -1,0 +1,14 @@
+.title {
+    font-weight: bolder;
+    color: white;
+}
+
+.active > div {
+    font-weight: bolder;
+    color: white;
+}
+
+.navBtn {
+    padding: 8px;
+    color: gray;
+}
