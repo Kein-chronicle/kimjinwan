@@ -38,9 +38,14 @@ function Top() {
                             <div className="navBtn">Service</div>
                         </NavLink>
                     </div> */}
-                    <div className="col-sm">
+                    {/* <div className="col-sm">
                         <NavLink to="/idea">
                             <div className="navBtn">Idea Note</div>
+                        </NavLink>
+                    </div> */}
+                    <div className="col-sm">
+                        <NavLink to="/blog">
+                            <div className="navBtn">Blog</div>
                         </NavLink>
                     </div>
                     <div className="col-sm">

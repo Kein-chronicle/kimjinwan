@@ -25,7 +25,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/:page?" component={_mainPage} />
+            <Route exact path="/:page?/:sub?" component={_mainPage} />
             <Route path="/" component={notFound} />
           </Switch>
         </Router>

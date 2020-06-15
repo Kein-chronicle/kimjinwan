@@ -8,7 +8,7 @@ function Intro() {
     return (
         <div>
             <div style={{paddingTop:'20px'}}>
-                <img style={imageStyle} src={Kecle} />
+                <img style={imageStyle} src={Kecle} alt="profile"/>
             </div>
             <div style={{paddingTop:"10px"}}>
                 <div>
@@ -31,7 +31,7 @@ function Intro() {
                         Now I live in Seongnam, Korea
                     </div>
                     <div>
-                        Work in M2S+(<a href="www.m2skorea.com" target="_blank">www.m2skorea.com</a>)
+                        {/* Work in M2S+(<a href="www.m2skorea.com" target="_blank">www.m2skorea.com</a>) */}
                     </div>
                 </div>
             </div>

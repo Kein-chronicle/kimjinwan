@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# api config
+/api/config.js
+
+# upload folder
+/api/upload

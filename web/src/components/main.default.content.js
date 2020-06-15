@@ -21,16 +21,16 @@ function MainDefaultContent() {
             <div style={desStyle}>
                 What is my job? <br />
                 Every day, I type blar blar blar... <br />
-                Am I 'typer'? <br />
-                Yes.. I'm 'typer' <br />
-                But my typing make thing, so many thing. <br />
+                Am I a 'typer'? <br />
+                Yes.. I'm a 'typer' <br />
+                But my typing make something, so many thing. <br />
                 Sometimes, make awsome & beautiful & helpful<br /><br />
-                <h5>So I am 'programmer'</h5>
+                <h5>So I am a 'programmer'</h5>
                 <br />
                 Since 2016
             </div>
             
-            <img style={imgSize} src={MainImg} />
+            <img style={imgSize} src={MainImg} alt="main-back" />
         </div>
     )
 }
