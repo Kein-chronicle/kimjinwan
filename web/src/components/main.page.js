@@ -32,13 +32,13 @@ function MainPage() {
             <Top />
             <Switch>
                 <UseSessionProvider>
-                    <Route exact path="/admin/:page?" component={Admin} />
+                    <Route exact path="/admin/:sub?" component={Admin} />
                 </UseSessionProvider>
                 <Route exact path="/intro" component={Intro} />
                 <Route exact path="/stack" component={Stack} />
                 <Route exact path="/history" component={Histroy} />
                 <Route exact path="/service" component={Service} />
-                <Route exact path="/blog" component={Blog} />
+                <Route exact path="/blog/:sub?/:index?" component={Blog} />
                 <Route exact path="/idea" component={Idea} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/" component={MainDefault} />
