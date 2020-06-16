@@ -4,6 +4,7 @@ import JwtDecode from 'jwt-decode';
 import StackGrid from "react-stack-grid";
 import api from '../../../models/api'
 import Moment from 'moment'
+import 'moment/locale/ko'
 import { Link } from 'react-router-dom'
 
 
@@ -74,7 +75,9 @@ function ListPage(props) {
                         tags = item.tags
                     }
                     
-                    const _at = Moment(item.at).format("YYYY-MM-DD hh:mm")
+                    Moment.locale('ko')
+                    const _at = Moment(item._at).format("YYYY-MM-DD HH:mm")
+                    
                     if (tags.includes(sub.tag) || sub.tag === "All" || !sub.tag) {
                         // arr.push(<ItemView key={item._id} sub={sub.tag} item={item} />)
                         var tagArr = []
