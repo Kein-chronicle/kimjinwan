@@ -158,6 +158,11 @@ function Read(props) {
             :
                 <Constent item={item} />
             }
+            <Link to="/blog/list">
+                <div style={{color:'white', fontSize:'20px', marginTop:"3rem"}}>
+                    to list
+                </div>
+            </Link>
         </div>
     )
 }
