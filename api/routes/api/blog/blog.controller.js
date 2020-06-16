@@ -118,3 +118,23 @@ exports.list = (req, res) => {
     .then(responds)
     .catch(catchError)
 }
+
+exports.read = (req, res) => {
+    const {_id} = req.body
+    
+    const responds = (data) => {
+        res.json({
+            data
+        })
+    }
+
+    const catchError = (err) => {
+        json.status(403).json({
+            message: err.message
+        })
+    }
+
+    Blog.findOneById(_id)
+    .then(responds)
+    .catch(catchError)
+}

@@ -19,6 +19,10 @@ Blog.statics.findAll = function() {
     return this.find({useYn: true}).sort({_at: -1})
 }
 
+Blog.statics.findOneById = function(_id) {
+    return this.findOne({_id})
+}
+
 Blog.statics.removeOne = async function(_id) {
     return await this.updateOne({_id}, {useYn: false})
 }

@@ -26,4 +26,6 @@ router.post('/update', controller.update)
 
 router.get('/list', controller.list)
 
+router.post('/read', controller.read)
+
 module.exports = router
