@@ -6,16 +6,17 @@ import api from '../../models/api'
 
 function LoginPage() {
     const [password, setPassword] = useState("")
+    const [tryCnt, setTryCnt] = useState(0)
     const history = useHistory()
     const session = useSession()
 
     const handleLogin = (token) => session.setSession({token:token})
 
     const login = () => {
-        if (password === "wlsdhks2@@") {
-            console.log("login complete");
-            
-            
+        setTryCnt(tryCnt + 1)
+        if (tryCnt >= 5) {
+          alert("Who are you? Do not connect this page")
+          return
         }
         fetch(
             api.login.url,
