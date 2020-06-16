@@ -15,45 +15,15 @@ function ListController() {
     )
 }
 
-function ItemView({item, sub}) {
-    const [tags, setTags] = useState([])
 
-    useEffect(()=>{
-        if (item.tags) {
-            var arr = []
-            for (let i = 0; i < item.tags.length; i++) {
-                const tag = item.tags[i];
-                var btnStyle = " btn-secondary"
-                if (sub === tag) {
-                    btnStyle = " btn-light"
-                }
-                arr.push(<Link to={"/blog/list/"+tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px', fontSize:'10px'}} className={"btn"+btnStyle}>{tag}</div></Link>)
-            }
-            setTags(arr)
-        }
-    }, [item.tags])
+function ListPage(props) {
+    const sub = props.match.params
+    
+    const session = useSession()
+    const [admin, setAdmin] = useState(false)
+    const [listItem, setListItem] = useState([])
 
-
-    const [imageView, setImageView] = useState("")
-    const [desSec, setDesSec] = useState("")
-    const [_at, setAt] = useState("")
     const imageUrl = "https://api.kimjinwan.com/"
-    useEffect(()=>{
-        if (item.file) {
-            setImageView(<img alt={imageUrl + item.file.path} style={{width:'150px', height:'auto'}} src={imageUrl + item.file.path} />)
-        }
-        if (item.description) {
-            const des = item.description
-            if (des.length > 60) {
-                setDesSec(des.slice(0, 60) + "...")
-            } else {
-                setDesSec(des)
-            }
-        }
-        if (item._at) {
-            setAt(Moment(item.at).format("YYYY-MM-DD hh:mm"))
-        }
-    }, [item])
 
     const itemWrap = {
         margin:'10px',
@@ -77,32 +47,6 @@ function ItemView({item, sub}) {
         color:'gray',
         fontSize:'11px'
     }
-    return (
-        <div style={itemWrap}>
-            <Link to={"/blog/read/"+item._id}>
-                <div style={imageWrap}>
-                    {imageView}
-                </div>
-                <div style={desWrap}>
-                    {desSec}
-                </div>
-            </Link>
-            <div>
-                {tags}
-            </div>
-            <div style={atWrap}>
-                {_at}
-            </div>
-        </div>
-    )
-}
-
-function ListPage(props) {
-    const sub = props.match.params
-    
-    const session = useSession()
-    const [admin, setAdmin] = useState(false)
-    const [listItem, setListItem] = useState([])
 
     const listCall = () => {
         fetch(
@@ -121,7 +65,6 @@ function ListPage(props) {
                 // 성공
                 const data = await response.json();
                 const items = data.data
-                console.log(items);
                 
                 var arr = []
                 for (let i = 0; i < items.length; i++) {
@@ -130,12 +73,54 @@ function ListPage(props) {
                     if (item.tags) {
                         tags = item.tags
                     }
-                    if (sub.tag && sub.tag !== "All") {
-                        if (tags.includes(sub.tag)) {
-                            arr.push(<ItemView key={item._id} sub={sub.tag} item={item} />)
+                    
+                    const _at = Moment(item.at).format("YYYY-MM-DD hh:mm")
+                    if (tags.includes(sub.tag) || sub.tag === "All" || !sub.tag) {
+                        // arr.push(<ItemView key={item._id} sub={sub.tag} item={item} />)
+                        var tagArr = []
+                        for (let i = 0; i < item.tags.length; i++) {
+                            const tag = item.tags[i];
+                            var btnStyle = " btn-secondary"
+                            if (sub.tag === tag) {
+                                btnStyle = " btn-light"
+                            }
+                            tagArr.push(<Link to={"/blog/list/"+tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px', fontSize:'10px'}} className={"btn"+btnStyle}>{"#"+tag}</div></Link>)
                         }
-                    } else {
-                        arr.push(<ItemView key={item._id} sub={"All"} item={item} />)
+                        var des = ""
+                        if (item.description) {
+                            if (item.description.length > 60) {
+                                des = item.description.slice(0, 60) + "..."
+                            } else {
+                                des = item.description
+                            }
+                        }
+                        arr.push(
+                            <div style={itemWrap} key={item._id}>
+                                <Link to={"/blog/read/"+item._id}>
+                                    <div style={imageWrap}>
+                                        {item.file ?
+                                        <img 
+                                            alt={imageUrl + item.file.path}
+                                            style={{width:'auto', height:'150px'}} 
+                                            src={imageUrl + item.file.path} 
+                                        />
+                                        // null
+                                        :
+                                        null
+                                        }
+                                    </div>
+                                    <div style={desWrap}>
+                                        {des}
+                                    </div>
+                                </Link>
+                                <div>
+                                    {tagArr}
+                                </div>
+                                <div style={atWrap}>
+                                    {_at}
+                                </div>
+                            </div>
+                        )
                     }
                 }
                 setListItem(arr)

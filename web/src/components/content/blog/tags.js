@@ -31,7 +31,7 @@ function Tags({sub, show}) {
                 if (sub && sub === tag.tag) {
                     btnStyle = " btn-light"
                 }
-                arr.push(<Link to={"/blog/list/"+tag.tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px'}} className={"btn"+btnStyle}>{tag.tag}</div></Link>)
+                arr.push(<Link to={"/blog/list/"+tag.tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px'}} className={"btn"+btnStyle}>{"#"+tag.tag}</div></Link>)
               }
               setTags(arr)
 

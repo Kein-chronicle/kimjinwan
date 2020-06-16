@@ -18,7 +18,7 @@ function Constent({item}) {
             for (let i = 0; i < item.tags.length; i++) {
                 const tag = item.tags[i];
                 const btnStyle = " btn-secondary"
-                arr.push(<Link to={"/blog/list/"+tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px'}} className={"btn"+btnStyle}>{tag}</div></Link>)
+                arr.push(<Link to={"/blog/list/"+tag} key={'tag'+i}><div style={{padding:'5px', margin:'5px'}} className={"btn"+btnStyle}>{"#"+tag}</div></Link>)
             }
             setTags(arr)
         }
@@ -39,7 +39,7 @@ function Constent({item}) {
                 ? 
                 <div style={{padding:'20px'}}>
                     <a href={"https://api.kimjinwan.com/"+item.file.path} target="_blank">
-                        <img style={{maxWidth:'50%', maxHeight:'250px'}} src={"https://api.kimjinwan.com/"+item.file.path} />
+                        <img style={{maxWidth:'80%', maxHeight:'250px'}} src={"https://api.kimjinwan.com/"+item.file.path} />
                     </a>
                 </div>
                 :
@@ -47,7 +47,7 @@ function Constent({item}) {
             }
             <div style={{fontSize:'20px'}} className="d-flex">
                 <div className="flex-grow-1"></div>
-                <div style={{maxWidth:'50%', margin:'5rem'}} dangerouslySetInnerHTML={ {__html: description} } />
+                <div style={{maxWidth:'80%', margin:'5rem'}} dangerouslySetInnerHTML={ {__html: description} } />
                 <div className="flex-grow-1"></div>
             </div>
             <div style={{color:'gray', fontSize:'13px'}}>
@@ -88,7 +88,6 @@ function Read(props) {
     const [notFound, setNotFound] = useState(false)
     const [_id, setId] = useState("")
     const [item, setItem] = useState({})
-    console.log(params);
 
     useEffect(()=>{
         if (params.index && params.index !== "") {
@@ -104,10 +103,8 @@ function Read(props) {
 
     useEffect(()=>{
         dispatch({type:'DATASET', showTops: false})
-        console.log("don't show");
         
         return () => {
-            console.log("show");
             dispatch({type:'DATASET', showTops: true})
         }
     }, [])
@@ -144,6 +141,8 @@ function Read(props) {
             console.log(error)
         });
     }
+
+    const [contentView, setContentView] = useState(null)
 
     return (
         <div>
