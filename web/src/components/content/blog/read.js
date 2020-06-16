@@ -39,7 +39,7 @@ function Constent({item}) {
                 ? 
                 <div style={{padding:'20px'}}>
                     <a href={"https://api.kimjinwan.com/"+item.file.path} target="_blank">
-                        <img style={{maxWidth:'80%', maxHeight:'250px'}} src={"https://api.kimjinwan.com/"+item.file.path} />
+                        <img alt={item.file.fileName} style={{maxWidth:'80%', maxHeight:'250px'}} src={"https://api.kimjinwan.com/"+item.file.path} />
                     </a>
                 </div>
                 :
