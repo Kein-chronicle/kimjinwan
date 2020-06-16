@@ -101,7 +101,7 @@ function ListPage(props) {
                                         {item.file ?
                                         <img 
                                             alt={imageUrl + item.file.path}
-                                            style={{width:'auto', height:'150px'}} 
+                                            style={{width:'auto', height:'150px', maxWidth:'140px'}} 
                                             src={imageUrl + item.file.path} 
                                         />
                                         // null
