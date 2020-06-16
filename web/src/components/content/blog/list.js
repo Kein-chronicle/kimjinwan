@@ -68,7 +68,9 @@ function ItemView({item, sub}) {
         padding:"3px",
         textAlign:'center',
         color:'white',
-        fontSize:'19px'
+        fontSize:'19px',
+        wordWrap:'inherit',
+        overflow:'hidden'
     }
     const atWrap = {
         textAlign:'right',

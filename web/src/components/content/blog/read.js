@@ -11,6 +11,7 @@ import NotFound from '../../not.found'
 function Constent({item}) {
     const [tags, setTags] = useState([])
     const [dateText, setDateText] = useState("")
+    const [description, setDescription] = useState("")
     useEffect(()=>{
         if (item.tags) {
             var arr = []
@@ -26,6 +27,12 @@ function Constent({item}) {
     useEffect(()=>{
         setDateText(Moment(item._at).format("YYYY-MM-DD hh:mm:ss"))
     }, [item._at])
+
+    useEffect(()=>{
+        var newDes = item.description + ""
+        newDes = newDes.replace(/\n/g, "<br />")
+        setDescription(newDes)
+    }, [item.description])
     return (
         <div>
             {item.file 
@@ -40,9 +47,7 @@ function Constent({item}) {
             }
             <div style={{fontSize:'20px'}} className="d-flex">
                 <div className="flex-grow-1"></div>
-                <div style={{maxWidth:'50%', margin:'5rem'}}>
-                    {item.description}
-                </div>
+                <div style={{maxWidth:'50%', margin:'5rem'}} dangerouslySetInnerHTML={ {__html: description} } />
                 <div className="flex-grow-1"></div>
             </div>
             <div style={{color:'gray', fontSize:'13px'}}>
