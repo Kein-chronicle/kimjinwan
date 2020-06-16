@@ -1,4 +1,5 @@
 const rootUrl = 'https://api.kimjinwan.com/api'
+// const rootUrl = 'http://localhost:3000/api'
 const authApi = rootUrl + "/auth"
 const blogApi = rootUrl + "/blog"
 const tagApi = rootUrl + "/tag"
@@ -10,6 +11,10 @@ const api = {
     },
     write: {
         url: blogApi + "/write",
+        method: 'POST'
+    },
+    read: {
+        url: blogApi + "/read",
         method: 'POST'
     },
     delete: {

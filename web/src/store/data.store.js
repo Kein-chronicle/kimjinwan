@@ -1,7 +1,7 @@
 const DATASET = 'DATASET';
 
 const initialState = {
-    data: ''
+    showTops: true
 }
 
 const data = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const data = (state = initialState, action) => {
   switch (action.type) {
     case DATASET:
       return {...state, 
-        data: action.data
+        showTops: action.showTops
     }
     default:
       return state;

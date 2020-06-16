@@ -8,7 +8,7 @@ const Tag = new Schema({
 })
 
 Tag.statics.findAll = function() {
-    return this.find({}).sort({_at: -1})
+    return this.find({}).sort({tag: 1})
 }
 
 Tag.statics.checkTag = async function (tags) {

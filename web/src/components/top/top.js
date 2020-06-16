@@ -1,18 +1,23 @@
 import React from "react"
 import { NavLink, Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function Top() {
 
+    const show = useSelector(state => state.dataStore)
+
     const wrapStyle = {
-        paddingTop: "5rem"
+        paddingTop: "5rem",
+        display : show.showTops ? "block" : "none"
     }
 
     const bottomGap = {
         marginBottom: '3rem'
     }
+    
 
     return (
-        <div style={bottomGap}>
+        <div style={bottomGap} >
             <Link to="/">
                 <h1 className="title">Kein Chronicle's Homepage</h1>
             </Link>
@@ -44,7 +49,7 @@ function Top() {
                         </NavLink>
                     </div> */}
                     <div className="col-sm">
-                        <NavLink to="/blog">
+                        <NavLink to="/blog/list">
                             <div className="navBtn">Blog</div>
                         </NavLink>
                     </div>

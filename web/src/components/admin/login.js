@@ -34,7 +34,7 @@ function LoginPage() {
               // 성공
               const data = await response.json();
               handleLogin(data.token)
-              history.push("/admin/list")
+              history.push("/blog/list")
             } else {
               // 실패
               alert("Who are you? Do not connect this page")

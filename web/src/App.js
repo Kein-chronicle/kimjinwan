@@ -16,7 +16,7 @@ import notFound from './components/not.found'
 // store root
 import rootReducer from './store'
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 function App() {
   return (
