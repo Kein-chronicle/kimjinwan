@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken')
+const config = require('../../../config')
 
 exports.login = (req, res) => {
     const {password} = req.body
     const secret = req.app.get('jwt-secret')
-    if (password !== "wlsdhks2@@") {
+    if (password !== config.adminPass) {
         return res.status(403).json({
             message: 'password error'
         })
