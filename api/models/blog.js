@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const Blog = new Schema({
-    _at : { type: Date, default: new Date() },
+    _at : { type: Date, required: true },
     description : {type: String, require: false},
     file : {type: Object, required: false},
     tags: {type: Array, required: true},
