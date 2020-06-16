@@ -47,7 +47,7 @@ function Constent({item}) {
             }
             <div style={{fontSize:'20px'}} className="d-flex">
                 <div className="flex-grow-1"></div>
-                <div style={{maxWidth:'80%', margin:'5rem'}} dangerouslySetInnerHTML={ {__html: description} } />
+                <div style={{maxWidth:'80%', marginTop:'5rem', marginBottom:'5rem', overflow:'hidden'}} dangerouslySetInnerHTML={ {__html: description} } />
                 <div className="flex-grow-1"></div>
             </div>
             <div style={{color:'gray', fontSize:'13px'}}>
@@ -142,7 +142,7 @@ function Read(props) {
         });
     }
 
-    const [contentView, setContentView] = useState(null)
+    // const [contentView, setContentView] = useState(null)
 
     return (
         <div>
