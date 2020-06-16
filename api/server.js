@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // print the request log on console
-app.use(morgan('test'))
+// app.use(morgan('test'))
 
 // set the secret key variable for jwt
 app.set('jwt-secret', config.secret)
