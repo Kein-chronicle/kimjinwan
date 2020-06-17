@@ -12,6 +12,9 @@ Tag.statics.findAll = function() {
 }
 
 Tag.statics.checkTag = async function (tags) {
+    if (!tags) {
+        return true
+    }
     for (let i = 0; i < tags.length; i++) {
         const tag = tags[i];
 
