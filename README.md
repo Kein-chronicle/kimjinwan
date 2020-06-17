@@ -28,6 +28,9 @@ source ~/.bashrc
 nvm i 12
 npm i -g serve
 
+# Pm2
+npm install pm2 -g
+
 # NginX
 sudo apt-get install -y nginx
 
