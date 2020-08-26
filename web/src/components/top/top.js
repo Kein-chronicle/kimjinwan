@@ -48,11 +48,11 @@ function Top() {
                             <div className="navBtn">Idea Note</div>
                         </NavLink>
                     </div> */}
-                    <div className="col-sm">
+                    {/* <div className="col-sm">
                         <NavLink to="/blog/list">
                             <div className="navBtn">Blog</div>
                         </NavLink>
-                    </div>
+                    </div> */}
                     <div className="col-sm">
                         <NavLink to="/contact">
                             <div className="navBtn">Contact</div>
