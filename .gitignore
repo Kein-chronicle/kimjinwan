@@ -1,0 +1,7 @@
+_face_original.jpg
+preview_*.jpeg
+_shot_*.jpeg
+.playwright-mcp/
+__pycache__/
+*.pyc
+.DS_Store
