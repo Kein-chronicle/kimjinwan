@@ -120,3 +120,17 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
   const saved=localStorage.getItem('lang');
   if(saved==='en'){setLang('en');} else {renderProjects();}
 })();
+
+// ===== Career Run 게임 팝업 =====
+function openGame(){
+  const f=document.getElementById('gameFrame');
+  f.src='game/index.html?t='+Date.now();
+  document.getElementById('gameModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeGame(){
+  document.getElementById('gameModal').classList.remove('open');
+  document.body.style.overflow='';
+  document.getElementById('gameFrame').src='about:blank'; // 루프 정지
+}
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ const gm=document.getElementById('gameModal'); if(gm&&gm.classList.contains('open')) closeGame(); }});

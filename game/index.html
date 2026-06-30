@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>김진완 인생게임 — Career Run</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#38BDF8"/><stop offset="0.55" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3C4"/>
+  </linearGradient>
+</defs></svg>
+<div id="app">
+  <canvas id="world"></canvas>          <!-- 탑다운 월드 -->
+  <canvas id="fx"></canvas>             <!-- 파티클 -->
+  <div id="vignette"></div>
+  <div id="hud"></div>                  <!-- 스테이지별 HUD/목표 -->
+  <div id="prompt"></div>               <!-- "SPACE 말걸기" -->
+  <div id="dpad"></div>                 <!-- 모바일 조작 -->
+  <a id="skip" href="https://kimjinwan.com" target="_blank">Skip → 포트폴리오</a>
+  <div id="stage"></div>                <!-- 로비/대화/인트로 오버레이 -->
+  <div id="flash"></div>
+</div>
+<script src="data.js"></script>
+<script src="fx.js"></script>
+<script src="logic.js"></script>
+<script src="codegame.js"></script>
+<script src="tycoon.js"></script>
+<script src="pmgame.js"></script>
+<script src="world.js"></script>
+<script>/* 홈페이지 팝업(iframe)에 임베드되면 Skip 링크 숨김 */
+if(window.top!==window.self){var _s=document.getElementById('skip');if(_s)_s.style.display='none';}</script>
+</body>
+</html>

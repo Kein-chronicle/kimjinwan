@@ -205,6 +205,23 @@
   <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com</div>
 </div></footer>
 
+<!-- GAME: floating button + in-page popup -->
+<button class="game-fab" id="gameFab" onclick="openGame()" aria-label="김진완 인생 체험 게임">
+  <span class="gf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#08111A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"/><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/></svg></span>
+  <span class="gf-tx"><span data-lang-ko>김진완 인생 체험 게임</span><span data-lang-en>Play · Career Run</span></span>
+</button>
+<div class="game-modal" id="gameModal">
+  <div class="gm-bg" onclick="closeGame()"></div>
+  <div class="gm-box">
+    <div class="gm-head">
+      <span class="gm-title"><span data-lang-ko>김진완 인생게임 · Career Run</span><span data-lang-en>Kim Jinwan · Career Run</span></span>
+      <span class="gm-hint"><span data-lang-ko>방향키/WASD · SPACE 상호작용</span><span data-lang-en>Arrows/WASD · SPACE</span></span>
+      <button class="gm-close" onclick="closeGame()" aria-label="닫기">×</button>
+    </div>
+    <div class="gm-frame"><iframe id="gameFrame" title="Career Run" src="about:blank" allow="autoplay"></iframe></div>
+  </div>
+</div>
+
 <!-- MODAL -->
 <div class="modal" id="modal"><div class="modal-bg" onclick="closeModal()"></div>
   <div class="modal-box"><button class="close-x" onclick="closeModal()">×</button><div id="modalContent"></div></div>
