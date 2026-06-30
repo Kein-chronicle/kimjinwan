@@ -42,6 +42,14 @@ nav.scrolled{border-bottom:1px solid var(--line);background:rgba(11,14,20,.9)}
 .btn-grad:hover{transform:translateY(-2px);box-shadow:0 12px 38px -8px rgba(124,92,255,.6)}
 .btn-ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--line)}
 .btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-ai{position:relative;color:#fff;background:linear-gradient(110deg,#1b1140,#3a1f6e 45%,#0f2e4a);
+  border:1px solid rgba(124,92,255,.55);box-shadow:0 8px 30px -8px rgba(124,92,255,.55);overflow:hidden}
+.btn-ai:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(124,92,255,.7);border-color:rgba(124,92,255,.9)}
+.btn-ai .ai-spark{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:aiblink 1.8s infinite}
+.btn-ai:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:aisheen 3.4s 1s infinite}
+@keyframes aisheen{0%{left:-60%}30%,100%{left:130%}}
+@keyframes aiblink{0%,100%{opacity:1}50%{opacity:.4}}
 .nav-cta{padding:9px 18px;font-size:14px}
 .menu-btn{display:none}
 

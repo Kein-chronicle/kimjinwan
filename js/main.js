@@ -134,3 +134,11 @@ function closeGame(){
   document.getElementById('gameFrame').src='about:blank'; // 루프 정지
 }
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ const gm=document.getElementById('gameModal'); if(gm&&gm.classList.contains('open')) closeGame(); }});
+
+// ===== AI 오토플레이로 게임 실행 =====
+function openGameAuto(){
+  const f=document.getElementById('gameFrame');
+  f.src='game/index.html?auto=1&t='+Date.now();
+  document.getElementById('gameModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}

@@ -136,5 +136,11 @@ const DirectorGame=(()=>{
       const r=root.querySelector('#tyRetry'); r.onclick=()=>start(root,onClear); }
   }
 
-  return { start };
+  // ── AI 오토: 빈 모듈에 분야 맞는 개발자를 계속 배치 → 목표 출시까지 ──
+  function auto(){ autoFill(); }
+  function autoFill(){ if(over)return;
+    modules.forEach(m=>{ if(!m.dev){ const d=pool.find(x=>x.field===m.field&&x.lv>=m.diff)||pool.find(x=>x.field===m.field)||pool[0]; if(d)assign(d,m); } });
+    setTimeout(autoFill, 500); }
+
+  return { start, auto };
 })();

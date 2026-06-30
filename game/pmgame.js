@@ -106,5 +106,18 @@ const PMGame=(()=>{
     msg('✓ 보고서 발행 완료 — 사람과 사람 사이의 일을 하나의 문서로 묶어냈다.','good');
     setTimeout(()=>{ onClear&&onClear(); },1500); }
 
-  return { start };
+  // ── AI 오토: 1단계 단어 정분류 → 2단계 보고서 순서대로 → 발행 ──
+  function auto(){ autoStep(); }
+  function autoStep(){ if(over)return;
+    if(phase===1){
+      if(pool.length){ const c=pool[0], cat=CATS.find(x=>x.k===c.k); sel=c.id; tryPlace(cat); }
+      setTimeout(autoStep, 380);
+    } else if(phase===2){
+      if(built.length<REPORT.length){ const next=REPORT[built.length], s=tray.find(x=>x.t===next);
+        if(s) tryOrder(s,{classList:{add(){},remove(){}}}); setTimeout(autoStep, 380); }
+      else { const pub=root.querySelector('#pmPub'); if(pub&&!pub.disabled) pub.click(); else setTimeout(autoStep,300); }
+    } else setTimeout(autoStep, 380);
+  }
+
+  return { start, auto };
 })();

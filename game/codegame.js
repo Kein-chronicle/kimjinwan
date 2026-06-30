@@ -143,5 +143,25 @@ const CodeGame=(()=>{
   function win(){ running=false; FX&&FX.confetti(); setMsg(`✓ 도착! <b>${L.label}</b> 클리어`,'good');
     setTimeout(()=>{ cur++; if(cur<LEVELS.length)level(); else{ root.innerHTML=''; onClear&&onClear(); } },1200); }
 
-  return { start:startGame, count:()=>LEVELS.length };
+  // ── AI 오토솔버: BFS로 길 찾아 명령 블록 자동 구성 → 실행, 레벨마다 반복 ──
+  function autoSolve(){
+    const key=(x,y)=>x+','+y, q=[[start.x,start.y]], prev={}, seen=new Set([key(start.x,start.y)]);
+    while(q.length){ const [x,y]=q.shift(); if(x===goal.x&&y===goal.y)break;
+      for(const [dx,dy] of DELTA){ const nx=x+dx,ny=y+dy; if(cellAt(nx,ny)==='#')continue; const k=key(nx,ny); if(seen.has(k))continue; seen.add(k); prev[k]=[x,y]; q.push([nx,ny]); } }
+    const path=[]; let c=[goal.x,goal.y];
+    while(c){ path.unshift(c); const p=prev[key(c[0],c[1])]; if(!p)break; c=p; }
+    const cmds=[]; let f=L.face, gated=false;
+    const dirOf=(a,b)=>{ const dx=b[0]-a[0],dy=b[1]-a[1]; if(dy<0)return 0; if(dx>0)return 1; if(dy>0)return 2; return 3; };
+    for(let i=0;i<path.length-1;i++){ const t=dirOf(path[i],path[i+1]), diff=((t-f)+4)%4;
+      if(diff===1)cmds.push('right'); else if(diff===3)cmds.push('left'); else if(diff===2){cmds.push('right');cmds.push('right');}
+      f=t; const nc=path[i+1], ch=cellAt(nc[0],nc[1]);
+      if('rby'.includes(ch)&&!gated){ cmds.push('loopRed'); gated=true; }
+      cmds.push('fwd'); }
+    prog=cmds.map(k=>({...PAL[k]})); renderProg();
+    const myCur=cur; setTimeout(run, 650);
+    const poll=setInterval(()=>{ if(!document.getElementById('cgRoot')){ clearInterval(poll); return; }
+      if(cur>myCur){ clearInterval(poll); setTimeout(autoSolve, 500); } }, 300);
+  }
+
+  return { start:startGame, count:()=>LEVELS.length, auto:autoSolve };
 })();

@@ -139,6 +139,8 @@ const cv=document.getElementById('world'), ctx=cv.getContext('2d');
 const $stage=document.getElementById('stage'), $prompt=document.getElementById('prompt'), $hud=document.getElementById('hud');
 let state='boot', scene, player, actors, hearts, cfg;
 const keys={}, touch={l:0,r:0,u:0,d:0};
+// AI 오토플레이
+let auto=false, autoT=0, autoBusy=false, curDlg=null;
 
 // ───────── 입력 ─────────
 addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=true; if(e.key===' '||e.key==='Enter'){e.preventDefault();action();}});
@@ -147,7 +149,13 @@ function dir(){let dx=0,dy=0;
   if(keys['arrowleft']||keys['a']||touch.l)dx--; if(keys['arrowright']||keys['d']||touch.r)dx++;
   if(keys['arrowup']||keys['w']||touch.u)dy--; if(keys['arrowdown']||keys['s']||touch.d)dy++; return{dx,dy};}
 function buildDpad(){const d=document.getElementById('dpad');
-  d.innerHTML=`<div class="pad"><button data-k="u">▲</button><div></div><button data-k="l">◀</button><button data-k="act">●</button><button data-k="r">▶</button><div></div><button data-k="d">▼</button></div>`;
+  d.innerHTML=`<div class="pad">
+      <button data-k="u" class="pu">▲</button>
+      <button data-k="l" class="pl">◀</button>
+      <button data-k="r" class="pr">▶</button>
+      <button data-k="d" class="pd">▼</button>
+    </div>
+    <button class="act-big" data-k="act">선택</button>`;
   d.querySelectorAll('button').forEach(b=>{const k=b.dataset.k;
     const on=e=>{e.preventDefault(); k==='act'?action():touch[k]=1;}; const off=e=>{e.preventDefault(); if(k!=='act')touch[k]=0;};
     b.addEventListener('touchstart',on);b.addEventListener('touchend',off);b.addEventListener('mousedown',on);b.addEventListener('mouseup',off);b.addEventListener('mouseleave',off);});}
@@ -202,19 +210,44 @@ function label(a){
 function near(){return actors.find(a=>!a.done && Math.hypot(a.x-player.x,a.y-player.y)<24);}
 function blocked(tx,ty){if(tx<0||ty<0||tx>=scene.w||ty>=scene.h)return true; const o=scene.obj[ty][tx]; return 'TtfsbWDRBC'.includes(o);}
 function loop(){
+  if(auto) autoTick();
+  const dp=document.getElementById('dpad'); if(dp) dp.classList.toggle('show', state==='world' && !auto);
   if(state==='world'){
-    const {dx,dy}=dir(), sp=1.5;
-    if(dx||dy){const ft=(px,py)=>blocked(((px+8)/TS)|0,((py+14)/TS)|0);
-      const nx=player.x+dx*sp, ny=player.y+dy*sp;
-      if(!ft(nx,player.y))player.x=nx; if(!ft(player.x,ny))player.y=ny;
+    let dx=0,dy=0;
+    if(auto){ const t=actors.find(a=>!a.done);
+      if(t){ const tx=t.x, ty=t.y+(t.kind==='station'?14:12);
+        const ddx=tx-player.x, ddy=ty-player.y, d=Math.hypot(ddx,ddy)||1;
+        if(d>8){ dx=ddx/d; dy=ddy/d; }
+        else if(Date.now()>autoT){ action(); autoT=Date.now()+700; } } }
+    else { const dd=dir(); dx=dd.dx; dy=dd.dy; }
+    const sp=auto?1.7:1.5;
+    if(dx||dy){
+      if(auto){ player.x+=dx*sp; player.y+=dy*sp; }
+      else { const ft=(px,py)=>blocked(((px+8)/TS)|0,((py+14)/TS)|0);
+        const nx=player.x+dx*sp, ny=player.y+dy*sp;
+        if(!ft(nx,player.y))player.x=nx; if(!ft(player.x,ny))player.y=ny; }
       if(dx)player.flip=dx<0; player.walk+=0.25; player.bob=Math.abs(Math.sin(player.walk))*-2;}
     else player.bob=0;
     player.x=Math.max(8,Math.min(scene.w*TS-24,player.x)); player.y=Math.max(8,Math.min(scene.h*TS-18,player.y));
     draw();
-    const n=near(); $prompt.style.display=n?'block':'none';
-    if(n)$prompt.textContent=n.kind==='station'?`▲ ${n.label} — SPACE로 ${n.verb||'시작'}`:`▲ ${n.data.name} — SPACE로 말 걸기`;
+    const n=near(); $prompt.style.display=(!auto&&n)?'block':'none';
+    if(!auto&&n)$prompt.textContent=n.kind==='station'?`▲ ${n.label} — SPACE로 ${n.verb||'시작'}`:`▲ ${n.data.name} — SPACE로 말 걸기`;
   } else if(scene&&state!=='boot'){ /* keep last frame */ }
   requestAnimationFrame(loop);
+}
+// ── AI 오토파일럿: 화면 상태를 보고 다음 행동을 수행 ──
+function autoTick(){
+  const cg=document.getElementById('cgRoot'), ty=document.getElementById('tyRoot'), pm=document.getElementById('pmRoot');
+  if(cg||ty||pm){ if(!autoBusy){ autoBusy=true; (cg?CodeGame:ty?DirectorGame:PMGame).auto(); } return; }
+  autoBusy=false;
+  if(Date.now()<autoT) return;
+  if(state==='dialogue'){ autoDialogue(); return; }
+  if(state==='over'||state==='cut'){ const b=$stage.querySelector('.btn'); if(b){ b.click(); autoT=Date.now()+850; } return; }
+}
+function autoDialogue(){
+  const opts=$stage.querySelectorAll('.opt');
+  if(opts.length){ if(curDlg){ const ok=curDlg.options.findIndex(o=>o.ok); const b=$stage.querySelector(`.opt[data-i="${ok}"]`); if(b&&!b.disabled){ b.click(); autoT=Date.now()+1700; } } return; }
+  if(window._adv){ window._adv(); autoT=Date.now()+420; }
 }
 function action(){ if(state==='world'){const n=near(); if(n){ if(n.kind==='talk')openDialogue(n); else n.act(n); }}}
 
@@ -236,7 +269,7 @@ const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();return
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function type(node,text,cps=46){return new Promise(res=>{node.innerHTML='';let i=0;const cur=el('<span class="cursor"></span>');const sp=document.createElement('span');node.append(sp,cur);const iv=setInterval(()=>{sp.textContent=text.slice(0,++i);if(i>=text.length){clearInterval(iv);cur.remove();res();}},1000/cps);});}
 function openDialogue(a){
-  state='dialogue'; $prompt.style.display='none'; $hud.style.display='none'; const c=a.data;
+  state='dialogue'; $prompt.style.display='none'; $hud.style.display='none'; const c=a.data; curDlg=c;
   const box=el(`<div class="dlg"><div class="char bob" id="cf">${c.face}</div><div class="cname">${c.name}</div>
     <div class="bubble" id="bub"></div><div class="tap" id="tap">▸ 대화 듣기 (클릭/SPACE)</div><div id="qz"></div></div>`);
   $stage.className='in'; $stage.innerHTML=''; $stage.appendChild(box); $stage.style.pointerEvents='auto';
@@ -344,7 +377,15 @@ function stub(no,title,desc,nextIdx){ cfg=null; $hud.style.display='none';
   const s=el(`<div class="center"><div class="tag">STAGE ${no} / 4</div><div class="big">${title}</div>
     <div class="objbox">🛠 이 미니게임은 제작 중입니다.<br><span class="help">${desc}</span></div><button class="btn" id="go">다음 →</button></div>`);
   overlay(s); s.querySelector('#go').onclick=()=>transform(nextIdx); }
-function ending(){ const s=el(`<div class="center"><div class="big">다음을 채우는 중입니다<span class="grad">…</span></div>
+function ending(){
+  if(auto){ auto=false;
+    const s=el(`<div class="center">
+      <img class="char bob facepic" src="assets/face.png" alt="">
+      <div class="big" style="margin-top:12px">AI가 <span class="grad">김진완의 인생</span>을 완주했습니다</div>
+      <div class="sub" style="margin-top:14px">이 게임은 <b>AI</b>로 만들었으나,<br>스토리 구상 · 게임 설계는 <span class="grad">김진완</span>이 했습니다.</div>
+      <button class="btn" id="c">처음으로</button></div>`);
+    overlay(s); FX.confetti(); FX.flash(); s.querySelector('#c').onclick=lobby; return; }
+  const s=el(`<div class="center"><div class="big">다음을 채우는 중입니다<span class="grad">…</span></div>
   <div class="sub">①영업 · ②개발 · ③개발팀장 · ④PM — 11년을 한 층씩 올라왔다.<br>지금은 AI로 직접 만드는 PM. 다음 층은 — 당신의 팀.</div>
   <button class="btn" id="c">처음으로</button></div>`); overlay(s); FX.confetti(); s.querySelector('#c').onclick=lobby; }
 
@@ -352,11 +393,13 @@ function ending(){ const s=el(`<div class="center"><div class="big">다음을 �
 function overlay(node){state='over'; cv.style.opacity=.25; $prompt.style.display='none'; $hud.style.display='none';
   $stage.className='in full'; $stage.innerHTML=''; $stage.appendChild(node); $stage.style.pointerEvents='auto';}
 function clearOverlay(){cv.style.opacity=1; $stage.className=''; $stage.innerHTML=''; $stage.style.pointerEvents='none';}
-function lobby(){ clearOverlay(); cfg=null; seqIdx=0; $hud.style.display='none'; scene=SCENES.sales; resize();
+function lobby(){ clearOverlay(); cfg=null; seqIdx=0; auto=false; $hud.style.display='none'; scene=SCENES.sales; resize();
   const s=el(`<div class="center"><div class="tag">Kim Jinwan · Career Run</div>
-    <div class="char bob" style="font-size:60px">🧒</div><div class="big">김진완 <span class="grad">인생게임</span></div>
+    <img class="char bob facepic" src="assets/face.png" alt=""><div class="big">김진완 <span class="grad">인생게임</span></div>
     <div class="sub">방향키/WASD로 걷고, 대상(!,▼)에 다가가 SPACE로 상호작용하세요.</div>
     <button class="btn" id="go">▶ 사회생활 시작하기</button></div>`);
   overlay(s); s.querySelector('#go').onclick=()=>startSales(); }
 
-function boot(){ scene=SCENES.sales; resize(); buildDpad(); lobby(); requestAnimationFrame(loop); }
+function boot(){ scene=SCENES.sales; resize(); buildDpad(); lobby();
+  if(/[?&]auto=1/.test(location.search)) auto=true;   // AI 오토플레이 진입 (lobby가 auto를 끄므로 그 뒤에 켠다)
+  requestAnimationFrame(loop); }
