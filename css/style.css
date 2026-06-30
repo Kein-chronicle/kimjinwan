@@ -99,7 +99,12 @@ nav.scrolled{border-bottom:1px solid var(--line);background:rgba(11,14,20,.9)}
 .cap{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
   border-radius:14px;padding:18px}
 .cap .dot{width:8px;height:8px;border-radius:50%;background:var(--grad);margin-top:8px;flex:none}
+.cap .pn{flex:none;font-size:13px;font-weight:800;color:#08111A;background:var(--grad);
+  width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .cap b{font-size:15px;font-weight:700}.cap p{font-size:13px;color:var(--muted);margin-top:3px}
+.cycle-note{font-size:13.5px;color:var(--muted);margin-top:20px;line-height:1.6;
+  background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(124,92,255,.08));
+  border:1px solid var(--line);border-radius:12px;padding:14px 18px}
 
 /* ===== CAREER TIMELINE ===== */
 .timeline{position:relative;padding-left:34px}
