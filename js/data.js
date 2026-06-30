@@ -15,6 +15,12 @@ window.PROJECTS = [
    "MySQL",
    "크롤링"
   ],
+  "stackEn": [
+   "PHP",
+   "Codeigniter",
+   "MySQL",
+   "Crawling"
+  ],
   "img": "assets/projects/p00.jpg",
   "client": "",
   "period": "",
@@ -37,6 +43,13 @@ window.PROJECTS = [
    "Object-C",
    "Java"
   ],
+  "stackEn": [
+   "PHP",
+   "Codeigniter",
+   "MySQL",
+   "Object-C",
+   "Java"
+  ],
   "img": "assets/projects/p01.jpg",
   "client": "",
   "period": "",
@@ -53,6 +66,13 @@ window.PROJECTS = [
   "descEn": "A coupon-sales app for offline stores; web + hybrid app.",
   "desc": "오프라인 매장 쿠폰 판매 앱",
   "stack": [
+   "PHP",
+   "Codeigniter",
+   "MySQL",
+   "Object-C",
+   "Java"
+  ],
+  "stackEn": [
    "PHP",
    "Codeigniter",
    "MySQL",
@@ -82,6 +102,14 @@ window.PROJECTS = [
    "MySQL",
    "Swift"
   ],
+  "stackEn": [
+   "AWS",
+   "Angular",
+   "PHP Codeigniter",
+   "NodeJS",
+   "MySQL",
+   "Swift"
+  ],
   "img": "assets/projects/p03.jpg",
   "client": "",
   "period": "",
@@ -98,6 +126,13 @@ window.PROJECTS = [
   "descEn": "A program to add items on a topic and recommend (vote) on them; NodeJS Socket server.",
   "desc": "주제별 항목 추가·추천(투표)",
   "stack": [
+   "AWS",
+   "NodeJS Socket",
+   "PHP Codeigniter",
+   "MySQL",
+   "Swift"
+  ],
+  "stackEn": [
    "AWS",
    "NodeJS Socket",
    "PHP Codeigniter",
@@ -126,6 +161,13 @@ window.PROJECTS = [
    "MySQL",
    "Swift"
   ],
+  "stackEn": [
+   "AWS",
+   "NodeJS Socket",
+   "PHP Codeigniter",
+   "MySQL",
+   "Swift"
+  ],
   "img": "assets/projects/p05.jpg",
   "client": "",
   "period": "",
@@ -142,6 +184,9 @@ window.PROJECTS = [
   "descEn": "iOS exchange app development and App Store release (Swift).",
   "desc": "iOS 앱 개발 및 스토어 등록",
   "stack": [
+   "Swift"
+  ],
+  "stackEn": [
    "Swift"
   ],
   "img": "assets/projects/p06.jpg",
@@ -164,6 +209,11 @@ window.PROJECTS = [
    "Remix",
    "Metamask"
   ],
+  "stackEn": [
+   "Solidity",
+   "Remix",
+   "Metamask"
+  ],
   "img": "assets/projects/p07.jpg",
   "client": "",
   "period": "",
@@ -182,6 +232,9 @@ window.PROJECTS = [
   "stack": [
    "Blockchain"
   ],
+  "stackEn": [
+   "Blockchain"
+  ],
   "img": "assets/projects/p08.jpg",
   "client": "",
   "period": "",
@@ -198,6 +251,13 @@ window.PROJECTS = [
   "descEn": "Lead development of the exchange + blockchain integration, operations and new-feature launches; dev lead.",
   "desc": "거래소 메인 개발, 블록체인 연동, 운영, 신규 서비스 런칭",
   "stack": [
+   "AWS",
+   "MySQL",
+   "NodeJS",
+   "MongoDB",
+   "coin server"
+  ],
+  "stackEn": [
    "AWS",
    "MySQL",
    "NodeJS",
@@ -226,6 +286,13 @@ window.PROJECTS = [
    "MySQL",
    "Swift"
   ],
+  "stackEn": [
+   "AWS",
+   "Apache",
+   "PHP",
+   "MySQL",
+   "Swift"
+  ],
   "img": "assets/projects/p10.jpg",
   "client": "",
   "period": "",
@@ -242,6 +309,7 @@ window.PROJECTS = [
   "descEn": "Reorganized R&R for 4 Unity devs and hired designers and front-end engineers.",
   "desc": "Unity 개발자 4명 R&R 정리, 디자이너·프론트 채용",
   "stack": [],
+  "stackEn": [],
   "img": "assets/projects/p11.jpg",
   "client": "",
   "period": "",
@@ -258,6 +326,13 @@ window.PROJECTS = [
   "descEn": "Built AWS infra and APIs to upload/query eye-exam device data per member and date.",
   "desc": "눈 검사 제품 데이터 서버 업로드·조회 인프라/API",
   "stack": [
+   "AWS",
+   "PHP",
+   "MySQL",
+   "NodeJS",
+   "MongoDB"
+  ],
+  "stackEn": [
    "AWS",
    "PHP",
    "MySQL",
@@ -283,6 +358,10 @@ window.PROJECTS = [
    "Swift",
    "Xcode"
   ],
+  "stackEn": [
+   "Swift",
+   "Xcode"
+  ],
   "img": "assets/projects/p13.jpg",
   "client": "",
   "period": "",
@@ -302,6 +381,10 @@ window.PROJECTS = [
    "React",
    "JavaScript"
   ],
+  "stackEn": [
+   "React",
+   "JavaScript"
+  ],
   "img": "assets/projects/p14.jpg",
   "client": "",
   "period": "",
@@ -318,6 +401,11 @@ window.PROJECTS = [
   "descEn": "Consumer (B2C) VR eye-exam software; delivered as a KT Super VR build (Pico VR, Unity, C#).",
   "desc": "VR 눈 검사 B2C, KT Super VR 납품",
   "stack": [
+   "Pico VR",
+   "Unity",
+   "C#"
+  ],
+  "stackEn": [
    "Pico VR",
    "Unity",
    "C#"
@@ -342,6 +430,11 @@ window.PROJECTS = [
    "Unity",
    "C#"
   ],
+  "stackEn": [
+   "Pico VR",
+   "Unity",
+   "C#"
+  ],
   "img": "assets/projects/p16.jpg",
   "client": "",
   "period": "",
@@ -358,6 +451,11 @@ window.PROJECTS = [
   "descEn": "Refactoring/migration to productize the iDoctor prototype (AWS, Node, MongoDB).",
   "desc": "아이닥터 판매용 제품화 리팩토링",
   "stack": [
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
+  "stackEn": [
    "AWS",
    "Node",
    "MongoDB"
@@ -383,6 +481,12 @@ window.PROJECTS = [
    "MongoDB",
    "React"
   ],
+  "stackEn": [
+   "AWS",
+   "Node",
+   "MongoDB",
+   "React"
+  ],
   "img": "assets/projects/p18.jpg",
   "client": "",
   "period": "",
@@ -403,6 +507,11 @@ window.PROJECTS = [
    "Unity",
    "C#"
   ],
+  "stackEn": [
+   "Pico VR",
+   "Unity",
+   "C#"
+  ],
   "img": "assets/projects/p19.jpg",
   "client": "",
   "period": "",
@@ -419,6 +528,12 @@ window.PROJECTS = [
   "descEn": "Mapped 4 beam projectors; rendered human shapes via RealSense depth camera (TouchDesigner).",
   "desc": "빔프로젝터 4대 매핑, 리얼센스 인체 형상 표현",
   "stack": [
+   "Unity",
+   "TouchDesigner",
+   "RealSense",
+   "Beam Projector"
+  ],
+  "stackEn": [
    "Unity",
    "TouchDesigner",
    "RealSense",
@@ -446,6 +561,13 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "Pico VR",
+   "Unity",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p21.jpg",
   "client": "",
   "period": "",
@@ -467,6 +589,12 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "Unity",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p22.jpg",
   "client": "",
   "period": "",
@@ -483,6 +611,14 @@ window.PROJECTS = [
   "descEn": "Physical-function assessment by joint-angle measurement + stretching/exercise management.",
   "desc": "신체 각도 측정 기능 평가 + 스트레칭/운동 관리",
   "stack": [
+   "Pico VR",
+   "Unity",
+   "C#",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
+  "stackEn": [
    "Pico VR",
    "Unity",
    "C#",
@@ -513,6 +649,14 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "Unity",
+   "C#",
+   "React",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p24.jpg",
   "client": "",
   "period": "",
@@ -535,6 +679,13 @@ window.PROJECTS = [
    "RealSense",
    "후크요 센서"
   ],
+  "stackEn": [
+   "Unity",
+   "C#",
+   "TouchDesigner",
+   "RealSense",
+   "Sensor"
+  ],
   "img": "assets/projects/p25.jpg",
   "client": "",
   "period": "",
@@ -551,6 +702,14 @@ window.PROJECTS = [
   "descEn": "Game-based remote patient-encounter training for Korea Univ. medical students (national exam flow).",
   "desc": "고려대 의대, 국가시험 과정 게임화",
   "stack": [
+   "Unity",
+   "C#",
+   "React",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
+  "stackEn": [
    "Unity",
    "C#",
    "React",
@@ -579,6 +738,12 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "Next.js",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p27.jpg",
   "client": "",
   "period": "",
@@ -595,6 +760,7 @@ window.PROJECTS = [
   "descEn": "Hired engineers to build out the digital-human future business.",
   "desc": "디지털 휴먼 산업 개발자 채용",
   "stack": [],
+  "stackEn": [],
   "img": "assets/projects/p28.jpg",
   "client": "",
   "period": "",
@@ -611,6 +777,18 @@ window.PROJECTS = [
   "descEn": "AI human-like chatbot R&D — TTS + Unreal 5 + motion tracking, 16-month roadmap.",
   "desc": "AI 사람형 챗봇 R&D, 16개월 로드맵 (8월 사업전환 파기)",
   "stack": [
+   "AI",
+   "Python",
+   "STT",
+   "TTS",
+   "Node",
+   "Unreal",
+   "Unity",
+   "Face Tracking",
+   "Motion Tracking",
+   "Chatbot"
+  ],
+  "stackEn": [
    "AI",
    "Python",
    "STT",
@@ -644,6 +822,13 @@ window.PROJECTS = [
    "Swift",
    "Xcode"
   ],
+  "stackEn": [
+   "AWS",
+   "Node",
+   "MongoDB",
+   "Swift",
+   "Xcode"
+  ],
   "img": "assets/projects/p30.jpg",
   "client": "",
   "period": "",
@@ -660,6 +845,18 @@ window.PROJECTS = [
   "descEn": "3-year national project: mental/physical monitoring (Azure Kinect, Fitbit; user/worker apps + org web).",
   "desc": "3개년 국가과제, 정신·신체 모니터링 (사용자/생활지원사 앱 + 기관 웹)",
   "stack": [
+   "Azure Kinect",
+   "Fitbit Sense",
+   "Unity",
+   "Android",
+   "Java",
+   "React",
+   "AWS",
+   "Node",
+   "MongoDB",
+   "Flutter"
+  ],
+  "stackEn": [
    "Azure Kinect",
    "Fitbit Sense",
    "Unity",
@@ -692,6 +889,12 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "AWS",
+   "Next.js",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p32.jpg",
   "client": "",
   "period": "",
@@ -708,6 +911,14 @@ window.PROJECTS = [
   "descEn": "Selected for KT Smart TV — 2D eye-exam + healing/care video streaming (Android, NodeJS).",
   "desc": "KT Smart TV 선정, 2D 눈 측정 + 영상 스트리밍",
   "stack": [
+   "AWS",
+   "Node",
+   "MongoDB",
+   "React",
+   "Android",
+   "Java"
+  ],
+  "stackEn": [
    "AWS",
    "Node",
    "MongoDB",
@@ -738,6 +949,14 @@ window.PROJECTS = [
    "Next.js",
    "Python"
   ],
+  "stackEn": [
+   "Unity",
+   "AWS",
+   "Node",
+   "MongoDB",
+   "Next.js",
+   "Python"
+  ],
   "img": "assets/projects/p34.jpg",
   "client": "",
   "period": "",
@@ -760,6 +979,13 @@ window.PROJECTS = [
    "Node",
    "MongoDB"
   ],
+  "stackEn": [
+   "Unity",
+   "React",
+   "AWS",
+   "Node",
+   "MongoDB"
+  ],
   "img": "assets/projects/p35.jpg",
   "client": "",
   "period": "",
@@ -776,6 +1002,7 @@ window.PROJECTS = [
   "descEn": "Hired strategy/designer/front-end/back-end staff for the platform business.",
   "desc": "사업전략1·디자이너1·프론트1·백엔드2 채용",
   "stack": [],
+  "stackEn": [],
   "img": "assets/projects/p36.jpg",
   "client": "",
   "period": "",
@@ -792,6 +1019,18 @@ window.PROJECTS = [
   "descEn": "Year-3 of the 3-year health-monitoring project — field deployment and testing.",
   "desc": "3년차 실증화, 현장 설치·테스트",
   "stack": [
+   "Azure Kinect",
+   "Fitbit Sense",
+   "Unity",
+   "Android",
+   "Java",
+   "React",
+   "AWS",
+   "Node",
+   "MongoDB",
+   "Flutter"
+  ],
+  "stackEn": [
    "Azure Kinect",
    "Fitbit Sense",
    "Unity",
@@ -825,6 +1064,13 @@ window.PROJECTS = [
    "MongoDB",
    "Flutter"
   ],
+  "stackEn": [
+   "Unity",
+   "AWS",
+   "Node",
+   "MongoDB",
+   "Flutter"
+  ],
   "img": "assets/projects/p38.jpg",
   "client": "",
   "period": "",
@@ -843,6 +1089,10 @@ window.PROJECTS = [
   "stack": [
    "PM",
    "양산 개발 프로세스"
+  ],
+  "stackEn": [
+   "PM",
+   "Mass-production"
   ],
   "img": "",
   "client": "",
@@ -863,6 +1113,10 @@ window.PROJECTS = [
    "PM",
    "국책과제"
   ],
+  "stackEn": [
+   "PM",
+   "Gov R&D"
+  ],
   "img": "",
   "client": "",
   "period": "",
@@ -881,6 +1135,10 @@ window.PROJECTS = [
   "stack": [
    "PM",
    "게임 플랫폼"
+  ],
+  "stackEn": [
+   "PM",
+   "Game platform"
   ],
   "img": "",
   "client": "",
@@ -902,6 +1160,11 @@ window.PROJECTS = [
    "다국어",
    "글로벌"
   ],
+  "stackEn": [
+   "PM",
+   "Multilingual",
+   "Global"
+  ],
   "img": "",
   "client": "",
   "period": "",
@@ -922,6 +1185,11 @@ window.PROJECTS = [
    "WebApp",
    "VOD"
   ],
+  "stackEn": [
+   "PM",
+   "WebApp",
+   "VOD"
+  ],
   "img": "",
   "client": "",
   "period": "",
@@ -938,6 +1206,9 @@ window.PROJECTS = [
   "descEn": "New IVI Live-TV project kickoff — setup, client handling, schedule/risk management, CDR.",
   "desc": "신규 프로젝트 킥오프부터 셋업·고객사 대응·일정/리스크 관리·CDR·설계 산출물",
   "stack": [
+   "PM"
+  ],
+  "stackEn": [
    "PM"
   ],
   "img": "",
@@ -961,6 +1232,12 @@ window.PROJECTS = [
    "게임패드 서버",
    "특허"
   ],
+  "stackEn": [
+   "PM",
+   "Gov R&D",
+   "Gamepad server",
+   "Patent"
+  ],
   "img": "",
   "client": "",
   "period": "",
@@ -982,6 +1259,12 @@ window.PROJECTS = [
    "보안(CSMS)",
    "OEM"
   ],
+  "stackEn": [
+   "PM",
+   "IVI",
+   "Security (CSMS)",
+   "OEM"
+  ],
   "img": "",
   "client": "LG U+ / Mercedes-Benz",
   "period": "2025.12~2026.07",
@@ -998,6 +1281,10 @@ window.PROJECTS = [
   "descEn": "Maintenance PM — interim reports (ROMS), QC issue analysis, security docs, stable operation.",
   "desc": "중간보고서(ROMS), 품확 이슈 분석, 보안점검 문서, 안정 운영",
   "stack": [
+   "PM",
+   "WebApp"
+  ],
+  "stackEn": [
    "PM",
    "WebApp"
   ],
@@ -1019,6 +1306,9 @@ window.PROJECTS = [
   "stack": [
    "PM"
   ],
+  "stackEn": [
+   "PM"
+  ],
   "img": "",
   "client": "LG U+ / 현대·기아",
   "period": "2026.01~03",
@@ -1035,6 +1325,9 @@ window.PROJECTS = [
   "descEn": "New contract & setup, added security requirements; users Hyundai 120k+/Kia 6.9k.",
   "desc": "프로젝트 셋업·계약, 보안 요구 대응, 사용자 현황(현대 12만+/기아 6.9천)",
   "stack": [
+   "PM"
+  ],
+  "stackEn": [
    "PM"
   ],
   "img": "",
@@ -1056,6 +1349,10 @@ window.PROJECTS = [
    "PM",
    "게임플랫폼"
   ],
+  "stackEn": [
+   "PM",
+   "Game platform"
+  ],
   "img": "",
   "client": "르노코리아(RKM)",
   "period": "2025.04~2027.08",
@@ -1074,6 +1371,10 @@ window.PROJECTS = [
   "stack": [
    "PM",
    "결제연동"
+  ],
+  "stackEn": [
+   "PM",
+   "Payment integration"
   ],
   "img": "",
   "client": "르노코리아(RKM)",
@@ -1095,6 +1396,11 @@ window.PROJECTS = [
    "게임패드 서버",
    "멀티플레이"
   ],
+  "stackEn": [
+   "PM",
+   "Gamepad server",
+   "Multiplayer"
+  ],
   "img": "",
   "client": "PickJoy(자체)",
   "period": "2026.01~06",
@@ -1111,6 +1417,9 @@ window.PROJECTS = [
   "descEn": "Live ops & monitoring, KIA CCNC PoC, FAMOBI stats feature; 18k+ downloads, 43k+ sessions.",
   "desc": "상시 운영·모니터링, KIA CCNC 성능평가·PoC, FAMOBI 통계 기능 개발, 누적 다운로드 1.8만+·총 사용 4.3만+",
   "stack": [
+   "PM"
+  ],
+  "stackEn": [
    "PM"
   ],
   "img": "",
@@ -1131,6 +1440,10 @@ window.PROJECTS = [
   "stack": [
    "PM",
    "국책과제"
+  ],
+  "stackEn": [
+   "PM",
+   "Gov R&D"
   ],
   "img": "",
   "client": "IITP 국책과제",

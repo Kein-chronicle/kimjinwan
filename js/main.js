@@ -19,6 +19,7 @@ const COMP_ORDER=['오비고','엠투에스','에쿼티언','더팀지케이','�
 const en=()=>document.body.classList.contains('en');
 const pName=p=>en()&&p.nameEn?p.nameEn:p.name;
 const pDesc=p=>en()&&p.descEn?p.descEn:p.desc;
+const pStack=p=>(en()&&p.stackEn?p.stackEn:p.stack)||[];
 
 // 픽토그램 (24x24 라인 아이콘, 그래디언트 stroke)
 const ICONS={
@@ -76,7 +77,7 @@ function renderProjects(){
     const ico=projIcon(p);
     const thumb=p.img?`<div class="thumb" style="background-image:url('${p.img}')"></div>`
                      :`<div class="thumb noimg"><span class="pico">${ico}</span><i class="wm">${comp}</i></div>`;
-    const stack=(p.stack||[]).slice(0,4).map(s=>`<span>${s}</span>`).join('');
+    const stack=pStack(p).slice(0,4).map(s=>`<span>${s}</span>`).join('');
     return `<div class="pcard" onclick="openModal(${p.id})">
       ${thumb}
       <div class="pbody">
@@ -98,7 +99,7 @@ function openModal(id){
   const meta=[comp,p.year,p.period,p.client].filter(Boolean).join(' · ');
   const img=p.img?`<img src="${p.img}" alt="${pName(p)}">`
                  :`<div class="modal-ico"><span class="pico">${projIcon(p)}</span></div>`;
-  const stack=(p.stack||[]).map(s=>`<span>${s}</span>`).join('');
+  const stack=pStack(p).map(s=>`<span>${s}</span>`).join('');
   const hl=(p.highlights||[]).map(h=>`<p>• ${h}</p>`).join('');
   document.getElementById('modalContent').innerHTML=`
     <div class="mmeta">${meta}</div>

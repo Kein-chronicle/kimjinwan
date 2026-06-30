@@ -17,6 +17,13 @@ from trans_en import TRANS_EN
 COMP_EN={"에쿼티언":"Equtian","엠투에스":"M2S","오비고":"Obigo","더팀지케이":"TheTeamGK","지엔글로벌":"GN Global"}
 COMP_KO_FULL={"에쿼티언":"에쿼티언","엠투에스":"엠투에스","오비고":"오비고(Obigo)","더팀지케이":"더팀지케이","지엔글로벌":"지엔글로벌"}
 
+STACK_EN={
+ "게임 플랫폼":"Game platform","게임플랫폼":"Game platform","게임패드 서버":"Gamepad server",
+ "결제연동":"Payment integration","국책과제":"Gov R&D","글로벌":"Global","다국어":"Multilingual",
+ "멀티플레이":"Multiplayer","보안(CSMS)":"Security (CSMS)","양산 개발 프로세스":"Mass-production",
+ "크롤링":"Crawling","특허":"Patent","후크요 센서":"Sensor",
+}
+
 def find_img(slide):
     for ext in ("png","jpg","jpeg"):
         g=sorted(glob.glob(f"{IMGDIR}/slide{slide:02d}_img*.{ext}"))
@@ -40,6 +47,7 @@ for i,p in enumerate(projects):
         "role":p["role"], "name":p["name"],
         "nameEn":te[0], "descEn":te[1],
         "desc":p["desc"], "stack":p.get("stack",[]),
+        "stackEn":[STACK_EN.get(s,s) for s in p.get("stack",[])],
         "img":img,
         "client":p.get("client",""), "period":p.get("period",""),
         "highlights":p.get("highlights",[]),
