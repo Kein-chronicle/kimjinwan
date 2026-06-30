@@ -42,12 +42,14 @@ body{
 #prompt{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:18;display:none;
   background:rgba(8,12,20,.82);border:2px solid var(--accent);color:var(--text);font-size:13px;
   padding:7px 14px;border-radius:4px;white-space:nowrap}
-/* 모바일 조작: 하단 바 (왼쪽 D-pad + 오른쪽 선택 버튼). 걷는 중(world)에만, 좁은 화면/터치에서만 노출 */
-#dpad{position:absolute;left:0;right:0;bottom:0;z-index:22;display:none;
-  align-items:flex-end;justify-content:space-between;padding:10px 14px 12px;pointer-events:none;
-  background:linear-gradient(to top,rgba(6,8,12,.78),rgba(6,8,12,0))}
+/* 모바일 조작: 화면(가로)과 안 겹치게 뷰포트 맨 아래 빈 공간에 고정. 걷는 중(world)·좁은 화면/터치에서만 */
+#dpad{position:fixed;left:0;right:0;bottom:0;z-index:22;display:none;
+  align-items:flex-end;justify-content:space-between;
+  padding:12px 18px calc(16px + env(safe-area-inset-bottom,0px));pointer-events:none}
 @media (max-width:820px){ #dpad.show{display:flex} }
 @media (pointer:coarse){ #dpad.show{display:flex} }
+/* 모바일: 게임을 위로 붙여 아래쪽을 컨트롤 공간으로 비움 */
+@media (max-width:820px){ body{align-items:flex-start} #app{margin-top:8px} }
 #dpad .pad{display:grid;grid-template-columns:repeat(3,46px);grid-auto-rows:46px;gap:6px}
 #dpad .pad button{pointer-events:auto}
 #dpad .pu{grid-column:2;grid-row:1}#dpad .pl{grid-column:1;grid-row:2}
