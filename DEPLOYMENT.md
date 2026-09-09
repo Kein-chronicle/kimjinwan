@@ -1,5 +1,11 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.0.2 — 블로그 바로가기
+
+상단 메뉴를 청록색 강조 버튼으로 바꾸고 첫 소개 영역에도 바로가기를 추가했다. 모바일에서도 상단 버튼을 유지하며 좁은 화면에서는 메뉴가 줄바꿈된다. 홈페이지 내 블로그 링크 4개 모두 중간 이동 없이 새 탭/창으로 연다. 새 창 안내와 키보드 포커스를 제공한다. CSS 버전 쿼리로 이전 스타일 캐시를 구분한다.
+
+공개 릴리스는 /var/www/kimjinwan/releases/1.0.2, 이전 1.0.1은 복구용으로 유지한다. 광고 파일과 Nginx 설정은 변경하지 않는다. 회귀 검사는 node --test tests/*.test.mjs로 실행한다.
+
 버전1.0.1. 실제 운영 브랜치는 static-site-2026이며 master는 이번에 변경하지 않았다.
 
 ## 광고 파일 우선 보존
@@ -41,4 +47,3 @@ node --test tests/*.test.mjs: 2개 통과. js/main.js·js/data.js 구문 검사 
 기술 설정을 배포했으며 검색엔진 색인·순위나 파비콘 표시를 보장하지 않는다. Search Console/네이버 소유권 등록이나 색인 요청은 이번에 실행하지 않았다.
 
 참고: [파비콘](https://developers.google.com/search/docs/appearance/favicon-in-search), [대표 주소](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls), [사이트맵](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
-
