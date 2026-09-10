@@ -14,6 +14,13 @@ test('블로그 버튼은 강조되고 새 창으로 직접 연결된다',()=>{
  assert.ok(css.includes('.nav-links a.btn-blog'));
  assert.ok(css.includes('.btn-blog:focus-visible'));
 });
+test('웹 도구 공장이 탐색과 첫 화면에서 연결된다',()=>{
+ const html=fs.readFileSync('index.html','utf8');
+ const links=[...html.matchAll(/<a\b[^>]*href="https:\/\/apps\.kimjinwan\.com\/"[^>]*>/g)].map(m=>m[0]);
+ assert.equal(links.length,3);
+ for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
+ assert.match(html,/무료 웹 도구 쓰기/);
+});
 test('서버에서 보존한 광고 파일을 유지한다',()=>{
  for(const file of ['app-ads.txt','ads.txt'])assert.equal(createHash('sha256').update(fs.readFileSync(file)).digest('hex'),'422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0');
 });
