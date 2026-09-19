@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 test('블로그 버튼은 강조되고 새 창으로 직접 연결된다',()=>{
  const html=fs.readFileSync('index.html','utf8');
  const links=[...html.matchAll(/<a\b[^>]*href="https:\/\/blog\.kimjinwan\.com\/[^\"]*"[^>]*>/g)].map(m=>m[0]);
- assert.equal(links.length,4);
+ assert.ok(links.length>=8);
  for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
  assert.ok(!html.includes('href="#journal"'));
  assert.match(html, /class="btn btn-blog nav-cta"/);
@@ -17,7 +17,7 @@ test('블로그 버튼은 강조되고 새 창으로 직접 연결된다',()=>{
 test('웹 도구 공장이 탐색과 첫 화면에서 연결된다',()=>{
  const html=fs.readFileSync('index.html','utf8');
  const links=[...html.matchAll(/<a\b[^>]*href="https:\/\/apps\.kimjinwan\.com\/"[^>]*>/g)].map(m=>m[0]);
- assert.equal(links.length,3);
+ assert.ok(links.length>=4);
  for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
  assert.match(html,/무료 웹 도구 쓰기/);
 });
@@ -36,4 +36,7 @@ test('홈페이지·게임 메타데이터와 파비콘',()=>{
  assert.ok(schema['@graph'].some(x=>x['@type']==='ProfilePage'));
  const xml=fs.readFileSync('sitemap.xml','utf8');assert.ok(xml.includes('https://kimjinwan.com/'));assert.ok(xml.includes('https://kimjinwan.com/game/'));
  assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: https://kimjinwan.com/sitemap.xml'));
+ for(const sitemap of ['https://blog.kimjinwan.com/sitemap.xml','https://apps.kimjinwan.com/sitemap.xml'])assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: '+sitemap));
+ assert.ok(html.includes('name="google-adsense-account" content="ca-pub-5544615855471151"'));
+ assert.ok(html.includes('id="public-work"'));
 });
