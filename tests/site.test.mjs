@@ -21,6 +21,14 @@ test('웹 도구 공장이 탐색과 첫 화면에서 연결된다',()=>{
  for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
  assert.match(html,/무료 웹 도구 쓰기/);
 });
+test('웹게임 포털이 탐색과 공개 작업에서 연결된다',()=>{
+ const html=fs.readFileSync('index.html','utf8');
+ const links=[...html.matchAll(/<a\b[^>]*href="https:\/\/games\.kimjinwan\.com\/[^"]*"[^>]*>/g)].map(m=>m[0]);
+ assert.ok(links.length>=7);
+ for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
+ assert.match(html,/웹게임 바로 플레이/);
+ assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: https://games.kimjinwan.com/sitemap.xml'));
+});
 test('서버에서 보존한 광고 파일을 유지한다',()=>{
  for(const file of ['app-ads.txt','ads.txt'])assert.equal(createHash('sha256').update(fs.readFileSync(file)).digest('hex'),'422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0');
 });
@@ -36,7 +44,7 @@ test('홈페이지·게임 메타데이터와 파비콘',()=>{
  assert.ok(schema['@graph'].some(x=>x['@type']==='ProfilePage'));
  const xml=fs.readFileSync('sitemap.xml','utf8');assert.ok(xml.includes('https://kimjinwan.com/'));assert.ok(xml.includes('https://kimjinwan.com/game/'));
  assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: https://kimjinwan.com/sitemap.xml'));
- for(const sitemap of ['https://blog.kimjinwan.com/sitemap.xml','https://apps.kimjinwan.com/sitemap.xml'])assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: '+sitemap));
+ for(const sitemap of ['https://blog.kimjinwan.com/sitemap.xml','https://apps.kimjinwan.com/sitemap.xml','https://games.kimjinwan.com/sitemap.xml'])assert.ok(fs.readFileSync('robots.txt','utf8').includes('Sitemap: '+sitemap));
  assert.ok(html.includes('name="google-adsense-account" content="ca-pub-5544615855471151"'));
  assert.ok(html.includes('id="public-work"'));
 });
