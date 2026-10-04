@@ -73,3 +73,7 @@ node --test tests/*.test.mjs: 2개 통과. js/main.js·js/data.js 구문 검사 
 ## 1.0.7 — Forge · Prism Studio 중심 소개
 
 2026-10-04 사용자 지시에 따라 메인 제목·첫 화면·대표 서비스 영역을 두 제품 중심으로 변경했다. 공개 초기 HTML에 기능·시작 방법·사용 예·한계를 한·영으로 제공하고 Forge 기능/예시 및 Prism 편집기로 직접 연결한다. 기존 포트폴리오와 블로그·도구·게임 연결은 유지한다. AdSense 재검토는 사용자 명시 요청으로 진행하며 승인 여부는 별도로 확인한다.
+
+검증: node --test tests/*.test.mjs 5/5 통과, main/data JS 구문 검사와 git diff --check 통과. 공개 index.html SHA-256이 로컬과 일치하고 ads.txt/app-ads.txt 기존 해시 보존. Forge 홈·features·examples와 Prism 홈 HTTP 200, 브라우저에서 새 메인 서비스 노출 확인. /var/www/kimjinwan/current를 releases/1.0.7로 전환했고 이전 릴리스는 유지했다.
+
+2026-10-04 10:28 KST 기존 AdSense 계정의 kimjinwan.com에서 개선 확인 후 검토 요청을 제출했다. 화면에서 승인 상태 `준비 중`, `사이트의 광고 게재 가능 여부 검토 중`, `리뷰가 요청됨`을 확인했다. 접수 완료이며 승인 완료는 아니다. 새 사이트 등록·광고 단위·지급 설정은 변경하지 않았다.
