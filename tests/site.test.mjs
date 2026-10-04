@@ -9,7 +9,7 @@ test('블로그 버튼은 강조되고 새 창으로 직접 연결된다',()=>{
  for(const link of links){assert.match(link,/target="_blank"/);assert.match(link,/rel="noopener noreferrer"/);}
  assert.ok(!html.includes('href="#journal"'));
  assert.match(html, /class="btn btn-blog nav-cta"/);
- assert.match(html, /<div class="hero-cta">\s*<a[^>]+class="btn btn-blog"/);
+ assert.match(html, /<div class="hero-cta">\s*<a[^>]+href="https:\/\/forge\.kimjinwan\.com\/"/);
  const css=fs.readFileSync('css/style.css','utf8');
  assert.ok(css.includes('.nav-links a.btn-blog'));
  assert.ok(css.includes('.btn-blog:focus-visible'));

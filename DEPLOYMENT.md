@@ -69,3 +69,7 @@ node --test tests/*.test.mjs: 2개 통과. js/main.js·js/data.js 구문 검사 
 기술 설정을 배포했으며 검색엔진 색인·순위나 파비콘 표시를 보장하지 않는다. Search Console/네이버 소유권 등록이나 색인 요청은 이번에 실행하지 않았다.
 
 참고: [파비콘](https://developers.google.com/search/docs/appearance/favicon-in-search), [대표 주소](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls), [사이트맵](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+
+## 1.0.7 — Forge · Prism Studio 중심 소개
+
+2026-10-04 사용자 지시에 따라 메인 제목·첫 화면·대표 서비스 영역을 두 제품 중심으로 변경했다. 공개 초기 HTML에 기능·시작 방법·사용 예·한계를 한·영으로 제공하고 Forge 기능/예시 및 Prism 편집기로 직접 연결한다. 기존 포트폴리오와 블로그·도구·게임 연결은 유지한다. AdSense 재검토는 사용자 명시 요청으로 진행하며 승인 여부는 별도로 확인한다.
