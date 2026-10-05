@@ -29,12 +29,23 @@ const PAGES = [
     title: '경력 — 김진완', description: '11년 경력과 수행 프로젝트 55개: 차량 SW PM, 풀스택 개발, 팀 리딩.'},
 ];
 
-function schemaFor(page) {
+// 출력은 src+data+js/data.js+VERSION 의 순수 함수여야 한다: 시각(new Date) 대신 데이터 안의 최대 날짜를 쓴다.
+function collectDates(v, acc = []) {
+  if (Array.isArray(v)) v.forEach(x => collectDates(x, acc));
+  else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) {
+    if ((k === 'updated' || k === 'as_of') && typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x)) acc.push(x);
+    else collectDates(x, acc);
+  }
+  return acc;
+}
+export const stampOf = d => collectDates(d).sort().at(-1);
+
+function schemaFor(page, stamp) {
   const g = [
     {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: '김진완 포트폴리오', alternateName: 'Kim Jinwan', inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
     {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: 'Kein', url: `${SITE}/`, jobTitle: 'Software Product Manager'},
   ];
-  if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url: `${SITE}/`, name: page.title, dateModified: new Date().toISOString().slice(0, 10), mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/'});
+  if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url: `${SITE}/`, name: page.title, dateModified: stamp, mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/'});
   return `<script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': g})}</script>`;
 }
 
@@ -47,6 +58,8 @@ export function buildAll({write = true} = {}) {
   const featuredProjects = pickFeatured(data.profile.featured_projects, projects);
   const byId = new Map(data.services.map(s => [s.id, s]));
   const version = rd('VERSION').trim();
+  const STAMP = stampOf(data);
+  if (!STAMP) throw new Error('no dates found in data/*.json');
   const partials = {head: rd('src/partials/head.html'), nav: rd('src/partials/nav.html'), footer: rd('src/partials/footer.html'),
     ai: rd('src/sections/ai.html')};
   const featured = data.services.filter(s => s.featured);
@@ -68,11 +81,11 @@ export function buildAll({write = true} = {}) {
     project_count: String(projects.length),
     ...Object.fromEntries(ICON_NAMES.map(n => ['ico_' + n, icon(n, {size: 18})])),
     ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
-    updated: new Date().toISOString().slice(0, 10),
+    updated: STAMP,
   };
   const out = {};
   for (const page of PAGES) {
-    const ctx = {...ctxBase, title: esc(page.title), description: esc(page.description), canonical: `${SITE}${page.path}`, schema: schemaFor(page)};
+    const ctx = {...ctxBase, title: esc(page.title), description: esc(page.description), canonical: `${SITE}${page.path}`, schema: schemaFor(page, STAMP)};
     out[page.out] = fill(rd(page.src), ctx, {...partials, head: fill(partials.head, ctx, {})});
   }
   if (write) for (const [file, html] of Object.entries(out)) {

@@ -1,5 +1,16 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.1.0 — 개발자 · PM 허브 개편
+
+단일 페이지 포트폴리오를 4페이지 허브로 바꿨다: `/`(홈), `/works/`(작업물), `/factories/`(AI 공장), `/career/`(경력·프로젝트 55개·Career Run 진입). `/game/`은 그대로다.
+
+- **빌드**: HTML 4개는 `src/`(페이지·파셜) + `data/*.json`(services·collections·factories·profile, SSOT) + `js/data.js`에서 `node scripts/build.mjs`로 생성한다. **생성된 `index.html`, `works/`, `factories/`, `career/` 는 직접 고치지 않는다** — `src/`나 `data/`를 고치고 다시 빌드한다. 출력은 입력만의 순수 함수이며(날짜는 데이터 안의 최대 `updated`/`as_of`), `tests/build.test.mjs`가 커밋본과 빌드 결과의 일치를 검사한다. CSS 캐시 구분(`?v=`)은 `VERSION`을 따른다.
+- **공개 허용 목록**: `works/`, `factories/`, `career/`, `css/`, `js/`, `assets/`, `game/` 와 루트 파일(`index.html`, `favicon*`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, `ads.txt`, `app-ads.txt`). `data/`, `src/`, `scripts/`, `tests/`, `docs/`는 배포하지 않는다.
+- **광고 파일**: `ads.txt`·`app-ads.txt`는 변경하지 않는다(SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0` 유지, 테스트가 검사).
+- **테마**: 방문 시각 기반 라이트/다크 자동 적용(`js/theme-core.js`가 `<head>`에서 본문보다 먼저 실행해 깜박임을 막고, `js/theme.js`가 수동 전환을 처리한다).
+- **검증**: `node scripts/build.mjs && node --test tests/*.test.mjs`. sitemap에 네 페이지와 `/game/`을 포함한다.
+- **복구**: 이전 릴리스 1.0.7(`/var/www/kimjinwan/releases/1.0.7`)이 남아 있으므로 `current` 심볼릭 링크를 1.0.7로 되돌리면 된다. 1.0.2~ 이후 섹션과 같은 방식이다.
+
 ## 1.0.6 — 웹게임 포털 연결
 
 상단 탐색, 첫 화면, 공개 작업, 하단 콘텐츠 링크에서 `https://games.kimjinwan.com/`과 대표 게임으로 연결했다. `robots.txt`에 게임 포털 사이트맵을 추가했다. 기존 광고 파일은 변경하지 않는다.
