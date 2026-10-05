@@ -11,7 +11,7 @@ import argparse
 from PIL import Image, ImageDraw
 
 K = [(8, 6), (14, 6), (14, 14), (21, 6), (28, 6), (19.1, 16.1), (22.5, 19.5), (18.5, 23.5), (14, 19), (14, 26), (8, 26)]
-DOT = (25, 25, 3.5)
+DOT = (25.5, 25.5, 3.25)
 RADIUS = 8
 SS = 8  # supersampling factor
 

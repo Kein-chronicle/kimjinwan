@@ -103,5 +103,5 @@ test('파비콘은 새 Kein 마크로 교체됐고 비어 있지 않다', async 
   assert.doesNotMatch(svg, /<image|<text|Gradient|href=/);
   // build_icons.py 도 같은 기하를 쓴다
   const py = read('scripts/build_icons.py');
-  assert.ok(py.includes('(19.1, 16.1), (22.5, 19.5), (18.5, 23.5)') && py.includes('DOT = (25, 25, 3.5)'));
+  assert.ok(py.includes('(19.1, 16.1), (22.5, 19.5), (18.5, 23.5)') && py.includes('DOT = (25.5, 25.5, 3.25)'));
 });

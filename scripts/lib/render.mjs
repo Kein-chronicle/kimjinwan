@@ -169,7 +169,7 @@ const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
 
 // Kein 마크: 둥근 사각 타일 + 기하 K + 앞으로 튀어나가는 점. 32 격자, 색은 CSS 토큰(.km-*)이 정한다.
 export const K_PATH = 'M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z';
-export const K_DOT = {cx: 25, cy: 25, r: 3.5};
+export const K_DOT = {cx: 25.5, cy: 25.5, r: 3.25};
 export function kMark(size = 28) {
   return `<svg class="kmark" viewBox="0 0 32 32" width="${size}" height="${size}" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="${K_PATH}"/><circle class="km-dot" cx="${K_DOT.cx}" cy="${K_DOT.cy}" r="${K_DOT.r}"/></svg>`;
 }
