@@ -7,7 +7,7 @@
 - **빌드**: HTML 4개는 `src/`(페이지·파셜) + `data/*.json`(services·collections·factories·profile, SSOT) + `js/data.js`에서 `node scripts/build.mjs`로 생성한다. **생성된 `index.html`, `works/`, `factories/`, `career/` 는 직접 고치지 않는다** — `src/`나 `data/`를 고치고 다시 빌드한다. 출력은 입력만의 순수 함수이며(날짜는 데이터 안의 최대 `updated`/`as_of`), `tests/build.test.mjs`가 커밋본과 빌드 결과의 일치를 검사한다. CSS 캐시 구분(`?v=`)은 `VERSION`을 따른다.
 - **공개 허용 목록**: `works/`, `factories/`, `career/`, `css/`, `js/`, `assets/`, `game/` 와 루트 파일(`index.html`, `favicon*`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, `ads.txt`, `app-ads.txt`). `data/`, `src/`, `scripts/`, `tests/`, `docs/`는 배포하지 않는다.
 - **광고 파일**: `ads.txt`·`app-ads.txt`는 변경하지 않는다(SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0` 유지, 테스트가 검사).
-- **테마**: 방문 시각 기반 라이트/다크 자동 적용(`js/theme-core.js`가 `<head>`에서 본문보다 먼저 실행해 깜박임을 막고, `js/theme.js`가 수동 전환을 처리한다).
+- **테마**: 방문 시각 기반 라이트/다크 자동 적용(`js/theme-core.js`가 `<head>`에서 본문보다 먼저 실행해 깜박임을 막고, `js/theme.js`가 5분마다·탭 복귀 시 시각을 다시 평가한다. 수동 전환 버튼은 없다).
 - **검증**: `node scripts/build.mjs && node --test tests/*.test.mjs`. sitemap에 네 페이지와 `/game/`을 포함한다.
 - **복구**: 이전 릴리스 1.0.7(`/var/www/kimjinwan/releases/1.0.7`)이 남아 있으므로 `current` 심볼릭 링크를 1.0.7로 되돌리면 된다. 1.0.2~ 이후 섹션과 같은 방식이다.
 
@@ -59,7 +59,7 @@ ads.txt도 서버의 기존 공개 원본을 그대로 가져와 추적한다. �
 
 기존 Nginx root가 Git 체크아웃을 직접 제공해 /.git/HEAD가 HTTP200이었다. 공개 파일만 /var/www/kimjinwan/releases/1.0.1에 복사하고 /var/www/kimjinwan/current를 root로 지정했다. 기존 저장소는 보존했으며 Git·테스트·생성 스크립트는 배포하지 않는다. 변경 뒤 내부 경로404 확인.
 
-공개 허용 목록: index.html, css/, js/, assets/, game/, app-ads.txt, ads.txt, favicon.svg, favicon.ico, favicon-96.png, apple-touch-icon.png, robots.txt, sitemap.xml. 기존 앱 광고 파일을 빼먹거나 저장소 전체를 배포하지 않는다.
+공개 허용 목록(1.0.x 기준 — 1.1.0 이후는 이 문서 맨 위 1.1.0 절의 목록이 우선): index.html, css/, js/, assets/, game/, app-ads.txt, ads.txt, favicon.svg, favicon.ico, favicon-96.png, apple-touch-icon.png, robots.txt, sitemap.xml. 기존 앱 광고 파일을 빼먹거나 저장소 전체를 배포하지 않는다.
 
 Nginx 기본 설정의 홈페이지 root 한 줄만 변경했다(파일 끝 개행 정규화 포함). 이전 설정은 서버 /root/kimjinwan-backups/default-before-1.0.1.conf에 보존했다. 동시 변경을 덮지 않도록 원본 해시 대조 후 교체했다. 다른 가상 호스트 설정 변경 없음.
 

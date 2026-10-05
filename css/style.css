@@ -302,7 +302,8 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .fac-role{color:var(--muted)}
 .flow{list-style:none;display:flex;flex-wrap:wrap;gap:0}
 .stage{position:relative;padding:8px 14px;border:1px solid var(--line);border-left-width:3px;background:var(--card2);font-size:13px;margin-right:18px;margin-bottom:8px}
-.stage:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--faint);font-family:var(--mono);font-size:12px}
+.flow{counter-reset:stage}
+.stage::before{counter-increment:stage;content:counter(stage,decimal-leading-zero);color:var(--faint);font-family:var(--mono);font-size:11px}
 .stage-ai{border-left-color:var(--stage-ai)} .stage-gate{border-left-color:var(--stage-gate)} .stage-human{border-left-color:var(--stage-human)}
 .legend{font-size:12px;color:var(--faint);display:flex;gap:14px;align-items:center}
 .dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
@@ -327,7 +328,6 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
   .hstat:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .flow{flex-direction:column;align-items:flex-start}
   .stage{margin-right:0}
-  .stage:not(:last-child)::after{content:"↓";right:auto;left:14px;top:auto;bottom:-14px;transform:none}
 }
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 .nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:var(--accent-ink)}

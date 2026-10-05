@@ -50,7 +50,7 @@ export function factoryCard(f, servicesById, {link = false} = {}) {
   <p class="fac-role">${bi(f.role)}</p>
   <ol class="flow" aria-label="pipeline">${stages}</ol>
   <p class="legend mono"><span class="lg lg-ai">${icon('sparkles', {size: 14})}AI</span><span class="lg lg-gate">${icon('shield-check', {size: 14})}GATE</span><span class="lg lg-human">${icon('hand', {size: 14})}HUMAN</span></p>
-  <p class="fac-human"><strong>${icon('user-check', {size: 16})}${bi({ko: '제가 맡는 일', en: 'What I do'})}:</strong> ${bi(f.human_role)}</p>
+  <p class="fac-human"><strong>${icon('user-check', {size: 16})}${bi({ko: '제가 맡는 일:', en: 'What I do:'})}</strong> ${bi(f.human_role)}</p>
   <dl class="metrics">${metrics}</dl>
   ${outs ? `<ul class="fac-outs">${outs}</ul>` : ''}
   ${link ? `<a class="more" href="/factories/#${esc(f.id)}">${bi({ko: '공장 상세', en: 'Factory details'})}${icon('arrow-up-right', {size: 14, cls: 'ico-ext'})}</a>` : ''}
