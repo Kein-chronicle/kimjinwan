@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, collectionCard, factoryCard, heroStats, strengthCard, timelineItem, featuredProjectCard, bi, esc} from './lib/render.mjs';
+import {serviceCard, collectionCard, factoryCard, heroStats, worksFilters, factoryNav, strengthCard, timelineItem, featuredProjectCard, bi, esc} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -57,6 +57,9 @@ export function buildAll({write = true} = {}) {
     all_services: data.services.map(serviceCard).join('\n'),
     collections: data.collections.map(collectionCard).join('\n'),
     factories: data.factories.map(f => factoryCard(f, byId)).join('\n'),
+    factories_home: data.factories.map(f => factoryCard(f, byId, {link: true})).join('\n'),
+    works_filters: worksFilters(),
+    factory_nav: factoryNav(data.factories),
     factories_teaser: data.factories.map(f => `<li><a href="/factories/#${esc(f.id)}">${bi(f.name)}</a> — ${bi(f.role)}</li>`).join(''),
     pitch: bi(data.profile.pitch),
     strengths: data.profile.strengths.map(strengthCard).join('\n'),

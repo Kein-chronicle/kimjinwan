@@ -1,7 +1,9 @@
 // tests/render.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {esc, bi, serviceCard, collectionCard, factoryCard, heroStats} from '../scripts/lib/render.mjs';
+import fs from 'node:fs';
+import {parseProjects} from '../scripts/lib/projects.mjs';
+import {esc, bi, serviceCard, collectionCard, factoryCard, heroStats, projectKind} from '../scripts/lib/render.mjs';
 
 const svc = {id: 'forge', name: 'Forge', kind: 'service', status: 'live', featured: true,
   summary: {ko: '요구사항에서 개발까지', en: 'From requirements to code'},
@@ -14,7 +16,7 @@ test('serviceCard 는 외부 링크 속성, 상태 배지, AI 툴 칩을 포함�
   const h = serviceCard(svc);
   assert.match(h, /href="https:\/\/forge\.example\.com\/"[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
   assert.match(h, /badge-live/); assert.match(h, /LIVE/);
-  assert.match(h, />Claude Code</); assert.match(h, /<img src="assets\/services\/forge\.png"/);
+  assert.match(h, />Claude Code</); assert.match(h, /<img src="\/assets\/services\/forge\.png"/);
 });
 test('serviceCard 는 thumb 가 없으면 img 를 만들지 않는다', () => {
   assert.doesNotMatch(serviceCard({...svc, thumb: ''}), /<img/);
@@ -41,4 +43,14 @@ test('heroStats 는 데이터에서 개수를 집계한다', () => {
     services: [svc, {...svc, id: 'b', featured: false}],
     collections: [{kind: 'game', count: {value: 44}}, {kind: 'tool', count: {value: 42}}, {kind: 'blog', count: {value: 218}}]});
   assert.match(h, />2</); assert.match(h, />44</); assert.match(h, />42</); assert.match(h, />218</);
+});
+test('블록체인·코인 프로젝트는 연동/결제 키워드보다 먼저 blocks 아이콘이 된다', () => {
+  const p = JSON.parse(JSON.stringify(parseProjects(fs.readFileSync('js/data.js', 'utf8'))));
+  for (const id of [6, 7, 8, 9]) assert.equal(projectKind(p.find(x => x.id === id)), 'blocks', String(id));
+});
+test('factoryCard link 옵션은 /factories/#id 링크를 만든다', () => {
+  const f = {id: 'af', name: {ko: '앱 공장', en: 'App Factory'}, role: {ko: 'r', en: 'r'}, stages: [{name: {ko: 'a', en: 'a'}, kind: 'ai'}],
+    human_role: {ko: 'h', en: 'h'}, metrics: [], outputs: []};
+  assert.match(factoryCard(f, new Map(), {link: true}), /href="\/factories\/#af"/);
+  assert.doesNotMatch(factoryCard(f, new Map()), /href="\/factories\/#af"/);
 });

@@ -387,3 +387,16 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .game-fab .gf-ico svg{stroke:currentColor}
 .pcard .thumb.noimg .pico svg{color:var(--accent)}
 @media(max-width:600px){.ai-asof{margin-top:-30px}.page-top{padding-top:104px}.fproj-link{padding:18px}}
+
+/* ===== /works 필터 · /factories 앵커 내비 ===== */
+[hidden]{display:none!important}
+.filters button{display:inline-flex;align-items:center;gap:6px}
+.filters button:hover{border-color:var(--accent);color:var(--text)}
+.filters button[aria-pressed="true"]:hover{color:var(--accent-ink)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.pill:hover{border-color:var(--accent);color:var(--accent)}
+.fac{scroll-margin-top:96px}
+.fac h3 a{color:inherit}
+.fac h3 a:hover{color:var(--accent)}
+.fac>.more{align-self:flex-start}

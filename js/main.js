@@ -39,13 +39,13 @@ const ICONS={
 function projIcon(p){
   const t=(p.name+' '+p.desc+' '+(p.stack||[]).join(' '));
   let k='box';
-  if(/벤츠|IVI|Live TV|커넥티드|단말|차량/.test(t))k='car';
+  if(/블록체인|코인|토큰|Solidity|\bERC/.test(t))k='chain';
+  else if(/벤츠|IVI|Live TV|커넥티드|단말|차량/.test(t))k='car';
   else if(/게임|PickJoy|멀티게임|게임패드|AR/.test(t))k='game';
   else if(/결제|연동/.test(t))k='pay';
   else if(/국책|과제|IITP/.test(t))k='gov';
   else if(/보고|유지보수|운영|M&S/.test(t))k='report';
   else if(/VR|XR|Unity|Pico/.test(t))k='vr';
-  else if(/블록체인|코인|토큰|Solidity/.test(t))k='chain';
   else if(/팀|빌딩|채용/.test(t))k='team';
   else if(/앱|App|iOS|Swift|Flutter/.test(t))k='app';
   else if(/웹|Web|React|홈페이지/.test(t))k='web';
@@ -165,3 +165,24 @@ function openGameAuto(){
   document.getElementById('gameModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
+
+// ===== /works 종류 필터 (JS 없으면 전부 보임, URL 해시로 딥링크: /works/#game) =====
+(function(){
+  const grid=document.getElementById('works-grid');
+  if(!grid) return;
+  const btns=[...document.querySelectorAll('.filters [data-filter]')];
+  const kinds=btns.map(b=>b.dataset.filter);
+  function apply(k){
+    if(!kinds.includes(k)) k='all';
+    btns.forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter===k)));
+    grid.querySelectorAll('[data-kind]').forEach(el=>{el.hidden=!(k==='all'||el.dataset.kind===k);});
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    const k=b.dataset.filter;
+    apply(k);
+    history.replaceState(null,'',k==='all'?location.pathname+location.search:'#'+k);
+  }));
+  const fromHash=()=>apply(location.hash.slice(1));
+  addEventListener('hashchange',fromHash);
+  fromHash();
+})();

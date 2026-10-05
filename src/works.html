@@ -1,5 +1,16 @@
 {{>head}}
 {{>nav}}
-<main class="block"><div class="wrap"><h1>TODO-in-task-6-8</h1></div></main>
+<main class="block page-top"><div class="wrap">
+  <div class="sec-head"><div class="sec-no">{{ico_layers}}<b>Works</b></div>
+    <h1 class="sec-title"><span data-lang-ko>제가 만든 작업물 전체</span><span data-lang-en>Everything I've built</span></h1>
+    <p class="sec-sub"><span data-lang-ko>제가 AI로 만들고 운영하는 서비스·웹게임·웹 도구·앱·블로그 전체입니다. 새로 만들 때마다 이 목록이 늘어납니다.</span><span data-lang-en>Every service, web game, web tool, app and journal I build with AI and run myself. The list grows each time I ship something new.</span></p></div>
+  <div class="filters" role="group" aria-label="filter">{{works_filters}}</div>
+  <div class="grid-3" id="works-grid">
+    {{all_services}}
+    {{collections}}
+  </div>
+</div></main>
 {{>footer}}
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
 </body></html>

@@ -84,9 +84,9 @@ test('featuredProjectCard: 연도·회사·역할·이름·설명·칩 최대 4�
 });
 test('projectKind 는 main.js projIcon 과 같은 키워드 규칙이다', () => {
   const k = (name, desc = '', stack = []) => projectKind({name, desc, stack});
-  assert.equal(k('벤츠 Live TV'), 'car'); assert.equal(k('게임플랫폼'), 'gamepad'); assert.equal(k('코인거래소'), 'link');
+  assert.equal(k('벤츠 Live TV'), 'car'); assert.equal(k('게임플랫폼'), 'gamepad'); assert.equal(k('코인거래소'), 'blocks');
   assert.equal(k('독거노인 국책'), 'landmark'); assert.equal(k('쇼핑몰', '', ['React']), 'globe'); assert.equal(k('zzz'), 'layers');
-  for (const n of ['car', 'gamepad', 'credit-card', 'landmark', 'bar-chart', 'vr', 'link', 'users', 'smartphone', 'globe', 'layers']) assert.ok(ICON_NAMES.includes(n), n);
+  for (const n of ['car', 'gamepad', 'credit-card', 'landmark', 'bar-chart', 'vr', 'blocks', 'users', 'smartphone', 'globe', 'layers']) assert.ok(ICON_NAMES.includes(n), n);
   for (const p of projects) assert.ok(ICON_NAMES.includes(projectKind(p)), p.name);
 });
 test('strengthCard / timelineItem 은 한/영 span 과 아이콘을 렌더한다', () => {

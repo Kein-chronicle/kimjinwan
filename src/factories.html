@@ -1,5 +1,13 @@
 {{>head}}
 {{>nav}}
-<main class="block"><div class="wrap"><h1>TODO-in-task-6-8</h1></div></main>
+<main class="block page-top"><div class="wrap">
+  <div class="sec-head"><div class="sec-no">{{ico_factory}}<b>Factories</b></div>
+    <h1 class="sec-title"><span data-lang-ko>제가 설계한 AI 공장</span><span data-lang-en>The AI factories I designed</span></h1>
+    <p class="sec-sub"><span data-lang-ko>제가 설계한 공장은 "AI가 알아서 한다"가 아니라, 단계와 품질 게이트가 정의된 파이프라인입니다. 게이트가 있는 공장에서는 통과하지 못하면 다음 단계로 가지 못하고, 제가 개입하는 지점은 공장마다 정해져 있습니다. 수치는 표시된 기준일의 실측값입니다.</span><span data-lang-en>The factories I designed are not "AI does whatever"; each is a pipeline with defined stages and quality gates. Where a gate exists, work cannot advance past a failing one, and the points where I step in are fixed per factory. Figures are measured as of the date shown.</span></p></div>
+  <div class="pills" role="navigation" aria-label="factories">{{factory_nav}}</div>
+  <div class="grid-2">{{factories}}</div>
+</div></main>
 {{>footer}}
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
 </body></html>
