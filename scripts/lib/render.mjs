@@ -30,7 +30,7 @@ export function serviceCard(s) {
 }
 
 export function collectionCard(c) {
-  const links = (c.previews || []).map(p => `<li><a href="${esc(p.url)}" ${EXT}>${esc(p.name)}${ext}</a></li>`).join('');
+  const links = (c.previews || []).map(p => `<li><a href="${esc(p.url)}" ${EXT}>${typeof p.name === 'object' ? bi(p.name) : esc(p.name)}${ext}</a></li>`).join('');
   return `<article class="card col" data-kind="${esc(c.kind)}">
   <div class="col-count mono">${icon(KIND_ICON[c.kind] || 'layers', {size: 22, cls: 'col-ico'})}<span>${esc(c.count.value)}</span></div>
   <h3>${bi(c.name)}</h3>

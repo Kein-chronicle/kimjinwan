@@ -4,17 +4,17 @@
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {"value": 275, "as_of": "2026-10-05", "source": "kein-blog/web/dist/ko/{ai,apps,games,fiction}/ 하위 글 폴더 수(63+130+78+4)를 ls로 센 값; web/content/ko 의 md 276개 중 status 가 draft 인 1개(editorial-draft.md)는 빌드에서 제외되어 불일치 없음"},
    "previews": [
-     {"name": "AdMob이 라이브 앱을 못 찾은 이유", "url": "https://blog.kimjinwan.com/ko/ai/admob-store-search-zero-results/"},
-     {"name": "두 AI 세션의 커밋을 구별한 방법", "url": "https://blog.kimjinwan.com/ko/ai/same-day-two-sessions-one-trailer/"},
-     {"name": "만들었던 앱들 — 출시와 심사, 내려간 기록까지", "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"}]},
+     {"name": {"ko": "AdMob이 라이브 앱을 못 찾은 이유", "en": "Why AdMob could not find a live app"}, "url": "https://blog.kimjinwan.com/ko/ai/admob-store-search-zero-results/"},
+     {"name": {"ko": "두 AI 세션의 커밋을 구별한 방법", "en": "How one trailer distinguished two AI sessions"}, "url": "https://blog.kimjinwan.com/ko/ai/same-day-two-sessions-one-trailer/"},
+     {"name": {"ko": "만들었던 앱들 — 출시와 심사, 내려간 기록까지", "en": "Apps I built — release, review and takedown records"}, "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"}]},
   {"id": "tools", "kind": "tool", "name": {"ko": "웹 도구", "en": "Web tools"},
    "summary": {"ko": "계산기부터 PDF·이미지 처리까지, 제가 만든 도구는 파일과 입력값을 가능한 한 사용자의 기기 안에서 처리합니다. 각 도구에 규칙과 한계를 함께 적었습니다.", "en": "From calculators to local PDF/image utilities, the tools I build keep files and inputs on your device whenever possible, with rules and limits explained."},
    "url": "https://apps.kimjinwan.com/",
    "count": {"value": 57, "as_of": "2026-10-05", "source": "kein-web-tools/lib/tool-catalog.ts 의 tools 배열 항목(href) 57개를 센 값; README 의 '도구 57종' 및 라이브 sitemap 66개 loc 에서 홈·카테고리 6·문의·개인정보 제외한 57과 일치"},
    "previews": [
-     {"name": "단가 비교 계산기", "url": "https://apps.kimjinwan.com/unit-price/"},
-     {"name": "토너먼트 대진표 생성기", "url": "https://apps.kimjinwan.com/tournament-bracket/"},
-     {"name": "브라우저 PDF 합치기", "url": "https://apps.kimjinwan.com/pdf-merge/"}]},
+     {"name": {"ko": "단가 비교 계산기", "en": "Unit price comparison"}, "url": "https://apps.kimjinwan.com/unit-price/"},
+     {"name": {"ko": "토너먼트 대진표 생성기", "en": "Tournament bracket maker"}, "url": "https://apps.kimjinwan.com/tournament-bracket/"},
+     {"name": {"ko": "브라우저 PDF 합치기", "en": "In-browser PDF merge"}, "url": "https://apps.kimjinwan.com/pdf-merge/"}]},
   {"id": "games", "kind": "game", "name": {"ko": "웹게임", "en": "Web games"},
    "summary": {"ko": "설치 없이 브라우저에서 바로 플레이하는 게임 포털. 제가 설계한 파이프라인으로 양산하고, 편입 검사를 통과한 게임만 올립니다.", "en": "A browser game portal. Games are produced by a pipeline I designed and published only after passing admission checks."},
    "url": "https://games.kimjinwan.com/",
@@ -28,5 +28,5 @@
    "url": "https://blog.kimjinwan.com/ko/apps/app-archive/",
    "count": {"value": 39, "as_of": "2026-10-05", "source": "app-factory/uploaded/ 하위 디렉터리 39개를 ls로 센 값; 39개 모두 FROZEN.md(업로드 완료 후 동결 표식)를 가짐. af-faith 폴더는 존재하지 않아(신앙 공장은 app-factory 로 통합) 합산 대상 없음. 승인·라이브 여부는 확인하지 않아 '업로드·심사 제출'로만 표기"},
    "previews": [
-     {"name": "만들었던 앱들 — 출시와 심사, 내려간 기록까지", "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"}]}
+     {"name": {"ko": "만들었던 앱들 — 출시와 심사, 내려간 기록까지", "en": "Apps I built — release, review and takedown records"}, "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"}]}
 ]

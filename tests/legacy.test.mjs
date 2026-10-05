@@ -107,3 +107,10 @@ test('대표 프로젝트 역할은 한·영을 모두 가진다 (EN 모드에 �
   const h = read('index.html');
   assert.ok(h.includes('<div class="fproj-role mono"><span data-lang-ko>총괄 PM</span><span data-lang-en>Lead PM</span></div>'));
 });
+test('컬렉션 미리보기 링크는 EN 모드용 영어 제목을 가진다 (구 사이트 한·영 라벨 보존)', () => {
+  const cols = JSON.parse(read('data/collections.json'));
+  for (const c of cols) for (const p of c.previews || [])
+    if (/[가-힣]/.test(typeof p.name === 'string' ? p.name : p.name.ko))
+      assert.ok(typeof p.name === 'object' && p.name.en && !/[가-힣]/.test(p.name.en), `${c.id}: ${JSON.stringify(p.name)}`);
+  assert.ok(read('index.html').includes('<span data-lang-en>Unit price comparison</span>'));
+});
