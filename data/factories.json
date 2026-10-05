@@ -1,0 +1,429 @@
+[
+ {
+  "id": "app-factory",
+  "name": {
+   "ko": "앱 공장",
+   "en": "App Factory"
+  },
+  "role": {
+   "ko": "iOS 앱을 기획부터 App Store 업로드·심사 제출까지 양산하는 파이프라인",
+   "en": "A pipeline that ships iOS apps from planning to App Store upload and review submission"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "계획·리서치",
+     "en": "Plan & research"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "설계·디자인",
+     "en": "Spec & design"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "개발",
+     "en": "Build"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "검증 게이트",
+     "en": "Verification gates"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "스토어 준비·업로드",
+     "en": "Store prep & upload"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "실기기 연결·제출 승인",
+     "en": "Real-device hookup & submission approval"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "실기기 연결과 심사 제출 승인만 사람이 합니다.",
+   "en": "A human only connects a real device and approves submission."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "품질 게이트",
+     "en": "Quality gates"
+    },
+    "value": "112",
+    "as_of": "2026-10-05",
+    "source": "app-factory/factory/pipeline.json v96 의 7개 stage gates 합계(python 으로 합산: 7+8+15+14+23+14+31)"
+   },
+   {
+    "label": {
+     "ko": "업로드한 앱",
+     "en": "Apps uploaded"
+    },
+    "value": "39",
+    "as_of": "2026-10-05",
+    "source": "app-factory/uploaded/ 디렉터리 39개(전부 FROZEN.md 보유)"
+   },
+   {
+    "label": {
+     "ko": "사람 개입 지점",
+     "en": "Human touchpoints"
+    },
+    "value": "1",
+    "as_of": "2026-10-05",
+    "source": "이 공장에 정의한 human 단계 수"
+   }
+  ],
+  "outputs": []
+ },
+ {
+  "id": "faith-factory",
+  "name": {
+   "ko": "신앙 앱 공장",
+   "en": "Faith App Factory"
+  },
+  "role": {
+   "ko": "기독교인 고객을 위한 앱을 같은 엔진에서 신앙 전용 규정을 더해 만드는 파이프라인",
+   "en": "A pipeline for apps aimed at Christian users: the same engine plus faith-specific rules"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "고객·콘텐츠 권리 검토",
+     "en": "Audience & content-rights review"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "설계·디자인",
+     "en": "Spec & design"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "개발",
+     "en": "Build"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "신앙 전용 게이트",
+     "en": "Faith-specific gates"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "스토어 준비·업로드",
+     "en": "Store prep & upload"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "실기기 연결·제출 승인",
+     "en": "Real-device hookup & submission approval"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "앱 공장과 같이 실기기 연결과 심사 제출 승인만 사람이 합니다.",
+   "en": "As in the app factory, a human only connects a real device and approves submission."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "신앙 전용 게이트",
+     "en": "Faith-specific gates"
+    },
+    "value": "13",
+    "as_of": "2026-10-05",
+    "source": "app-factory/profiles/faith/profile.json 의 stages[].gates 합계"
+   },
+   {
+    "label": {
+     "ko": "사람 개입 지점",
+     "en": "Human touchpoints"
+    },
+    "value": "1",
+    "as_of": "2026-10-05",
+    "source": "이 공장에 정의한 human 단계 수"
+   }
+  ],
+  "outputs": []
+ },
+ {
+  "id": "web-games",
+  "name": {
+   "ko": "웹게임 파이프라인",
+   "en": "Web Game Pipeline"
+  },
+  "role": {
+   "ko": "게임 선정부터 개발·검증을 거쳐 웹 포털에 편입하는 양산 파이프라인",
+   "en": "A pipeline that takes games from selection through build and verification into the web portal"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "선정·리서치",
+     "en": "Selection & research"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "재설계·설계서",
+     "en": "Redesign & design doc"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "개발",
+     "en": "Build"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "테스트·검증",
+     "en": "Test & verify"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "포털 편입 검사",
+     "en": "Portal admission checks"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "방향 판정·플레이 피드백",
+     "en": "Direction & playtest feedback"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "선정 풀과 방향을 정하고 완성작을 플레이해 판정하는 일은 사람이 합니다.",
+   "en": "A human sets the selection pool and direction, and judges finished games by playing them."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "포털 게임",
+     "en": "Portal games"
+    },
+    "value": "77",
+    "as_of": "2026-10-05",
+    "source": "kein-web-games/src/games.json 배열 길이"
+   },
+   {
+    "label": {
+     "ko": "편입 기준",
+     "en": "Admission criteria"
+    },
+    "value": "5",
+    "as_of": "2026-10-05",
+    "source": "kein-web-games/docs/ARCHITECTURE.md '편입 기준' 번호 항목 수"
+   },
+   {
+    "label": {
+     "ko": "사람 개입 지점",
+     "en": "Human touchpoints"
+    },
+    "value": "1",
+    "as_of": "2026-10-05",
+    "source": "이 공장에 정의한 human 단계 수"
+   }
+  ],
+  "outputs": []
+ },
+ {
+  "id": "video",
+  "name": {
+   "ko": "영상 자동화",
+   "en": "Video Automation"
+  },
+  "role": {
+   "ko": "게임 소재 선정부터 이미지·음성·합성·검수·업로드까지 쇼츠를 만드는 파이프라인",
+   "en": "A pipeline that makes short videos from topic selection through images, voice, compositing, review and upload"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "소재 선정·기획",
+     "en": "Topic selection & planning"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "이미지·음성·모션 생성",
+     "en": "Image, voice & motion generation"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "합성",
+     "en": "Compositing"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "기술·품질 검사",
+     "en": "Technical & quality checks"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "업로드·공개 확인",
+     "en": "Upload & publish check"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "채널 방향·운영 결정",
+     "en": "Channel direction & operations decisions"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "채널 방향과 운영 재개·중지는 사람이 결정합니다. 공개 전 사람 승인은 두지 않고 자동 검사로 대신합니다.",
+   "en": "A human decides channel direction and when to resume or pause operations. There is no pre-publish human approval; automated checks stand in for it."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "공개한 영상",
+     "en": "Videos published"
+    },
+    "value": "21",
+    "as_of": "2026-10-05",
+    "source": "kein-tube/content/ledger.json episodes 31건 중 status 가 public 인 건수(public 21 / hold 8 / deleted 2)"
+   },
+   {
+    "label": {
+     "ko": "사람 개입 지점",
+     "en": "Human touchpoints"
+    },
+    "value": "1",
+    "as_of": "2026-10-05",
+    "source": "이 공장에 정의한 human 단계 수"
+   }
+  ],
+  "outputs": []
+ },
+ {
+  "id": "blog",
+  "name": {
+   "ko": "블로그 공장",
+   "en": "Blog Factory"
+  },
+  "role": {
+   "ko": "AI가 조사·초안을 쓰고 자동 게이트를 거쳐 글을 발행하는 편집 파이프라인",
+   "en": "An editorial pipeline where AI researches and drafts, and posts are published after automated gates"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "소재 선정·조사",
+     "en": "Topic & research"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "개요·초안",
+     "en": "Outline & draft"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "독립 검토",
+     "en": "Independent review"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "자동 공개 검토",
+     "en": "Automated release review"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "빌드·배포 확인",
+     "en": "Build, deploy & verify"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "사후 검토·방향 지시",
+     "en": "Post-publish review & direction"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "주제 방향을 정하고 공개 후 검토합니다. 사람 검토는 발행을 막지 않는 사후 기록입니다.",
+   "en": "A human sets topic direction and reviews after publication. Human review is a non-blocking after-the-fact record."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "발행한 글",
+     "en": "Posts published"
+    },
+    "value": "275",
+    "as_of": "2026-10-05",
+    "source": "kein-blog/web/dist/ko/ 하위 글 폴더 수(ai 63 + apps 130 + games 78 + fiction 4)"
+   },
+   {
+    "label": {
+     "ko": "편집 단계",
+     "en": "Editorial stages"
+    },
+    "value": "7",
+    "as_of": "2026-10-05",
+    "source": "kein-blog/docs/editorial/PIPELINE.md 의 stage 표 7행(brief~published)"
+   },
+   {
+    "label": {
+     "ko": "사람 개입 지점",
+     "en": "Human touchpoints"
+    },
+    "value": "1",
+    "as_of": "2026-10-05",
+    "source": "이 공장에 정의한 human 단계 수"
+   }
+  ],
+  "outputs": []
+ }
+]
