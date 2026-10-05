@@ -528,3 +528,8 @@ main>.wrap>.page-foot{margin:0 0 72px}
   .foot-map ul{justify-content:center}
   .page-foot{flex-direction:column;align-items:flex-start}
 }
+/* 02-3 이어붙인 AI 작업물 (구 03 하단) */
+.more-bridge{margin:40px 0 0}
+#works .ai-subh{margin:14px 0 8px}
+#works .ai-showcase{margin-top:0}
+#works .ai-note{margin-top:18px}
