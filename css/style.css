@@ -1,10 +1,10 @@
 /* ===== 김진완 — AI 제작·운영 허브 (light/dark tokens) ===== */
 :root{
   --bg:#FAFAF7; --bg2:#F2F2EC; --card:#FFFFFF; --card2:#F7F7F2;
-  --line:#E4E4DC; --text:#16181D; --muted:#515867; --faint:#7A8191;
+  --line:#E4E4DC; --text:#16181D; --muted:#515867; --faint:#666D7C;
   --accent:#3B4BDB; --accent-ink:#FFFFFF; --accent-soft:rgba(59,75,219,.08);
-  --ok:#1A7F4B; --warn:#9A6700;
-  --stage-ai:#3B4BDB; --stage-gate:#9A6700; --stage-human:#1A7F4B;
+  --ok:#177447; --warn:#8A5D00;
+  --stage-ai:#3B4BDB; --stage-gate:#8A5D00; --stage-human:#177447;
   --mono:"JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
   --maxw:1120px; --r:10px;
 }
@@ -13,7 +13,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#0F1115; --bg2:#14171D; --card:#171A21; --card2:#1B1F27;
-  --line:#262B35; --text:#ECEEF2; --muted:#A3AABA; --faint:#7C8497;
+  --line:#262B35; --text:#ECEEF2; --muted:#A3AABA; --faint:#8790A3;
   --accent:#7C8CFF; --accent-ink:#0F1115; --accent-soft:rgba(124,140,255,.12);
   --ok:#4CC38A; --warn:#E2B04A;
   --stage-ai:#7C8CFF; --stage-gate:#E2B04A; --stage-human:#4CC38A;
