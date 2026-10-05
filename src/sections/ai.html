@@ -4,30 +4,43 @@
     <p class="sec-sub"><span data-lang-ko>앞에서 본 서비스와 공장, 산출물은 모두 이 방식으로 돌아갑니다. 현장에서 익힌 순서는 그대로입니다. 결정은 사람이 하고, 달라진 건 수행을 AI에게 맡긴다는 점입니다. 그만큼 AI를 "쓰는" 데서 멈추지 않고 "운영"합니다. 검토·하네스·실행·검증·정리·이월의 6원칙 사이클로 돌리는 운영 체계가 그 바탕입니다.</span><span data-lang-en>The services, factories and output above all run this way. The sequence I learned on the job stays the same. People still decide; what changed is that AI now executes. That is why I don't just "use" AI; I operate it as a system, built on a six-principle cycle (review · harness · execute · verify · close · carry-over).</span></p>
   </div>
 
-  <div class="ai-stats">
-    <div class="aistat"><div class="num mono">9</div><div class="lbl"><span data-lang-ko>운용 중인 AI 에이전트·봇</span><span data-lang-en>AI agents &amp; bots I run</span></div></div>
-    <div class="aistat"><div class="num mono">740+</div><div class="lbl"><span data-lang-ko>AI 작업 세션 (개인·회사 합산)</span><span data-lang-en>AI sessions (personal + work)</span></div></div>
-    <div class="aistat"><div class="num mono">51+</div><div class="lbl"><span data-lang-ko>운영 프로젝트</span><span data-lang-en>Projects operated</span></div></div>
-    <div class="aistat"><div class="num mono">36K+</div><div class="lbl"><span data-lang-ko>누적 실행 횟수</span><span data-lang-en>Cumulative runs</span></div></div>
+  <div class="ai-band">
+    <div class="ai-stats">
+      <div class="aistat"><div class="num mono">9</div><div class="lbl"><span data-lang-ko>운용 중인 AI 에이전트·봇</span><span data-lang-en>AI agents &amp; bots I run</span></div></div>
+      <div class="aistat"><div class="num mono">740+</div><div class="lbl"><span data-lang-ko>AI 작업 세션 (개인·회사 합산)</span><span data-lang-en>AI sessions (personal + work)</span></div></div>
+      <div class="aistat"><div class="num mono">51+</div><div class="lbl"><span data-lang-ko>운영 프로젝트</span><span data-lang-en>Projects operated</span></div></div>
+      <div class="aistat"><div class="num mono">36K+</div><div class="lbl"><span data-lang-ko>누적 실행 횟수</span><span data-lang-en>Cumulative runs</span></div></div>
+    </div>
+    <p class="asof mono ai-asof">{{ico_clock}}<span data-lang-ko>2026-09 기준</span><span data-lang-en>as of 2026-09</span></p>
   </div>
-  <p class="asof mono ai-asof">{{ico_clock}}<span data-lang-ko>2026-09 기준</span><span data-lang-en>as of 2026-09</span></p>
 
-  <h3 class="ai-subh"><span data-lang-ko>함께 일하는 도구</span><span data-lang-en>Tools I orchestrate</span></h3>
-  <ul class="tools">
-    <li class="tool"><span class="st-ico">{{ico_terminal}}</span><p><b>Claude Code</b> <span data-lang-ko>코드 구현·리팩토링·문서화, 그리고 검증 루프를 지휘하는 메인 개발 에이전트.</span><span data-lang-en>Main dev agent — code, refactoring, docs, and orchestrating the verification loop.</span></p></li>
-    <li class="tool"><span class="st-ico">{{ico_blocks}}</span><p><b>OpenAI Codex</b> <span data-lang-ko>게임 코드·이미지/에셋 생성·빌드·배포, 실시간 캐릭터 런타임.</span><span data-lang-en>Game code, asset generation, build/deploy, and real-time character runtimes.</span></p></li>
-    <li class="tool"><span class="st-ico">{{ico_cpu}}</span><p><b><span data-lang-ko>로컬 생성형 인프라 (OpenClaw)</span><span data-lang-en>Local generative infra (OpenClaw)</span></b> <span data-lang-ko>OpenClaw로 로컬 생성형 환경을 직접 구축 — 로컬 LLM 구동, ComfyUI·LoRA 이미지 파이프라인까지 자체 운용.</span><span data-lang-en>Built a self-hosted generative stack with OpenClaw — running local LLMs plus a ComfyUI·LoRA image pipeline.</span></p></li>
-    <li class="tool"><span class="st-ico">{{ico_plug}}</span><p><b><span data-lang-ko>MCP 연동</span><span data-lang-en>MCP integrations</span></b> <span data-lang-ko>Telegram·Figma·Slack·Google 등 다양한 MCP를 붙여 메시징·디자인·문서·검색까지 도구를 확장 운용.</span><span data-lang-en>Connects many MCPs — Telegram, Figma, Slack, Google and more — extending into messaging, design, docs and search.</span></p></li>
-  </ul>
+  <div class="part" id="ai-tools">
+    <h3 class="part-h"><span class="part-no mono">03-1</span><span><span data-lang-ko>함께 일하는 도구</span><span data-lang-en>Tools I orchestrate</span></span></h3>
+    <ul class="tools">
+      <li class="tool"><span class="tool-ico">{{ico_terminal}}</span><div class="tool-body"><h4>Claude Code</h4><p><span data-lang-ko>코드 구현·리팩토링·문서화, 그리고 검증 루프를 지휘하는 메인 개발 에이전트.</span><span data-lang-en>Main dev agent — code, refactoring, docs, and orchestrating the verification loop.</span></p></div></li>
+      <li class="tool"><span class="tool-ico">{{ico_blocks}}</span><div class="tool-body"><h4>OpenAI Codex</h4><p><span data-lang-ko>게임 코드·이미지/에셋 생성·빌드·배포, 실시간 캐릭터 런타임.</span><span data-lang-en>Game code, asset generation, build/deploy, and real-time character runtimes.</span></p></div></li>
+      <li class="tool"><span class="tool-ico">{{ico_cpu}}</span><div class="tool-body"><h4><span data-lang-ko>로컬 생성형 인프라 (OpenClaw)</span><span data-lang-en>Local generative infra (OpenClaw)</span></h4><p><span data-lang-ko>OpenClaw로 로컬 생성형 환경을 직접 구축 — 로컬 LLM 구동, ComfyUI·LoRA 이미지 파이프라인까지 자체 운용.</span><span data-lang-en>Built a self-hosted generative stack with OpenClaw — running local LLMs plus a ComfyUI·LoRA image pipeline.</span></p></div></li>
+      <li class="tool"><span class="tool-ico">{{ico_plug}}</span><div class="tool-body"><h4><span data-lang-ko>MCP 연동</span><span data-lang-en>MCP integrations</span></h4><p><span data-lang-ko>Telegram·Figma·Slack·Google 등 다양한 MCP를 붙여 메시징·디자인·문서·검색까지 도구를 확장 운용.</span><span data-lang-en>Connects many MCPs — Telegram, Figma, Slack, Google and more — extending into messaging, design, docs and search.</span></p></div></li>
+    </ul>
+  </div>
 
-  <h3 class="ai-subh"><span data-lang-ko>AI 운영 체계 — 6원칙</span><span data-lang-en>How I operate AI — 6 principles</span></h3>
-  <ol class="cap-list">
-    <li class="cap"><span class="pn mono">01</span><div><b><span data-lang-ko>세션 검토</span><span data-lang-en>Session review</span></b><p><span data-lang-ko>세션마다 상태·합의·용어를 먼저 명시적으로 확인한다. '당연히 알겠지'가 가장 비싼 가정이다.</span><span data-lang-en>Re-read state, agreements and terms every session — "they'll just know" is the costliest assumption.</span></p></div></li>
-    <li class="cap"><span class="pn mono">02</span><div><b><span data-lang-ko>하네스 구축</span><span data-lang-en>Build the harness</span></b><p><span data-lang-ko>용어 사전·영역 한정·완료 채점표를 먼저 세운다. 완료가 의견이 아닌 확인이 되도록.</span><span data-lang-en>Set up a glossary, scope fences and a completion rubric first — so "done" is verified, not opinion.</span></p></div></li>
-    <li class="cap"><span class="pn mono">03</span><div><b><span data-lang-ko>실행</span><span data-lang-en>Execute</span></b><p><span data-lang-ko>결정은 사람이, 수행은 AI에게. 방향이 정해지면 질문 없이 지시한다.</span><span data-lang-en>Humans decide, AI executes. Once the direction is set, I instruct — I don't ask.</span></p></div></li>
-    <li class="cap"><span class="pn mono">04</span><div><b><span data-lang-ko>다층 검증</span><span data-lang-en>Multi-layer verify</span></b><p><span data-lang-ko>AI=로직, 사람=비주얼. lint/build/test → 실제 화면 → 시각·수동까지 충돌을 메운다.</span><span data-lang-en>AI judges logic, I judge the visual — verify across lint/build/test, the live screen and a human look.</span></p></div></li>
-    <li class="cap"><span class="pn mono">05</span><div><b><span data-lang-ko>정리</span><span data-lang-en>Close out</span></b><p><span data-lang-ko>툴·세션이 바뀌어도 같은 상태로 시작하게. 커밋 히스토리·핸드오프 문서로 닫는다.</span><span data-lang-en>Close so any tool/session resumes identically — commit history and a handoff doc are the memory that survives.</span></p></div></li>
-    <li class="cap"><span class="pn mono">06</span><div><b><span data-lang-ko>이월</span><span data-lang-en>Carry over</span></b><p><span data-lang-ko>잘 된 과정은 스킬·도구로 이월. 쌓일수록 다음 프로젝트가 검증된 자산 위에서 시작한다.</span><span data-lang-en>Carry wins forward as skills and tools — each project starts on proven assets. It compounds.</span></p></div></li>
-  </ol>
-  <p class="cycle-note">{{ico_workflow}}<span><span data-lang-ko>이월(06)이 다음 세션 검토(01)로 이어지는 사이클 — 쓸수록 AI가 일하는 방식에 맞춰지고, 새 프로젝트도 검증된 자산 위에서 시작합니다.</span><span data-lang-en>Carry-over (06) feeds the next session review (01) — the more I run it, the more AI fits me, and new projects start on proven assets.</span></span></p>
+  <div class="part" id="ai-principles">
+    <h3 class="part-h"><span class="part-no mono">03-2</span><span><span data-lang-ko>AI 운영 체계 — 6원칙</span><span data-lang-en>How I operate AI — 6 principles</span></span></h3>
+    <ol class="cap-list">
+      <li class="cap"><div class="cap-top"><span class="pn mono">01</span><span class="cap-next">{{ico_arrow-right}}</span></div><h4><span data-lang-ko>세션 검토</span><span data-lang-en>Session review</span></h4><p><span data-lang-ko>세션마다 상태·합의·용어를 먼저 명시적으로 확인한다. '당연히 알겠지'가 가장 비싼 가정이다.</span><span data-lang-en>Re-read state, agreements and terms every session — "they'll just know" is the costliest assumption.</span></p></li>
+      <li class="cap"><div class="cap-top"><span class="pn mono">02</span><span class="cap-next">{{ico_arrow-right}}</span></div><h4><span data-lang-ko>하네스 구축</span><span data-lang-en>Build the harness</span></h4><p><span data-lang-ko>용어 사전·영역 한정·완료 채점표를 먼저 세운다. 완료가 의견이 아닌 확인이 되도록.</span><span data-lang-en>Set up a glossary, scope fences and a completion rubric first — so "done" is verified, not opinion.</span></p></li>
+      <li class="cap"><div class="cap-top"><span class="pn mono">03</span><span class="cap-next">{{ico_arrow-right}}</span></div><h4><span data-lang-ko>실행</span><span data-lang-en>Execute</span></h4><p><span data-lang-ko>결정은 사람이, 수행은 AI에게. 방향이 정해지면 질문 없이 지시한다.</span><span data-lang-en>Humans decide, AI executes. Once the direction is set, I instruct — I don't ask.</span></p></li>
+      <li class="cap"><div class="cap-top"><span class="pn mono">04</span><span class="cap-next">{{ico_arrow-right}}</span></div><h4><span data-lang-ko>다층 검증</span><span data-lang-en>Multi-layer verify</span></h4><p><span data-lang-ko>AI=로직, 사람=비주얼. lint/build/test → 실제 화면 → 시각·수동까지 충돌을 메운다.</span><span data-lang-en>AI judges logic, I judge the visual — verify across lint/build/test, the live screen and a human look.</span></p></li>
+      <li class="cap"><div class="cap-top"><span class="pn mono">05</span><span class="cap-next">{{ico_arrow-right}}</span></div><h4><span data-lang-ko>정리</span><span data-lang-en>Close out</span></h4><p><span data-lang-ko>툴·세션이 바뀌어도 같은 상태로 시작하게. 커밋 히스토리·핸드오프 문서로 닫는다.</span><span data-lang-en>Close so any tool/session resumes identically — commit history and a handoff doc are the memory that survives.</span></p></li>
+      <li class="cap"><div class="cap-top"><span class="pn mono">06</span><span class="cap-next cap-loop">{{ico_repeat}}</span></div><h4><span data-lang-ko>이월</span><span data-lang-en>Carry over</span></h4><p><span data-lang-ko>잘 된 과정은 스킬·도구로 이월. 쌓일수록 다음 프로젝트가 검증된 자산 위에서 시작한다.</span><span data-lang-en>Carry wins forward as skills and tools — each project starts on proven assets. It compounds.</span></p></li>
+    </ol>
+    <div class="loop-band">
+      <div class="loop-track">
+        <span class="loop-node"><b class="mono">06</b><span><span data-lang-ko>이월</span><span data-lang-en>Carry over</span></span></span>
+        <span class="loop-line" aria-hidden="true">{{ico_repeat}}</span>
+        <span class="loop-node"><b class="mono">01</b><span><span data-lang-ko>세션 검토</span><span data-lang-en>Session review</span></span></span>
+      </div>
+      <p class="cycle-note"><span><span data-lang-ko>이월(06)이 다음 세션 검토(01)로 이어지는 사이클 — 쓸수록 AI가 일하는 방식에 맞춰지고, 새 프로젝트도 검증된 자산 위에서 시작합니다.</span><span data-lang-en>Carry-over (06) feeds the next session review (01) — the more I run it, the more AI fits me, and new projects start on proven assets.</span></span></p>
+    </div>
+  </div>
 </div></section>

@@ -7,8 +7,8 @@
    "en": "App Factory"
   },
   "role": {
-   "ko": "기획부터 App Store 업로드·심사 제출까지, iOS 앱을 양산하도록 설계한 파이프라인",
-   "en": "A pipeline I designed to ship iOS apps from planning to App Store upload and review submission"
+   "ko": "기획부터 App Store 업로드·심사 제출까지, iOS 앱을 양산하도록 설계한 파이프라인. 기독교인 대상 앱도 같은 엔진에 신앙 전용 프로필을 더해 만듭니다.",
+   "en": "A pipeline I designed to ship iOS apps from planning to App Store upload and review submission. Apps for Christian users are built on the same engine with a faith-specific profile."
   },
   "stages": [
    {
@@ -76,74 +76,11 @@
     "value": "39",
     "as_of": "2026-10-05",
     "source": "app-factory/uploaded/ 디렉터리 39개(전부 FROZEN.md 보유)"
-   }
-  ],
-  "outputs": []
- },
- {
-  "id": "faith-factory",
-  "icon": "book-open",
-  "name": {
-   "ko": "신앙 앱 공장",
-   "en": "Faith App Factory"
-  },
-  "role": {
-   "ko": "기독교인 고객을 위한 앱을 만들려고, 같은 엔진에 신앙 전용 규정을 더해 설계한 파이프라인",
-   "en": "A pipeline I designed for apps aimed at Christian users: the same engine plus faith-specific rules"
-  },
-  "stages": [
-   {
-    "name": {
-     "ko": "고객·콘텐츠 권리 검토",
-     "en": "Audience & content-rights review"
-    },
-    "kind": "ai"
    },
-   {
-    "name": {
-     "ko": "설계·디자인",
-     "en": "Spec & design"
-    },
-    "kind": "ai"
-   },
-   {
-    "name": {
-     "ko": "개발",
-     "en": "Build"
-    },
-    "kind": "ai"
-   },
-   {
-    "name": {
-     "ko": "신앙 전용 게이트",
-     "en": "Faith-specific gates"
-    },
-    "kind": "gate"
-   },
-   {
-    "name": {
-     "ko": "스토어 준비·업로드",
-     "en": "Store prep & upload"
-    },
-    "kind": "ai"
-   },
-   {
-    "name": {
-     "ko": "실기기 연결·제출 승인",
-     "en": "Real-device hookup & submission approval"
-    },
-    "kind": "human"
-   }
-  ],
-  "human_role": {
-   "ko": "앱 공장과 마찬가지로, 실기기를 연결하고 심사 제출을 승인합니다.",
-   "en": "As in the app factory, I connect the real device and approve the submission."
-  },
-  "metrics": [
    {
     "label": {
-     "ko": "신앙 전용 게이트",
-     "en": "Faith-specific gates"
+     "ko": "신앙 앱 전용 게이트",
+     "en": "Faith-profile gates"
     },
     "value": "13",
     "as_of": "2026-10-05",

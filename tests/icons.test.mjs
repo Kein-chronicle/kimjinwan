@@ -6,7 +6,7 @@ import {serviceCard, collectionCard, factoryCard, stageLegend, heroStats} from '
 
 const NEEDED = ['user', 'code', 'layers', 'cpu', 'sparkles', 'shield-check', 'hand', 'user-check', 'factory', 'gamepad', 'wrench',
   'smartphone', 'book-open', 'globe', 'mail', 'phone', 'link', 'play', 'arrow-up-right', 'workflow', 'clock', 'check-circle',
-  'bar-chart', 'briefcase', 'image', 'file-text', 'rocket', 'bot', 'brain', 'calendar'];
+  'bar-chart', 'briefcase', 'image', 'file-text', 'rocket', 'bot', 'brain', 'calendar', 'arrow-right', 'repeat'];
 
 test('필요한 아이콘이 모두 있다', () => { for (const n of NEEDED) assert.ok(ICON_NAMES.includes(n), n); });
 test('모든 아이콘은 필수 속성을 가진 유효한 svg 로 렌더된다', () => {

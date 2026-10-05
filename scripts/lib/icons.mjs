@@ -20,6 +20,8 @@ const P = {
   play: '<rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/>',
   'arrow-up-right': '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>',
   'arrow-down': '<path d="M12 5v14"/><path d="m6 13 6 6 6-6"/>',
+  'arrow-right': '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
+  repeat: '<path d="M4 11V9a3 3 0 0 1 3-3h12"/><path d="m16 3 3 3-3 3"/><path d="M20 13v2a3 3 0 0 1-3 3H5"/><path d="m8 21-3-3 3-3"/>',
   'arrow-left': '<path d="M19 12H5"/><path d="m11 6-6 6 6 6"/>',
   home: '<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',

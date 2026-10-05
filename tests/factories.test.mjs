@@ -18,13 +18,31 @@ test('수치마다 기준일이 표시된다', () => {
   for (const m of data().flatMap(f => f.metrics)) assert.ok(h().includes(m.as_of));
 });
 test('골격 TODO 가 남아 있지 않다', () => assert.doesNotMatch(h(), /TODO-in-task/));
-test('공장 6곳(웹 도구 공장 포함)이 /factories/ 와 홈 모두에 렌더된다', () => {
+test('공장 5곳(앱·웹게임·영상·블로그·웹 도구)이 /factories/ 와 홈 모두에 렌더된다', () => {
   const home = fs.readFileSync('index.html', 'utf8');
-  assert.equal(data().length, 6);
-  assert.ok(data().some(f => f.id === 'web-tools'));
-  for (const page of [h(), home]) assert.equal((page.match(/<article class="fac"/g) || []).length, 6);
+  assert.deepEqual(data().map(f => f.id), ['app-factory', 'web-games', 'video', 'blog', 'web-tools']);
+  for (const page of [h(), home]) assert.equal((page.match(/<article class="fac"/g) || []).length, 5);
   for (const f of data()) assert.ok(home.includes(`href="/factories/#${f.id}"`), f.id);
-  assert.ok(home.includes('직접 설계한 공장 6곳'));
+  assert.ok(home.includes('직접 설계한 공장 5곳'));
+  assert.ok(!home.includes('공장 6곳'));
+});
+test('신앙 앱 공장은 앱 공장에 편입됐다: 별도 공장·앵커가 없고, 앱 공장이 신앙 전용 게이트 수치를 출처와 함께 가진다', () => {
+  assert.ok(!data().some(f => f.id === 'faith-factory'));
+  const home = fs.readFileSync('index.html', 'utf8');
+  for (const page of [h(), home]) {
+    assert.doesNotMatch(page, /faith-factory/);
+    assert.ok(!page.includes('신앙 앱 공장'));
+  }
+  const af = data().find(f => f.id === 'app-factory');
+  const m = af.metrics.find(x => x.label.ko === '신앙 앱 전용 게이트');
+  assert.ok(m, 'faith gates metric on app-factory');
+  assert.equal(m.label.en, 'Faith-profile gates');
+  assert.equal(m.value, '13');
+  assert.equal(m.as_of, '2026-10-05');
+  assert.match(m.source, /^app-factory\/profiles\/faith\/profile\.json /);
+  assert.match(af.role.ko, /기독교인 대상 앱도 같은 엔진에 신앙 전용 프로필/);
+  assert.match(af.role.en, /same engine with a faith-specific profile/);
+  for (const page of [h(), home]) assert.ok(page.includes('신앙 앱 전용 게이트') && page.includes('Faith-profile gates'));
 });
 test('웹 도구 공장: 단계에 사람 단계가 있고 공개 전 사람 승인이 없음을 밝히며, 수치마다 source·as_of 가 있다', () => {
   const f = data().find(x => x.id === 'web-tools');
