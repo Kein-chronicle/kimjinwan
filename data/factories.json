@@ -75,15 +75,6 @@
     "value": "39",
     "as_of": "2026-10-05",
     "source": "app-factory/uploaded/ 디렉터리 39개(전부 FROZEN.md 보유)"
-   },
-   {
-    "label": {
-     "ko": "사람 개입 지점",
-     "en": "Human touchpoints"
-    },
-    "value": "1",
-    "as_of": "2026-10-05",
-    "source": "이 공장에 정의한 human 단계 수"
    }
   ],
   "outputs": []
@@ -155,15 +146,6 @@
     "value": "13",
     "as_of": "2026-10-05",
     "source": "app-factory/profiles/faith/profile.json 의 stages[].gates 합계"
-   },
-   {
-    "label": {
-     "ko": "사람 개입 지점",
-     "en": "Human touchpoints"
-    },
-    "value": "1",
-    "as_of": "2026-10-05",
-    "source": "이 공장에 정의한 human 단계 수"
    }
   ],
   "outputs": []
@@ -244,15 +226,6 @@
     "value": "5",
     "as_of": "2026-10-05",
     "source": "kein-web-games/docs/ARCHITECTURE.md '편입 기준' 번호 항목 수"
-   },
-   {
-    "label": {
-     "ko": "사람 개입 지점",
-     "en": "Human touchpoints"
-    },
-    "value": "1",
-    "as_of": "2026-10-05",
-    "source": "이 공장에 정의한 human 단계 수"
    }
   ],
   "outputs": []
@@ -324,15 +297,6 @@
     "value": "21",
     "as_of": "2026-10-05",
     "source": "kein-tube/content/ledger.json episodes 31건 중 status 가 public 인 건수(public 21 / hold 8 / deleted 2)"
-   },
-   {
-    "label": {
-     "ko": "사람 개입 지점",
-     "en": "Human touchpoints"
-    },
-    "value": "1",
-    "as_of": "2026-10-05",
-    "source": "이 공장에 정의한 human 단계 수"
    }
   ],
   "outputs": []
@@ -413,15 +377,6 @@
     "value": "7",
     "as_of": "2026-10-05",
     "source": "kein-blog/docs/editorial/PIPELINE.md 의 stage 표 7행(brief~published)"
-   },
-   {
-    "label": {
-     "ko": "사람 개입 지점",
-     "en": "Human touchpoints"
-    },
-    "value": "1",
-    "as_of": "2026-10-05",
-    "source": "이 공장에 정의한 human 단계 수"
    }
   ],
   "outputs": []
