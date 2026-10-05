@@ -65,3 +65,50 @@ export function heroStats({services, collections}) {
     cell('book-open', n('blog'), {ko: '블로그 글', en: 'Journal posts'}),
   ].join('');
 }
+
+// 프로젝트 종류 아이콘 — js/main.js projIcon 과 같은 키워드 순서(이름은 아이콘 이름으로 매핑)
+export function projectKind(p) {
+  const t = p.name + ' ' + p.desc + ' ' + (p.stack || []).join(' ');
+  if (/벤츠|IVI|Live TV|커넥티드|단말|차량/.test(t)) return 'car';
+  if (/게임|PickJoy|멀티게임|게임패드|AR/.test(t)) return 'gamepad';
+  if (/결제|연동/.test(t)) return 'credit-card';
+  if (/국책|과제|IITP/.test(t)) return 'landmark';
+  if (/보고|유지보수|운영|M&S/.test(t)) return 'bar-chart';
+  if (/VR|XR|Unity|Pico/.test(t)) return 'vr';
+  if (/블록체인|코인|토큰|Solidity/.test(t)) return 'link';
+  if (/팀|빌딩|채용/.test(t)) return 'users';
+  if (/앱|App|iOS|Swift|Flutter/.test(t)) return 'smartphone';
+  if (/웹|Web|React|홈페이지/.test(t)) return 'globe';
+  return 'layers';
+}
+
+export function strengthCard(s) {
+  return `<article class="fcard strength">
+  <div class="ic">${icon(s.icon, {size: 22})}</div>
+  <h3>${bi(s.title)}</h3>
+  <p>${bi(s.text)}</p>
+</article>`;
+}
+
+export function timelineItem(t) {
+  return `<li class="tl-item">
+  <div class="yr mono">${esc(t.period)} · ${bi(t.company)}</div>
+  <h3>${bi(t.title)}</h3>
+  <div class="role">${bi(t.role)}</div>
+  <p>${bi(t.text)}</p>
+</li>`;
+}
+
+const pick = (p, k) => ({ko: p[k], en: p[k + 'En'] || p[k]});
+export function featuredProjectCard(p) {
+  const chips = (p.stack || []).slice(0, 4).map((s, i) => `<span class="chip mono">${bi({ko: s, en: (p.stackEn || p.stack)[i] || s})}</span>`).join('');
+  return `<article class="card fproj" data-project="${esc(p.id)}">
+  <a class="fproj-link" href="/career/#p${esc(p.id)}">
+    <div class="fproj-top"><span class="fproj-ico">${icon(projectKind(p), {size: 22})}</span><span class="fproj-meta mono">${esc(p.year)} · ${bi(pick(p, 'company'))}</span></div>
+    <div class="fproj-role mono">${esc(p.role)}</div>
+    <h3>${bi(pick(p, 'name'))}</h3>
+    <p>${bi(pick(p, 'desc'))}</p>
+    <div class="chips">${chips}</div>
+  </a>
+</article>`;
+}

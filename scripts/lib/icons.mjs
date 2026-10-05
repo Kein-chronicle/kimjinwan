@@ -30,6 +30,14 @@ const P = {
   bot: '<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3.5" r=".5"/><path d="M9 14h.01M15 14h.01"/><path d="M2 14h2M20 14h2"/>',
   brain: '<path d="M12 5a3 3 0 0 0-5.7-1.2A3.5 3.5 0 0 0 4 10a3.5 3.5 0 0 0 1 6 3 3 0 0 0 5 2.5c.6.6 2 .6 2 0z"/><path d="M12 5a3 3 0 0 1 5.7-1.2A3.5 3.5 0 0 1 20 10a3.5 3.5 0 0 1-1 6 3 3 0 0 1-5 2.5"/><path d="M12 5v14"/>',
   calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  car: '<path d="M3 13l2-5a3 3 0 0 1 2.8-2h8.4A3 3 0 0 1 21 8l2 5"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M6 13v-1m12 1v-1"/>',
+  'credit-card': '<rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 9.5h20M5.5 15h4"/>',
+  landmark: '<path d="M12 3l9 5H3z"/><path d="M5 10v7M9.5 10v7M14.5 10v7M19 10v7M3 20h18"/>',
+  vr: '<rect x="2" y="7" width="20" height="10" rx="3"/><path d="M9 17a3 3 0 0 1 6 0"/><path d="M2 11h2m16 0h2"/>',
+  users: '<circle cx="8.5" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.4"/><path d="M3.5 19a5 5 0 0 1 10 0M14 19a4.2 4.2 0 0 1 6.5-1.2"/>',
+  terminal: '<rect x="2" y="3" width="20" height="18" rx="2"/><path d="m6 9 3 3-3 3"/><path d="M12 15h6"/>',
+  blocks: '<rect x="8" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/>',
+  plug: '<path d="M9 2v6M15 2v6"/><path d="M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/>',
 };
 export const ICON_NAMES = Object.keys(P);
 export function icon(name, {size = 18, cls = ''} = {}) {

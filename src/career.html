@@ -1,5 +1,52 @@
 {{>head}}
 {{>nav}}
-<main class="block"><div class="wrap"><h1>TODO-in-task-6-8</h1></div></main>
+<main>
+<section class="block page-top" id="about"><div class="wrap">
+  <div class="sec-head"><div class="sec-no">{{ico_user}}<b>01</b> Strengths</div>
+    <h1 class="sec-title"><span data-lang-ko>현장을 아는 PM, 김진완</span><span data-lang-en>Jinwan Kim — a PM who knows the work</span></h1>
+    <p class="sec-sub">{{pitch}}</p></div>
+  <div class="cards3">{{strengths}}</div>
+</div></section>
+
+<section class="block alt" id="career"><div class="wrap">
+  <div class="sec-head"><div class="sec-no">{{ico_briefcase}}<b>02</b> Career</div>
+    <h2 class="sec-title"><span data-lang-ko>경력 — 11년의 역할 확장</span><span data-lang-en>Career — 11 years of growing scope</span></h2></div>
+  <ol class="timeline">{{timeline}}</ol>
+</div></section>
+
+<section class="block" id="projects"><div class="wrap">
+  <div class="sec-head"><div class="sec-no">{{ico_layers}}<b>03</b> Projects</div>
+    <h2 class="sec-title"><span data-lang-ko>프로젝트 — 2015~2026</span><span data-lang-en>Projects — 2015–2026</span></h2>
+    <p class="sec-sub"><span data-lang-ko>전 기간 {{project_count}}개 프로젝트. 회사·연도로 필터하고 카드를 눌러 상세를 보세요.</span><span data-lang-en>{{project_count}} projects across the full timeline. Filter by company/year, click a card for details.</span></p></div>
+  <div class="filters" id="filters"></div>
+  <div class="pgrid" id="pgrid"></div>
+  <div class="more-wrap"><button class="btn btn-ghost" id="moreBtn"><span data-lang-ko>더 보기</span><span data-lang-en>Show more</span></button></div>
+</div></section>
+</main>
+
 {{>footer}}
+
+<button class="game-fab" id="gameFab" onclick="openGame()" aria-label="김진완 인생 체험 게임">
+  <span class="gf-ico" aria-hidden="true">{{ico_gamepad}}</span>
+  <span class="gf-tx"><span data-lang-ko>김진완 인생 체험 게임</span><span data-lang-en>Play · Career Run</span></span>
+</button>
+<div class="game-modal" id="gameModal">
+  <div class="gm-bg" onclick="closeGame()"></div>
+  <div class="gm-box">
+    <div class="gm-head">
+      <span class="gm-title"><span data-lang-ko>김진완 인생게임 · Career Run</span><span data-lang-en>Kim Jinwan · Career Run</span></span>
+      <span class="gm-hint"><span data-lang-ko>방향키/WASD · SPACE 상호작용</span><span data-lang-en>Arrows/WASD · SPACE</span></span>
+      <button class="gm-close" onclick="closeGame()" aria-label="닫기">×</button>
+    </div>
+    <div class="gm-frame"><iframe id="gameFrame" title="Career Run" src="about:blank" allow="autoplay"></iframe></div>
+  </div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-bg" onclick="closeModal()"></div>
+  <div class="modal-box"><button class="close-x" onclick="closeModal()" aria-label="닫기">×</button><div id="modalContent"></div></div>
+</div>
+
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
 </body></html>

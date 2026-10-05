@@ -52,3 +52,27 @@ test('공장 icon 은 허용된 아이콘 이름이어야 한다', () => {
   const ok = good(); ok.factories[0].icon = 'gamepad'; assert.deepEqual(validate(ok), []);
   const bad = good(); bad.factories[0].icon = 'nope'; assert.match(validate(bad).join('\n'), /icon/);
 });
+
+const prof = () => ({
+  pitch: bi('소개', 'pitch'),
+  strengths: [0, 1, 2, 3].map(i => ({icon: 'code', title: bi('제목' + i, 't' + i), text: bi('내용', 'text')})),
+  timeline: [0, 1, 2, 3].map(i => ({period: '2020 – 2021', company: bi('회사', 'Co'), title: bi('직함', 'Title'), role: bi('역할', 'Role'), text: bi('내용', 'text')})),
+  featured_projects: [46, 50, 9]});
+test('profile 정상 데이터는 통과한다', () => assert.deepEqual(validate({...good(), profile: prof()}), []));
+test('profile 은 강점 4개·타임라인 4개를 요구한다', () => {
+  const a = prof(); a.strengths.pop(); assert.match(validate({...good(), profile: a}).join('\n'), /strengths must have exactly 4/);
+  const b = prof(); b.timeline.pop(); assert.match(validate({...good(), profile: b}).join('\n'), /timeline must have exactly 4/);
+});
+test('profile ko/en 이 비면 잡는다', () => {
+  const a = prof(); a.strengths[1].text.en = ''; assert.match(validate({...good(), profile: a}).join('\n'), /strengths\[1\]/);
+  const b = prof(); b.timeline[2].company.ko = ' '; assert.match(validate({...good(), profile: b}).join('\n'), /timeline\[2\]: company/);
+  const c = prof(); c.pitch.en = ''; assert.match(validate({...good(), profile: c}).join('\n'), /pitch/);
+});
+test('profile 강점 아이콘은 허용된 이름이어야 한다', () => {
+  const a = prof(); a.strengths[0].icon = 'nope'; assert.match(validate({...good(), profile: a}).join('\n'), /unknown icon/);
+});
+test('featured_projects 는 중복 없는 정수여야 한다', () => {
+  const a = prof(); a.featured_projects = [1, 1]; assert.match(validate({...good(), profile: a}).join('\n'), /unique/);
+  const b = prof(); b.featured_projects = [1, '2']; assert.match(validate({...good(), profile: b}).join('\n'), /integers/);
+  const c = prof(); c.featured_projects = []; assert.match(validate({...good(), profile: c}).join('\n'), /non-empty/);
+});

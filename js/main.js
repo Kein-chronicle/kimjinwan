@@ -2,14 +2,15 @@
 function setLang(l){
   document.body.classList.toggle('en', l==='en');
   document.documentElement.lang=l;
-  document.getElementById('ko').classList.toggle('on', l==='ko');
-  document.getElementById('en').classList.toggle('on', l==='en');
+  const kb=document.getElementById('ko'), eb=document.getElementById('en');
+  if(kb) kb.classList.toggle('on', l==='ko');
+  if(eb) eb.classList.toggle('on', l==='en');
   localStorage.setItem('lang',l);
   renderProjects();
 }
 // ===== 네비 스크롤 =====
 const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+if(nav) addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
 
 // ===== 프로젝트 =====
 const P=window.PROJECTS||[];
@@ -21,7 +22,7 @@ const pName=p=>en()&&p.nameEn?p.nameEn:p.name;
 const pDesc=p=>en()&&p.descEn?p.descEn:p.desc;
 const pStack=p=>(en()&&p.stackEn?p.stackEn:p.stack)||[];
 
-// 픽토그램 (24x24 라인 아이콘, 그래디언트 stroke)
+// 픽토그램 (24x24 라인 아이콘, currentColor — 색은 .pico 토큰). 키워드 규칙은 scripts/lib/render.mjs projectKind 와 같다
 const ICONS={
  car:'<path d="M3 13l2-5a3 3 0 0 1 2.8-2h8.4A3 3 0 0 1 21 8l2 5"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M6 13v-1m12 1v-1"/>',
  game:'<rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 10v4M5 12h4"/><circle cx="16" cy="11" r="1.1"/><circle cx="18.5" cy="13.5" r="1.1"/>',
@@ -48,10 +49,11 @@ function projIcon(p){
   else if(/팀|빌딩|채용/.test(t))k='team';
   else if(/앱|App|iOS|Swift|Flutter/.test(t))k='app';
   else if(/웹|Web|React|홈페이지/.test(t))k='web';
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="url(#picg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg>`;
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg>`;
 }
 function buildFilters(){
   const f=document.getElementById('filters');
+  if(!f) return;
   const comps=[...new Set(P.map(p=>p.company))].sort((a,b)=>COMP_ORDER.indexOf(a)-COMP_ORDER.indexOf(b));
   const en=document.body.classList.contains('en');
   const all=en?'All':'전체';
@@ -65,9 +67,11 @@ function buildFilters(){
   f.querySelectorAll('button').forEach(b=>b.onclick=()=>{curFilter=b.dataset.f;shown=9;renderProjects();});
 }
 
+const asset=u=>u&&!/^(\/|https?:|data:)/.test(u)?'/'+u:u;
 function renderProjects(){
-  buildFilters();
   const grid=document.getElementById('pgrid');
+  if(!grid) return;
+  buildFilters();
   let list=P.filter(p=>curFilter==='all'||p.company===curFilter);
   // 최신 회사/연도 우선 정렬
   list=list.slice().sort((a,b)=>(b.year+'').localeCompare(a.year+''));
@@ -75,10 +79,10 @@ function renderProjects(){
   grid.innerHTML=vis.map(p=>{
     const comp=en()?p.companyEn:p.company;
     const ico=projIcon(p);
-    const thumb=p.img?`<div class="thumb" style="background-image:url('${p.img}')"></div>`
+    const thumb=p.img?`<div class="thumb" style="background-image:url('${asset(p.img)}')"></div>`
                      :`<div class="thumb noimg"><span class="pico">${ico}</span><i class="wm">${comp}</i></div>`;
     const stack=pStack(p).slice(0,4).map(s=>`<span>${s}</span>`).join('');
-    return `<div class="pcard" onclick="openModal(${p.id})">
+    return `<div class="pcard" id="p${p.id}" onclick="openModal(${p.id})">
       ${thumb}
       <div class="pbody">
         <div class="pmeta">${comp} · ${p.year}</div>
@@ -88,16 +92,18 @@ function renderProjects(){
       </div></div>`;
   }).join('');
   const mb=document.getElementById('moreBtn');
-  mb.style.display = shown<list.length ? 'inline-flex':'none';
+  if(mb) mb.style.display = shown<list.length ? 'inline-flex':'none';
 }
-document.getElementById('moreBtn').onclick=()=>{shown+=9;renderProjects();};
+const moreBtn0=document.getElementById('moreBtn');
+if(moreBtn0) moreBtn0.onclick=()=>{shown+=9;renderProjects();};
 
 // ===== 모달 =====
 function openModal(id){
-  const p=P.find(x=>x.id===id); if(!p)return;
+  const modal=document.getElementById('modal');
+  const p=P.find(x=>x.id===id); if(!p||!modal)return;
   const comp=en()?p.companyEn:p.company;
   const meta=[comp,p.year,p.period,p.client].filter(Boolean).join(' · ');
-  const img=p.img?`<img src="${p.img}" alt="${pName(p)}">`
+  const img=p.img?`<img src="${asset(p.img)}" alt="${pName(p)}">`
                  :`<div class="modal-ico"><span class="pico">${projIcon(p)}</span></div>`;
   const stack=pStack(p).map(s=>`<span>${s}</span>`).join('');
   const hl=(p.highlights||[]).map(h=>`<p>• ${h}</p>`).join('');
@@ -109,22 +115,39 @@ function openModal(id){
     <p>${pDesc(p)}</p>
     ${hl}
     <div class="mstack">${stack}</div>`;
-  document.getElementById('modal').classList.add('open');
+  modal.classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function closeModal(){const m=document.getElementById('modal');if(m)m.classList.remove('open');document.body.style.overflow='';}
 addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 // init
 (function(){
   const saved=localStorage.getItem('lang');
   if(saved==='en'){setLang('en');} else {renderProjects();}
+  openFromHash();
 })();
+
+// /career/#p46 — 해당 프로젝트 카드까지 펼치고 모달을 연다
+function openFromHash(){
+  const m=/^#p(\d+)$/.exec(location.hash);
+  const grid=document.getElementById('pgrid');
+  if(!m||!grid) return;
+  const id=+m[1], p=P.find(x=>x.id===id); if(!p) return;
+  curFilter='all';
+  const sorted=P.slice().sort((a,b)=>(b.year+'').localeCompare(a.year+''));
+  shown=Math.max(shown,sorted.findIndex(x=>x.id===id)+1);
+  renderProjects();
+  const card=document.getElementById('p'+id);
+  if(card) card.scrollIntoView({block:'center'});
+  openModal(id);
+}
+addEventListener('hashchange',openFromHash);
 
 // ===== Career Run 게임 팝업 =====
 function openGame(){
   const f=document.getElementById('gameFrame');
-  f.src='game/index.html?t='+Date.now();
+  f.src='/game/index.html?t='+Date.now();
   document.getElementById('gameModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -138,7 +161,7 @@ addEventListener('keydown',e=>{ if(e.key==='Escape'){ const gm=document.getEleme
 // ===== AI 오토플레이로 게임 실행 =====
 function openGameAuto(){
   const f=document.getElementById('gameFrame');
-  f.src='game/index.html?auto=1&t='+Date.now();
+  f.src='/game/index.html?auto=1&t='+Date.now();
   document.getElementById('gameModal').classList.add('open');
   document.body.style.overflow='hidden';
 }

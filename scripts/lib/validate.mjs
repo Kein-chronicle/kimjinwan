@@ -8,7 +8,7 @@ const HTTPS = /^https:\/\//;
 
 const biOk = o => o && typeof o.ko === 'string' && o.ko.trim() && typeof o.en === 'string' && o.en.trim();
 
-export function validate({services = [], collections = [], factories = []}) {
+export function validate({services = [], collections = [], factories = [], profile = null}) {
   const err = [];
   const dup = (list, label) => {
     const seen = new Set();
@@ -54,5 +54,28 @@ export function validate({services = [], collections = [], factories = []}) {
     }
     for (const o of f.outputs || []) if (!ids.has(o)) err.push(`${w}: outputs references unknown service ${o}`);
   }
+  if (profile) validateProfile(profile, err);
   return err;
+}
+
+function validateProfile(p, err) {
+  if (!biOk(p.pitch)) err.push('profile.pitch needs ko/en');
+  if (!Array.isArray(p.strengths) || p.strengths.length !== 4) err.push('profile.strengths must have exactly 4 entries');
+  (p.strengths || []).forEach((s, i) => {
+    const w = `profile.strengths[${i}]`;
+    if (!ICON_NAMES.includes(s.icon)) err.push(`${w}: unknown icon ${s.icon}`);
+    if (!biOk(s.title) || !biOk(s.text)) err.push(`${w}: title/text need ko/en`);
+  });
+  if (!Array.isArray(p.timeline) || p.timeline.length !== 4) err.push('profile.timeline must have exactly 4 entries');
+  (p.timeline || []).forEach((t, i) => {
+    const w = `profile.timeline[${i}]`;
+    if (typeof t.period !== 'string' || !t.period.trim()) err.push(`${w}: period required`);
+    for (const k of ['company', 'title', 'role', 'text']) if (!biOk(t[k])) err.push(`${w}: ${k} needs ko/en`);
+  });
+  const f = p.featured_projects;
+  if (!Array.isArray(f) || !f.length) err.push('profile.featured_projects must be a non-empty array');
+  else {
+    if (!f.every(Number.isInteger)) err.push('profile.featured_projects must be integers');
+    if (new Set(f).size !== f.length) err.push('profile.featured_projects must be unique');
+  }
 }

@@ -134,7 +134,7 @@ nav.scrolled{border-bottom:1px solid var(--line);background:color-mix(in srgb,va
 .pcard p{font-size:13px;color:var(--muted);flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pcard .pstack{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
 .pcard .pstack span{font-size:11px;color:var(--faint);background:var(--card2);padding:3px 8px;border-radius:6px}
-.more{text-align:center;margin-top:28px}
+.more-wrap{text-align:center;margin-top:28px}
 
 /* ===== MODAL ===== */
 .modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
@@ -360,3 +360,30 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .hstat .lbl .ico{color:var(--accent)}
 .fac-outs a,.teaser a{display:inline-flex;align-items:center}
 .contacts a .ico{color:var(--accent);width:18px;height:18px}
+
+/* ===== moved sections: strengths / timeline / featured projects / AI / career page ===== */
+.page-top{padding-top:128px}
+.fcard .ic .ico{width:22px;height:22px;color:var(--accent)}
+.fcard:hover{transform:none}
+.pico{display:flex;color:var(--accent)}
+.timeline{list-style:none;margin-bottom:8px}
+.tl-item .yr{font-size:13px;display:flex;flex-wrap:wrap;gap:0 4px}
+.tl-item:last-child{padding-bottom:6px}
+.fproj{display:flex;flex-direction:column}
+.fproj-link{display:flex;flex-direction:column;gap:10px;padding:20px;height:100%}
+.fproj-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.fproj-ico{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent)}
+.fproj-meta{font-size:12px;color:var(--faint)}
+.fproj-role{font-size:12px;color:var(--accent)}
+.fproj h3{font-size:18px;line-height:1.3;letter-spacing:-.01em}
+.fproj p{font-size:14px;color:var(--muted);flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.ai-asof{margin:-30px 0 8px;justify-content:flex-end}
+.cycle-note{display:flex;gap:12px;align-items:flex-start}
+.cycle-note .ico{width:18px;height:18px;margin-top:2px;color:var(--accent)}
+.aistat .num{color:var(--accent)}
+.acard .thumb.noimg .pico svg{color:var(--accent)}
+.ai-subh{margin-top:44px}
+.sec-head+.ai-stats{margin-top:0}
+.game-fab .gf-ico svg{stroke:currentColor}
+.pcard .thumb.noimg .pico svg{color:var(--accent)}
+@media(max-width:600px){.ai-asof{margin-top:-30px}.page-top{padding-top:104px}.fproj-link{padding:18px}}

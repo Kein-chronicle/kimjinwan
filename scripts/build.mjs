@@ -4,15 +4,16 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
-import {icon} from './lib/icons.mjs';
-import {serviceCard, collectionCard, factoryCard, heroStats, bi, esc} from './lib/render.mjs';
+import {icon, ICON_NAMES} from './lib/icons.mjs';
+import {serviceCard, collectionCard, factoryCard, heroStats, strengthCard, timelineItem, featuredProjectCard, bi, esc} from './lib/render.mjs';
+import {parseProjects, pickFeatured} from './lib/projects.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rd = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const json = p => JSON.parse(rd(p));
 
 export function loadData() {
-  return {services: json('data/services.json'), collections: json('data/collections.json'), factories: json('data/factories.json')};
+  return {services: json('data/services.json'), collections: json('data/collections.json'), factories: json('data/factories.json'), profile: json('data/profile.json')};
 }
 
 const SITE = 'https://kimjinwan.com';
@@ -42,6 +43,8 @@ export function buildAll({write = true} = {}) {
   const errors = validate(data);
   if (errors.length) throw new Error('data validation failed:\n' + errors.join('\n'));
 
+  const projects = parseProjects(rd('js/data.js'));
+  const featuredProjects = pickFeatured(data.profile.featured_projects, projects);
   const byId = new Map(data.services.map(s => [s.id, s]));
   const version = rd('VERSION').trim();
   const partials = {head: rd('src/partials/head.html'), nav: rd('src/partials/nav.html'), footer: rd('src/partials/footer.html'),
@@ -55,7 +58,13 @@ export function buildAll({write = true} = {}) {
     collections: data.collections.map(collectionCard).join('\n'),
     factories: data.factories.map(f => factoryCard(f, byId)).join('\n'),
     factories_teaser: data.factories.map(f => `<li><a href="/factories/#${esc(f.id)}">${bi(f.name)}</a> — ${bi(f.role)}</li>`).join(''),
-    ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
+    pitch: bi(data.profile.pitch),
+    strengths: data.profile.strengths.map(strengthCard).join('\n'),
+    timeline: data.profile.timeline.map(timelineItem).join('\n'),
+    featured_projects: featuredProjects.map(featuredProjectCard).join('\n'),
+    project_count: String(projects.length),
+    ...Object.fromEntries(ICON_NAMES.map(n => ['ico_' + n, icon(n, {size: 18})])),
+    ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     updated: new Date().toISOString().slice(0, 10),
   };
   const out = {};
