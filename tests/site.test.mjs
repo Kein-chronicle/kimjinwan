@@ -84,8 +84,9 @@ test('페이지에 TODO 문자열이 없다', () => {
 test('모든 페이지에 내비게이션이 있다', () => {
   for (const f of PAGES) {
     const h = read(f);
-    assert.match(h, /<nav id="nav">/, f);
-    for (const p of ['/works/', '/factories/', '/career/']) assert.ok(h.includes(`<nav id="nav">`) && h.includes(`href="${p}"`), f + p);
+    const nav = h.match(/<nav id="nav" aria-label="Main">[\s\S]*?<\/nav>/);
+    assert.ok(nav, f + ' site nav (labelled landmark)');
+    for (const p of ['/', '/works/', '/factories/', '/career/']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
   }
 });
 test('theme-core 는 head 안에서 본문보다 먼저 실행된다', () => {

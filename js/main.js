@@ -12,6 +12,24 @@ function setLang(l){
 const nav=document.getElementById('nav');
 if(nav) addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
 
+// ===== 좁은 화면 메뉴 (버튼 ↔ 패널, Esc·링크 클릭·바깥 클릭으로 닫힘) =====
+(function(){
+  const btn=document.getElementById('menuBtn'), menu=document.getElementById('nav-menu');
+  if(!nav||!btn||!menu) return;
+  const isOpen=()=>nav.classList.contains('open');
+  function setOpen(o,{focus=false}={}){
+    nav.classList.toggle('open',o);
+    btn.setAttribute('aria-expanded',String(o));
+    if(o&&focus){const a=menu.querySelector('a');if(a)a.focus();}
+  }
+  btn.addEventListener('click',()=>setOpen(!isOpen(),{focus:!isOpen()&&btn.matches(':focus-visible')}));
+  menu.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false);});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen()){setOpen(false);btn.focus();}});
+  document.addEventListener('click',e=>{if(isOpen()&&!nav.contains(e.target))setOpen(false);});
+  // 패널이 열린 채 데스크톱 폭으로 넓어지면 상태를 정리한다
+  matchMedia('(min-width:1101px)').addEventListener('change',m=>{if(m.matches)setOpen(false);});
+})();
+
 // ===== 프로젝트 =====
 const P=window.PROJECTS||[];
 let curFilter='all', shown=9;

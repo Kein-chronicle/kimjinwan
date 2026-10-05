@@ -26,17 +26,18 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"김진완 포트폴리오","alternateName":"Kim Jinwan","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":"Kein","url":"https://kimjinwan.com/","jobTitle":"Software Product Manager"}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.1.0">
+<link rel="stylesheet" href="/css/style.css?v=1.2.0">
 <script src="/js/theme-core.js"></script>
-<script>__theme.apply()</script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
 <body>
 
-<nav id="nav">
+<nav id="nav" aria-label="Main">
   <div class="nav-in">
-    <a href="/" class="logo"><span data-lang-ko>김진완</span><span data-lang-en>KIM JINWAN</span></a>
-    <div class="nav-links">
-      <a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25" cy="25" r="3.5"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="/career/" aria-current="page"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
       <a href="/#ai"><span data-lang-ko>AI 활용</span><span data-lang-en>AI</span></a>
       <a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
       <a href="/works/"><span data-lang-ko>작업물</span><span data-lang-en>Works</span></a>
@@ -44,16 +45,20 @@
       <a href="https://games.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹게임</span><span data-lang-en>Games</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
       <a href="https://apps.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹 도구</span><span data-lang-en>Tools</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
       <a href="#contact" class="btn btn-primary nav-cta"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+    </div>
+    <div class="nav-tools">
       <div class="lang">
         <button id="ko" class="on" onclick="setLang('ko')">KO</button>
         <button id="en" onclick="setLang('en')">EN</button>
       </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
     </div>
   </div>
 </nav>
 
 <main>
 <section class="block page-top" id="about"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li aria-current="page"><span data-lang-ko>경력</span><span data-lang-en>Career</span></li></ol></nav>
   <div class="sec-head"><div class="sec-no"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><b>01</b> Strengths</div>
     <h1 class="sec-title"><span data-lang-ko>현장을 아는 PM, 김진완</span><span data-lang-en>Jinwan Kim — a PM who knows the work</span></h1>
     <p class="sec-sub"><span data-lang-ko>기획·관리에서 멈추는 PM이 아닙니다. 개발과 팀 운영을 직접 겪었기에 현장의 디테일을 알고, 그만큼 더 정확하게 매니징합니다.</span><span data-lang-en>I'm not a PM who only plans and manages. Having done the engineering and run teams myself, I understand the details on the floor — and manage with that precision.</span></p></div>
@@ -113,6 +118,7 @@
   <div class="pgrid" id="pgrid"></div>
   <div class="more-wrap"><button class="btn btn-ghost" id="moreBtn"><span data-lang-ko>더 보기</span><span data-lang-en>Show more</span></button></div>
 </div></section>
+<div class="wrap"><div class="page-foot"><a class="btn btn-ghost back-home" href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈으로 돌아가기</span><span data-lang-en>Back to home</span></a><p class="hop"><span class="hop-lbl"><span data-lang-ko>다른 페이지</span><span data-lang-en>Other pages</span></span><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a><span class="dot" aria-hidden="true">·</span><a href="/works/"><span data-lang-ko>작업물</span><span data-lang-en>Works</span></a></p></div></div>
 </main>
 
 <footer id="contact"><div class="wrap">
@@ -124,6 +130,7 @@
       <a href="https://www.youtube.com/channel/UCv8cGlH7g0UBgnHQVsY9zDg" target="_blank" rel="noopener noreferrer"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg>YouTube</a>
     </div>
   </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25" cy="25" r="3.5"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>작업물</span><span data-lang-en>Works</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/" aria-current="page"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="https://blog.kimjinwan.com/ko/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li><li><a href="https://games.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹게임</span><span data-lang-en>Games</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li><li><a href="https://apps.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹 도구</span><span data-lang-en>Tools</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
   <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
 </div></footer>
 <script src="/js/theme.js" defer></script>

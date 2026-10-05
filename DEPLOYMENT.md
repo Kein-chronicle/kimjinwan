@@ -52,7 +52,7 @@ ads.txt도 서버의 기존 공개 원본을 그대로 가져와 추적한다. �
 - 기존 한·영 화면에 블로그 소개 영역과 내비게이션, 한국어 블로그·연재 목차 링크 추가.
 - 홈페이지/게임에 canonical, robots, description, Open Graph, Twitter 메타; 홈페이지 WebSite·Person·ProfilePage 구조화 데이터.
 - 홈페이지와 게임의 실제 주소만 sitemap에 등록. 동일 URL의 한·영 토글은 별도 번역 URL인 것처럼 hreflang을 생성하지 않음.
-- 남색 K 모노그램: SVG, 96px PNG, 다중 크기 ICO, 180px 터치 아이콘. Pillow를 쓰는 scripts/build_icons.py로 재생성 가능.
+- Kein 마크(인디고 타일 + 기하 K + 앰버 점): 손으로 쓴 favicon.svg, 96px PNG, 다중 크기 ICO(크기별 직접 렌더), 180px 터치 아이콘(꽉 찬 사각). 재생성: `python3 scripts/build_icons.py . --background '#3B4BDB' --accent '#FFB547'` (Pillow). 기하는 scripts/lib/render.mjs 의 K_PATH/K_DOT 와 같다.
 - 블로그와 색상만 달리해 같은 운영자의 사이트임을 표현. 새 공유 이미지 생성은 하지 않음.
 
 ## 배포 경계와 보안

@@ -1,19 +1,15 @@
-<nav id="nav">
+<nav id="nav" aria-label="Main">
   <div class="nav-in">
-    <a href="/" class="logo"><span data-lang-ko>김진완</span><span data-lang-en>KIM JINWAN</span></a>
-    <div class="nav-links">
-      <a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
-      <a href="/#ai"><span data-lang-ko>AI 활용</span><span data-lang-en>AI</span></a>
-      <a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
-      <a href="/works/"><span data-lang-ko>작업물</span><span data-lang-en>Works</span></a>
-      <a href="https://blog.kimjinwan.com/ko/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span>{{ico_ext}}</a>
-      <a href="https://games.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹게임</span><span data-lang-en>Games</span>{{ico_ext}}</a>
-      <a href="https://apps.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>웹 도구</span><span data-lang-en>Tools</span>{{ico_ext}}</a>
-      <a href="#contact" class="btn btn-primary nav-cta"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+    {{logo}}
+    <div class="nav-links" id="nav-menu">
+      {{nav_links}}
+    </div>
+    <div class="nav-tools">
       <div class="lang">
         <button id="ko" class="on" onclick="setLang('ko')">KO</button>
         <button id="en" onclick="setLang('en')">EN</button>
       </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open">{{ico_menu}}</span><span class="mb-close">{{ico_close}}</span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
     </div>
   </div>
 </nav>

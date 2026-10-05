@@ -150,3 +150,53 @@ export function worksFilters() {
 export function factoryNav(factories) {
   return factories.map(f => `<a class="pill" href="#${esc(f.id)}">${f.icon ? icon(f.icon, {size: 16}) : ''}${bi(f.name)}</a>`).join('');
 }
+
+// ===== 사이트 내비게이션 · 로고 =====
+// 페이지 키: home | works | factories | career. 하위 페이지 순서는 홈 이야기 순서(경력→공장→작업물)와 같다.
+export const SUBPAGES = [
+  {key: 'career', href: '/career/', label: {ko: '경력', en: 'Career'}},
+  {key: 'factories', href: '/factories/', label: {ko: 'AI 공장', en: 'Factories'}},
+  {key: 'works', href: '/works/', label: {ko: '작업물', en: 'Works'}},
+];
+const HOME = {key: 'home', href: '/', label: {ko: '홈', en: 'Home'}};
+const EXTERNAL = [
+  {href: 'https://blog.kimjinwan.com/ko/', label: {ko: '블로그', en: 'Journal'}},
+  {href: 'https://games.kimjinwan.com/', label: {ko: '웹게임', en: 'Games'}},
+  {href: 'https://apps.kimjinwan.com/', label: {ko: '웹 도구', en: 'Tools'}},
+];
+const cur = (key, page) => key === page ? ' aria-current="page"' : '';
+const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
+
+// Kein 마크: 둥근 사각 타일 + 기하 K + 앞으로 튀어나가는 점. 32 격자, 색은 CSS 토큰(.km-*)이 정한다.
+export const K_PATH = 'M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z';
+export const K_DOT = {cx: 25, cy: 25, r: 3.5};
+export function kMark(size = 28) {
+  return `<svg class="kmark" viewBox="0 0 32 32" width="${size}" height="${size}" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="${K_PATH}"/><circle class="km-dot" cx="${K_DOT.cx}" cy="${K_DOT.cy}" r="${K_DOT.r}"/></svg>`;
+}
+export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Kein — Home">${kMark(28)}<span class="logo-word">Kein</span></a>`;
+
+export function navLinks(page) {
+  const items = [HOME, SUBPAGES[0], {key: 'ai', href: '/#ai', label: {ko: 'AI 활용', en: 'AI'}}, SUBPAGES[1], SUBPAGES[2]];
+  return [
+    ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
+    ...EXTERNAL.map(extLink),
+    `<a href="#contact" class="btn btn-primary nav-cta">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
+  ].join('\n      ');
+}
+
+export function footMap(page) {
+  const items = [HOME, SUBPAGES[2], SUBPAGES[1], SUBPAGES[0]].map(l => `<li><a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a></li>`);
+  return `<nav class="foot-map" aria-label="Site map"><ul>${[...items, ...EXTERNAL.map(l => `<li>${extLink(l)}</li>`)].join('')}</ul></nav>`;
+}
+
+const sub = page => SUBPAGES.find(s => s.key === page);
+export function breadcrumb(page) {
+  const s = sub(page);
+  if (!s) return '';
+  return `<nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/">${icon('arrow-left', {size: 16})}${bi(HOME.label)}</a></li><li aria-current="page">${bi(s.label)}</li></ol></nav>`;
+}
+export function pageFoot(page) {
+  if (!sub(page)) return '';
+  const others = SUBPAGES.filter(x => x.key !== page).map(x => `<a href="${x.href}">${bi(x.label)}</a>`).join('<span class="dot" aria-hidden="true">·</span>');
+  return `<div class="page-foot"><a class="btn btn-ghost back-home" href="/">${icon('arrow-left', {size: 16})}${bi({ko: '홈으로 돌아가기', en: 'Back to home'})}</a><p class="hop"><span class="hop-lbl">${bi({ko: '다른 페이지', en: 'Other pages'})}</span>${others}</p></div>`;
+}

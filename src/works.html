@@ -1,6 +1,7 @@
 {{>head}}
 {{>nav}}
 <main class="block page-top"><div class="wrap">
+  {{breadcrumb}}
   <div class="sec-head"><div class="sec-no">{{ico_layers}}<b>Works</b></div>
     <h1 class="sec-title"><span data-lang-ko>직접 만든 작업물 전체</span><span data-lang-en>Everything I've built</span></h1>
     <p class="sec-sub"><span data-lang-ko>현장 경험으로 무엇을 만들지 정하고, AI와 직접 설계한 공장으로 만든 결과물 전체입니다. 서비스·웹게임·웹 도구·블로그는 운영 중인 사이트에서 돌아가고, 앱은 App Store 심사 제출까지 마쳤습니다. 새로 만들 때마다 이 목록이 늘어납니다.</span><span data-lang-en>Everything that came out of deciding what to build from field experience, then building it with AI and the factories I designed. The services, web games, web tools and journal run on sites I operate, and the apps have been submitted for App Store review. The list grows each time I ship something new.</span></p></div>
@@ -9,6 +10,7 @@
     {{all_services}}
     {{collections}}
   </div>
+  {{page_foot}}
 </div></main>
 {{>footer}}
 <script src="/js/main.js"></script>
