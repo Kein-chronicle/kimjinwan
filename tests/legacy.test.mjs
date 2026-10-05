@@ -102,3 +102,8 @@ test('profile 의 사실(회사·기간·수치)은 원문 그대로다', () => 
 test('신규 아이콘이 유효하다', () => {
   for (const n of ['car', 'credit-card', 'landmark', 'vr', 'users', 'terminal', 'blocks', 'plug']) assert.match(icon(n), /<svg /);
 });
+test('대표 프로젝트 역할은 한·영을 모두 가진다 (EN 모드에 한국어 역할 노출 금지)', () => {
+  for (const p of projects) assert.ok(p.roleEn && !/[가-힣]/.test(p.roleEn), `roleEn ${p.id}`);
+  const h = read('index.html');
+  assert.ok(h.includes('<div class="fproj-role mono"><span data-lang-ko>총괄 PM</span><span data-lang-en>Lead PM</span></div>'));
+});

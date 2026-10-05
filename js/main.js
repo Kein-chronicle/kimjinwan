@@ -111,7 +111,7 @@ function openModal(id){
     <div class="mmeta">${meta}</div>
     <h2>${pName(p)}</h2>
     ${img}
-    <div class="mrole">${p.role}</div>
+    <div class="mrole">${en()&&p.roleEn?p.roleEn:p.role}</div>
     <p>${pDesc(p)}</p>
     ${hl}
     <div class="mstack">${stack}</div>`;

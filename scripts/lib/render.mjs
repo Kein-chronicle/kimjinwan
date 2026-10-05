@@ -107,7 +107,7 @@ export function featuredProjectCard(p) {
   return `<article class="card fproj" data-project="${esc(p.id)}">
   <a class="fproj-link" href="/career/#p${esc(p.id)}">
     <div class="fproj-top"><span class="fproj-ico">${icon(projectKind(p), {size: 22})}</span><span class="fproj-meta mono">${esc(p.year)} · ${bi(pick(p, 'company'))}</span></div>
-    <div class="fproj-role mono">${esc(p.role)}</div>
+    <div class="fproj-role mono">${bi(pick(p, 'role'))}</div>
     <h3>${bi(pick(p, 'name'))}</h3>
     <p>${bi(pick(p, 'desc'))}</p>
     <div class="chips">${chips}</div>
