@@ -1390,3 +1390,9 @@ Expected: 작업 트리 clean.
 **Placeholder scan:** `Task 4` 의 `value: 0`·`<…>` 는 실측 입력 슬롯이며 각각 `grep` 검증 단계가 있다. `src/*.html` 골격의 `TODO-in-task` 는 Task 9 테스트가 잔존을 실패 처리한다.
 
 **Type consistency:** `validate({services,collections,factories})`, `serviceCard(s)`, `collectionCard(c)`, `factoryCard(f, Map)`, `heroStats({services,collections})`, `fill(tpl, ctx, partials)`, `buildAll({write})`, `loadData()` — 정의와 사용처 일치. 템플릿 변수 `hero_stats, featured, all_services, collections, factories, factories_teaser, version, title, description, canonical, schema, updated` 는 `build.mjs` 의 `ctxBase`/페이지 ctx 에서 모두 제공된다(`factories_teaser` 는 현재 템플릿에서 미사용이며 `fill` 은 미사용 키를 허용하므로 무해, 불필요하면 삭제).
+
+---
+
+## 개정 태스크 (2026-10-05, 시안 확인 후 유저 지시) — Task 5b 를 Task 6 앞에 수행
+
+Task 5b: 사람 중심 카피 재작성 + 시간 기반 테마 + 아이콘 시스템 (스펙 '개정' 절 참조). 이후 Task 6~8 의 모든 신규/이관 카피도 같은 톤(1인칭, 개발자 · PM 김진완)으로 쓴다. Task 7·8 의 제목/설명 문구와 테스트의 문구 의존은 5b 이후 값에 맞춘다.
