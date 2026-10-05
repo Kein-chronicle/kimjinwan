@@ -437,3 +437,4 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
   .handoff{margin-top:40px;font-size:16px}
 }
 .strengths+.bridge{margin:28px 0 0}
+.page-top+.story{border-top:1px solid var(--line)}
