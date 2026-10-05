@@ -33,7 +33,8 @@
   // offsetMin(방문자 UTC 오프셋, 분)을 주면 방문자 시계로 환산해 같은 시계 시각 규칙을 적용한다.
   function isNight(date, offsetMin) {
     var d = date;
-    if (typeof offsetMin === 'number') d = new Date(date.getTime() + (KST - offsetMin) * 60000);
+    // sunTimes 는 d + KST 를 시계로 읽으므로, d = date + (offset - KST) 이면 그 시계가 방문자 벽시계가 된다.
+    if (typeof offsetMin === 'number') d = new Date(date.getTime() + (offsetMin - KST) * 60000);
     var t = sunTimes(d);
     return t.minutes < t.sunrise || t.minutes >= t.sunset;
   }

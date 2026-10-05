@@ -31,3 +31,15 @@ test('방문자 오프셋을 주면 방문자 시계 기준으로 판정한다',
   assert.equal(isNight(new Date('2026-06-21T17:00:00Z'), -300), false);
   assert.equal(isNight(new Date('2026-06-22T04:00:00Z'), -300), true);
 });
+test('방문자 오프셋 환산은 방향이 맞다 (UTC·UTC-5 실측, 24시간 모듈로 우연 통과 방지)', () => {
+  // UTC(0) 방문자: 현지 12:00 은 낮, 19:00 은 밤 (10월 서울 일몰 ≈ 18:11 을 같은 시계 시각에 적용)
+  assert.equal(isNight(new Date('2026-10-05T12:00:00Z'), 0), false);
+  assert.equal(isNight(new Date('2026-10-05T19:00:00Z'), 0), true);
+  // UTC-5 방문자, 12월 21일: 현지 16:00 은 낮, 18:30 은 밤, 08:30 은 낮
+  assert.equal(isNight(new Date('2026-12-21T21:00:00Z'), -300), false);
+  assert.equal(isNight(new Date('2026-12-21T23:30:00Z'), -300), true);
+  assert.equal(isNight(new Date('2026-12-21T13:30:00Z'), -300), false);
+  // KST(+540) 방문자는 그대로
+  assert.equal(isNight(new Date('2026-10-05T03:00:00Z'), 540), false);
+  assert.equal(isNight(new Date('2026-10-05T15:00:00Z'), 540), true);
+});
