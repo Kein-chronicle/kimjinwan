@@ -18,3 +18,24 @@ test('수치마다 기준일이 표시된다', () => {
   for (const m of data().flatMap(f => f.metrics)) assert.ok(h().includes(m.as_of));
 });
 test('골격 TODO 가 남아 있지 않다', () => assert.doesNotMatch(h(), /TODO-in-task/));
+test('공장 6곳(웹 도구 공장 포함)이 /factories/ 와 홈 모두에 렌더된다', () => {
+  const home = fs.readFileSync('index.html', 'utf8');
+  assert.equal(data().length, 6);
+  assert.ok(data().some(f => f.id === 'web-tools'));
+  for (const page of [h(), home]) assert.equal((page.match(/<article class="fac"/g) || []).length, 6);
+  for (const f of data()) assert.ok(home.includes(`href="/factories/#${f.id}"`), f.id);
+  assert.ok(home.includes('직접 설계한 공장 6곳'));
+});
+test('웹 도구 공장: 단계에 사람 단계가 있고 공개 전 사람 승인이 없음을 밝히며, 수치마다 source·as_of 가 있다', () => {
+  const f = data().find(x => x.id === 'web-tools');
+  assert.equal(f.icon, 'wrench');
+  assert.ok(f.stages.length >= 4 && f.stages.length <= 7);
+  assert.ok(f.stages.some(s => s.kind === 'human') && f.stages.some(s => s.kind === 'gate'));
+  assert.match(f.human_role.ko, /공개 전 사람 승인은 두지 않/); assert.match(f.human_role.en, /no pre-publish human approval/);
+  const tools = JSON.parse(fs.readFileSync('data/collections.json', 'utf8')).find(c => c.id === 'tools');
+  const pub = f.metrics.find(m => m.label.ko === '공개한 도구');
+  assert.equal(pub.value, String(tools.count.value), 'factory metric = collection count');
+  for (const m of f.metrics) { assert.match(m.as_of, /^\d{4}-\d{2}-\d{2}$/); assert.ok(m.source.includes('kein-web-tools/')); }
+  assert.deepEqual(f.outputs, []);
+  assert.match(tools.summary.ko, /웹 도구 공장/);
+});

@@ -385,5 +385,86 @@
    }
   ],
   "outputs": []
+ },
+ {
+  "id": "web-tools",
+  "icon": "wrench",
+  "name": {
+   "ko": "웹 도구 공장",
+   "en": "Web Tools Factory"
+  },
+  "role": {
+   "ko": "가입·서버 업로드 없이 브라우저 안에서 처리하는 웹 도구를, 한 번에 하나씩 문제 확정부터 공개 확인까지 만들도록 설계한 파이프라인",
+   "en": "A pipeline I designed to build browser tools that need no sign-up or server upload, one tool at a time, from defining the problem to checking the live page"
+  },
+  "stages": [
+   {
+    "name": {
+     "ko": "검색 의도·문제 확정",
+     "en": "Search intent & problem"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "화면·설명 구성",
+     "en": "Screen & explanation"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "구현·테스트 작성",
+     "en": "Build & write tests"
+    },
+    "kind": "ai"
+   },
+   {
+    "name": {
+     "ko": "모바일·접근성·검색 검사",
+     "en": "Mobile, accessibility & search checks"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "배포·공개 URL 확인",
+     "en": "Deploy & live URL check"
+    },
+    "kind": "gate"
+   },
+   {
+    "name": {
+     "ko": "운영 결정·사후 검토",
+     "en": "Operations decisions & post-publish review"
+    },
+    "kind": "human"
+   }
+  ],
+  "human_role": {
+   "ko": "운영 재개·중지를 결정하고, 공개 후에 검토합니다. 공개 전 사람 승인은 두지 않고 필수 검증과 공개 URL 확인으로 대신합니다.",
+   "en": "I decide when operations resume or pause, and review after publication. There is no pre-publish human approval; required checks and a live-URL check stand in for it."
+  },
+  "metrics": [
+   {
+    "label": {
+     "ko": "공개한 도구",
+     "en": "Tools published"
+    },
+    "value": "57",
+    "as_of": "2026-10-05",
+    "source": "kein-web-tools/lib/tool-catalog.ts 의 고유 href 57개(grep -o \"href: '...'\" | sort | uniq | wc -l); contracts/forge-legacy.json targets 57개·README '도구 57종'과 일치"
+   },
+   {
+    "label": {
+     "ko": "필수 검증 명령",
+     "en": "Required check commands"
+    },
+    "value": "3",
+    "as_of": "2026-10-05",
+    "source": "kein-web-tools/forge-production.json verification 배열 3개(npm run lint / npm test / npm run build)"
+   }
+  ],
+  "outputs": []
  }
 ]

@@ -29,6 +29,26 @@ export function serviceCard(s) {
 </article>`;
 }
 
+// 홈 02-1: 대표 서비스를 크게, 같은 무게로 — 가로 한 행(스크린샷 + 설명). /works 의 serviceCard(data-kind 필터 대상)와 별개
+export function serviceFeature(s) {
+  const thumb = s.thumb && !/^(https?:)?\/\//.test(s.thumb) ? '/' + s.thumb.replace(/^\/+/, '') : s.thumb;
+  const shot = thumb
+    ? `<img src="${esc(thumb)}" alt="${esc(s.name)} screenshot" loading="lazy" width="640" height="400">`
+    : `<span class="mono shot-fallback">${esc(s.name.slice(0, 2).toUpperCase())}</span>`;
+  const host = new URL(s.url).host;
+  const chips = s.ai_tools.map(t => `<span class="chip mono">${esc(t)}</span>`).join('');
+  return `<article class="card svc-wide" id="svc-${esc(s.id)}">
+  <div class="svcw-shot">${shot}</div>
+  <div class="svcw-body">
+    <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${esc(s.kind)}</span></div>
+    <h4>${esc(s.name)}</h4>
+    <p>${bi(s.summary)}</p>
+    <div class="svcw-tools"><span class="svcw-lbl mono">${bi({ko: '함께 만든 AI', en: 'Built with'})}</span><div class="chips">${chips}</div></div>
+    <a class="btn btn-ghost svcw-open" href="${esc(s.url)}" ${EXT}>${bi(open)}<span class="mono svcw-host">${esc(host)}</span>${ext}</a>
+  </div>
+</article>`;
+}
+
 export function collectionCard(c) {
   const links = (c.previews || []).map(p => `<li><a href="${esc(p.url)}" ${EXT}>${typeof p.name === 'object' ? bi(p.name) : esc(p.name)}${ext}</a></li>`).join('');
   return `<article class="card col" data-kind="${esc(c.kind)}">
@@ -152,7 +172,7 @@ export function factoryNav(factories) {
 }
 
 // ===== 사이트 내비게이션 · 로고 =====
-// 페이지 키: home | works | factories | career. 하위 페이지 순서는 홈 이야기 순서(경력→공장→작업물)와 같다.
+// 페이지 키: home | works | factories | career. 하위 페이지 순서는 홈 이야기 순서(경력 → 개인 프로젝트 안의 공장 → 산출물)와 같다.
 export const SUBPAGES = [
   {key: 'career', href: '/career/', label: {ko: '경력', en: 'Career'}},
   {key: 'factories', href: '/factories/', label: {ko: 'AI 공장', en: 'Factories'}},
@@ -176,7 +196,10 @@ export function kMark(size = 28) {
 export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Kein — Home">${kMark(28)}<span class="logo-word">Kein</span></a>`;
 
 export function navLinks(page) {
-  const items = [HOME, SUBPAGES[0], {key: 'ai', href: '/#ai', label: {ko: 'AI 활용', en: 'AI'}}, SUBPAGES[1], SUBPAGES[2]];
+  // 홈 이야기 순서: 01 경력(전체는 /career/) → 02 개인 프로젝트(#projects) → 03 일하는 도구와 원칙(#ai).
+  // /works/·/factories/ 는 02 안의 링크·푸터 사이트맵·하위 페이지 하단에서 이어진다.
+  const items = [HOME, SUBPAGES[0], {key: 'projects', href: '/#projects', label: {ko: '개인 프로젝트', en: 'Projects'}},
+    {key: 'ai', href: '/#ai', label: {ko: '도구·원칙', en: 'Tools & principles'}}];
   return [
     ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
     ...EXTERNAL.map(extLink),

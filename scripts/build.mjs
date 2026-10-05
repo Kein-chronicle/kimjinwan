@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot} from './lib/render.mjs';
+import {serviceCard, serviceFeature, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -68,6 +68,7 @@ export function buildAll({write = true} = {}) {
     version,
     hero_stats: heroStats(data),
     featured: featured.map(serviceCard).join('\n'),
+    featured_wide: featured.map(serviceFeature).join('\n'),
     all_services: data.services.map(serviceCard).join('\n'),
     collections: data.collections.map(collectionCard).join('\n'),
     collection_rows: data.collections.map(collectionRow).join('\n'),
@@ -83,7 +84,7 @@ export function buildAll({write = true} = {}) {
     timeline_projects: data.profile.timeline.map((t, i) => timelineItem(t, projectsByEntry[i])).join('\n'),
     project_count: String(projects.length),
     ...Object.fromEntries(ICON_NAMES.map(n => ['ico_' + n, icon(n, {size: 18})])),
-    ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
+    ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], rocket: ['rocket', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     updated: STAMP,
     logo: logo(),
     logo_foot: logo('logo logo-foot'),

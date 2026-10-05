@@ -76,3 +76,13 @@ test('featured_projects 는 중복 없는 정수여야 한다', () => {
   const b = prof(); b.featured_projects = [1, '2']; assert.match(validate({...good(), profile: b}).join('\n'), /integers/);
   const c = prof(); c.featured_projects = []; assert.match(validate({...good(), profile: c}).join('\n'), /non-empty/);
 });
+test('실데이터의 웹 도구 공장도 source·as_of 가 빠지면 검증에 걸린다', async () => {
+  const fs = await import('node:fs');
+  const load = n => JSON.parse(fs.readFileSync(`data/${n}.json`, 'utf8'));
+  const d = {services: load('services'), collections: load('collections'), factories: load('factories')};
+  assert.deepEqual(validate(d), []);
+  const wt = d.factories.find(f => f.id === 'web-tools');
+  delete wt.metrics[0].source; wt.metrics[1].as_of = '2026-10';
+  const e = validate(d).join('\n');
+  assert.match(e, /factories\.web-tools: metric needs source/); assert.match(e, /factories\.web-tools: metric as_of/);
+});

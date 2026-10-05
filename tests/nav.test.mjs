@@ -9,17 +9,19 @@ const SUB = {works: '/works/', factories: '/factories/', career: '/career/'};
 const siteNav = h => h.match(/<nav id="nav" aria-label="Main">[\s\S]*?\n<\/nav>/)[0];
 const main = h => h.slice(h.indexOf('<main'), h.indexOf('</main>'));
 
-test('내비 첫 링크는 홈("/")이고 aria-current 는 현재 페이지 하나에만 붙는다', () => {
+test('내비: 홈·경력·개인 프로젝트·도구·원칙·블로그·웹게임·웹 도구·연락하기 순서, aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
+  const WANT = [['/', '홈'], ['/career/', '경력'], ['/#projects', '개인 프로젝트'], ['/#ai', '도구·원칙'],
+    ['https://blog.kimjinwan.com/ko/', '블로그'], ['https://games.kimjinwan.com/', '웹게임'], ['https://apps.kimjinwan.com/', '웹 도구'], ['#contact', '연락하기']];
   for (const [f, key] of Object.entries(PAGES)) {
     const nav = siteNav(read(f));
     const menu = nav.slice(nav.indexOf('id="nav-menu"'));
-    const links = [...menu.matchAll(/<a\b([^>]*)>/g)].map(m => m[1]);
-    assert.match(links[0], /^ href="\/"/, f + ' first menu link is home');
-    assert.ok(menu.split('</a>')[0].includes('<span data-lang-ko>홈</span><span data-lang-en>Home</span>'), f);
-    const current = links.filter(a => a.includes('aria-current="page"'));
-    assert.equal(current.length, 1, f);
-    assert.ok(current[0].includes(`href="${key === 'home' ? '/' : SUB[key]}"`), f + ' current=' + current[0]);
-    for (const h of ['/#ai', '/works/', '/factories/', '/career/', '#contact']) assert.ok(menu.includes(`href="${h}"`), f + h);
+    const links = [...menu.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
+    assert.deepEqual(links.map(m => m[1].match(/href="([^"]*)"/)[1]), WANT.map(w => w[0]), f);
+    links.forEach((m, i) => assert.ok(m[2].includes(`<span data-lang-ko>${WANT[i][1]}</span>`), f + ' label ' + WANT[i][1]));
+    const current = links.map(m => m[1]).filter(a => a.includes('aria-current="page"'));
+    const own = key === 'home' ? '/' : SUB[key];
+    if (WANT.some(w => w[0] === own)) { assert.equal(current.length, 1, f); assert.ok(current[0].includes(`href="${own}"`), f + ' current=' + current[0]); }
+    else assert.equal(current.length, 0, f + ' (page not in menu: reached via in-page links, site map and page foot)');
   }
 });
 test('홈 섹션 앵커(/#ai 등)는 홈에 실존하는 id 로 간다', () => {
