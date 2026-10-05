@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
+import {icon} from './lib/icons.mjs';
 import {serviceCard, collectionCard, factoryCard, heroStats, bi, esc} from './lib/render.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -17,12 +18,12 @@ export function loadData() {
 const SITE = 'https://kimjinwan.com';
 const PAGES = [
   {src: 'src/home.html', out: 'index.html', path: '/',
-    title: '김진완 — AI로 서비스를 만들고 직접 운영합니다',
-    description: '소프트웨어 PM 김진완이 AI 공장·파이프라인으로 만들어 운영하는 서비스, 웹게임, 웹 도구, 블로그와 경력.'},
+    title: '김진완 — AI로 만들고 운영하는 개발자 · PM',
+    description: '개발자·PM 김진완이 AI로 만들고 직접 운영하는 서비스, 웹게임, 웹 도구, 블로그와 11년 경력.'},
   {src: 'src/works.html', out: 'works/index.html', path: '/works/',
-    title: '작업물 — 김진완', description: 'AI로 만들고 운영하는 서비스·웹게임·웹 도구·앱·블로그 전체 목록.'},
+    title: '작업물 — 김진완', description: '제가 AI로 만들고 운영하는 서비스·웹게임·웹 도구·앱·블로그 전체 목록.'},
   {src: 'src/factories.html', out: 'factories/index.html', path: '/factories/',
-    title: 'AI 공장 — 김진완', description: '앱·게임·콘텐츠를 양산하는 AI 공장과 파이프라인의 단계, 자동화 범위, 사람이 하는 일.'},
+    title: '제가 설계한 AI 공장 — 김진완', description: '앱·게임·콘텐츠를 양산하도록 제가 설계한 AI 공장과 파이프라인의 단계, 자동화 범위, 제가 맡는 일.'},
   {src: 'src/career.html', out: 'career/index.html', path: '/career/',
     title: '경력 — 김진완', description: '11년 경력과 수행 프로젝트 55개: 차량 SW PM, 풀스택 개발, 팀 리딩.'},
 ];
@@ -54,6 +55,7 @@ export function buildAll({write = true} = {}) {
     collections: data.collections.map(collectionCard).join('\n'),
     factories: data.factories.map(f => factoryCard(f, byId)).join('\n'),
     factories_teaser: data.factories.map(f => `<li><a href="/factories/#${esc(f.id)}">${bi(f.name)}</a> — ${bi(f.role)}</li>`).join(''),
+    ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     updated: new Date().toISOString().slice(0, 10),
   };
   const out = {};

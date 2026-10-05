@@ -48,3 +48,7 @@ test('stage kind 는 ai|human|gate 이고 human 단계가 최소 1개', () => {
 test('ko/en 이 비어 있으면 잡는다', () => {
   const d = good(); d.services[0].summary.en = ''; assert.match(validate(d).join('\n'), /summary/);
 });
+test('공장 icon 은 허용된 아이콘 이름이어야 한다', () => {
+  const ok = good(); ok.factories[0].icon = 'gamepad'; assert.deepEqual(validate(ok), []);
+  const bad = good(); bad.factories[0].icon = 'nope'; assert.match(validate(bad).join('\n'), /icon/);
+});

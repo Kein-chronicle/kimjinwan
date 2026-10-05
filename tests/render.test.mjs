@@ -33,7 +33,7 @@ test('factoryCard 는 단계 3종 클래스, 사람 역할, 수치, 산출물 �
     outputs: ['forge']};
   const h = factoryCard(f, new Map([['forge', svc]]));
   for (const c of ['stage-ai', 'stage-gate', 'stage-human']) assert.match(h, new RegExp(c));
-  assert.match(h, /제출 승인만/); assert.match(h, />87</); assert.match(h, /href="https:\/\/forge\.example\.com\/"/);
+  assert.match(h, /제출 승인만/); assert.match(h, /제가 맡는 일/); assert.match(h, /What I do/); assert.doesNotMatch(h, /사람 몫|Human role/); assert.match(h, />87</); assert.match(h, /href="https:\/\/forge\.example\.com\/"/);
   assert.doesNotMatch(h, /\/Users\/|secret|pipeline\.json/);
 });
 test('heroStats 는 데이터에서 개수를 집계한다', () => {

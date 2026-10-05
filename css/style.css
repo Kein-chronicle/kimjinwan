@@ -8,14 +8,15 @@
   --mono:"JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
   --maxw:1120px; --r:10px;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0F1115; --bg2:#14171D; --card:#171A21; --card2:#1B1F27;
-    --line:#262B35; --text:#ECEEF2; --muted:#A3AABA; --faint:#7C8497;
-    --accent:#7C8CFF; --accent-ink:#0F1115; --accent-soft:rgba(124,140,255,.12);
-    --ok:#4CC38A; --warn:#E2B04A;
-    --stage-ai:#7C8CFF; --stage-gate:#E2B04A; --stage-human:#4CC38A;
-  }
+/* 다크는 시간 기반: js/theme-core.js 가 일몰 후~일출 전에 <html data-theme="dark"> 를 붙인다. OS 설정은 따르지 않는다. */
+:root{color-scheme:light}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1115; --bg2:#14171D; --card:#171A21; --card2:#1B1F27;
+  --line:#262B35; --text:#ECEEF2; --muted:#A3AABA; --faint:#7C8497;
+  --accent:#7C8CFF; --accent-ink:#0F1115; --accent-soft:rgba(124,140,255,.12);
+  --ok:#4CC38A; --warn:#E2B04A;
+  --stage-ai:#7C8CFF; --stage-gate:#E2B04A; --stage-human:#4CC38A;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -330,3 +331,32 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 }
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 .nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:var(--accent-ink)}
+
+/* ===== icons ===== */
+.ico{width:1em;height:1em;flex:none;vertical-align:-.125em}
+.ico-ext{width:.95em;height:.95em;margin-left:3px;vertical-align:-.1em}
+.sec-no,.eyebrow-row{display:inline-flex;align-items:center;gap:8px}
+.eyebrow-row{margin-bottom:14px}
+.eyebrow-row .ico,.sec-no .ico{color:var(--accent);width:16px;height:16px}
+.sec-head .sec-no{display:flex}
+.nav-links a{display:inline-flex;align-items:center}
+.svc-meta .kind{display:inline-flex;align-items:center;gap:5px}
+.more{display:inline-flex;align-items:center;gap:2px}
+.col-count{display:flex;align-items:center;gap:12px}
+.col-count .col-ico{width:26px;height:26px;color:var(--accent)}
+.col-links a{display:inline-flex;align-items:center}
+.asof{display:inline-flex;align-items:center;gap:5px}
+.fac h3{display:flex;align-items:center;gap:10px}
+.fac h3 .fac-ico{width:24px;height:24px;color:var(--accent)}
+.stage{display:flex;align-items:center;gap:8px}
+.stage .ico-stage{width:16px;height:16px}
+.stage-ai .ico-stage{color:var(--stage-ai)} .stage-gate .ico-stage{color:var(--stage-gate)} .stage-human .ico-stage{color:var(--stage-human)}
+.legend .lg{display:inline-flex;align-items:center;gap:5px}
+.lg-ai{color:var(--stage-ai)} .lg-gate{color:var(--stage-gate)} .lg-human{color:var(--stage-human)}
+.fac-human strong{display:inline-flex;align-items:center;gap:6px;margin-right:6px;color:var(--stage-human)}
+.metric dt{display:flex;align-items:center;gap:6px}
+.metric .asof{margin-top:2px}
+.hstat .lbl{display:flex;align-items:center;gap:7px}
+.hstat .lbl .ico{color:var(--accent)}
+.fac-outs a,.teaser a{display:inline-flex;align-items:center}
+.contacts a .ico{color:var(--accent);width:18px;height:18px}

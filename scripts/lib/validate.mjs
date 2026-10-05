@@ -1,4 +1,5 @@
 // scripts/lib/validate.mjs
+import {ICON_NAMES} from './icons.mjs';
 const KINDS = ['service', 'game', 'tool', 'app', 'blog'];
 const STATUS = ['live', 'released', 'experiment'];
 const STAGE = ['ai', 'human', 'gate'];
@@ -44,6 +45,7 @@ export function validate({services = [], collections = [], factories = []}) {
       if (!STAGE.includes(st.kind)) err.push(`${w}: bad stage kind ${st.kind}`);
       if (!biOk(st.name)) err.push(`${w}: stage name needs ko/en`);
     }
+    if (f.icon !== undefined && !ICON_NAMES.includes(f.icon)) err.push(`${w}: unknown icon ${f.icon}`);
     if (!(f.stages || []).some(st => st.kind === 'human')) err.push(`${w}: needs at least one human stage`);
     for (const m of f.metrics || []) {
       if (!DATE.test(m.as_of || '')) err.push(`${w}: metric as_of must be YYYY-MM-DD`);
