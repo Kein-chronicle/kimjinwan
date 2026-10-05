@@ -40,21 +40,41 @@ export function collectionCard(c) {
 </article>`;
 }
 
+export const stageLegend = () => `<p class="legend mono"><span class="lg lg-ai">${icon('sparkles', {size: 14})}AI</span><span class="lg lg-gate">${icon('shield-check', {size: 14})}GATE</span><span class="lg lg-human">${icon('hand', {size: 14})}HUMAN</span></p>`;
+
+// 공장 1개 = 한 편의 짧은 글(행): 왼쪽 이름·역할, 오른쪽 흐름도·직접 맡는 일·수치
 export function factoryCard(f, servicesById, {link = false} = {}) {
   const stages = f.stages.map(st => `<li class="stage stage-${st.kind}">${icon(STAGE_ICON[st.kind], {size: 16, cls: 'ico-stage'})}<span class="mono">${bi(st.name)}</span></li>`).join('');
   const metrics = f.metrics.map(m => `<div class="metric"><dt>${icon('bar-chart', {size: 14})}${bi(m.label)}</dt><dd class="mono">${esc(m.value)}</dd><span class="asof mono">${icon('clock', {size: 13})}${esc(m.as_of)}</span></div>`).join('');
   const outs = f.outputs.map(id => servicesById.get(id)).filter(Boolean)
     .map(s => `<li><a href="${esc(s.url)}" ${EXT}>${esc(s.name)}${ext}</a></li>`).join('');
-  return `<article class="card fac" id="${esc(f.id)}">
-  <h3>${f.icon ? icon(f.icon, {size: 22, cls: 'fac-ico'}) : ''}<span>${link ? `<a href="/factories/#${esc(f.id)}">${bi(f.name)}</a>` : bi(f.name)}</span></h3>
-  <p class="fac-role">${bi(f.role)}</p>
-  <ol class="flow" aria-label="pipeline">${stages}</ol>
-  <p class="legend mono"><span class="lg lg-ai">${icon('sparkles', {size: 14})}AI</span><span class="lg lg-gate">${icon('shield-check', {size: 14})}GATE</span><span class="lg lg-human">${icon('hand', {size: 14})}HUMAN</span></p>
-  <p class="fac-human"><strong>${icon('user-check', {size: 16})}${bi({ko: '제가 맡는 일:', en: 'What I do:'})}</strong> ${bi(f.human_role)}</p>
-  <dl class="metrics">${metrics}</dl>
-  ${outs ? `<ul class="fac-outs">${outs}</ul>` : ''}
-  ${link ? `<a class="more" href="/factories/#${esc(f.id)}">${bi({ko: '공장 상세', en: 'Factory details'})}${icon('arrow-up-right', {size: 14, cls: 'ico-ext'})}</a>` : ''}
+  return `<article class="fac" id="${esc(f.id)}">
+  <div class="fac-head">
+    <h3>${f.icon ? icon(f.icon, {size: 22, cls: 'fac-ico'}) : ''}<span>${link ? `<a href="/factories/#${esc(f.id)}">${bi(f.name)}</a>` : bi(f.name)}</span></h3>
+    <p class="fac-role">${bi(f.role)}</p>
+    ${link ? `<a class="more" href="/factories/#${esc(f.id)}">${bi({ko: '공장 상세', en: 'Factory details'})}${icon('arrow-up-right', {size: 14, cls: 'ico-ext'})}</a>` : ''}
+  </div>
+  <div class="fac-body">
+    <ol class="flow" aria-label="pipeline">${stages}</ol>
+    <p class="fac-human"><strong>${icon('user-check', {size: 16})}${bi({ko: '직접 맡는 일', en: 'What I do'})}</strong> ${bi(f.human_role)}</p>
+    <dl class="metrics">${metrics}</dl>
+    ${outs ? `<ul class="fac-outs">${outs}</ul>` : ''}
+  </div>
 </article>`;
+}
+
+// 홈용 컬렉션 행 — /works 의 collectionCard(data-kind 필터 대상)와 별개
+export function collectionRow(c) {
+  const links = (c.previews || []).map(p => `<li><a href="${esc(p.url)}" ${EXT}>${typeof p.name === 'object' ? bi(p.name) : esc(p.name)}${ext}</a></li>`).join('');
+  return `<li class="col-row">
+  <div class="col-row-count mono">${icon(KIND_ICON[c.kind] || 'layers', {size: 20, cls: 'col-ico'})}<span>${esc(c.count.value)}</span></div>
+  <div class="col-row-body">
+    <h4><a href="${esc(c.url)}" ${EXT}>${bi(c.name)}${ext}</a></h4>
+    <p>${bi(c.summary)}</p>
+    <ul class="col-row-links">${links}</ul>
+  </div>
+  <span class="asof mono">${icon('clock', {size: 13})}${bi(asOf)} ${esc(c.count.as_of)}</span>
+</li>`;
 }
 
 export function heroStats({services, collections}) {
@@ -84,35 +104,40 @@ export function projectKind(p) {
   return 'layers';
 }
 
-export function strengthCard(s) {
-  return `<article class="fcard strength">
-  <div class="ic">${icon(s.icon, {size: 22})}</div>
-  <h3>${bi(s.title)}</h3>
-  <p>${bi(s.text)}</p>
-</article>`;
-}
-
-export function timelineItem(t) {
-  return `<li class="tl-item">
-  <div class="yr mono">${esc(t.period)} · ${bi(t.company)}</div>
-  <h3>${bi(t.title)}</h3>
-  <div class="role">${bi(t.role)}</div>
-  <p>${bi(t.text)}</p>
+export function strengthItem(s) {
+  return `<li class="strength">
+  <span class="st-ico">${icon(s.icon, {size: 20})}</span>
+  <p><b>${bi(s.title)}</b> ${bi(s.text)}</p>
 </li>`;
 }
 
 const pick = (p, k) => ({ko: p[k], en: p[k + 'En'] || p[k]});
-export function featuredProjectCard(p) {
-  const chips = (p.stack || []).slice(0, 4).map((s, i) => `<span class="chip mono">${bi({ko: s, en: (p.stackEn || p.stack)[i] || s})}</span>`).join('');
-  return `<article class="card fproj" data-project="${esc(p.id)}">
-  <a class="fproj-link" href="/career/#p${esc(p.id)}">
-    <div class="fproj-top"><span class="fproj-ico">${icon(projectKind(p), {size: 22})}</span><span class="fproj-meta mono">${esc(p.year)} · ${bi(pick(p, 'company'))}</span></div>
-    <div class="fproj-role mono">${bi(pick(p, 'role'))}</div>
-    <h3>${bi(pick(p, 'name'))}</h3>
-    <p>${bi(pick(p, 'desc'))}</p>
-    <div class="chips">${chips}</div>
-  </a>
-</article>`;
+// 타임라인 안에 붙는 대표 프로젝트 한 줄: 종류 아이콘 · 이름 · 연도 · 역할
+export function projectLine(p) {
+  return `<li><a class="tl-proj" data-project="${esc(p.id)}" href="/career/#p${esc(p.id)}"><span class="tl-proj-ico">${icon(projectKind(p), {size: 16})}</span><span class="tl-proj-name">${bi(pick(p, 'name'))}</span><span class="tl-proj-meta mono">${esc(p.year)} · ${bi(pick(p, 'role'))}</span></a></li>`;
+}
+
+export function timelineItem(t, projects = []) {
+  const projs = projects.length
+    ? `<div class="tl-projects"><div class="tl-projects-h mono">${bi({ko: '대표 프로젝트', en: 'Selected projects'})}</div><ul>${projects.map(projectLine).join('')}</ul></div>`
+    : '';
+  return `<li class="tl-item">
+  <div class="yr mono">${esc(t.period)} · ${bi(t.company)}</div>
+  <h3>${bi(t.title)}</h3>
+  <div class="role">${bi(t.role)}</div>
+  <p>${bi(t.text)}</p>${projs ? '\n  ' + projs : ''}
+</li>`;
+}
+
+// 대표 프로젝트를 회사 이름으로 타임라인 항목에 붙인다(연도는 회사 경계에서 겹치므로 쓰지 않는다)
+export function attachProjects(timeline, featured) {
+  const groups = timeline.map(() => []);
+  for (const p of featured) {
+    const hits = timeline.map((t, i) => (t.company.ko === p.company ? i : -1)).filter(i => i > -1);
+    if (hits.length !== 1) throw new Error(`featured project ${p.id} (${p.company}) matches ${hits.length} timeline entries`);
+    groups[hits[0]].push(p);
+  }
+  return groups;
 }
 
 const FILTERS = [

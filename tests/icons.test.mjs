@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {icon, ICON_NAMES} from '../scripts/lib/icons.mjs';
-import {serviceCard, collectionCard, factoryCard, heroStats} from '../scripts/lib/render.mjs';
+import {serviceCard, collectionCard, factoryCard, stageLegend, heroStats} from '../scripts/lib/render.mjs';
 
 const NEEDED = ['user', 'code', 'layers', 'cpu', 'sparkles', 'shield-check', 'hand', 'user-check', 'factory', 'gamepad', 'wrench',
   'smartphone', 'book-open', 'globe', 'mail', 'phone', 'link', 'play', 'arrow-up-right', 'workflow', 'clock', 'check-circle',
@@ -32,7 +32,9 @@ test('카드 렌더 결과에 아이콘이 들어간다', () => {
   const f = {id: 'af', icon: 'smartphone', name: {ko: '앱', en: 'App'}, role: {ko: '역할', en: 'r'}, stages: [{name: {ko: '기획', en: 'p'}, kind: 'ai'}, {name: {ko: '승인', en: 'a'}, kind: 'human'}], human_role: {ko: '승인', en: 'a'}, metrics: [{label: {ko: '게이트', en: 'g'}, value: '1', as_of: '2026-10-05', source: 's'}], outputs: []};
   const h = factoryCard(f, new Map());
   assert.match(h, /<svg/); assert.match(h, /fac-ico/);
-  assert.ok((h.match(/<svg/g) || []).length >= 8);
+  // 범례(AI/GATE/HUMAN)는 공장마다 반복하지 않고 섹션에 한 번 — stageLegend 로 분리됐다
+  assert.ok((h.match(/<svg/g) || []).length >= 5);
+  assert.equal((stageLegend().match(/<svg/g) || []).length, 3);
   assert.match(heroStats({services: [svc], collections: []}), /<svg/);
 });
 test('빌드된 index.html 에 외부 링크 화살표 글리프가 남지 않는다', () => {

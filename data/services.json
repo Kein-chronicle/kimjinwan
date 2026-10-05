@@ -6,7 +6,7 @@
   "status": "live",
   "featured": true,
   "summary": {
-   "ko": "요구사항 정의에서 디자인·화면설계·개발 보조·익스포트까지 하나의 흐름으로 잇도록 제가 만든 웹서비스 제작 도구.",
+   "ko": "요구사항 정의에서 디자인·화면설계·개발 보조·익스포트까지 하나의 흐름으로 잇도록 직접 만든 웹서비스 제작 도구.",
    "en": "A web-service production tool I built to connect requirements, design, screen specs, development assistance and export in one flow."
   },
   "ai_tools": [
@@ -24,7 +24,7 @@
   "status": "live",
   "featured": true,
   "summary": {
-   "ko": "제가 만든 독립 웹 편집기. 브라우저에서 레이어·선택 영역·마스크로 이미지를 편집하고, PSD 열기·저장을 지원합니다.",
+   "ko": "독립 웹 편집기. 브라우저에서 레이어·선택 영역·마스크로 이미지를 편집하고, PSD 열기·저장을 지원합니다.",
    "en": "An independent browser image editor I built, with layers, selections and masks, including PSD open and save."
   },
   "ai_tools": [
@@ -42,7 +42,7 @@
   "status": "live",
   "featured": true,
   "summary": {
-   "ko": "보고서 요약·메일 쓰기·회의록 정리 같은 일을 설치 없이 쓰는 작은 AI 도구를 모아, 제가 운영하는 한국어 도구 가게.",
+   "ko": "보고서 요약·메일 쓰기·회의록 정리 같은 일을 설치 없이 쓰는 작은 AI 도구를 모아 직접 운영하는 한국어 도구 가게.",
    "en": "A Korean-language shop I run, collecting small AI tools for everyday work such as summarizing reports, writing email and organizing meeting notes, usable without installing anything."
   },
   "ai_tools": [

@@ -7,7 +7,7 @@
    "en": "App Factory"
   },
   "role": {
-   "ko": "기획부터 App Store 업로드·심사 제출까지, iOS 앱을 양산하도록 제가 설계한 파이프라인",
+   "ko": "기획부터 App Store 업로드·심사 제출까지, iOS 앱을 양산하도록 설계한 파이프라인",
    "en": "A pipeline I designed to ship iOS apps from planning to App Store upload and review submission"
   },
   "stages": [
@@ -55,7 +55,7 @@
    }
   ],
   "human_role": {
-   "ko": "실기기 연결과 심사 제출 승인은 제가 합니다.",
+   "ko": "실기기를 연결하고 심사 제출을 승인합니다.",
    "en": "I connect the real device and approve the submission."
   },
   "metrics": [
@@ -88,7 +88,7 @@
    "en": "Faith App Factory"
   },
   "role": {
-   "ko": "기독교인 고객을 위한 앱을 만들려고, 같은 엔진에 신앙 전용 규정을 더해 제가 설계한 파이프라인",
+   "ko": "기독교인 고객을 위한 앱을 만들려고, 같은 엔진에 신앙 전용 규정을 더해 설계한 파이프라인",
    "en": "A pipeline I designed for apps aimed at Christian users: the same engine plus faith-specific rules"
   },
   "stages": [
@@ -136,7 +136,7 @@
    }
   ],
   "human_role": {
-   "ko": "앱 공장과 마찬가지로, 실기기 연결과 심사 제출 승인은 제가 합니다.",
+   "ko": "앱 공장과 마찬가지로, 실기기를 연결하고 심사 제출을 승인합니다.",
    "en": "As in the app factory, I connect the real device and approve the submission."
   },
   "metrics": [
@@ -160,7 +160,7 @@
    "en": "Web Game Pipeline"
   },
   "role": {
-   "ko": "게임 선정부터 개발·검증을 거쳐 웹 포털에 편입하기까지, 제가 설계한 양산 파이프라인",
+   "ko": "게임 선정부터 개발·검증을 거쳐 웹 포털에 편입하기까지 이어지는 양산 파이프라인",
    "en": "A pipeline I designed that takes games from selection through build and verification into the web portal"
   },
   "stages": [
@@ -241,7 +241,7 @@
    "en": "Video Automation"
   },
   "role": {
-   "ko": "게임 소재 선정부터 이미지·음성·합성·검수·업로드까지, 쇼츠를 만들도록 제가 설계한 파이프라인",
+   "ko": "게임 소재 선정부터 이미지·음성·합성·검수·업로드까지, 쇼츠를 만들도록 설계한 파이프라인",
    "en": "A pipeline I designed to make short videos from topic selection through images, voice, compositing, review and upload"
   },
   "stages": [
@@ -289,7 +289,7 @@
    }
   ],
   "human_role": {
-   "ko": "채널 방향과 운영 재개·중지는 제가 결정합니다. 공개 전 사람 승인은 두지 않고 자동 검사로 대신합니다.",
+   "ko": "채널 방향과 운영 재개·중지를 결정합니다. 공개 전 사람 승인은 두지 않고 자동 검사로 대신합니다.",
    "en": "I decide channel direction and when to resume or pause operations. There is no pre-publish human approval; automated checks stand in for it."
   },
   "metrics": [
@@ -313,7 +313,7 @@
    "en": "Blog Factory"
   },
   "role": {
-   "ko": "AI가 조사·초안을 쓰고 자동 게이트를 거쳐 글을 발행하도록 제가 설계한 편집 파이프라인",
+   "ko": "AI가 조사·초안을 쓰고 자동 게이트를 거쳐 글을 발행하도록 설계한 편집 파이프라인",
    "en": "An editorial pipeline I designed where AI researches and drafts, and posts are published after automated gates"
   },
   "stages": [
@@ -361,7 +361,7 @@
    }
   ],
   "human_role": {
-   "ko": "주제 방향을 정하고 공개 후에 검토합니다. 제 검토는 발행을 막지 않는 사후 기록입니다.",
+   "ko": "주제 방향을 정하고 공개 후에 검토합니다. 이 검토는 발행을 막지 않는 사후 기록입니다.",
    "en": "I set topic direction and review after publication. My review is a non-blocking after-the-fact record."
   },
   "metrics": [

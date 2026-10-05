@@ -99,3 +99,12 @@ test('theme-core 는 head 안에서 본문보다 먼저 실행된다', () => {
     assert.ok(h.indexOf('<body') > h.indexOf('</head>'), f);
   }
 });
+test('한국어 1인칭 대명사(제가·저는·저의 등)가 화면·데이터·메타 어디에도 없다 — "직접 …" 표현을 쓴다', () => {
+  const BAN = /제가|저는|저의|저를|저에게|제게|저희|(?:^|[\s>("'])제\s/m;
+  const files = [...PAGES, 'js/data.js', 'js/main.js', 'scripts/build.mjs', 'scripts/lib/render.mjs',
+    ...fs.readdirSync('data').map(f => 'data/' + f), ...fs.readdirSync('src', {recursive: true}).filter(f => f.endsWith('.html')).map(f => 'src/' + f)];
+  for (const f of files) {
+    const m = read(f).match(BAN);
+    assert.equal(m, null, `${f}: "${m && read(f).slice(Math.max(0, m.index - 20), m.index + 20)}"`);
+  }
+});

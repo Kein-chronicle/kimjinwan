@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parseProjects, pickFeatured} from '../scripts/lib/projects.mjs';
-import {strengthCard, timelineItem, featuredProjectCard, projectKind} from '../scripts/lib/render.mjs';
+import {strengthItem, timelineItem, projectLine, attachProjects, projectKind} from '../scripts/lib/render.mjs';
 import {icon, ICON_NAMES} from '../scripts/lib/icons.mjs';
 
 const read = f => fs.readFileSync(f, 'utf8');
@@ -11,17 +11,29 @@ const projects = parseProjects(read('js/data.js'));
 const profile = JSON.parse(read('data/profile.json'));
 const strip = h => h.replace(/<script[\s\S]*?<\/script>/g, '');
 
-test('홈: 강점 4·타임라인 4·대표 프로젝트 6, 섹션 순서와 번호', () => {
+test('홈: 강점 4·타임라인 4·대표 프로젝트 6, 이야기 순서(경험→AI→공장→결과물→연락)와 번호', () => {
   const h = read('index.html');
-  assert.equal(count(h, /class="fcard strength"/g), 4);
+  assert.equal(count(h, /<li class="strength">/g), 4);
   assert.equal(count(h, /<li class="tl-item">/g), 4);
-  assert.equal(count(h, /class="card fproj"/g), 6);
-  const ids = ['top', 'strengths', 'services', 'factories', 'career-brief', 'collections', 'ai', 'contact'];
+  assert.equal(count(h, /class="tl-proj"/g), 6);
+  const ids = ['top', 'experience', 'ai', 'factories', 'works', 'contact'];
   const pos = ids.map(i => h.indexOf(`id="${i}"`)); assert.ok(pos.every(p => p > 0), 'all sections');
   assert.deepEqual([...pos].sort((a, b) => a - b), pos);
-  for (const [i, n] of ['01', '02', '03', '04', '05', '06'].entries())
-    assert.ok(new RegExp(`<b>${n}</b> ${['Strengths', 'Services', 'Factories', 'Career &amp; Projects', 'Collections', 'AI'][i]}`).test(h), n);
+  for (const i of ids) assert.equal(count(h, new RegExp(`id="${i}"`, 'g')), 1, 'unique id ' + i);
+  for (const [i, n] of ['01', '02', '03', '04'].entries())
+    assert.ok(new RegExp(`<b>${n}</b> ${['Experience', 'AI', 'Factories', 'Works'][i]}`).test(h), n);
   assert.match(h, /href="\/career\/"/); assert.ok(h.includes(`${projects.length}개`));
+});
+test('홈: 대표 프로젝트는 회사가 같은 타임라인 항목 안에 붙는다', () => {
+  const h = read('index.html');
+  const items = h.split('<li class="tl-item">').slice(1);
+  assert.equal(items.length, profile.timeline.length);
+  for (const id of profile.featured_projects) {
+    const p = projects.find(x => x.id === id);
+    const i = profile.timeline.findIndex(t => t.company.ko === p.company);
+    assert.ok(i > -1 && items[i].includes(`href="/career/#p${id}"`), `project ${id} under ${p.company}`);
+  }
+  assert.throws(() => attachProjects(profile.timeline, [{id: 1, company: '없는회사'}]), /matches 0/);
 });
 test('홈: 대표 프로젝트는 /career/#p<id> 로 연결되고 id 가 data.js 에 실존한다', () => {
   const h = read('index.html');
@@ -41,7 +53,7 @@ test('경력 페이지는 강점·전체 타임라인·그리드·모달·게임
   const h = read('career/index.html');
   for (const id of ['id="about"', 'id="career"', 'id="projects"', 'id="pgrid"', 'id="filters"', 'id="moreBtn"', 'id="modal"', 'id="modalContent"', 'id="gameModal"', 'onclick="openGame()"'])
     assert.ok(h.includes(id), id);
-  assert.equal(count(h, /class="fcard strength"/g), 4); assert.equal(count(h, /<li class="tl-item">/g), 4);
+  assert.equal(count(h, /<li class="strength">/g), 4); assert.equal(count(h, /<li class="tl-item">/g), 4);
   for (const s of ['/js/data.js', '/js/main.js', '/js/site-metrics.js']) assert.ok(h.includes(`src="${s}"`), s);
   assert.doesNotMatch(h, /TODO-in-task/);
 });
@@ -74,13 +86,12 @@ test('parseProjects / pickFeatured', () => {
   assert.deepEqual(pickFeatured([50, 46], projects).map(p => p.id), [50, 46]);
   assert.throws(() => pickFeatured([46, 9999], projects), /id 9999 not found/);
 });
-test('featuredProjectCard: 연도·회사·역할·이름·설명·칩 최대 4개·종류 아이콘·링크, 한/영 span', () => {
+test('projectLine: 종류 아이콘·이름·연도·역할·/career/#p 링크, 한/영 span (타임라인 안 한 줄)', () => {
   const p = projects.find(x => x.id === 9);
-  const h = featuredProjectCard(p);
-  assert.match(h, /href="\/career\/#p9"/); assert.match(h, /2020 · <span data-lang-ko>에쿼티언<\/span><span data-lang-en>Equtian<\/span>/);
-  assert.ok(h.includes('메인 개발, 개발팀장')); assert.ok(h.includes('Crypto Exchange (VentasBit)')); assert.ok(h.includes('Lead development of the exchange'));
-  assert.equal(count(h, /class="chip mono"/g), 4); assert.ok(!h.includes('coin server'));
-  assert.match(h, /<svg/);
+  const h = projectLine(p);
+  assert.match(h, /href="\/career\/#p9"/); assert.match(h, /2020 · <span data-lang-ko>메인 개발, 개발팀장<\/span><span data-lang-en>Lead developer, dev lead<\/span>/);
+  assert.ok(h.includes('<span data-lang-ko>코인거래소(벤타스비트)</span><span data-lang-en>Crypto Exchange (VentasBit)</span>'));
+  assert.doesNotMatch(h, /class="chip/); assert.match(h, /<svg/);
 });
 test('projectKind 는 main.js projIcon 과 같은 키워드 규칙이다', () => {
   const k = (name, desc = '', stack = []) => projectKind({name, desc, stack});
@@ -89,9 +100,9 @@ test('projectKind 는 main.js projIcon 과 같은 키워드 규칙이다', () =>
   for (const n of ['car', 'gamepad', 'credit-card', 'landmark', 'bar-chart', 'vr', 'blocks', 'users', 'smartphone', 'globe', 'layers']) assert.ok(ICON_NAMES.includes(n), n);
   for (const p of projects) assert.ok(ICON_NAMES.includes(projectKind(p)), p.name);
 });
-test('strengthCard / timelineItem 은 한/영 span 과 아이콘을 렌더한다', () => {
+test('strengthItem / timelineItem 은 한/영 span 과 아이콘을 렌더한다', () => {
   const s = profile.strengths[0], t = profile.timeline[0];
-  const sh = strengthCard(s); assert.match(sh, /<svg/); assert.match(sh, /data-lang-ko/); assert.match(sh, /data-lang-en/);
+  const sh = strengthItem(s); assert.match(sh, /<svg/); assert.match(sh, /data-lang-ko/); assert.match(sh, /data-lang-en/);
   const th = timelineItem(t); assert.ok(th.includes('2024 – Now')); assert.match(th, /오비고/); assert.match(th, /Obigo/);
 });
 test('profile 의 사실(회사·기간·수치)은 원문 그대로다', () => {
@@ -105,7 +116,7 @@ test('신규 아이콘이 유효하다', () => {
 test('대표 프로젝트 역할은 한·영을 모두 가진다 (EN 모드에 한국어 역할 노출 금지)', () => {
   for (const p of projects) assert.ok(p.roleEn && !/[가-힣]/.test(p.roleEn), `roleEn ${p.id}`);
   const h = read('index.html');
-  assert.ok(h.includes('<div class="fproj-role mono"><span data-lang-ko>총괄 PM</span><span data-lang-en>Lead PM</span></div>'));
+  assert.ok(h.includes('<span class="tl-proj-meta mono">2026 · <span data-lang-ko>총괄 PM</span><span data-lang-en>Lead PM</span></span>'));
 });
 test('컬렉션 미리보기 링크는 EN 모드용 영어 제목을 가진다 (구 사이트 한·영 라벨 보존)', () => {
   const cols = JSON.parse(read('data/collections.json'));

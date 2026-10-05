@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parseProjects} from '../scripts/lib/projects.mjs';
-import {esc, bi, serviceCard, collectionCard, factoryCard, heroStats, projectKind} from '../scripts/lib/render.mjs';
+import {esc, bi, serviceCard, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, projectKind} from '../scripts/lib/render.mjs';
 
 const svc = {id: 'forge', name: 'Forge', kind: 'service', status: 'live', featured: true,
   summary: {ko: '요구사항에서 개발까지', en: 'From requirements to code'},
@@ -35,8 +35,22 @@ test('factoryCard 는 단계 3종 클래스, 사람 역할, 수치, 산출물 �
     outputs: ['forge']};
   const h = factoryCard(f, new Map([['forge', svc]]));
   for (const c of ['stage-ai', 'stage-gate', 'stage-human']) assert.match(h, new RegExp(c));
-  assert.match(h, /제출 승인만/); assert.match(h, /제가 맡는 일/); assert.match(h, /What I do/); assert.doesNotMatch(h, /사람 몫|Human role/); assert.match(h, />87</); assert.match(h, /href="https:\/\/forge\.example\.com\/"/);
+  assert.match(h, /제출 승인만/); assert.match(h, /직접 맡는 일/); assert.match(h, /What I do/); assert.doesNotMatch(h, /사람 몫|Human role/); assert.match(h, />87</); assert.match(h, /href="https:\/\/forge\.example\.com\/"/);
   assert.doesNotMatch(h, /\/Users\/|secret|pipeline\.json/);
+});
+test('stageLegend 는 AI/GATE/HUMAN 세 범례를 아이콘과 함께 렌더한다', () => {
+  const h = stageLegend();
+  for (const c of ['lg-ai', 'lg-gate', 'lg-human']) assert.match(h, new RegExp(c));
+  assert.equal((h.match(/<svg/g) || []).length, 3);
+});
+test('collectionRow 는 개수·기준일·제목 링크·미리보기 링크를 새 창 링크로 렌더한다', () => {
+  const h = collectionRow({id: 'games', kind: 'game', name: {ko: '웹게임', en: 'Web games'},
+    summary: {ko: '설명', en: 'desc'}, url: 'https://games.example.com/',
+    count: {value: 44, as_of: '2026-10-05', source: 's'}, previews: [{name: 'A', url: 'https://games.example.com/a'}]});
+  assert.match(h, />44</); assert.match(h, /2026-10-05/);
+  for (const u of ['https://games.example.com/', 'https://games.example.com/a'])
+    assert.match(h, new RegExp(`href="${u.replace(/[./]/g, '\\$&')}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"`));
+  assert.doesNotMatch(h, /source|data-kind/);
 });
 test('heroStats 는 데이터에서 개수를 집계한다', () => {
   const h = heroStats({
