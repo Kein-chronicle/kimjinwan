@@ -9,6 +9,16 @@
 - **SNS 캐시 갱신**: og:image 주소의 `?v=` 는 PNG 내용 해시라 카드가 바뀌면 주소가 바뀐다. 그래도 각 서비스는 페이지 단위로 미리보기를 캐시하므로 배포 후 다시 긁게 한다 — 카카오 공유 디버거(https://developers.kakao.com/tool/debugger/sharing, 캐시 초기화), Facebook 공유 디버거(https://developers.facebook.com/tools/debug/, 다시 스크랩), LinkedIn Post Inspector(https://www.linkedin.com/post-inspector/). 슬랙은 링크를 새로 붙이면 대개 다시 읽는다.
 - **배포 허용 목록 추가**: `manifest.json`(루트), `assets/og/`(이미 `assets/` 에 포함).
 
+## 1.3.2 배포 기록 — 2026-10-06
+
+공유 미리보기 정리(`og:image`·`twitter:image` 명시, 페이지별 텍스트 공유 카드 `assets/og/*.png`, JSON-LD 정리, `game/` 메타 보강)를 `/var/www/kimjinwan/releases/1.3.2` 로 배포하고 `current` 를 원자 전환했다. 직전 `1.3.0`·`1.3.1` 은 복구용으로 유지한다. 1.3.1 은 매니페스트 파일명이 `site.webmanifest` 였는데 nginx 에 해당 MIME 이 없어 `octet-stream` 으로 나가서, `manifest.json`(application/json)으로 바꿔 1.3.2 로 다시 냈다.
+
+- 배경: 공유 시 Forge 스크린샷이 미리보기로 뜨던 문제(페이지에 `og:image` 가 없어 첫 이미지를 스크레이퍼가 고름). 얼굴 사진은 공유 이미지로 쓰지 않는다.
+- 업로드: 공개 허용 목록 87개 파일(`manifest.json`, `assets/og/` 5개 포함). `scripts/`(`build_og.mjs`·`og-cards.lock.json` 포함)·`src/`·`data/`·`tests/`·`docs/` 는 올리지 않는다.
+- 광고 파일: `ads.txt`·`app-ads.txt` SHA-256 `422f460a…49a0` 로 서버 릴리스·라이브 응답 모두 일치.
+- 검증: 네 페이지와 `/game/` 200, 라이브 HTML·CSS 해시가 로컬 빌드와 일치, `manifest.json` 200 `application/json`, 공유 카드 5개 200 `image/png`, 구 `/site.webmanifest` 404. 로컬 테스트 119/119.
+- 공유 캐시 갱신(카카오·페이스북·링크드인에서 해당 URL 을 다시 긁기): 카카오 https://developers.kakao.com/tool/debugger/sharing , 페이스북 https://developers.facebook.com/tools/debug/ , 링크드인 https://www.linkedin.com/post-inspector/ . 이미지 URL 의 `?v=` 는 카드 내용 해시라 카드가 바뀔 때만 바뀐다.
+
 ## 1.3.0 배포 기록 — 2026-10-05
 
 허브 개편 최종본(홈 스토리 구성: 01 경력 → 02 개인 프로젝트[서비스 3·공장 5·산출물] → 03 도구와 원칙, Kein 로고, 홈 복귀 내비게이션, 시간 기반 라이트/다크)을 `/var/www/kimjinwan/releases/1.3.0` 으로 배포하고 `current` 심볼릭 링크를 `mv -T` 로 원자 전환했다. 직전 `releases/1.0.7` 은 복구용으로 유지한다(복구 = `current` 를 1.0.7 로 되돌림).
