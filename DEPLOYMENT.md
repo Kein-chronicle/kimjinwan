@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.4 배포 기록 — 2026-10-07
+
+대표 서비스에 **DocLoom**(https://docloom.kimjinwan.com/)을 네 번째로 추가했다(`data/services.json`, 썸네일 `assets/services/docloom.png` = DocLoom 로고 카드 640×400). 홈 02-1 문구의 "셋 다"를 "넷 다"로 고치고(한·영) 테스트의 서비스 카드 수 기대값을 `featured` 개수에서 읽게 바꿨다. `sitemap.xml` lastmod 를 데이터 스탬프(2026-10-07)에 맞췄고 `robots.txt` 에 `https://docloom.kimjinwan.com/sitemap.xml` 을 추가했다(DocLoom 이 프리렌더 사이트맵을 공개한 뒤). 구조화 데이터(JSON-LD)에는 서비스 목록 항목이 원래 없어(WebSite·Person·ProfilePage/WebPage·BreadcrumbList 만) 추가하지 않았다. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `/var/www/kimjinwan/releases/1.3.4` 로 배포, 직전 1.3.3 은 복구용 유지.
+
 ## 메타데이터 · 공유 이미지 (1.3.1~)
 
 공유 미리보기(카카오톡·슬랙·링크드인 등)는 페이지마다 명시한 `og:image`/`twitter:image` 카드만 쓴다. 이전에는 og:image 가 없어 스크래퍼가 본문 첫 이미지(Forge 스크린샷)를 집었다. **얼굴 사진(`portrait_full.png`)과 제품 스크린샷(`assets/services/`)은 메타·JSON-LD 어디에도 쓰지 않는다**(`tests/site.test.mjs` 가 검사).

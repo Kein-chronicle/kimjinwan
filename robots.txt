@@ -7,3 +7,4 @@ Sitemap: https://kimjinwan.com/sitemap.xml
 Sitemap: https://blog.kimjinwan.com/sitemap.xml
 Sitemap: https://apps.kimjinwan.com/sitemap.xml
 Sitemap: https://games.kimjinwan.com/sitemap.xml
+Sitemap: https://docloom.kimjinwan.com/sitemap.xml

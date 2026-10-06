@@ -28,7 +28,7 @@ test('홈: 강점 4·타임라인 4·대표 프로젝트 6, 이야기 순서(경
   assert.doesNotMatch(h, /<b>04<\/b>|그래서, AI로 직접 만든다/);
   assert.match(h, /href="\/career\/"/); assert.ok(h.includes(`${projects.length}개`));
 });
-test('홈 02 개인 프로젝트: 한 섹션 안에 큰 서비스 카드 3 → 공장 전부 → 컬렉션 행 4 순서, 03 은 그 뒤', () => {
+test('홈 02 개인 프로젝트: 한 섹션 안에 큰 서비스 카드 4 → 공장 전부 → 컬렉션 행 4 순서, 03 은 그 뒤', () => {
   const h = read('index.html');
   const start = h.indexOf('<section class="block story" id="projects">');
   const end = h.indexOf('</section>', start);
@@ -38,7 +38,7 @@ test('홈 02 개인 프로젝트: 한 섹션 안에 큰 서비스 카드 3 → �
   const facs = JSON.parse(read('data/factories.json'));
   const cols = JSON.parse(read('data/collections.json'));
   const feat = JSON.parse(read('data/services.json')).filter(s => s.featured);
-  assert.equal(count(sec, /<article class="card svc-wide"/g), 3);
+  assert.equal(count(sec, /<article class="card svc-wide"/g), feat.length);
   assert.equal(count(sec, /<article class="fac"/g), facs.length);
   assert.equal(count(sec, /<li class="col-row">/g), cols.length);
   const order = ['02-1', 'class="card svc-wide"', '02-2', 'class="fac"', '02-3', 'class="col-row"'].map(m => sec.indexOf(m));
