@@ -169,7 +169,7 @@ test('모든 페이지(+게임)가 자기 공유 카드를 og:image·twitter:ima
     assert.equal(ogm(h, 'og:site_name'), SITE_NAME, f);
     assert.equal(ogm(h, 'og:locale'), 'ko_KR', f);
     assert.ok(h.includes('<meta name="author" content="김진완">'), f + ' author');
-    assert.ok(h.includes('<link rel="manifest" href="/site.webmanifest">'), f + ' manifest');
+    assert.ok(h.includes('<link rel="manifest" href="/manifest.json">'), f + ' manifest');
     assert.equal((h.match(/property="og:image"/g) || []).length, 1, f + ' og:image 는 하나');
   }
 });
@@ -253,7 +253,7 @@ test('JSON-LD: Person 은 sameAs·knowsAbout·jobTitle 을 갖고 image 는 없�
 test('sitemap lastmod 는 데이터 스탬프를 따른다, 매니페스트는 유효하다', () => {
   const x = read('sitemap.xml'), stamp = stampOf(loadData());
   for (const p of ['/', '/works/', '/factories/', '/career/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc><lastmod>${stamp}</lastmod>`), p);
-  const mf = JSON.parse(read('site.webmanifest'));
+  const mf = JSON.parse(read('manifest.json'));
   assert.equal(mf.short_name, 'Kein');
   for (const i of mf.icons) assert.ok(fs.existsSync(i.src.slice(1)), i.src);
 });
