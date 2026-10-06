@@ -5,8 +5,10 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot} from './lib/render.mjs';
+import {serviceCard, serviceFeature, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
+import {createHash} from 'node:crypto';
+import {SITE, SITE_NAME, facts, pageMeta, cardPath, cardAlt} from './lib/og.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rd = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
@@ -16,18 +18,19 @@ export function loadData() {
   return {services: json('data/services.json'), collections: json('data/collections.json'), factories: json('data/factories.json'), profile: json('data/profile.json')};
 }
 
-const SITE = 'https://kimjinwan.com';
-const PAGES = [
-  {key: 'home', src: 'src/home.html', out: 'index.html', path: '/',
-    title: '김진완 — AI로 만들고 운영하는 개발자 · PM',
-    description: '개발자·PM 김진완이 AI로 만들고 직접 운영하는 서비스, 웹게임, 웹 도구, 블로그와 11년 경력.'},
-  {key: 'works', src: 'src/works.html', out: 'works/index.html', path: '/works/',
-    title: '작업물 — 김진완', description: '개발자·PM 김진완이 AI로 만들어 직접 운영하는 서비스·웹게임·웹 도구·앱·블로그 전체 목록.'},
-  {key: 'factories', src: 'src/factories.html', out: 'factories/index.html', path: '/factories/',
-    title: '직접 설계한 AI 공장 — 김진완', description: '앱·게임·콘텐츠를 양산하도록 직접 설계한 AI 공장: 파이프라인의 단계, 품질 게이트, 사람이 직접 맡는 일.'},
-  {key: 'career', src: 'src/career.html', out: 'career/index.html', path: '/career/',
-    title: '경력 — 김진완', description: '11년 경력과 수행 프로젝트 55개: 차량 SW PM, 풀스택 개발, 팀 리딩.'},
+// 페이지 표. 제목·설명·공유 카드 문구는 scripts/lib/og.mjs 의 pageMeta 한 곳에서 온다(카드 PNG 와 같은 출처).
+const PAGE_FILES = [
+  {key: 'home', src: 'src/home.html', out: 'index.html', path: '/'},
+  {key: 'works', src: 'src/works.html', out: 'works/index.html', path: '/works/'},
+  {key: 'factories', src: 'src/factories.html', out: 'factories/index.html', path: '/factories/'},
+  {key: 'career', src: 'src/career.html', out: 'career/index.html', path: '/career/'},
 ];
+export function pagesFor(meta) {
+  return PAGE_FILES.map(p => ({...p, title: meta[p.key].title, description: meta[p.key].description,
+    image: cardPath(p.key), imageAlt: cardAlt(meta[p.key])}));
+}
+// 공유 카드 절대 URL — ?v= 는 PNG 내용 해시라 카드가 바뀔 때만 SNS 캐시가 갈린다.
+export const cardUrl = file => `${SITE}/${file}?v=${createHash('sha256').update(fs.readFileSync(path.join(ROOT, file))).digest('hex').slice(0, 10)}`;
 
 // 출력은 src+data+js/data.js+VERSION 의 순수 함수여야 한다: 시각(new Date) 대신 데이터 안의 최대 날짜를 쓴다.
 function collectDates(v, acc = []) {
@@ -40,12 +43,25 @@ function collectDates(v, acc = []) {
 }
 export const stampOf = d => collectDates(d).sort().at(-1);
 
-function schemaFor(page, stamp) {
+// YouTube 는 푸터에 실제로 걸린 주소. 얼굴 사진은 공유·구조화 데이터 어디에도 쓰지 않는다(Person.image 없음).
+const SAME_AS = ['https://www.youtube.com/channel/UCv8cGlH7g0UBgnHQVsY9zDg'];
+function schemaFor(page, stamp, {profile}) {
+  const url = `${SITE}${page.path}`;
+  const img = cardUrl(page.image);
+  const image = {'@type': 'ImageObject', '@id': `${url}#primaryimage`, url: img, contentUrl: img, thumbnailUrl: img, width: 1200, height: 630, caption: page.imageAlt};
   const g = [
-    {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: '김진완 포트폴리오', alternateName: 'Kim Jinwan', inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
-    {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: 'Kein', url: `${SITE}/`, jobTitle: 'Software Product Manager'},
+    {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: SITE_NAME, alternateName: ['김진완 포트폴리오', 'Kim Jinwan'], inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
+    {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: ['Kim Jinwan', 'Kein'], url: `${SITE}/`,
+      jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en), sameAs: SAME_AS},
   ];
-  if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url: `${SITE}/`, name: page.title, dateModified: stamp, mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/'});
+  if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
+    mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/', primaryImageOfPage: image, thumbnailUrl: img});
+  else g.push(
+    {'@type': 'WebPage', '@id': `${url}#webpage`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
+      isPartOf: {'@id': `${SITE}/#website`}, about: {'@id': `${SITE}/#person`}, breadcrumb: {'@id': `${url}#breadcrumb`}, primaryImageOfPage: image, thumbnailUrl: img},
+    {'@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
+      {'@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/`},
+      {'@type': 'ListItem', position: 2, name: SUBPAGES.find(x => x.key === page.key).label.ko, item: url}]});
   return `<script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': g})}</script>`;
 }
 
@@ -90,8 +106,9 @@ export function buildAll({write = true} = {}) {
     logo_foot: logo('logo logo-foot'),
   };
   const out = {};
-  for (const page of PAGES) {
-    const ctx = {...ctxBase, nav_links: navLinks(page.key), foot_map: footMap(page.key), breadcrumb: breadcrumb(page.key), page_foot: pageFoot(page.key), title: esc(page.title), description: esc(page.description), canonical: `${SITE}${page.path}`, schema: schemaFor(page, STAMP)};
+  for (const page of pagesFor(pageMeta(facts(data, projects)))) {
+    const ctx = {...ctxBase, nav_links: navLinks(page.key), foot_map: footMap(page.key), breadcrumb: breadcrumb(page.key), page_foot: pageFoot(page.key), title: esc(page.title), description: esc(page.description), canonical: `${SITE}${page.path}`, schema: schemaFor(page, STAMP, data),
+      site_name: esc(SITE_NAME), og_image: cardUrl(page.image), og_image_alt: esc(page.imageAlt)};
     out[page.out] = fill(rd(page.src), ctx, {...partials, head: fill(partials.head, ctx, {})});
   }
   if (write) for (const [file, html] of Object.entries(out)) {

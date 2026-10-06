@@ -133,3 +133,127 @@ test('쇼케이스 카드 여섯 제목은 홈에 정확히 한 번씩, 이미�
   assert.equal(cards.length, 6);
   for (const c of cards) assert.ok(/role="img"|aria-label=|<img[^>]+alt=|noimg/.test(c), c.slice(0, 120));
 });
+
+// ── 메타데이터 · 공유 이미지(og:image) ──────────────────────────────────────────
+import {loadData, stampOf, cardUrl} from '../scripts/build.mjs';
+import {parseProjects} from '../scripts/lib/projects.mjs';
+import {facts, pageMeta, cardText, cardPath, cardAlt, CARD_KEYS, SITE_NAME} from '../scripts/lib/og.mjs';
+
+const ALL = {'index.html': 'home', 'works/index.html': 'works', 'factories/index.html': 'factories', 'career/index.html': 'career', 'game/index.html': 'game'};
+const headOf = h => h.slice(h.indexOf('<head>'), h.indexOf('</head>'));
+const metaOf = (h, attr, name) => { const m = h.match(new RegExp(`<meta ${attr}="${name.replace(/[.:]/g, '\\$&')}" content="([^"]*)">`)); return m && m[1].replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); };
+const ogm = (h, n) => metaOf(h, 'property', n);
+const nm = (h, n) => metaOf(h, 'name', n);
+const META = pageMeta(facts(loadData(), parseProjects(read('js/data.js'))));
+const pngDims = buf => {
+  assert.equal(buf.readUInt32BE(0), 0x89504e47, 'PNG signature');
+  assert.equal(buf.toString('ascii', 12, 16), 'IHDR');
+  return [buf.readUInt32BE(16), buf.readUInt32BE(20)];
+};
+
+test('모든 페이지(+게임)가 자기 공유 카드를 og:image·twitter:image 로 명시한다(첫 번째 <img> 에 맡기지 않는다)', () => {
+  for (const [f, key] of Object.entries(ALL)) {
+    const h = read(f);
+    const img = ogm(h, 'og:image');
+    assert.ok(img, f + ' og:image');
+    assert.match(img, /^https:\/\/kimjinwan\.com\/assets\/og\/[a-z]+\.png\?v=[0-9a-f]{10}$/, f);
+    assert.equal(img, cardUrl(cardPath(key)), f + ' og:image ?v= 는 카드 PNG 내용 해시와 같아야 한다');
+    assert.equal(ogm(h, 'og:image:secure_url'), img, f);
+    assert.equal(nm(h, 'twitter:image'), img, f);
+    assert.equal(ogm(h, 'og:image:type'), 'image/png', f);
+    assert.equal(ogm(h, 'og:image:width'), '1200', f);
+    assert.equal(ogm(h, 'og:image:height'), '630', f);
+    assert.equal(nm(h, 'twitter:card'), 'summary_large_image', f);
+    assert.equal(ogm(h, 'og:image:alt'), cardAlt(META[key]), f);
+    assert.equal(nm(h, 'twitter:image:alt'), cardAlt(META[key]), f);
+    assert.equal(ogm(h, 'og:site_name'), SITE_NAME, f);
+    assert.equal(ogm(h, 'og:locale'), 'ko_KR', f);
+    assert.ok(h.includes('<meta name="author" content="김진완">'), f + ' author');
+    assert.ok(h.includes('<link rel="manifest" href="/site.webmanifest">'), f + ' manifest');
+    assert.equal((h.match(/property="og:image"/g) || []).length, 1, f + ' og:image 는 하나');
+  }
+});
+test('공유 카드 파일: PNG, 정확히 1200×630, 200KB 이하', () => {
+  for (const key of CARD_KEYS) {
+    const buf = fs.readFileSync(cardPath(key));
+    assert.deepEqual(pngDims(buf), [1200, 630], key);
+    assert.ok(buf.length <= 200 * 1024, `${key}: ${buf.length} bytes`);
+  }
+});
+test('공유 카드 문구가 데이터와 어긋나지 않는다(lock = 데이터에서 다시 계산한 문구, PNG 해시 = lock)', () => {
+  const lock = JSON.parse(read('scripts/og-cards.lock.json'));
+  assert.deepEqual(Object.keys(lock).sort(), [...CARD_KEYS].sort());
+  for (const key of CARD_KEYS) {
+    assert.deepEqual(lock[key].text, cardText(META[key]), `${key}: 카드 문구가 데이터와 다르다 — node scripts/build_og.mjs 로 다시 생성`);
+    assert.equal(createHash('sha256').update(fs.readFileSync(cardPath(key))).digest('hex'), lock[key].sha256, `${key}: PNG 가 lock 과 다르다 — node scripts/build_og.mjs`);
+  }
+  const d = loadData();
+  assert.ok(META.factories.headline.includes(`${d.factories.length}곳`));
+  assert.ok(META.career.headline.includes(`${parseProjects(read('js/data.js')).length}개`));
+});
+test('제목·설명: 페이지마다 다르고 길이가 적당하며, og/twitter 가 같은 문구를 쓴다', () => {
+  const titles = new Set(), descs = new Set();
+  for (const [f, key] of Object.entries(ALL)) {
+    const h = read(f);
+    const title = h.match(/<title>([^<]*)<\/title>/)[1];
+    const desc = nm(h, 'description');
+    assert.equal(title, META[key].title, f);
+    assert.equal(desc, META[key].description, f);
+    assert.ok(title.length <= 60, `${f} title ${title.length}`);
+    assert.ok(desc.length >= 80 && desc.length <= 160, `${f} description ${desc.length}`);
+    assert.equal(ogm(h, 'og:title'), title, f); assert.ok(title.length <= 70);
+    assert.equal(nm(h, 'twitter:title'), title, f);
+    assert.equal(ogm(h, 'og:description'), desc, f);
+    assert.equal(nm(h, 'twitter:description'), desc, f);
+    assert.doesNotMatch(desc, /게이트|SSOT|파이프라인|DoD|lock/i, f + ' 설명에 내부 용어 금지');
+    titles.add(title); descs.add(desc);
+  }
+  assert.equal(titles.size, Object.keys(ALL).length, 'titles unique');
+  assert.equal(descs.size, Object.keys(ALL).length, 'descriptions unique');
+});
+test('얼굴 사진·제품 스크린샷은 메타/JSON-LD 어디에도 쓰지 않는다, 연락처도 없다', () => {
+  for (const f of Object.keys(ALL)) {
+    const h = read(f);
+    const head = headOf(h);
+    assert.doesNotMatch(head, /portrait_full|assets\/services\//, f + ' head');
+    for (const m of head.matchAll(/<meta [^>]*content="([^"]*)"/g)) assert.doesNotMatch(m[1], /@[a-z0-9-]+\.[a-z]|mailto:|\b01[016789]-?\d{3,4}-?\d{4}\b/i, f + ' meta ' + m[1]);
+    const ld = h.match(LD)[1];
+    const json = JSON.parse(ld);
+    assert.equal(json['@context'], 'https://schema.org', f);
+    assert.doesNotMatch(ld, /portrait_full|assets\/services\/|mailto:|"email"|"telephone"|@naver|@gmail/, f + ' JSON-LD');
+    const urls = [...ld.matchAll(/"(?:url|item|contentUrl|thumbnailUrl|@id|relatedLink)":"([^"]+)"/g)].map(m => m[1]);
+    assert.ok(urls.length > 3, f);
+    for (const u of urls) assert.match(u, /^https:\/\//, f + ' ' + u);
+    assert.equal((h.match(/application\/ld\+json/g) || []).length, 1, f + ' JSON-LD 블록 하나');
+  }
+});
+test('JSON-LD: Person 은 sameAs·knowsAbout·jobTitle 을 갖고 image 는 없다, 하위 페이지는 Breadcrumb + 대표 이미지', () => {
+  const profile = loadData().profile;
+  for (const [f, key] of Object.entries(ALL)) {
+    const g = JSON.parse(read(f).match(LD)[1])['@graph'];
+    const page = g.find(x => ['WebPage', 'ProfilePage'].includes(x['@type']));
+    assert.ok(page, f);
+    assert.equal(page.primaryImageOfPage.url, cardUrl(cardPath(key)), f);
+    assert.equal(page.thumbnailUrl, cardUrl(cardPath(key)), f);
+    if (key === 'game') continue;
+    const person = g.find(x => x['@type'] === 'Person');
+    assert.ok(!('image' in person), f + ' Person.image 없음');
+    assert.ok(person.sameAs.length >= 1 && person.sameAs.every(u => u.startsWith('https://')), f);
+    for (const u of person.sameAs) assert.ok(read('src/partials/footer.html').includes(`href="${u}"`), f + ' sameAs 는 푸터에 실제로 걸린 주소');
+    assert.deepEqual(person.knowsAbout, profile.strengths.map(s => s.title.en));
+    assert.ok(person.jobTitle);
+    assert.equal(g.find(x => x['@type'] === 'WebSite').name, SITE_NAME);
+    if (key === 'home') { assert.equal(page['@type'], 'ProfilePage'); assert.ok(!g.some(x => x['@type'] === 'BreadcrumbList')); continue; }
+    const bc = g.find(x => x['@type'] === 'BreadcrumbList');
+    assert.equal(page.breadcrumb['@id'], bc['@id'], f);
+    assert.deepEqual(bc.itemListElement.map(x => x.position), [1, 2]);
+    assert.equal(bc.itemListElement.at(-1).item, page.url);
+  }
+});
+test('sitemap lastmod 는 데이터 스탬프를 따른다, 매니페스트는 유효하다', () => {
+  const x = read('sitemap.xml'), stamp = stampOf(loadData());
+  for (const p of ['/', '/works/', '/factories/', '/career/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc><lastmod>${stamp}</lastmod>`), p);
+  const mf = JSON.parse(read('site.webmanifest'));
+  assert.equal(mf.short_name, 'Kein');
+  for (const i of mf.icons) assert.ok(fs.existsSync(i.src.slice(1)), i.src);
+});

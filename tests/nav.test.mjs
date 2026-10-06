@@ -43,7 +43,9 @@ test('사람 이름(김진완)은 본문·메타·JSON-LD 에 남아 있다', ()
   const h = read('index.html');
   assert.match(h, /<h1>[\s\S]*김진완[\s\S]*<\/h1>/);
   assert.ok(h.includes('<meta name="author" content="김진완">'));
-  assert.ok(h.includes('"name":"김진완","alternateName":"Kein"'));
+  const person = JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(x => x['@type'] === 'Person');
+  assert.equal(person.name, '김진완');
+  assert.ok([].concat(person.alternateName).includes('Kein'));
 });
 test('모바일 메뉴 버튼은 aria-expanded/aria-controls 로 패널과 연결된다', () => {
   for (const f of Object.keys(PAGES)) {
