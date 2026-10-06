@@ -1,5 +1,14 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 메타데이터 · 공유 이미지 (1.3.1~)
+
+공유 미리보기(카카오톡·슬랙·링크드인 등)는 페이지마다 명시한 `og:image`/`twitter:image` 카드만 쓴다. 이전에는 og:image 가 없어 스크래퍼가 본문 첫 이미지(Forge 스크린샷)를 집었다. **얼굴 사진(`portrait_full.png`)과 제품 스크린샷(`assets/services/`)은 메타·JSON-LD 어디에도 쓰지 않는다**(`tests/site.test.mjs` 가 검사).
+
+- **카드**: `assets/og/{home,works,factories,career,game}.png` — 1200×630, 텍스트 카드(Kein 마크 + 김진완 · 개발자 · PM + 페이지 문구 + kimjinwan.com). 문구·숫자의 출처는 `scripts/lib/og.mjs`(공장 수 = `data/factories.json`, 프로젝트 수 = `js/data.js`)이며 페이지 제목·설명·og:image:alt 도 같은 곳에서 나온다.
+- **재생성**(데이터 숫자나 카드 문구가 바뀌면 테스트가 실패한다): `node scripts/build_og.mjs` → `node scripts/build.mjs` → `node --test tests/*.test.mjs`. 헤드리스 Chrome(`/Applications/Google Chrome.app`)·Pillow·네트워크(Pretendard CDN)가 필요하다. 생성기는 `scripts/og-cards.lock.json` 에 문구와 PNG 해시를 적고, 손으로 쓴 `game/index.html` 의 `?v=` 도 맞춘다.
+- **SNS 캐시 갱신**: og:image 주소의 `?v=` 는 PNG 내용 해시라 카드가 바뀌면 주소가 바뀐다. 그래도 각 서비스는 페이지 단위로 미리보기를 캐시하므로 배포 후 다시 긁게 한다 — 카카오 공유 디버거(https://developers.kakao.com/tool/debugger/sharing, 캐시 초기화), Facebook 공유 디버거(https://developers.facebook.com/tools/debug/, 다시 스크랩), LinkedIn Post Inspector(https://www.linkedin.com/post-inspector/). 슬랙은 링크를 새로 붙이면 대개 다시 읽는다.
+- **배포 허용 목록 추가**: `site.webmanifest`(루트), `assets/og/`(이미 `assets/` 에 포함).
+
 ## 1.3.0 배포 기록 — 2026-10-05
 
 허브 개편 최종본(홈 스토리 구성: 01 경력 → 02 개인 프로젝트[서비스 3·공장 5·산출물] → 03 도구와 원칙, Kein 로고, 홈 복귀 내비게이션, 시간 기반 라이트/다크)을 `/var/www/kimjinwan/releases/1.3.0` 으로 배포하고 `current` 심볼릭 링크를 `mv -T` 로 원자 전환했다. 직전 `releases/1.0.7` 은 복구용으로 유지한다(복구 = `current` 를 1.0.7 로 되돌림).
@@ -14,7 +23,7 @@
 단일 페이지 포트폴리오를 4페이지 허브로 바꿨다: `/`(홈), `/works/`(작업물), `/factories/`(AI 공장), `/career/`(경력·프로젝트 55개·Career Run 진입). `/game/`은 그대로다.
 
 - **빌드**: HTML 4개는 `src/`(페이지·파셜) + `data/*.json`(services·collections·factories·profile, SSOT) + `js/data.js`에서 `node scripts/build.mjs`로 생성한다. **생성된 `index.html`, `works/`, `factories/`, `career/` 는 직접 고치지 않는다** — `src/`나 `data/`를 고치고 다시 빌드한다. 출력은 입력만의 순수 함수이며(날짜는 데이터 안의 최대 `updated`/`as_of`), `tests/build.test.mjs`가 커밋본과 빌드 결과의 일치를 검사한다. CSS 캐시 구분(`?v=`)은 `VERSION`을 따른다.
-- **공개 허용 목록**: `works/`, `factories/`, `career/`, `css/`, `js/`, `assets/`, `game/` 와 루트 파일(`index.html`, `favicon*`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, `ads.txt`, `app-ads.txt`). `data/`, `src/`, `scripts/`, `tests/`, `docs/`는 배포하지 않는다.
+- **공개 허용 목록**: `works/`, `factories/`, `career/`, `css/`, `js/`, `assets/`, `game/` 와 루트 파일(`index.html`, `favicon*`, `apple-touch-icon.png`, `site.webmanifest`(1.3.1~), `robots.txt`, `sitemap.xml`, `ads.txt`, `app-ads.txt`). `data/`, `src/`, `scripts/`, `tests/`, `docs/`는 배포하지 않는다.
 - **광고 파일**: `ads.txt`·`app-ads.txt`는 변경하지 않는다(SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0` 유지, 테스트가 검사).
 - **테마**: 방문 시각 기반 라이트/다크 자동 적용(`js/theme-core.js`가 `<head>`에서 본문보다 먼저 실행해 깜박임을 막고, `js/theme.js`가 5분마다·탭 복귀 시 시각을 다시 평가한다. 수동 전환 버튼은 없다).
 - **검증**: `node scripts/build.mjs && node --test tests/*.test.mjs`. sitemap에 네 페이지와 `/game/`을 포함한다.
