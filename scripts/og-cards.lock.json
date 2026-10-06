@@ -1,0 +1,67 @@
+{
+  "home": {
+    "file": "assets/og/home.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "",
+      "headline": "AI로 만들고 운영하는 서비스 · 공장 · 기록",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "5f808c45a02ec2272e8c472e8be3a1fb53d8e06381c04ed38fff0270ea42c85c",
+    "bytes": 12680
+  },
+  "works": {
+    "file": "assets/og/works.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "WORKS",
+      "headline": "직접 만들어 운영하는 서비스와 작업물",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "053e32cb2a852a9a17025cbccacce1589c91412e165711717a569448c20b633e",
+    "bytes": 13192
+  },
+  "factories": {
+    "file": "assets/og/factories.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "AI FACTORIES",
+      "headline": "서비스를 만드는 AI 공장 5곳",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "7e303932e4475c38f040ff258eac11d92479c8637f9ffae5b373acbf3a045518",
+    "bytes": 11785
+  },
+  "career": {
+    "file": "assets/og/career.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "CAREER",
+      "headline": "11년, 현장에서 쌓은 경력과 프로젝트 55개",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "288f9ea6b43a3c7ebf2b477c96a38c5cf605e59e3648aafdc48753a96f4c25ce",
+    "bytes": 14542
+  },
+  "game": {
+    "file": "assets/og/game.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "CAREER RUN",
+      "headline": "Career Run — 김진완의 경력을 게임으로",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "821bdd236d8c5341734aef9fdc9ac9fdc53b2930e3a36cadf7b1fbd0e0f7cca9",
+    "bytes": 14822
+  }
+}
