@@ -227,7 +227,7 @@ test('얼굴 사진·제품 스크린샷은 메타/JSON-LD 어디에도 쓰지 �
     assert.equal((h.match(/application\/ld\+json/g) || []).length, 1, f + ' JSON-LD 블록 하나');
   }
 });
-test('JSON-LD: Person 은 sameAs·knowsAbout·jobTitle 을 갖고 image 는 없다, 하위 페이지는 Breadcrumb + 대표 이미지', () => {
+test('JSON-LD: Person 은 knowsAbout·jobTitle 을 갖고 sameAs·image 는 없다, 하위 페이지는 Breadcrumb + 대표 이미지', () => {
   const profile = loadData().profile;
   for (const [f, key] of Object.entries(ALL)) {
     const g = JSON.parse(read(f).match(LD)[1])['@graph'];
@@ -238,8 +238,7 @@ test('JSON-LD: Person 은 sameAs·knowsAbout·jobTitle 을 갖고 image 는 없�
     if (key === 'game') continue;
     const person = g.find(x => x['@type'] === 'Person');
     assert.ok(!('image' in person), f + ' Person.image 없음');
-    assert.ok(person.sameAs.length >= 1 && person.sameAs.every(u => u.startsWith('https://')), f);
-    for (const u of person.sameAs) assert.ok(read('src/partials/footer.html').includes(`href="${u}"`), f + ' sameAs 는 푸터에 실제로 걸린 주소');
+    assert.ok(!('sameAs' in person), f + ' 외부 SNS 링크를 두지 않는다(이메일만 받는다)');
     assert.deepEqual(person.knowsAbout, profile.strengths.map(s => s.title.en));
     assert.ok(person.jobTitle);
     assert.equal(g.find(x => x['@type'] === 'WebSite').name, SITE_NAME);

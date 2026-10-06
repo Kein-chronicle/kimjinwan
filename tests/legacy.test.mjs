@@ -99,7 +99,7 @@ test('경력 페이지는 강점·전체 타임라인·그리드·모달·게임
 });
 test('모든 페이지 푸터에 연락처가 있다', () => {
   for (const f of ['index.html', 'works/index.html', 'factories/index.html', 'career/index.html']) {
-    const h = read(f); assert.match(h, /k_star_w@naver\.com/, f); assert.match(h, /youtube\.com\/channel/, f);
+    const h = read(f); assert.match(h, /k_star_w@naver\.com/, f); assert.doesNotMatch(h, /youtube\.com|linkedin\.com/i, f + ' 연락은 이메일만(SNS 링크 없음)');
   }
 });
 test('이관된 본문에 이모지·그래디언트·사라진 클래스가 없다', () => {

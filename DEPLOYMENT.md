@@ -9,6 +9,10 @@
 - **SNS 캐시 갱신**: og:image 주소의 `?v=` 는 PNG 내용 해시라 카드가 바뀌면 주소가 바뀐다. 그래도 각 서비스는 페이지 단위로 미리보기를 캐시하므로 배포 후 다시 긁게 한다 — 카카오 공유 디버거(https://developers.kakao.com/tool/debugger/sharing, 캐시 초기화), Facebook 공유 디버거(https://developers.facebook.com/tools/debug/, 다시 스크랩), LinkedIn Post Inspector(https://www.linkedin.com/post-inspector/). 슬랙은 링크를 새로 붙이면 대개 다시 읽는다.
 - **배포 허용 목록 추가**: `manifest.json`(루트), `assets/og/`(이미 `assets/` 에 포함).
 
+## 1.3.3 배포 기록 — 2026-10-06
+
+푸터에서 YouTube 링크를 제거하고 구조화 데이터(JSON-LD)의 `sameAs` 도 뺐다. 외부 SNS(LinkedIn·YouTube)는 사이트 어디에도 두지 않고 연락은 이메일(`k_star_w@naver.com`)만 받는다(마스터 결정, 테스트가 SNS 링크 부재를 검사). `/var/www/kimjinwan/releases/1.3.3` 로 배포, 직전 1.3.2 는 복구용 유지. 광고 파일 SHA-256 `422f460a…49a0` 불변. 구글 등이 이미 가진 정보는 재수집 때 갱신된다.
+
 ## 1.3.2 배포 기록 — 2026-10-06
 
 공유 미리보기 정리(`og:image`·`twitter:image` 명시, 페이지별 텍스트 공유 카드 `assets/og/*.png`, JSON-LD 정리, `game/` 메타 보강)를 `/var/www/kimjinwan/releases/1.3.2` 로 배포하고 `current` 를 원자 전환했다. 직전 `1.3.0`·`1.3.1` 은 복구용으로 유지한다. 1.3.1 은 매니페스트 파일명이 `site.webmanifest` 였는데 nginx 에 해당 MIME 이 없어 `octet-stream` 으로 나가서, `manifest.json`(application/json)으로 바꿔 1.3.2 로 다시 냈다.

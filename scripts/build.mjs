@@ -43,8 +43,7 @@ function collectDates(v, acc = []) {
 }
 export const stampOf = d => collectDates(d).sort().at(-1);
 
-// YouTube 는 푸터에 실제로 걸린 주소. 얼굴 사진은 공유·구조화 데이터 어디에도 쓰지 않는다(Person.image 없음).
-const SAME_AS = ['https://www.youtube.com/channel/UCv8cGlH7g0UBgnHQVsY9zDg'];
+// 외부 SNS 링크(sameAs)는 두지 않는다 — 연락은 이메일만. 얼굴 사진은 공유·구조화 데이터 어디에도 쓰지 않는다(Person.image 없음).
 function schemaFor(page, stamp, {profile}) {
   const url = `${SITE}${page.path}`;
   const img = cardUrl(page.image);
@@ -52,7 +51,7 @@ function schemaFor(page, stamp, {profile}) {
   const g = [
     {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: SITE_NAME, alternateName: ['김진완 포트폴리오', 'Kim Jinwan'], inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
     {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: ['Kim Jinwan', 'Kein'], url: `${SITE}/`,
-      jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en), sameAs: SAME_AS},
+      jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en)},
   ];
   if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
     mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/', primaryImageOfPage: image, thumbnailUrl: img});
