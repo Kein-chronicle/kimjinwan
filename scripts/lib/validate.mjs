@@ -26,7 +26,7 @@ export function validate({services = [], collections = [], factories = [], profi
     if (!Array.isArray(s.ai_tools)) err.push(`${w}: ai_tools must be array`);
   }
   const featured = services.filter(s => s.featured).length;
-  if (featured < 3 || featured > 4) err.push(`services: featured must be 3-4, got ${featured}`);
+  if (featured < 3 || featured > 5) err.push(`services: featured must be 3-5, got ${featured}`);
 
   for (const c of collections) {
     const w = `collections.${c.id}`;

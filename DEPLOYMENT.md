@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.5 배포 기록 — 2026-10-09
+
+대표 서비스에 **Pitchwright**(https://pitchwright.kimjinwan.com/)를 다섯 번째로 추가했다(`data/services.json`, 썸네일 `assets/services/pitchwright.png` = 서비스 파비콘+워드마크 카드 640×400). 홈 02-1 문구를 "다섯 모두"(한·영)로 고치고, 검증 규칙의 대표 서비스 수 상한을 4에서 5로 올렸다(`scripts/lib/validate.mjs`). `sitemap.xml` lastmod 를 데이터 스탬프(2026-10-09)에 맞췄다. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `/var/www/kimjinwan/releases/1.3.5` 로 배포, 직전 1.3.4 는 복구용 유지.
+
 ## 1.3.4 배포 기록 — 2026-10-07
 
 대표 서비스에 **DocLoom**(https://docloom.kimjinwan.com/)을 네 번째로 추가했다(`data/services.json`, 썸네일 `assets/services/docloom.png` = DocLoom 로고 카드 640×400). 홈 02-1 문구의 "셋 다"를 "넷 다"로 고치고(한·영) 테스트의 서비스 카드 수 기대값을 `featured` 개수에서 읽게 바꿨다. `sitemap.xml` lastmod 를 데이터 스탬프(2026-10-07)에 맞췄고 `robots.txt` 에 `https://docloom.kimjinwan.com/sitemap.xml` 을 추가했다(DocLoom 이 프리렌더 사이트맵을 공개한 뒤). 구조화 데이터(JSON-LD)에는 서비스 목록 항목이 원래 없어(WebSite·Person·ProfilePage/WebPage·BreadcrumbList 만) 추가하지 않았다. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `/var/www/kimjinwan/releases/1.3.4` 로 배포, 직전 1.3.3 은 복구용 유지.

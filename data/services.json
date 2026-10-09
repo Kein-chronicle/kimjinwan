@@ -70,5 +70,23 @@
   "url": "https://docloom.kimjinwan.com/",
   "thumb": "assets/services/docloom.png",
   "updated": "2026-10-07"
+ },
+ {
+  "id": "pitchwright",
+  "name": "Pitchwright",
+  "kind": "service",
+  "status": "live",
+  "featured": true,
+  "summary": {
+   "ko": "RFP를 넣으면 요구사항 분석, 컴플라이언스 매트릭스, 목차별 본문 작성, 정합성 점검까지 단계별로 제안서를 쓰고, 기관 양식에 맞춰 DOCX·XLSX·HWPX 등으로 내보내는 제안서 작성 웹서비스.",
+   "en": "A proposal-writing web service I built. Feed it an RFP and it works step by step through requirement analysis, a compliance matrix, section-by-section drafting and consistency checks, then exports to an agency's own form as DOCX, XLSX, HWPX and more."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://pitchwright.kimjinwan.com/",
+  "thumb": "assets/services/pitchwright.png",
+  "updated": "2026-10-09"
  }
 ]
