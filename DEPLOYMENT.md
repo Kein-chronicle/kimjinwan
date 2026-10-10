@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.7 (미배포) — 2026-10-10
+
+서비스에 분류(`category`: document·creative·build·ai-tools, 순서는 `render.mjs` 의 `CATEGORY`)를 도입했다. 홈 02-1 은 분류별 묶음 + 분류당 2개까지 노출, 나머지는 '더 보기'로 접힌다(분류 안은 최근 갱신순). 경력 타임라인은 회사·직함·역할까지만 보이고 설명·대표 프로젝트는 '자세히 보기'로 접었다(홈·/career/ 공통). 오비고 역할을 `PM · Mobility SW Division` 으로 정정(AI Division 아님). 홈 02-1 문구의 서비스 개수 표기 제거.
+
 ## 1.3.6 배포 기록 — 2026-10-10
 
 Pitchwright 는 완성본 전이라 서비스 상태에 `prelaunch`(배지 `PRE-LAUNCH`)를 신설해 적용했다(`scripts/lib/validate.mjs`·`render.mjs`, `css/style.css`). 소개 문구의 출력 형식에 PPTX 를 추가했다. `sitemap.xml` lastmod 2026-10-10. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `releases/1.3.6` 로 배포, 직전 1.3.5 는 복구용 유지.

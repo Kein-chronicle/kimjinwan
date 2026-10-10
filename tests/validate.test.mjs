@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {validate} from '../scripts/lib/validate.mjs';
 
 const bi = (ko, en) => ({ko, en});
-const svc = (id, o = {}) => ({id, name: id, kind: 'service', status: 'live', featured: false,
+const svc = (id, o = {}) => ({id, name: id, kind: 'service', status: 'live', featured: false, category: 'document',
   summary: bi('요약', 'summary'), ai_tools: ['Claude Code'], url: `https://${id}.example.com/`,
   thumb: '', updated: '2026-10-05', ...o});
 const col = (id, o = {}) => ({id, kind: 'game', name: bi('게임', 'Games'), summary: bi('요약', 'summary'),

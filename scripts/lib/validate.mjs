@@ -1,6 +1,7 @@
 // scripts/lib/validate.mjs
 import {ICON_NAMES} from './icons.mjs';
 const KINDS = ['service', 'game', 'tool', 'app', 'blog'];
+export const CATEGORIES = ['document', 'creative', 'build', 'ai-tools'];
 const STATUS = ['live', 'released', 'experiment', 'prelaunch'];
 const STAGE = ['ai', 'human', 'gate'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -19,6 +20,7 @@ export function validate({services = [], collections = [], factories = [], profi
   for (const s of services) {
     const w = `services.${s.id}`;
     if (!KINDS.includes(s.kind)) err.push(`${w}: bad kind ${s.kind}`);
+    if (!CATEGORIES.includes(s.category)) err.push(`${w}: bad category ${s.category}`);
     if (!STATUS.includes(s.status)) err.push(`${w}: bad status ${s.status}`);
     if (!biOk(s.summary)) err.push(`${w}: summary needs ko/en`);
     if (!HTTPS.test(s.url || '')) err.push(`${w}: url must be https`);

@@ -15,7 +15,8 @@
   ],
   "url": "https://forge.kimjinwan.com/",
   "thumb": "assets/services/forge.png",
-  "updated": "2026-10-05"
+  "updated": "2026-10-05",
+  "category": "build"
  },
  {
   "id": "prism-studio",
@@ -33,7 +34,8 @@
   ],
   "url": "https://prism-studio.kimjinwan.com/",
   "thumb": "assets/services/prism-studio.png",
-  "updated": "2026-10-05"
+  "updated": "2026-10-05",
+  "category": "creative"
  },
  {
   "id": "gizmo-store",
@@ -51,7 +53,8 @@
   ],
   "url": "https://gizmo-store.com",
   "thumb": "assets/services/gizmo-store.png",
-  "updated": "2026-10-05"
+  "updated": "2026-10-05",
+  "category": "ai-tools"
  },
  {
   "id": "docloom",
@@ -69,7 +72,8 @@
   ],
   "url": "https://docloom.kimjinwan.com/",
   "thumb": "assets/services/docloom.png",
-  "updated": "2026-10-07"
+  "updated": "2026-10-07",
+  "category": "document"
  },
  {
   "id": "pitchwright",
@@ -87,6 +91,7 @@
   ],
   "url": "https://pitchwright.kimjinwan.com/",
   "thumb": "assets/services/pitchwright.png",
-  "updated": "2026-10-10"
+  "updated": "2026-10-10",
+  "category": "document"
  }
 ]

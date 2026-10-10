@@ -11,16 +11,31 @@ const KIND_ICON = {service: 'layers', game: 'gamepad', tool: 'wrench', app: 'sma
 const STAGE_ICON = {ai: 'sparkles', gate: 'shield-check', human: 'hand'};
 const ext = icon('arrow-up-right', {size: 14, cls: 'ico-ext'});
 
+// 서비스 분류: 순서가 곧 노출 순서. 새 분류는 여기와 validate.mjs 의 CATEGORIES 에 같이 추가한다.
+export const CATEGORY = [
+  {key: 'document', icon: 'file-text', label: {ko: '문서·업무', en: 'Documents & work'}, blurb: {ko: '문서를 쓰고 고치고 제출하는 일', en: 'Writing, editing and submitting documents'}},
+  {key: 'creative', icon: 'sparkles', label: {ko: '디자인·창작', en: 'Design & creative'}, blurb: {ko: '이미지와 시각 작업', en: 'Images and visual work'}},
+  {key: 'build', icon: 'wrench', label: {ko: '개발·제작', en: 'Build & make'}, blurb: {ko: '서비스를 만드는 도구', en: 'Tools for building services'}},
+  {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
+];
+const catOf = s => CATEGORY.find(c => c.key === s.category);
+const HOME_VISIBLE = 2; // 홈에서 분류당 먼저 보이는 카드 수. 나머지는 '더 보기'(details) 안에 접힌다.
+// 분류 순서 → 같은 분류 안에서는 최근 갱신순(같으면 이름순)
+export function sortServices(services) {
+  const rank = s => CATEGORY.findIndex(c => c.key === s.category);
+  return [...services].sort((a, b) => rank(a) - rank(b) || b.updated.localeCompare(a.updated) || a.name.localeCompare(b.name));
+}
+
 export function serviceCard(s) {
   const thumb = s.thumb && !/^(https?:)?\/\//.test(s.thumb) ? '/' + s.thumb.replace(/^\/+/, '') : s.thumb;
   const shot = thumb
     ? `<img src="${esc(thumb)}" alt="${esc(s.name)} screenshot" loading="lazy" width="640" height="400">`
     : `<span class="mono shot-fallback">${esc(s.name.slice(0, 2).toUpperCase())}</span>`;
   const chips = s.ai_tools.map(t => `<span class="chip mono">${esc(t)}</span>`).join('');
-  return `<article class="card svc" data-kind="${esc(s.kind)}">
+  return `<article class="card svc" data-kind="${esc(s.kind)}" data-category="${esc(s.category)}">
   <div class="svc-shot">${shot}</div>
   <div class="svc-body">
-    <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${esc(s.kind)}</span></div>
+    <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${catOf(s) ? bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h3>${esc(s.name)}</h3>
     <p>${bi(s.summary)}</p>
     <div class="chips">${chips}</div>
@@ -41,12 +56,30 @@ export function serviceFeature(s) {
   <div class="svcw-shot">${shot}</div>
   <div class="svcw-body">
     <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${esc(s.kind)}</span></div>
-    <h4>${esc(s.name)}</h4>
+    <h5>${esc(s.name)}</h5>
     <p>${bi(s.summary)}</p>
     <div class="svcw-tools"><span class="svcw-lbl mono">${bi({ko: '함께 만든 AI', en: 'Built with'})}</span><div class="chips">${chips}</div></div>
     <a class="btn btn-ghost svcw-open" href="${esc(s.url)}" ${EXT}>${bi(open)}<span class="mono svcw-host">${esc(host)}</span>${ext}</a>
   </div>
 </article>`;
+}
+
+// 홈 02-1: 분류별 묶음. 분류 머리 + 카드(처음 HOME_VISIBLE 개) + 나머지는 접어 둔다.
+export function serviceGroups(services) {
+  const sorted = sortServices(services);
+  const jump = CATEGORY.filter(c => sorted.some(s => s.category === c.key))
+    .map(c => `<a class="pill" href="#svc-cat-${c.key}">${icon(c.icon, {size: 16})}${bi(c.label)}<span class="pill-n mono">${sorted.filter(s => s.category === c.key).length}</span></a>`).join('');
+  const groups = CATEGORY.map(c => {
+    const list = sorted.filter(s => s.category === c.key);
+    if (!list.length) return '';
+    const shown = list.slice(0, HOME_VISIBLE).map(serviceFeature).join('\n');
+    const rest = list.slice(HOME_VISIBLE);
+    const more = rest.length
+      ? `\n<details class="fold svc-fold"><summary><span class="fold-open">${bi({ko: `${rest.length}개 더 보기`, en: `Show ${rest.length} more`})}</span><span class="fold-close">${bi({ko: '접기', en: 'Show less'})}</span></summary>\n<div class="svc-feature">${rest.map(serviceFeature).join('\n')}</div></details>`
+      : '';
+    return `<div class="svc-group" id="svc-cat-${c.key}"><h4 class="svc-group-h">${icon(c.icon, {size: 18})}<span>${bi(c.label)}</span><span class="svc-group-blurb">${bi(c.blurb)}</span></h4>\n<div class="svc-feature">${shown}</div>${more}</div>`;
+  }).join('\n');
+  return `<nav class="svc-jump" aria-label="${esc('service categories')}">${jump}</nav>\n${groups}`;
 }
 
 export function collectionCard(c) {
@@ -141,11 +174,14 @@ export function timelineItem(t, projects = []) {
   const projs = projects.length
     ? `<div class="tl-projects"><div class="tl-projects-h mono">${bi({ko: '대표 프로젝트', en: 'Selected projects'})}</div><ul>${projects.map(projectLine).join('')}</ul></div>`
     : '';
+  // 회사·직함·역할까지만 보이고, 설명과 대표 프로젝트는 '자세히 보기' 안에 접어 둔다.
   return `<li class="tl-item">
   <div class="yr mono">${esc(t.period)} · ${bi(t.company)}</div>
   <h3>${bi(t.title)}</h3>
   <div class="role">${bi(t.role)}</div>
+  <details class="fold tl-fold"><summary><span class="fold-open">${bi({ko: '자세히 보기', en: 'Details'})}</span><span class="fold-close">${bi({ko: '접기', en: 'Hide'})}</span></summary>
   <p>${bi(t.text)}</p>${projs ? '\n  ' + projs : ''}
+  </details>
 </li>`;
 }
 

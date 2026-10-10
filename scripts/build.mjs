@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
+import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {SITE, SITE_NAME, facts, pageMeta, cardPath, cardAlt} from './lib/og.mjs';
@@ -83,8 +83,8 @@ export function buildAll({write = true} = {}) {
     version,
     hero_stats: heroStats(data),
     featured: featured.map(serviceCard).join('\n'),
-    featured_wide: featured.map(serviceFeature).join('\n'),
-    all_services: data.services.map(serviceCard).join('\n'),
+    featured_wide: serviceGroups(featured),
+    all_services: sortServices(data.services).map(serviceCard).join('\n'),
     collections: data.collections.map(collectionCard).join('\n'),
     collection_rows: data.collections.map(collectionRow).join('\n'),
     stage_legend: stageLegend(),

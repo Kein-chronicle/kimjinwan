@@ -423,7 +423,7 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .svcw-shot{background:var(--bg2);border-right:1px solid var(--line);display:grid;place-items:center;aspect-ratio:8/5}
 .svcw-shot img{width:100%;height:100%;object-fit:cover;display:block}
 .svcw-body{padding:28px 30px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.svcw-body h4{font-size:28px;font-weight:750;letter-spacing:-.02em;line-height:1.2}
+.svcw-body h5{font-size:28px;font-weight:750;letter-spacing:-.02em;line-height:1.2}
 .svcw-body p{color:var(--muted);font-size:16px;line-height:1.7}
 .svcw-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 .svcw-lbl{font-size:12px;color:var(--faint)}
@@ -439,7 +439,7 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
   .svc-wide{grid-template-columns:1fr}
   .svcw-shot{border-right:0;border-bottom:1px solid var(--line)}
   .svcw-body{padding:20px}
-  .svcw-body h4{font-size:24px}
+  .svcw-body h5{font-size:24px}
   .part{margin-top:56px}
   .part+.part{padding-top:44px}
   .part-h{font-size:21px;gap:10px}
@@ -565,3 +565,24 @@ main>.wrap>.page-foot{margin:0 0 72px}
   #ai .loop-node{padding:8px 12px;font-size:14px;gap:8px}
 }
 #ai .tool-body p,#ai .cap p,#ai .cycle-note,#ai .aistat .lbl{word-break:keep-all;overflow-wrap:anywhere}
+
+/* 접기(details) — 경력 자세히 보기·서비스 더 보기 공통 */
+.fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14.5px;padding:4px 0}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+.fold[open]>summary::after{transform:rotate(225deg) translateY(-2px)}
+.fold>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.fold .fold-close{display:none}
+.fold[open]>summary .fold-open{display:none}
+.fold[open]>summary .fold-close{display:inline}
+.tl-fold{margin-top:4px}
+.tl-fold>p{margin-top:8px}
+.svc-fold{margin-top:16px}
+.svc-fold>.svc-feature{margin-top:14px}
+/* 서비스 분류 */
+.svc-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.svc-jump .pill-n{margin-left:6px;font-size:12px;color:var(--faint)}
+.svc-group{margin-bottom:38px;scroll-margin-top:84px}
+.svc-group-h{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;font-size:18px;font-weight:750;margin-bottom:14px;color:var(--text)}
+.svc-group-h .ico{color:var(--accent)}
+.svc-group-blurb{font-size:13.5px;font-weight:500;color:var(--muted)}

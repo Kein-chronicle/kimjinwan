@@ -16,7 +16,7 @@
   "timeline": [
     {"period": "2024 – Now", "company": {"ko": "오비고", "en": "Obigo"},
      "title": {"ko": "차량용 소프트웨어 PM", "en": "Automotive SW PM"},
-     "role": {"ko": "PM · Mobility SW/AI Division", "en": "PM · Mobility SW/AI Division"},
+     "role": {"ko": "PM · Mobility SW Division", "en": "PM · Mobility SW Division"},
      "text": {"ko": "벤츠 Live TV 총괄 PM, 르노 AR1/AR2 픽조이 게임플랫폼, 제네시스 블룸버그 웹앱, FOD 국책과제를 맡고 있습니다. 게임패드 서버(WebRTC→Redis)를 직접 개발했고, 특허 2종을 출원했으며, 사내 Best Employee를 수상했습니다.", "en": "I'm lead PM on Benz Live TV, the Renault AR1/AR2 PickJoy game platform, the Genesis Bloomberg WebApp and the FOD gov R&D. I built the gamepad server (WebRTC→Redis), filed 2 patents and won internal Best Employee."}},
     {"period": "2020 – 2023", "company": {"ko": "엠투에스", "en": "M2S"},
      "title": {"ko": "의료·헬스 솔루션 PM/PL", "en": "Healthcare Solution PM/PL"},
