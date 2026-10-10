@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.6 배포 기록 — 2026-10-10
+
+Pitchwright 는 완성본 전이라 서비스 상태에 `prelaunch`(배지 `PRE-LAUNCH`)를 신설해 적용했다(`scripts/lib/validate.mjs`·`render.mjs`, `css/style.css`). 소개 문구의 출력 형식에 PPTX 를 추가했다. `sitemap.xml` lastmod 2026-10-10. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `releases/1.3.6` 로 배포, 직전 1.3.5 는 복구용 유지.
+
 ## 1.3.5 배포 기록 — 2026-10-09
 
 대표 서비스에 **Pitchwright**(https://pitchwright.kimjinwan.com/)를 다섯 번째로 추가했다(`data/services.json`, 썸네일 `assets/services/pitchwright.png` = 서비스 파비콘+워드마크 카드 640×400). 홈 02-1 문구를 "다섯 모두"(한·영)로 고치고, 검증 규칙의 대표 서비스 수 상한을 4에서 5로 올렸다(`scripts/lib/validate.mjs`). `sitemap.xml` lastmod 를 데이터 스탬프(2026-10-09)에 맞췄다. `ads.txt`·`app-ads.txt` 불변(SHA-256 `422f460a…49a0`). `/var/www/kimjinwan/releases/1.3.5` 로 배포, 직전 1.3.4 는 복구용 유지.

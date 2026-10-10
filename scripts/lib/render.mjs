@@ -1,7 +1,7 @@
 // scripts/lib/render.mjs
 import {icon} from './icons.mjs';
 const EXT = 'target="_blank" rel="noopener noreferrer"';
-const STATUS_LABEL = {live: 'LIVE', released: 'RELEASED', experiment: 'EXPERIMENT'};
+const STATUS_LABEL = {live: 'LIVE', released: 'RELEASED', experiment: 'EXPERIMENT', prelaunch: 'PRE-LAUNCH'};
 
 export const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 export const bi = o => `<span data-lang-ko>${esc(o.ko)}</span><span data-lang-en>${esc(o.en)}</span>`;

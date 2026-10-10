@@ -1,7 +1,7 @@
 // scripts/lib/validate.mjs
 import {ICON_NAMES} from './icons.mjs';
 const KINDS = ['service', 'game', 'tool', 'app', 'blog'];
-const STATUS = ['live', 'released', 'experiment'];
+const STATUS = ['live', 'released', 'experiment', 'prelaunch'];
 const STAGE = ['ai', 'human', 'gate'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const HTTPS = /^https:\/\//;

@@ -246,7 +246,7 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .svc-body p{color:var(--muted);font-size:15px;flex:1}
 .svc-meta{display:flex;gap:8px;align-items:center;font-size:12px}
 .badge{padding:2px 8px;border-radius:999px;border:1px solid currentColor;font-weight:600}
-.badge-live{color:var(--ok)} .badge-released{color:var(--accent)} .badge-experiment{color:var(--warn)}
+.badge-live{color:var(--ok)} .badge-released{color:var(--accent)} .badge-experiment{color:var(--warn)} .badge-prelaunch{color:var(--warn)}
 .kind{color:var(--faint);text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--bg2);color:var(--muted);border:1px solid var(--line)}
