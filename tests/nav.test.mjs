@@ -9,8 +9,8 @@ const SUB = {works: '/works/', factories: '/factories/', career: '/career/'};
 const siteNav = h => h.match(/<nav id="nav" aria-label="Main">[\s\S]*?\n<\/nav>/)[0];
 const main = h => h.slice(h.indexOf('<main'), h.indexOf('</main>'));
 
-test('내비: 홈·경력·개인 프로젝트·서비스·도구·원칙·연락하기 순서(블로그·웹게임·웹 도구는 서비스로 묶임), aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
-  const WANT = [['/', '홈'], ['/career/', '경력'], ['/#projects', '개인 프로젝트'], ['/works/', '서비스'], ['/#ai', '도구·원칙'], ['#contact', '연락하기']];
+test('내비: 홈·서비스 모아보기(service.kimjinwan.com)·AI 공장·경력·연락하기 순서(블로그·웹게임·웹 도구는 서비스로 묶임), aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
+  const WANT = [['/', '홈'], ['https://service.kimjinwan.com/', '서비스 모아보기'], ['/factories/', 'AI 공장'], ['/career/', '경력'], ['#contact', '연락하기']];
   for (const [f, key] of Object.entries(PAGES)) {
     const nav = siteNav(read(f));
     const menu = nav.slice(nav.indexOf('id="nav-menu"'));

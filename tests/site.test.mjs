@@ -22,7 +22,6 @@ test('홈이 블로그·웹도구·웹게임·Forge·Prism 으로 연결된다',
   const h = read('index.html');
   for (const u of ['https://blog.kimjinwan.com/ko/', 'https://apps.kimjinwan.com/', 'https://games.kimjinwan.com/', 'https://forge.kimjinwan.com/', 'https://prism-studio.kimjinwan.com/'])
     assert.ok(h.includes(`href="${u}`), u);
-  assert.ok(h.includes('https://blog.kimjinwan.com/ko/ai/ai-writing-index/') || h.includes('https://blog.kimjinwan.com/ko/apps/app-archive/'));
 });
 test('robots.txt 는 네 사이트맵을 명시한다', () => {
   const r = read('robots.txt');
@@ -86,8 +85,7 @@ test('모든 페이지에 내비게이션이 있다', () => {
     const h = read(f);
     const nav = h.match(/<nav id="nav" aria-label="Main">[\s\S]*?<\/nav>/);
     assert.ok(nav, f + ' site nav (labelled landmark)');
-    for (const p of ['/', '/career/', '/#projects', '/works/', '/#ai']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
-    // /works/·/factories/ 는 내비에서 빠졌지만 푸터 사이트맵에는 남는다
+    for (const p of ['/', 'https://service.kimjinwan.com/', '/factories/', '/career/']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
     const map = h.match(/<nav class="foot-map" aria-label="Site map">[\s\S]*?<\/nav>/)[0];
     for (const p of ['/works/', '/factories/']) assert.ok(map.includes(`href="${p}"`), f + ' foot-map ' + p);
   }
@@ -111,27 +109,6 @@ test('한국어 1인칭 대명사(제가·저는·저의 등)가 화면·데이�
     const m = read(f).match(BAN);
     assert.equal(m, null, `${f}: "${m && read(f).slice(Math.max(0, m.index - 20), m.index + 20)}"`);
   }
-});
-test('AI로 만든 것들 쇼케이스는 02-3(컬렉션 행 뒤)에 있고 03 섹션에는 없다', () => {
-  const h = read('index.html');
-  const s02 = h.slice(h.indexOf('id="projects"'), h.indexOf('id="ai"'));
-  const s03 = h.slice(h.indexOf('id="ai"'));
-  const works = s02.slice(s02.indexOf('id="works"'));
-  const rows = works.indexOf('class="col-rows"');
-  const show = works.indexOf('class="ai-showcase"');
-  assert.ok(rows > -1 && show > rows, 'showcase after collection rows');
-  assert.ok(works.indexOf('class="ai-subh"') > rows);
-  assert.ok(!s03.includes('ai-showcase') && !s03.includes('acard') && !s03.includes('/assets/ai/'), '03 has no showcase');
-  assert.ok(s03.includes('class="cap-list"') && s03.includes('class="ai-stats"') && s03.includes('class="tools"'));
-});
-test('쇼케이스 카드 여섯 제목은 홈에 정확히 한 번씩, 이미지 카드는 대체 텍스트가 있다', () => {
-  const h = read('index.html');
-  const titles = ['AI 캐릭터·컴패니언', '게임', '앱', 'AI 이미지·에셋', '사내 문서·자동화', 'AI 운영 인프라'];
-  const found = [...h.matchAll(/<div class="abody"><h4><span data-lang-ko>([^<]+)<\/span>/g)].map(m => m[1]);
-  assert.deepEqual(found, titles);
-  const cards = h.match(/<div class="acard">[\s\S]*?<\/div>\s*<div class="abody">/g) || [];
-  assert.equal(cards.length, 6);
-  for (const c of cards) assert.ok(/role="img"|aria-label=|<img[^>]+alt=|noimg/.test(c), c.slice(0, 120));
 });
 
 // ── 메타데이터 · 공유 이미지(og:image) ──────────────────────────────────────────

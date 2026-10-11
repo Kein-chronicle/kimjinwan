@@ -178,9 +178,7 @@ export function timelineItem(t, projects = []) {
   <div class="yr mono">${esc(t.period)} · ${bi(t.company)}</div>
   <h3>${bi(t.title)}</h3>
   <div class="role">${bi(t.role)}</div>
-  <details class="fold tl-fold"><summary><span class="fold-open">${bi({ko: '자세히 보기', en: 'Details'})}</span><span class="fold-close">${bi({ko: '접기', en: 'Hide'})}</span></summary>
   <p>${bi(t.text)}</p>${projs ? '\n  ' + projs : ''}
-  </details>
 </li>`;
 }
 
@@ -207,13 +205,14 @@ export function factoryNav(factories) {
 }
 
 // ===== 사이트 내비게이션 · 로고 =====
-// 페이지 키: home | works | factories | career. 하위 페이지 순서는 홈 이야기 순서(경력 → 개인 프로젝트 안의 공장 → 산출물)와 같다.
+// 페이지 키: home | works | factories | career. 홈 이야기 순서는 서비스 → 공장 → 경력이고, 내비는 각 하위 페이지로 간다.
 export const SUBPAGES = [
   {key: 'career', href: '/career/', label: {ko: '경력', en: 'Career'}},
   {key: 'factories', href: '/factories/', label: {ko: 'AI 공장', en: 'Factories'}},
   {key: 'works', href: '/works/', label: {ko: '서비스', en: 'Services'}},
 ];
 const HOME = {key: 'home', href: '/', label: {ko: '홈', en: 'Home'}};
+const HUB = {href: 'https://service.kimjinwan.com/', label: {ko: '서비스 모아보기', en: 'Browse services'}}; // 서비스 스토어(별도 사이트)
 const cur = (key, page) => key === page ? ' aria-current="page"' : '';
 
 // Kein 마크: 둥근 사각 타일 + 기하 K + 앞으로 튀어나가는 점. 32 격자, 색은 CSS 토큰(.km-*)이 정한다.
@@ -224,12 +223,14 @@ export function kMark(size = 28) {
 }
 export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Kein — Home">${kMark(28)}<span class="logo-word">Kein</span></a>`;
 
+const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
+
 export function navLinks(page) {
-  // 홈 이야기 순서: 01 경력(전체는 /career/) → 02 개인 프로젝트(#projects) → 03 일하는 도구와 원칙(#ai).
-  // /works/·/factories/ 는 02 안의 링크·푸터 사이트맵·하위 페이지 하단에서 이어진다.
-  const items = [HOME, SUBPAGES[0], {key: 'projects', href: '/#projects', label: {ko: '개인 프로젝트', en: 'Projects'}}, SUBPAGES[2],
-    {key: 'ai', href: '/#ai', label: {ko: '도구·원칙', en: 'Tools & principles'}}];
+  // 홈 → 서비스 모아보기(service.kimjinwan.com, 새 창) → AI 공장 → 경력. /works/ 는 홈 서비스 섹션의 '서비스 전체 보기'와 푸터 사이트맵으로 닿는다.
+  const items = [SUBPAGES[1], SUBPAGES[0]];
   return [
+    `<a href="${HOME.href}"${cur(HOME.key, page)}>${bi(HOME.label)}</a>`,
+    extLink(HUB),
     ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
     `<a href="#contact" class="btn btn-primary nav-cta">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
   ].join('\n      ');
@@ -237,7 +238,7 @@ export function navLinks(page) {
 
 export function footMap(page) {
   const items = [HOME, SUBPAGES[2], SUBPAGES[1], SUBPAGES[0]].map(l => `<li><a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a></li>`);
-  return `<nav class="foot-map" aria-label="Site map"><ul>${items.join('')}</ul></nav>`;
+  return `<nav class="foot-map" aria-label="Site map"><ul>${[...items, `<li>${extLink(HUB)}</li>`].join('')}</ul></nav>`;
 }
 
 const sub = page => SUBPAGES.find(s => s.key === page);

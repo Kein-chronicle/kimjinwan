@@ -11,60 +11,44 @@ const projects = parseProjects(read('js/data.js'));
 const profile = JSON.parse(read('data/profile.json'));
 const strip = h => h.replace(/<script[\s\S]*?<\/script>/g, '');
 
-test('홈: 강점 4·타임라인 4·대표 프로젝트 6, 이야기 순서(경력→개인 프로젝트[서비스→공장→산출물]→도구·원칙→연락)와 번호', () => {
+test('홈: 강점 4·타임라인 4·대표 프로젝트 6, 이야기 순서(서비스→공장→경력→연락)와 번호', () => {
   const h = read('index.html');
   assert.equal(count(h, /<li class="strength">/g), 4);
   assert.equal(count(h, /<li class="tl-item">/g), 4);
   assert.equal(count(h, /class="tl-proj"/g), 6);
-  const ids = ['top', 'experience', 'projects', 'services', 'factories', 'works', 'ai', 'contact'];
+  const ids = ['top', 'services', 'factories', 'experience', 'contact'];
   const pos = ids.map(i => h.indexOf(`id="${i}"`)); assert.ok(pos.every(p => p > 0), 'all sections');
   assert.deepEqual([...pos].sort((a, b) => a - b), pos);
   for (const i of ids) assert.equal(count(h, new RegExp(`id="${i}"`, 'g')), 1, 'unique id ' + i);
-  const labels = [['01', 'Experience'], ['02', 'Projects'], ['03', 'Tools']];
+  const labels = [['01', 'Services'], ['02', 'Factories'], ['03', 'Experience']];
   const at = labels.map(([n, w]) => h.search(new RegExp(`<b>${n}</b> ${w}<`)));
   assert.ok(at.every(p => p > 0), 'section numbers 01–03');
   assert.deepEqual([...at].sort((a, b) => a - b), at, 'numbers in reading order');
   assert.equal(count(h, /<b>0\d<\/b>/g), 3, 'exactly three numbered sections');
-  assert.doesNotMatch(h, /<b>04<\/b>|그래서, AI로 직접 만든다/);
+  assert.doesNotMatch(h, /id="ai"|id="projects"|hero-cta|class="hstats"|class="fold tl-fold"|그래서, AI로 직접 만든다/);
   assert.match(h, /href="\/career\/"/); assert.ok(h.includes(`${projects.length}개`));
-});
-test('홈 02 개인 프로젝트: 한 섹션 안에 큰 서비스 카드 4 → 공장 전부 → 컬렉션 행 4 순서, 03 은 그 뒤', () => {
+});test('홈 서비스·공장 섹션: 서비스 카드 전부 → 공장 전부, 경력은 그 뒤', () => {
   const h = read('index.html');
-  const start = h.indexOf('<section class="block story" id="projects">');
-  const end = h.indexOf('</section>', start);
-  assert.ok(start > 0 && end > start);
-  const sec = h.slice(start, end);
-  assert.match(sec, /<h2 class="sec-title"><span data-lang-ko>끊임없이 해온 개인 프로젝트, 이제는 AI와 함께<\/span>/);
+  const sec = (id) => { const a = h.indexOf(`<section class="block story" id="${id}">`); return h.slice(a, h.indexOf('</section>', a)); };
+  const svcSec = sec('services'), facSec = sec('factories');
   const facs = JSON.parse(read('data/factories.json'));
-  const cols = JSON.parse(read('data/collections.json'));
   const feat = JSON.parse(read('data/services.json')).filter(s => s.featured);
-  assert.equal(count(sec, /<article class="card svc-wide"/g), feat.length);
-  assert.equal(count(sec, /<article class="fac"/g), facs.length);
-  assert.equal(count(sec, /<li class="col-row">/g), cols.length);
-  const order = ['02-1', 'class="card svc-wide"', '02-2', 'class="fac"', '02-3', 'class="col-row"'].map(m => sec.indexOf(m));
-  assert.ok(order.every(p => p > 0), String(order));
-  assert.deepEqual([...order].sort((a, b) => a - b), order);
-  assert.ok(sec.lastIndexOf('class="card svc-wide"') < sec.indexOf('class="fac"'), 'all services before factories');
-  assert.ok(sec.lastIndexOf('class="fac"') < sec.indexOf('class="col-row"'), 'all factories before collections');
+  assert.equal(count(svcSec, /<article class="card svc-wide"/g), feat.length);
+  assert.equal(count(facSec, /<article class="fac"/g), facs.length);
   for (const s of feat) {
-    const card = sec.slice(sec.indexOf(`id="svc-${s.id}"`)).split('</article>')[0];
+    const card = svcSec.slice(svcSec.indexOf(`id="svc-${s.id}"`)).split('</article>')[0];
     assert.match(card, /<img src="[^"]+" alt="[^"]+ screenshot"/, s.id);
     assert.match(card, new RegExp(`href="${s.url.replace(/[./]/g, '\\$&')}"[^>]*target="_blank" rel="noopener noreferrer"`), s.id);
     for (const t of s.ai_tools) assert.ok(card.includes(`>${t}<`), s.id + t);
   }
-  for (const c of cols) assert.ok(sec.includes(c.count.as_of), c.id);
-  assert.ok(h.indexOf('id="ai"') > end, '03 after 02');
-  assert.equal(count(h, /<section class="block story"/g), 3, 'experience, projects, tools — three story sections');
-});
-test('홈 연결 문장: 01 은 개인 프로젝트로, 02 는 도구·원칙으로 넘긴다(옛 순서 문장 없음)', () => {
+  assert.ok(h.indexOf('id="experience"') > h.indexOf('id="factories"'), 'experience after factories');
+  assert.equal(count(h, /<section class="block story"/g), 3, 'services, factories, experience — three story sections');
+});test('홈 연결 문장: 서비스 → 공장 → 경력 순서 문장만 남는다(옛 순서 문장 없음)', () => {
   const h = read('index.html');
-  assert.ok(h.includes('현장 밖에서도 개인 프로젝트를 쉬지 않고 이어 왔고, 이제는 AI와 함께 합니다.'));
   assert.ok(h.includes('서비스를 크게 만드는 데서 그치지 않고, 반복되는 생산을 자동화하는 공장도 만들었습니다.'));
-  assert.ok(h.includes('그 공장에서 웹게임, 웹 도구, 앱, 글 같은 크고 작은 산출물이 계속 만들어집니다.'));
-  assert.ok(h.includes('<span data-lang-ko>일하는 도구와 원칙</span><span data-lang-en>Tools and principles I work by</span>'));
-  for (const old of ['같은 순서가 계속 반복됐습니다', '경험에서 AI, 공장, 결과물까지', '그 결과물, 직접 운영 중']) assert.ok(!h.includes(old), old);
-});
-test('홈: 대표 프로젝트는 회사가 같은 타임라인 항목 안에 붙는다', () => {
+  assert.ok(h.includes('이 페이지는 직접 만들어 운영하는 서비스, 그 생산을 맡은 AI 공장, 그리고 경력 순서로 이어집니다.'));
+  for (const old of ['같은 순서가 계속 반복됐습니다', '경험에서 AI, 공장, 결과물까지', '그 결과물, 직접 운영 중', '일하는 도구와 원칙', '현장 밖에서도 개인 프로젝트를 쉬지 않고']) assert.ok(!h.includes(old), old);
+});test('홈: 대표 프로젝트는 회사가 같은 타임라인 항목 안에 붙는다', () => {
   const h = read('index.html');
   const items = h.split('<li class="tl-item">').slice(1);
   assert.equal(items.length, profile.timeline.length);
@@ -81,13 +65,6 @@ test('홈: 대표 프로젝트는 /career/#p<id> 로 연결되고 id 가 data.js
     assert.ok(projects.some(p => p.id === id), `id ${id}`);
     assert.ok(h.includes(`href="/career/#p${id}"`), `link ${id}`);
   }
-});
-test('홈 AI 섹션은 운영 체계와 지표·기준일을 보존한다', () => {
-  const h = read('index.html');
-  assert.ok(h.includes('id="ai"'));
-  for (const v of ['>9<', '>740+<', '>51+<', '>36K+<', '2026-09']) assert.ok(h.includes(v), v);
-  for (const w of ['세션 검토', '하네스 구축', '실행', '다층 검증', '정리', '이월']) assert.ok(h.includes(w), w);
-  assert.equal(count(h, /class="cap"/g), 6);
 });
 test('경력 페이지는 강점·전체 타임라인·그리드·모달·게임 모달을 가진다', () => {
   const h = read('career/index.html');
@@ -163,5 +140,4 @@ test('컬렉션 미리보기 링크는 EN 모드용 영어 제목을 가진다 (
   for (const c of cols) for (const p of c.previews || [])
     if (/[가-힣]/.test(typeof p.name === 'string' ? p.name : p.name.ko))
       assert.ok(typeof p.name === 'object' && p.name.en && !/[가-힣]/.test(p.name.en), `${c.id}: ${JSON.stringify(p.name)}`);
-  assert.ok(read('index.html').includes('<span data-lang-en>Unit price comparison</span>'));
 });
