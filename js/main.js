@@ -204,3 +204,20 @@ function openGameAuto(){
   addEventListener('hashchange',fromHash);
   fromHash();
 })();
+
+// ===== 홈 02-1 서비스 분류 거르기 (JS 없으면 전부 보임) =====
+(function(){
+  const btns=[...document.querySelectorAll('[data-svc-cat]')];
+  if(!btns.length) return;
+  const fold=document.querySelector('.svc-fold');
+  function apply(k){
+    btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.svcCat===k)));
+    document.querySelectorAll('.svc-wide[data-category]').forEach(el=>{el.hidden=!(k==='all'||el.dataset.category===k);});
+    if(fold){
+      const sum=fold.querySelector('summary');
+      if(k==='all'){sum.hidden=false;}
+      else{fold.open=true;sum.hidden=true;}
+    }
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.svcCat)));
+})();

@@ -19,7 +19,7 @@ export const CATEGORY = [
   {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
-const HOME_VISIBLE = 2; // 홈에서 분류당 먼저 보이는 카드 수. 나머지는 '더 보기'(details) 안에 접힌다.
+const HOME_VISIBLE = 6; // 홈에서 먼저 보이는 카드 수(3열 × 2줄). 나머지는 '더 보기'(details) 안에 접힌다.
 // 분류 순서 → 같은 분류 안에서는 최근 갱신순(같으면 이름순)
 export function sortServices(services) {
   const rank = s => CATEGORY.findIndex(c => c.key === s.category);
@@ -52,10 +52,10 @@ export function serviceFeature(s) {
     : `<span class="mono shot-fallback">${esc(s.name.slice(0, 2).toUpperCase())}</span>`;
   const host = new URL(s.url).host;
   const chips = s.ai_tools.map(t => `<span class="chip mono">${esc(t)}</span>`).join('');
-  return `<article class="card svc-wide" id="svc-${esc(s.id)}">
+  return `<article class="card svc-wide" id="svc-${esc(s.id)}" data-category="${esc(s.category)}">
   <div class="svcw-shot">${shot}</div>
   <div class="svcw-body">
-    <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${esc(s.kind)}</span></div>
+    <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${catOf(s) ? icon(catOf(s).icon, {size: 14}) + bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h5>${esc(s.name)}</h5>
     <p>${bi(s.summary)}</p>
     <div class="svcw-tools"><span class="svcw-lbl mono">${bi({ko: '함께 만든 AI', en: 'Built with'})}</span><div class="chips">${chips}</div></div>
@@ -64,22 +64,19 @@ export function serviceFeature(s) {
 </article>`;
 }
 
-// 홈 02-1: 분류별 묶음. 분류 머리 + 카드(처음 HOME_VISIBLE 개) + 나머지는 접어 둔다.
+// 홈 02-1: 한 줄 3장 격자. 분류 칩은 거르기 버튼, 처음 HOME_VISIBLE 장만 보이고 나머지는 '더 보기'로 접힌다.
 export function serviceGroups(services) {
   const sorted = sortServices(services);
-  const jump = CATEGORY.filter(c => sorted.some(s => s.category === c.key))
-    .map(c => `<a class="pill" href="#svc-cat-${c.key}">${icon(c.icon, {size: 16})}${bi(c.label)}<span class="pill-n mono">${sorted.filter(s => s.category === c.key).length}</span></a>`).join('');
-  const groups = CATEGORY.map(c => {
-    const list = sorted.filter(s => s.category === c.key);
-    if (!list.length) return '';
-    const shown = list.slice(0, HOME_VISIBLE).map(serviceFeature).join('\n');
-    const rest = list.slice(HOME_VISIBLE);
-    const more = rest.length
-      ? `\n<details class="fold svc-fold"><summary><span class="fold-open">${bi({ko: `${rest.length}개 더 보기`, en: `Show ${rest.length} more`})}</span><span class="fold-close">${bi({ko: '접기', en: 'Show less'})}</span></summary>\n<div class="svc-feature">${rest.map(serviceFeature).join('\n')}</div></details>`
-      : '';
-    return `<div class="svc-group" id="svc-cat-${c.key}"><h4 class="svc-group-h">${icon(c.icon, {size: 18})}<span>${bi(c.label)}</span><span class="svc-group-blurb">${bi(c.blurb)}</span></h4>\n<div class="svc-feature">${shown}</div>${more}</div>`;
-  }).join('\n');
-  return `<nav class="svc-jump" aria-label="${esc('service categories')}">${jump}</nav>\n${groups}`;
+  const cats = CATEGORY.filter(c => sorted.some(s => s.category === c.key));
+  const chip = (k, ic, label, n, on) => `<button type="button" class="pill" data-svc-cat="${k}" aria-pressed="${on}">${ic ? icon(ic, {size: 16}) : ''}${bi(label)}<span class="pill-n mono">${n}</span></button>`;
+  const chips = chip('all', 'layers', {ko: '전체', en: 'All'}, sorted.length, true)
+    + cats.map(c => chip(c.key, c.icon, c.label, sorted.filter(s => s.category === c.key).length, false)).join('');
+  const shown = sorted.slice(0, HOME_VISIBLE).map(serviceFeature).join('\n');
+  const rest = sorted.slice(HOME_VISIBLE);
+  const more = rest.length
+    ? `\n<details class="fold svc-fold"><summary><span class="fold-open">${bi({ko: `${rest.length}개 더 보기`, en: `Show ${rest.length} more`})}</span><span class="fold-close">${bi({ko: '접기', en: 'Show less'})}</span></summary>\n<div class="svc-feature">${rest.map(serviceFeature).join('\n')}</div></details>`
+    : '';
+  return `<div class="svc-jump" role="group" aria-label="service categories">${chips}</div>\n<div class="svc-feature" id="svc-grid">${shown}</div>${more}`;
 }
 
 export function collectionCard(c) {

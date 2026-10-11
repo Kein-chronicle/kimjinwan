@@ -417,14 +417,14 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .part+.part{border-top:1px solid var(--line);padding-top:56px}
 
 /* 02-1: 대표 서비스 — 같은 크기의 가로 카드 세 장 */
-.svc-feature{display:flex;flex-direction:column;gap:24px}
-.svc-wide{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);overflow:hidden}
+.svc-feature{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc-wide{display:flex;flex-direction:column;overflow:hidden}
 .svc-wide:hover{transform:none}
-.svcw-shot{background:var(--bg2);border-right:1px solid var(--line);display:grid;place-items:center;aspect-ratio:8/5}
+.svcw-shot{background:var(--bg2);border-bottom:1px solid var(--line);display:grid;place-items:center;aspect-ratio:8/5}
 .svcw-shot img{width:100%;height:100%;object-fit:cover;display:block}
-.svcw-body{padding:28px 30px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.svcw-body h5{font-size:28px;font-weight:750;letter-spacing:-.02em;line-height:1.2}
-.svcw-body p{color:var(--muted);font-size:16px;line-height:1.7}
+.svcw-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;min-width:0;flex:1}
+.svcw-body h5{font-size:22px;font-weight:750;letter-spacing:-.02em;line-height:1.2}
+.svcw-body p{color:var(--muted);font-size:14.5px;line-height:1.65}
 .svcw-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 .svcw-lbl{font-size:12px;color:var(--faint)}
 .svcw-open{align-self:flex-start;margin-top:auto;gap:8px;max-width:100%;white-space:nowrap}
@@ -436,10 +436,7 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
   .ai-showcase{grid-template-columns:1fr}
   .fac{grid-template-columns:1fr;gap:14px}
   .col-row{grid-template-columns:1fr;gap:6px}
-  .svc-wide{grid-template-columns:1fr}
-  .svcw-shot{border-right:0;border-bottom:1px solid var(--line)}
-  .svcw-body{padding:20px}
-  .svcw-body h5{font-size:24px}
+  .svc-feature{grid-template-columns:repeat(2,minmax(0,1fr))}
   .part{margin-top:56px}
   .part+.part{padding-top:44px}
   .part-h{font-size:21px;gap:10px}
@@ -582,7 +579,6 @@ main>.wrap>.page-foot{margin:0 0 72px}
 /* 서비스 분류 */
 .svc-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
 .svc-jump .pill-n{margin-left:6px;font-size:12px;color:var(--faint)}
-.svc-group{margin-bottom:38px;scroll-margin-top:84px}
-.svc-group-h{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;font-size:18px;font-weight:750;margin-bottom:14px;color:var(--text)}
-.svc-group-h .ico{color:var(--accent)}
-.svc-group-blurb{font-size:13.5px;font-weight:500;color:var(--muted)}
+@media(max-width:600px){.svc-feature{grid-template-columns:1fr}}
+.svc-jump .pill{cursor:pointer;font-family:inherit}
+.svc-jump .pill[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--card)}
