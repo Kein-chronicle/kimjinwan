@@ -9,9 +9,8 @@ const SUB = {works: '/works/', factories: '/factories/', career: '/career/'};
 const siteNav = h => h.match(/<nav id="nav" aria-label="Main">[\s\S]*?\n<\/nav>/)[0];
 const main = h => h.slice(h.indexOf('<main'), h.indexOf('</main>'));
 
-test('내비: 홈·경력·개인 프로젝트·도구·원칙·블로그·웹게임·웹 도구·연락하기 순서, aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
-  const WANT = [['/', '홈'], ['/career/', '경력'], ['/#projects', '개인 프로젝트'], ['/#ai', '도구·원칙'],
-    ['https://blog.kimjinwan.com/ko/', '블로그'], ['https://games.kimjinwan.com/', '웹게임'], ['https://apps.kimjinwan.com/', '웹 도구'], ['#contact', '연락하기']];
+test('내비: 홈·경력·개인 프로젝트·서비스·도구·원칙·연락하기 순서(블로그·웹게임·웹 도구는 서비스로 묶임), aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
+  const WANT = [['/', '홈'], ['/career/', '경력'], ['/#projects', '개인 프로젝트'], ['/works/', '서비스'], ['/#ai', '도구·원칙'], ['#contact', '연락하기']];
   for (const [f, key] of Object.entries(PAGES)) {
     const nav = siteNav(read(f));
     const menu = nav.slice(nav.indexOf('id="nav-menu"'));
@@ -84,11 +83,12 @@ test('하위 페이지: main 안 브레드크럼에 "/" 링크, 하단에 홈 �
   }
   assert.equal(breadcrumb('home'), ''); assert.equal(pageFoot('home'), '');
 });
-test('푸터 사이트맵: 모든 페이지에 홈·작업물·AI 공장·경력·블로그·웹게임·웹 도구, 외부는 새 창', () => {
+test('푸터 사이트맵: 모든 페이지에 홈·서비스·AI 공장·경력(블로그·웹게임·웹 도구는 서비스로 묶여 메뉴에서 빠졌다)', () => {
   for (const f of Object.keys(PAGES)) {
     const map = read(f).match(/<nav class="foot-map" aria-label="Site map">[\s\S]*?<\/nav>/)[0];
-    for (const u of ['/', '/works/', '/factories/', '/career/', 'https://blog.kimjinwan.com/ko/', 'https://games.kimjinwan.com/', 'https://apps.kimjinwan.com/'])
+    for (const u of ['/', '/works/', '/factories/', '/career/'])
       assert.ok(map.includes(`href="${u}"`), f + u);
+    for (const u of ['blog.kimjinwan.com', 'games.kimjinwan.com', 'apps.kimjinwan.com']) assert.ok(!map.includes(u), f + u);
     for (const m of map.matchAll(/<a href="https:[^"]*"[^>]*>/g)) assert.match(m[0], /target="_blank" rel="noopener noreferrer"/);
   }
 });

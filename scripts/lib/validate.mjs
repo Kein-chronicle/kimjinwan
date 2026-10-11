@@ -1,7 +1,7 @@
 // scripts/lib/validate.mjs
 import {ICON_NAMES} from './icons.mjs';
 const KINDS = ['service', 'game', 'tool', 'app', 'blog'];
-export const CATEGORIES = ['document', 'creative', 'build', 'ai-tools'];
+export const CATEGORIES = ['document', 'creative', 'build', 'hub', 'ai-tools'];
 const STATUS = ['live', 'released', 'experiment', 'prelaunch'];
 const STAGE = ['ai', 'human', 'gate'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -29,7 +29,7 @@ export function validate({services = [], collections = [], factories = [], profi
     if (!Array.isArray(s.ai_tools)) err.push(`${w}: ai_tools must be array`);
   }
   const featured = services.filter(s => s.featured).length;
-  if (featured < 3 || featured > 12) err.push(`services: featured must be 3-12, got ${featured}`);
+  if (featured < 3 || featured > 24) err.push(`services: featured must be 3-24, got ${featured}`);
 
   for (const c of collections) {
     const w = `collections.${c.id}`;

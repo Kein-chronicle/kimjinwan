@@ -16,6 +16,7 @@ export const CATEGORY = [
   {key: 'document', icon: 'file-text', label: {ko: '문서·업무', en: 'Documents & work'}, blurb: {ko: '문서를 쓰고 고치고 제출하는 일', en: 'Writing, editing and submitting documents'}},
   {key: 'creative', icon: 'sparkles', label: {ko: '디자인·창작', en: 'Design & creative'}, blurb: {ko: '이미지와 시각 작업', en: 'Images and visual work'}},
   {key: 'build', icon: 'wrench', label: {ko: '개발·제작', en: 'Build & make'}, blurb: {ko: '서비스를 만드는 도구', en: 'Tools for building services'}},
+  {key: 'hub', icon: 'gamepad', label: {ko: '게임·도구·글', en: 'Games, tools & writing'}, blurb: {ko: '계속 늘어나는 웹게임·웹 도구·블로그', en: 'Ever-growing web games, tools and journal'}},
   {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
@@ -210,16 +211,10 @@ export function factoryNav(factories) {
 export const SUBPAGES = [
   {key: 'career', href: '/career/', label: {ko: '경력', en: 'Career'}},
   {key: 'factories', href: '/factories/', label: {ko: 'AI 공장', en: 'Factories'}},
-  {key: 'works', href: '/works/', label: {ko: '작업물', en: 'Works'}},
+  {key: 'works', href: '/works/', label: {ko: '서비스', en: 'Services'}},
 ];
 const HOME = {key: 'home', href: '/', label: {ko: '홈', en: 'Home'}};
-const EXTERNAL = [
-  {href: 'https://blog.kimjinwan.com/ko/', label: {ko: '블로그', en: 'Journal'}},
-  {href: 'https://games.kimjinwan.com/', label: {ko: '웹게임', en: 'Games'}},
-  {href: 'https://apps.kimjinwan.com/', label: {ko: '웹 도구', en: 'Tools'}},
-];
 const cur = (key, page) => key === page ? ' aria-current="page"' : '';
-const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
 
 // Kein 마크: 둥근 사각 타일 + 기하 K + 앞으로 튀어나가는 점. 32 격자, 색은 CSS 토큰(.km-*)이 정한다.
 export const K_PATH = 'M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z';
@@ -232,18 +227,17 @@ export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Ke
 export function navLinks(page) {
   // 홈 이야기 순서: 01 경력(전체는 /career/) → 02 개인 프로젝트(#projects) → 03 일하는 도구와 원칙(#ai).
   // /works/·/factories/ 는 02 안의 링크·푸터 사이트맵·하위 페이지 하단에서 이어진다.
-  const items = [HOME, SUBPAGES[0], {key: 'projects', href: '/#projects', label: {ko: '개인 프로젝트', en: 'Projects'}},
+  const items = [HOME, SUBPAGES[0], {key: 'projects', href: '/#projects', label: {ko: '개인 프로젝트', en: 'Projects'}}, SUBPAGES[2],
     {key: 'ai', href: '/#ai', label: {ko: '도구·원칙', en: 'Tools & principles'}}];
   return [
     ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
-    ...EXTERNAL.map(extLink),
     `<a href="#contact" class="btn btn-primary nav-cta">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
   ].join('\n      ');
 }
 
 export function footMap(page) {
   const items = [HOME, SUBPAGES[2], SUBPAGES[1], SUBPAGES[0]].map(l => `<li><a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a></li>`);
-  return `<nav class="foot-map" aria-label="Site map"><ul>${[...items, ...EXTERNAL.map(l => `<li>${extLink(l)}</li>`)].join('')}</ul></nav>`;
+  return `<nav class="foot-map" aria-label="Site map"><ul>${items.join('')}</ul></nav>`;
 }
 
 const sub = page => SUBPAGES.find(s => s.key === page);

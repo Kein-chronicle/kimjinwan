@@ -204,5 +204,74 @@
    "ko": "영상 하나 놓으면 움짤이 나와요",
    "en": "Drop a video, get a GIF"
   }
+ },
+ {
+  "id": "kein-journal",
+  "name": "Kein Journal",
+  "kind": "blog",
+  "status": "live",
+  "featured": true,
+  "category": "hub",
+  "summary": {
+   "ko": "AI 자동화의 실패와 복구, 앱 제작과 심사, 플레이 중인 게임의 공식 공지를 출처와 날짜까지 구분해 남기는 제작 기록 블로그. AI가 조사와 초안을 쓰고, 독립 검토와 자동 공개 게이트를 통과한 글만 발행합니다.",
+   "en": "A production-journal blog covering AI automation failures and recovery, app building and review, and sourced game updates. AI researches and drafts; only posts that pass an independent review and an automated release gate are published."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://blog.kimjinwan.com/ko/",
+  "thumb": "assets/services/kein-journal.png",
+  "updated": "2026-10-12",
+  "tagline": {
+   "ko": "써보고, 플레이하고, 이야기하다",
+   "en": "Try it, play it, write it down"
+  }
+ },
+ {
+  "id": "kein-games",
+  "name": "Kein Games",
+  "kind": "game",
+  "status": "live",
+  "featured": true,
+  "category": "hub",
+  "summary": {
+   "ko": "설치와 가입 없이 브라우저에서 바로 플레이하는 웹게임 포털. 웹게임 파이프라인으로 양산하고, 편입 검사를 통과한 게임만 올립니다.",
+   "en": "A browser game portal with no install or sign-up. Games come out of a pipeline I designed and are published only after passing admission checks."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://games.kimjinwan.com/",
+  "thumb": "assets/services/kein-games.png",
+  "updated": "2026-10-12",
+  "tagline": {
+   "ko": "고르고 바로 플레이",
+   "en": "Pick one and play right away"
+  }
+ },
+ {
+  "id": "kein-tools",
+  "name": "Kein Tools",
+  "kind": "tool",
+  "status": "live",
+  "featured": true,
+  "category": "hub",
+  "summary": {
+   "ko": "계산기부터 PDF·이미지 처리까지, 가입과 업로드 없이 기기 안에서 처리하는 실용 웹 도구 모음. 웹 도구 공장에서 한 번에 하나씩 만들어 공개하고, 도구마다 규칙과 한계를 함께 적었습니다.",
+   "en": "A collection of practical web tools, from calculators to PDF and image utilities, processed on your device with no sign-up or upload. The web tools factory builds them one at a time, and each tool lists its rules and limits."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://apps.kimjinwan.com/",
+  "thumb": "assets/services/kein-tools.png",
+  "updated": "2026-10-12",
+  "tagline": {
+   "ko": "필요한 답만 빠르게",
+   "en": "Just the answer you need, fast"
+  }
  }
 ]

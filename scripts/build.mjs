@@ -9,6 +9,7 @@ import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {SITE, SITE_NAME, facts, pageMeta, cardPath, cardAlt} from './lib/og.mjs';
+const SERVICE_KINDS = ['blog', 'game', 'tool']; // 서비스 카드로 올라간 종류는 /works/ 컬렉션 카드에서 뺀다(중복 방지)
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rd = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
@@ -85,7 +86,7 @@ export function buildAll({write = true} = {}) {
     featured: featured.map(serviceCard).join('\n'),
     featured_wide: serviceGroups(featured),
     all_services: sortServices(data.services).map(serviceCard).join('\n'),
-    collections: data.collections.map(collectionCard).join('\n'),
+    collections: data.collections.filter(c => !SERVICE_KINDS.includes(c.kind)).map(collectionCard).join('\n'),
     collection_rows: data.collections.map(collectionRow).join('\n'),
     stage_legend: stageLegend(),
     factory_count: String(data.factories.length),

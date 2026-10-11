@@ -11,7 +11,7 @@ const LD = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
 test('외부 서브도메인 링크는 모두 새 창·noopener 로 연다', () => {
   for (const f of PAGES) {
     const links = [...read(f).matchAll(/<a\b[^>]*href="https:\/\/(?:blog|apps|games|forge|prism-studio)\.kimjinwan\.com\/[^"]*"[^>]*>/g)];
-    assert.ok(links.length >= 3, f + ' has external subdomain links');
+    if (/^(index|works\/index)\.html$/.test(f)) assert.ok(links.length >= 3, f + ' has external subdomain links'); // 메뉴·푸터에선 빠지고 서비스 카드로 이어진다
     for (const m of links) { assert.match(m[0], /target="_blank"/, f); assert.match(m[0], /rel="noopener noreferrer"/, f); }
   }
 });
@@ -86,7 +86,7 @@ test('모든 페이지에 내비게이션이 있다', () => {
     const h = read(f);
     const nav = h.match(/<nav id="nav" aria-label="Main">[\s\S]*?<\/nav>/);
     assert.ok(nav, f + ' site nav (labelled landmark)');
-    for (const p of ['/', '/career/', '/#projects', '/#ai']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
+    for (const p of ['/', '/career/', '/#projects', '/works/', '/#ai']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
     // /works/·/factories/ 는 내비에서 빠졌지만 푸터 사이트맵에는 남는다
     const map = h.match(/<nav class="foot-map" aria-label="Site map">[\s\S]*?<\/nav>/)[0];
     for (const p of ['/works/', '/factories/']) assert.ok(map.includes(`href="${p}"`), f + ' foot-map ' + p);
