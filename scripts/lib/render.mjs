@@ -20,10 +20,9 @@ export const CATEGORY = [
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
 const HOME_VISIBLE = Infinity; // 홈에서 먼저 보이는 카드 수. 지금은 전부 노출. 길어지면 숫자(3열 × 2줄 = 6)로 낮추면 나머지가 '더 보기'(details)로 접힌다.
-// 분류 순서 → 같은 분류 안에서는 최근 갱신순(같으면 이름순)
+// 이름순(대소문자 무시). 분류는 정렬이 아니라 칩 거르기로만 쓴다.
 export function sortServices(services) {
-  const rank = s => CATEGORY.findIndex(c => c.key === s.category);
-  return [...services].sort((a, b) => rank(a) - rank(b) || b.updated.localeCompare(a.updated) || a.name.localeCompare(b.name));
+  return [...services].sort((a, b) => a.name.localeCompare(b.name, 'en', {sensitivity: 'base'}));
 }
 
 export function serviceCard(s) {
