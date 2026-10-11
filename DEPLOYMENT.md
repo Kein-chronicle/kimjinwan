@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.10 배포 기록 — 2026-10-11
+
+Pitchwright·DocLoom·Casewright 썸네일을 로고 카드에서 **PC 화면(1280×800) 스크린샷**으로 교체했다(각 서비스 공개 첫 화면). 직전 1.3.9 는 복구용 유지.
+
 ## 1.3.9 배포 기록 — 2026-10-11
 
 대표 서비스에 **Casewright**(https://casewright.kimjinwan.com/, TC 작성, `prelaunch`, 분류 build)를 추가했다(썸네일 `assets/services/casewright.png`). 1.3.8 의 3열 격자와 함께 배포(1.3.8 은 단독 배포하지 않음). Fitwright 는 수정 중이라 제외. `ads.txt`·`app-ads.txt` 불변. 직전 1.3.7 은 복구용 유지.
