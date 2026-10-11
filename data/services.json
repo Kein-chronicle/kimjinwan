@@ -187,22 +187,22 @@
   "id": "cel-studio",
   "name": "Cel Studio",
   "kind": "service",
-  "status": "prelaunch",
+  "status": "live",
   "featured": true,
   "category": "creative",
   "summary": {
-   "ko": "움짤·애니메이션 이미지를 한국어로 한 곳에서 다루는 브라우저 도구 모음. GIF 만들기, 크기·용량 줄이기, 프레임 편집에 WebP·APNG·AVIF·JXL까지 담는 것이 목표이며, 파일은 내 브라우저 안에서만 처리하도록 설계합니다. 지금은 소개 사이트와 도구 지도를 먼저 공개했고 첫 도구를 만드는 중입니다.",
-   "en": "A Korean-language suite of browser tools for GIFs and animated images. The goal covers making GIFs, resizing, shrinking file size and frame editing, plus WebP, APNG, AVIF and JXL, designed so files are processed only inside your browser. The intro site and tool map are public now; the first tool is in development."
+   "ko": "영상이나 사진을 끌어다 놓으면 움짤(GIF)이 되는 한국어 브라우저 도구 모음. 영상·이미지를 GIF로 만들고, 프레임 편집기와 효과, 용량 줄이기, 시트 자르기, 영상 도구까지 한 곳에서 다룹니다. 파일은 가입이나 업로드 없이 내 브라우저 안에서만 처리됩니다.",
+   "en": "A Korean-language suite of browser tools: drop a video or photos and get a GIF. It turns video and images into GIFs and adds a frame editor with effects, file-size reduction, sprite-sheet cutting and video tools in one place. Files are processed only inside your browser, with no sign-up or upload."
   },
   "ai_tools": [
    "Claude Code"
   ],
   "url": "https://cel-studio.kimjinwan.com/",
   "thumb": "assets/services/cel-studio.png",
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "tagline": {
-   "ko": "움짤을 한 프레임까지 만지는 곳",
-   "en": "Edit animated images down to a single frame"
+   "ko": "영상 하나 놓으면 움짤이 나와요",
+   "en": "Drop a video, get a GIF"
   }
  }
 ]
