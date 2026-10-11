@@ -182,5 +182,27 @@
    "ko": "말로 부탁하면 코드가 그려 주는 모션그래픽",
    "en": "Describe it, and code draws the motion graphics"
   }
+ },
+ {
+  "id": "cel-studio",
+  "name": "Cel Studio",
+  "kind": "service",
+  "status": "prelaunch",
+  "featured": true,
+  "category": "creative",
+  "summary": {
+   "ko": "움짤·애니메이션 이미지를 한국어로 한 곳에서 다루는 브라우저 도구 모음. GIF 만들기, 크기·용량 줄이기, 프레임 편집에 WebP·APNG·AVIF·JXL까지 담는 것이 목표이며, 파일은 내 브라우저 안에서만 처리하도록 설계합니다. 지금은 소개 사이트와 도구 지도를 먼저 공개했고 첫 도구를 만드는 중입니다.",
+   "en": "A Korean-language suite of browser tools for GIFs and animated images. The goal covers making GIFs, resizing, shrinking file size and frame editing, plus WebP, APNG, AVIF and JXL, designed so files are processed only inside your browser. The intro site and tool map are public now; the first tool is in development."
+  },
+  "ai_tools": [
+   "Claude Code"
+  ],
+  "url": "https://cel-studio.kimjinwan.com/",
+  "thumb": "assets/services/cel-studio.png",
+  "updated": "2026-10-11",
+  "tagline": {
+   "ko": "움짤을 한 프레임까지 만지는 곳",
+   "en": "Edit animated images down to a single frame"
+  }
  }
 ]
