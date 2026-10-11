@@ -19,7 +19,7 @@ export const CATEGORY = [
   {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
-const HOME_VISIBLE = 6; // 홈에서 먼저 보이는 카드 수(3열 × 2줄). 나머지는 '더 보기'(details) 안에 접힌다.
+const HOME_VISIBLE = Infinity; // 홈에서 먼저 보이는 카드 수. 지금은 전부 노출. 길어지면 숫자(3열 × 2줄 = 6)로 낮추면 나머지가 '더 보기'(details)로 접힌다.
 // 분류 순서 → 같은 분류 안에서는 최근 갱신순(같으면 이름순)
 export function sortServices(services) {
   const rank = s => CATEGORY.findIndex(c => c.key === s.category);
