@@ -112,5 +112,24 @@
   "url": "https://casewright.kimjinwan.com/",
   "thumb": "assets/services/casewright.png",
   "updated": "2026-10-11"
+ },
+ {
+  "id": "fitwright",
+  "name": "Fitwright",
+  "kind": "service",
+  "status": "prelaunch",
+  "featured": true,
+  "category": "document",
+  "summary": {
+   "ko": "공고 작성과 지원자 평가, 두 서비스로 채용 서류 검토를 돕는 웹 서비스. 공고는 근거와 함께 필수 스펙을 정하고, 평가는 이력서를 기준대로 단계마다 걸러 가중 점수와 면접 질문까지 이어갑니다. 점수와 판단 근거 대조는 AI가 아니라 코드가 합니다.",
+   "en": "A web service for hiring-document review, in two parts: writing a job post and evaluating applicants. The post fixes must-have specs with evidence, and the evaluation filters résumés against those criteria stage by stage into weighted scores and interview questions. Scores and evidence checks are done by code, not by the AI."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://fitwright.kimjinwan.com/",
+  "thumb": "assets/services/fitwright.png",
+  "updated": "2026-10-11"
  }
 ]
