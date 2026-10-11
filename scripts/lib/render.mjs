@@ -37,6 +37,7 @@ export function serviceCard(s) {
   <div class="svc-body">
     <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${catOf(s) ? bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h3>${esc(s.name)}</h3>
+    <p class="svc-tag">${bi(s.tagline)}</p>
     <p>${bi(s.summary)}</p>
     <div class="chips">${chips}</div>
     <a class="more" href="${esc(s.url)}" ${EXT}>${bi(open)}${ext}</a>
@@ -57,6 +58,7 @@ export function serviceFeature(s) {
   <div class="svcw-body">
     <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${catOf(s) ? icon(catOf(s).icon, {size: 14}) + bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h5>${esc(s.name)}</h5>
+    <p class="svc-tag">${bi(s.tagline)}</p>
     <p>${bi(s.summary)}</p>
     <div class="svcw-tools"><span class="svcw-lbl mono">${bi({ko: '함께 만든 AI', en: 'Built with'})}</span><div class="chips">${chips}</div></div>
     <a class="btn btn-ghost svcw-open" href="${esc(s.url)}" ${EXT}>${bi(open)}<span class="mono svcw-host">${esc(host)}</span>${ext}</a>

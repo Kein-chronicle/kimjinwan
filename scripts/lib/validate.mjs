@@ -22,6 +22,7 @@ export function validate({services = [], collections = [], factories = [], profi
     if (!KINDS.includes(s.kind)) err.push(`${w}: bad kind ${s.kind}`);
     if (!CATEGORIES.includes(s.category)) err.push(`${w}: bad category ${s.category}`);
     if (!STATUS.includes(s.status)) err.push(`${w}: bad status ${s.status}`);
+    if (!biOk(s.tagline)) err.push(`${w}: tagline needs ko/en`);
     if (!biOk(s.summary)) err.push(`${w}: summary needs ko/en`);
     if (!HTTPS.test(s.url || '')) err.push(`${w}: url must be https`);
     if (!DATE.test(s.updated || '')) err.push(`${w}: updated must be YYYY-MM-DD`);

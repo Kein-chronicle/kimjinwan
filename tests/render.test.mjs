@@ -6,6 +6,7 @@ import {parseProjects} from '../scripts/lib/projects.mjs';
 import {esc, bi, serviceCard, collectionCard, collectionRow, factoryCard, stageLegend, heroStats, projectKind} from '../scripts/lib/render.mjs';
 
 const svc = {id: 'forge', name: 'Forge', kind: 'service', status: 'live', featured: true,
+  tagline: {ko: '한마디', en: 'tag'}, category: 'build',
   summary: {ko: '요구사항에서 개발까지', en: 'From requirements to code'},
   ai_tools: ['Claude Code', 'Codex'], url: 'https://forge.example.com/', thumb: 'assets/services/forge.png', updated: '2026-10-05'};
 

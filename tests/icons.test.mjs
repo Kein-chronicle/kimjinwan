@@ -24,7 +24,7 @@ test('size 와 cls 옵션을 반영한다', () => {
 });
 test('알 수 없는 이름은 던진다', () => { assert.throws(() => icon('nope'), /unknown icon/); assert.throws(() => icon('toString')); });
 test('카드 렌더 결과에 아이콘이 들어간다', () => {
-  const svc = {id: 'a', name: 'A', kind: 'service', status: 'live', summary: {ko: '가', en: 'a'}, ai_tools: [], url: 'https://a.example.com/', thumb: ''};
+  const svc = {id: 'a', name: 'A', kind: 'service', status: 'live', summary: {ko: '가', en: 'a'}, tagline: {ko: '한', en: 't'}, ai_tools: [], url: 'https://a.example.com/', thumb: ''};
   assert.match(serviceCard(svc), /<svg/);
   assert.doesNotMatch(serviceCard(svc), /↗/);
   const col = {id: 'g', kind: 'game', name: {ko: '게임', en: 'Games'}, summary: {ko: '설명', en: 'd'}, url: 'https://g.example.com/', count: {value: 1, as_of: '2026-10-05', source: 's'}, previews: []};

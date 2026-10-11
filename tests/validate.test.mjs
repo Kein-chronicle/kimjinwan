@@ -6,7 +6,7 @@ import {validate} from '../scripts/lib/validate.mjs';
 const bi = (ko, en) => ({ko, en});
 const svc = (id, o = {}) => ({id, name: id, kind: 'service', status: 'live', featured: false, category: 'document',
   summary: bi('요약', 'summary'), ai_tools: ['Claude Code'], url: `https://${id}.example.com/`,
-  thumb: '', updated: '2026-10-05', ...o});
+  thumb: '', tagline: bi('한마디', 'tag'), updated: '2026-10-05', ...o});
 const col = (id, o = {}) => ({id, kind: 'game', name: bi('게임', 'Games'), summary: bi('요약', 'summary'),
   url: 'https://games.example.com/', count: {value: 44, as_of: '2026-10-05', source: 'x'},
   previews: [{name: 'a', url: 'https://games.example.com/a'}], ...o});

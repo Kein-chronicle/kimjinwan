@@ -16,7 +16,11 @@
   "url": "https://forge.kimjinwan.com/",
   "thumb": "assets/services/forge.png",
   "updated": "2026-10-05",
-  "category": "build"
+  "category": "build",
+  "tagline": {
+   "ko": "요구사항에서 완성까지, 웹서비스 제작 도구",
+   "en": "From requirements to a finished web service"
+  }
  },
  {
   "id": "prism-studio",
@@ -35,7 +39,11 @@
   "url": "https://prism-studio.kimjinwan.com/",
   "thumb": "assets/services/prism-studio.png",
   "updated": "2026-10-05",
-  "category": "creative"
+  "category": "creative",
+  "tagline": {
+   "ko": "브라우저에서 하는 레이어·PSD 이미지 편집",
+   "en": "Layer and PSD image editing in the browser"
+  }
  },
  {
   "id": "gizmo-store",
@@ -54,7 +62,11 @@
   "url": "https://gizmo-store.com",
   "thumb": "assets/services/gizmo-store.png",
   "updated": "2026-10-05",
-  "category": "ai-tools"
+  "category": "ai-tools",
+  "tagline": {
+   "ko": "설치 없이 쓰는 작은 AI 도구 가게",
+   "en": "A shop of small AI tools, no install"
+  }
  },
  {
   "id": "docloom",
@@ -73,13 +85,17 @@
   "url": "https://docloom.kimjinwan.com/",
   "thumb": "assets/services/docloom.png",
   "updated": "2026-10-07",
-  "category": "document"
+  "category": "document",
+  "tagline": {
+   "ko": "문서 작업을 한곳에서, 서버 전송 없이",
+   "en": "All your documents in one place, never sent to a server"
+  }
  },
  {
   "id": "pitchwright",
   "name": "Pitchwright",
   "kind": "service",
-  "status": "prelaunch",
+  "status": "live",
   "featured": true,
   "summary": {
    "ko": "RFP를 넣으면 요구사항 분석, 컴플라이언스 매트릭스, 목차별 본문 작성, 정합성 점검까지 단계별로 제안서를 쓰고, 기관 양식에 맞춰 DOCX·PPTX·XLSX·HWPX 등으로 내보내는 제안서 작성 웹서비스.",
@@ -92,13 +108,17 @@
   "url": "https://pitchwright.kimjinwan.com/",
   "thumb": "assets/services/pitchwright.png",
   "updated": "2026-10-10",
-  "category": "document"
+  "category": "document",
+  "tagline": {
+   "ko": "RFP 한 부에서 제출할 제안서까지",
+   "en": "From one RFP to a proposal ready to submit"
+  }
  },
  {
   "id": "casewright",
   "name": "Casewright",
   "kind": "service",
-  "status": "prelaunch",
+  "status": "live",
   "featured": true,
   "category": "build",
   "summary": {
@@ -111,13 +131,17 @@
   ],
   "url": "https://casewright.kimjinwan.com/",
   "thumb": "assets/services/casewright.png",
-  "updated": "2026-10-11"
+  "updated": "2026-10-11",
+  "tagline": {
+   "ko": "요구사항에서 근거 있는 테스트 케이스까지",
+   "en": "From requirements to evidence-backed test cases"
+  }
  },
  {
   "id": "fitwright",
   "name": "Fitwright",
   "kind": "service",
-  "status": "prelaunch",
+  "status": "live",
   "featured": true,
   "category": "document",
   "summary": {
@@ -130,6 +154,10 @@
   ],
   "url": "https://fitwright.kimjinwan.com/",
   "thumb": "assets/services/fitwright.png",
-  "updated": "2026-10-11"
+  "updated": "2026-10-11",
+  "tagline": {
+   "ko": "뽑을 사람을 정하고, 이력서를 기준대로 거르기",
+   "en": "Define who to hire, screen résumés by your criteria"
+  }
  }
 ]

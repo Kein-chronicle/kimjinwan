@@ -582,3 +582,6 @@ main>.wrap>.page-foot{margin:0 0 72px}
 @media(max-width:600px){.svc-feature{grid-template-columns:1fr}}
 .svc-jump .pill{cursor:pointer;font-family:inherit}
 .svc-jump .pill[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--card)}
+
+.svc-tag{color:var(--accent);font-weight:650;font-size:14.5px;line-height:1.4;margin:-4px 0 2px}
+.svcw-body p.svc-tag{color:var(--accent);font-size:14.5px;line-height:1.4}
