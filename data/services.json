@@ -159,5 +159,28 @@
    "ko": "뽑을 사람을 정하고, 이력서를 기준대로 거르기",
    "en": "Define who to hire, screen résumés by your criteria"
   }
+ },
+ {
+  "id": "codemotionmaker",
+  "name": "CodeMotionMaker",
+  "kind": "service",
+  "status": "live",
+  "featured": true,
+  "category": "creative",
+  "summary": {
+   "ko": "말로 부탁하면 코드로 프레임을 그려 모션그래픽 MP4를 만드는 웹 서비스. 내 PC의 Claude·Codex가 코드를 짜고 내 PC의 Chrome이 한 프레임씩 찍어, 영상 편집 프로그램 없이 광고·소개·프로모션 영상을 만듭니다. 단계와 검사 55개가 박자·글꼴·소리를 고정합니다.",
+   "en": "A web service that turns a plain request into a motion-graphics MP4 drawn as code. Your own Claude or Codex writes the frames and your Chrome captures them one by one, so ads, intros and promos need no video editor. A fixed pipeline and 55 checks keep timing, fonts and sound in line."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://codemotionmaker.kimjinwan.com/",
+  "thumb": "assets/services/codemotionmaker.png",
+  "updated": "2026-10-11",
+  "tagline": {
+   "ko": "말로 부탁하면 코드가 그려 주는 모션그래픽",
+   "en": "Describe it, and code draws the motion graphics"
+  }
  }
 ]
