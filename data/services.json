@@ -93,5 +93,24 @@
   "thumb": "assets/services/pitchwright.png",
   "updated": "2026-10-10",
   "category": "document"
+ },
+ {
+  "id": "casewright",
+  "name": "Casewright",
+  "kind": "service",
+  "status": "prelaunch",
+  "featured": true,
+  "category": "build",
+  "summary": {
+   "ko": "요구사항 정의서·기획서·화면설계서를 올리면 근거를 붙인 테스트 케이스(TC)를 만들고, 추천 양식이나 직접 올린 양식의 엑셀로 내보내는 웹 서비스. 판정은 코드의 게이트가 하고 AI는 제안만 합니다.",
+   "en": "A web service that turns requirement, planning and screen-design documents into evidence-backed test cases and exports them to Excel, in a recommended form or one you upload. Code-based gates make the judgments, and the AI only proposes."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://casewright.kimjinwan.com/",
+  "thumb": "assets/services/casewright.png",
+  "updated": "2026-10-11"
  }
 ]
