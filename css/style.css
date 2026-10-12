@@ -594,3 +594,4 @@ main>.wrap>.page-foot{margin:0 0 72px}
 
 .img-credit{margin:6px 0 0;font-size:12px;color:var(--muted,#6b7280)}
 .fac-to{color:var(--muted);font-weight:500}
+.hv-cap a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
