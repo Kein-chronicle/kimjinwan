@@ -76,7 +76,7 @@ test('경력 페이지는 강점·전체 타임라인·그리드·모달·게임
 });
 test('모든 페이지 푸터에 연락처가 있다', () => {
   for (const f of ['index.html', 'works/index.html', 'factories/index.html', 'career/index.html']) {
-    const h = read(f); assert.match(h, /k_star_w@naver\.com/, f); assert.doesNotMatch(h, /youtube\.com|linkedin\.com/i, f + ' 연락은 이메일만(SNS 링크 없음)');
+    const h = read(f); assert.match(h, /k_star_w@naver\.com/, f); assert.doesNotMatch(h.replaceAll('https://www.youtube.com/@chibi-bangsongguk', ''), /youtube\.com|linkedin\.com/i, f + ' 연락은 이메일만(SNS 링크 없음; 영상 공장의 생성물 링크인 치비 방송국 채널만 예외)');
   }
 });
 test('이관된 본문에 이모지·그래디언트·사라진 클래스가 없다', () => {
@@ -97,7 +97,7 @@ test('home/works/factories 는 data.js 를 불러오지 않는다', () => {
   for (const f of ['index.html', 'works/index.html', 'factories/index.html']) assert.doesNotMatch(read(f), /js\/data\.js/, f);
 });
 test('parseProjects / pickFeatured', () => {
-  assert.equal(projects.length, 55);
+  assert.equal(projects.length, 56);
   assert.throws(() => parseProjects('var x = 1'), /not found/);
   assert.throws(() => parseProjects('window.PROJECTS = [{bad}];'), /not valid JSON/);
   assert.deepEqual(pickFeatured([50, 46], projects).map(p => p.id), [50, 46]);

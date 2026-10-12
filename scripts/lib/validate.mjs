@@ -55,6 +55,7 @@ export function validate({services = [], collections = [], factories = [], profi
       if (!m.source) err.push(`${w}: metric needs source`);
       if (!biOk(m.label) || m.value === undefined || m.value === '') err.push(`${w}: metric needs label and value`);
     }
+    if (f.showcase && (!/^https:\/\//.test(f.showcase.url || '') || !biOk(f.showcase.label))) err.push(`${w}: showcase needs https url and ko/en label`);
     for (const o of f.outputs || []) if (!ids.has(o)) err.push(`${w}: outputs references unknown service ${o}`);
   }
   if (profile) validateProfile(profile, err);

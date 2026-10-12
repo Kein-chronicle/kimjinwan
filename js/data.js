@@ -1134,7 +1134,8 @@ window.PROJECTS = [
    "PM",
    "Mass-production"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-casual-game.jpg",
+  "imgCredit": "스마트투데이",
   "client": "",
   "period": "",
   "highlights": []
@@ -1158,7 +1159,8 @@ window.PROJECTS = [
    "PM",
    "Gov R&D"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "",
   "period": "",
   "highlights": []
@@ -1182,7 +1184,8 @@ window.PROJECTS = [
    "PM",
    "Game platform"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "",
   "period": "",
   "highlights": []
@@ -1208,7 +1211,8 @@ window.PROJECTS = [
    "Multilingual",
    "Global"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-casual-game.jpg",
+  "imgCredit": "스마트투데이",
   "client": "",
   "period": "",
   "highlights": []
@@ -1234,7 +1238,8 @@ window.PROJECTS = [
    "WebApp",
    "VOD"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-genesis.jpg",
+  "imgCredit": "현대자동차그룹 뉴스룸",
   "client": "",
   "period": "",
   "highlights": []
@@ -1256,7 +1261,8 @@ window.PROJECTS = [
   "stackEn": [
    "PM"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-benz-livetv.jpg",
+  "imgCredit": "아이뉴스24",
   "client": "",
   "period": "",
   "highlights": []
@@ -1284,7 +1290,8 @@ window.PROJECTS = [
    "Gamepad server",
    "Patent"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "",
   "period": "",
   "highlights": []
@@ -1312,7 +1319,8 @@ window.PROJECTS = [
    "Security (CSMS)",
    "OEM"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-benz-livetv.jpg",
+  "imgCredit": "아이뉴스24",
   "client": "LG U+ / Mercedes-Benz",
   "period": "2025.12~2026.07",
   "highlights": []
@@ -1336,7 +1344,8 @@ window.PROJECTS = [
    "PM",
    "WebApp"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-genesis.jpg",
+  "imgCredit": "현대자동차그룹 뉴스룸",
   "client": "현대차(제네시스)",
   "period": "2026.01~",
   "highlights": []
@@ -1358,7 +1367,8 @@ window.PROJECTS = [
   "stackEn": [
    "PM"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-casual-game.jpg",
+  "imgCredit": "스마트투데이",
   "client": "LG U+ / 현대·기아",
   "period": "2026.01~03",
   "highlights": []
@@ -1380,7 +1390,8 @@ window.PROJECTS = [
   "stackEn": [
    "PM"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-casual-game.jpg",
+  "imgCredit": "스마트투데이",
   "client": "LG U+ / 현대·기아",
   "period": "2026.04~",
   "highlights": []
@@ -1404,7 +1415,8 @@ window.PROJECTS = [
    "PM",
    "Game platform"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "르노코리아(RKM)",
   "period": "2025.04~2027.08",
   "highlights": []
@@ -1428,7 +1440,8 @@ window.PROJECTS = [
    "PM",
    "Payment integration"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "르노코리아(RKM)",
   "period": "2025.11~2026.07",
   "highlights": []
@@ -1454,7 +1467,8 @@ window.PROJECTS = [
    "Gamepad server",
    "Multiplayer"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "PickJoy(자체)",
   "period": "2026.01~06",
   "highlights": []
@@ -1476,7 +1490,8 @@ window.PROJECTS = [
   "stackEn": [
    "PM"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "PickJoy(자체)",
   "period": "2026.03~",
   "highlights": []
@@ -1500,9 +1515,40 @@ window.PROJECTS = [
    "PM",
    "Gov R&D"
   ],
-  "img": "",
+  "img": "assets/projects/obigo-pickjoy.jpg",
+  "imgCredit": "아시아경제",
   "client": "IITP 국책과제",
   "period": "~2026.04",
   "highlights": []
+ },
+ {
+   "id": 55,
+   "year": "2026",
+   "company": "오비고",
+   "companyEn": "Obigo",
+   "role": "개발 PM",
+   "roleEn": "Dev PM",
+   "name": "PickJoy 멀티게임 1차 완성 (7종)",
+   "nameEn": "PickJoy Multiplayer Games — Phase 1 (7 titles)",
+   "descEn": "Phase-1 completion report for seven multiplayer games: per-game design upgrade, then applied and verified on PC and on a real AR1 device with controller input. Vector Rush also shown on Hyundai, Kia and Renault vehicle skins.",
+   "desc": "멀티게임 7종(Space O·Kittris·Ofight·Break For Cat·Obino·Obiron·Vector Rush)의 게임별 디자인 업그레이드를 마치고 PC 화면과 AR1 실기기(컨트롤러 조작)에서 적용을 확인한 1차 완성 보고. Vector Rush 는 현대·기아·르노 차량별 적용 화면까지 정리",
+   "stack": [
+     "PM",
+     "멀티플레이",
+     "게임패드 서버"
+   ],
+   "stackEn": [
+     "PM",
+     "Multiplayer",
+     "Gamepad server"
+   ],
+   "img": "",
+   "client": "PickJoy(자체)",
+   "period": "2026.09",
+   "highlights": [
+     "7종 구성: 2인 협동 슈팅 · 대전 퍼즐 · 대전 액션 · 2인 브레이크아웃 · 2–4인 카드 · 1–4인 미로 액션 · 레이싱",
+     "게임당 대표 비주얼 → PC 디자인 적용 → AR1 실기기 적용·컨트롤러 조작 → 플레이 영상, 4개 섹션 28페이지 보고",
+     "레이싱(Vector Rush)은 현대 그랜저 · 기아 K5 · 르노 그랑콜레오스 OEM 차량별 적용 화면 포함"
+   ]
  }
 ];

@@ -128,7 +128,7 @@ function openModal(id){
   document.getElementById('modalContent').innerHTML=`
     <div class="mmeta">${meta}</div>
     <h2>${pName(p)}</h2>
-    ${img}
+    ${img}${p.imgCredit?`<p class="img-credit">${en()?'Image: ':'이미지 출처: '}${p.imgCredit}</p>`:''}
     <div class="mrole">${en()&&p.roleEn?p.roleEn:p.role}</div>
     <p>${pDesc(p)}</p>
     ${hl}
@@ -220,4 +220,15 @@ function openGameAuto(){
     }
   }
   btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.svcCat)));
+})();
+
+// ===== 히어로 영상: 소리 켜기/끄기, 모션 줄이기 설정이면 자동재생 대신 포스터 =====
+(function(){
+  const v=document.getElementById('heroVideo'), b=document.getElementById('heroSound');
+  if(!v) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.controls=true;}
+  if(b) b.addEventListener('click',()=>{
+    v.muted=!v.muted; b.setAttribute('aria-pressed',String(!v.muted));
+    if(!v.muted){v.currentTime=0;const r=v.play();if(r&&r.catch)r.catch(()=>{});}
+  });
 })();

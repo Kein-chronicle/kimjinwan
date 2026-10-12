@@ -87,7 +87,14 @@
     "source": "app-factory/profiles/faith/profile.json 의 stages[].gates 합계"
    }
   ],
-  "outputs": []
+  "outputs": [],
+  "showcase": {
+   "url": "https://blog.kimjinwan.com/ko/apps/",
+   "label": {
+    "ko": "블로그 · 내 앱",
+    "en": "Journal · My apps"
+   }
+  }
  },
  {
   "id": "web-games",
@@ -168,7 +175,14 @@
     "source": "kein-web-games/docs/ARCHITECTURE.md '편입 기준' 번호 항목 수"
    }
   ],
-  "outputs": []
+  "outputs": [],
+  "showcase": {
+   "url": "https://games.kimjinwan.com/",
+   "label": {
+    "ko": "웹게임 사이트",
+    "en": "Web games site"
+   }
+  }
  },
  {
   "id": "video",
@@ -240,7 +254,14 @@
     "source": "kein-tube/content/ledger.json episodes 31건 중 status 가 public 인 건수(public 21 / hold 8 / deleted 2)"
    }
   ],
-  "outputs": []
+  "outputs": [],
+  "showcase": {
+   "url": "https://www.youtube.com/@chibi-bangsongguk",
+   "label": {
+    "ko": "유튜브 채널",
+    "en": "YouTube channel"
+   }
+  }
  },
  {
   "id": "blog",
@@ -321,7 +342,14 @@
     "source": "kein-blog/docs/editorial/PIPELINE.md 의 stage 표 7행(brief~published)"
    }
   ],
-  "outputs": []
+  "outputs": [],
+  "showcase": {
+   "url": "https://blog.kimjinwan.com/ko/",
+   "label": {
+    "ko": "블로그",
+    "en": "Journal"
+   }
+  }
  },
  {
   "id": "web-tools",
@@ -402,6 +430,13 @@
     "source": "kein-web-tools/forge-production.json verification 배열 3개(npm run lint / npm test / npm run build)"
    }
   ],
-  "outputs": []
+  "outputs": [],
+  "showcase": {
+   "url": "https://apps.kimjinwan.com/",
+   "label": {
+    "ko": "웹 도구 사이트",
+    "en": "Web tools site"
+   }
+  }
  }
 ]
