@@ -17,16 +17,16 @@ export function facts(data, projects) {
 export function pageMeta(f) {
   return {
     home: {
-      title: '김진완 — AI로 만들고 운영하는 개발자 · PM',
-      description: `개발자·PM 김진완의 허브. ${f.years}년 현장 경력을 바탕으로 AI와 함께 직접 만들고 운영하는 서비스, 웹게임, 웹 도구, 블로그, 그리고 그 일을 돌리는 AI 공장 ${f.factories}곳을 한곳에 모았습니다.`,
+      title: '김진완 — 개발자 · PM',
+      description: `개발자·PM 김진완의 홈페이지. ${f.years}년 현장 경력과, 직접 만들어 제공하는 서비스, 웹게임, 웹 도구, 블로그, 그리고 그 일을 돌리는 공장 ${f.factories}곳을 한곳에 모았습니다.`,
       kicker: '',
-      headline: 'AI로 만들고 운영하는 서비스 · 공장 · 기록',
+      headline: '직접 만들어 제공하는 서비스 · 공장 · 기록',
     },
     works: {
-      title: '서비스 — 직접 만들어 운영하는 서비스 · 김진완',
-      description: '김진완이 AI와 함께 직접 만들어 운영하는 서비스, 웹게임, 웹 도구, 블로그와 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.',
+      title: '서비스 — 직접 만들어 제공하는 서비스 · 김진완',
+      description: '김진완이 직접 만들어 제공하는 서비스, 웹게임, 웹 도구, 블로그와 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.',
       kicker: 'WORKS',
-      headline: '직접 만들어 운영하는 서비스와 작업물',
+      headline: '직접 만들어 제공하는 서비스와 작업물',
     },
     factories: {
       title: `서비스를 만드는 AI 공장 ${f.factories}곳 — 김진완`,
