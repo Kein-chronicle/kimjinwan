@@ -9,8 +9,9 @@
       "headline": "직접 만들어 제공하는 서비스 · 공장 · 기록",
       "domain": "kimjinwan.com"
     },
-    "sha256": "206eba2a636c933713b28304fc0dce32f073bbff920768c162902d47731faf5a",
-    "bytes": 56174
+    "sha256": "5471b7633f16fab417dc1d36674f99f823adc307b5912eb53e8c0b05882b00fb",
+    "bytes": 66159,
+    "source": "assets/hero/jinwan-share-frame.png"
   },
   "works": {
     "file": "assets/og/works.png",

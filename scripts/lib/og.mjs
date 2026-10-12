@@ -21,6 +21,8 @@ export function pageMeta(f) {
       description: `개발자·PM 김진완의 홈페이지. 직접 만들어 제공하는 서비스 ${f.services}곳(문서·업무, 창작, 개발 도구와 웹게임, 웹 도구, 블로그), 그 생산을 맡은 공장 ${f.factories}곳, ${f.years}년 현장 경력을 소개합니다.`,
       kicker: '',
       headline: '직접 만들어 제공하는 서비스 · 공장 · 기록',
+      // 공유 카드는 히어로 소개 영상의 한 장면(assets/hero/jinwan-share-frame.png)이다 → 카드 글자는 영상이 그린 것.
+      alt: '김진완 소개 영상의 마지막 장면 — 어두운 화면에 김진완, “논리로 만들고, 끝까지 운영합니다”, kimjinwan.com이 적혀 있다',
     },
     works: {
       title: '서비스 — 직접 만들어 제공하는 서비스 · 김진완',
@@ -52,6 +54,6 @@ export function pageMeta(f) {
 
 export const CARD_KEYS = ['home', 'works', 'factories', 'career', 'game'];
 export const cardPath = key => `assets/og/${key}.png`;
-export const cardAlt = m => `“${m.headline}” — Kein 로고와 김진완 · ${ROLE_LINE}, kimjinwan.com이 적힌 공유 카드`;
+export const cardAlt = m => m.alt || `“${m.headline}” — Kein 로고와 김진완 · ${ROLE_LINE}, kimjinwan.com이 적힌 공유 카드`;
 // 카드에 실제로 찍히는 문구(lock 대조 대상)
 export const cardText = m => ({wordmark: 'Kein', name: '김진완', role: ROLE_LINE, kicker: m.kicker, headline: m.headline, domain: 'kimjinwan.com'});

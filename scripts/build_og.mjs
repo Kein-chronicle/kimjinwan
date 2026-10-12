@@ -112,6 +112,23 @@ export async function render({thumbs} = {}) {
   try {
     for (const key of CARD_KEYS) {
       const text = cardText(meta[key]);
+      const frame = path.join(ROOT, 'assets/hero/jinwan-share-frame.png');
+      if (key === 'home' && fs.existsSync(frame)) { // 홈 카드 = 히어로 영상의 한 프레임(16:9 → 1200×630 가운데 잘라내기)
+        const dest = path.join(ROOT, cardPath(key));
+        execFileSync('python3', ['-c', `import sys
+from PIL import Image
+im = Image.open(sys.argv[1]).convert('RGB')
+w, h = im.size
+th = round(w * ${H} / ${W})
+top = (h - th) // 2
+im = im.crop((0, top, w, top + th)).resize((${W}, ${H}), Image.LANCZOS)
+im.save(sys.argv[2], optimize=True)`, frame, dest]);
+        const buf = fs.readFileSync(dest);
+        lock[key] = {file: cardPath(key), text, sha256: createHash('sha256').update(buf).digest('hex'), bytes: buf.length, source: 'assets/hero/jinwan-share-frame.png'};
+        if (thumbs) { fs.mkdirSync(thumbs, {recursive: true}); execFileSync('sips', ['-Z', '300', dest, '--out', path.join(thumbs, key + '-300.png')], {stdio: 'ignore'}); }
+        console.log(`${cardPath(key)}  ${W}x${H}  ${(buf.length / 1024).toFixed(1)}KB  (hero video frame)`);
+        continue;
+      }
       const html = path.join(tmp, key + '.html');
       // 홈·서비스 카드는 오른쪽에 서비스 스크린샷 벽을 얹는다(데이터가 바뀌면 이 스크립트를 다시 돌린다)
       const wall = (key === 'home' || key === 'works')
