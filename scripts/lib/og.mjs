@@ -10,7 +10,7 @@ export const CAREER_YEARS = 11;
 export const ROLE_LINE = '개발자 · PM';
 
 export function facts(data, projects) {
-  return {years: CAREER_YEARS, factories: data.factories.length, projects: projects.length};
+  return {years: CAREER_YEARS, factories: data.factories.length, projects: projects.length, services: data.services.length};
 }
 
 // 페이지별 메타 + 카드 문구. key 는 assets/og/<key>.png 이름이기도 하다.
@@ -18,15 +18,15 @@ export function pageMeta(f) {
   return {
     home: {
       title: '김진완 — 개발자 · PM',
-      description: `개발자·PM 김진완의 홈페이지. ${f.years}년 현장 경력과, 직접 만들어 제공하는 서비스, 웹게임, 웹 도구, 블로그, 그리고 그 일을 돌리는 공장 ${f.factories}곳을 한곳에 모았습니다.`,
+      description: `개발자·PM 김진완의 홈페이지. 직접 만들어 제공하는 서비스 ${f.services}곳(문서·업무, 창작, 개발 도구와 웹게임, 웹 도구, 블로그), 그 생산을 맡은 공장 ${f.factories}곳, ${f.years}년 현장 경력을 소개합니다.`,
       kicker: '',
       headline: '직접 만들어 제공하는 서비스 · 공장 · 기록',
     },
     works: {
       title: '서비스 — 직접 만들어 제공하는 서비스 · 김진완',
-      description: '김진완이 직접 만들어 제공하는 서비스, 웹게임, 웹 도구, 블로그와 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.',
+      description: `김진완이 직접 만들어 제공하는 서비스 ${f.services}곳과 웹게임, 웹 도구, 블로그, 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.`,
       kicker: 'WORKS',
-      headline: '직접 만들어 제공하는 서비스와 작업물',
+      headline: `직접 만들어 제공하는 서비스 ${f.services}곳`,
     },
     factories: {
       title: `서비스를 만드는 AI 공장 ${f.factories}곳 — 김진완`,

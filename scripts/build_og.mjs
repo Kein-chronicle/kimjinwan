@@ -23,7 +23,7 @@ const FONT_CSS = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist
 const W = 1200, H = 630;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-export function cardHtml(t) {
+export function cardHtml(t, thumbs = []) {
   const mark = `<svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3B4BDB"/><path d="${K_PATH}" fill="#fff"/><circle cx="${K_DOT.cx}" cy="${K_DOT.cy}" r="${K_DOT.r}" fill="#FFB547"/></svg>`;
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <link rel="stylesheet" href="${FONT_CSS}">
@@ -45,14 +45,18 @@ body{background:#FAFAF7;color:#16181D;font-family:Pretendard,sans-serif;position
 .who b{color:#16181D;font-weight:700}
 .bottom{display:flex;align-items:center;gap:12px;border-top:2px solid #E4E4DC;padding-top:22px;font-size:22px;font-weight:600;color:#666D7C;letter-spacing:.01em}
 .dot{width:10px;height:10px;border-radius:50%;background:#FFB547}
+.wall{position:absolute;right:104px;top:104px;width:444px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.wall img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 8px 20px rgba(22,24,29,.18),0 0 0 1px rgba(22,24,29,.08);display:block;background:#fff}
+.frame.has-wall .headline{max-width:520px;font-size:56px}
 </style></head><body>
 <div class="edge"></div>
-<div class="frame">
+<div class="frame${thumbs.length ? ' has-wall' : ''}">
   <div class="top">${mark}<span class="word">${esc(t.wordmark)}</span>${t.kicker ? `<span class="kicker">${esc(t.kicker)}</span>` : ''}</div>
   <div class="main"><div class="rule"></div><h1 class="headline">${esc(t.headline)}</h1>
     <div class="who"><b>${esc(t.name)}</b> · ${esc(t.role)}</div></div>
   <div class="bottom"><span class="dot"></span>${esc(t.domain)}</div>
 </div>
+${thumbs.length ? `<div class="wall">${thumbs.map(src => `<img src="${src}" alt="">`).join('')}</div>` : ''}
 </body></html>`;
 }
 
@@ -109,7 +113,12 @@ export async function render({thumbs} = {}) {
     for (const key of CARD_KEYS) {
       const text = cardText(meta[key]);
       const html = path.join(tmp, key + '.html');
-      fs.writeFileSync(html, cardHtml(text));
+      // 홈·서비스 카드는 오른쪽에 서비스 스크린샷 벽을 얹는다(데이터가 바뀌면 이 스크립트를 다시 돌린다)
+      const wall = (key === 'home' || key === 'works')
+        ? [...data.services].sort((a, b) => a.name.localeCompare(b.name, 'en', {sensitivity: 'base'})).slice(0, 12)
+          .map(sv => 'data:image/png;base64,' + fs.readFileSync(path.join(ROOT, sv.thumb)).toString('base64'))
+        : [];
+      fs.writeFileSync(html, cardHtml(text, wall));
       const {info, png} = await shoot(cdp, html);
       for (const w of ['500', '600', '700', '800']) if (!info.loaded.includes(w)) throw new Error(`${key}: Pretendard ${w} not loaded (got ${info.loaded}) — check network/CDN`);
       if (info.lines > 2) throw new Error(`${key}: headline wraps to ${info.lines} lines`);

@@ -45,7 +45,7 @@ function collectDates(v, acc = []) {
 export const stampOf = d => collectDates(d).sort().at(-1);
 
 // 외부 SNS 링크(sameAs)는 두지 않는다 — 연락은 이메일만. 얼굴 사진은 공유·구조화 데이터 어디에도 쓰지 않는다(Person.image 없음).
-function schemaFor(page, stamp, {profile}) {
+function schemaFor(page, stamp, {profile, services = []}) {
   const url = `${SITE}${page.path}`;
   const img = cardUrl(page.image);
   const image = {'@type': 'ImageObject', '@id': `${url}#primaryimage`, url: img, contentUrl: img, thumbnailUrl: img, width: 1200, height: 630, caption: page.imageAlt};
@@ -55,7 +55,9 @@ function schemaFor(page, stamp, {profile}) {
       jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en)},
   ];
   if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
-    mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: 'https://blog.kimjinwan.com/', primaryImageOfPage: image, thumbnailUrl: img});
+    mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: ['https://service.kimjinwan.com/', 'https://blog.kimjinwan.com/', 'https://games.kimjinwan.com/', 'https://apps.kimjinwan.com/'], primaryImageOfPage: image, thumbnailUrl: img},
+    {'@type': 'ItemList', '@id': `${SITE}/#services`, name: '김진완이 직접 만들어 제공하는 서비스', numberOfItems: services.length,
+      itemListElement: services.map((s, i) => ({'@type': 'ListItem', position: i + 1, name: s.name, url: s.url}))});
   else g.push(
     {'@type': 'WebPage', '@id': `${url}#webpage`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
       isPartOf: {'@id': `${SITE}/#website`}, about: {'@id': `${SITE}/#person`}, breadcrumb: {'@id': `${url}#breadcrumb`}, primaryImageOfPage: image, thumbnailUrl: img},
