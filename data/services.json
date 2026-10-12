@@ -273,5 +273,28 @@
    "ko": "필요한 답만 빠르게",
    "en": "Just the answer you need, fast"
   }
+ },
+ {
+  "id": "proofdesk",
+  "name": "Proofdesk",
+  "kind": "service",
+  "status": "live",
+  "featured": true,
+  "category": "document",
+  "summary": {
+   "ko": "보고서 · 견적서 · 제안서 · 코드를 제출하기 전에 교정을 보는 검수 서비스. 오타, 안 맞는 숫자, 빈칸, 기간, 참여자와 공수 매칭, 요구사항 누락을 찾아 수정을 제안하고, 고친 결과를 다시 검수해 최종 확인서까지 받습니다. 맞는지는 계산하는 코드가 판정하고 AI는 근거와 함께 제안만 합니다.",
+   "en": "A proofreading service to run before you submit reports, quotes, proposals and code. It finds typos, numbers that do not add up, blanks, date and staffing mismatches and missing requirements, proposes fixes, re-checks your corrections and issues a final sign-off. Code decides what is correct; the AI only proposes, with evidence."
+  },
+  "ai_tools": [
+   "Claude Code",
+   "Codex"
+  ],
+  "url": "https://proofdesk.kimjinwan.com/",
+  "thumb": "assets/services/proofdesk.png",
+  "updated": "2026-10-12",
+  "tagline": {
+   "ko": "제출 전에 교정을 봅니다",
+   "en": "Proof-check before you submit"
+  }
  }
 ]
