@@ -1137,6 +1137,65 @@
     "moonhare-hills.webp": 13202
    }
   },
+  "mori-lantern-cluster": {
+   "from": "{\"srcs\":[\"mori-lantern-cluster-0.png\",\"mori-lantern-cluster-2.png\",\"mori-lantern-cluster-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "mori-lantern-cluster-1.webp": 38682,
+    "mori-lantern-cluster-2.webp": 19620,
+    "mori-lantern-cluster-hero.webp": 20314,
+    "mori-lantern-cluster.webp": 18486
+   }
+  },
+  "my-whale": {
+   "from": "{\"srcs\":[\"my-whale-0.png\",\"my-whale-1.png\",\"my-whale-3.png\",\"my-whale-5.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "my-whale-1.webp": 11720,
+    "my-whale-2.webp": 11076,
+    "my-whale-3.webp": 11866,
+    "my-whale-hero.webp": 9136,
+    "my-whale.webp": 4172
+   }
+  },
   "neon-beat-operator": {
    "from": "{\"srcs\":[\"neon-beat-operator-0.png\",\"neon-beat-operator-4.png\",\"neon-beat-operator-8.png\"],\"cardI\":1}",
    "card": [
@@ -1572,6 +1631,60 @@
     "pulse-bat.webp": 10210
    }
   },
+  "raccoon-gear-align": {
+   "from": "{\"srcs\":[\"raccoon-gear-align-0.png\",\"raccoon-gear-align-s3.png\",\"raccoon-gear-align-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "raccoon-gear-align-1.webp": 14272,
+    "raccoon-gear-align-2.webp": 7256,
+    "raccoon-gear-align-hero.webp": 11832,
+    "raccoon-gear-align.webp": 4954
+   }
+  },
+  "rivet-cloud-stack": {
+   "from": "{\"srcs\":[\"rivet-cloud-stack-0.png\",\"rivet-cloud-stack-2.png\",\"rivet-cloud-stack-6.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "rivet-cloud-stack-1.webp": 18206,
+    "rivet-cloud-stack-2.webp": 19080,
+    "rivet-cloud-stack-hero.webp": 17426,
+    "rivet-cloud-stack.webp": 7220
+   }
+  },
   "shadow-orbit-explorer": {
    "card": [
     640,
@@ -1619,6 +1732,38 @@
     "signal-tower-guard.webp": 37310
    }
   },
+  "skyline-gliders": {
+   "from": "{\"srcs\":[\"skyline-gliders-0.png\",\"skyline-gliders-s15.png\",\"skyline-gliders-end.png\",\"skyline-gliders-res.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "skyline-gliders-1.webp": 39636,
+    "skyline-gliders-2.webp": 7752,
+    "skyline-gliders-3.webp": 27764,
+    "skyline-gliders-hero.webp": 38054,
+    "skyline-gliders.webp": 15334
+   }
+  },
   "soda-stack-signal": {
    "card": [
     640,
@@ -1638,6 +1783,33 @@
     "soda-stack-signal-1.webp": 20740,
     "soda-stack-signal-hero.webp": 105714,
     "soda-stack-signal.webp": 39674
+   }
+  },
+  "sort-penguin": {
+   "from": "{\"srcs\":[\"sort-penguin-0.png\",\"sort-penguin-mid.png\",\"sort-penguin-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "sort-penguin-1.webp": 19994,
+    "sort-penguin-2.webp": 20972,
+    "sort-penguin-hero.webp": 16104,
+    "sort-penguin.webp": 6880
    }
   },
   "star-scout-survivors": {
@@ -1666,6 +1838,92 @@
     "star-scout-survivors.webp": 2538
    }
   },
+  "stargazer-glyph-case": {
+   "from": "{\"srcs\":[\"stargazer-glyph-case-0.png\",\"stargazer-glyph-case-wrong.png\",\"stargazer-glyph-case-hit1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "stargazer-glyph-case-1.webp": 17998,
+    "stargazer-glyph-case-2.webp": 9280,
+    "stargazer-glyph-case-hero.webp": 15964,
+    "stargazer-glyph-case.webp": 7030
+   }
+  },
+  "stormglass-orbit": {
+   "from": "{\"srcs\":[\"stormglass-orbit-0.png\",\"stormglass-orbit-1.png\",\"stormglass-orbit-5.png\",\"stormglass-orbit-4.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "stormglass-orbit-1.webp": 103106,
+    "stormglass-orbit-2.webp": 104526,
+    "stormglass-orbit-3.webp": 35096,
+    "stormglass-orbit-hero.webp": 77366,
+    "stormglass-orbit.webp": 37400
+   }
+  },
+  "sudoku-crane": {
+   "from": "{\"srcs\":[\"sudoku-crane-0.png\",\"sudoku-crane-click1.png\",\"sudoku-crane-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "sudoku-crane-1.webp": 18866,
+    "sudoku-crane-2.webp": 21006,
+    "sudoku-crane-hero.webp": 14394,
+    "sudoku-crane.webp": 6052
+   }
+  },
   "tori-meteor-run": {
    "from": "{\"srcs\":[\"tori-meteor-run-0.png\",\"tori-meteor-run-2.png\",\"tori-meteor-run-7.png\"],\"cardI\":1}",
    "card": [
@@ -1691,6 +1949,173 @@
     "tori-meteor-run-2.webp": 13744,
     "tori-meteor-run-hero.webp": 12466,
     "tori-meteor-run.webp": 4328
+   }
+  },
+  "twin-fox": {
+   "from": "{\"srcs\":[\"twin-fox-0.png\",\"twin-fox-mid.png\",\"twin-fox-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "twin-fox-1.webp": 22634,
+    "twin-fox-2.webp": 23062,
+    "twin-fox-hero.webp": 17614,
+    "twin-fox.webp": 7132
+   }
+  },
+  "typo-survivors": {
+   "from": "{\"srcs\":[\"typo-survivors-0.png\",\"typo-survivors-levelup.png\",\"typo-survivors-end.png\",\"typo-survivors-meta.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "typo-survivors-1.webp": 11578,
+    "typo-survivors-2.webp": 9436,
+    "typo-survivors-3.webp": 17472,
+    "typo-survivors-hero.webp": 21362,
+    "typo-survivors.webp": 4310
+   }
+  },
+  "volt-marten-bastion": {
+   "from": "{\"srcs\":[\"volt-marten-bastion-0.png\",\"volt-marten-bastion-1.png\",\"volt-marten-bastion-4.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "volt-marten-bastion-1.webp": 23802,
+    "volt-marten-bastion-2.webp": 23786,
+    "volt-marten-bastion-hero.webp": 17426,
+    "volt-marten-bastion.webp": 10458
+   }
+  },
+  "whale-survivors": {
+   "from": "{\"srcs\":[\"whale-survivors-0.png\",\"whale-survivors-s12.png\",\"whale-survivors-end.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "whale-survivors-1.webp": 30000,
+    "whale-survivors-2.webp": 41304,
+    "whale-survivors-hero.webp": 21250,
+    "whale-survivors.webp": 10784
+   }
+  },
+  "word-frog": {
+   "from": "{\"srcs\":[\"word-frog-0.png\",\"word-frog-miss.png\",\"word-frog-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "word-frog-1.webp": 19784,
+    "word-frog-2.webp": 22434,
+    "word-frog-hero.webp": 15146,
+    "word-frog.webp": 6264
+   }
+  },
+  "word-worm": {
+   "from": "{\"srcs\":[\"word-worm-0.png\",\"word-worm-mid.png\",\"word-worm-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "word-worm-1.webp": 20268,
+    "word-worm-2.webp": 21018,
+    "word-worm-hero.webp": 15632,
+    "word-worm.webp": 6628
    }
   }
  },
