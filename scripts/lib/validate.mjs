@@ -44,6 +44,7 @@ export function validate({services = [], collections = [], factories = [], profi
   for (const f of factories) {
     const w = `factories.${f.id}`;
     if (!biOk(f.name) || !biOk(f.role) || !biOk(f.human_role)) err.push(`${w}: name/role/human_role need ko/en`);
+    if (f.paused && !biOk(f.paused.note)) err.push(`${w}: paused.note needs ko/en`);
     for (const st of f.stages || []) {
       if (!STAGE.includes(st.kind)) err.push(`${w}: bad stage kind ${st.kind}`);
       if (!biOk(st.name)) err.push(`${w}: stage name needs ko/en`);

@@ -276,6 +276,9 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 .dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
 .dot-ai{background:var(--stage-ai)} .dot-gate{background:var(--stage-gate)} .dot-human{background:var(--stage-human)}
 .fac-human{font-size:15px}
+.fac-paused{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.6;padding:10px 12px;border:1px dashed var(--muted);border-radius:8px;color:var(--muted)}
+.fac-paused svg{flex:none;margin-top:3px}
+.fac-paused strong{color:var(--stage-human);margin-right:4px;letter-spacing:.04em}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;border-top:1px solid var(--line);padding-top:14px}
 .metric dt{font-size:12px;color:var(--muted)} .metric dd{font-size:24px;font-weight:700}
 .fac-outs{list-style:none;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}

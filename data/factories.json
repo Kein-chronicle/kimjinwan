@@ -94,6 +94,13 @@
     "ko": "블로그 · 내 앱",
     "en": "Journal · My apps"
    }
+  },
+  "paused": {
+   "since": "2026-10-13",
+   "note": {
+    "ko": "현재 운영을 쉬고 있습니다. App Store 심사 방식이 바뀌면서, 그에 맞춰 파이프라인을 다시 설계하기 전까지 새 앱 제작을 멈췄습니다. 이미 업로드한 앱은 그대로 유지됩니다.",
+    "en": "Currently on hold. App Store's review process has changed, so new app production is paused until the pipeline is redesigned to fit it. Apps already uploaded remain as they are."
+   }
   }
  },
  {

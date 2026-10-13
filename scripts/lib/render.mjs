@@ -104,6 +104,7 @@ export function factoryCard(f, servicesById, {link = false} = {}) {
   <div class="fac-head">
     <h3>${f.icon ? icon(f.icon, {size: 22, cls: 'fac-ico'}) : ''}<span>${link ? `<a href="/factories/#${esc(f.id)}">${bi(f.name)}</a>` : bi(f.name)}</span></h3>
     <p class="fac-role">${bi(f.role)}</p>
+    ${f.paused ? `<p class="fac-paused">${icon('clock', {size: 15})}<span><strong class="mono">${bi({ko: '운영 중단', en: 'ON HOLD'})}</strong> ${bi(f.paused.note)}</span></p>` : ''}
     ${f.showcase ? `<a class="more" href="${esc(f.showcase.url)}" ${EXT}>${bi({ko: '생성물 보기', en: 'See the output'})} <span class="fac-to">· ${bi(f.showcase.label)}</span>${ext}</a>` : ''}
   </div>
   <div class="fac-body">
