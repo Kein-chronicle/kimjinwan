@@ -16,7 +16,7 @@ export const CATEGORY = [
   {key: 'document', icon: 'file-text', label: {ko: '문서·업무', en: 'Documents & work'}, blurb: {ko: '문서를 쓰고 고치고 제출하는 일', en: 'Writing, editing and submitting documents'}},
   {key: 'creative', icon: 'sparkles', label: {ko: '디자인·창작', en: 'Design & creative'}, blurb: {ko: '이미지와 시각 작업', en: 'Images and visual work'}},
   {key: 'build', icon: 'wrench', label: {ko: '개발·제작', en: 'Build & make'}, blurb: {ko: '서비스를 만드는 도구', en: 'Tools for building services'}},
-  {key: 'hub', icon: 'gamepad', label: {ko: '게임·도구·글', en: 'Games, tools & writing'}, blurb: {ko: '계속 늘어나는 웹게임·웹 도구·블로그', en: 'Ever-growing web games, tools and journal'}},
+  {key: 'hub', icon: 'gamepad', label: {ko: '게임·도구', en: 'Games & tools'}, blurb: {ko: '계속 늘어나는 웹게임·웹 도구', en: 'Ever-growing web games and tools'}},
   {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
@@ -137,7 +137,6 @@ export function heroStats({services, collections}) {
     cell('layers', services.length, {ko: '서비스', en: 'Services'}),
     cell('gamepad', n('game'), {ko: '웹게임', en: 'Web games'}),
     cell('wrench', n('tool'), {ko: '웹 도구', en: 'Web tools'}),
-    cell('book-open', n('blog'), {ko: '블로그 글', en: 'Journal posts'}),
   ].join('');
 }
 
@@ -196,7 +195,7 @@ export function attachProjects(timeline, featured) {
 
 const FILTERS = [
   ['all', 'layers', {ko: '전체', en: 'All'}], ['service', 'rocket', {ko: '서비스', en: 'Services'}], ['game', 'gamepad', {ko: '게임', en: 'Games'}],
-  ['tool', 'wrench', {ko: '도구', en: 'Tools'}], ['app', 'smartphone', {ko: '앱', en: 'Apps'}], ['blog', 'book-open', {ko: '블로그', en: 'Journal'}],
+  ['tool', 'wrench', {ko: '도구', en: 'Tools'}], ['app', 'smartphone', {ko: '앱', en: 'Apps'}],
 ];
 export function worksFilters() {
   return FILTERS.map(([k, ic, l], i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${icon(ic, {size: 16})}${bi(l)}</button>`).join('');
@@ -275,7 +274,7 @@ export const HUB_SECTIONS = [
     intro: {ko: '설치 없이 쓰는 프롬프트·스킬 가이드입니다. 용도별로 묶어 이름과 한 줄 설명을 적었고, 항목마다 설명·대상·사용 방법과 프롬프트 전문을 이 사이트 안에서 읽을 수 있습니다. 설명은 한국어입니다.',
       en: 'Prompt and skill guides you can use without installing anything. Entries are grouped by purpose with a name and a one-line description; each has its own page with description, audience, steps and the full prompt. Descriptions are written in Korean.'}},
   {id: 'games', icon: 'gamepad', title: {ko: '웹게임', en: 'Web games'},
-    intro: {ko: '설치 없이 브라우저에서 바로 하는 게임입니다. 게임마다 소개와 조작 방법, 진행 규칙, 플레이 화면을 실었고 마음에 들면 바로 시작할 수 있습니다. 설명은 한국어입니다.',
+    intro: {ko: '설치 없이 브라우저에서 바로 하는 게임입니다. 게임마다 직접 실행해 확인한 소개와 조작 방법, 진행 규칙, 플레이 팁, 플레이 화면을 실었고 마음에 들면 바로 시작할 수 있습니다. 설명은 한국어입니다.',
       en: 'Games that run straight in the browser with no install. Each page has an introduction, controls, rules and gameplay screens, and a button to start playing. Descriptions are written in Korean.'}},
   {id: 'tools', icon: 'wrench', title: {ko: '웹 도구', en: 'Web tools'},
     intro: {ko: '브라우저에서 바로 쓰는 계산기와 변환기입니다. 도구마다 무엇을 입력받아 무엇을 내놓는지, 알아둘 한계는 무엇인지 화면 캡처와 함께 적었습니다. 설명은 한국어입니다.',
@@ -358,23 +357,24 @@ const IMG = '/assets/content';
 const figure = (kind, slug, name, rec, alt, cls = 'detail-hero') => `<figure class="${cls}"><img src="${IMG}/${kind}/${slug}-hero.webp" width="${rec.hero[0]}" height="${rec.hero[1]}" alt="${esc(alt)}" fetchpriority="high"></figure>`;
 const ORIENT = {'가로': {ko: '가로 화면', en: 'Landscape'}, '세로': {ko: '세로 화면', en: 'Portrait'}, '세로·가로': {ko: '세로·가로 모두', en: 'Portrait or landscape'}, '반응형': {ko: '화면 크기에 맞춰 바뀜', en: 'Adapts to the screen'}};
 export function gameBody(g, rec) {
-  const title = g.title.ko;
+  const title = g.title.ko, A = g.images || [];
   const info = [[{ko: '분류', en: 'Genre'}, esc(g.categories.join('·'))], g.tags?.length ? [{ko: '태그', en: 'Tags'}, esc(g.tags.join(' · '))] : null,
     g.session ? [{ko: '한 판 길이', en: 'Session'}, esc(g.session)] : null, g.orientation ? [{ko: '화면', en: 'Screen'}, bi(ORIENT[g.orientation] || {ko: g.orientation, en: g.orientation})] : null,
-    g.stageCount ? [{ko: '스테이지', en: 'Stages'}, `${g.stageCount}`] : null, g.controls?.length ? [{ko: '조작 방식', en: 'Input'}, esc(g.controls.join(', '))] : null].filter(Boolean);
+    g.controlLabels?.length ? [{ko: '조작 방식', en: 'Input'}, esc(g.controlLabels.join(', '))] : null].filter(Boolean);
   const list = items => `<ul>${items.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ul>`;
-  const sec = (label, inner) => inner ? `${h2(label)}${inner}` : '';
-  const shots = (rec.shots || []).map((sz, i) => `<figure><img src="${IMG}/games/${g.slug}-${i + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(`${title} 플레이 화면 ${i + 1}`)}" loading="lazy"></figure>`).join('');
-  return `${figure('games', g.slug, title, rec, `${title} 대표 이미지`)}
+  const sub = (label, items) => items?.length ? `<h3 lang="ko">${esc(label)}</h3>${list(items)}` : '';
+  const shots = (rec.shots || []).map((sz, i) => `<figure><img src="${IMG}/games/${g.slug}-${i + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(A[i + 1]?.alt || `${title} 플레이 화면 ${i + 1}`)}" loading="lazy"></figure>`).join('');
+  return `${figure('games', g.slug, title, rec, A[0]?.alt || `${title} 대표 이미지`)}
 <p class="detail-cta"><a class="btn btn-primary" href="https://games.kimjinwan.com/play/${esc(g.slug)}/" ${EXT}>${bi({ko: '게임하러 가기', en: 'Play now'})}${ext}</a></p>
-<p class="detail-lead" lang="ko">${esc(g.description)}</p>
-${g.pitch ? `<p lang="ko">${esc(g.pitch)}</p>` : ''}${g.lead ? `<p lang="ko">${esc(g.lead)}</p>` : ''}
-${sec({ko: '게임 정보', en: 'Game info'}, `<dl class="detail-facts">${info.map(([l, v]) => `<dt>${bi(l)}</dt><dd lang="ko">${v}</dd>`).join('')}</dl>`)}
-${sec({ko: '조작 방법', en: 'Controls'}, g.controlsDetail?.length ? list(g.controlsDetail) : '')}
-${sec({ko: '규칙', en: 'Rules'}, g.rules?.length ? list(g.rules) : '')}
-${sec({ko: '진행', en: 'Progress'}, g.progress?.length ? list(g.progress) : '')}
-${sec({ko: '스테이지 안내 예시', en: 'Stage hints'}, g.stageGuides?.length ? list(g.stageGuides) : '')}
-${shots ? `${h2({ko: '플레이 화면', en: 'Gameplay'})}<div class="detail-gallery">${shots}</div>` : ''}`;
+<p class="detail-lead" lang="ko">${esc(g.oneLiner)}</p>
+${h2({ko: '이런 게임입니다', en: 'About'})}${g.about.split(/\n+/).map(x => `<p lang="ko">${esc(x)}</p>`).join('')}
+${h2({ko: '게임 정보', en: 'Game info'})}<dl class="detail-facts">${info.map(([l, v]) => `<dt>${bi(l)}</dt><dd lang="ko">${v}</dd>`).join('')}</dl>
+${h2({ko: '조작 방법', en: 'Controls'})}${sub('PC(키보드·마우스)', g.controls.pc)}${sub('터치(모바일)', g.controls.touch)}
+${h2({ko: '목표와 규칙', en: 'Goal and rules'})}<p lang="ko">${esc(g.goal)}</p>${list(g.rules)}
+${h2({ko: '진행', en: 'Progress'})}${list(g.progress)}
+${h2({ko: '처음 하는 사람을 위한 팁', en: 'Tips'})}${list(g.tips)}
+${h2({ko: '플레이 화면', en: 'Gameplay'})}<p lang="ko">${esc(g.screens)}</p>${shots ? `<div class="detail-gallery">${shots}</div>` : ''}
+<p class="detail-verified" lang="ko">${esc(g.verified.date)} 직접 실행해 확인한 내용입니다.</p>`;
 }
 export function toolBody(t, rec) {
   const name = t.title;

@@ -105,7 +105,7 @@ test('한국어 1인칭 대명사(제가·저는·저의 등)가 화면·데이�
   const BAN = /제가|저는|저의|저를|저에게|제게|저희|(?:^|[\s>("'])제\s/m;
   // content/index.html 은 블로그·기즈모 원문의 제목·설명을 그대로 옮겨 싣는다 → 원문은 고치지 않으므로 이 검사에서 뺀다(허브가 직접 쓴 문구는 src/content.html·render.mjs 로 검사된다. tests/content.test.mjs 참고).
   const files = [...PAGES.filter(f => f !== 'content/index.html'), 'game/index.html', 'js/data.js', 'js/main.js', 'scripts/build.mjs', 'scripts/lib/render.mjs', 'scripts/lib/og.mjs', 'scripts/build_og.mjs',
-    ...fs.readdirSync('data').filter(f => f !== 'content-hub.json').map(f => 'data/' + f), ...fs.readdirSync('src', {recursive: true}).filter(f => f.endsWith('.html')).map(f => 'src/' + f)];
+    ...fs.readdirSync('data', {recursive: true}).filter(f => f.endsWith('.json') && f !== 'content-hub.json').map(f => 'data/' + f), ...fs.readdirSync('src', {recursive: true}).filter(f => f.endsWith('.html')).map(f => 'src/' + f)];
   for (const f of files) {
     const m = read(f).match(BAN);
     assert.equal(m, null, `${f}: "${m && read(f).slice(Math.max(0, m.index - 20), m.index + 20)}"`);

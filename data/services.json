@@ -206,29 +206,6 @@
   }
  },
  {
-  "id": "kein-journal",
-  "name": "Kein Journal",
-  "kind": "blog",
-  "status": "live",
-  "featured": true,
-  "category": "hub",
-  "summary": {
-   "ko": "AI 자동화의 실패와 복구, 앱 제작과 심사, 플레이 중인 게임의 공식 공지를 출처와 날짜까지 구분해 남기는 제작 기록 블로그. AI가 조사와 초안을 쓰고, 독립 검토와 자동 공개 게이트를 통과한 글만 발행합니다.",
-   "en": "A production-journal blog covering AI automation failures and recovery, app building and review, and sourced game updates. AI researches and drafts; only posts that pass an independent review and an automated release gate are published."
-  },
-  "ai_tools": [
-   "Claude Code",
-   "Codex"
-  ],
-  "url": "https://blog.kimjinwan.com/ko/",
-  "thumb": "assets/services/kein-journal.png",
-  "updated": "2026-10-12",
-  "tagline": {
-   "ko": "써보고, 플레이하고, 이야기하다",
-   "en": "Try it, play it, write it down"
-  }
- },
- {
   "id": "kein-games",
   "name": "Kein Games",
   "kind": "game",

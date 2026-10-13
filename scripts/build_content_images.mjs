@@ -4,7 +4,8 @@
 // 출력: assets/content/games/<slug>.webp(카드 640×400) · <slug>-hero.webp(≤1280폭) · <slug>-1/2.webp(실제 플레이 화면)
 //       assets/content/tools/<slug>.webp(카드 640×400) · <slug>-hero.webp(1200×750)
 //       content-src/images.json (크기·바이트 매니페스트 — 텍스트 생성기와 빌드가 읽는다)
-// 소스: 게임 = 포털 커버(kein-web-games/dist/covers) + 로컬 빌드(dist/builds/<slug>/)를 헤드리스로 띄운 실제 화면, 도구 = 라이브 페이지 화면.
+// 소스: 게임 = 직접 플레이하며 찍은 캡처 PNG(편집 원본 data/authoring/games/<id>.json 의 images[].src, 폴더는 --raw <dir> 또는 환경변수 GAME_SHOTS_DIR; 캡처 도구는 scripts/capture/), 도구 = 라이브 페이지 화면.
+//   게임: images[0] → <slug>-hero.webp(≤1280폭·≤150KB), images[1..] → <slug>-1..3.webp(≤150KB), 카드 <slug>.webp(640×400) = images[cardIndex ?? 첫 비-타이틀]. 원본 PNG 목록이 바뀌면(매니페스트 from) 그 게임만 다시 만든다.
 // 서브도메인 핫링크는 쓰지 않는다 — 결과 파일만 허브가 가진다.
 import fs from 'node:fs';
 import os from 'node:os';
@@ -13,7 +14,8 @@ import http from 'node:http';
 import {execFileSync, spawn} from 'node:child_process';
 import {setTimeout as sleep} from 'node:timers/promises';
 import {fileURLToPath} from 'node:url';
-import {collectGame, gameEligible, collectTool, toolEligible} from './lib/hub_sources.mjs';
+import {collectTool, toolEligible} from './lib/hub_sources.mjs';
+import {readAuthoring} from './lib/games_authoring.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOME = os.homedir();
@@ -24,14 +26,14 @@ const OUT = {games: path.join(ROOT, 'assets/content/games'), tools: path.join(RO
 for (const d of Object.values(OUT)) fs.mkdirSync(d, {recursive: true});
 
 // ── 대상: 소개글 자격이 있는 항목만 ──
-const games = JSON.parse(fs.readFileSync(path.join(GAMES, 'src/games.json'), 'utf8')).filter(g => !g.legacy)
-  .filter(g => gameEligible(g, collectGame(HOME, GAMES, g)));
+const authoring = readAuthoring(ROOT);
+const RAW = (() => { const i = process.argv.indexOf('--raw'); return i > -1 ? process.argv[i + 1] : process.env.GAME_SHOTS_DIR; })();
 const catalog = fs.readFileSync(path.join(TOOLS, 'lib/tool-catalog.ts'), 'utf8');
 const body = catalog.slice(catalog.indexOf('export const tools'));
 const toolItems = [...body.matchAll(/\{\s*href:\s*'([^']+)',\s*name:\s*'((?:[^'\\]|\\.)*)',\s*description:\s*'((?:[^'\\]|\\.)*)',[\s\S]*?categories:\s*\[([^\]]*)\]/g)]
   .map(m => ({href: m[1], name: m[2], description: m[3].replace(/\\'/g, "'"), categories: [...m[4].matchAll(/'([^']+)'/g)].map(x => x[1])}));
 const tools = toolItems.filter(it => toolEligible(it, collectTool(TOOLS, it)));
-console.log(`targets: ${games.length} games, ${tools.length} tools`);
+console.log(`targets: ${authoring.size} games, ${tools.length} tools`);
 
 // ── Pillow 변환 ──
 const PY = `
@@ -44,7 +46,7 @@ def save(img, path, qs):
         img.save(path, 'WEBP', quality=q, method=6)
         import os
         if os.path.getsize(path) <= LIMIT[0]: return
-LIMIT = [60*1024]
+LIMIT = [40*1024]
 def contain_on_blur(im, W, H):
     bg = im.resize((W, H), Image.LANCZOS) if False else im.copy()
     r = max(W / bg.width, H / bg.height)
@@ -68,7 +70,13 @@ if mode == 'cover':
 elif mode == 'shot':
     w, h = im.size
     if w > 1280: im = im.resize((1280, round(h*1280/w)), Image.LANCZOS)
-    LIMIT[0] = 150*1024; save(im, f'{outdir}/{name}.webp', [76, 68, 60, 52, 44]); out['size'] = list(im.size)
+    LIMIT[0] = 150*1024; save(im, f'{outdir}/{name}.webp', [74, 66, 58, 50, 42, 34, 26]); out['size'] = list(im.size)
+elif mode == 'ghero':
+    if im.width / im.height < 1.2: im = contain_on_blur(im, 1280, 720)
+    elif im.width > 1280: im = im.resize((1280, round(im.height*1280/im.width)), Image.LANCZOS)
+    LIMIT[0] = 150*1024; save(im, f'{outdir}/{name}.webp', [74, 66, 58, 50, 42, 34, 26]); out['size'] = list(im.size)
+elif mode == 'gcard':
+    card = contain_on_blur(im, 640, 400); save(card, f'{outdir}/{name}.webp', [74, 66, 58, 50, 42, 34]); out['card'] = [640, 400]
 elif mode == 'tool':
     card = im.resize((640, 400), Image.LANCZOS); save(card, f'{outdir}/{name}.webp', [74, 66, 58, 50, 42]); out['card'] = [640, 400]
     hero = im.resize((1200, 750), Image.LANCZOS); LIMIT[0] = 130*1024; save(hero, f'{outdir}/{name}-hero.webp', [76, 68, 60, 52, 44]); out['hero'] = [1200, 750]
@@ -135,32 +143,26 @@ const have = (kind, slug, ...names) => !FORCE && manifest[kind]?.[slug] && names
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kein-img-'));
 const cdp = await launchChrome(tmp);
 const srv = await serve(path.join(GAMES, 'dist'));
-const base = `http://127.0.0.1:${srv.address().port}`;
 const skipped = [];
 try {
-  for (const g of games) {
-    const cover = path.join(GAMES, 'dist/covers', `${g.slug}.webp`);
-    if (!fs.existsSync(cover)) { skipped.push([`game:${g.slug}`, 'no cover']); continue; }
-    if (have('games', g.slug, `${g.slug}.webp`, `${g.slug}-hero.webp`)) { console.log('keep game', g.slug); continue; }
-    const rec = py('cover', cover, OUT.games, g.slug);
-    rec.shots = [];
-    // 실제 플레이 화면: 초기 화면 + 한 번 눌러 시작한 화면
-    const portrait = g.orientation === '세로';
-    const [w, h] = portrait ? [540, 960] : [1280, 720];
-    const a = path.join(tmp, `${g.slug}-a.png`), b = path.join(tmp, `${g.slug}-b.png`);
-    try {
-      await shoot(cdp, `${base}/builds/${g.slug}/`, w, h, a);
-      const sa = stats(a);
-      if (sa.colors > 120 && sa.sd > 18) {
-        rec.shots.push(py('shot', a, OUT.games, `${g.slug}-1`).size);
-        await shoot(cdp, `${base}/builds/${g.slug}/`, w, h, b, {click: true});
-        const sb = stats(b, a);
-        if (sb.colors > 120 && sb.sd > 18 && sb.diff > 4) rec.shots.push(py('shot', b, OUT.games, `${g.slug}-2`).size);
-      }
-    } catch (e) { console.log('shot failed', g.slug, e.message); }
-    manifest.games[g.slug] = rec;
-    console.log('game', g.slug, JSON.stringify(rec));
+  for (const [slug, a] of authoring) {
+    const srcs = a.images.map(x => x.src), cardI = a.cardIndex ?? Math.max(1, a.images.findIndex(x => x.role !== 'title'));
+    const sig = JSON.stringify({srcs, cardI});
+    const names = [`${slug}.webp`, `${slug}-hero.webp`, ...srcs.slice(1).map((_, i) => `${slug}-${i + 1}.webp`)];
+    if (!FORCE && manifest.games[slug]?.from === sig && names.every(n => fs.existsSync(path.join(OUT.games, n)))) { console.log('keep game', slug); continue; }
+    if (!RAW) { skipped.push([`game:${slug}`, '--raw <캡처 폴더> 가 필요']); continue; }
+    const miss = srcs.filter(f => !fs.existsSync(path.join(RAW, f)));
+    if (miss.length) { skipped.push([`game:${slug}`, `캡처 없음 ${miss}`]); continue; }
+    for (const f of fs.readdirSync(OUT.games)) if (f === `${slug}.webp` || (f.startsWith(`${slug}-`) && /^-(hero|\d)\.webp$/.test(f.slice(slug.length)))) fs.rmSync(path.join(OUT.games, f));
+    const rec = {from: sig};
+    rec.card = py('gcard', path.join(RAW, srcs[cardI]), OUT.games, slug).card;
+    rec.hero = py('ghero', path.join(RAW, srcs[0]), OUT.games, `${slug}-hero`).size;
+    rec.shots = srcs.slice(1).map((f, i) => py('shot', path.join(RAW, f), OUT.games, `${slug}-${i + 1}`).size);
+    manifest.games[slug] = rec;
+    console.log('game', slug, JSON.stringify(rec));
   }
+  for (const slug of Object.keys(manifest.games)) if (!authoring.has(slug)) { delete manifest.games[slug]; }
+  for (const f of fs.readdirSync(OUT.games)) { const m = f.match(/^(.+?)(-hero|-\d)?\.webp$/); if (!m || !manifest.games[m[1]]) fs.rmSync(path.join(OUT.games, f)); }
   for (const it of tools) {
     const slug = it.href.replace(/\//g, '');
     if (have('tools', slug, `${slug}.webp`, `${slug}-hero.webp`)) { console.log('keep tool', slug); continue; }

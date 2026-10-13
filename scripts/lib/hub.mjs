@@ -124,7 +124,9 @@ export function hubModel(data) {
   const gmChips = on => chipBar('game genres', [{href: secPath('games'), label: {ko: '전체', en: 'All'}, n: games.count.value, on: on === 'all'},
     ...games.groups.map(g => ({href: `/content/games/genre/${g.id}/`, label: g.label, n: g.items.length, on: on === g.id}))]);
   const jsonGm = it => ({name: it.title.ko, url: SITE + mirrorPath('games', it.slug)});
-  const gmNote = {ko: `웹게임 ${games.count.total}개 중 소개글에 쓸 사실이 확인되는 ${games.count.value}개를 실었습니다.`, en: `${games.count.value} of ${games.count.total} web games are listed here, those with enough verified facts for a write-up.`};
+  const gmExcl = games.count.total - games.count.value;
+  const gmNote = gmExcl ? {ko: `웹게임 ${games.count.total}개 중 직접 실행해 플레이를 확인한 ${games.count.value}개를 실었습니다. 나머지 ${gmExcl}개는 실행 확인이 되지 않아 뺐습니다.`, en: `${games.count.value} of ${games.count.total} web games are listed, each launched and played by hand. The other ${gmExcl} could not be confirmed to run and are left out.`}
+    : {ko: `웹게임 ${games.count.value}개를 모두 실었습니다. 게임마다 직접 실행해 플레이해 보고 확인한 것만 적었습니다.`, en: `All ${games.count.value} web games are listed. Each one was launched and played by hand, and only what was observed is written down.`};
   const noteHtml = n => `<p class="hub-note">${bi(n)}</p>`;
   pages.push(...listPages({kind: 'games', base: secPath('games'), tName: {ko: '웹게임 전체', en: 'All web games'}, heading: def('games').title, lead: def('games').intro, unit: {ko: '개'}, order: {ko: '이름순'},
     items: [...gm].sort((a, b) => a.slug.localeCompare(b.slug)), rowOf: gameCard, chips: gmChips('all'), trail: trailGames, jsonOf: jsonGm, count: games.count, wrap: 'games', note: noteHtml(gmNote)}));

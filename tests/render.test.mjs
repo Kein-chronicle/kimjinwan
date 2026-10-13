@@ -56,8 +56,8 @@ test('collectionRow 는 개수·기준일·제목 링크·미리보기 링크를
 test('heroStats 는 데이터에서 개수를 집계한다', () => {
   const h = heroStats({
     services: [svc, {...svc, id: 'b', featured: false}],
-    collections: [{kind: 'game', count: {value: 44}}, {kind: 'tool', count: {value: 42}}, {kind: 'blog', count: {value: 218}}]});
-  assert.match(h, />2</); assert.match(h, />44</); assert.match(h, />42</); assert.match(h, />218</);
+    collections: [{kind: 'game', count: {value: 44}}, {kind: 'tool', count: {value: 42}}]});
+  assert.match(h, />2</); assert.match(h, />44</); assert.match(h, />42</); assert.doesNotMatch(h, /Journal posts/);
 });
 test('블록체인·코인 프로젝트는 연동/결제 키워드보다 먼저 blocks 아이콘이 된다', () => {
   const p = JSON.parse(JSON.stringify(parseProjects(fs.readFileSync('js/data.js', 'utf8'))));

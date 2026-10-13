@@ -5,14 +5,15 @@
 // 시각을 읽지 않는다: 기준일은 --as-of 로 받고, 같은 입력 저장소 상태면 출력은 바이트까지 같다.
 // 읽기만 하는 출처(형제 저장소, 수정 금지):
 //   blog     ~/Projects/kein-blog/web/content/ko/{ai,apps,games,fiction}/*.md (frontmatter) + web/dist/ko/<카테고리>/<slug>/ 실존 확인
-//   games    ~/Projects/kein-web-games/src/games.json
+//   games    ~/Projects/kein-web-games/src/games.json(메타만) + 허브 편집 원본 data/authoring/games/*.json(서술·관찰 메모)
 //   tools    ~/Projects/kein-web-tools/lib/tool-catalog.ts
 //   gizmo    https://gizmo-store.com/api/v1/items (공개 API, 네트워크 필요 — 실패하면 기존 JSON 을 건드리지 않고 exit 1). 색인엔 제목·한줄설명, 상세엔 설명류 필드와 text 항목의 download 본문 전문
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {collectGame, gameFactChars, gameEligible, collectTool, toolBodyChars, toolEligible} from './lib/hub_sources.mjs';
+import {collectTool, toolBodyChars, toolEligible} from './lib/hub_sources.mjs';
+import {buildGames} from './lib/games_authoring.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOME = os.homedir();
@@ -127,31 +128,19 @@ function newsSection() {
 }
 
 // ── 웹게임 · 웹 도구: 로컬 저장소의 실제 자료에서 소개글을 만든다(사실이 모자라면 제외) ──
-const GENRE_IDS = {보드: ['board', 'Board'], 퍼즐: ['puzzle', 'Puzzle'], 액션: ['action', 'Action'], 전략: ['strategy', 'Strategy'], 아케이드: ['arcade', 'Arcade'], 시뮬레이션: ['sim', 'Simulation'], 경영: ['management', 'Management'], 캐주얼: ['casual', 'Casual'], 롤플레잉: ['rpg', 'RPG']};
 const TOOL_IDS = {'이미지': ['image', 'Image'], PDF: ['pdf', 'PDF'], QR: ['qr', 'QR'], '게임': ['game', 'Games & random'], '생활·학습': ['life-study', 'Life & study'], '업무': ['work', 'Work']};
 const EXCLUDED = {games: [], tools: []};
 // 허브 화면에는 '원문' 표기를 쓰지 않는다 — 소스 문구 속 일반 낱말 '원문'은 같은 뜻의 '원본'으로 바꿔 싣는다.
 const nw = v => (typeof v === 'string' ? v.replace(/원문/g, '원본') : Array.isArray(v) ? v.map(nw) : v);
 const IMAGES = fs.existsSync(path.join(ROOT, 'content-src/images.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'content-src/images.json'), 'utf8')) : {games: {}, tools: {}};
+// 웹게임: 소개는 허브 편집 원본(data/authoring/games/<id>.json)이 SSOT 이다 — games.json 은 메타(장르·시간·조작 라벨)만 준다. 소스 문서에서 사실을 뽑지 않는다.
 function gamesSection() {
   const all = JSON.parse(fs.readFileSync(path.join(GAMES, 'src/games.json'), 'utf8')).filter(g => !g.legacy).sort((a, b) => a.slug.localeCompare(b.slug));
-  const groups = new Map(); let n = 0;
-  for (const g of all) {
-    const f = collectGame(HOME, GAMES, g);
-    if (!gameEligible(g, f)) { EXCLUDED.games.push({id: g.slug, reason: `소스에서 확인되는 사실 부족(${gameFactChars(g, f)}자 — 기준 170자와 조작·규칙·진행 상세 중 하나 이상 미달)`}); continue; }
-    if (!IMAGES.games[g.slug]) { EXCLUDED.games.push({id: g.slug, reason: '이미지 없음(build_content_images.mjs 를 먼저 실행)'}); continue; }
-    const genre = g.categories?.[0]; if (!GENRE_IDS[genre]) throw new Error(`game ${g.slug}: unknown genre ${genre} — add it to GENRE_IDS`);
-    const clean0 = x => x && !/원문/.test(x);
-    const fact = {slug: g.slug, title: {ko: g.titleKo || g.title, en: g.title}, description: nw(g.description), categories: g.categories || [], tags: g.tags || [], controls: g.controls || [], orientation: g.orientation, session: g.session,
-      lead: nw(f.lead), pitch: nw(f.pitch), subtitle: nw(f.subtitle), stageCount: f.stageCount, controlsDetail: nw(f.controlsDetail), rules: nw(f.rules), progress: nw(f.progress), stageGuides: nw(f.stageGuides)};
-    for (const k of Object.keys(fact)) if (fact[k] === undefined || (Array.isArray(fact[k]) && !fact[k].length && !['categories', 'tags', 'controls'].includes(k))) delete fact[k];
-    EXTRA.set(`content-src/games/${g.slug}.json`, fact);
-    const [gid, gen] = GENRE_IDS[genre];
-    if (!groups.has(gid)) groups.set(gid, {id: gid, label: {ko: genre, en: gen}, items: []});
-    groups.get(gid).items.push({slug: g.slug, title: fact.title, summary: nw(g.description), session: g.session, controls: g.controls || [], url: `https://games.kimjinwan.com/play/${g.slug}/`}); n++;
-  }
-  return {id: 'games', url: 'https://games.kimjinwan.com/', count: {value: n, total: all.length, as_of: AS_OF, source: `kein-web-games/src/games.json(legacy 제외 ${all.length}개) 중 소개글에 쓸 사실이 확인되는 ${n}개. 사실 출처: games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 이미지는 content-src/images.json`},
-    groups: [...groups.values()].sort((a, b) => b.items.length - a.items.length || a.id.localeCompare(b.id))};
+  const r = buildGames({root: ROOT, all, asOf: AS_OF, images: IMAGES, pendingOk: argv.includes('--allow-pending')});
+  if (r.errors.length) throw new Error('games authoring:\n  ' + r.errors.join('\n  '));
+  for (const [k, v] of r.extra) EXTRA.set(k, v);
+  EXCLUDED.games.push(...r.excluded);
+  return r.section;
 }
 function toolsSection(blogApps) {
   const src = fs.readFileSync(path.join(TOOLS, 'lib/tool-catalog.ts'), 'utf8');
