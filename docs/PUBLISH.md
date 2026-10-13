@@ -15,7 +15,7 @@ scripts/publish.sh --reason "..." --force              # 소스 변화가 없어
 
 ## 하는 일(순서)
 1. 잠금(`/tmp/kimjinwan-publish.lock`): 살아 있는 다른 발행이 있으면 종료 코드 75(건드리지 않음). 죽은 소유자의 낡은 잠금은 치운다.
-2. 소스 스냅샷(`build_content_hub.mjs` — 블로그 dist·기즈모 API·웹게임·웹 도구·편집 원본) → 이미지(`build_content_images.mjs`, 없는 것만) → 빌드. 바뀐 게 없으면 종료 코드 10(`--force` 가 없을 때).
+2. 소스 스냅샷(`build_content_hub.mjs` — 블로그 dist·기즈모 API·웹게임·웹 도구·편집 원본) → 이미지(`build_content_images.mjs`, 없는 것만) → 빌드 → 공유 카드 재생성(`build_og.mjs`; 카드 문구에 글 편수가 들어 있어 새 글마다 `og-cards.lock.json` 이 어긋난다, 2026-10-14 블로그 허브 발행 첫 시험에서 시험 4번 실패로 발견) → 재빌드. 바뀐 게 없으면 종료 코드 10(`--force` 가 없을 때).
 3. **변동 게이트**: 섹션별 개수가 줄었거나 한 번에 +20 을 넘으면 변경을 되돌리고 종료 코드 3(사람 확인).
 4. 전체 시험(`node --test tests/*.test.mjs`) 통과 필수, `ads.txt`·`app-ads.txt` 해시 불변 확인. 실패하면 되돌리고 종료 코드 4(또는 해시 위반 3).
 5. 서버 사전 점검(ssh, 새 버전 디렉터리가 비어 있는지) → 종료 코드 6 이면 되돌림.

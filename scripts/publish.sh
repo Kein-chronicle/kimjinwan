@@ -55,6 +55,9 @@ node -e "const d=JSON.parse(require('fs').readFileSync('data/content-hub.json','
 if ! node scripts/build_content_hub.mjs --as-of "$AS_OF" >>"$LOG" 2>&1; then say "스냅샷 생성 실패(소스 접근/검증) — 변경을 되돌리고 멈춘다. 로그: $LOG"; restore; exit 4; fi
 node scripts/build_content_images.mjs >>"$LOG" 2>&1 || { say "이미지 생성 실패 — 로그: $LOG"; restore; exit 4; }
 node scripts/build.mjs >>"$LOG" 2>&1 || { say "빌드 실패 — 로그: $LOG"; restore; exit 4; }
+# 공유 카드 문구에 글 편수가 들어 있다(og-cards.lock.json). 새 글이 들어오면 문구가 바뀌므로 카드를 다시 만들고(바뀐 카드만 PNG 가 달라진다) 해시를 반영해 다시 빌드한다.
+node scripts/build_og.mjs >>"$LOG" 2>&1 || { say "공유 카드 생성 실패 — 로그: $LOG"; restore; exit 4; }
+node scripts/build.mjs >>"$LOG" 2>&1 || { say "카드 반영 빌드 실패 — 로그: $LOG"; restore; exit 4; }
 if [ -z "$(git status --porcelain)" ] && [ "$FORCE" -eq 0 ]; then say "바꿀 게 없다(nothing_to_do)."; exit 10; fi
 
 # ---- 3. 변동 게이트(감소 또는 한 섹션 +20 초과면 자동 반영하지 않는다) ----
