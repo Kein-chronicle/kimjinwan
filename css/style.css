@@ -658,6 +658,7 @@ main>.wrap>.page-foot{margin:0 0 72px}
 .detail-body details{margin:0 0 20px}
 .detail-body summary{cursor:pointer;color:var(--accent);font-weight:600}
 .detail-lead{font-size:18px;color:var(--muted)}
+.detail-verified{margin-top:28px;font-size:13px;color:var(--faint)}
 .detail-facts dt{font-weight:700;margin-top:10px}.detail-facts dd{margin:0 0 6px;color:var(--muted)}
 @media (max-width:700px){.hub-row{grid-template-columns:minmax(0,1fr)}.hub-row .hub-meta{grid-row:auto}}
 /* 콘텐츠 허브: 보조 내비 · 카테고리 칩 · 쪽 나누기 · 랜딩 카드 */

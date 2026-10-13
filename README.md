@@ -13,6 +13,8 @@ AI로 만들고 운영하는 서비스, 웹게임, 웹 도구, 블로그, 11년 
 - `game/` — Career Run 게임
 - `tests/` — 데이터·렌더·사이트 계약·빌드 동기화 테스트
 - `docs/` — 스펙과 구현 계획
+- `docs/AUTHORING_GAMES.md` — 웹게임 소개 편집 원본(`data/authoring/games/<id>.json`) 작성 기준·템플릿·등록 절차(공장 게임 포지용). 점검: `node scripts/hub_check_game.mjs <id>`
+- `docs/AUTHORING_TOOLS.md` — 웹 도구 소개가 읽히는 곳(`tool-catalog.ts`·`page.tsx` 정적 문구)·자격 기준·부족할 때 고칠 위치(공장 웹툴용). 점검: `node scripts/hub_check_tool.mjs <slug>`
 - `build_data.py` + `trans_en.py` — projects.json → js/data.js 생성기(로컬용)
 
 ## 개발
@@ -24,7 +26,7 @@ node scripts/build_og.mjs       # 공유 카드 재생성(숫자·문구가 바�
 내용 수정은 `src/` 또는 `data/`에서 하고 다시 빌드한다. 빌드 결과가 커밋본과 다르면 `tests/build.test.mjs`가 실패한다.
 
 ## 배포
-현재 버전: 1.3.1. 실제 운영 브랜치는 static-site-2026이다. [배포·광고 파일 보존·검색 설정](DEPLOYMENT.md)을 따른다. 공개 파일만 별도 릴리스로 배포하며(`data/ src/ scripts/ tests/ docs/` 제외) Git 체크아웃은 웹에서 제공하지 않는다.
+현재 버전: 1.3.38. 실제 운영 브랜치는 static-site-2026이다. [배포·광고 파일 보존·검색 설정](DEPLOYMENT.md)을 따른다. 공개 파일만 별도 릴리스로 배포하며(`data/ src/ scripts/ tests/ docs/` 제외) Git 체크아웃은 웹에서 제공하지 않는다.
 
 ## TODO
 `_TODO.md` 참조 (이력서 PDF 교체, 배포 등).

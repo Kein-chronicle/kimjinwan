@@ -1,12 +1,12 @@
 # 콘텐츠 허브 동기화 체커 — 공장 허브에 넣을 내용
 
-작성: 2026-10-13. 대상: kimjinwan.com `/content/`(블로그 글·게임 소식·AI 활용 가이드(기즈모 스토어의 프롬프트·스킬)·웹게임·웹 도구 소개글을 허브 도메인 안에서 읽게 하는 페이지, 456쪽).
+작성: 2026-10-13. 대상: kimjinwan.com `/content/`(블로그 글·게임 소식·AI 활용 가이드(기즈모 스토어의 프롬프트·스킬)·웹게임·웹 도구 소개글을 허브 도메인 안에서 읽게 하는 페이지, 458쪽).
 이 문서는 **공장 허브(~/Projects/kein-factory-hub)에 체커를 등록할 때 쓸 내용**이다. 허브에는 아직 등록하지 않았다.
 등록하려면 아래 1) 을 `factories.json` 의 jobs 에, 2) 를 `prompts/content-hub-sync.md` 로 넣는다.
 
 ## 왜 필요한가
 허브 `/content/` 는 스냅샷(`content-src/`)을 빌드한 정적 페이지라서, 블로그 글·게임 소식·AI 활용 가이드·웹게임·웹 도구가 새로 등록돼도 **생성기를 돌리고 빌드·배포하기 전에는 반영되지 않는다.** 이 체커가 그 일을 매일 한 번 대신한다.
-웹게임·웹 도구도 이제 상세 소개글을 가진다(로컬 저장소 자료 기준 — 사실이 모자란 항목은 생성기가 제외하고 `content-src/excluded.json` 에 사유를 남긴다). 새 이미지는 `node scripts/build_content_images.mjs` 로 따로 만든다.
+웹게임·웹 도구도 상세 소개글을 가진다. **웹게임은 하이브리드**: 편집 원본 `data/authoring/games/<id>.json`(공장 게임 포지가 직접 실행해 쓴 것, 검증·이미지가 맞을 때만)이 있으면 그것을, 없으면 로컬 저장소 자료(README·설계 문서·`games.json`)에서 추출한 사실을 쓴다. 사실이 모자란 항목은 생성기가 제외하고 `content-src/excluded.json` 에 사유를 남긴다. **웹 도구는 편집 원본 없이** `kein-web-tools` 의 `lib/tool-catalog.ts` 와 `app/<slug>/page.tsx` 정적 문구에서 만든다. 새 이미지는 `node scripts/build_content_images.mjs`(게임 편집 원본은 `--raw <캡처 폴더>`)로 따로 만든다. 작성 기준·점검: `docs/AUTHORING_GAMES.md`·`docs/AUTHORING_TOOLS.md`.
 
 ## 1) 잡 등록(factories.json 의 jobs 에 추가)
 ```json
@@ -74,7 +74,8 @@
 | 소스 접근 실패·시험 실패·검증 실패 | `failed`, 배포했다면 직전 릴리스로 롤백 |
 
 ## 4) 알아둘 한계
-- 웹게임·웹 도구는 소개글에 쓸 사실이 확인되는 항목만 싣는다(웹게임 77개 중 15개, 웹 도구 57개 중 45개 — `content-src/excluded.json`). 새 항목은 소스 문서가 갖춰져야 허브에 오른다.
+- 웹게임·웹 도구는 소개글에 쓸 사실이 확인되는 항목만 싣는다(웹게임 77개 중 17개 = 편집 원본 3 + 소스 추출 14, 웹 도구 57개 중 45개 — `content-src/excluded.json`). 새 웹게임은 편집 원본을 쓰거나(`docs/AUTHORING_GAMES.md`) 소스 문서가 갖춰져야 허브에 오르고, 새 웹 도구는 `page.tsx` 정적 문구가 자격 기준(`docs/AUTHORING_TOOLS.md`)을 채워야 한다.
+- 편집 원본이 검증·이미지에서 실패하면 그 게임만 소스 추출로 되돌아가고 생성기가 stderr 에 `games authoring 경고`를 낸다(빌드는 멈추지 않는다). 공장은 커밋 전에 `node scripts/hub_check_game.mjs <id>` 로 확인한다. 변동 게이트(4번)의 "감소"는 이 되돌아감 때문에 생길 수 있으니 경고를 summary 에 옮긴다.
 - 블로그 카테고리 표시 이름은 이야기·에이전트 업무일지·앱 제작·심사(순서 = 생성기의 BLOG_CATS), 게임 소식은 frontmatter topic 으로 게임별 분류한다(알 수 없는 topic 이면 생성기가 멈춘다).
 - 블로그와 AI 활용 가이드 본문이 원 사이트와 같아 중복 콘텐츠로 볼 수 있다(허브를 오리지널로 취급하는 결정의 대가).
 - 서버 접속·sudo·rsync 는 이 PC 에서만 된다. 허브가 이 PC 에서 돌 때만 동작한다.

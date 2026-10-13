@@ -9,7 +9,7 @@ const readJson = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 // 마크다운 한 줄 → 평문(백틱·굵게·링크 제거)
 export const plain = s => oneLine(String(s).replace(/`([^`]*)`/g, '$1').replace(/\*\*([^*]*)\*\*/g, '$1').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/^[-*]\s+/, ''));
 // 내부 생산 공정 용어·파일 경로·명령이 든 줄은 소개글에 쓰지 않는다
-const INTERNAL = /npm |Forge|게이트|라이선스|CC0|OpenAI|localStorage|런타임|\bQA\b|DoD|DOD|스타터|starter|검증|public\/|\.json|\.md|\.ts\b|manifest|빌드|커밋|가이드라인 준수|원작|리서치|렌더|프레임 간격|파이프라인/;
+export const INTERNAL = /npm |Forge|게이트|라이선스|CC0|OpenAI|localStorage|런타임|\bQA\b|DoD|DOD|스타터|starter|검증|public\/|\.json|\.md|\.ts\b|manifest|빌드|커밋|가이드라인 준수|원작|리서치|렌더|프레임 간격|파이프라인/;
 
 // "## 제목" 아래 불릿/문단을 {제목: [줄…]} 로
 export function mdSections(md) {
@@ -74,6 +74,17 @@ export function gameFactChars(g, f) {
 }
 
 // ── 웹 도구 ───────────────────────────────────────────────────────────
+// 도구 분류(tool-catalog.ts categories[0]) → [허브 분류 id, 영문 라벨]. 새 분류는 여기에 추가한다.
+export const TOOL_IDS = {'이미지': ['image', 'Image'], PDF: ['pdf', 'PDF'], QR: ['qr', 'QR'], '게임': ['game', 'Games & random'], '생활·학습': ['life-study', 'Life & study'], '업무': ['work', 'Work']};
+// kein-web-tools/lib/tool-catalog.ts 의 도구 목록 → [{href, name, description, categories}]. 파싱 개수가 href 개수와 다르면 예외.
+export function parseToolCatalog(src) {
+  const body = src.slice(src.indexOf('export const tools'));
+  const entries = [...body.matchAll(/\{\s*href:\s*'([^']+)',\s*name:\s*'((?:[^'\\]|\\.)*)',\s*description:\s*'((?:[^'\\]|\\.)*)',[\s\S]*?categories:\s*\[([^\]]*)\]/g)].map(m => ({
+    href: m[1], name: m[2].replace(/\\'/g, "'"), description: m[3].replace(/\\'/g, "'"), categories: [...m[4].matchAll(/'([^']+)'/g)].map(x => x[1])}));
+  const hrefCount = (body.match(/^\s+href:/gm) || []).length;
+  if (entries.length !== hrefCount) throw new Error(`tool catalog parse mismatch: ${entries.length} parsed vs ${hrefCount} href`);
+  return entries;
+}
 // page.tsx 에서 사용자에게 보이는 한국어 문구를 역할별로 모은다.
 export function collectTool(toolsRepo, item) {
   const slug = item.href.replace(/\//g, '');

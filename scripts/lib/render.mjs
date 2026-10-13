@@ -358,6 +358,7 @@ const IMG = '/assets/content';
 const figure = (kind, slug, name, rec, alt, cls = 'detail-hero') => `<figure class="${cls}"><img src="${IMG}/${kind}/${slug}-hero.webp" width="${rec.hero[0]}" height="${rec.hero[1]}" alt="${esc(alt)}" fetchpriority="high"></figure>`;
 const ORIENT = {'가로': {ko: '가로 화면', en: 'Landscape'}, '세로': {ko: '세로 화면', en: 'Portrait'}, '세로·가로': {ko: '세로·가로 모두', en: 'Portrait or landscape'}, '반응형': {ko: '화면 크기에 맞춰 바뀜', en: 'Adapts to the screen'}};
 export function gameBody(g, rec) {
+  if (g.verified) return authoredGameBody(g, rec); // 편집 원본(data/authoring/games)에서 온 게임
   const title = g.title.ko;
   const info = [[{ko: '분류', en: 'Genre'}, esc(g.categories.join('·'))], g.tags?.length ? [{ko: '태그', en: 'Tags'}, esc(g.tags.join(' · '))] : null,
     g.session ? [{ko: '한 판 길이', en: 'Session'}, esc(g.session)] : null, g.orientation ? [{ko: '화면', en: 'Screen'}, bi(ORIENT[g.orientation] || {ko: g.orientation, en: g.orientation})] : null,
@@ -375,6 +376,27 @@ ${sec({ko: '규칙', en: 'Rules'}, g.rules?.length ? list(g.rules) : '')}
 ${sec({ko: '진행', en: 'Progress'}, g.progress?.length ? list(g.progress) : '')}
 ${sec({ko: '스테이지 안내 예시', en: 'Stage hints'}, g.stageGuides?.length ? list(g.stageGuides) : '')}
 ${shots ? `${h2({ko: '플레이 화면', en: 'Gameplay'})}<div class="detail-gallery">${shots}</div>` : ''}`;
+}
+// 편집 원본 형태(oneLiner·about·controls{pc,touch}·goal·rules·progress·tips·screens·verified·images)의 게임 상세 본문
+function authoredGameBody(g, rec) {
+  const title = g.title.ko, A = g.images || [];
+  const info = [[{ko: '분류', en: 'Genre'}, esc(g.categories.join('·'))], g.tags?.length ? [{ko: '태그', en: 'Tags'}, esc(g.tags.join(' · '))] : null,
+    g.session ? [{ko: '한 판 길이', en: 'Session'}, esc(g.session)] : null, g.orientation ? [{ko: '화면', en: 'Screen'}, bi(ORIENT[g.orientation] || {ko: g.orientation, en: g.orientation})] : null,
+    g.controlLabels?.length ? [{ko: '조작 방식', en: 'Input'}, esc(g.controlLabels.join(', '))] : null].filter(Boolean);
+  const list = items => `<ul>${items.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ul>`;
+  const sub = (label, items) => items?.length ? `<h3 lang="ko">${esc(label)}</h3>${list(items)}` : '';
+  const shots = (rec.shots || []).map((sz, i) => `<figure><img src="${IMG}/games/${g.slug}-${i + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(A[i + 1]?.alt || `${title} 플레이 화면 ${i + 1}`)}" loading="lazy"></figure>`).join('');
+  return `${figure('games', g.slug, title, rec, A[0]?.alt || `${title} 대표 이미지`)}
+<p class="detail-cta"><a class="btn btn-primary" href="https://games.kimjinwan.com/play/${esc(g.slug)}/" ${EXT}>${bi({ko: '게임하러 가기', en: 'Play now'})}${ext}</a></p>
+<p class="detail-lead" lang="ko">${esc(g.oneLiner)}</p>
+${h2({ko: '이런 게임입니다', en: 'About'})}${g.about.split(/\n+/).map(x => `<p lang="ko">${esc(x)}</p>`).join('')}
+${h2({ko: '게임 정보', en: 'Game info'})}<dl class="detail-facts">${info.map(([l, v]) => `<dt>${bi(l)}</dt><dd lang="ko">${v}</dd>`).join('')}</dl>
+${h2({ko: '조작 방법', en: 'Controls'})}${sub('PC(키보드·마우스)', g.controls.pc)}${sub('터치(모바일)', g.controls.touch)}
+${h2({ko: '목표와 규칙', en: 'Goal and rules'})}<p lang="ko">${esc(g.goal)}</p>${list(g.rules)}
+${h2({ko: '진행', en: 'Progress'})}${list(g.progress)}
+${h2({ko: '처음 하는 사람을 위한 팁', en: 'Tips'})}${list(g.tips)}
+${h2({ko: '플레이 화면', en: 'Gameplay'})}<p lang="ko">${esc(g.screens)}</p>${shots ? `<div class="detail-gallery">${shots}</div>` : ''}
+<p class="detail-verified" lang="ko">${esc(g.verified.date)} 직접 실행해 확인한 내용입니다.</p>`;
 }
 export function toolBody(t, rec) {
   const name = t.title;

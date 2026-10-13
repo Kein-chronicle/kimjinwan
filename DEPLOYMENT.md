@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.38 변경 내용(scripts/publish.sh 로 발행) — 2026-10-13 (미배포·미커밋)
+
+웹게임 소개를 **편집 원본 우선 + 소스 추출 폴백(하이브리드)** 으로 바꿨다. `data/authoring/games/<id>.json`(직접 실행해 확인한 서술·관찰 메모 verified·이미지 목록)이 있고 검증·이미지가 맞으면 그것을 쓰고, 없거나 실패하면 기존 소스 추출(`scripts/lib/hub_sources.mjs`)로 되돌아간다(경고만 내고 빌드는 계속). 웹게임 15개 → **17개**(기존 15개 상세 URL·이미지 유지, 편집 원본 3개 = clockwork-harbor(기존 게임, 편집 원본으로 교체)·aim-trainer·arc-eel(신규)). 허브 전체 456쪽 → **458쪽**(상세 +2), 사이트맵 461 → 463, 홈·랜딩·서브메뉴의 웹게임 수 15 → 17. 새 파일: `scripts/lib/games_authoring.mjs`, `scripts/build_content_games.mjs`(웹게임 섹션만 재생성·`--check`), 공장용 점검 CLI `scripts/hub_check_game.mjs`·`scripts/hub_check_tool.mjs`, 작성 원본 문서 `docs/AUTHORING_GAMES.md`·`docs/AUTHORING_TOOLS.md`, 시험 `tests/authoring.test.mjs`. 이미지 변환기(`build_content_images.mjs`)는 편집 원본 게임만 `--raw <캡처 폴더>` 로 다시 만든다(다른 게임 이미지는 보존). **배포 시 주의: `content/`·`assets/content/` 를 함께 올린다(`data/ scripts/ tests/ docs/` 는 공개하지 않는다). CSS(`css/style.css` 의 `.detail-verified`)가 바뀌었다.** 직전 1.3.37 은 복구용 유지. ads.txt·app-ads.txt 해시 422f460a… 불변.
+
 ## 1.3.37 배포 기록 — 2026-10-13
 
 서비스 페이지·홈에서 **Kein Journal(블로그 서비스 카드)을 제거**했다(`data/services.json` 14→13곳, 썸네일 삭제, 서비스 수·메타·JSON-LD·공유 카드(works) 재생성). 서비스 분류 '게임·도구·글'을 '게임·도구'로, /works/ 소개문에서 '블로그' 표현을 뺐고 홈 JSON-LD relatedLink 의 blog.kimjinwan.com 을 콘텐츠 허브로 바꿨다. 앱 컬렉션의 앱 기록 링크(blog.kimjinwan.com/ko/apps/app-archive/)는 허브 글(/content/blog/apps/app-archive/)로 돌렸다. `/content/` 는 변경 없음. service.kimjinwan.com 은 별도 저장소에서 이미 제거 배포. ads.txt·app-ads.txt 해시 422f460a… 불변. 직전 1.3.36 은 복구용 유지.

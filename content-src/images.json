@@ -1,6 +1,66 @@
 {
  "games": {
+  "aim-trainer": {
+   "from": "{\"srcs\":[\"aim-trainer-0.png\",\"aim-trainer-3.png\",\"aim-trainer-5.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "aim-trainer-1.webp": 4580,
+    "aim-trainer-2.webp": 10770,
+    "aim-trainer-hero.webp": 33388,
+    "aim-trainer.webp": 1978
+   }
+  },
+  "arc-eel": {
+   "from": "{\"srcs\":[\"arc-eel-0.png\",\"arc-eel-1.png\",\"arc-eel-5.png\",\"arc-eel-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "arc-eel-1.webp": 19412,
+    "arc-eel-2.webp": 20818,
+    "arc-eel-3.webp": 19364,
+    "arc-eel-hero.webp": 9848,
+    "arc-eel.webp": 5424
+   }
+  },
   "clockwork-harbor": {
+   "from": "{\"srcs\":[\"clockwork-harbor-0.png\",\"clockwork-harbor-1.png\",\"clockwork-harbor-2.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -13,12 +73,17 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     720
     ]
    ],
    "bytes": {
-    "clockwork-harbor-1.webp": 35156,
-    "clockwork-harbor-hero.webp": 41010,
-    "clockwork-harbor.webp": 13752
+    "clockwork-harbor-1.webp": 35836,
+    "clockwork-harbor-2.webp": 11056,
+    "clockwork-harbor-hero.webp": 33860,
+    "clockwork-harbor.webp": 13596
    }
   },
   "cloud-sheep-forest-words": {
