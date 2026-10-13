@@ -1,12 +1,12 @@
 {
- "as_of": "2026-10-13",
+ "as_of": "2026-10-14",
  "sections": [
   {
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
     "value": 206,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "카테고리 fiction·ai·apps: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
    "groups": [
@@ -1298,7 +1298,7 @@
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
     "value": 79,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
    "groups": [
@@ -1863,7 +1863,7 @@
    "url": "https://gizmo-store.com/",
    "count": {
     "value": 50,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순"
    },
    "groups": [
@@ -2220,7 +2220,7 @@
    "count": {
     "value": 17,
     "total": 77,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 17개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
@@ -2525,7 +2525,7 @@
    "count": {
     "value": 45,
     "total": 57,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "kein-web-tools/lib/tool-catalog.ts 의 도구 57개 중 소개글에 쓸 사실이 확인되는 45개. 사실 출처: 카탈로그 설명 + app/<slug>/page.tsx 의 정적 한국어 문구(머리말·입력 항목·버튼·안내 문단). 화면 이미지는 content-src/images.json"
    },
    "groups": [
@@ -2906,7 +2906,7 @@
    "count": {
     "value": 50,
     "total": 50,
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "source": "App Store 개발자 계정(Jinwan Kim, id1446513824)의 공개 앱 50개(iTunes lookup, 기준 2026-10-14) 중 소개글에 쓸 사실이 확인되는 50개. 우선순위: 허브 편집 원본 data/authoring/apps/<slug>.json(앱 소스·스토어 설명에서 확인한 사실로 쓴 한국어 소개) + 스토어 공개 정보 캐시 content-src/apps-store.json(이름·버전·분류·언어·가격·출시일). 이미지는 content-src/images.json 의 apps"
    },
    "groups": [
