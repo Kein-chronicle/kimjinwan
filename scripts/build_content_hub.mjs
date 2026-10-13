@@ -1,15 +1,13 @@
 // scripts/build_content_hub.mjs — 콘텐츠 허브(/content/) 데이터 스냅샷 생성기. 수동 실행:
 //   node scripts/build_content_hub.mjs --as-of 2026-10-13     # data/content-hub.json 을 다시 쓴다
 //   node scripts/build_content_hub.mjs --as-of 2026-10-13 --check   # 파일을 쓰지 않고 현재 파일과 같은지만 본다
-// 산출: data/content-hub.json(색인) + content-src/{blog,gizmo,services}/**.json(개별 페이지 본문 스냅샷). 모두 메모리에서 끝까지 만든 뒤에 쓴다 — 어느 단계든 실패하면 기존 산출물은 그대로다.
+// 산출: data/content-hub.json(색인) + content-src/{blog,gizmo}/**.json(개별 페이지 본문 스냅샷). 모두 메모리에서 끝까지 만든 뒤에 쓴다 — 어느 단계든 실패하면 기존 산출물은 그대로다.
 // 시각을 읽지 않는다: 기준일은 --as-of 로 받고, 같은 입력 저장소 상태면 출력은 바이트까지 같다.
 // 읽기만 하는 출처(형제 저장소, 수정 금지):
 //   blog     ~/Projects/kein-blog/web/content/ko/{ai,apps,games,fiction}/*.md (frontmatter) + web/dist/ko/<카테고리>/<slug>/ 실존 확인
-//   services ~/Projects/kimjinwan-services/js/details.js (서비스별 주요 기능·추천 대상)
 //   games    ~/Projects/kein-web-games/src/games.json
 //   tools    ~/Projects/kein-web-tools/lib/tool-catalog.ts
 //   gizmo    https://gizmo-store.com/api/v1/items (공개 API, 네트워크 필요 — 실패하면 기존 JSON 을 건드리지 않고 exit 1). 색인엔 제목·한줄설명, 상세엔 설명류 필드와 text 항목의 download 본문 전문
-// 이름·태그라인·URL 은 data/services.json 이 SSOT 라 여기에는 서비스 id 와 읽을거리 본문만 둔다.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -18,7 +16,6 @@ import {fileURLToPath} from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOME = os.homedir();
 const BLOG = path.join(HOME, 'Projects/kein-blog/web');
-const SERVICES_REPO = path.join(HOME, 'Projects/kimjinwan-services');
 const GAMES = path.join(HOME, 'Projects/kein-web-games');
 const TOOLS = path.join(HOME, 'Projects/kein-web-tools');
 
@@ -50,7 +47,7 @@ function frontmatter(file) {
   return fm;
 }
 const BLOG_CATS = [
-  {id: 'ai', limit: 10, label: {ko: 'AI 활용', en: 'AI in practice'}, blurb: {ko: 'AI 에이전트로 일하며 겪은 실패와 복구, 도구 사용 기록', en: 'Failures, recoveries and tool notes from working with AI agents'}},
+  {id: 'ai', limit: 10, label: {ko: 'AI 사용기', en: 'AI field notes'}, blurb: {ko: 'AI 에이전트로 일하며 겪은 실패와 복구, 도구 사용 기록', en: 'Failures, recoveries and tool notes from working with AI agents'}},
   {id: 'apps', limit: 10, label: {ko: '앱 제작·심사', en: 'Apps'}, blurb: {ko: '앱을 만들고 심사에 제출하며 남긴 제작·심사 기록', en: 'Records of building apps and submitting them for review'}},
   {id: 'games', limit: 10, label: {ko: '게임', en: 'Games'}, blurb: {ko: '플레이 중인 게임의 공식 공지와 분석 글', en: 'Sourced updates and analysis of games I play'}},
   {id: 'fiction', limit: 10, label: {ko: '이야기', en: 'Essays'}, blurb: {ko: 'AI 시대의 일과 놀이에 대한 짧은 글', en: 'Short essays on work and play in the age of AI'}},
@@ -105,31 +102,6 @@ function blogSection() {
   };
 }
 
-// ── 서비스 읽을거리 ────────────────────────────────────────────────────
-function servicesSection() {
-  const services = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/services.json'), 'utf8'));
-  const raw = fs.readFileSync(path.join(SERVICES_REPO, 'js/details.js'), 'utf8').trim().replace(/^window\.DETAILS=/, '').replace(/;$/, '');
-  const details = JSON.parse(raw);
-  const items = [];
-  for (const s of services) {
-    const d = details[s.id];
-    if (!d) throw new Error(`no details for ${s.id}`);
-    const text = {};
-    for (const lang of ['ko', 'en']) {
-      const feats = (d.features || []).slice(0, 2).map(f => `${f.d[lang]}`);
-      const aud = (d.audience || [])[0];
-      const lead = lang === 'ko' ? '이런 분께 맞습니다: ' : 'A good fit for: ';
-      const end = x => (/[.!?]$/.test(x) ? x : x + '.');
-      text[lang] = [end(s.summary[lang]), ...feats.map(end), aud ? lead + end(aud[lang]) : ''].filter(Boolean).join(' ');
-    }
-    if (!clean(text.ko)) throw new Error(`service ${s.id} text violates site rules`);
-    const {tags, audience, features, steps, notes, facts} = d;
-    EXTRA.set(`content-src/services/${s.id}.json`, {id: s.id, tags, audience, features, steps, notes, facts});
-    items.push({id: s.id, text});
-  }
-  return {id: 'services', count: {value: services.length, as_of: AS_OF, source: 'kimjinwan/data/services.json 의 서비스 수; 읽을거리 본문은 kimjinwan-services/js/details.js 의 요약·주요 기능 2개·추천 대상 첫 항목'}, items};
-}
-
 // ── 웹게임 ─────────────────────────────────────────────────────────────
 function gamesSection() {
   const all = JSON.parse(fs.readFileSync(path.join(GAMES, 'src/games.json'), 'utf8'));
@@ -174,7 +146,7 @@ function toolsSection() {
     count: {value: entries.length, as_of: AS_OF, source: 'kein-web-tools/lib/tool-catalog.ts 의 tools 배열 항목(href) 수. 대표는 분류(이미지·PDF·QR·게임·생활·학습·업무)별 카탈로그 앞 2개; 요약 = 카탈로그 설명 + 각 도구 페이지 머리말 문단'}, items};
 }
 
-// ── 기즈모 스토어(공개 API) ───────────────────────────────────────────
+// ── AI 활용 가이드 = 기즈모 스토어(공개 API) ───────────────────────────────────────────
 const GIZMO_PURPOSE = [
   ['research', {ko: '조사·리서치', en: 'Research'}], ['career', {ko: '업무·커리어', en: 'Work & career'}], ['creative', {ko: '창작', en: 'Creative'}],
   ['dev', {ko: '개발', en: 'Development'}], ['writing', {ko: '글쓰기', en: 'Writing'}]];
@@ -222,7 +194,7 @@ async function gizmoSection() {
     count: {value: items.length, as_of: AS_OF, source: 'https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순'}, groups};
 }
 
-const out = {as_of: AS_OF, sections: [blogSection(), servicesSection(), gamesSection(), toolsSection(), await gizmoSection()]};
+const out = {as_of: AS_OF, sections: [blogSection(), gamesSection(), toolsSection(), await gizmoSection()]};
 const files = new Map([['data/content-hub.json', JSON.stringify(out, null, 1) + '\n']]);
 for (const [rel, obj] of [...EXTRA].sort((a, b) => a[0].localeCompare(b[0]))) files.set(rel, JSON.stringify(obj, null, 1) + '\n');
 const existing = fs.existsSync(path.join(ROOT, 'content-src')) ? fs.readdirSync(path.join(ROOT, 'content-src'), {recursive: true}).filter(f => f.endsWith('.json')).map(f => 'content-src/' + f) : [];

@@ -299,6 +299,12 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 }
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 .nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:var(--accent-ink)}
+/* 서비스 모아보기: 같은 레벨 메뉴가 아니라 다른 사이트로 나가는 바로가기 — 구분선 + 점선 테두리 알약 */
+.nav-sep{align-self:center;width:1px;height:22px;background:var(--line);margin:0 -6px}
+.nav-links a.nav-ext{gap:6px;padding:6px 12px;border:1px dashed var(--faint);border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);background:transparent}
+.nav-links a.nav-ext .ico{width:15px;height:15px;color:var(--accent)}
+.nav-links a.nav-ext .ico-ext{width:12px;height:12px;margin-left:0;opacity:.8}
+.nav-links a.nav-ext:hover{color:var(--text);border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
 
 /* ===== icons ===== */
 .ico{width:1em;height:1em;flex:none;vertical-align:-.125em}
@@ -492,6 +498,8 @@ main>.wrap>.page-foot{margin:0 0 72px}
   .js #nav.open .nav-links{display:flex}
   .js .nav-links a{padding:13px 4px;font-size:16px;border-bottom:1px solid var(--line)}
   .js .nav-links a[aria-current="page"]{text-decoration:none;color:var(--accent);box-shadow:inset 3px 0 0 var(--accent);padding-left:14px}
+  .js .nav-links .nav-sep{width:auto;height:0;margin:14px 0 4px;border-top:1px solid var(--line);background:none}
+  .js .nav-links a.nav-ext{justify-content:center;margin-top:8px;padding:11px 18px;font-size:15px;border-bottom:1px dashed var(--faint)}
   .js .nav-links .nav-cta{margin-top:14px;justify-content:center;border-bottom:1px solid var(--accent);padding:12px 18px}
   html:not(.js) #nav{position:relative}
   html:not(.js) .nav-in{flex-wrap:wrap}
@@ -692,3 +700,14 @@ main>.wrap>.page-foot{margin:0 0 72px}
 .detail-body .detail-cta a.btn-primary{color:var(--accent-ink)}
 .detail-body .detail-cta a.btn-ghost{color:var(--text)}
 .detail-body .detail-cta a.btn-ghost:hover{color:var(--accent)}
+/* 프롬프트 복사 버튼 */
+.copy-bar{display:flex;align-items:center;gap:12px;margin:0 0 10px;min-height:44px}
+.copy-btn[hidden]{display:none}
+.copy-btn .cb-done{display:none}
+.copy-btn[data-state="done"] .cb-idle,.copy-btn[data-state="fail"] .cb-idle{display:none}
+.copy-btn[data-state="done"] .cb-done{display:inline}
+.copy-btn[data-state="fail"] .cb-done{display:none}
+.copy-btn[data-state="fail"]{background:var(--card2);color:var(--text);border-color:var(--line)}
+.copy-btn[data-state="fail"]::after{content:"!";margin-left:6px;color:var(--accent)}
+.copy-status{font-size:14px;color:var(--muted)}
+.copy-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}

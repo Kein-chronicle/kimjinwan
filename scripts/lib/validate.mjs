@@ -60,7 +60,7 @@ export function validate({services = [], collections = [], factories = [], profi
     for (const o of f.outputs || []) if (!ids.has(o)) err.push(`${w}: outputs references unknown service ${o}`);
   }
   if (profile) validateProfile(profile, err);
-  if (contentHub) validateContentHub(contentHub, services, err);
+  if (contentHub) validateContentHub(contentHub, err);
   return err;
 }
 
@@ -91,10 +91,10 @@ const HUB_HOST = {blog: 'blog.kimjinwan.com', games: 'games.kimjinwan.com', tool
 export const HUB_MIN_SUMMARY = 40;
 export const HUB_MIN_GIZMO_SUMMARY = 30; // 한 줄 설명 + 추천 대상 한 줄
 export const HUB_MIN_BLOG_SUMMARY = 20; // 전체 글을 싣는 블로그는 짧은 설명이 있는 글도 있다
-function validateContentHub(hub, services, err) {
+function validateContentHub(hub, err) {
   if (!DATE.test(hub.as_of || '')) err.push('contentHub.as_of must be YYYY-MM-DD');
   const ids = (hub.sections || []).map(s => s.id);
-  if (ids.join() !== 'blog,services,games,tools,gizmo') err.push(`contentHub.sections must be blog,services,games,tools,gizmo (got ${ids})`);
+  if (ids.join() !== 'blog,games,tools,gizmo') err.push(`contentHub.sections must be blog,games,tools,gizmo (got ${ids})`);
   const seen = new Set();
   const url = (w, u, host) => {
     if (!HTTPS.test(u || '')) { err.push(`${w}: url must be https`); return; }
@@ -106,7 +106,7 @@ function validateContentHub(hub, services, err) {
   for (const s of hub.sections || []) {
     const c = s.count;
     if (!c || !Number.isInteger(c.value) || c.value < 1 || !DATE.test(c.as_of || '') || !c.source) err.push(`contentHub.${s.id}: count needs value, as_of and source`);
-    if (s.id !== 'services') url(`contentHub.${s.id}`, s.url, HUB_HOST[s.id]);
+    url(`contentHub.${s.id}`, s.url, HUB_HOST[s.id]);
     if (s.id === 'gizmo') {
       let n = 0;
       for (const g of s.groups || []) {
@@ -138,16 +138,6 @@ function validateContentHub(hub, services, err) {
         }
       }
       if (c && total !== c.value) err.push(`contentHub.blog: count ${c.value} != sum of group totals ${total}`);
-    } else if (s.id === 'services') {
-      const have = new Set(services.map(x => x.id));
-      for (const it of s.items || []) {
-        if (!have.has(it.id)) err.push(`contentHub.services: unknown service ${it.id}`);
-        if (!biOk(it.text) || it.text.ko.length < HUB_MIN_SUMMARY || it.text.en.length < HUB_MIN_SUMMARY) err.push(`contentHub.services.${it.id}: text needs ko/en`);
-      }
-      const got = new Set((s.items || []).map(x => x.id));
-      for (const id of have) if (!got.has(id)) err.push(`contentHub.services: missing ${id}`);
-      if (got.size !== (s.items || []).length) err.push('contentHub.services: duplicate id');
-      if (c && c.value !== services.length) err.push(`contentHub.services: count ${c.value} != ${services.length} services`);
     } else {
       if (!(s.items || []).length) err.push(`contentHub.${s.id}: needs items`);
       if (c && (s.items || []).length > c.value) err.push(`contentHub.${s.id}: more items than count`);

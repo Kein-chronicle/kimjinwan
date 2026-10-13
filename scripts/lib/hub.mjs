@@ -1,8 +1,8 @@
-// scripts/lib/hub.mjs — 콘텐츠 허브(/content/) 색인 페이지 모델. data/content-hub.json + data/services.json → 페이지 목록.
+// scripts/lib/hub.mjs — 콘텐츠 허브(/content/) 색인 페이지 모델. data/content-hub.json → 페이지 목록.
 // 한 페이지에 길게 나열하지 않는다: 랜딩(/content/) → 섹션 → 카테고리 → 페이지(20건) → 상세(/content/<종류>/…/).
 // 색인·상세 모두 자기 자신이 canonical 이다.
 import {icon} from './icons.mjs';
-import {esc, bi, EXT, ext, open, asOf, HUB_SECTIONS, CATEGORY, mirrorPath, crumbTrail} from './render.mjs';
+import {esc, bi, EXT, ext, open, asOf, HUB_SECTIONS, mirrorPath, crumbTrail} from './render.mjs';
 
 export const PER_PAGE = 20;
 export const SITE = 'https://kimjinwan.com';
@@ -13,7 +13,7 @@ export const pageHref = (base, n) => (n === 1 ? base : `${base}page/${n}/`);
 const slugOf = url => url.split('/').filter(Boolean).pop();
 
 // 섹션 순서 = 보조 내비 순서
-export const NAV = [['blog', 'blog'], ['services', 'services'], ['gizmo', 'gizmo'], ['games', 'games'], ['tools', 'tools']];
+export const NAV = [['blog', 'blog'], ['gizmo', 'gizmo'], ['games', 'games'], ['tools', 'tools']];
 const sec = (hub, id) => hub.sections.find(s => s.id === id);
 
 // 보조 내비(콘텐츠 영역 전용). 모바일에서는 CSS 가 가로 스크롤 칩으로 만든다.
@@ -67,8 +67,8 @@ function listPages({kind, base, tName, heading, lead, unit, order, items, rowOf,
 }
 
 export function hubModel(data) {
-  const hub = data.contentHub, svcs = data.services;
-  const blog = sec(hub, 'blog'), gizmo = sec(hub, 'gizmo'), games = sec(hub, 'games'), tools = sec(hub, 'tools'), svcSec = sec(hub, 'services');
+  const hub = data.contentHub;
+  const blog = sec(hub, 'blog'), gizmo = sec(hub, 'gizmo'), games = sec(hub, 'games'), tools = sec(hub, 'tools');
   const pages = [];
 
   // ── 블로그 ──
@@ -87,32 +87,18 @@ export function hubModel(data) {
       items, rowOf: blogRow, chips: blogChips(g.id), trail: [...trailBlog, {label: bi(g.label), href: `/content/blog/${g.id}/`, name: g.label.ko}], jsonOf: jsonPost, count: blog.count}));
   }
 
-  // ── 기즈모 스토어 ──
-  const trailGizmo = [{label: bi(def('gizmo').title), href: secPath('gizmo'), name: '기즈모 스토어'}];
+  // ── AI 활용 가이드(기즈모 스토어 항목) ──
+  const trailGizmo = [{label: bi(def('gizmo').title), href: secPath('gizmo'), name: 'AI 활용 가이드'}];
   const gitems = gizmo.groups.flatMap(g => g.items.map(it => ({...it, purpose: g.id, slug: slugOf(it.url)})));
   const gRow = it => row({title: it.title, body: it.tagline, href: mirrorPath('gizmo', it.slug)});
-  const gChips = on => chipBar('gizmo purposes', [{href: secPath('gizmo'), label: {ko: '전체', en: 'All'}, n: gizmo.count.value, on: on === 'all'},
+  const gChips = on => chipBar('guide purposes', [{href: secPath('gizmo'), label: {ko: '전체', en: 'All'}, n: gizmo.count.value, on: on === 'all'},
     ...gizmo.groups.map(g => ({href: `/content/gizmo/purpose/${g.id}/`, label: g.label, n: g.items.length, on: on === g.id}))]);
   const jsonG = it => ({name: it.title, url: it.url});
-  pages.push(...listPages({kind: 'gizmo', base: secPath('gizmo'), tName: {ko: '기즈모 스토어 도구 전체', en: 'All Gizmo Store items'}, heading: def('gizmo').title, lead: def('gizmo').intro, unit: {ko: '개'}, order: {ko: '용도순'},
+  pages.push(...listPages({kind: 'gizmo', base: secPath('gizmo'), tName: {ko: 'AI 활용 가이드 전체', en: 'All AI usage guides'}, heading: def('gizmo').title, lead: def('gizmo').intro, unit: {ko: '개'}, order: {ko: '용도순'},
     items: gitems, rowOf: gRow, chips: gChips('all'), trail: trailGizmo, jsonOf: jsonG, count: gizmo.count}));
   for (const g of gizmo.groups)
-    pages.push(...listPages({kind: 'gizmo', base: `/content/gizmo/purpose/${g.id}/`, tName: {ko: `기즈모 스토어 · ${g.label.ko}`, en: `Gizmo Store · ${g.label.en}`}, heading: g.label, lead: def('gizmo').intro, unit: {ko: '개'}, order: {ko: '이름순'},
+    pages.push(...listPages({kind: 'gizmo', base: `/content/gizmo/purpose/${g.id}/`, tName: {ko: `AI 활용 가이드 · ${g.label.ko}`, en: `AI usage guides · ${g.label.en}`}, heading: g.label, lead: def('gizmo').intro, unit: {ko: '개'}, order: {ko: '이름순'},
       items: gitems.filter(i => i.purpose === g.id), rowOf: gRow, chips: gChips(g.id), trail: [...trailGizmo, {label: bi(g.label), href: `/content/gizmo/purpose/${g.id}/`, name: g.label.ko}], jsonOf: jsonG, count: gizmo.count}));
-
-  // ── 서비스 ──
-  const trailSvc = [{label: bi(def('services').title), href: secPath('services'), name: '서비스'}];
-  const sorted = [...svcs].sort((a, b) => a.name.localeCompare(b.name, 'en', {sensitivity: 'base'}));
-  const cats = CATEGORY.filter(c => svcs.some(s => s.category === c.key));
-  const sRow = s => row({meta: esc(new URL(s.url).host), titleHtml: esc(s.name), bodyHtml: `<strong class="hub-tag">${bi(s.tagline)}</strong> ${bi(s.summary)}`, href: mirrorPath('services', s.id)});
-  const sChips = on => chipBar('service categories', [{href: secPath('services'), label: {ko: '전체', en: 'All'}, n: svcs.length, on: on === 'all'},
-    ...cats.map(c => ({href: `/content/services/category/${c.key}/`, label: c.label, n: svcs.filter(s => s.category === c.key).length, on: on === c.key}))]);
-  const jsonS = s => ({name: s.name, url: s.url});
-  pages.push(...listPages({kind: 'services', base: secPath('services'), tName: {ko: '서비스 전체', en: 'All services'}, heading: def('services').title, lead: def('services').intro, unit: {ko: '곳'}, order: {ko: '이름순'},
-    items: sorted, rowOf: sRow, chips: sChips('all'), trail: trailSvc, jsonOf: jsonS, count: svcSec.count}));
-  for (const c of cats)
-    pages.push(...listPages({kind: 'services', base: `/content/services/category/${c.key}/`, tName: {ko: `서비스 · ${c.label.ko}`, en: `Services · ${c.label.en}`}, heading: c.label, lead: c.blurb, unit: {ko: '곳'}, order: {ko: '이름순'},
-      items: sorted.filter(s => s.category === c.key), rowOf: sRow, chips: sChips(c.key), trail: [...trailSvc, {label: bi(c.label), href: `/content/services/category/${c.key}/`, name: c.label.ko}], jsonOf: jsonS, count: svcSec.count}));
 
   // ── 웹게임 · 웹 도구(대표 항목만 — 원본 저장소의 일부) ──
   const featureList = (kind, s, name, rowOf, jsonOf, note) => listPages({kind, base: secPath(kind), tName: {ko: `${name.ko} 대표 작품`, en: `${name.en}: selected`}, heading: def(kind).title, lead: def(kind).intro, unit: {ko: '개'}, order: {ko: '기준일 선별'},
@@ -125,16 +111,15 @@ export function hubModel(data) {
     it => row({meta: esc(it.category), title: it.title, body: it.summary, href: it.url, external: true}), it => ({name: it.title, url: it.url}),
     {ko: `전체 ${tools.count.value}개 중 분류별 대표 ${tools.items.length}개만 실었습니다. 나머지는 웹 도구 사이트에서 볼 수 있습니다.`, en: `Only ${tools.items.length} of ${tools.count.value} tools are listed here; the rest are on the web tools site.`}));
 
-  return {pages, posts, gitems, sorted, cats};
+  return {pages, posts, gitems};
 }
 
 // 상세 페이지의 상위 경로(브레드크럼 중간 단계). m.crumbs 로 쓴다.
 export function mirrorTrail(data, kind, catKey) {
   const hub = data.contentHub;
   if (kind === 'blog') { const g = sec(hub, 'blog').groups.find(x => x.id === catKey); return [{label: bi(def('blog').title), href: secPath('blog'), name: '블로그'}, {label: bi(g.label), href: `/content/blog/${catKey}/`, name: g.label.ko}]; }
-  if (kind === 'gizmo') { const g = sec(hub, 'gizmo').groups.find(x => x.id === catKey); return [{label: bi(def('gizmo').title), href: secPath('gizmo'), name: '기즈모 스토어'}, {label: bi(g.label), href: `/content/gizmo/purpose/${catKey}/`, name: g.label.ko}]; }
-  const c = CATEGORY.find(x => x.key === catKey);
-  return [{label: bi(def('services').title), href: secPath('services'), name: '서비스'}, {label: bi(c.label), href: `/content/services/category/${catKey}/`, name: c.label.ko}];
+  if (kind === 'gizmo') { const g = sec(hub, 'gizmo').groups.find(x => x.id === catKey); return [{label: bi(def('gizmo').title), href: secPath('gizmo'), name: 'AI 활용 가이드'}, {label: bi(g.label), href: `/content/gizmo/purpose/${catKey}/`, name: g.label.ko}]; }
+  throw new Error(`mirrorTrail: unknown kind ${kind}`);
 }
 
 // 랜딩(/content/): 섹션 카드 5장, 항목은 대표 3건만.
@@ -144,7 +129,7 @@ export function landingHtml(data, model) {
     const s = sec(hub, id), d = def(id);
     return `<article class="card hub-card">
     <h2>${icon(d.icon, {size: 20})}<span>${bi(d.title)}</span></h2>
-    <p class="hub-count mono">${icon('clock', {size: 13})}<span>${bi({ko: `${s.count.value}${id === 'services' ? '곳' : id === 'blog' ? '편' : '개'}`, en: `${s.count.value}`})}</span> · ${bi(asOf)} ${esc(s.count.as_of)}</p>
+    <p class="hub-count mono">${icon('clock', {size: 13})}<span>${bi({ko: `${s.count.value}${id === 'blog' ? '편' : '개'}`, en: `${s.count.value}`})}</span> · ${bi(asOf)} ${esc(s.count.as_of)}</p>
     <p class="hub-blurb">${bi(blurb)}</p>
     <ul class="hub-prev">${items.slice(0, 3).map(i => `<li>${i.html}</li>`).join('')}</ul>
     <a class="more" href="${secPath(id)}">${bi({ko: '전체 보기', en: 'See all'})}${ext}</a>
@@ -152,9 +137,8 @@ export function landingHtml(data, model) {
   };
   const loc = (href, text, external) => `<a href="${esc(href)}"${external ? ` ${EXT}` : ''} lang="ko">${esc(text)}</a>`;
   return `<div class="hub-cards">
-  ${card('blog', model.posts.map(p => ({html: loc(mirrorPath('blog', `${p.cat}/${p.slug}`), p.title)})), {ko: 'AI 활용, 앱 제작·심사, 게임 소식과 짧은 글. 최신 글부터 보여 줍니다.', en: 'AI in practice, app production and review, game updates and short essays, newest first.'})}
-  ${card('services', model.sorted.map(s => ({html: `<a href="${mirrorPath('services', s.id)}">${esc(s.name)}</a>`})), {ko: '직접 만들어 제공하는 서비스의 기능·대상·사용 방법.', en: 'Features, audience and steps for each service I provide.'})}
-  ${card('gizmo', model.gitems.map(i => ({html: loc(mirrorPath('gizmo', i.slug), i.title)})), {ko: '설치 없이 쓰는 작은 AI 도구와 스킬. 용도별로 묶었습니다.', en: 'Small AI tools and skills, grouped by purpose.'})}
+  ${card('blog', model.posts.map(p => ({html: loc(mirrorPath('blog', `${p.cat}/${p.slug}`), p.title)})), {ko: 'AI 사용기, 앱 제작·심사, 게임 소식과 짧은 글. 최신 글부터 보여 줍니다.', en: 'AI field notes, app production and review, game updates and short essays, newest first.'})}
+  ${card('gizmo', model.gitems.map(i => ({html: loc(mirrorPath('gizmo', i.slug), i.title)})), {ko: '설치 없이 쓰는 프롬프트·스킬. 용도별로 묶었고 전문을 읽을 수 있습니다.', en: 'Prompts and skills you can use without installing anything, grouped by purpose, with the full text.'})}
   ${card('games', sec(hub, 'games').items.map(i => ({html: `<a href="${esc(i.url)}" ${EXT}>${bi(i.title)}</a>`})), {ko: '브라우저에서 바로 하는 게임 가운데 대표 작품.', en: 'Selected browser games.'})}
   ${card('tools', sec(hub, 'tools').items.map(i => ({html: loc(i.url, i.title, true)})), {ko: '브라우저에서 쓰는 계산기와 변환기 가운데 대표 도구.', en: 'Selected calculators and converters.'})}
 </div>`;

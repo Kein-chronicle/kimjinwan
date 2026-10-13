@@ -5,7 +5,6 @@ import fs from 'node:fs';
 import {validate, HUB_MIN_SUMMARY} from '../scripts/lib/validate.mjs';
 import {loadData, buildAll} from '../scripts/build.mjs';
 import {PER_PAGE} from '../scripts/lib/hub.mjs';
-import {CATEGORY} from '../scripts/lib/render.mjs';
 
 const read = f => fs.readFileSync(f, 'utf8');
 const D = loadData();
@@ -24,7 +23,6 @@ const ceilDiv = n => Math.max(1, Math.ceil(n / PER_PAGE));
 
 const blog = sec('blog'), gizmo = sec('gizmo');
 const slugOf = u => u.split('/').filter(Boolean).pop();
-const cats = CATEGORY.filter(c => D.services.some(s => s.category === c.key));
 
 // 기대하는 색인 경로 집합을 데이터에서 따로 계산한다(구현과 독립)
 function expectedIndexPaths() {
@@ -34,19 +32,16 @@ function expectedIndexPaths() {
   for (const g of blog.groups) add(`/content/blog/${g.id}/`, g.items.length);
   add('/content/gizmo/', gizmo.count.value);
   for (const g of gizmo.groups) add(`/content/gizmo/purpose/${g.id}/`, g.items.length);
-  add('/content/services/', D.services.length);
-  for (const c of cats) add(`/content/services/category/${c.key}/`, D.services.filter(s => s.category === c.key).length);
   set.add('/content/games/'); set.add('/content/tools/');
   return set;
 }
-const detailPaths = () => new Set([...flat(blog).map(i => `/content/blog/${i.url.split('/').slice(-3, -1).join('/')}/`), ...flat(gizmo).map(i => `/content/gizmo/${slugOf(i.url)}/`), ...D.services.map(s => `/content/services/${s.id}/`)]);
+const detailPaths = () => new Set([...flat(blog).map(i => `/content/blog/${i.url.split('/').slice(-3, -1).join('/')}/`), ...flat(gizmo).map(i => `/content/gizmo/${slugOf(i.url)}/`)]);
 
 test('콘텐츠 허브 데이터는 검증을 통과한다', () => assert.deepEqual(validate(D), []));
-test('섹션 다섯 개, 숫자마다 as_of·source, 블로그·기즈모는 전체 항목', () => {
-  assert.deepEqual(hub.sections.map(s => s.id), ['blog', 'services', 'games', 'tools', 'gizmo']);
+test('섹션 네 개, 숫자마다 as_of·source, 블로그·기즈모는 전체 항목', () => {
+  assert.deepEqual(hub.sections.map(s => s.id), ['blog', 'games', 'tools', 'gizmo']);
   for (const s of hub.sections) { assert.match(s.count.as_of, /^\d{4}-\d{2}-\d{2}$/, s.id); assert.ok(s.count.source.length > 20, s.id); assert.ok(s.count.value >= flat(s).length, s.id); }
   assert.equal(flat(blog).length, blog.count.value); assert.equal(flat(gizmo).length, gizmo.count.value);
-  assert.equal(flat(sec('services')).length, D.services.length);
   for (const it of flat(gizmo)) assert.ok(it.summary.length >= 30, it.url);
 });
 test('색인 페이지 집합이 데이터에서 계산한 기대값과 정확히 같다(쪽 수 정합)', () => {
@@ -60,7 +55,6 @@ test('경로 충돌이 없다: 상세 slug 가 쪽·분류 경로 이름과 겹�
   for (const it of flat(blog)) { const [cat, slug] = it.url.split('/').slice(-3, -1); assert.ok(!['page'].includes(slug), `blog slug ${cat}/${slug}`); assert.ok(!/^\d+$/.test(slug) || true); }
   for (const g of blog.groups) assert.notEqual(g.id, 'page');
   for (const it of flat(gizmo)) assert.ok(!['page', 'purpose'].includes(slugOf(it.url)), slugOf(it.url));
-  for (const s of D.services) assert.ok(!['page', 'category'].includes(s.id), s.id);
   const paths = contentFiles.map(pathOf);
   assert.equal(new Set(paths).size, paths.length);
   const det = detailPaths();
@@ -68,7 +62,7 @@ test('경로 충돌이 없다: 상세 slug 가 쪽·분류 경로 이름과 겹�
 });
 test('색인 페이지: 자기 canonical, 쪽당 20건 이하, prev/next 가 서로 맞물린다', () => {
   const bases = [['/content/blog/', blog.count.value], ...blog.groups.map(g => [`/content/blog/${g.id}/`, g.items.length]), ['/content/gizmo/', gizmo.count.value],
-    ...gizmo.groups.map(g => [`/content/gizmo/purpose/${g.id}/`, g.items.length]), ['/content/services/', D.services.length]];
+    ...gizmo.groups.map(g => [`/content/gizmo/purpose/${g.id}/`, g.items.length])];
   for (const [base, n] of bases) {
     const total = ceilDiv(n);
     for (let i = 1; i <= total; i++) {
@@ -97,26 +91,23 @@ test('모든 글·기즈모 항목이 각 분류 목록의 정확히 한 쪽에 
   const allG = collect('/content/gizmo/', gizmo.count.value), hrefG = it => `/content/gizmo/${slugOf(it.url)}/`;
   assert.deepEqual([...allG].sort(), flat(gizmo).map(hrefG).sort());
   assert.deepEqual([...gizmo.groups.flatMap(g => collect(`/content/gizmo/purpose/${g.id}/`, g.items.length))].sort(), [...allG].sort());
-  const allS = collect('/content/services/', D.services.length);
-  assert.deepEqual([...allS].sort(), D.services.map(s => `/content/services/${s.id}/`).sort());
-  assert.deepEqual([...cats.flatMap(c => collect(`/content/services/category/${c.key}/`, D.services.filter(s => s.category === c.key).length))].sort(), [...allS].sort());
-  for (const h of [...allBlog, ...allG, ...allS]) assert.ok(out[h.slice(1) + 'index.html'], h);
+  for (const h of [...allBlog, ...allG]) assert.ok(out[h.slice(1) + 'index.html'], h);
 });
-test('랜딩: 섹션 카드 5장, 각 카드 대표 3건 이하, 개수·기준일 표기, 긴 목록 없음', () => {
+test('랜딩: 섹션 카드 4장, 각 카드 대표 3건 이하, 개수·기준일 표기, 긴 목록 없음', () => {
   const h = out['content/index.html'];
   const cards = h.match(/<article class="card hub-card">[\s\S]*?<\/article>/g);
-  assert.equal(cards.length, 5);
-  for (const c of cards) { assert.ok((c.match(/<li>/g) || []).length <= 3); assert.match(c, /\d{4}-\d{2}-\d{2}/); assert.match(c, /href="\/content\/(blog|services|gizmo|games|tools)\/"/); }
+  assert.equal(cards.length, 4);
+  for (const c of cards) { assert.ok((c.match(/<li>/g) || []).length <= 3); assert.match(c, /\d{4}-\d{2}-\d{2}/); assert.match(c, /href="\/content\/(blog|gizmo|games|tools)\/"/); }
   assert.equal((h.match(/<li>/g) || []).filter(Boolean).length < 40, true);
   assert.doesNotMatch(h, /class="hub-list"/);
   assert.equal((h.match(/<h1[\s>]/g) || []).length, 1);
 });
-test('보조 내비: 모든 /content/ 페이지에 같은 여섯 항목, 현재 위치 하나만 강조, 개수 표기', () => {
+test('보조 내비: 모든 /content/ 페이지에 같은 다섯 항목(전체·블로그·AI 활용 가이드·웹게임·웹 도구), 현재 위치 하나만 강조, 개수 표기', () => {
   for (const f of contentFiles) {
     const h = out[f], nav = h.match(/<nav class="subnav"[\s\S]*?<\/nav>/);
     assert.ok(nav, f);
     const links = [...nav[0].matchAll(/<a href="([^"]*)"([^>]*)>/g)];
-    assert.deepEqual(links.map(m => m[1]), ['/content/', '/content/blog/', '/content/services/', '/content/gizmo/', '/content/games/', '/content/tools/'], f);
+    assert.deepEqual(links.map(m => m[1]), ['/content/', '/content/blog/', '/content/gizmo/', '/content/games/', '/content/tools/'], f);
     assert.equal(links.filter(m => m[2].includes('aria-current="page"')).length, 1, f);
     for (const [id, n] of [['blog', blog.count.value], ['gizmo', gizmo.count.value]]) assert.ok(nav[0].includes(`href="/content/${id}/"`) && nav[0].includes(`>${n}</span>`), f + id);
   }
@@ -154,26 +145,31 @@ test('기즈모 상세: text 항목은 프롬프트 전문을 pre/code 로 싣�
     const g = JSON.parse(read('content-src/gizmo/' + f)), h = out[`content/gizmo/${g.slug}/index.html`];
     if (g.kind === 'text') {
       nText++; assert.ok(g.prompt.length >= 100, g.slug);
-      const m = h.match(/<pre lang="ko" tabindex="0"><code>([\s\S]*?)<\/code><\/pre>/);
+      const m = h.match(/<pre lang="ko" tabindex="0"><code id="prompt-[\w-]+">([\s\S]*?)<\/code><\/pre>/);
       assert.ok(m, g.slug + ' pre'); assert.equal(unescape(m[1]), g.prompt, g.slug + ' 전문 일치'); assert.doesNotMatch(m[1], /<(?!\/)[a-z]/i, g.slug + ' 이스케이프');
       if (g.prompt.includes('\n')) assert.ok(m[1].includes('\n'), g.slug);
       assert.equal(g.download, `https://gizmo-store.com/tool/${g.slug}/download`, g.slug);
-      assert.ok(h.includes(`href="${g.download}" target="_blank" rel="noopener noreferrer"`), g.slug + ' 받기 링크');
-    } else { nWeb++; assert.doesNotMatch(h, /<pre/, g.slug); assert.ok(g.toolUrl && h.includes(`href="${g.toolUrl}"`), g.slug); }
+      assert.ok(h.includes(`href="${g.download}" target="_blank" rel="noopener noreferrer">`), g.slug + ' 다운로드 링크');
+      assert.match(h, /<span data-lang-ko>다운로드<\/span><span data-lang-en>Download<\/span>/, g.slug);
+      assert.match(h, new RegExp(`<button type="button" class="btn btn-primary copy-btn" data-copy-target="prompt-${g.slug}" hidden>`), g.slug + ' 복사 버튼');
+      assert.match(h, /<span class="copy-status" role="status" aria-live="polite"><\/span>/, g.slug);
+      assert.ok(h.includes('<script src="/js/copy.js" defer></script>'), g.slug + ' 스크립트');
+      assert.match(h, /복사하기<\/span><span data-lang-en>Copy</, g.slug);
+    } else { nWeb++; assert.doesNotMatch(h, /<pre|copy-btn|copy\.js|data-copy-target/, g.slug); assert.ok(g.toolUrl && h.includes(`href="${g.toolUrl}"`), g.slug); }
     assert.equal(g.url, `https://gizmo-store.com/tool/${g.slug}`, g.slug);
-    assert.ok(h.includes(`href="${g.url}" target="_blank" rel="noopener noreferrer"`), g.slug + ' 보기 링크');
-    assert.match(h, /기즈모 스토어에서 보기/, g.slug);
-    if (g.kind === 'text') assert.match(h, /기즈모 스토어에서 받기/, g.slug);
+    assert.ok(!h.includes(`href="${g.url}"`), g.slug + ' 보조 보기 버튼은 없다');
+    assert.doesNotMatch(h, /에서 보기|View on/, g.slug);
     assert.ok(g.audience && g.result && g.steps.length, g.slug);
     assert.ok(h.includes('<dl class="detail-facts">'), g.slug);
   }
   assert.equal(nText + nWeb, gizmo.count.value); assert.equal(nWeb, 6);
   const gh = [...Object.entries(out)].filter(([f]) => f.startsWith('content/gizmo/') && !f.includes('/page/') && !f.includes('/purpose/') && f !== 'content/gizmo/index.html');
   assert.equal(gh.length, 50); assert.equal(gh.filter(([, h]) => /href="https:\/\/gizmo-store\.com\/tool\/[\w-]+\/download"/.test(h)).length, 44);
-  for (const [f, h] of gh) for (const m of h.matchAll(/href="(https:\/\/gizmo-store\.com[^"]*)"/g)) assert.match(m[1], /^https:\/\/gizmo-store\.com\/tool\/[\w-]+(\/download)?$/, f);
+  for (const [f, h] of gh) for (const m of h.matchAll(/href="(https:\/\/gizmo-store\.com[^"]*)"/g)) assert.match(m[1], /^https:\/\/gizmo-store\.com\/tool\/[\w-]+\/download$/, f);
+  assert.equal(gh.filter(([, h]) => h.includes('/js/copy.js')).length, 44);
 });
 test('상세 본문 길이 하한', () => {
-  const MIN = {blog: 150, gizmo: 250, services: 400};
+  const MIN = {blog: 150, gizmo: 250};
   for (const p of detailPaths()) {
     const h = out[p.slice(1) + 'index.html'], kind = p.split('/')[2];
     const body = text(h.slice(h.indexOf('<div class="detail-body">'), h.indexOf('</main>'))).replace(/\s+/g, ' ');
@@ -211,7 +207,7 @@ test('랜딩 JSON-LD 는 섹션 ItemList, 색인 쪽은 CollectionPage + ItemLis
   const ld = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   const land = ld(out['content/index.html']);
   assert.ok(land.some(x => x['@type'] === 'CollectionPage'));
-  assert.equal(land.find(x => x['@type'] === 'ItemList').itemListElement.length, 5);
+  assert.equal(land.find(x => x['@type'] === 'ItemList').itemListElement.length, 4);
   const g = ld(out['content/blog/page/2/index.html']);
   assert.ok(g.some(x => x['@type'] === 'CollectionPage' && x.url === `${SITE}/content/blog/page/2/`));
   assert.equal(g.find(x => x['@type'] === 'ItemList').numberOfItems, PER_PAGE);
@@ -222,9 +218,76 @@ test('빌드는 형제 저장소·네트워크를 읽지 않는다(content-src �
 });
 test('검증 규칙: 요약이 짧거나 호스트가 다르거나 중복이면 잡는다', () => {
   const bad = JSON.parse(JSON.stringify(hub));
-  bad.sections[2].items[0].summary = '짧음';
-  bad.sections[3].items[0].url = 'https://example.com/x/';
-  bad.sections[4].groups[0].items[1].url = bad.sections[4].groups[0].items[0].url;
+  bad.sections[1].items[0].summary = '짧음';
+  bad.sections[2].items[0].url = 'https://example.com/x/';
+  bad.sections[3].groups[0].items[1].url = bad.sections[3].groups[0].items[0].url;
   const e = validate({...D, contentHub: bad}).join('\n');
   assert.match(e, /summary needs at least/); assert.match(e, /host must be apps\.kimjinwan\.com/); assert.match(e, /duplicate url/);
+});
+
+test('서비스 섹션은 허브에서 빠졌다: 경로·데이터·소스 읽기·사이트맵·내비·문구 어디에도 없다(서비스 소개는 /works/ 가 맡는다)', () => {
+  assert.ok(!contentFiles.some(f => f.startsWith('content/services/')));
+  assert.ok(!fs.existsSync('content/services') && !fs.existsSync('content-src/services'));
+  assert.ok(!hub.sections.some(s => s.id === 'services'));
+  assert.doesNotMatch(read('sitemap.xml'), /\/content\/services\//);
+  assert.doesNotMatch(read('scripts/build_content_hub.mjs'), /kimjinwan-services|details\.js/);
+  for (const f of contentFiles) { const h = out[f]; assert.doesNotMatch(h, /href="\/content\/services\//, f); assert.doesNotMatch(noCode(h.slice(h.indexOf('<nav class="subnav"'), h.indexOf('</nav>', h.indexOf('<nav class="subnav"')))), /서비스|Services/, f + ' 서브 내비'); }
+  const land = text(out['content/index.html']);
+  assert.doesNotMatch(land, /서비스 소개|서비스 \d+곳/);
+  const home = out['index.html'], entry = home.slice(home.indexOf('id="content-hub"'), home.indexOf('id="content-hub"') + 1600);
+  assert.doesNotMatch(entry, /서비스 소개|service write-ups/);
+  assert.ok(fs.existsSync('works/index.html')); // 서비스 소개는 그대로
+});
+test('이름 변경: 사용자에게 보이는 곳은 AI 활용 가이드(영어 AI usage guides), URL 은 /content/gizmo/ 유지', () => {
+  const nav = out['content/index.html'].match(/<nav class="subnav"[\s\S]*?<\/nav>/)[0];
+  assert.ok(nav.includes('<span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span>'));
+  assert.ok(nav.includes('href="/content/gizmo/"'));
+  for (const f of contentFiles.filter(f => f.startsWith('content/gizmo/') || f === 'content/index.html')) {
+    const h = out[f];
+    const head = h.slice(0, h.indexOf('</head>')), chrome = h.slice(h.indexOf('<nav id="nav"'), h.indexOf('<div class="detail-body">') > 0 ? h.indexOf('<div class="detail-body">') : h.length);
+    assert.doesNotMatch(head, /기즈모|Gizmo/, f + ' meta/JSON-LD');
+  }
+  assert.doesNotMatch(read('index.html').slice(read('index.html').indexOf('id="content-hub"'), read('index.html').indexOf('id="content-hub"') + 1600), /기즈모/);
+  assert.match(out['content/gizmo/index.html'], /<title>AI 활용 가이드 전체 — 콘텐츠 허브/);
+  const lock = JSON.parse(read('scripts/og-cards.lock.json')).content.text;
+  assert.doesNotMatch(lock.headline, /서비스|기즈모/); assert.match(lock.headline, /AI 활용 가이드/);
+  const blogChips = out['content/blog/index.html'].match(/<nav class="chipbar"[\s\S]*?<\/nav>/)[0];
+  assert.doesNotMatch(blogChips, /AI 활용/); // 블로그 카테고리 칩과 가이드 이름이 겹치지 않는다
+});
+
+// 허브가 직접 쓴 화면 문구(내비·제목·메타·버튼·소개)에는 '기즈모'·'Gizmo' 가 남지 않는다. 가이드 항목 자체의 설명 본문(API 가 준 글)은 고치지 않는다.
+const visible = h => { const x = h.replace(/<script[\s\S]*?<\/script>/g, ''); return (text(x) + ' ' + [...x.matchAll(/\s(?:alt|aria-label|title|content)="([^"]*)"/g)].map(m => m[1]).join(' ')).replace(/https?:\/\/\S+/g, ''); };
+test('허브 화면 문구에 기즈모·Gizmo 가 없다(항목 본문 제외, URL 제외)', () => {
+  for (const f of contentFiles) {
+    let h = out[f];
+    h = h.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '');
+    assert.doesNotMatch(visible(h), /기즈모|Gizmo/i, f);
+  }
+  assert.doesNotMatch(visible(out['content/index.html']), /기즈모|Gizmo/i);
+  for (const src of ['src/content.html', 'src/content-list.html', 'src/detail.html']) assert.doesNotMatch(read(src), /기즈모|Gizmo/i, src);
+});
+// ── 복사하기 버튼 ──
+import {createRequire} from 'node:module';
+const copy = createRequire(import.meta.url)('../js/copy.js');
+test('copy.js: clipboard 성공 시 전문 그대로 writeText 로 넘기고 clipboard 를 돌려준다', async () => {
+  let got; const r = await copy.copyText('줄1\n줄2', {writeText: async t => { got = t; }}, () => { throw new Error('no fallback'); });
+  assert.equal(got, '줄1\n줄2'); assert.equal(r, 'clipboard');
+});
+test('copy.js: clipboard 거부·동기 예외·부재 → execCommand 대체, 대체도 실패하면 null', async () => {
+  let fb = 0; const ok = t => { fb++; assert.equal(t, 'x'); return true; };
+  assert.equal(await copy.copyText('x', {writeText: async () => { throw new Error('denied'); }}, ok), 'fallback');
+  assert.equal(await copy.copyText('x', {writeText: () => { throw new Error('sync'); }}, ok), 'fallback');
+  assert.equal(await copy.copyText('x', undefined, ok), 'fallback');
+  assert.equal(await copy.copyText('x', null, ok), 'fallback'); assert.equal(fb, 4);
+  assert.equal(await copy.copyText('x', undefined, () => false), null);
+  assert.equal(await copy.copyText('x', {writeText: async () => { throw new Error('d'); }}, () => { throw new Error('exec'); }), null);
+  assert.deepEqual(Object.keys(copy.MSG), ['ko', 'en']);
+  assert.equal(copy.MSG.ko.done, '복사됐어요'); assert.equal(copy.MSG.en.done, 'Copied'); assert.match(copy.MSG.ko.fail, /직접 선택해 복사해 주세요/);
+});
+test('copy.js 는 인라인 스크립트 없이 외부 파일로만 로드되고, 버튼은 JS 없이는 hidden 이다', () => {
+  for (const [f, h] of Object.entries(out).filter(([f]) => f.startsWith('content/gizmo/'))) {
+    assert.doesNotMatch(h.slice(h.indexOf('<main'), h.indexOf('</main>')), /<script/, f);
+    for (const m of h.matchAll(/<button type="button" class="btn btn-primary copy-btn"[^>]*>/g)) assert.match(m[0], / hidden>/, f);
+  }
+  assert.doesNotMatch(read('js/copy.js'), /innerHTML|eval\(/);
 });

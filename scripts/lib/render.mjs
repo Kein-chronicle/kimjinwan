@@ -228,18 +228,19 @@ export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Ke
 const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
 
 export function navLinks(page) {
-  // 홈 → 서비스 모아보기(service.kimjinwan.com, 새 창) → 콘텐츠 허브 → AI 공장 → 경력. /works/ 는 홈 서비스 섹션의 '서비스 전체 보기'와 푸터 사이트맵으로 닿는다.
-  const items = [SUBPAGES[3], SUBPAGES[1], SUBPAGES[0]];
+  // 홈 → 서비스 → AI 공장 → 경력 → 콘텐츠 허브 → 연락하기 | 서비스 모아보기. 마지막은 같은 레벨의 메뉴가 아니라 다른 사이트(service.kimjinwan.com, 새 창)로 가는 바로가기라 구분선과 다른 모양(.nav-ext)으로 둔다.
+  const items = [SUBPAGES[2], SUBPAGES[1], SUBPAGES[0], SUBPAGES[3]];
   return [
     `<a href="${HOME.href}"${cur(HOME.key, page)}>${bi(HOME.label)}</a>`,
-    extLink(HUB),
     ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
     `<a href="#contact" class="btn btn-primary nav-cta">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
+    `<span class="nav-sep" aria-hidden="true"></span>`,
+    `<a class="nav-ext" href="${HUB.href}" ${EXT} title="${esc(HUB.label.ko)} — service.kimjinwan.com">${icon('layers', {size: 15})}${bi(HUB.label)}${ext}</a>`,
   ].join('\n      ');
 }
 
 export function footMap(page) {
-  const items = [HOME, SUBPAGES[2], SUBPAGES[3], SUBPAGES[1], SUBPAGES[0]].map(l => `<li><a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a></li>`);
+  const items = [HOME, SUBPAGES[2], SUBPAGES[1], SUBPAGES[0], SUBPAGES[3]].map(l => `<li><a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a></li>`);
   return `<nav class="foot-map" aria-label="Site map"><ul>${[...items, `<li>${extLink(HUB)}</li>`].join('')}</ul></nav>`;
 }
 
@@ -261,18 +262,15 @@ export const HUB_SECTIONS = [
   {id: 'blog', icon: 'book-open', title: {ko: '블로그', en: 'Journal'},
     intro: {ko: 'AI 자동화의 실패와 복구, 앱 제작과 심사, 플레이 중인 게임의 공식 공지를 출처와 날짜까지 남기는 블로그입니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
       en: 'A journal of AI automation failures and recovery, app production and review, and sourced game updates. Read the title and summary of the latest posts in each category right here, then open the full post. The posts are written in Korean.'}},
-  {id: 'services', icon: 'layers', title: {ko: '서비스', en: 'Services'},
-    intro: {ko: '직접 만들어 제공하는 서비스입니다. 서비스마다 무엇을 하는지, 어떤 기능이 있는지, 어떤 분께 맞는지를 짧게 풀어 적었습니다.',
-      en: 'The services I build and provide. Each one is described briefly: what it does, its main features and who it suits.'}},
   {id: 'games', icon: 'gamepad', title: {ko: '웹게임', en: 'Web games'},
     intro: {ko: '설치 없이 브라우저에서 바로 하는 게임입니다. 대표 게임의 장르, 조작 방법, 한 판 길이를 적었습니다. 게임 설명은 한국어입니다.',
       en: 'Games that run straight in the browser with no install. Each entry lists genre, controls and session length. Game descriptions are written in Korean.'}},
   {id: 'tools', icon: 'wrench', title: {ko: '웹 도구', en: 'Web tools'},
     intro: {ko: '브라우저에서 바로 쓰는 계산기와 변환기입니다. 분류별 대표 도구가 무엇을 입력받아 무엇을 내놓는지 적었습니다. 도구 설명은 한국어입니다.',
       en: 'Calculators and converters that work in the browser. Each entry says what the tool takes in and what it gives back. Tool descriptions are written in Korean.'}},
-  {id: 'gizmo', icon: 'sparkles', title: {ko: '기즈모 스토어', en: 'Gizmo Store'},
-    intro: {ko: '설치 없이 쓰는 작은 AI 도구와 스킬을 모은 가게입니다. 용도별로 묶어 도구 이름과 한 줄 설명을 적었고, 항목마다 설명·대상·사용 방법을 이 사이트 안에서 읽을 수 있습니다. 설명은 한국어입니다.',
-      en: 'A shop of small AI tools and skills. Entries are grouped by purpose with a name and a one-line description; each has its own page here with description, audience and steps. Descriptions are written in Korean.'}},
+  {id: 'gizmo', icon: 'sparkles', title: {ko: 'AI 활용 가이드', en: 'AI usage guides'},
+    intro: {ko: '설치 없이 쓰는 프롬프트·스킬 가이드입니다. 용도별로 묶어 이름과 한 줄 설명을 적었고, 항목마다 설명·대상·사용 방법과 프롬프트 전문을 이 사이트 안에서 읽을 수 있습니다. 설명은 한국어입니다.',
+      en: 'Prompt and skill guides you can use without installing anything. Entries are grouped by purpose with a name and a one-line description; each has its own page with description, audience, steps and the full prompt. Descriptions are written in Korean.'}},
 ];
 
 // ===== 콘텐츠 허브 상세 페이지(/content/<종류>/…/) — 허브가 자기 주소를 canonical 로 가진다 =====
@@ -305,24 +303,11 @@ export function rewriteBlogBody(html, mirrored) {
 const li = (list, f = x => esc(x)) => `<ul>${list.map(x => `<li>${f(x)}</li>`).join('')}</ul>`;
 const h2 = t => `<h2>${bi(t)}</h2>`;
 const cta = (href, label) => `<p class="detail-cta"><a class="btn btn-primary" href="${esc(href)}" ${EXT}>${bi(label)}${ext}</a></p>`;
-export function serviceBody(sv, d) {
-  const L = (k, o) => ({ko: k, en: o});
-  const fact = [['login', L('가입', 'Sign-up')], ['device', L('이용 환경', 'Environment')], ['ai', L('AI 연결', 'AI connection')]].filter(([k]) => d.facts?.[k]);
-  return `<p class="detail-lead">${bi(sv.summary)}</p>
-${cta(sv.url, {ko: '서비스 열기', en: 'Open the service'})}
-${h2(L('주요 기능', 'Main features'))}<ul>${d.features.map(f => `<li><strong>${bi(f.t)}</strong> ${bi(f.d)}</li>`).join('')}</ul>
-${h2(L('이런 분께 맞습니다', 'Who it is for'))}${li(d.audience, a => bi(a))}
-${h2(L('사용 방법', 'How to use'))}<ol>${d.steps.map(x => `<li>${bi(x)}</li>`).join('')}</ol>
-${h2(L('알아둘 점', 'Good to know'))}${li(d.notes, a => bi(a))}
-${fact.length ? `${h2(L('이용 정보', 'Details'))}<dl class="detail-facts">${fact.map(([k, l]) => `<dt>${bi(l)}</dt><dd>${bi(d.facts[k])}</dd>`).join('')}</dl>` : ''}
-${d.tags?.length ? `<div class="chips">${d.tags.map(t => `<span class="chip" lang="ko">${esc(t)}</span>`).join('')}</div>` : ''}`;
-}
-// 이용 진입 링크: text 는 기즈모 스토어 다운로드, web 은 서비스 열기. 보조로 스토어 상세 페이지. 값은 스냅샷 필드(url·download·toolUrl)에서 온다.
+// 이용 진입 링크: text 는 '다운로드'(받는 기능은 스토어 쪽 주소로 연결), web 은 '써 보기'. 값은 스냅샷 필드(url·download·toolUrl)에서 온다.
 function gizmoCtas(g) {
-  const slug = g.slug, page = g.url || `https://gizmo-store.com/tool/${slug}`;
   const main = g.kind === 'web' ? (g.toolUrl ? {href: g.toolUrl, label: {ko: '써 보기', en: 'Try it'}} : null)
-    : {href: g.download || `${page}/download`, label: {ko: '기즈모 스토어에서 받기', en: 'Get it from Gizmo Store'}};
-  return `<p class="detail-cta">${main ? `<a class="btn btn-primary" href="${esc(main.href)}" ${EXT}>${bi(main.label)}${ext}</a>` : ''}<a class="btn btn-ghost" href="${esc(page)}" ${EXT}>${bi({ko: '기즈모 스토어에서 보기', en: 'View on Gizmo Store'})}${ext}</a></p>`;
+    : {href: g.download || `${g.url}/download`, label: {ko: '다운로드', en: 'Download'}};
+  return main ? `<p class="detail-cta"><a class="btn btn-primary" href="${esc(main.href)}" ${EXT}>${bi(main.label)}${ext}</a></p>` : '';
 }
 export function gizmoBody(g) {
   const part = (label, text) => text ? `${h2(label)}<p lang="ko">${esc(text)}</p>` : '';
@@ -334,7 +319,7 @@ export function gizmoBody(g) {
 ${gizmoCtas(g)}
 ${part({ko: '설명', en: 'About'}, g.description === g.tagline ? '' : g.description)}${part({ko: '이런 분께 맞습니다', en: 'Who it is for'}, g.audience)}${part({ko: '결과물', en: 'What you get'}, g.result)}
 ${g.steps.length ? `${h2({ko: '쓰는 방법', en: 'How to use'})}<ol>${g.steps.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ol>` : ''}
-${g.prompt ? `${h2({ko: '프롬프트 전문', en: 'Full prompt'})}<details class="detail-prompt" open><summary><span data-lang-ko>전문 접기·펼치기</span><span data-lang-en>Show / hide the full text</span></summary><pre lang="ko" tabindex="0"><code>${esc(g.prompt)}</code></pre></details>` : ''}
+${g.prompt ? `${h2({ko: '프롬프트 전문', en: 'Full prompt'})}<div class="copy-bar"><button type="button" class="btn btn-primary copy-btn" data-copy-target="prompt-${esc(g.slug)}" hidden><span class="cb-idle">${bi({ko: '복사하기', en: 'Copy'})}</span><span class="cb-done">${bi({ko: '복사됐어요', en: 'Copied'})}</span></button><span class="copy-status" role="status" aria-live="polite"></span></div><details class="detail-prompt" open><summary><span data-lang-ko>전문 접기·펼치기</span><span data-lang-en>Show / hide the full text</span></summary><pre lang="ko" tabindex="0"><code id="prompt-${esc(g.slug)}">${esc(g.prompt)}</code></pre></details>` : ''}
 ${part({ko: '막힐 때', en: 'If you get stuck'}, g.trouble)}
 ${h2({ko: '정보', en: 'Info'})}<dl class="detail-facts">${info.map(([l, v]) => `<dt>${bi(l)}</dt><dd>${v}</dd>`).join('')}</dl>`;
 }
