@@ -131,6 +131,7 @@ Pitchwright 는 완성본 전이라 서비스 상태에 `prelaunch`(배지 `PRE-
 - **광고 파일**: `ads.txt`·`app-ads.txt` 는 서버 릴리스 파일과 라이브 URL 응답 모두 SHA-256 `422f460a…49a0` 로 원본과 일치. 네 페이지 모두 `google-adsense-account` 메타(ca-pub-5544615855471151) 포함.
 - 검증: `/`·`/works/`·`/factories/`·`/career/`·`/game/` 200, 라이브 HTML·CSS·JS 해시가 로컬 빌드와 일치, 사이트맵 5개 URL, 블로그·게임·도구·Forge 서브도메인 200. 로컬 테스트 112/112.
 - 서버 접속 `ssh -i ~/kjw.pem ubuntu@54.116.13.147`, 릴리스 디렉터리는 root 소유라 업로드 후 `sudo mv` + `chown ubuntu`.
+- **함정(1.3.29 실측)**: `/var/www/kimjinwan` 도 root 소유라 `current` 심볼릭 링크 전환은 `sudo ln -sfn releases/<V> current.new && sudo mv -T current.new current` 로 해야 한다(sudo 없으면 Permission denied). 스테이징을 `mktemp -d` 로 만들면 rsync -a 가 디렉터리 권한 700 을 그대로 옮겨 nginx 가 못 읽는다 — 전환 **전에** `sudo find <릴리스> -type d -exec chmod 755 {} +` · `-type f -exec chmod 644 {} +`. 이걸 빼먹고 전환하면 홈 403·나머지 404 가 된다. 전환 직후 5개 페이지 200 과 ads.txt 해시를 바로 확인한다.
 
 ## 1.1.0 — 개발자 · PM 허브 개편
 
