@@ -2218,10 +2218,10 @@
    "id": "games",
    "url": "https://games.kimjinwan.com/",
    "count": {
-    "value": 31,
+    "value": 46,
     "total": 77,
     "as_of": "2026-10-14",
-    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 31개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
+    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 46개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
     {
@@ -2413,6 +2413,34 @@
        "url": "https://games.kimjinwan.com/play/honeybee-garden-trail/"
       },
       {
+       "slug": "line-spider",
+       "title": {
+        "ko": "라인 스파이더: 한붓그리기",
+        "en": "Line Spider"
+       },
+       "summary": "별자리 모양으로 이어진 점과 선 위를 거미와 함께 한 붓으로 훑어, 모든 선을 정확히 한 번씩만 지나가는 한붓그리기 퍼즐입니다.",
+       "session": "2~6분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/line-spider/"
+      },
+      {
+       "slug": "lumi-sequence",
+       "title": {
+        "ko": "루미의 빛 순서",
+        "en": "Lumi Light Sequence"
+       },
+       "summary": "반딧불이 루미가 네 가지 색 패드를 순서대로 반짝여 보여 주면, 그 순서를 기억했다가 똑같이 눌러 따라 하는 기억력 게임입니다.",
+       "session": "2~5분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/lumi-sequence/"
+      },
+      {
        "slug": "luno-rune-vault",
        "title": {
         "ko": "루노의 룬 금고",
@@ -2439,6 +2467,90 @@
         "터치"
        ],
        "url": "https://games.kimjinwan.com/play/mandu-house/"
+      },
+      {
+       "slug": "maze-mouse",
+       "title": {
+        "ko": "메이즈 마우스: 숫자 미로",
+        "en": "Number Maze Mouse"
+       },
+       "summary": "칸마다 적힌 숫자만큼 정확히 이동해야 하는 4×4 격자 미로에서 생쥐를 치즈 칸까지 이끄는 숫자 이동 퍼즐입니다.",
+       "session": "2~7분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/maze-mouse/"
+      },
+      {
+       "slug": "memory-elephant",
+       "title": {
+        "ko": "메모리 엘리펀트: 기억 카드",
+        "en": "Memory Elephant"
+       },
+       "summary": "뒤집힌 카드 여덟 장 속에서 같은 동물 그림 쌍 네 개를 두 장씩 뒤집어 찾는, 코끼리가 곁에서 지켜보는 짝 맞추기 기억력 게임입니다.",
+       "session": "2~5분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/memory-elephant/"
+      },
+      {
+       "slug": "merge-cat",
+       "title": {
+        "ko": "고양이 합치기",
+        "en": "Merge Cat Mania"
+       },
+       "summary": "잠든 고양이를 위에서 떨어뜨려 같은 단계끼리 겹치면 한 단계 큰 고양이로 합쳐지는, 11단계 고양이 도감을 채워 가는 물리 합치기 퍼즐입니다.",
+       "session": "3~15분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/merge-cat/"
+      },
+      {
+       "slug": "merge-slime",
+       "title": {
+        "ko": "머지 슬라임 256",
+        "en": "Merge Slime 256"
+       },
+       "summary": "초록 슬라임 마스코트가 지켜보는 4×4 보드에서 방향 버튼으로 전체를 밀어 같은 숫자를 합쳐 가며 스테이지 목표 숫자를 만드는 2048류 숫자 퍼즐입니다.",
+       "session": "3~15분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/merge-slime/"
+      },
+      {
+       "slug": "merge-whale",
+       "title": {
+        "ko": "고래 합치기",
+        "en": "Merge Whale"
+       },
+       "summary": "도트 그림의 작은 고래를 떨어뜨려 같은 종끼리 합치며 Minke부터 Right까지 12단계로 키워 가는 수박게임식 합치기 퍼즐입니다.",
+       "session": "3~15분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/merge-whale/"
+      },
+      {
+       "slug": "mine-mole",
+       "title": {
+        "ko": "마인 몰: 안전한 지뢰찾기",
+        "en": "Mine Mole"
+       },
+       "summary": "고글을 쓴 폭탄 처리 두더지와 함께 칸을 열면 나오는 숫자 단서로 주변 폭탄의 수를 추리해 폭탄을 피해 안전한 칸을 모두 여는 지뢰찾기형 퍼즐입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/mine-mole/"
       },
       {
        "slug": "owl-hangul-detective",
@@ -2521,6 +2633,48 @@
        "url": "https://games.kimjinwan.com/play/capy-highlands/"
       },
       {
+       "slug": "hare-dragon-palace",
+       "title": {
+        "ko": "용궁의 토끼",
+        "en": "Hare of the Dragon Palace"
+       },
+       "summary": "하얀 집토끼가 용궁 입구의 바닷속 들판에서 몰려드는 소라게 떼를 120초 동안 버티며 무기 카드를 키워 나가는 도트 그래픽 생존 액션입니다.",
+       "session": "10~20분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/hare-dragon-palace/"
+      },
+      {
+       "slug": "monster-throne",
+       "title": {
+        "ko": "몬스터 살아남기",
+        "en": "Monster Throne"
+       },
+       "summary": "운동화를 신고 달리는 파란 상어 몬스터를 몰아 뒷골목의 쓰레기 더미와 들개 떼를 버티며 120초를 살아남는 도트 그래픽 생존 액션입니다.",
+       "session": "10~20분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/monster-throne/"
+      },
+      {
+       "slug": "moonhare-hills",
+       "title": {
+        "ko": "문헤어 힐스",
+        "en": "Moonhare Hills"
+       },
+       "summary": "노을 진 억새 들판에서 집토끼 한 마리를 몰아 메뚜기와 쥐 떼 사이를 2분 동안 버티며 무기 카드를 모아 키우는 도트 그래픽 생존 액션입니다.",
+       "session": "10~20분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/moonhare-hills/"
+      },
+      {
        "slug": "shadow-orbit-explorer",
        "title": {
         "ko": "섀도우 오빗 익스플로러",
@@ -2550,6 +2704,76 @@
         "방향키"
        ],
        "url": "https://games.kimjinwan.com/play/star-scout-survivors/"
+      }
+     ]
+    },
+    {
+     "id": "arcade",
+     "label": {
+      "ko": "아케이드",
+      "en": "Arcade"
+     },
+     "items": [
+      {
+       "slug": "comet-cafe-rush",
+       "title": {
+        "ko": "코멧 카페 러시",
+        "en": "코멧 카페 러시"
+       },
+       "summary": "여우 셰프 미모를 직접 움직여 우주 손님의 주문을 조리하고 전달하는 캐릭터 중심 카페 러시",
+       "session": "1-4분",
+       "controls": [
+        "WASD·방향키 이동",
+        "E·Space 조리",
+        "Shift·F 대시",
+        "터치 이동·조리 버튼",
+        "게임패드 왼쪽 스틱·A·B"
+       ],
+       "url": "https://games.kimjinwan.com/play/comet-cafe-rush/"
+      },
+      {
+       "slug": "hammer-hamster",
+       "title": {
+        "ko": "해머 햄스터: 순발력 게임",
+        "en": "Hammer Hamster"
+       },
+       "summary": "빨간 망치를 든 햄스터를 응원하며 구멍에서 튀어나오는 빛나는 목표만 재빨리 두드리고, 위험 표시가 붙은 폭탄은 건드리지 않는 두더지 잡기형 아케이드입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/hammer-hamster/"
+      },
+      {
+       "slug": "helix-descent",
+       "title": {
+        "ko": "헬릭스 디센트",
+        "en": "Helix Descent"
+       },
+       "summary": "화면 가운데에서 계속 떨어지는 두더지 드릴리 아래로 나선 통로의 틈을 맞추려고 화면을 좌우로 돌리며, 얼마나 깊이 내려갈 수 있는지 겨루는 낙하 아케이드입니다.",
+       "session": "2~8분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/helix-descent/"
+      },
+      {
+       "slug": "soda-stack-signal",
+       "title": {
+        "ko": "소다 스택 시그널",
+        "en": "소다 스택 시그널"
+       },
+       "summary": "너구리 기사 리벳이 직접 크레인을 몰아 소다 화물을 쌓는 물리 밸런스 아케이드",
+       "session": "1-4분",
+       "controls": [
+        "A·D/방향키 이동",
+        "Space·화면 터치 투하",
+        "Shift·F 자이로 제동",
+        "게임패드 스틱·A·B"
+       ],
+       "url": "https://games.kimjinwan.com/play/soda-stack-signal/"
       }
      ]
     },
@@ -2606,44 +2830,39 @@
      ]
     },
     {
-     "id": "arcade",
+     "id": "ops",
      "label": {
-      "ko": "아케이드",
-      "en": "Arcade"
+      "ko": "운영",
+      "en": "Operations"
      },
      "items": [
       {
-       "slug": "comet-cafe-rush",
+       "slug": "mako-skyport-command",
        "title": {
-        "ko": "코멧 카페 러시",
-        "en": "코멧 카페 러시"
+        "ko": "마코 스카이포트 커맨드",
+        "en": "마코 스카이포트 커맨드"
        },
-       "summary": "여우 셰프 미모를 직접 움직여 우주 손님의 주문을 조리하고 전달하는 캐릭터 중심 카페 러시",
-       "session": "1-4분",
+       "summary": "선장 모자를 쓴 상어 마코의 공중항에서 재고, 설비, 직원, 주문 네 개의 자원 블록을 눌러 출항 지연을 풀어 가는 짧은 운영 게임입니다.",
+       "session": "5-10분",
        "controls": [
-        "WASD·방향키 이동",
-        "E·Space 조리",
-        "Shift·F 대시",
-        "터치 이동·조리 버튼",
-        "게임패드 왼쪽 스틱·A·B"
+        "관리 패널",
+        "작업자 이동"
        ],
-       "url": "https://games.kimjinwan.com/play/comet-cafe-rush/"
+       "url": "https://games.kimjinwan.com/play/mako-skyport-command/"
       },
       {
-       "slug": "soda-stack-signal",
+       "slug": "mimi-orbit-diner",
        "title": {
-        "ko": "소다 스택 시그널",
-        "en": "소다 스택 시그널"
+        "ko": "미미 오빗 다이너",
+        "en": "미미 오빗 다이너"
        },
-       "summary": "너구리 기사 리벳이 직접 크레인을 몰아 소다 화물을 쌓는 물리 밸런스 아케이드",
-       "session": "1-4분",
+       "summary": "요리사 모자를 쓴 토끼 미미의 우주 식당에서 NEXT ORDER에 뜬 색을 보고 음료, 디저트, 그릴, 포장, 서빙 다섯 설비 중 맞는 것을 눌러 주문을 처리하는 짧은 운영 게임입니다.",
+       "session": "2-5분",
        "controls": [
-        "A·D/방향키 이동",
-        "Space·화면 터치 투하",
-        "Shift·F 자이로 제동",
-        "게임패드 스틱·A·B"
+        "설비 터치",
+        "숫자키"
        ],
-       "url": "https://games.kimjinwan.com/play/soda-stack-signal/"
+       "url": "https://games.kimjinwan.com/play/mimi-orbit-diner/"
       }
      ]
     },
