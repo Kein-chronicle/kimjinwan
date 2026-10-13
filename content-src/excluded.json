@@ -1,11 +1,6 @@
 {
  "as_of": "2026-10-14",
- "games": [
-  {
-   "id": "flow-gecko",
-   "reason": "소스에서 확인되는 사실 부족(48자 — 기준 170자와 조작·규칙·진행 상세 중 하나 이상 미달)"
-  }
- ],
+ "games": [],
  "tools": [
   {
    "id": "social-image-resizer",
