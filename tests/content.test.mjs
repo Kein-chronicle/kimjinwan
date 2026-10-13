@@ -261,11 +261,11 @@ test('상세 본문끼리 문장이 겹치지 않는다(템플릿 문장으로 �
     assert.ok(sum / sets.size <= 0.12, `${kind} 평균 중복률 ${(sum / sets.size * 100).toFixed(1)}%`);
   }
 });
-test('이미지 용량 예산: 이미지 총량 4MB 이하, 상세 HTML 평균 80KB 이하', () => {
+test('이미지 용량 예산: 이미지 총량 40MB 이하(게임 편집 원본 게임당 약 0.4MB), 상세 HTML 평균 80KB 이하', () => {
   const files = fs.readdirSync('assets/content', {recursive: true}).filter(f => f.endsWith('.webp'));
   const sizeOf = list => list.reduce((a, f) => a + fs.statSync('assets/content/' + f).size, 0);
   const total = sizeOf(files.filter(f => !f.startsWith('apps/')));
-  assert.ok(total <= 4 * 1024 * 1024, `images ${total}`);
+  assert.ok(total <= 40 * 1024 * 1024, `images ${total}`);
   assert.ok(sizeOf(files.filter(f => f.startsWith('apps/'))) <= 3 * 1024 * 1024, '내 앱 이미지 총량 3MB 이하');
   const sizes = contentFiles.map(f => Buffer.byteLength(out[f])); assert.ok(sizes.reduce((a, b) => a + b, 0) / sizes.length <= 80 * 1024);
   const manifestFiles = ['games', 'tools', 'apps'].flatMap(k => Object.entries(D.images[k]).flatMap(([slug, r]) => Object.keys(r.bytes).map(f => `${k}/${f}`)));

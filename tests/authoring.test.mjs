@@ -137,9 +137,9 @@ test('실제 허브: 사이트맵 URL 수 = 페이지 수(+ 사이트맵에 없�
   assert.match(fs.readFileSync(path.join(REPO, 'content/index.html'), 'utf8'), new RegExp(`웹게임 ${n}개`));
   assert.match(fs.readFileSync(path.join(REPO, 'index.html'), 'utf8'), new RegExp(`웹게임 ${n}개`));
 });
-test('실제 허브: 편집 원본 3개는 모두 검증·이미지 규칙을 통과하고 상세 페이지가 편집 원본 본문으로 만들어진다', () => {
+test('실제 허브: 편집 원본은 모두 검증·이미지 규칙을 통과하고 상세 페이지가 편집 원본 본문으로 만들어진다', () => {
   const auth = readAuthoring(REPO), imgs = rd('content-src/images.json').games;
-  assert.deepEqual([...auth.keys()].sort(), ['aim-trainer', 'arc-eel', 'clockwork-harbor']);
+  for (const id of ['aim-trainer', 'arc-eel', 'clockwork-harbor']) assert.ok(auth.has(id), `${id} 편집 원본 유지`);
   for (const [id, a] of auth) {
     assert.deepEqual(validateAuthoring(id, a), [], id); assert.deepEqual(imageProblems(REPO, id, a, imgs[id]), [], id);
     const html = fs.readFileSync(path.join(REPO, `content/games/${id}/index.html`), 'utf8');

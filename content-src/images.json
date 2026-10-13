@@ -59,6 +59,225 @@
     "arc-eel.webp": 5424
    }
   },
+  "asteroids-belt": {
+   "from": "{\"srcs\":[\"asteroids-belt-0.png\",\"asteroids-belt-8.png\",\"asteroids-belt-3.png\",\"asteroids-belt-6.png\"],\"cardI\":2}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "asteroids-belt-1.webp": 31286,
+    "asteroids-belt-2.webp": 9332,
+    "asteroids-belt-3.webp": 8770,
+    "asteroids-belt-hero.webp": 9148,
+    "asteroids-belt.webp": 2654
+   }
+  },
+  "balance-bear": {
+   "from": "{\"srcs\":[\"balance-bear-0.png\",\"balance-bear-1.png\",\"balance-bear-5.png\",\"balance-bear-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "balance-bear-1.webp": 46700,
+    "balance-bear-2.webp": 47302,
+    "balance-bear-3.webp": 25348,
+    "balance-bear-hero.webp": 16770,
+    "balance-bear.webp": 14708
+   }
+  },
+  "block-beaver": {
+   "from": "{\"srcs\":[\"block-beaver-0.png\",\"block-beaver-6.png\",\"block-beaver-11.png\",\"block-beaver-13.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "block-beaver-1.webp": 24704,
+    "block-beaver-2.webp": 22150,
+    "block-beaver-3.webp": 24178,
+    "block-beaver-hero.webp": 18422,
+    "block-beaver.webp": 8292
+   }
+  },
+  "bubble-front-command": {
+   "from": "{\"srcs\":[\"bubble-front-command-0.png\",\"bubble-front-command-3.png\",\"bubble-front-command-6.png\",\"bubble-front-command-7.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "bubble-front-command-1.webp": 18370,
+    "bubble-front-command-2.webp": 18758,
+    "bubble-front-command-3.webp": 17396,
+    "bubble-front-command-hero.webp": 17476,
+    "bubble-front-command.webp": 7578
+   }
+  },
+  "capy-highlands": {
+   "from": "{\"srcs\":[\"capy-highlands-0.png\",\"capy-highlands-6.png\",\"capy-highlands-8.png\",\"capy-highlands-19.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "capy-highlands-1.webp": 27898,
+    "capy-highlands-2.webp": 31166,
+    "capy-highlands-3.webp": 41014,
+    "capy-highlands-hero.webp": 40914,
+    "capy-highlands.webp": 10312
+   }
+  },
+  "category-cat": {
+   "from": "{\"srcs\":[\"category-cat-0.png\",\"category-cat-7.png\",\"category-cat-5.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "category-cat-1.webp": 21716,
+    "category-cat-2.webp": 23636,
+    "category-cat-hero.webp": 16826,
+    "category-cat.webp": 6928
+   }
+  },
+  "circuit-lynx": {
+   "from": "{\"srcs\":[\"circuit-lynx-0.png\",\"circuit-lynx-1.png\",\"circuit-lynx-5.png\",\"circuit-lynx-7.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "circuit-lynx-1.webp": 12826,
+    "circuit-lynx-2.webp": 15368,
+    "circuit-lynx-3.webp": 13442,
+    "circuit-lynx-hero.webp": 10366,
+    "circuit-lynx.webp": 4434
+   }
+  },
   "clockwork-harbor": {
    "from": "{\"srcs\":[\"clockwork-harbor-0.png\",\"clockwork-harbor-1.png\",\"clockwork-harbor-2.png\"],\"cardI\":1}",
    "card": [
@@ -107,6 +326,65 @@
     "cloud-sheep-forest-words.webp": 12992
    }
   },
+  "cloud-sheep-wordpath": {
+   "from": "{\"srcs\":[\"cloud-sheep-wordpath-0.png\",\"cloud-sheep-wordpath-2.png\",\"cloud-sheep-wordpath-5.png\",\"cloud-sheep-wordpath-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "cloud-sheep-wordpath-1.webp": 12132,
+    "cloud-sheep-wordpath-2.webp": 11882,
+    "cloud-sheep-wordpath-3.webp": 6800,
+    "cloud-sheep-wordpath-hero.webp": 10904,
+    "cloud-sheep-wordpath.webp": 5262
+   }
+  },
+  "color-chameleon": {
+   "from": "{\"srcs\":[\"color-chameleon-0.png\",\"color-chameleon-3.png\",\"color-chameleon-1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "color-chameleon-1.webp": 22178,
+    "color-chameleon-2.webp": 23474,
+    "color-chameleon-hero.webp": 16832,
+    "color-chameleon.webp": 6926
+   }
+  },
   "comet-cafe-rush": {
    "card": [
     640,
@@ -149,6 +427,65 @@
     "cosmo-corgi-star-route.webp": 19950
    }
   },
+  "current-canticle": {
+   "from": "{\"srcs\":[\"current-canticle-0.png\",\"current-canticle-2.png\",\"current-canticle-9.png\",\"current-canticle-12.png\"],\"cardI\":2}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "current-canticle-1.webp": 44736,
+    "current-canticle-2.webp": 70684,
+    "current-canticle-3.webp": 42840,
+    "current-canticle-hero.webp": 41898,
+    "current-canticle.webp": 22998
+   }
+  },
+  "echo-prism-beat": {
+   "from": "{\"srcs\":[\"echo-prism-beat-0.png\",\"echo-prism-beat-1.png\",\"echo-prism-beat-2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "echo-prism-beat-1.webp": 15930,
+    "echo-prism-beat-2.webp": 16944,
+    "echo-prism-beat-hero.webp": 17346,
+    "echo-prism-beat.webp": 6920
+   }
+  },
   "firefly-signal-school": {
    "card": [
     640,
@@ -170,6 +507,38 @@
     "firefly-signal-school.webp": 16678
    }
   },
+  "forest-fox-differences": {
+   "from": "{\"srcs\":[\"forest-fox-differences-0.png\",\"forest-fox-differences-1.png\",\"forest-fox-differences-4.png\",\"forest-fox-differences-2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "forest-fox-differences-1.webp": 25294,
+    "forest-fox-differences-2.webp": 19048,
+    "forest-fox-differences-3.webp": 15440,
+    "forest-fox-differences-hero.webp": 22954,
+    "forest-fox-differences.webp": 11444
+   }
+  },
   "four-sight": {
    "card": [
     640,
@@ -189,6 +558,70 @@
     "four-sight-1.webp": 14534,
     "four-sight-hero.webp": 17516,
     "four-sight.webp": 6830
+   }
+  },
+  "ghost-bubble-groups": {
+   "from": "{\"srcs\":[\"ghost-bubble-groups-0.png\",\"ghost-bubble-groups-1.png\",\"ghost-bubble-groups-4.png\",\"ghost-bubble-groups-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "ghost-bubble-groups-1.webp": 39384,
+    "ghost-bubble-groups-2.webp": 39466,
+    "ghost-bubble-groups-3.webp": 14690,
+    "ghost-bubble-groups-hero.webp": 17430,
+    "ghost-bubble-groups.webp": 17854
+   }
+  },
+  "glyph-owl": {
+   "from": "{\"srcs\":[\"glyph-owl-0.png\",\"glyph-owl-9.png\",\"glyph-owl-4.png\",\"glyph-owl-5.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "glyph-owl-1.webp": 22486,
+    "glyph-owl-2.webp": 25780,
+    "glyph-owl-3.webp": 23026,
+    "glyph-owl-hero.webp": 17536,
+    "glyph-owl.webp": 7464
    }
   },
   "honeybee-garden-trail": {
