@@ -16,7 +16,7 @@ export const CATEGORY = [
   {key: 'document', icon: 'file-text', label: {ko: '문서·업무', en: 'Documents & work'}, blurb: {ko: '문서를 쓰고 고치고 제출하는 일', en: 'Writing, editing and submitting documents'}},
   {key: 'creative', icon: 'sparkles', label: {ko: '디자인·창작', en: 'Design & creative'}, blurb: {ko: '이미지와 시각 작업', en: 'Images and visual work'}},
   {key: 'build', icon: 'wrench', label: {ko: '개발·제작', en: 'Build & make'}, blurb: {ko: '서비스를 만드는 도구', en: 'Tools for building services'}},
-  {key: 'hub', icon: 'gamepad', label: {ko: '게임·도구·글', en: 'Games, tools & writing'}, blurb: {ko: '계속 늘어나는 웹게임·웹 도구·블로그', en: 'Ever-growing web games, tools and journal'}},
+  {key: 'hub', icon: 'gamepad', label: {ko: '게임·도구', en: 'Games & tools'}, blurb: {ko: '계속 늘어나는 웹게임·웹 도구', en: 'Ever-growing web games and tools'}},
   {key: 'ai-tools', icon: 'layers', label: {ko: 'AI 도구 모음', en: 'AI tool collections'}, blurb: {ko: '일상 업무용 작은 AI 도구', en: 'Small AI tools for everyday work'}},
 ];
 const catOf = s => CATEGORY.find(c => c.key === s.category);
@@ -196,7 +196,7 @@ export function attachProjects(timeline, featured) {
 
 const FILTERS = [
   ['all', 'layers', {ko: '전체', en: 'All'}], ['service', 'rocket', {ko: '서비스', en: 'Services'}], ['game', 'gamepad', {ko: '게임', en: 'Games'}],
-  ['tool', 'wrench', {ko: '도구', en: 'Tools'}], ['app', 'smartphone', {ko: '앱', en: 'Apps'}], ['blog', 'book-open', {ko: '블로그', en: 'Journal'}],
+  ['tool', 'wrench', {ko: '도구', en: 'Tools'}], ['app', 'smartphone', {ko: '앱', en: 'Apps'}],
 ];
 export function worksFilters() {
   return FILTERS.map(([k, ic, l], i) => `<button type="button" data-filter="${k}" aria-pressed="${i === 0}">${icon(ic, {size: 16})}${bi(l)}</button>`).join('');

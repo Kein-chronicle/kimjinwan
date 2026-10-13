@@ -11,9 +11,10 @@ test('대표 서비스는 Forge, Prism Studio 를 포함한다', () => {
   const ids = data().services.filter(s => s.featured).map(s => s.id);
   assert.ok(ids.includes('forge') && ids.includes('prism-studio'));
 });
-test('컬렉션은 game/tool/app/blog 를 모두 가진다', () => {
+test('컬렉션은 game/tool/app 을 가진다(블로그는 콘텐츠 허브로 옮겨 서비스·컬렉션 카드에서 뺐다)', () => {
   const kinds = new Set(data().collections.map(c => c.kind));
-  for (const k of ['game', 'tool', 'app', 'blog']) assert.ok(kinds.has(k), k);
+  for (const k of ['game', 'tool', 'app']) assert.ok(kinds.has(k), k);
+  assert.ok(!kinds.has('blog'), 'blog 컬렉션은 허브(/content/)가 맡는다');
 });
 test('비공개 정보가 렌더 대상 필드에 없다', () => {
   const {services, collections, factories} = data();

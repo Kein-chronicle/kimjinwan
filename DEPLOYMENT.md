@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.37 배포 기록 — 2026-10-13
+
+서비스 페이지·홈에서 **Kein Journal(블로그 서비스 카드)을 제거**했다(`data/services.json` 14→13곳, 썸네일 삭제, 서비스 수·메타·JSON-LD·공유 카드(works) 재생성). 서비스 분류 '게임·도구·글'을 '게임·도구'로, /works/ 소개문에서 '블로그' 표현을 뺐고 홈 JSON-LD relatedLink 의 blog.kimjinwan.com 을 콘텐츠 허브로 바꿨다. 앱 컬렉션의 앱 기록 링크(blog.kimjinwan.com/ko/apps/app-archive/)는 허브 글(/content/blog/apps/app-archive/)로 돌렸다. `/content/` 는 변경 없음. service.kimjinwan.com 은 별도 저장소에서 이미 제거 배포. ads.txt·app-ads.txt 해시 422f460a… 불변. 직전 1.3.36 은 복구용 유지.
+
 ## 1.3.36 배포 대기 — 2026-10-13 (미배포·미커밋)
 
 상단 메뉴 최종: 홈 · 서비스 · AI 공장 · 경력 · 연락하기(일반 링크) | 콘텐츠 허브 · 서비스 허브(.nav-ext 알약 둘, '서비스 모아보기'를 '서비스 허브'로 개명). 콘텐츠 허브 개편. ① **웹게임·웹 도구 상세 소개글**: `/content/games/`(큰 썸네일 카드 3열, 장르 칩, `/genre/<id>/`) · `/content/tools/`(조밀한 4열 카드, 분류 칩, `/category/<id>/`) 와 상세 `/content/games/<slug>/` · `/content/tools/<slug>/`. 소개글은 로컬 저장소의 실제 자료(games.json·forge 작업공간 README·설계 문서, 도구 page.tsx 정적 문구)에서만 만들고 사실이 모자란 항목은 제외한다(웹게임 77개 중 15개, 웹 도구 57개 중 45개 — 사유 `content-src/excluded.json`). 이미지는 허브가 자체 호스팅(`assets/content/{games,tools}/`, `scripts/build_content_images.mjs`, 매니페스트 `content-src/images.json`)하며 서브도메인 핫링크가 없다. ② **게임 소식 독립**: 블로그 '게임' 카테고리 79편을 `/content/game-news/`(게임별 서브카테고리 `/content/game-news/<game-id>/`, 상세 `/content/game-news/<slug>/`)로 옮겼고 블로그는 이야기·에이전트 업무일지·앱 제작·심사 206편만 남는다. 옛 `/content/blog/games/…` 는 사라지므로 서버에서 `data/content-redirects.json`(83건)대로 301 을 걸어야 한다. ③ 블로그 카테고리 'AI 사용기'를 '에이전트 업무일지'로 바꾸고(URL `/content/blog/ai/` 유지) 칩 순서를 전체 → 이야기 → 에이전트 업무일지 → 앱 제작·심사로 고정했다. 서브 메뉴는 전체 / 블로그 / 게임 소식 / AI 활용 가이드 / 웹게임 / 웹 도구. **배포 시 주의: `content/` 와 `assets/content/`(둘 다 허용 목록의 `content/`·`assets/` 아래)를 함께 올리고, 공유 카드 `assets/og/content.png` 가 바뀌었다.** 상단 메뉴의 서비스·AI 공장·경력은 홈 섹션 앵커(`/#services` 등)로 바뀌었고 새 `js/nav-spy.js` 가 홈에서 같은 문서 스크롤과 현재 섹션 강조를 맡는다(`js/` 허용 목록에 포함). 허브 전체 456쪽. 직전 1.3.35 는 복구용 유지. ads.txt·app-ads.txt 불변.

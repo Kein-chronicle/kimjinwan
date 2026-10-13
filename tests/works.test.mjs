@@ -11,7 +11,7 @@ test('/works 는 JS 없이 모든 서비스와 컬렉션을 초기 HTML 에 포�
   for (const c of cols) assert.ok(h().includes(c.url), c.id);
 });
 test('/works 는 종류 필터 버튼을 가진다', () => {
-  for (const k of ['all', 'service', 'game', 'tool', 'app', 'blog']) assert.ok(h().includes(`data-filter="${k}"`), k);
+  for (const k of ['all', 'service', 'game', 'tool', 'app']) assert.ok(h().includes(`data-filter="${k}"`), k);
 });
 test('/works 는 메인 스크립트를 절대경로로 불러온다', () => {
   assert.match(h(), /src="\/js\/main\.js"/); assert.match(h(), /src="\/js\/site-metrics\.js"/);

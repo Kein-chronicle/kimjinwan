@@ -58,7 +58,7 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
       jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en)},
   ];
   if (page.path === '/') g.push({'@type': 'ProfilePage', '@id': `${SITE}/#profile`, url, name: page.title, description: page.description, inLanguage: 'ko', dateModified: stamp,
-    mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: ['https://service.kimjinwan.com/', 'https://blog.kimjinwan.com/', 'https://games.kimjinwan.com/', 'https://apps.kimjinwan.com/'], primaryImageOfPage: image, thumbnailUrl: img},
+    mainEntity: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/#website`}, relatedLink: ['https://service.kimjinwan.com/', 'https://kimjinwan.com/content/', 'https://games.kimjinwan.com/', 'https://apps.kimjinwan.com/'], primaryImageOfPage: image, thumbnailUrl: img},
     {'@type': 'ItemList', '@id': `${SITE}/#services`, name: '김진완이 직접 만들어 제공하는 서비스', numberOfItems: services.length,
       itemListElement: services.map((s, i) => ({'@type': 'ListItem', position: i + 1, name: s.name, url: s.url}))});
   else g.push(
