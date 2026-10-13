@@ -4,51 +4,51 @@
  "tools": [
   {
    "id": "social-image-resizer",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(254자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "image-crop-rotate",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(242자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "photo-collage",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(263자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "image-redactor",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(272자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "metadata-remover",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(258자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "id-photo-maker",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(295자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "app-icon-generator",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(248자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "palette-extractor",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(221자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "signature-maker",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(233자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "pdf-organizer",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(288자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "qr-generator",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(244자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   },
   {
    "id": "device-mockup",
-   "reason": "소스(page.tsx)에서 확인되는 사실 부족(275자 < 300)"
+   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
   }
  ],
  "apps": [

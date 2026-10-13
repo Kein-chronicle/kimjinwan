@@ -2288,6 +2288,20 @@
     "annual-leave-calculator.webp": 9554
    }
   },
+  "app-icon-generator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "app-icon-generator-hero.webp": 19414,
+    "app-icon-generator.webp": 7902
+   }
+  },
   "background-remover": {
    "card": [
     640,
@@ -2358,6 +2372,20 @@
     "dedupe-lines.webp": 7522
    }
   },
+  "device-mockup": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "device-mockup-hero.webp": 19854,
+    "device-mockup.webp": 8000
+   }
+  },
   "discount-calculator": {
    "card": [
     640,
@@ -2414,6 +2442,20 @@
     "gpa-calculator.webp": 10188
    }
   },
+  "id-photo-maker": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "id-photo-maker-hero.webp": 17230,
+    "id-photo-maker.webp": 6712
+   }
+  },
   "image-compressor": {
    "card": [
     640,
@@ -2442,6 +2484,20 @@
     "image-converter.webp": 7326
    }
   },
+  "image-crop-rotate": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-crop-rotate-hero.webp": 16848,
+    "image-crop-rotate.webp": 6662
+   }
+  },
   "image-ocr": {
    "card": [
     640,
@@ -2454,6 +2510,20 @@
    "bytes": {
     "image-ocr-hero.webp": 14314,
     "image-ocr.webp": 6378
+   }
+  },
+  "image-redactor": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-redactor-hero.webp": 15232,
+    "image-redactor.webp": 6938
    }
   },
   "image-to-pdf": {
@@ -2526,6 +2596,34 @@
     "math-worksheet.webp": 9462
    }
   },
+  "metadata-remover": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "metadata-remover-hero.webp": 20448,
+    "metadata-remover.webp": 8008
+   }
+  },
+  "palette-extractor": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "palette-extractor-hero.webp": 22802,
+    "palette-extractor.webp": 9412
+   }
+  },
   "password-generator": {
    "card": [
     640,
@@ -2566,6 +2664,20 @@
    "bytes": {
     "pdf-merge-hero.webp": 19414,
     "pdf-merge.webp": 7526
+   }
+  },
+  "pdf-organizer": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-organizer-hero.webp": 18140,
+    "pdf-organizer.webp": 7368
    }
   },
   "pdf-sign": {
@@ -2624,6 +2736,20 @@
     "pdf-watermark.webp": 7632
    }
   },
+  "photo-collage": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "photo-collage-hero.webp": 19488,
+    "photo-collage.webp": 7714
+   }
+  },
   "project-checklist": {
    "card": [
     640,
@@ -2650,6 +2776,20 @@
    "bytes": {
     "pull-planner-hero.webp": 20970,
     "pull-planner.webp": 9016
+   }
+  },
+  "qr-generator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "qr-generator-hero.webp": 19038,
+    "qr-generator.webp": 10024
    }
   },
   "qr-reader": {
@@ -2748,6 +2888,34 @@
    "bytes": {
     "severance-pay-calculator-hero.webp": 25834,
     "severance-pay-calculator.webp": 10924
+   }
+  },
+  "signature-maker": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "signature-maker-hero.webp": 21760,
+    "signature-maker.webp": 8374
+   }
+  },
+  "social-image-resizer": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "social-image-resizer-hero.webp": 18916,
+    "social-image-resizer.webp": 7608
    }
   },
   "text-diff": {
