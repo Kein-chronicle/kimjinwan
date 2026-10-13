@@ -264,8 +264,9 @@ test('hub_check_tool: 1인칭·이모지가 실릴 문구에 있으면 실패, �
   assert.equal(cli('hub_check_tool.mjs', ['x', '--tools-repo', '/nonexistent/path']).code, 1);
 });
 test('hub_check_tool: 허브 빌드와 같은 판정 — 실제 저장소의 제외 도구는 미달, 포함 도구는 통과', () => {
-  const ex = rd('content-src/excluded.json').tools[0].id, inc = Object.keys(rd('content-src/images.json').tools)[0];
-  assert.equal(cli('hub_check_tool.mjs', [ex]).code, 1); assert.equal(cli('hub_check_tool.mjs', [inc]).code, 0);
+  const exList = rd('content-src/excluded.json').tools, inc = Object.keys(rd('content-src/images.json').tools)[0];
+  if (exList.length) assert.equal(cli('hub_check_tool.mjs', [exList[0].id]).code, 1); // 제외 도구가 없으면(전부 등록됨) 이 확인은 건너뛴다
+  assert.equal(cli('hub_check_tool.mjs', [inc]).code, 0);
 });
 test('parseToolCatalog: 항목 수가 href 수와 다르면 예외, 이스케이프된 따옴표를 푼다', () => {
   const ok = parseToolCatalog(`export const tools = [\n  {\n    href: '/a/',\n    name: '가\\'나',\n    description: '설명',\n    categories: ['업무'],\n  },\n];`);
