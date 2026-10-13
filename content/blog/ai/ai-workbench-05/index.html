@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 활용기: 슬라임이 자꾸 사람처럼 나왔다</title>
+<meta name="description" content="프롬프트뿐 아니라 생성 경로와 방향, 해상도를 비교했다. 2026년 8월 PixelLab 열 가지 실험 기록.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/blog/ai/ai-workbench-05/">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="AI 활용기: 슬라임이 자꾸 사람처럼 나왔다">
+<meta property="og:description" content="프롬프트뿐 아니라 생성 경로와 방향, 해상도를 비교했다. 2026년 8월 PixelLab 열 가지 실험 기록.">
+<meta property="og:url" content="https://kimjinwan.com/content/blog/ai/ai-workbench-05/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 활용기: 슬라임이 자꾸 사람처럼 나왔다">
+<meta name="twitter:description" content="프롬프트뿐 아니라 생성 경로와 방향, 해상도를 비교했다. 2026년 8월 PixelLab 열 가지 실험 기록.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta name="twitter:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/ai-workbench-05/#article","url":"https://kimjinwan.com/content/blog/ai/ai-workbench-05/","headline":"AI 활용기: 슬라임이 자꾸 사람처럼 나왔다","description":"프롬프트뿐 아니라 생성 경로와 방향, 해상도를 비교했다. 2026년 8월 PixelLab 열 가지 실험 기록.","inLanguage":"ko","datePublished":"2026-09-09","dateModified":"2026-09-09","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/ai-workbench-05/"},"image":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/ai-workbench-05/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"블로그","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"AI 활용","item":"https://kimjinwan.com/content/blog/ai/"},{"@type":"ListItem","position":5,"name":"AI 활용기: 슬라임이 자꾸 사람처럼 나왔다","item":"https://kimjinwan.com/content/blog/ai/ai-workbench-05/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.34">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      <a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" class="btn btn-primary nav-cta"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span></a></li><li><a href="/content/blog/ai/"><span data-lang-ko>AI 활용</span><span data-lang-en>AI in practice</span></a></li><li aria-current="page"><span lang="ko">AI 활용기: 슬라임이 자꾸 사람처럼 나왔다</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span><span class="subnav-n mono">285</span></a></li><li><a href="/content/services/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span><span class="subnav-n mono">14</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>기즈모 스토어</span><span data-lang-en>Gizmo Store</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">78</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li></ul></nav>
+  <article class="detail" data-kind="blog">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>AI 활용</span><span data-lang-en>AI in practice</span> · 2026-09-09</p>
+      <h1 class="sec-title detail-title"><span lang="ko">AI 활용기: 슬라임이 자꾸 사람처럼 나왔다</span></h1></header>
+    <div class="detail-body"><p>AI 사용기 / AI 작업실 · 5</p><div><span>기록일 <time datetime="2026-08-12T00:00:00.000Z">2026. 8. 12.</time></span><span>수정 2026. 9. 9.</span></div><p>표시 날짜는 이 글이 다루는 작업의 대표 기록일이며, 당시 발행된 글을 뜻하지 않습니다. 이후 회고와 적용 방법은 2026년 9월에 정리했습니다.</p><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>이미지 생성 서비스 하나로 모든 에셋을 뽑으려는 사람에게, 생성 경로 선택이 프롬프트 문구보다 결과를 더 크게 바꿀 수 있다는 걸 보여준다.</p></div><div><strong>핵심 내용</strong><p>팔다리 없는 슬라임을 캐릭터 생성 경로로 요청하면 사람처럼 서 있는 형태가 나왔고, 오브젝트 생성 경로로 바꾸자 의도한 비정형 덩어리가 나왔다. 같은 프롬프트라도 어떤 경로를 골랐는지가 더 크게 갈랐다.</p></div><div><strong>읽고 나서</strong><p>이미지 생성 도구에서 원하는 결과가 안 나오면 프롬프트부터 고치지 말고 캐릭터/오브젝트처럼 생성 경로 자체를 바꿔 같은 요청을 한 번 더 넣어본다.</p></div></section><details><summary>연재 목차</summary><ol><li><a href="/content/blog/ai/ai-workbench-01/">AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다</a></li><li><a href="/content/blog/ai/ai-workbench-02/">AI 활용기: AI가 만든 검사기를 일부러 망가뜨려봤다</a></li><li><a href="/content/blog/ai/ai-workbench-03/">AI 활용기: 앱과 서버를 따로 만들었더니 데이터 이름부터 달랐다</a></li><li><a href="/content/blog/ai/ai-workbench-04/">AI 활용기: 로컬 AI 앱은 하나도 만들기 전에 멈췄다</a></li><li><a href="/content/blog/ai/ai-workbench-05/" aria-current="page">AI 활용기: 슬라임이 자꾸 사람처럼 나왔다</a></li><li><a href="/content/blog/ai/ai-workbench-06/">AI 활용기: 마스코트 528프레임을 만들고도 완료는 아니었다</a></li><li><a href="/content/blog/ai/ai-workbench-07/">AI 활용기: AI에게 맡긴 일을 다시 AI와 정리했다</a></li></ol></details><details><summary>목차</summary><ul><li><a href="#먼저-답하면">먼저 답하면</a></li><li><a href="#이름만-보고-기능을-고르면-빗나갔다">이름만 보고 기능을 고르면 빗나갔다</a></li><li><a href="#생성-도구-비교는-변수를-하나씩">생성 도구 비교는 변수를 하나씩</a></li></ul></details><div><h2 id="먼저-답하면">먼저 답하면</h2>
+<p>8월 12일 PixelLab에서 하트 체력 아이콘을 요청했더니 단독 아이콘이 아니라 장식 테두리에 가까운 결과가 나왔다.</p>
+<!-- purpose-first:end -->
+<p>팔다리 없는 슬라임을 원했는데 사람처럼 서 있는 형태가 나왔다. 8월 12일 PixelLab 실험 기록에 남은 사례다. 프롬프트를 더 고치는 대신 생성 경로를 캐릭터에서 오브젝트로 바꾸자 의도에 가까운 덩어리가 나왔다고 적혀 있다.</p>
+<p>당시에는 캐릭터와 오브젝트, 무기 효과, 화면 장식, 타일, 해상도와 방향을 나눠 열 가지 시험을 했다. 이미지 도구가 좋은지 한 번에 결론 내리기보다 필요한 결과별로 비교하려 했다.</p>
+<h2 id="이름만-보고-기능을-고르면-빗나갔다">이름만 보고 기능을 고르면 빗나갔다</h2>
+<p>내가 기대한 용도와 생성 기능이 실제로 잘 만드는 대상은 같지 않을 수 있었다. 아이콘이라는 이름을 보고 골랐어도 실제로는 장식용 소재에 맞춰진 기능일 수 있다는 뜻이다.</p>
+<p>96픽셀에서 48픽셀보다 원하는 실루엣과 세부 형태가 잘 보였다는 평가도 남아 있다. 하지만 다른 설정까지 완전히 같게 통제한 비교는 아니므로 모든 차이를 해상도 탓으로 돌리지는 않는다. 네발 동물은 정면만 보지 않고 측면도 확인해야 자세가 드러났다.</p>
+<p>이 내용은 당시 실험의 관찰이다. 지금의 기능과 가격, 생성 속도까지 같은 조건이라고 소개하는 글은 아니다.</p>
+<p>결과가 좋지 않을 때 문장만 계속 바꾸기 쉬운데, 생성 경로와 평가 방향부터 다시 볼 필요가 있었다. 큰 원본에서 예쁜지와 게임 화면의 작은 크기에서 알아볼 수 있는지도 따로 봐야 한다.</p>
+<p>다음 실험에서는 한 번에 바꾸는 조건을 줄이고 설정과 결과를 같이 보관하려 한다. 잘 나온 그림만 남기면 실패하면서 배운 선택 기준은 사라진다. 같은 슬라임을 다시 만들 때 어디서 시작할지 알 수 있는 기록을 남기는 편이 더 쓸모 있었다.</p>
+<h2 id="생성-도구-비교는-변수를-하나씩">생성 도구 비교는 변수를 하나씩</h2>
+<p>그림 생성 실험을 다시 한다면 같은 대상과 사용 크기를 고정하고 경로, 방향, 해상도를 한 번에 하나씩 바꾼다. 실패한 결과도 보관하고 설정을 같이 적는다. 가장 예쁜 한 장만 남기면 어떤 조건이 도움이 됐는지 알기 어렵다.</p>
+<p>평가 항목은 먼저 알아볼 수 있는 실루엣, 필요한 방향, 잘림 여부, 실제 화면에서의 구별 정도로 정한다. 큰 이미지로 확대해 세부를 보는 것과 게임에서 쓰는 작은 크기로 보는 것을 모두 수행한다. 전자는 결함을, 후자는 사용 가능성을 확인하는 데 도움이 된다.</p>
+<p>표본이 적다면 ‘이 도구는 항상 사람을 만든다’고 일반화하지 않는다. 그 설정에서 관찰한 실패라고 적고 다른 경로에서 개선됐는지 비교한다. 모델이나 기능이 바뀌면 당시 결과는 다시 확인할 출발점이지 영구 결론이 아니다.</p>
+<hr>
+<p><a href="/content/blog/ai/ai-workbench-04/">← 이전 글: 로컬 AI 앱은 하나도 만들기 전에 멈췄다</a> · <a href="/content/blog/ai/ai-writing-index/">전체 목차</a> · <a href="/content/blog/ai/ai-workbench-06/">다음 글: 마스코트 528프레임을 만들고도 완료는 아니었다 →</a></p>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/ai-workbench-07/">AI 활용기: AI에게 맡긴 일을 다시 AI와 정리했다</a><p>프로젝트별 결과와 판단을 다시 사례·규칙·출처로 묶었다. 작업 이력을 글로 옮길 때 남길 것과 뺄 것.</p></li><li><a href="/content/blog/ai/ai-workbench-02/">AI 활용기: AI가 만든 검사기를 일부러 망가뜨려봤다</a><p>일부러 검사 조건과 산출물을 빼봤다. 정상 통과만 확인해서는 드러나지 않았던 자동 검증의 허점.</p></li><li><a href="/content/blog/ai/ai-workbench-01/">AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다</a><p>여러 분야의 앱 공장을 공통 엔진과 프로필로 나눴다. 반복되는 제작 규칙과 제품별 판단을 구분하기.</p></li></ul></aside><nav><a href="/content/blog/ai/ai-workbench-04/">← 이전 회차</a><a href="/content/blog/ai/ai-workbench-06/">다음 회차 →</a></nav></div>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/ai/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+</body></html>

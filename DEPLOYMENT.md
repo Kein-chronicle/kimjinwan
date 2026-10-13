@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.34 배포 대기 — 2026-10-13 (미배포·미커밋)
+
+새 페이지 `/content/`(콘텐츠 허브) 영역 398쪽을 추가했다. 랜딩 1 + 섹션·카테고리·쪽 색인 48(블로그 전체 15쪽·카테고리 4/7/4/1쪽, 기즈모 3쪽·용도 6쪽, 서비스 전체+카테고리, 웹게임, 웹 도구) + 상세 349(`/content/blog/<카테고리>/<slug>/` 285, `/content/gizmo/<slug>/` 50, `/content/services/<id>/` 14). 쪽당 20건, 쪽 경로는 `…/page/N/`(첫 쪽은 경로 없음). 보조 내비(전체·블로그·서비스·기즈모·웹게임·웹 도구)와 카테고리 칩이 모든 쪽에 붙는다. 색인·상세 모두 자기 자신이 canonical 이며 사이트맵(`sitemap.xml`, 이제 build 산출물)에 전부 들어 있다. 본문 스냅샷은 `content-src/`, 색인은 `data/content-hub.json` — 둘 다 `node scripts/build_content_hub.mjs --as-of YYYY-MM-DD`(수동·네트워크 필요·실패 시 기존 산출물 유지)로 만들고, 기즈모 text 항목은 `/tool/<slug>/download` 전문을 가져온다. **배포 시 주의: 위 "공개 허용 목록"에 `content/` 가 없다 — rsync 대상에 `content/` 를 추가하지 않으면 새 페이지가 404 이다.** `content-src/` 는 배포하지 않는다. 한계: 블로그·기즈모 본문이 blog.kimjinwan.com·gizmo-store.com 과 같아 중복 콘텐츠로 판정될 수 있다. ads.txt·app-ads.txt 해시 422f460a… 불변 확인. 직전 1.3.32 는 복구용 유지.
+
 ## 1.3.32 배포 기록 — 2026-10-13
 
 Pagefold(pagefold.kimjinwan.com, PDF 편집 · 합치기 · 나누기)를 서비스에 추가했다(`document`, LIVE, 메인 1280×800 썸네일). 서비스 수 14곳 반영(메타·JSON-LD·카테고리 수), 공유 카드 재생성, sitemap lastmod 갱신. 서비스 모아보기(service.kimjinwan.com)에도 같은 서비스와 상세·스크린샷 7장을 넣어 같이 배포했다. 직전 1.3.31 은 복구용 유지. ads.txt·app-ads.txt 해시 422f460a… 확인.

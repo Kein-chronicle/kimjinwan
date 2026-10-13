@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "device-mockup",
+ "title": "스마트폰 목업 생성 — 앱 스크린샷 홍보 이미지 만들기",
+ "description": "앱 스크린샷을 일반 스마트폰 프레임과 배경에 넣어 홍보 PNG로 만드는 방법이다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/device-mockup/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>디자인 프로그램 없이 앱 화면을 정돈된 홍보 이미지로 만들게 한다.</p></div><div><strong>핵심 내용</strong><p>세로 원본의 중요한 UI가 중앙에 있어야 프레임 크롭에서 잘리지 않는다.</p></div><div><strong>읽고 나서</strong><p>세로 스크린샷과 배경색을 골라 1200×1600px PNG를 만든다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#원본-준비\">원본 준비</a></li><li><a href=\"#프레임-범위\">프레임 범위</a></li></ul></details><div><h2 id=\"원본-준비\">원본 준비</h2>\n<p>선명한 세로 스크린샷을 사용하고 가장자리의 중요한 버튼과 글자가 잘리지 않는지 확인한다.</p>\n<p><a href=\"https://apps.kimjinwan.com/device-mockup/\">스마트폰 목업 생성기 열기</a></p>\n<h2 id=\"프레임-범위\">프레임 범위</h2>\n<p>특정 제조사 제품이 아닌 일반 실루엣이다. 스토어 제출 이미지는 각 플랫폼 규격을 다시 확인한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/app-icon-generator/\">앱 아이콘·파비콘 생성 — 원본과 여백 준비법</a><p>이미지 한 장을 앱과 웹 대표 PNG 크기로 만들 때 필요한 원본 품질과 여백 기준이다.</p></li><li><a href=\"/ko/apps/json-formatter/\">JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기</a><p>API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.</p></li><li><a href=\"/ko/apps/dedupe-lines/\">중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유</a><p>한 줄씩 입력한 목록에서 중복을 정리하고 첫 등장 순서와 원문 줄 번호를 확인한다. 공백·대소문자 비교 옵션이 결과를 바꾸는 범위와 빈 줄 처리의 차이를 설명한다.</p></li></ul></aside>"
+}

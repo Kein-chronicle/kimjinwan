@@ -1,0 +1,140 @@
+{
+ "id": "proofdesk",
+ "tags": [
+  "검수",
+  "교정",
+  "견적서 · 제안서",
+  "코드 리뷰",
+  "확인서"
+ ],
+ "audience": [
+  {
+   "ko": "견적서 · 제안서 · 결과보고서를 제출하기 전에 숫자와 문구를 한 번 더 확인해야 하는 PM · 영업 · 사업 담당",
+   "en": "PMs, sales and business staff who must double-check numbers and wording before submitting quotes, proposals and reports"
+  },
+  {
+   "ko": "합계 · 단가×수량 · 부가세 · 날짜 · 참여자 공수가 서로 맞는지 사람 눈으로는 놓치기 쉬운 담당자",
+   "en": "People who easily miss mismatches in totals, unit price × quantity, VAT, dates and staffing effort"
+  },
+  {
+   "ko": "RFP · 요구사항 정의서 대비 제출 문서에 빠진 요구사항이 없는지 확인하고 싶은 제안 팀",
+   "en": "Proposal teams checking that no requirement from the RFP or spec is missing in the deliverable"
+  },
+  {
+   "ko": "코드(.zip)에서 하드코딩 비밀키 · SQL 이어붙이기 · 빈 catch 같은 위험한 패턴을 제출 전에 걸러내고 싶은 개발자",
+   "en": "Developers who want risky patterns such as hard-coded secrets, concatenated SQL and empty catches caught before delivery"
+  }
+ ],
+ "features": [
+  {
+   "t": {
+    "ko": "틀렸다는 판정은 코드가",
+    "en": "Code decides what is wrong"
+   },
+   "d": {
+    "ko": "합계 · 단가×수량 · 부가세 · 날짜 범위 · 요일 · 명단 일치 · 빈칸 · 자리표시자 · 비밀키 노출은 AI가 아니라 코드가 계산해서 판정합니다.",
+    "en": "Totals, unit price × quantity, VAT, date ranges, weekdays, roster matches, blanks, placeholders and exposed secrets are computed and judged by code, not AI."
+   }
+  },
+  {
+   "t": {
+    "ko": "근거 없는 지적은 버립니다",
+    "en": "Unsupported findings are dropped"
+   },
+   "d": {
+    "ko": "AI가 짚은 모든 문제는 원문에서 그대로 복사한 인용이 있어야 하고, 코드가 문서와 대조해 없으면 목록에 오르지 못합니다.",
+    "en": "Every AI finding needs a verbatim quote from the source; code checks it against the document and drops it if absent."
+   }
+  },
+  {
+   "t": {
+    "ko": "여백 노트와 수정 제안",
+    "en": "Margin notes with proposed fixes"
+   },
+   "d": {
+    "ko": "문서 옆에 이슈 노트가 붙고 \"20 → 13.5\"처럼 고칠 값을 제안합니다. 적용하거나 직접 고칠 수 있습니다.",
+    "en": "Issue notes sit beside the document with proposed values such as \"20 → 13.5\"; apply them or edit yourself."
+   }
+  },
+  {
+   "t": {
+    "ko": "재검수가 \"해결\"을 확인",
+    "en": "Re-review confirms \"resolved\""
+   },
+   "d": {
+    "ko": "\"적용됨\"은 확인이 아닙니다. 다시 검수해서 사라져야 \"해결\"이고, 다시 나타나면 \"재발\"로 표시됩니다.",
+    "en": "\"Applied\" is not confirmation; an issue is resolved only if it disappears on re-review, and it shows as \"recurring\" if it returns."
+   }
+  },
+  {
+   "t": {
+    "ko": "문제 아닌 것은 추적 안 함",
+    "en": "Not-a-problem stays untracked"
+   },
+   "d": {
+    "ko": "의도된 표기나 해당 없는 항목은 이유를 적어 추적하지 않기로 하며, 이유는 확인서에 남습니다.",
+    "en": "Intentional notation or irrelevant items are marked untracked with a reason that is recorded in the sign-off."
+   }
+  },
+  {
+   "t": {
+    "ko": "원본 서식 그대로 수정본",
+    "en": "Corrected file in the original format"
+   },
+   "d": {
+    "ko": "DOCX · XLSX는 원본에서 고친 곳만 바꿔 내려받아 서식 · 표 · 수식을 유지하고, 확인서 · 이슈 대장도 받습니다.",
+    "en": "DOCX and XLSX are corrected in place, keeping formatting, tables and formulas; the sign-off and issue ledger download too."
+   }
+  }
+ ],
+ "steps": [
+  {
+   "ko": "자료: 검수할 문서(DOCX · XLSX · PPTX · PDF · CSV · TXT)나 코드(.zip)를 올립니다. 산출물 검토라면 RFP나 한두 줄 설명도 함께 올립니다.",
+   "en": "Documents: upload the document (DOCX, XLSX, PPTX, PDF, CSV, TXT) or code (.zip), plus an RFP or a short description for deliverable review."
+  },
+  {
+   "ko": "이해: AI가 이름 · 공수 · 금액 · 날짜 같은 값을 뽑고 \"무엇이 무엇과 맞아야 하는지\"를 찾습니다. 규칙은 켜고 끌 수 있습니다.",
+   "en": "Understand: AI extracts names, effort, amounts and dates and finds what must match what; rules can be toggled."
+  },
+  {
+   "ko": "검수 · 수정: 코드가 판정한 이슈와 AI가 찾은 이슈를 보고 적용하거나 직접 고칩니다.",
+   "en": "Review and fix: apply or edit the issues found by code and by AI."
+  },
+  {
+   "ko": "확인: 모든 문서가 재검수되고 열린 이슈가 없을 때 확인서 · 이슈 대장 · 수정본을 받습니다.",
+   "en": "Sign-off: when every document is re-reviewed with no open issues, download the sign-off, ledger and corrected files."
+  }
+ ],
+ "notes": [
+  {
+   "ko": "AI 판단은 서버가 아니라 내 PC의 Claude Code · Codex(내 구독)가 합니다. 서비스 서버에는 모델이 없습니다.",
+   "en": "The AI work runs on your own PC through Claude Code or Codex (your subscription). The service server has no model."
+  },
+  {
+   "ko": "코드 검사(빈칸 · 합계 · 날짜 등)는 AI 연결 없이도 바로 돌려 볼 수 있습니다.",
+   "en": "Code checks (blanks, totals, dates) run right away even without connecting an AI agent."
+  },
+  {
+   "ko": "확인서는 \"검수 기록\"이지 보증이 아닙니다. AI가 놓치는 결함이 있을 수 있고 최종 책임은 확인한 사람에게 있습니다.",
+   "en": "The sign-off is a review record, not a guarantee. AI can miss defects and final responsibility rests with the person who signs."
+  },
+  {
+   "ko": "HWP와 스캔(이미지) PDF는 아직 읽지 못합니다. 변환해서 올려 주세요. 샘플은 모두 가상의 문서 · 이름 · 금액입니다.",
+   "en": "HWP and scanned (image) PDFs cannot be read yet; convert them first. All samples use fictional documents, names and amounts."
+  }
+ ],
+ "facts": {
+  "login": {
+   "ko": "이메일 · Google · Apple 가입",
+   "en": "Sign up with email, Google or Apple"
+  },
+  "device": {
+   "ko": "PC 웹 브라우저 + 내 PC 에이전트(한 번 연결)",
+   "en": "Desktop browser + your PC agent (connect once)"
+  },
+  "ai": {
+   "ko": "내 Claude · ChatGPT 구독(Claude Code · Codex)",
+   "en": "Your Claude or ChatGPT subscription (Claude Code / Codex)"
+  }
+ }
+}

@@ -4,13 +4,13 @@ import fs from 'node:fs';
 import {K_PATH, K_DOT, breadcrumb, pageFoot} from '../scripts/lib/render.mjs';
 
 const read = f => fs.readFileSync(f, 'utf8');
-const PAGES = {'index.html': 'home', 'works/index.html': 'works', 'factories/index.html': 'factories', 'career/index.html': 'career'};
-const SUB = {works: '/works/', factories: '/factories/', career: '/career/'};
+const PAGES = {'index.html': 'home', 'works/index.html': 'works', 'factories/index.html': 'factories', 'career/index.html': 'career', 'content/index.html': 'content'};
+const SUB = {works: '/works/', factories: '/factories/', career: '/career/', content: '/content/'};
 const siteNav = h => h.match(/<nav id="nav" aria-label="Main">[\s\S]*?\n<\/nav>/)[0];
 const main = h => h.slice(h.indexOf('<main'), h.indexOf('</main>'));
 
-test('내비: 홈·서비스 모아보기(service.kimjinwan.com)·AI 공장·경력·연락하기 순서(블로그·웹게임·웹 도구는 서비스로 묶임), aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
-  const WANT = [['/', '홈'], ['https://service.kimjinwan.com/', '서비스 모아보기'], ['/factories/', 'AI 공장'], ['/career/', '경력'], ['#contact', '연락하기']];
+test('내비: 홈·서비스 모아보기(service.kimjinwan.com)·콘텐츠 허브·AI 공장·경력·연락하기 순서(블로그·웹게임·웹 도구는 서비스로 묶임), aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
+  const WANT = [['/', '홈'], ['https://service.kimjinwan.com/', '서비스 모아보기'], ['/content/', '콘텐츠 허브'], ['/factories/', 'AI 공장'], ['/career/', '경력'], ['#contact', '연락하기']];
   for (const [f, key] of Object.entries(PAGES)) {
     const nav = siteNav(read(f));
     const menu = nav.slice(nav.indexOf('id="nav-menu"'));
@@ -86,7 +86,7 @@ test('하위 페이지: main 안 브레드크럼에 "/" 링크, 하단에 홈 �
 test('푸터 사이트맵: 모든 페이지에 홈·서비스·AI 공장·경력(블로그·웹게임·웹 도구는 서비스로 묶여 메뉴에서 빠졌다)', () => {
   for (const f of Object.keys(PAGES)) {
     const map = read(f).match(/<nav class="foot-map" aria-label="Site map">[\s\S]*?<\/nav>/)[0];
-    for (const u of ['/', '/works/', '/factories/', '/career/'])
+    for (const u of ['/', '/works/', '/factories/', '/career/', '/content/'])
       assert.ok(map.includes(`href="${u}"`), f + u);
     for (const u of ['blog.kimjinwan.com', 'games.kimjinwan.com', 'apps.kimjinwan.com']) assert.ok(!map.includes(u), f + u);
     for (const m of map.matchAll(/<a href="https:[^"]*"[^>]*>/g)) assert.match(m[0], /target="_blank" rel="noopener noreferrer"/);

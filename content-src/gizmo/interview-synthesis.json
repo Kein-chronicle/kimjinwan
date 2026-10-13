@@ -1,0 +1,21 @@
+{
+ "slug": "interview-synthesis",
+ "kind": "text",
+ "purpose": "research",
+ "title": "인터뷰 내용에서 발견 뽑기",
+ "tagline": "인터뷰·면담 기록에서 반복되는 주제와 인용할 말을 정리해 줘요",
+ "url": "https://gizmo-store.com/tool/interview-synthesis",
+ "download": "https://gizmo-store.com/tool/interview-synthesis/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "adcff527f95a205e474a43494312c053f481865b255eb583567b34798b265118",
+ "description": "인터뷰·면담 기록에서 반복되는 주제와 인용할 말을 정리해 줘요. 고객·사용자 인터뷰를 진행한 분.",
+ "audience": "고객·사용자 인터뷰를 진행한 분.",
+ "result": "주제 묶음, 근거 인용, 의외의 발견, 후속 질문이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "인터뷰 기록을 분석해 줘. 해석과 사실을 구분해 줘.\n\n조사 질문: [예: 사람들이 왜 앱을 중간에 그만두는가]\n인터뷰 기록들 (이름은 [참가자A]처럼 가려서 붙여넣으세요):\n[여기에 붙여넣으세요]\n\n정리할 것:\n1. 반복되는 주제 5개 (몇 명이 말했는지, 대표 인용 2개씩)\n2. 한 사람만 말했지만 중요해 보이는 의견\n3. 서로 모순되는 말\n4. 의외의 발견 3가지\n5. 해석(내 추정)과 인터뷰에서 직접 나온 말을 구분해서 표시\n6. 다음 인터뷰에서 확인할 질문 5개\n인터뷰에 없는 내용을 만들지 말고, 인용은 원문 그대로 해 줘."
+}

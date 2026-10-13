@@ -1,0 +1,21 @@
+{
+ "slug": "reading-priority",
+ "kind": "text",
+ "purpose": "research",
+ "title": "읽을 자료 우선순위 정하기",
+ "tagline": "자료 목록에서 먼저 읽을 것과 건너뛸 것을 가려 줘요",
+ "url": "https://gizmo-store.com/tool/reading-priority",
+ "download": "https://gizmo-store.com/tool/reading-priority/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "96ae0c2bb72f1b777c665fb1a64ac5bfc5d5e15899e641dd7257b1414793664e",
+ "description": "자료 목록에서 먼저 읽을 것과 건너뛸 것을 가려 줘요. 읽을 게 산더미인 분.",
+ "audience": "읽을 게 산더미인 분.",
+ "result": "목적 기준 우선순위, 읽는 깊이, 읽는 순서가 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "읽을 자료 목록의 우선순위를 정해 줘.\n\n내 목적: [예: 3일 안에 이 주제로 발표]\n쓸 수 있는 시간: [예: 총 6시간]\n자료 목록 (제목, 종류, 길이, 한 줄 설명):\n[여기에 붙여넣으세요]\n\n정리할 것:\n1. 자료마다: 꼭 읽기 / 훑기 / 나중에 / 건너뛰기, 이유 한 줄\n2. 깊이: 처음부터 끝까지 / 초록·결론만 / 목차 보고 필요한 곳만\n3. 읽는 순서 (개요 → 핵심 → 반론/보충)\n4. 시간 배분\n5. 읽으며 던질 질문 5개\n목록에 없는 자료는 추천하지 말고, 자료 내용은 내가 준 설명 범위에서만 판단해 줘."
+}

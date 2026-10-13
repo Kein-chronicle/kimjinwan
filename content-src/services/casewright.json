@@ -1,0 +1,136 @@
+{
+ "id": "casewright",
+ "tags": [
+  "테스트 케이스",
+  "QA",
+  "요구사항 추적",
+  "엑셀",
+  "ISO 29119"
+ ],
+ "audience": [
+  {
+   "ko": "요구사항 정의서 · 기획서 · 화면설계서를 바탕으로 테스트 케이스를 써야 하는 QA · 테스터",
+   "en": "QA engineers and testers writing test cases from requirement, planning and screen documents"
+  },
+  {
+   "ko": "경계값 · 조합 · 결정 테이블 계산을 손으로 하다 빠뜨림이 걱정되는 개발자",
+   "en": "Developers worried about missing boundary, combination and decision-table cases when computing by hand"
+  },
+  {
+   "ko": "요구사항 ↔ TC 추적표를 제출해야 하는 SI · 납품 프로젝트 PM",
+   "en": "PMs on SI or delivery projects who must submit a requirement-to-test traceability matrix"
+  },
+  {
+   "ko": "회사나 발주처가 정한 엑셀 TC 양식에 그대로 채워야 하는 팀",
+   "en": "Teams that must fill a company- or client-defined Excel TC template"
+  }
+ ],
+ "features": [
+  {
+   "t": {
+    "ko": "일곱 단계, 단계마다 게이트",
+    "en": "Seven stages, a gate at each"
+   },
+   "d": {
+    "ko": "설정 → 자료 → 요구사항·조건 → 설계 → 테스트 케이스 → 게이트·추적표 → 내보내기. 27개 게이트가 PASS / FAIL / UNKNOWN으로 판정하고 빈 입력은 \"판정 불가\"입니다.",
+    "en": "Setup, documents, requirements and conditions, design, cases, gates and traceability, export. 27 gates return PASS / FAIL / UNKNOWN; empty input is \"cannot judge\"."
+   }
+  },
+  {
+   "t": {
+    "ko": "근거 없는 TC를 걸러냅니다",
+    "en": "Filters out unsupported cases"
+   },
+   "d": {
+    "ko": "모든 조건 · 예상 결과에 원문 인용을 요구하고 코드가 원문과 대조합니다. 문서에 없는 결과는 지어내지 않고 \"근거 없음\"으로 남깁니다.",
+    "en": "Every condition and expected result needs a source quote that code verifies. Results missing from documents are left as \"no evidence\" instead of invented."
+   }
+  },
+  {
+   "t": {
+    "ko": "기법의 산술은 코드가",
+    "en": "Technique math done by code"
+   },
+   "d": {
+    "ko": "동등분할 · 경계값 · 결정 테이블 · 상태 전이 · 페어와이즈 조합은 AI가 아니라 코드가 계산합니다. AI는 문서에서 범위 · 규칙 · 상태를 \"찾기\"만 합니다.",
+    "en": "Equivalence classes, boundaries, decision tables, state transitions and pairwise combinations are computed by code; AI only finds ranges, rules and states in the documents."
+   }
+  },
+  {
+   "t": {
+    "ko": "양방향 추적표(RTM)",
+    "en": "Two-way traceability (RTM)"
+   },
+   "d": {
+    "ko": "요구사항마다 TC가, TC마다 요구사항이 있는지 보여 주고 빈 곳을 짚습니다.",
+    "en": "Shows whether each requirement has cases and each case has a requirement, and points out the gaps."
+   }
+  },
+  {
+   "t": {
+    "ko": "내 양식 그대로 내보내기",
+    "en": "Export in your own template"
+   },
+   "d": {
+    "ko": "추천 양식 4종 또는 내 엑셀 양식에 맞춰 서식 · 병합 · 열 너비를 보존해 채우고, 만든 파일을 다시 읽어 검증합니다.",
+    "en": "Fill one of four recommended templates or your own Excel while preserving formatting, merges and widths, then re-read the file to verify."
+   }
+  },
+  {
+   "t": {
+    "ko": "사람이 고친 TC는 보존",
+    "en": "Human edits are kept"
+   },
+   "d": {
+    "ko": "사람이 고치거나 승인한 TC는 재생성해도 보존됩니다. 모호한 곳은 질문으로 돌려줍니다.",
+    "en": "Cases you edit or approve survive regeneration, and ambiguous points come back as questions."
+   }
+  }
+ ],
+ "steps": [
+  {
+   "ko": "테스트 레벨(단위 · 통합 · 시스템 · 인수)과 제품 유형, 사용 환경, 출력 양식을 정합니다.",
+   "en": "Set the test level, product type, environments and output template."
+  },
+  {
+   "ko": "요구사항 정의서 · 기획서 · 화면설계서를 올립니다(XLSX · DOCX · PPTX · PDF · CSV · TXT).",
+   "en": "Upload requirement, planning and screen documents (XLSX, DOCX, PPTX, PDF, CSV, TXT)."
+  },
+  {
+   "ko": "조건 추출과 설계 기법 선택을 확인하고 테스트 케이스를 검수합니다.",
+   "en": "Review extracted conditions and technique choices, then inspect the generated cases."
+  },
+  {
+   "ko": "게이트와 추적표를 통과시킨 뒤 엑셀(.xlsx)로 내보냅니다.",
+   "en": "Pass the gates and traceability check, then export to .xlsx."
+  }
+ ],
+ "notes": [
+  {
+   "ko": "AI 판단은 서버가 아니라 내 PC의 Claude Code · Codex(내 구독)가 합니다. 서비스 서버에는 모델이 없습니다.",
+   "en": "The AI work runs on your own PC through Claude Code or Codex (your subscription). The service server has no model."
+  },
+  {
+   "ko": "필수(E) 게이트가 하나라도 실패하면 제출용 내보내기는 막히고, 경고(W)는 남겨 두고 내보낼 수 있습니다.",
+   "en": "If any mandatory (E) gate fails, submission export is blocked; warnings (W) can remain."
+  },
+  {
+   "ko": "결과 기록 · 회귀 선별 기능은 준비 중입니다.",
+   "en": "Result logging and regression selection are still in preparation."
+  }
+ ],
+ "facts": {
+  "login": {
+   "ko": "이메일 · Google · Apple 가입",
+   "en": "Sign up with email, Google or Apple"
+  },
+  "device": {
+   "ko": "PC 웹 브라우저 + 내 PC 에이전트(한 번 연결)",
+   "en": "Desktop browser + your PC agent (connect once)"
+  },
+  "ai": {
+   "ko": "내 Claude · ChatGPT 구독(Claude Code · Codex)",
+   "en": "Your Claude or ChatGPT subscription (Claude Code / Codex)"
+  }
+ }
+}

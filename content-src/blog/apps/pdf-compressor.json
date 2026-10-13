@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "pdf-compressor",
+ "title": "PDF 용량 줄이기 — 이미지 문서를 가볍게 압축",
+ "description": "사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/pdf-compressor/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>메일과 제출 사이트의 파일 크기 제한에 맞게 이미지형 PDF를 줄인다.</p></div><div><strong>핵심 내용</strong><p>압축은 되돌릴 수 없는 화질 손실이므로 원본을 보관하고 결과 글자를 확대 확인한다.</p></div><div><strong>읽고 나서</strong><p>PDF를 선택하고 화질 단계를 정해 예상 결과를 비교한다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#어떤-pdf에-효과적인가\">어떤 PDF에 효과적인가</a></li><li><a href=\"#화질-손실-확인\">화질 손실 확인</a></li></ul></details><div><h2 id=\"어떤-pdf에-효과적인가\">어떤 PDF에 효과적인가</h2>\n<p>스캔 문서와 사진 보고서는 이미지 비중이 커서 압축 효과가 크다. 이미 최적화된 전자 문서나 글자 위주의 PDF는 오히려 크기가 비슷하거나 늘 수 있다.</p>\n<p><a href=\"https://apps.kimjinwan.com/pdf-compressor/\">PDF 용량 줄이기 열기</a></p>\n<h2 id=\"화질-손실-확인\">화질 손실 확인</h2>\n<p>이 도구는 각 페이지를 다시 그려 PDF로 묶는다. 링크, 선택 가능한 글자, 양식, 전자서명 같은 원본 구조가 보존되지 않을 수 있다. 계약서와 증명 문서는 원본을 남기고 압축본의 작은 글자와 도장을 확대해서 확인한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/pdf-merge/\">PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에</a><p>여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.</p></li><li><a href=\"/ko/apps/pdf-organizer/\">PDF 페이지 순서 변경·추출 — 번호 입력 사용법</a><p>PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.</p></li><li><a href=\"/ko/apps/pdf-split/\">PDF 분할·페이지 추출 — 필요한 범위만 새 파일로</a><p>PDF에서 필요한 페이지 범위를 한 파일로 추출하거나 페이지마다 나누어 ZIP으로 저장하는 방법이다.</p></li></ul></aside>"
+}

@@ -1,0 +1,21 @@
+{
+ "slug": "headhunter-reply",
+ "kind": "text",
+ "purpose": "career",
+ "title": "헤드헌터·채용 담당자 답장",
+ "tagline": "제안 메일에 관심 있는 척 아닌 척 정중하게 답해 줘요",
+ "url": "https://gizmo-store.com/tool/headhunter-reply",
+ "download": "https://gizmo-store.com/tool/headhunter-reply/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "1105ed614485af7f1a4fff495b0a5dfc6aafe84c493580e000749b58cab7781a",
+ "description": "제안 메일에 관심 있는 척 아닌 척 정중하게 답해 줘요. 이직 제안 연락을 받은 분.",
+ "audience": "이직 제안 연락을 받은 분.",
+ "result": "관심 정도에 맞는 답장과 먼저 물어볼 질문이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "받은 이직 제안에 답장을 써 줘.\n\n받은 제안: [여기에 붙여넣으세요. 이름·연락처는 가리세요]\n내 상태: [예: 지금 이직 의사는 크지 않지만 조건이 좋으면 이야기 가능]\n먼저 알고 싶은 것: [예: 회사 이름, 연봉 범위, 팀 규모, 재택 여부]\n\n답장 3가지 버전:\n1. 관심 있음 (일정 제안)\n2. 정보를 먼저 요청 (질문 포함)\n3. 정중한 거절 (나중에 연락 여지를 남기기)\n각 버전 5문장 이내. 내 현재 회사의 기밀이나 연봉 정보를 먼저 공개하도록 쓰지 마."
+}

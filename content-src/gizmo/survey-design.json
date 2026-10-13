@@ -1,0 +1,21 @@
+{
+ "slug": "survey-design",
+ "kind": "text",
+ "purpose": "research",
+ "title": "설문 설계하기",
+ "tagline": "알고 싶은 것을 답하기 쉬운 설문 문항으로 바꿔 줘요",
+ "url": "https://gizmo-store.com/tool/survey-design",
+ "download": "https://gizmo-store.com/tool/survey-design/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "11788f0aafbfcdc9e3f4bb6644ac160a4ea559f35e6133a3e287fc744c5f85fc",
+ "description": "알고 싶은 것을 답하기 쉬운 설문 문항으로 바꿔 줘요. 고객·학생·구성원 설문을 만드는 분.",
+ "audience": "고객·학생·구성원 설문을 만드는 분.",
+ "result": "유도하지 않는 문항, 선택지, 순서, 길이 점검이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "설문을 설계해 줘.\n\n알고 싶은 것: [예: 신제품에 대한 고객 반응과 구매 의향]\n대상과 응답 방법: [예: 기존 고객 300명, 모바일 링크]\n활용 방법: [예: 출시 가격 결정]\n\n설계할 것:\n1. 목적에 맞는 문항 12개 이내 (객관식 위주, 자유 응답은 1~2개)\n2. 문항마다 왜 묻는지 한 줄\n3. 선택지: 겹치지 않고 빠짐없게, \"기타\"와 \"해당 없음\"이 필요한지\n4. 순서와 소요 시간 (5분 이내)\n5. 유도 질문, 두 가지를 한 번에 묻는 질문, 어려운 용어를 점검한 결과\n6. 응답 결과를 분석하는 방법과 한계 (표본 편향 등)\n개인정보를 최소로 묻고, 수집한다면 이유와 보관 안내 문구를 넣도록 알려 줘."
+}

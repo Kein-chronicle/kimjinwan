@@ -1,0 +1,21 @@
+{
+ "slug": "folder-system",
+ "kind": "text",
+ "purpose": "research",
+ "title": "자료 폴더·이름 규칙 만들기",
+ "tagline": "쌓여 가는 자료를 찾기 쉽게 정리하는 규칙을 정해 줘요",
+ "url": "https://gizmo-store.com/tool/folder-system",
+ "download": "https://gizmo-store.com/tool/folder-system/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "6289f893dba504794aba389b6db7b7b63ff63f56c9af01679451368a9b2948bb",
+ "description": "쌓여 가는 자료를 찾기 쉽게 정리하는 규칙을 정해 줘요. 파일이 뒤죽박죽인 분.",
+ "audience": "파일이 뒤죽박죽인 분.",
+ "result": "폴더 구조, 파일 이름 규칙, 정리 루틴이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "자료 정리 체계를 만들어 줘.\n\n내가 다루는 자료: [예: 프로젝트별 보고서, 논문 PDF, 회의록, 이미지]\n쓰는 도구: [예: 구글 드라이브, 노션]\n지금의 문제: [예: 어디 뒀는지 몰라서 찾는 데 시간이 걸림]\n\n만들 것:\n1. 폴더 구조 (3단계 이내)\n2. 파일 이름 규칙 (날짜, 종류, 버전 표기 예시 10개)\n3. 새 자료를 받았을 때 5분 안에 정리하는 순서\n4. 주 1회 10분 정리 루틴\n5. 지금의 엉킨 폴더를 한 번에 옮기지 않고 단계적으로 옮기는 방법\n파일을 지우거나 합치는 일은 백업 후에 하라고 안내해 줘."
+}

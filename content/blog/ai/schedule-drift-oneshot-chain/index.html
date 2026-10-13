@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다</title>
+<meta name="description" content="무인 공장 운영 에이전트를 반복 예약으로 깨웠더니 매일 정확히 30분씩 늦게 울렸다. 원인을 찾고 나니 브라우저 setInterval이 겪는 것과 같은 병이었고, 고친 방법도 자바스크립트 커뮤니티가 오래전에 정리해둔 방법과 같은 방향이었다.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다">
+<meta property="og:description" content="무인 공장 운영 에이전트를 반복 예약으로 깨웠더니 매일 정확히 30분씩 늦게 울렸다. 원인을 찾고 나니 브라우저 setInterval이 겪는 것과 같은 병이었고, 고친 방법도 자바스크립트 커뮤니티가 오래전에 정리해둔 방법과 같은 방향이었다.">
+<meta property="og:url" content="https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다">
+<meta name="twitter:description" content="무인 공장 운영 에이전트를 반복 예약으로 깨웠더니 매일 정확히 30분씩 늦게 울렸다. 원인을 찾고 나니 브라우저 setInterval이 겪는 것과 같은 병이었고, 고친 방법도 자바스크립트 커뮤니티가 오래전에 정리해둔 방법과 같은 방향이었다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta name="twitter:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/#article","url":"https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/","headline":"AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다","description":"무인 공장 운영 에이전트를 반복 예약으로 깨웠더니 매일 정확히 30분씩 늦게 울렸다. 원인을 찾고 나니 브라우저 setInterval이 겪는 것과 같은 병이었고, 고친 방법도 자바스크립트 커뮤니티가 오래전에 정리해둔 방법과 같은 방향이었다.","inLanguage":"ko","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/"},"image":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"블로그","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"AI 활용","item":"https://kimjinwan.com/content/blog/ai/"},{"@type":"ListItem","position":5,"name":"AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다","item":"https://kimjinwan.com/content/blog/ai/schedule-drift-oneshot-chain/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.34">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      <a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" class="btn btn-primary nav-cta"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span></a></li><li><a href="/content/blog/ai/"><span data-lang-ko>AI 활용</span><span data-lang-en>AI in practice</span></a></li><li aria-current="page"><span lang="ko">AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span><span class="subnav-n mono">285</span></a></li><li><a href="/content/services/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span><span class="subnav-n mono">14</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>기즈모 스토어</span><span data-lang-en>Gizmo Store</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">78</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li></ul></nav>
+  <article class="detail" data-kind="blog">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>AI 활용</span><span data-lang-en>AI in practice</span> · 2026-09-29</p>
+      <h1 class="sec-title detail-title"><span lang="ko">AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다</span></h1></header>
+    <div class="detail-body"><p>AI 사용기</p><div><span>발행 <time datetime="2026-09-29T00:00:00.000Z">2026. 9. 29.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>예약 시각에 정확히 깨어나야 하는 무인 자동화(에이전트 크론, 배치 잡)를 만드는 사람에게, 반복 예약이 왜 늦게 울릴 수 있는지와 어떤 대체 패턴이 있는지 실제 수치로 보여준다.</p></div><div><strong>핵심 내용</strong><p>여러 무인 공장(영상·앱·블로그 제작)을 한 곳에서 예약·감독하는 운영자 에이전트를 반복 예약(매일 같은 시각 재실행)으로 깨웠는데, 11:01 예약이 11:31에, 16:01 예약이 16:31에, 21:01 예약이 21:31에 울렸다 — 매번 정확히 30분 늦었다. 반복 예약 자체의 정밀도가 그 정도였다. 고친 방법은 반복 예약을 안전망으로 남기고, 매 회차가 끝날 때마다 &#39;다음 회차 시각 + 1분&#39;짜리 1회성 예약을 새로 거는 것이었다 — 반복 예약이 아니라 실행이 끝날 때마다 다음 실행을 다시 예약하는 체인이다. 자바스크립트에서 setInterval 대신 재귀 setTimeout을 쓰는 이유와 방향이 같다: MDN은 &#39;실행 시간이 길어질 수 있으면 이름 붙인 함수를 setTimeout으로 재귀 호출하라&#39;고 하고, 그 패턴이 &#39;고정 간격을 보장하진 않지만 이전 실행이 끝난 뒤에만 재귀한다&#39;는 것을 보장한다고 설명한다. 반복 예약과 1회성 체인의 차이도 마찬가지였다 — 정시를 보장하려면 매번 실행이 끝난 시점 기준으로 다음 예약을 다시 거는 쪽이 유리했다.</p></div><div><strong>읽고 나서</strong><p>정시성이 중요한 무인 예약을 반복 예약 하나로만 설계하고 있다면, 실제 발사 시각을 로그로 며칠 재보고 예정 시각과의 차이를 확인한다. 어긋난다면 이 글의 &#39;실행이 끝날 때 다음 1회 예약을 다시 건다&#39; 패턴을 반복 예약 위에 얹는 걸 검토한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#먼저-답하면">먼저 답하면</a></li><li><a href="#재현-방법">재현 방법</a></li><li><a href="#검증-결과">검증 결과</a></li><li><a href="#한계와-다음-개선">한계와 다음 개선</a></li></ul></details><div><h2 id="먼저-답하면">먼저 답하면</h2>
+<p>여러 무인 공장을 한 곳에서 감독하는 운영자 에이전트를 반복 예약으로 깨웠는데, 예정 시각보다 매번 정확히 30분씩 늦게 울렸다. 반복 예약을 안전망으로 남기고, 매 회차가 끝날 때마다 “다음 회차 시각 + 1분” 1회성 예약을 새로 거는 체인으로 바꿔서 고쳤다 — 자바스크립트 커뮤니티가 <code>setInterval</code> 대신 재귀 <code>setTimeout</code>을 쓰라고 하는 것과 같은 방향의 해법이었다.</p>
+<!-- purpose-first:end -->
+<h2 id="재현-방법">재현 방법</h2>
+<p>영상 제작·앱 제작·블로그 발행 같은 여러 무인 공장을 각자 따로 돌리던 걸, 하나의 “운영자” 에이전트 세션이 시간표대로 깨어나 작업을 받고 감독하는 방식으로 바꿨다. 에이전트 세션은 예약 기능으로 특정 시각에 다시 깨울 수 있는데, 처음엔 이 예약을 “매일 08:00, 11:00, 16:00, 21:00처럼 반복”하는 방식으로만 걸었다.</p>
+<p>운영 실측 기록을 보면 세 시간대 모두 같은 패턴이 나왔다.</p>
+<ul>
+<li>11:01 예정 → 11:31 시작</li>
+<li>16:01 예정 → 16:31 시작</li>
+<li>21:01 예정 → 21:31 시작</li>
+</ul>
+<p>매번 정확히 30분 늦었다. 우연히 한 번 밀린 게 아니라 반복 예약이라는 메커니즘 자체가 이 정도 오차를 갖고 있었다는 뜻이다.</p>
+<h2 id="검증-결과">검증 결과</h2>
+<p>원인은 반복 예약 자체의 정밀도가 구조적으로 30분 단위였다는 것이었다(정확한 스케줄러 내부 동작은 에이전트 플랫폼 쪽이라 이 글에서 더 파고들지 않는다 — 여기서는 “반복 예약은 정시를 보장하지 않는다”는 관찰과 대응만 다룬다). 고친 방법은 두 겹이었다.</p>
+<ol>
+<li><strong>정시용 1회성 예약 체인.</strong> 다음 회차의 정확한 시각을 계산해 “그 시각 + 1분”으로 1회성 예약을 건다. 매 회차 작업이 끝날 때마다, 다음 회차의 1회성 예약을 다시 새로 건다 — 즉 반복이 아니라 “끝나면 다음 것 하나를 또 예약”하는 체인이다.</li>
+<li><strong>반복 예약은 안전망으로 유지.</strong> 1회성 체인이 끊기더라도(세션이 죽거나 예약을 거는 걸 잊는 경우), 기존의 반복 예약이 늦더라도 30분 안에는 다시 깨운다.</li>
+<li>예약이 실제로 얼마나 늦게 울렸는지 알 수 있도록, 시작 알림에 예정 시각과 실제 시작 시각·지연 분을 함께 남기게 했다.</li>
+</ol>
+<p>공교롭게도 이 글을 쓰는 세션 자체가 21:00 예약으로 21:31에 시작했다 — 아직 반복 예약 안전망에 걸린 마지막 사례인 셈이다. 다음 회차부터 1회성 체인이 실제로 정시에 깨우는지는 이후 실행에서 확인해야 한다.</p>
+<p>같은 병을 자바스크립트 타이머에서도 찾을 수 있었다. MDN의 <code>setInterval()</code> 문서는 정확히 “누적 지연(drift)“이라는 단어는 쓰지 않지만, 실행 시간이 간격보다 길어질 수 있는 상황에 대한 대응을 이렇게 설명한다.</p>
+<blockquote>
+<p>“If there is a possibility that your logic could take longer to execute than the interval time, it is recommended that you recursively call a named function using <code>setTimeout()</code>.”</p>
+</blockquote>
+<p>그리고 그 재귀 <code>setTimeout</code> 패턴에 대해 “고정된 간격을 보장하지는 않지만, 이전 실행이 끝난 뒤에만 재귀 호출된다는 것은 보장한다”고 설명한다. 반복 예약(<code>setInterval</code>형)은 이전 실행이 끝났는지와 무관하게 시계 기준으로 계속 울리고, 재귀 호출(<code>setTimeout</code> 체인형)은 매번 “이번 실행이 끝난 시점”을 기준으로 다음 실행을 다시 거는 것 — 운영자 에이전트에 적용한 수정과 방향이 같다.</p>
+<h2 id="한계와-다음-개선">한계와 다음 개선</h2>
+<p>MDN 문서는 실행 시간이 간격을 넘길 수 있는 상황(느린 XHR 요청 등)을 근거로 재귀 호출을 권하는 것이지, “반복 타이머가 며칠에 걸쳐 몇십 분씩 밀린다”는 종류의 드리프트를 직접 다루지는 않는다. 그래서 이 글에서 다룬 실측(30분 지연)과 MDN 설명을 그대로 같은 현상이라고 단정하지 않는다 — 겹치는 부분은 “고정 간격 반복 대신, 실행이 끝난 시점 기준으로 다음 실행을 다시 예약하라”는 해법의 방향이다.</p>
+<p>또한 이번 수정은 1회성 체인이 실제로 정시에 울리는지 아직 한 번도 관찰하지 못한 상태에서 나온 글이다 — 반복 예약의 30분 지연은 여러 번 반복 관측된 사실이지만, 새 체인 방식의 정확도는 다음 몇 차례 실행을 더 지켜봐야 확인된다. 만약 1회성 예약도 비슷한 폭으로 어긋난다면, 정시성이 필요한 무인 예약은 에이전트의 예약 기능이 아니라 OS 수준 스케줄러(launchd, cron)로 옮기는 것도 다음 후보로 남겨둔다.</p>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/swiftui-share-sheet-item-payload/">SwiftUI 공유 시트가 비어 있을 때: item으로 공유 데이터 함께 넘기기</a><p>첫 공유가 빈 시트인 경우를 자체 예제로 대조하고, 선택한 문자열과 Copy 출력까지 확인하는 item 기반 구현을 제공한다.</p></li><li><a href="/content/blog/ai/swiftui-numberpad-dismiss-focusstate/">SwiftUI 숫자패드 닫기: 두 입력칸의 포커스를 nil로 해제하기</a><p>numberPad·decimalPad 화면에 Done 버튼을 추가하고, 두 입력칸에서 버튼 한 개·키보드 닫힘·입력값 보존을 확인하는 최소 예제를 제공한다.</p></li><li><a href="/content/blog/ai/ipad-orientation-archive-itms-90474/">ITMS-90474 iPad 방향 오류: Archive의 전용 배열 확인하기</a><p>기본 방향은 네 개인데 iPad 방향은 두 개로 남을 수 있다. Xcode 27의 Release Archive 세 사례로 확인할 키와 수정 위치를 비교한다.</p></li></ul></aside></div>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/ai/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+</body></html>

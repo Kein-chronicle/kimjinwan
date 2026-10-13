@@ -1,0 +1,21 @@
+{
+ "slug": "career-pivot",
+ "kind": "text",
+ "purpose": "career",
+ "title": "커리어 전환 로드맵",
+ "tagline": "다른 직무로 옮기기 위한 현실적인 단계를 같이 정리해 줘요",
+ "url": "https://gizmo-store.com/tool/career-pivot",
+ "download": "https://gizmo-store.com/tool/career-pivot/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "642c9355ac10fe5fd1c5808a8aca6eb5a4eff7b179c99b930fc52118b3c9ab72",
+ "description": "다른 직무로 옮기기 위한 현실적인 단계를 같이 정리해 줘요. 직무를 바꾸고 싶은 분.",
+ "audience": "직무를 바꾸고 싶은 분.",
+ "result": "내 경험의 재활용 가능성, 부족한 것, 단계별 계획이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "다른 직무로 전환하는 계획을 같이 짜 줘.\n\n지금 직무와 경력: [예: 영업 4년]\n가고 싶은 직무: [예: 데이터 분석가]\n쓸 수 있는 시간과 비용: [예: 평일 저녁 2시간, 월 20만원]\n제약: [예: 연봉 하락은 최대 10%]\n\n정리할 것:\n1. 지금 경험 중 새 직무에서 재활용할 수 있는 것\n2. 부족한 역량과 채우는 방법 (과정, 프로젝트, 자격증은 효과가 있는지 의심하며)\n3. 3개월 / 6개월 / 12개월 단계 계획과 점검 기준\n4. 먼저 해볼 작은 시도 (사이드 프로젝트, 사내 이동, 인터뷰)\n5. 전환이 현실적인지에 대한 솔직한 의견과 위험\n채용 시장 상황이나 연봉은 모르니 내가 조사할 항목으로 바꿔 줘."
+}

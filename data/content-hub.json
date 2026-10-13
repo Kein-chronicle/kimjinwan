@@ -1,0 +1,2440 @@
+{
+ "as_of": "2026-10-13",
+ "sections": [
+  {
+   "id": "blog",
+   "url": "https://blog.kimjinwan.com/ko/",
+   "count": {
+    "value": 285,
+    "as_of": "2026-10-13",
+    "source": "kein-blog/web/content/ko/{ai,apps,games,fiction}/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
+   },
+   "groups": [
+    {
+     "id": "ai",
+     "label": {
+      "ko": "AI 활용",
+      "en": "AI in practice"
+     },
+     "blurb": {
+      "ko": "AI 에이전트로 일하며 겪은 실패와 복구, 도구 사용 기록",
+      "en": "Failures, recoveries and tool notes from working with AI agents"
+     },
+     "total": 71,
+     "url": "https://blog.kimjinwan.com/ko/ai/",
+     "items": [
+      {
+       "title": "SwiftUI 공유 시트가 비어 있을 때: item으로 공유 데이터 함께 넘기기",
+       "summary": "첫 공유가 빈 시트인 경우를 자체 예제로 대조하고, 선택한 문자열과 Copy 출력까지 확인하는 item 기반 구현을 제공한다.",
+       "date": "2026-10-12",
+       "url": "https://blog.kimjinwan.com/ko/ai/swiftui-share-sheet-item-payload/"
+      },
+      {
+       "title": "SwiftUI 숫자패드 닫기: 두 입력칸의 포커스를 nil로 해제하기",
+       "summary": "numberPad·decimalPad 화면에 Done 버튼을 추가하고, 두 입력칸에서 버튼 한 개·키보드 닫힘·입력값 보존을 확인하는 최소 예제를 제공한다.",
+       "date": "2026-10-11",
+       "url": "https://blog.kimjinwan.com/ko/ai/swiftui-numberpad-dismiss-focusstate/"
+      },
+      {
+       "title": "ITMS-90474 iPad 방향 오류: Archive의 전용 배열 확인하기",
+       "summary": "기본 방향은 네 개인데 iPad 방향은 두 개로 남을 수 있다. Xcode 27의 Release Archive 세 사례로 확인할 키와 수정 위치를 비교한다.",
+       "date": "2026-10-10",
+       "url": "https://blog.kimjinwan.com/ko/ai/ipad-orientation-archive-itms-90474/"
+      },
+      {
+       "title": "iOS 홈 화면 앱 이름이 다를 때: 최종 Info.plist부터 확인하기",
+       "summary": "Xcode 27에서 생성 모드와 입력 파일을 바꿔 표시 이름을 네 번 빌드했다. 최종 앱에 OldName이 남는 조건과 NewName으로 고치는 위치를 비교한다.",
+       "date": "2026-10-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ios-home-screen-display-name-plist/"
+      },
+      {
+       "title": "Phaser is not defined: Scene을 import했는데 Math에서 멈출 때",
+       "summary": "Phaser 4 npm 모듈에서 타입 검사는 통과하지만 브라우저가 멈추는 최소 예제를 재현했다. import 누락을 고치는 두 방법과 실제 콜백의 오류를 확인하는 순서를 정리한다.",
+       "date": "2026-10-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/phaser-is-not-defined-module-import/"
+      },
+      {
+       "title": "node·npm에서 No such file or directory: 삭제된 실행 파일을 부르는 래퍼 찾기",
+       "summary": "정상 Node가 설치돼 있어도 PATH 앞의 낡은 래퍼 때문에 npm이 실패할 수 있다. macOS zsh에서 원인 경로를 찾고, 파일 삭제 없이 현재 셸과 자식 프로세스를 복구하는 절차를 재현했다.",
+       "date": "2026-10-07",
+       "url": "https://blog.kimjinwan.com/ko/ai/node-npm-no-such-file-path-wrapper/"
+      },
+      {
+       "title": "AI 활용기: Swift Int(Double) 크래시 'Double value cannot be converted to Int' 원인과 막는 법",
+       "summary": "Swift 6.4에서 Int(Double)에 NaN, 무한대, 2^63을 넣어 보고 어느 값에서 프로세스가 죽는지 확인했다. 그럴듯한 방어 코드가 새는 경계값과 죽지 않는 변환 함수를 설명한다.",
+       "date": "2026-10-06",
+       "url": "https://blog.kimjinwan.com/ko/ai/swift-int-double-fatal-error-nan-infinity/"
+      },
+      {
+       "title": "AI 활용기: 사진 가로세로가 거꾸로 측정된다: EXIF Orientation 때문에 PIL·sips 크기가 틀릴 때",
+       "summary": "EXIF Orientation 6을 붙인 400x300 시험 이미지로 Pillow, sips, Swift ImageIO·NSImage의 크기를 직접 비교했다. 저장 크기와 표시 크기를 구분하고 회전을 픽셀로 굽는 방법을 설명한다.",
+       "date": "2026-10-05",
+       "url": "https://blog.kimjinwan.com/ko/ai/exif-orientation-pil-sips-size/"
+      },
+      {
+       "title": "AI 활용기: 초안 검토 후 수정했다면, 승인 기록을 원고 버전에 묶는 방법",
+       "summary": "제목·설명·본문·출처가 바뀐 AI 원고에 이전 검토를 재사용하지 않는 JSON·SHA-256 예제. 실제 실행 결과와 검증의 한계를 함께 설명합니다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/ai/review-version-binding/"
+      },
+      {
+       "title": "AI 활용기: 작업자는 끝났는데 운영자는 계속 busy였다 — 완료 감지와 우선순위의 빈틈",
+       "summary": "개인 AI 공장의 오후 생산이 밀린 실제 사례다. 완료 파일을 운영자가 읽도록 깨우는 경로와 due 생산 우선 선택을 나눠 고쳤다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/ai/worker-done-operator-still-busy/"
+      },
+      {
+       "title": "AI 활용기: 받아쓰기 언어를 바꿨는데 옛 결과가 남는 캐시의 함정",
+       "summary": "실제 영상 제작의 STT 검증에서 음성 파일만 비교하던 캐시를 모델·요청 언어까지 비교하도록 바꾸고 원시 응답을 보존한 사례다.",
+       "date": "2026-10-02",
+       "url": "https://blog.kimjinwan.com/ko/ai/stt-cache-request-provenance/"
+      },
+      {
+       "title": "AI 활용기: 개발 인계 문서가 있어도 빈 클론에서 시작해 봐야 하는 이유",
+       "summary": "영상 편집 도구의 작업 기록에서 개인 파일 경로·가상환경·브라우저 탐색이 인계를 막던 사례를 보고, 새 클론 검증이 확인하는 범위를 정리한다.",
+       "date": "2026-10-01",
+       "url": "https://blog.kimjinwan.com/ko/ai/clean-clone-handoff-check/"
+      },
+      {
+       "title": "AI 활용기: 브라우저 자동화가 사람의 탭을 건드릴 뻔했다",
+       "summary": "여러 작업이 같은 Chrome을 쓰던 날, 자동화가 사람의 메일 작성 탭 주소를 바꿀 뻔한 사례를 바탕으로 작업별 창을 식별하는 방법을 정리한다.",
+       "date": "2026-09-30",
+       "url": "https://blog.kimjinwan.com/ko/ai/browser-automation-window-ownership/"
+      },
+      {
+       "title": "AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다",
+       "summary": "무인 공장 운영 에이전트를 반복 예약으로 깨웠더니 매일 정확히 30분씩 늦게 울렸다. 원인을 찾고 나니 브라우저 setInterval이 겪는 것과 같은 병이었고, 고친 방법도 자바스크립트 커뮤니티가 오래전에 정리해둔 방법과 같은 방향이었다.",
+       "date": "2026-09-29",
+       "url": "https://blog.kimjinwan.com/ko/ai/schedule-drift-oneshot-chain/"
+      },
+      {
+       "title": "AI 활용기: Homebrew 파이썬을 올렸더니 무인 자동화 권한이 조용히 풀렸다",
+       "summary": "macOS 예약 자동화(launchd)에 준 화면기록·손쉬운 사용 권한이 Homebrew 파이썬 업그레이드 한 번에 풀린 이유와, 서명된 런처 앱을 자식 프로세스로 끼워 넣어 고친 방법. Qt Creator와 오픈소스 tcc-venv가 같은 macOS 메커니즘을 다루는 방식을 WebFetch로 직접 확인해 비교했다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/ai/macos-tcc-responsible-process/"
+      },
+      {
+       "title": "AI 활용기: 리뷰마다 다른 결함이 나온 무인 자동화, 원인은 네 가지였다",
+       "summary": "사람이 안 보는 예약 자동화 허브를 만들면서 코드 리뷰를 세 번 돌렸는데 그때마다 Critical이 나왔다. 실제 결함 네 가지와 그걸 고친 커밋, 그리고 크론잡 운영 커뮤니티가 이미 정리해둔 원칙 중 어디까지가 겹치는지 확인했다.",
+       "date": "2026-09-27",
+       "url": "https://blog.kimjinwan.com/ko/ai/unattended-three-failure-axes/"
+      },
+      {
+       "title": "AI 활용기: 신규 게임 캐릭터를 글로만 설명해 그렸더니 전혀 다른 사람이 나왔다 — 공식 레퍼런스를 먼저 붙이는 순서",
+       "summary": "치비 영상용 게임 캐릭터 이미지를 텍스트 묘사만으로 생성했다가 실제 캐릭터와 전혀 다른 결과가 나와 전량 재제작했다. 같은 도구가 레퍼런스를 붙였을 때는 왜 멀쩡했는지, 그리고 이걸 절차로 굳힌 방법을 정리했다.",
+       "date": "2026-09-26",
+       "url": "https://blog.kimjinwan.com/ko/ai/new-character-text-description-wrong-face/"
+      },
+      {
+       "title": "AI 활용기: '조회수 안 나올 것 같다'는 반려 한 줄이 포맷도 고치고, 내가 몰래 넣은 가짜 해시값도 잡아냈다",
+       "summary": "유튜브 파일럿이 반려된 뒤 포맷을 '결과·사건' 중심으로 바꾸는 과정에서, 실제 버그를 극적으로 보여주려고 넣은 md5 해시값이 계산한 값이 아니라 지어낸 자리표시자였다는 걸 발행 전에 발견했다. 그럴듯한 가짜 숫자가 검증 없이 다음 단계로 넘어가면 어떻게 되는지 보여준 법정 사례와 겹쳐 정리한다.",
+       "date": "2026-09-25",
+       "url": "https://blog.kimjinwan.com/ko/ai/fake-number-caught-before-publish/"
+      },
+      {
+       "title": "AI 활용기: 게임 설정에 '피드백 3종'을 적어놨는데, 실제로 켜졌는지는 아무도 안 재고 있었다",
+       "summary": "게임을 자동 양산하는 파이프라인에서 config에 적힌 '입력마다 모션+소리+마스코트' 같은 피드백 선언이 실제로 브라우저에서 실행됐는지는 검증 대상이 아니었다. 브라우저를 계측해 실행 여부를 세는 게이트를 만들며, 자동 게임 디자인이 '주스(juice)'를 다루기 어려워하는 이유를 다룬 논문과 겹쳐 읽었다.",
+       "date": "2026-09-24",
+       "url": "https://blog.kimjinwan.com/ko/ai/declared-feedback-vs-executed-feedback/"
+      },
+      {
+       "title": "AI 활용기: git status에 낯선 staged 파일이 있길래, 짐작하지 않고 먼저 물었다",
+       "summary": "게임 스타터 파이프라인 저장소를 점검하던 중, 문서 300줄과 버전업이 이미 staged된 낯선 상태를 발견했다. 다른 터미널에서 동시에 같은 저장소를 건드리고 있었다 — 짐작 대신 확인을 택한 이유와, 여러 AI 에이전트가 같은 저장소를 건드릴 때 업계가 쓰는 격리 방법을 함께 정리했다.",
+       "date": "2026-09-23",
+       "url": "https://blog.kimjinwan.com/ko/ai/concurrent-session-unowns-your-repo/"
+      },
+      {
+       "title": "AI 활용기: 내 테스트가 남의 프로젝트 폴더에 빚지고 있었다",
+       "summary": "배포 전 QA 게이트가 자기 package.json엔 없는 패키지를, '정리 예정' 표시가 붙은 이웃 프로젝트의 node_modules에서 상대경로로 빌려 쓰고 있었다. 같은 날 다른 저장소에서 같은 함정을 다시 만나 바로 고쳤다.",
+       "date": "2026-09-22",
+       "url": "https://blog.kimjinwan.com/ko/ai/phantom-dependency-borrowed-node-modules/"
+      },
+      {
+       "title": "AI 활용기: 게이트를 통과했다는 것과 원하는 게 됐다는 건 다른 얘기였다",
+       "summary": "게임 스타터를 대량 생산하는 파이프라인에 '재테마 가능성'을 자동 검증하는 게이트를 만들다가, 픽셀 diff만으로는 스킨만 바뀌어도 통과되는 가짜 증명을 발견했다. AI 에이전트가 평가지표를 게이밍하는 문제를 다룬 온라인 사례와 겹쳐 읽었다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/ai/gate-does-not-measure-what-you-want/"
+      },
+      {
+       "title": "AI 활용기: 내 성능 측정 코드가 스스로 거짓말을 하고 있었다",
+       "summary": "직접 만드는 게임의 대규모 전투 성능 테스트에서, AI 코드리뷰가 측정 루프 자체의 이중 처리 버그를 잡아냈다. 같은 프레임에 데미지가 두 번 들어가 오브젝트 풀이 오염되는 버그도 같은 세션에서 함께 발견했다. 벤치마크 하네스 자체의 결함과 객체 풀 이중 반납 문제를 다룬 온라인 사례와 겹쳐 읽었다.",
+       "date": "2026-09-20",
+       "url": "https://blog.kimjinwan.com/ko/ai/double-dispatch-benchmark-lie/"
+      },
+      {
+       "title": "AI 활용기: 카메라 파라미터를 조율하는 대신 '항상 화면 안'을 수식으로 못박았다",
+       "summary": "턴제 전투 게임에서 캐릭터가 카메라 밖으로 사라지는 버그를 파라미터 미세조정으로 두 번 고쳤다가 세 번째로 재발했다. 세 번째는 값을 고치지 않고 '두 유닛이 항상 화면 안에 들어오는 최소 거리'를 계산하는 함수로 문제 자체를 없앴다. 게임 카메라 분야에서 같은 발상을 공식화한 사례들과 비교했다.",
+       "date": "2026-09-19",
+       "url": "https://blog.kimjinwan.com/ko/ai/camera-two-targets-geometric-guarantee/"
+      },
+      {
+       "title": "AI 활용기: AdMob이 라이브 앱을 '못 찾음'이라고 한 이유",
+       "summary": "AI 에이전트가 앱을 AdMob에 스토어 ID로 연결하려다 검색 결과 0건을 받은 사례와, 같은 증상을 겪은 개발자들이 남긴 Google 공식 문서·커뮤니티 글을 함께 정리했다.",
+       "date": "2026-09-17",
+       "url": "https://blog.kimjinwan.com/ko/ai/admob-store-search-zero-results/"
+      },
+      {
+       "title": "AI 활용기: 같은 날 두 세션이 남긴 커밋을 트레일러 한 줄로 구별했다",
+       "summary": "무인 일일 루틴이 시작하자마자 '이미 오늘 커밋했는데 안 푸시된' 상태를 발견했다. 그게 오늘 밤 이 루틴이 한 일인지, 오후에 마스터와 나눈 별개 세션이 한 일인지를 커밋 메시지 맨 끝 한 줄로 구별한 이야기와, 같은 문제를 겪은 다른 자동화 사례들.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/ai/same-day-two-sessions-one-trailer/"
+      },
+      {
+       "title": "AI 활용기: 같은 통계 기능을 저장소 4개에 동시에 심었는데 코드가 다 달랐다",
+       "summary": "쿠키 없는 방문자 집계 기능 하나를 백엔드·정적 블로그·플레인 HTML·Next.js 앱에 같은 원리로 넣었더니, 프레임워크마다 코드 형태가 달라진 이유와 Plausible 같은 실제 프라이버시 분석 도구의 설계를 비교했다.",
+       "date": "2026-09-15",
+       "url": "https://blog.kimjinwan.com/ko/ai/same-pattern-four-repos-one-day/"
+      },
+      {
+       "title": "AI 활용기: du가 41G라던 폴더를 지웠더니 13G만 비었다",
+       "summary": "맥 디스크 정리 자동화 스크립트를 AI와 짜다가, APFS 클론 때문에 du 용량과 실제 회수량이 최대 3배 어긋난다는 걸 알게 된 사례와, 같은 문제를 다루는 오픈소스 도구를 같이 정리했다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/ai/apfs-du-df-clone-mismatch/"
+      },
+      {
+       "title": "AI 활용기: 반려 스크린샷을 고쳐 올렸는데 16장이 됐다",
+       "summary": "App Store Connect 스크린샷 교체가 덮어쓰기가 아니라 추가라는 걸 반려 이후에야 알게 된 사례와, 같은 함정을 겪은 fastlane 사용자들의 실제 이슈를 같이 정리했다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/ai/asc-screenshot-additive-trap/"
+      },
+      {
+       "title": "AI 활용기: 100건까지만 응답하는 API를 4단계 끝나서야 알았다",
+       "summary": "공개 API가 상한선을 조용히 넘기며 데이터를 잘라주는 문제를, 앱 기획 4단계를 다 마친 뒤에야 발견한 사례와 같은 함정을 다룬 해외 기술 글을 같이 정리했다.",
+       "date": "2026-09-12",
+       "url": "https://blog.kimjinwan.com/ko/ai/hidden-truncation-trap/"
+      },
+      {
+       "title": "AI 동료 제작기: 요카이, 페어리, 웅삐에게 다른 일을 맡겼다",
+       "summary": "실행과 적용, 검토와 인계, 가상 캐릭터 대화. 세 이름으로 나눠 사용한 AI의 역할과 확인 기준.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-01/"
+      },
+      {
+       "title": "AI 동료 제작기: 요카이는 제안서를 그대로 따라 하지 않게 했다",
+       "summary": "오래된 진단보다 현재 코드를 먼저 보게 했다. 제안과 다른 원인을 찾거나 수정하지 않기로 한 사례.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-02/"
+      },
+      {
+       "title": "AI 동료 제작기: 페어리의 검토는 정답보다 제안서에 가까웠다",
+       "summary": "대상과 시점, 지적과 피드백을 문서로 연결했다. 다른 AI의 검토도 다시 확인해야 했던 이유.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-03/"
+      },
+      {
+       "title": "AI 동료 제작기: 웅삐를 다음 날에도 이어지는 캐릭터로 만들기",
+       "summary": "프로필에 기억과 일정, 현재 상황을 붙였다. 세션이 달라져도 이어지는 가상 캐릭터를 만들려는 시도.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-04/"
+      },
+      {
+       "title": "AI 동료 제작기: 기억하는 것만큼 끝난 상황을 지우는 것도 중요했다",
+       "summary": "이미 끝난 바쁨과 아직 오지 않은 식사. 기억의 양보다 상태가 바뀌는 조건을 다뤘다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-05/"
+      },
+      {
+       "title": "AI 동료 제작기: 자연스럽게 말하라는 규칙도 반복되면 어색했다",
+       "summary": "말투를 고쳐도 답변 구조가 반복되면 어색했다. 길이와 질문, 표현 강도를 나눠 조정한 과정.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-06/"
+      },
+      {
+       "title": "AI 동료 제작기: 먼저 연락하게 만들기 전에 보내지 않을 때를 정했다",
+       "summary": "먼저 말 걸기에는 문장 생성 외의 조건이 필요했다. 발송 간격과 현재 모드, 보내지 않을 상황을 정했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-07/"
+      },
+      {
+       "title": "AI 동료 제작기: 사진을 만들었는데 대화에는 도착하지 않았다",
+       "summary": "생성 성공과 전송 성공, 상황의 일관성은 달랐다. 사진과 음성을 붙이며 늘어난 확인 항목들.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-08/"
+      },
+      {
+       "title": "AI 동료 제작기: 웅삐 설정을 바꿀 때 옛 설정이 따라왔다",
+       "summary": "컨셉을 바꾸면 일정과 요약에도 옛 설정이 남았다. 5월부터 9월까지의 변경과 상태 정리 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-09/"
+      },
+      {
+       "title": "AI 동료 제작기: AI 동료도 조용히 멈추고 확인할 수 있어야 했다",
+       "summary": "답이 없을 때 처리와 전송을 구분하기. 상태·로그·무음·복구로 AI 작업을 확인하는 방법을 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-10/"
+      },
+      {
+       "title": "AI 게임 공장: 게임 하나가 아니라 만드는 과정을 만들고 싶었다",
+       "summary": "여러 장르를 반복해서 만들면 제작 공정도 만들 수 있을까. AI 게임 공장의 첫 실험과 생산량의 한계.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-01/"
+      },
+      {
+       "title": "AI 게임 공장: 많이 만들기에서 네 작품에 집중하기로",
+       "summary": "네 작품을 골라 연출과 조작을 개선했지만 계속 투자할 이유는 얻지 못했다. 소수 집중 실험의 결과.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-02/"
+      },
+      {
+       "title": "AI 게임 공장: 완료 보고 옆에 실제 확인한 것을 적기 시작했다",
+       "summary": "컨셉, 실행, 출시 후보를 구분하는 원장을 뒀다. 같은 완료 보고 아래 섞여 있던 실제 상태들.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-03/"
+      },
+      {
+       "title": "AI 게임 공장: Godot에서 웹으로 옮겨도 남았던 문제",
+       "summary": "React·Phaser로 전환하고 이미지 생성도 바꿨다. 그래도 만든 에셋이 실제 화면에 들어가는지는 따로 봐야 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-04/"
+      },
+      {
+       "title": "AI 게임 공장: 화면을 다듬고도 게임을 멈춘 이유",
+       "summary": "PRISM SURGE, SKY SALVO, SNOWBOUND. 설계 중단과 플레이 검증 실패, 결론이 남지 않은 상태를 나눠봤다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-05/"
+      },
+      {
+       "title": "AI 게임 공장: 완성 대신 부분완성이라고 적고 닫았다",
+       "summary": "EMBERLINE에서 치명적인 문제부터 고치고 나머지를 남겼다. 완성이라고 부르지 않고 작업을 닫은 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-06/"
+      },
+      {
+       "title": "AI 게임 공장: 방치형으로 장르를 좁혀봤다",
+       "summary": "공통 방치형 엔진을 만들었지만 앱의 저장과 보상은 별도 문제였다. 장승과 구미호에서 확인한 연결부.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-07/"
+      },
+      {
+       "title": "AI 게임 공장: Swift로 옮기며 이전 공장에서 남길 것을 골랐다",
+       "summary": "기존 공정과 모바일 제출 경험을 골라 Swift 라인을 만들었다. 첫 시도 Vat Relay가 멈춘 지점까지.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-08/"
+      },
+      {
+       "title": "AI 게임 공장: 게임을 고치다가 검사기도 다시 고쳤다",
+       "summary": "먹빛 겹치기에서 드래그와 실패 판정을 다시 봤다. 다른 화면을 보고 통과하는 검사도 수정해야 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-09/"
+      },
+      {
+       "title": "AI 게임 공장: 심사 제출까지 온 뒤 돌아본 AI 게임 공장",
+       "summary": "대량 제작, 집중 개선, 웹, 방치형, Swift를 거쳐 심사 제출까지. 다음 라인에 가져간 경험을 돌아봤다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-10/"
+      },
+      {
+       "title": "AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다",
+       "summary": "여러 분야의 앱 공장을 공통 엔진과 프로필로 나눴다. 반복되는 제작 규칙과 제품별 판단을 구분하기.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-01/"
+      },
+      {
+       "title": "AI 활용기: AI가 만든 검사기를 일부러 망가뜨려봤다",
+       "summary": "일부러 검사 조건과 산출물을 빼봤다. 정상 통과만 확인해서는 드러나지 않았던 자동 검증의 허점.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-02/"
+      },
+      {
+       "title": "AI 활용기: 앱과 서버를 따로 만들었더니 데이터 이름부터 달랐다",
+       "summary": "회원 식별자와 요청 필드 이름을 명시적으로 맞췄다. 각각 완성한 앱과 서버 사이에 남은 연결 작업.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-03/"
+      },
+      {
+       "title": "AI 활용기: 로컬 AI 앱은 하나도 만들기 전에 멈췄다",
+       "summary": "운영비 없는 앱과 충분한 언어 모델 품질을 함께 얻을 수 있을까. 구현 전에 중단한 기획의 재개 조건.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-04/"
+      },
+      {
+       "title": "AI 활용기: 슬라임이 자꾸 사람처럼 나왔다",
+       "summary": "프롬프트뿐 아니라 생성 경로와 방향, 해상도를 비교했다. 2026년 8월 PixelLab 열 가지 실험 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-05/"
+      },
+      {
+       "title": "AI 활용기: 마스코트 528프레임을 만들고도 완료는 아니었다",
+       "summary": "승인된 528프레임 옆에는 11,772프레임의 빈칸이 있었다. 생성 수량과 실제 완성을 나눠 본 제작 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-06/"
+      },
+      {
+       "title": "AI 활용기: AI에게 맡긴 일을 다시 AI와 정리했다",
+       "summary": "프로젝트별 결과와 판단을 다시 사례·규칙·출처로 묶었다. 작업 이력을 글로 옮길 때 남길 것과 뺄 것.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-07/"
+      },
+      {
+       "title": "AI 사용기: 게임, 앱, 동료를 만들며 남긴 기록",
+       "summary": "웨일서바이버, AI 게임 공장, AI 동료, 작업실과 커리어 관리. 시도와 중단, 수정 과정을 담은 40편의 읽는 순서.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/ai-writing-index/"
+      },
+      {
+       "title": "AI 커리어 관리 1 — 이력서보다 먼저 내 작업을 모았다",
+       "summary": "흩어진 프로젝트를 홈페이지와 블로그로 나누고, 실제 결과를 경력 근거로 남기는 방법.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/career-01/"
+      },
+      {
+       "title": "AI 커리어 관리 2 — 회사 이름보다 실제 일을 조사했다",
+       "summary": "회사 검색에서 법인 확인, 직무 해석, 출처와 불확실성 표시를 분리한 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/career-02/"
+      },
+      {
+       "title": "AI 커리어 관리 3 — 블로그를 다음 조사에 쓸 기록으로 만들기",
+       "summary": "글을 올리는 것으로 끝내지 않고 수정일, 출처, 연재 목차를 유지하는 운영 방식.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/career-03/"
+      },
+      {
+       "title": "AI 게임 개발기: 러버블에서 고래 게임을 시작했다",
+       "summary": "러버블로 만든 작은 고래 게임이 앱 포팅과 스팀 실험으로 이어지기까지. 출발점에서 남은 것과 빠진 기록을 돌아봤다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-01/"
+      },
+      {
+       "title": "AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다",
+       "summary": "SwiftUI와 웹뷰로 기존 게임을 아이폰에 담았다. 화면을 여는 것 외에 자산과 광고를 연결하는 일이 남았다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-02/"
+      },
+      {
+       "title": "AI 게임 개발기: 스팀을 생각하니 조작부터 다시 봐야 했다",
+       "summary": "패드와 키보드로 로비부터 결과창까지. 스팀을 준비하며 달라진 조작과 테스트 범위를 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-03/"
+      },
+      {
+       "title": "AI 게임 개발기: 브라우저에서는 됐는데 실행 파일에서는 멈췄다",
+       "summary": "이미지 경로와 Windows 실행 문제를 고치고 데모 빌드를 나눴다. 개발 서버 밖에서 드러난 차이들.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-04/"
+      },
+      {
+       "title": "AI 게임 개발기: 이미지를 만드는 일과 게임에 넣는 일은 달랐다",
+       "summary": "카드 그림과 전투 효과에 같은 규격을 쓸 수는 없었다. 생성한 이미지를 비교하고 적용하기까지.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-05/"
+      },
+      {
+       "title": "AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다",
+       "summary": "카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-06/"
+      },
+      {
+       "title": "AI 게임 개발기: 시스템을 늘리자 설명할 것도 많아졌다",
+       "summary": "태그와 성장, 기믹을 늘리던 시기. 새로운 규칙만큼 화면에서 설명해야 할 내용도 늘었다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-07/"
+      },
+      {
+       "title": "AI 게임 개발기: 브랜치를 합친 뒤에도 게임을 다시 고쳐야 했다",
+       "summary": "여러 실험을 main에 가져온 8월 7일. 파일 병합 뒤에 이어진 실행 복구와 통합 검증 이야기.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-08/"
+      },
+      {
+       "title": "AI 게임 개발기: 다시 모바일로 옮기면서 덜어낸 것들",
+       "summary": "전투 코어는 살리고 자산과 조작은 다시 정리했다. 모바일로 돌아오며 무엇을 남길지 골랐다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-09/"
+      },
+      {
+       "title": "AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다",
+       "summary": "스토어 설명과 스크린샷, 빌드 설정을 준비하고 심사 제출까지. 게임 밖에서 이어진 개발 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-10/"
+      }
+     ]
+    },
+    {
+     "id": "apps",
+     "label": {
+      "ko": "앱 제작·심사",
+      "en": "Apps"
+     },
+     "blurb": {
+      "ko": "앱을 만들고 심사에 제출하며 남긴 제작·심사 기록",
+      "en": "Records of building apps and submitting them for review"
+     },
+     "total": 130,
+     "url": "https://blog.kimjinwan.com/ko/apps/",
+     "items": [
+      {
+       "title": "JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기",
+       "summary": "API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/apps/json-formatter/"
+      },
+      {
+       "title": "논리 게이트: 회로 실험실 — 배선과 진리표를 함께 검산하는 제작 앱",
+       "summary": "게이트를 연결하고 입력별 신호·진리표를 확인하도록 만든 조합 논리회로 앱이다. 현재 App Store Connect 상태는 제출 준비 중이다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/apps/logic-workbench/"
+      },
+      {
+       "title": "중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유",
+       "summary": "한 줄씩 입력한 목록에서 중복을 정리하고 첫 등장 순서와 원문 줄 번호를 확인한다. 공백·대소문자 비교 옵션이 결과를 바꾸는 범위와 빈 줄 처리의 차이를 설명한다.",
+       "date": "2026-10-03",
+       "url": "https://blog.kimjinwan.com/ko/apps/dedupe-lines/"
+      },
+      {
+       "title": "텍스트 비교기 — 수정한 한 줄이 삭제와 추가로 나오는 이유",
+       "summary": "수정 전후 문서를 줄 단위로 비교해 추가·삭제·유지 줄과 양쪽 줄 번호를 확인한다. 공백 무시 옵션의 범위와 긴 문서를 나눠 비교할 때 주의할 점을 예시로 설명한다.",
+       "date": "2026-10-02",
+       "url": "https://blog.kimjinwan.com/ko/apps/text-diff/"
+      },
+      {
+       "title": "CSV와 JSON 변환 — 따옴표 안의 쉼표가 열을 늘리지 않게 하려면",
+       "summary": "CSV 첫 행을 열 이름으로 읽어 JSON 객체 배열로 바꾸거나, 평평한 JSON 객체 배열을 CSV로 바꾼다. 따옴표 안의 쉼표·줄바꿈과 누락 값을 어떻게 처리하는지 예시로 확인한다.",
+       "date": "2026-10-01",
+       "url": "https://blog.kimjinwan.com/ko/apps/csv-json/"
+      },
+      {
+       "title": "서브넷 계산기: CIDR 계획 — IPv4 블록 분할을 검토하는 앱",
+       "summary": "IPv4 주소 계산과 VLSM 분할 계획을 함께 보여주는 제작 앱이다. 10월 2일 App Store Connect 상태는 심사 대기 중이다.",
+       "date": "2026-10-01",
+       "url": "https://blog.kimjinwan.com/ko/apps/subnet-calculator/"
+      },
+      {
+       "title": "퇴직금 계산기 — 평균임금 3/12가 상여금·연차수당에만 붙는 이유",
+       "summary": "입사일·퇴사일과 퇴직 전 3개월 임금총액을 넣으면 근로자퇴직급여보장법 제8조 기준 평균임금과 예상 퇴직금을 계산한다. 계속근로기간이 365일 미만이면 지급 의무가 없다는 것도 함께 보여준다.",
+       "date": "2026-09-30",
+       "url": "https://blog.kimjinwan.com/ko/apps/severance-pay-calculator/"
+      },
+      {
+       "title": "연차 계산기 — 입사 1년 미만과 이후, 계산식이 왜 갈리는지",
+       "summary": "입사일만 넣으면 근로기준법 제60조 기준으로 지금까지 쌓인 연차와 다음 발생일을 계산한다. 1년 미만은 개근 월 1일, 1년 이상은 15일에서 2년마다 1일씩 늘어난다.",
+       "date": "2026-09-29",
+       "url": "https://blog.kimjinwan.com/ko/apps/annual-leave-calculator/"
+      },
+      {
+       "title": "만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유",
+       "summary": "만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/age-calculator/"
+      },
+      {
+       "title": "금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유",
+       "summary": "숫자 금액을 계약서·수표용 한글 금액 표기(일금 OOO원정)로 바꿀 때 '일십', '일백'처럼 1을 빼지 않는 규칙과 중간 0을 처리하는 방식을 정리했다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/amount-to-korean/"
+      },
+      {
+       "title": "더치페이 정산 계산기 — 맥주를 안 마신 사람까지 N분의 1을 내지 않게",
+       "summary": "더치페이 정산 계산기로 영수증 항목을 실제로 먹은 사람에게만 나누고, 부가세·봉사료를 주문액 비율대로 얹어 1원까지 합계를 맞추는 방법을 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/bill-split/"
+      },
+      {
+       "title": "할인율 계산기 — 20% 할인에 10% 쿠폰을 더해도 30% 할인이 아닌 이유",
+       "summary": "할인율 계산기로 정가와 할인율에서 판매가를, 정가와 판매가에서 할인율을 구하고, 중복 할인이 단순 합산보다 작아지는 이유를 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/discount-calculator/"
+      },
+      {
+       "title": "학점 계산기 — 4.5 만점 평점에 4.3/4.5를 곱하면 안 되는 이유",
+       "summary": "학점 계산기로 과목별 이수학점과 성적을 넣어 4.5 만점·4.3 만점 평점평균(GPA)을 계산한다. 두 만점 기준의 등급표가 비례하지 않는 이유와 P/F 과목, 목표 평점 역산을 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/gpa-calculator/"
+      },
+      {
+       "title": "대출 원리금 계산기 — 연 12%로 1년 빌려도 이자가 12%가 아닌 이유",
+       "summary": "대출 이자 계산기로 원리금균등상환과 원금균등상환의 월 상환액과 총이자를 비교하고, 상환 방식에 따라 이자가 달라지는 이유를 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/loan-calculator/"
+      },
+      {
+       "title": "비밀번호 생성기 — 기호를 넣는 것보다 길이를 늘리는 쪽이 센 이유",
+       "summary": "랜덤 비밀번호 생성기가 길이와 문자 종류로 엔트로피(비트)를 계산하는 공식과, 기호 추가와 길이 증가가 강도에 주는 차이를 실제 수치로 정리했다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/password-generator/"
+      },
+      {
+       "title": "적금 이자 계산기 — 연 4% 적금에 600만원을 넣어도 이자가 24만원이 아닌 이유",
+       "summary": "적금 이자 계산기로 월 납입액·연이자율·가입기간에서 단리·복리 세전 이자와 세금을 뗀 만기 수령액을 구하고, 적금 이자가 예상보다 적게 나오는 이유를 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/savings-interest-calculator/"
+      },
+      {
+       "title": "시크릿 산타·마니또 추첨기 — 자기 이름이 뽑히지 않게 나누는 방법",
+       "summary": "마니또·시크릿 산타 추첨에서 아무도 자기 자신을 뽑지 않고, 커플이나 가족끼리 걸리지 않게 선물 상대를 배정하는 방식을 정리했다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/secret-santa/"
+      },
+      {
+       "title": "시차 계산기 — 시차 4시간인데 날짜는 하루 다른 이유",
+       "summary": "시차 계산기로 서울·뉴욕·런던 등 14개 도시의 같은 순간 시각을 비교한다. 시차와 날짜 차이가 서로 다른 값인 이유와, 서머타임 때문에 시차가 계절마다 바뀌는 이유를 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/timezone-converter/"
+      },
+      {
+       "title": "타자 속도 테스트 — 총 타수와 순 타수가 다르게 나오는 이유",
+       "summary": "타자 속도 테스트에서 오타를 포함한 총 타수와 정확히 친 순 타수, WPM, 정확도가 각각 어떻게 계산되는지 정리했다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/typing-speed-test/"
+      },
+      {
+       "title": "단위 변환기 — 레시피의 1컵이 200mL가 아닌 이유",
+       "summary": "단위 변환기로 길이·무게·부피·온도를 환산한다. 미국 레시피의 컵·갤런이 한국 계량컵과 다른 이유와, 온도만 곱셈으로 바꿀 수 없는 이유를 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/unit-converter/"
+      },
+      {
+       "title": "부가세 계산기 — 합계금액의 10%는 부가세가 아니다",
+       "summary": "부가세 계산기로 공급가액에서 부가세와 합계를 구하거나, 부가세 포함 합계금액에서 공급가액과 세액을 역산하고 원 미만 처리 차이를 확인하는 방법을 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/vat-calculator/"
+      },
+      {
+       "title": "택배 부피무게 계산기 — 3kg짜리 상자가 4kg으로 청구되는 이유",
+       "summary": "택배 부피무게 계산기로 상자의 가로·세로·높이와 실제 무게를 넣어 부피무게와 청구 기준 무게를 구한다. 나눔값 6,000과 5,000이 결과를 얼마나 바꾸는지 정리한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/apps/volumetric-weight-calculator/"
+      },
+      {
+       "title": "누비즈: 성격 심리테스트 — 본성·관계·충전을 따로 보는 삼면 초상",
+       "summary": "하나의 유형표 대신 본성·관계 방식·충전 방식을 각각 5문항으로 따로 물어, 32종 오리지널 캐릭터 중 나를 닮은 삼면 초상을 만드는 앱이다.",
+       "date": "2026-09-19",
+       "url": "https://blog.kimjinwan.com/ko/apps/nuvvies/"
+      },
+      {
+       "title": "짐 목록: 마지막 점검 — 전날 짐과 마지막 짐을 나누는 여행 체크리스트",
+       "summary": "출발 전날 챙기는 물건과 아침에 마지막으로 챙기는 물건을 다른 칸에 나눠 보여주는 여행 준비 체크리스트 앱이다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/apps/pack-last/"
+      },
+      {
+       "title": "빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록",
+       "summary": "공구 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 물건을, 통째로가 아니라 물건 하나씩 반환 확인하는 앱이다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/apps/return-tag/"
+      },
+      {
+       "title": "취미 기록: 다시 잇기 — 프로젝트 개수도 사진 개수도 안 자르는 취미 책갈피",
+       "summary": "뜨개질·그림·모형·글쓰기처럼 시작했다가 멈춘 취미마다 사진 타임라인과 다음 행동만 남기는 기록 앱. 무료로도 프로젝트·사진 개수 제한이 없다.",
+       "date": "2026-09-15",
+       "url": "https://blog.kimjinwan.com/ko/apps/hobby-tracker-resume/"
+      },
+      {
+       "title": "BrightPocket: Compliment Log — 칭찬과 작은 성취를 모아두는 금고",
+       "summary": "받은 칭찬과 스스로 뿌듯했던 순간을 태그로 정리해 다시 꺼내 보는 앱이다. 계정 없이 Face ID로만 잠근다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/brightpocket/"
+      },
+      {
+       "title": "Daily Challenge: Tiny Actions — 계획 대신 앱이 골라주는 오늘의 행동",
+       "summary": "습관을 직접 설계하는 대신, 관심 분야를 고르면 앱이 매일 작은 행동 하나를 골라주는 자기계발 앱이다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/daily-challenge/"
+      },
+      {
+       "title": "DiceFeel: D20 Dice Roller — 합산까지 읽어주는 테이블탑 주사위",
+       "summary": "d4부터 d100까지 최대 20개를 한 공식으로 굴리고, 결과를 촉각과 음성으로 확인하는 테이블탑 보조 앱이다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/dicefeel/"
+      },
+      {
+       "title": "Five Shapes — 도형을 탭하는 캐주얼 퍼즐",
+       "summary": "화면에 뜬 도형을 탭해 단계를 넘기는 단순한 캐주얼 퍼즐 앱이다. 2020년 출시 이후 지금도 App Store에서 내려받을 수 있다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/five-shapes/"
+      },
+      {
+       "title": "One Thing Today: Daily Goal — 하루에 목표 하나만 남기는 위젯 앱",
+       "summary": "그날의 목표를 하나만 정해 홈 화면·잠금 화면 위젯에 띄우고, 실패 표시 없이 주간 리뷰로 돌아보는 앱이다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/one-thing-today/"
+      },
+      {
+       "title": "PocketBox: Links & Notes — 공유 시트 하나로 모이는 뒤섞인 보관함",
+       "summary": "링크·텍스트·사진을 공유 시트 하나로 받아 미확인 보관함에 모으고, 중복 링크는 자동으로 걸러내는 앱이다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/pocketbox/"
+      },
+      {
+       "title": "Prayer Practice: Your Words — 완성된 기도문 대신 다섯 단계 안내",
+       "summary": "완성된 기도문을 주지 않고, 감사 한 문장부터 독립 기도까지 다섯 안내 단계로 자기 언어로 기도하게 돕는 앱이다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/prayer-practice/"
+      },
+      {
+       "title": "Tithe Basis: Gross or Net — 십일조 기준을 고르지 않고 보여주는 계산기",
+       "summary": "총소득·순소득 등 여덟 기준을 나란히 두고, 어떤 항목이 왜 포함되거나 제외됐는지 이유까지 보여주는 십일조 계산기다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/tithe-basis/"
+      },
+      {
+       "title": "CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱",
+       "summary": "카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/coffee-cut/"
+      },
+      {
+       "title": "Fast Plate: 금식 음식 판정 — 이거 먹어도 되나 답하는 앱",
+       "summary": "지키는 금식을 고르고 음식 이름을 입력하면 괜찮음·제외·라벨 확인 중 하나로 답하고 이유까지 알려주는 앱이다. 날짜가 아니라 음식 단위로 판단한다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/fast-plate/"
+      },
+      {
+       "title": "Hymn Crosswalk: 본문과 운율 — 성경 본문으로 찬송 찾는 앱",
+       "summary": "이번 주 설교 본문을 넣으면 그 본문을 인용한 찬송을 수록 찬송가 수 순으로 보여주는 앱이다. 운율이 같은 찬송끼리 곡조를 맞바꿔 부를 수 있는지도 알려준다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/hymn-crosswalk/"
+      },
+      {
+       "title": "VocaPuff - Chinese — 매일 10개씩 외우는 중국어 단어 암기 앱",
+       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 중국어 단어를 외우는 암기 앱이다. 모르는 단어는 바로 한국어 뜻을 확인한다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-chinese/"
+      },
+      {
+       "title": "VocaPuff - English — 매일 10개씩 외우는 영단어 암기 앱",
+       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 영단어를 외우는 암기 앱이다. 아는 단어와 모르는 단어를 카드에서 바로 나눈다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-english/"
+      },
+      {
+       "title": "VocaPuff - Japanese — 매일 10개씩 외우는 일본어 단어 암기 앱",
+       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 일본어 단어를 외우는 암기 앱이다. 모르는 단어는 바로 한국어 뜻을 확인한다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-japanese/"
+      },
+      {
+       "title": "냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트",
+       "summary": "간단한 질문에 답하면 취향과 분위기에 맞는 음식 성격 유형을 보여주는 캐주얼 테스트 앱이다. 결과 카드를 친구와 공유할 수 있다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/apps/yumyum-type-test/"
+      },
+      {
+       "title": "매일 성경 - 온라인 필사 — 타이핑으로 하는 하루 한 구절 필사",
+       "summary": "성경 한 구절을 매일 타이핑으로 필사하며 진행률을 달력으로 남기는 앱이다. 손 필사 대신 타이핑을 택해 기록과 공유를 더 쉽게 만들었다.",
+       "date": "2026-09-12",
+       "url": "https://blog.kimjinwan.com/ko/apps/daily-bible-writing/"
+      },
+      {
+       "title": "날짜 계산기·디데이 — D-1 이 하루 남았다는 뜻인 이유",
+       "summary": "두 날짜 사이 일수를 셀 때 디데이와 당일 포함이 서로 다른 값을 내는 이유와, 어느 쪽을 써야 하는지 정리한다.",
+       "date": "2026-09-11",
+       "url": "https://blog.kimjinwan.com/ko/apps/date-calculator/"
+      },
+      {
+       "title": "앱 아이콘·파비콘 생성 — 원본과 여백 준비법",
+       "summary": "이미지 한 장을 앱과 웹 대표 PNG 크기로 만들 때 필요한 원본 품질과 여백 기준이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/app-icon-generator/"
+      },
+      {
+       "title": "누끼·배경 제거 — 브라우저 AI 결과 품질 높이기",
+       "summary": "인물과 상품 배경을 투명하게 만들 때 잘 분리되는 사진과 결과 확인 기준을 정리한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/background-remover/"
+      },
+      {
+       "title": "스마트폰 목업 생성 — 앱 스크린샷 홍보 이미지 만들기",
+       "summary": "앱 스크린샷을 일반 스마트폰 프레임과 배경에 넣어 홍보 PNG로 만드는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/device-mockup/"
+      },
+      {
+       "title": "게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기",
+       "summary": "게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/event-deadline/"
+      },
+      {
+       "title": "사진으로 GIF 만들기 — 프레임 순서와 속도 설정",
+       "summary": "여러 이미지를 움직이는 GIF로 묶고 크기와 프레임 간격을 정하는 방법과 형식의 한계를 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/gif-maker/"
+      },
+      {
+       "title": "증명사진 제작 — 배경색·얼굴 위치·규격 맞추기",
+       "summary": "투명 배경 사진을 증명사진 크기로 배치하고 공식 제출 전 확인할 조건을 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/id-photo-maker/"
+      },
+      {
+       "title": "이미지 용량 줄이기 — 품질과 크기를 조절하는 기준",
+       "summary": "JPG·PNG·WebP 사진을 브라우저에서 압축할 때 품질과 최대 너비를 고르는 방법을 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-compressor/"
+      },
+      {
+       "title": "이미지 형식 변환 — HEIC·JPG·PNG·WebP 선택법",
+       "summary": "아이폰 HEIC와 JPG·PNG·WebP를 브라우저에서 변환하고 목적에 맞는 형식을 고르는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-converter/"
+      },
+      {
+       "title": "이미지 자르기·회전 — 정사각형과 16:9 비율 맞추기",
+       "summary": "사진을 원본 비율에 맞춰 자르고 90도 단위로 회전해 새 이미지로 저장하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-crop-rotate/"
+      },
+      {
+       "title": "이미지 글자 추출 OCR — 한국어 인식률 높이기",
+       "summary": "사진과 스크린샷에서 한국어·영어 글자를 추출할 때 원본과 결과를 확인하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-ocr/"
+      },
+      {
+       "title": "사진 모자이크 — 얼굴·번호판·문서 정보 가리기",
+       "summary": "사진에서 선택한 영역을 모자이크 처리하고 공유 전에 확인할 개인정보 범위를 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-redactor/"
+      },
+      {
+       "title": "사진을 PDF로 변환 — 여러 장 순서와 A4 여백",
+       "summary": "여러 사진을 파일 순서대로 A4 PDF에 넣고 여백을 조절하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-to-pdf/"
+      },
+      {
+       "title": "이미지 워터마크 넣기 — 사진에 출처 문구 표시",
+       "summary": "사진에 문구·위치·크기·투명도를 정해 워터마크를 넣는 방법과 보호 범위를 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-watermark/"
+      },
+      {
+       "title": "사진 메타데이터 제거 — GPS·EXIF 없이 공유하기",
+       "summary": "사진 픽셀만 새 파일로 저장해 위치·촬영 기기 등 EXIF 정보를 제거하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/metadata-remover/"
+      },
+      {
+       "title": "사진 색상 팔레트 추출 — HEX·RGB 대표색 찾기",
+       "summary": "사진에서 자주 나타나는 색을 묶어 대표 팔레트로 만들고 활용하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/palette-extractor/"
+      },
+      {
+       "title": "PDF 용량 줄이기 — 이미지 문서를 가볍게 압축",
+       "summary": "사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-compressor/"
+      },
+      {
+       "title": "PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에",
+       "summary": "여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-merge/"
+      },
+      {
+       "title": "PDF 페이지 순서 변경·추출 — 번호 입력 사용법",
+       "summary": "PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-organizer/"
+      },
+      {
+       "title": "PDF 서명 넣기 — 서명 이미지를 원하는 위치에 배치",
+       "summary": "투명 PNG 서명을 PDF의 특정 페이지와 위치에 삽입하는 방법과 전자서명의 차이를 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-sign/"
+      },
+      {
+       "title": "PDF 분할·페이지 추출 — 필요한 범위만 새 파일로",
+       "summary": "PDF에서 필요한 페이지 범위를 한 파일로 추출하거나 페이지마다 나누어 ZIP으로 저장하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-split/"
+      },
+      {
+       "title": "PDF JPG·PNG 변환 — 페이지를 이미지로 저장하기",
+       "summary": "PDF 페이지를 JPG 또는 PNG로 렌더링하고 범위와 해상도를 조절하는 기준을 설명한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-to-image/"
+      },
+      {
+       "title": "PDF 워터마크 넣기 — 문구·투명도·각도 설정",
+       "summary": "PDF 페이지에 검토용, 기밀, 사본 같은 문구를 반복 표시하는 방법과 글꼴 제한을 안내한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-watermark/"
+      },
+      {
+       "title": "사진 여러 장 합치기 — 가로·세로·격자 콜라주",
+       "summary": "2장부터 9장까지 사진을 한 캔버스에 배치하고 간격과 배경색을 조절하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/photo-collage/"
+      },
+      {
+       "title": "프로젝트 체크리스트 생성기 — 단계·작업·담당자 묶어 인쇄하기",
+       "summary": "단계와 작업, 담당자를 입력해 화면에서 체크하고 텍스트로 복사하거나 인쇄하는 브라우저 도구다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/project-checklist/"
+      },
+      {
+       "title": "뽑기 재화 계획표 — 목표 횟수까지 하루 필요량 계산하기",
+       "summary": "현재 재화와 목표 횟수, 1회 비용, 남은 기간으로 부족분과 하루 필요량을 계산하는 브라우저 도구다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/pull-planner/"
+      },
+      {
+       "title": "QR 코드 만들기 — URL·텍스트를 잘 스캔되게 저장하기",
+       "summary": "URL과 텍스트 QR을 만들 때 크기·색상·여백과 개인정보를 확인하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/qr-generator/"
+      },
+      {
+       "title": "QR 코드 해석 — 사진·카메라 스캔 전 주소 확인",
+       "summary": "QR 이미지와 카메라에서 내용을 읽고 위험 주소와 단축 URL을 확인하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/qr-reader/"
+      },
+      {
+       "title": "랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기",
+       "summary": "중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/random-roulette/"
+      },
+      {
+       "title": "게임 복귀 체크리스트 — 기간 한정과 영구 할 일 나누기",
+       "summary": "쉬었던 기간과 계정 진행도, 하루 가능 시간을 바탕으로 복귀 직후 확인할 일을 분리하는 브라우저 도구다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/return-checklist/"
+      },
+      {
+       "title": "투명 서명 이미지 만들기 — 문서에 사인 넣기",
+       "summary": "손가락이나 마우스로 서명을 그리고 투명 PNG로 저장할 때의 보안 주의사항이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/signature-maker/"
+      },
+      {
+       "title": "SNS 이미지 리사이즈 — 게시물 규격과 크롭 확인",
+       "summary": "사진을 인스타그램·유튜브·블로그 대표 규격으로 자를 때 피사체를 보존하는 방법이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/apps/social-image-resizer/"
+      },
+      {
+       "title": "Animal Personality: Duet — 상황별 동물 성격 테스트",
+       "summary": "익숙한 사람들 사이의 나와 낯선 모임에서의 나를 따로 돌아보는 앱이다. 하나의 동물로 모든 상황을 설명하지 않는 쪽으로 만들었다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/animal-personality/"
+      },
+      {
+       "title": "만들었던 앱들 — 출시와 심사, 내려간 기록까지",
+       "summary": "앱 기록 76개의 목적과 기능, 이미지, 제출·판매 중단 상태를 모았다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"
+      },
+      {
+       "title": "Bike Tire Pressure: Any Width — 자전거 타이어 공기압 계산기",
+       "summary": "자전거 타이어 폭과 사용 조건으로 앞뒤 공기압 범위를 살펴보는 계산기다. 실제 타이어의 최대 표시값을 입력하도록 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/bike-tire-pressure/"
+      },
+      {
+       "title": "Chess Clock: Time Controls — 증가·딜레이 규칙 체스 시계",
+       "summary": "탁자 위 대국에서 두 사람의 시간을 재는 시계다. 시간을 더하는 규칙과 시작을 늦추는 규칙을 구분한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/chess-clock/"
+      },
+      {
+       "title": "Church Calendar: East & West — 동방·서방 교회력 비교 달력",
+       "summary": "서방과 동방 교회력의 날짜를 나란히 비교하는 달력 앱이다. 서로 다른 계산 기준을 한 가지로 합쳐 보이지 않도록 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/church-calendar/"
+      },
+      {
+       "title": "Concrete Bags and Yards — 콘크리트 부피·포대 수 계산기",
+       "summary": "콘크리트 작업의 치수로 부피와 주문 단위를 계산하는 도구다. 부피 숫자만 아니라 포대 수량까지 보는 데 목적을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/concrete-calculator/"
+      },
+      {
+       "title": "Crochet Row Counter: Repeat — 뜨개질 단수·반복 카운터",
+       "summary": "뜨개질의 현재 단과 반복 위치를 함께 세는 앱이다. 중간에 쉬었다가 돌아왔을 때 어디까지 했는지 남기는 용도다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/crochet-row-counter/"
+      },
+      {
+       "title": "Cut List: Named Parts — 부품 이름으로 만드는 재료 절단 목록",
+       "summary": "이름 붙인 부품을 가지고 재료 절단 계획을 정리하는 앱이다. 숫자만 있는 목록을 실제 부품과 다시 대조하는 수고를 줄이려 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/cut-list/"
+      },
+      {
+       "title": "Depth of Field: Two Subjects — 두 피사체 심도 계산기",
+       "summary": "선명하게 담고 싶은 앞뒤 피사체의 거리에서 초점과 조리개 조건을 역으로 살펴보는 사진 도구다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/depth-of-field/"
+      },
+      {
+       "title": "Dew Point: Vent Check — 실내외 온습도 이슬점 계산기",
+       "summary": "직접 측정한 실내외 온도와 습도를 비교하는 도구다. 휴대폰이 방의 습도를 측정하는 것처럼 보이지 않도록 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/dew-point/"
+      },
+      {
+       "title": "Dream Meaning: Symbol Reader — 꿈 상징을 고르는 오프라인 해몽 앱",
+       "summary": "꿈에서 기억나는 상징과 느낌을 골라 짧은 해석을 읽는 앱이다. 글을 서버에 보내는 대신 보존된 콘텐츠로 기기에서 구성한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/dream-meaning/"
+      },
+      {
+       "title": "Expiration Tracker: Use First — 유통기한·사용기한 우선순위 기록",
+       "summary": "집에 있는 물건을 날짜 순으로 정리해 먼저 쓸 것을 확인하는 앱이다. 상품 검색 없이 이름과 표시 날짜부터 입력한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/expiration-tracker/"
+      },
+      {
+       "title": "Floe Steps — 지나온 얼음이 무너지는 경로 퍼즐",
+       "summary": "미끄러져 이동한 얼음이 무너지는 경로 퍼즐이다. 지나온 길이 다음 이동을 막기 때문에 멈출 자리를 먼저 생각해야 한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/floe-steps/"
+      },
+      {
+       "title": "Focus Relay: Team Timer — 차례를 넘기는 팀 집중 타이머",
+       "summary": "같은 시각에 모이지 않아도 집중 시간을 이어갈 수 있는 팀 타이머다. 내 차례를 마친 뒤 다음 사람에게 넘기는 방식이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/focus-relay/"
+      },
+      {
+       "title": "GBlog — 삭제된 개인 블로그 앱 기록",
+       "summary": "GBlog라는 이름의 앱 등록 기록이다. 2020년 7월 1일 계정에서 삭제됐다는 날짜를 확인했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/gblog/"
+      },
+      {
+       "title": "RandomPick: Wheel & Teams — 룰렛과 팀 나누기",
+       "summary": "임의의 숫자·룰렛·팀 나누기가 필요할 때 바로 결과를 보는 작은 도구다. Give Me Random을 같은 번들 ID로 개명·재제출해 다시 다운로드할 수 있다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/give-me-random/"
+      },
+      {
+       "title": "House Ledger: Maintenance — 집 수리·점검 공유 장부",
+       "summary": "함께 사는 사람들이 집의 점검과 수리 기록을 공유하는 앱이다. 누가 언제 무엇을 했는지와 다음 점검 시점을 남긴다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/house-ledger/"
+      },
+      {
+       "title": "Ikigai Map: Four Circles — 네 개의 원으로 정리하는 이키가이 지도",
+       "summary": "좋아하는 일과 잘하는 일, 돈이 되는 일과 필요한 일을 네 원에 놓아보는 앱이다. 답을 내려주는 검사보다 내가 무엇을 어느 영역에 두었는지 보이게 만드는 데 초점을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/ikigai-map/"
+      },
+      {
+       "title": "Ink Fold: Overlap makes darker — 겹칠수록 진해지는 색 퍼즐",
+       "summary": "조각을 겹쳐 칸마다 정해진 진하기를 맞추는 퍼즐이다. 겹침을 피하는 것이 아니라 필요한 만큼 겹치는 것이 규칙이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/ink-fold/"
+      },
+      {
+       "title": "Jet Lag: Both Clocks — 출발지·도착지 시차 일정 계산기",
+       "summary": "여행 전후 시간을 양쪽 시간대로 함께 보는 일정 도구다. 날짜가 달라지는 이동에서 어느 날의 시간인지 놓치지 않는 데 초점을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/jet-lag/"
+      },
+      {
+       "title": "Kim Howl — 삭제된 개인 앱 기록",
+       "summary": "Kim Howl이라는 이름으로 등록했던 개인 앱 기록이다. 남아 있는 설명은 출시 안내 한 줄뿐이라 서비스의 세부 목적을 복원하기 어렵다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/kim-howl/"
+      },
+      {
+       "title": "Lockin Message — 코드로 보관하는 잠금 메시지",
+       "summary": "메시지를 잠그고 생성된 코드로 다시 찾는 앱이다. 내용을 바로 보내는 대신 코드로 보관하고 전달하는 방식을 시도했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/lockin-message/"
+      },
+      {
+       "title": "Math Worksheet: Answer Key — 문제지와 답안지 자동 생성",
+       "summary": "원하는 연산과 자릿수로 문제지와 답안지를 함께 만드는 앱과 설치 없이 쓰는 웹도구를 안내한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/math-worksheet/"
+      },
+      {
+       "title": "Merge Cat — 같은 고양이를 합치는 물리 퍼즐",
+       "summary": "고양이를 떨어뜨려 같은 단계끼리 합치는 물리 퍼즐이다. 작은 캐릭터가 큰 단계로 바뀌는 과정을 중심으로 만들었다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/merge-cat/"
+      },
+      {
+       "title": "Merge Whale - 고래 합치기 — 같은 고래를 합치는 물리 퍼즐",
+       "summary": "고래를 떨어뜨려 같은 단계끼리 합치고 점수를 쌓는 게임이다. 다음 고래를 보고 놓을 위치를 고르는 방식이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/merge-whale/"
+      },
+      {
+       "title": "몬스터 살아남기 — 자동 공격 픽셀 생존 게임",
+       "summary": "방향을 조작하며 자동 공격과 성장 선택으로 살아남는 픽셀 생존 게임이다. 짧은 한 판을 시작점으로 잡았다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/monster-survivors/"
+      },
+      {
+       "title": "My Whale - 고래 키우기 — 먹이고 진화시키는 고래 키우기 게임",
+       "summary": "작은 고래를 돌보며 성장과 진화를 지켜보는 게임이다. 짧은 돌봄 행동이 다음 변화로 이어지는 것을 중심에 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/my-whale/"
+      },
+      {
+       "title": "Sight Reading: Note Trainer! — 오선 음표·건반 초견 연습",
+       "summary": "오선의 음표를 보고 이름이나 건반으로 답하며 익히는 앱이다. 눈으로 읽는 것과 음을 듣는 것을 함께 제공한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/note-reading/"
+      },
+      {
+       "title": "Pace Calculator: Race Plan — 달리기 페이스·구간 기록 계산기",
+       "summary": "거리와 목표 시간으로 달리기 페이스와 구간 계획을 계산하는 도구다. 숫자를 확인한 뒤 공유할 수 있는 표를 남긴다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/pace-calculator/"
+      },
+      {
+       "title": "Plate Calculator: What You Own — 보유 원판 기준 바벨 중량 계산기",
+       "summary": "실제로 가진 원판과 봉으로 목표 중량을 구성하는 계산기다. 헬스장마다 다른 장비 구성을 먼저 입력한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/plate-calculator/"
+      },
+      {
+       "title": "작은 답안지 - Pocket Answer — 질문 뒤 짧은 답을 뽑는 앱",
+       "summary": "질문을 떠올리고 짧은 답을 만나는 작은 답안지 앱이다. 결정 자체를 대신해주는 서비스보다는 잠깐 생각을 환기하는 용도다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/pocket-answer/"
+      },
+      {
+       "title": "폴리텔리 - pollytelly — 위치 기반 동네 소셜 앱 기록",
+       "summary": "위치를 바탕으로 채팅과 글, 동네 공유 활동을 묶은 소셜미디어 앱이다. 여러 종류의 활동을 하나의 지도 경험으로 연결하려던 프로젝트다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/pollytelly/"
+      },
+      {
+       "title": "Pool Calculator: Own Chems — 보유 약품 기준 수영장 수질 계산기",
+       "summary": "사용자가 측정한 수질과 가지고 있는 제품의 농도로 계산하는 수영장 관리 보조 도구다. 특정 상품 목록에만 맞추지 않도록 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/pool-calculator/"
+      },
+      {
+       "title": "Reaction Time Test: Millis — 밀리초 반응속도 테스트",
+       "summary": "화면 변화에 반응하는 시간을 기록하는 도구다. 최고 기록 하나보다 여러 시도의 차이를 보여주는 데 초점을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/reaction-time/"
+      },
+      {
+       "title": "Bible Reading Plan: Pace — 마감일 기준 성경 읽기 계획",
+       "summary": "읽을 책과 마감일에 맞춰 성경 읽기 계획을 만드는 앱이다. 정해진 계획을 그대로 따르기보다 자신의 일정에서 시작한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/reading-pace/"
+      },
+      {
+       "title": "Save Anything — 삭제된 정보 저장 앱 기록",
+       "summary": "정보를 저장하고 나중에 찾아보는 용도로 등록했던 앱이다. 보관된 설명이 짧아 기능 범위를 넓혀 적지 않았다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/save-anything/"
+      },
+      {
+       "title": "Score Keeper: Card & Board — 보드게임 라운드 점수판",
+       "summary": "보드게임과 카드게임의 여러 참가자·라운드 점수를 표로 남기는 앱이다. 합계만 아니라 지난 판을 다시 볼 수 있게 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/score-keeper/"
+      },
+      {
+       "title": "Seating Chart: Seat Rules — 함께·분리 조건 좌석 배치",
+       "summary": "참가자와 배치 조건으로 좌석표를 만드는 앱 기록과 설치 없이 쓰는 고정 좌석 웹도구를 안내한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/seating-chart/"
+      },
+      {
+       "title": "Stair Calculator: Both Ways — 공간 기준 계단 단수 계산기",
+       "summary": "주어진 높이와 길이 조건에서 계단 배치를 비교하는 계산기다. 이미 정해진 공간 안에서 가능한 단수를 살펴보는 용도다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/stair-calculator/"
+      },
+      {
+       "title": "급노트 — 바로 쓰는 빠른 메모 앱 기록",
+       "summary": "급하게 떠오른 내용을 빠르게 남기는 메모 앱이다. 큰 문서 관리보다 바로 기록하는 용도로 만들었다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/sudden-note/"
+      },
+      {
+       "title": "Tournament Bracket: Undo Safe — 결과 수정 가능한 토너먼트 대진표",
+       "summary": "작은 대회의 대진과 결과를 관리하는 앱이다. 지난 결과를 고쳤을 때 관계없는 경기까지 사라지지 않게 하는 데 초점을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/tournament-bracket/"
+      },
+      {
+       "title": "Dilemma Compass: Priorities — 두 선택지의 우선순위 비교",
+       "summary": "두 선택지 중 무엇을 지킬지 고르며 자신의 우선순위를 돌아보는 앱이다. 남들이 무엇을 골랐는지를 보여주는 대신 내가 포기한 쪽도 남기려 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/tradeoff-compass/"
+      },
+      {
+       "title": "Triangle Solver Two Answers — 두 해까지 보여주는 삼각형 계산기",
+       "summary": "주어진 변과 각으로 가능한 삼각형을 구하는 계산기다. 답이 둘이거나 성립하지 않는 경우를 숨기지 않는 것이 핵심이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/triangle-solver/"
+      },
+      {
+       "title": "Turnover Crew: Reset List — 공간 정리용 팀 체크리스트",
+       "summary": "여러 사람이 공간 정리 작업을 나눠 맡는 체크리스트다. 개인 체크 목록과 큰 숙박 운영 시스템 사이의 작은 협업 도구를 목표로 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/turnover-crew/"
+      },
+      {
+       "title": "Unit Price: Which Is Cheaper — 묶음·용량별 단가 비교 계산기",
+       "summary": "마트에서 묶음 수량과 용량이 다른 상품의 단가를 비교하는 앱이다. 선반에 적힌 표기를 그대로 입력하는 방식이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/unit-price/"
+      },
+      {
+       "title": "VENTAS Modile 지갑 — 가상자산 지갑 앱 개발 기록",
+       "summary": "가상자산 지갑을 시작점으로 거래소 기능을 확장하려던 앱이다. 등록 이름의 Modile 표기는 관리 화면에 남은 이름을 그대로 기록했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/ventas-wallet/"
+      },
+      {
+       "title": "벤타스 — 가상자산 거래 앱 개발 기록",
+       "summary": "가상자산 거래 서비스를 모바일에서 사용하도록 만든 앱이다. 이 글은 투자 권유가 아니라 당시 개발했던 제품의 보관 소개다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/ventas/"
+      },
+      {
+       "title": "벤타스비트 — 가상자산 거래·입출금 앱 기록",
+       "summary": "가상자산 거래와 입출금을 모바일에서 사용하는 앱으로 등록됐다. 당시의 거래소 앱 개발 기록을 남기기 위한 소개다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/ventasbit/"
+      },
+      {
+       "title": "Scripture Memory: Your Text — 직접 붙여넣는 성경 암송 연습",
+       "summary": "사용자가 가진 본문으로 암송을 연습하는 앱이다. 특정 번역문을 앱에 묶어 넣지 않고 직접 붙여넣은 글을 사용한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/verse-memory/"
+      },
+      {
+       "title": "VIGORIGHT - 비고라이트 — 눈 관리 정보·영상 앱 기록",
+       "summary": "눈 관련 정보를 읽고 관리 영상을 보는 앱이다. App Store Connect의 앱 이름은 비고라이트이며, 보존 설명에는 Eye Doctor라는 이름도 함께 남아 있다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/vigoright/"
+      },
+      {
+       "title": "VROR — VR 안구 헬스케어 앱 기록",
+       "summary": "VR 안구 헬스케어의 정보를 앱에서 확인하고 관리하는 용도로 등록된 프로젝트다. 당시 설명이 제시한 제품 목적을 기록으로 남겼다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/vror/"
+      },
+      {
+       "title": "웨이 - WA-YE — 지도 기반 사진·메시지 소통 앱",
+       "summary": "지도 위에서 위치와 짧은 메시지, 사진으로 소통하는 소셜 모빌리티 메신저다. 긴 채팅보다 지금 있는 곳에서 나누는 반응에 초점을 뒀다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/waye/"
+      },
+      {
+       "title": "Whale Book - 고래 사전 — 고래를 찾아 읽는 모바일 사전",
+       "summary": "고래를 찾아보고 알아가는 사전 앱이다. 고래를 주제로 만든 게임들과는 달리 정보를 읽는 용도로 묶었다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/whale-book/"
+      },
+      {
+       "title": "Whale Survivors - 픽셀 고래 살아남기 — 픽셀 고래 생존·성장 게임",
+       "summary": "고래를 움직이며 공격을 피하고 성장을 선택하는 픽셀 생존 게임이다. 웹에서 시작해 여러 형식의 전투를 실험한 프로젝트다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/whale-survivors/"
+      },
+      {
+       "title": "Word Counter: Reading Time — 글자 수·읽는 시간 계산기",
+       "summary": "글을 쓰면서 분량과 읽는 시간을 함께 확인하는 도구다. 계산하려고 옮겨 붙인 글도 기기에 남겨 다음에 다시 볼 수 있게 했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/word-counter/"
+      },
+      {
+       "title": "YOK - 신개념 욕 추천 어플리케이션 — 상황별 표현 추천 앱 개발 기록",
+       "summary": "상황에 쓸 표현을 추천하고 사용자도 추천에 참여하는 욕 추천 앱이었다. 지금 보면 작은 발상을 서비스로 옮겼을 때 콘텐츠 기준까지 함께 고민해야 했던 사례다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/apps/yok/"
+      }
+     ]
+    },
+    {
+     "id": "games",
+     "label": {
+      "ko": "게임",
+      "en": "Games"
+     },
+     "blurb": {
+      "ko": "플레이 중인 게임의 공식 공지와 분석 글",
+      "en": "Sourced updates and analysis of games I play"
+     },
+     "total": 79,
+     "url": "https://blog.kimjinwan.com/ko/games/",
+     "items": [
+      {
+       "title": "니케 벨로타: 펌킨 위치, 뽑아야 할까 — 밀어줄 지속 대미지 딜러가 없다면 패스",
+       "summary": "10월 8일 출시된 서포터 벨로타: 펌킨 위치를 영문·국내 4곳의 자료로 정리했다. 오른쪽 한 명만 강화하는 버퍼라서 그 자리에 세울 딜러가 있는지가 뽑기 기준이다.",
+       "date": "2026-10-13",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-belorta-pumpkin-witch-guide/"
+      },
+      {
+       "title": "림버스 10월 8일 모바일 최적화 예고 — 메모리 15% 감소는 어떤 조건의 수치인가",
+       "summary": "1.116.2는 10월 8일 12시 KST 예정이다. 개발사 iOS 내부 시험의 약 15%·300MB 감소와 모든 기기의 튕김 해결을 구분한다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-oct8-mobile-memory-optimization/"
+      },
+      {
+       "title": "니케 벨로타: 펌킨 위치 픽업 — 10월 8일 점검 후 시작, 종료는 28일 23:59",
+       "summary": "SSR Belorta: Pumpkin Witch의 공식 픽업 일정은 10월 8일 점검 후부터 28일 23:59 UTC+9다. 시작 시각과 성능 추천은 아직 이 공지로 확정할 수 없다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-oct8-belorta-pumpkin-witch-recruitment/"
+      },
+      {
+       "title": "젠레스 존 제로 10월 3일 탐정 이벤트 — 다음 의뢰가 안 열릴 때 확인할 두 조건",
+       "summary": "Chronicles of the Hobbling Crow는 서버 시간 10월 3일 시작한다. 이전 의뢰 완료와 지정 시각을 모두 확인하고 서버 시간을 KST로 단정하지 않는다.",
+       "date": "2026-10-04",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-oct3-hobbling-crow-event/"
+      },
+      {
+       "title": "림버스 10월 2일 — 5층 보스 설문 마감과 모바일 1.116.1 확인 순서",
+       "summary": "10장 3부 5층 보스 난도 설문은 10월 8일 10시까지다. 모바일 버그 수정 업데이트와 추가 난도 조정 검토를 구분한다.",
+       "date": "2026-10-02",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-oct2-survey-mobile-update/"
+      },
+      {
+       "title": "림버스 10월 1일 핫픽스 — 재접속과 5층 보스 광기 환급 조건",
+       "summary": "10월 1일 공식 배포 완료 공지로 보조 아이템 완화와 5층 보스 설명 변경, 10월 8일 광기 환급 대상을 구분한다.",
+       "date": "2026-10-01",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-oct1-hotfix-refund-window/"
+      },
+      {
+       "title": "이환 1.4 첫날 무엇부터 확인할까 — 우편 선물과 10월 21일 마감",
+       "summary": "9월 29일 공식 공지를 기준으로 이환 1.4 업데이트 첫날 받을 수 있는 우편 선물과 레이븐 모집 마감을 구분한다.",
+       "date": "2026-09-30",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-14-first-day-priorities/"
+      },
+      {
+       "title": "니케 미니케: 타이니 테일즈 신데렐라 편 공개 — 동화 시리즈 네 번째 이야기",
+       "summary": "니케 공식 유튜브가 9월 27일(한국시간) 공개한 애니메이션 숏 '미니케: 타이니 테일즈' 신데렐라 편 1·2부를 정리한다. 레드후드·백설공주·크라운에 이은 네 번째 동화이며 신규 게임 콘텐츠 공지는 아니다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep27-minikke-cinderella-episode/"
+      },
+      {
+       "title": "림버스 1.115.0 퀘스트 막힘 — '세이브 복원' 위치와 쓰면 안 되는 경우",
+       "summary": "프로젝트문이 9월 24일 1.115.0의 알려진 문제 16건을 공지하고, 같은 날 저녁 핫픽스와 칸토 10 전용 '세이브 복원' 기능을 예고했다. 어디에서 누르는지, 언제 쓰면 안 되는지 공식 원문 기준으로 정리했다.",
+       "date": "2026-09-26",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-1115-known-issues-save-restore/"
+      },
+      {
+       "title": "니케, 사과문 이후 첫 무더기 제재 — 시즌41 하루 전 47+15개 계정",
+       "summary": "9월 16일 유형석 디렉터 사과문 이후 처음 나온 니케 제재 명단. 9월 23일 불법 프로그램 47개, 매크로·입력 자동화 15개 계정에 최대 10년 제한을 적용했고, 다음 날 열리는 솔로 레이드 시즌41 대리 플레이 검증을 강화한다고 예고했다.",
+       "date": "2026-09-24",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep23-post-apology-sanctions-season41/"
+      },
+      {
+       "title": "니케 신: 스위프트 바니, 9월 24일 픽업 — 지난 글의 미확인 정보가 실은 이미 공식이었다",
+       "summary": "9월 16일 글에서 팬사이트 출처로만 미확인 표시했던 '신: 스위프트 바니' 픽업이, 실은 9월 12일 니케 공식 X 계정이 이미 발표한 확정 정보였다. 픽업 시작(9/24) 이틀 전 프로필과 일정을 정리한다.",
+       "date": "2026-09-22",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep22-swift-bunny-official-confirm/"
+      },
+      {
+       "title": "림버스 컴퍼니 로쟈 스킬 공개 — 9월 24일 업데이트, 10장 후편도 함께",
+       "summary": "프로젝트문이 9월 21일 스팀 공지로 로쟈(오트쿠튀르::수선실) 신규 인격의 스킬 구조와 9월 24일 정기 업데이트 내용을 공개했다. 관성 카운트를 쌓아 표식을 부여하는 서포트형 딜러이며, 메인 스토리 10장 후편도 같이 열린다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-rodion-kit-and-update-sep24/"
+      },
+      {
+       "title": "니케 유형석 디렉터, 제재 논란에 공식 사과 — 대응 개선안 3가지",
+       "summary": "9월 11일 제재 논란, 9월 12일 협회장 대기 요청으로 이어진 사태에 니케 유형석 디렉터가 9월 16일 밤 공식 사과문과 부정행위 대응 개선안을 냈다. 9월 18일 답변 기한을 앞둔 시점의 공식 대응이다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep16-cheat-response-apology/"
+      },
+      {
+       "title": "이환 1.4 버전 프리뷰 방송 정리 — 신캐 레이븐·아카네 린, 신규 지역 공개",
+       "summary": "이환 1.4 버전 프리뷰 특별 방송(9월 16일)에서 신규 S급 캐릭터 레이븐·아카네 린과 신규 지역, 포르쉐 콜라보 시즌2가 공개됐다. 9월 13일 예고 글에 이은 실제 방송 내용이다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-14-raven-akane-fuka-paradise/"
+      },
+      {
+       "title": "명조 3.7 버전 9월 30일 출시 확정 — 히신·쇄명 프리뷰 방송 정리",
+       "summary": "명조 공식 유튜브가 9월 19일 진행한 3.7 버전 프리뷰 특별 방송에서 정식 출시일 9월 30일과 1차 배너 히신, 신규 전투 시스템 '협동 협주'가 공개됐다. 2차 배너 쇄명의 정확한 시점은 아직 2차 매체 보도로만 확인된다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-37-livestream-release-oct/"
+      },
+      {
+       "title": "젠레스 존 제로, 미출시 콘텐츠 비공개 테스트 '할로우 뱅가드' 모집",
+       "summary": "호요버스가 9월 16일 공식 HoYoLAB 게시물로 젠레스 존 제로의 소규모 비공개 테스트 프로그램 '할로우 뱅가드' 참가자 모집을 시작했다. 비밀유지 서약이 필요한 소수 인원 대상 프로그램이다.",
+       "date": "2026-09-21",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-hollow-vanguards-signup/"
+      },
+      {
+       "title": "림버스 컴퍼니, 도쿄게임쇼 2026 시연 40분 만에 마감 — 무엇을 보여줬나",
+       "summary": "프로젝트문이 도쿄게임쇼 2026(9월 17~21일) 8홀 부스에서 본편 10장 1부를 시연했고, 첫 일반 공개일 시연 예약이 약 40분 만에 마감됐다는 9월 20일 디지털데일리 보도를 정리했다.",
+       "date": "2026-09-20",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-tgs2026-booth-sellout/"
+      },
+      {
+       "title": "림버스 컴퍼니 신규 인격 오트쿠튀르::수선실 로쟈 — 9월 24일 KST 추출 시작",
+       "summary": "프로젝트문이 9월 18일 저녁 스팀에 공지한 로쟈 신규 인격 추출 일정과, 아직 확인되지 않은 스킬 정보를 정리했다.",
+       "date": "2026-09-19",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-rodion-alteration-shop-extraction/"
+      },
+      {
+       "title": "이환 산들바람 속 라이딩 종료 후 — 자전거 초대는 만남의 순간에서 계속",
+       "summary": "산들바람 속 라이딩은 9월 30일 06:59 KST에 종료됐다. 기간 한정 보상과 상시 만남의 순간에서 이어지는 자전거 초대를 구분한다.",
+       "date": "2026-09-17",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-sep17-breeze-riding-event/"
+      },
+      {
+       "title": "무한대(Ananta) 개발사, 출시 후 최소 7년 지원 계획 언급",
+       "summary": "게임스컴 2026 현장 인터뷰에서 무한대(Ananta) 개발사 네이키드 레인의 퍼블리싱·마케팅 리드가 '출시 후 최소 7년' 장기 지원 계획과 데이원 100시간 이상 콘텐츠 분량을 언급했다. 9월 4일 보도된 인터뷰 기반 기사를 확정 계약이 아닌 현재 계획으로 구분해 정리했다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/games/ananta-seven-year-support-pledge/"
+      },
+      {
+       "title": "림버스 컴퍼니 챕터10 파트1, 9월 17일 출시 — 모바일 권장사양 상향",
+       "summary": "림버스 컴퍼니 공식 스팀 뉴스가 챕터10(파트1) 정기 업데이트를 9월 17일로 예고하며, 신규 시스템·시각효과로 늘어난 메모리 사용량에 맞춰 iOS 권장사양을 6GB 이상 RAM·iOS 26 이상으로 올렸다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-chapter10-part1-mobile-specs/"
+      },
+      {
+       "title": "니케 9/17 업데이트 — 길티: 마이티 바니 신규 SSR과 코인 러시 쇼다운",
+       "summary": "니케 9월 17일(목) 11:00~18:00(KST) 서버 점검 후 신규 SSR '길티: 마이티 바니'가 픽업되고, 바니걸 테마 신규 이벤트 '코인 러시 쇼다운'이 시작된다. 공식 발표(9/14)와 적용일(9/17)을 구분해 정리했다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep17-guilty-mighty-bunny-update/"
+      },
+      {
+       "title": "이환 9/16 긴급 점검 — DDoS 공격 대응, 환석 500개 보상",
+       "summary": "이환(NTE) 공식 한국 사이트가 9월 15일 공지한 대로, 9월 16일 01:00~13:00(KST) Asia·SEA 서버 점검이 진행됐다. 최근 발생한 DDoS 공격에 대한 방어 기능 업그레이드가 사유이며, 대상 플레이어에게 환석 500개가 지급된다.",
+       "date": "2026-09-16",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-sep16-ddos-maintenance-annulith/"
+      },
+      {
+       "title": "이환 픽셀 대방출 — 9월 21일 새벽까지 4개 콘텐츠 보상 2배",
+       "summary": "이환(NTE) 공식 공지가 9월 8일 예고한 '픽셀 대방출' 이벤트가 9월 14일 05:00부터 9월 21일 04:59(KST)까지 진행 중이다. 대상 콘텐츠 4개와 일일·누적 한도를 정리했다.",
+       "date": "2026-09-15",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-pixel-burst-double-reward/"
+      },
+      {
+       "title": "젠레스 존 제로 호요랜드2026 티켓 — 9월 14일 저녁 7시 예매 시작, 요일당 1매",
+       "summary": "호요버스 오프라인 행사 호요랜드2026(10월 2~5일, 킨텍스)에 젠레스 존 제로가 참가한다. 티켓 예매는 9월 14일 19시 KST에 시작됐고, 계정당 요일별 최대 1매·현장 판매 없음·모바일 티켓만 제공된다는 공식 조건을 정리했다.",
+       "date": "2026-09-15",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-hoyoland2026-offline-ticket/"
+      },
+      {
+       "title": "림버스 챕터10 조기 개방 — 챕터1만 깨면 열린다",
+       "summary": "9월 11일 공식 스팀 공지가 챕터10을 챕터1 클리어만으로 열어준다고 밝혔다. 9월 17일 챕터10 1부 공개와 함께 적용된다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-canto10-early-unlock/"
+      },
+      {
+       "title": "니케 소다: 트윙클링 버니 — 큐브·스킬 우선순위 자료 정리",
+       "summary": "소다: 트윙클링 버니의 큐브·스킬 투자 우선순위를 공략 사이트 기준으로 정리했다. 직접 플레이 검증이 아니라 자료 기반 정리다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-soda-twinkling-bunny-build/"
+      },
+      {
+       "title": "이환 1.4 프리뷰 방송 9월 16일 20시 30분",
+       "summary": "이환 1.4 버전 '누구를 위하여 기도를 올리나' 프리뷰 특별 방송 일정이 공식 유튜브에 예고됐다. 방송 전이라 패치 내용은 아직 확인되지 않았다.",
+       "date": "2026-09-13",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-14-preview-broadcast/"
+      },
+      {
+       "title": "니케 협회장 \"일단 18일까지 기다려보자\" — 개인 입장문 정리",
+       "summary": "한국게임이용자협회장 이철우 변호사가 9월 12일 새벽 니케 갤러리에 직접 글을 올려, 협회가 요구한 답변 기한까지 이용자들에게 이탈 대신 대기를 요청한 내용을 정리했다.",
+       "date": "2026-09-12",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep12-association-deadline/"
+      },
+      {
+       "title": "명조 3.7 프리뷰 방송 9월 19일 — 신규 공명자 신·쇄명 먼저 확인",
+       "summary": "명조:워더링 웨이브 3.7 버전 프리뷰 특별 방송 일정과, 공식 유튜브 채널이 8월 28일 먼저 공개한 신규 공명자 '신'과 '쇄명'의 인게임 플레이 정보를 정리했다.",
+       "date": "2026-09-12",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-37-hsin-suoming-preview/"
+      },
+      {
+       "title": "니케 부정 프로그램 제재 논란 — 대표는 침묵, 부사장이 대신 나선 이유",
+       "summary": "8월 말 솔로 레이드 제재 수위 논란이 커지는 동안 시프트업 김형태 대표는 공개 대응을 하지 않았고, 유형석 부사장이 '자리 걸고 수습'을 자처했다는 9월 11일 보도를 타임라인으로 정리했다.",
+       "date": "2026-09-11",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep11-ban-controversy-silence/"
+      },
+      {
+       "title": "무한대 출시일 공개 — 2027년 1월 15일과 아직 남은 질문",
+       "summary": "게임스컴 발표 이후 공식 홈페이지와 보도를 대조한 출시 일정 기록. 무한대 공식 홈페이지는 글로벌 정식 출시일을 2027년 1월 15일로 안내하고 8월 25일자 Siliconera 보도도 같은 날짜를 전했지만, 사전 다운로드 시각·서버 오픈 시각·기기별 요구 사양은 이 발표에 포함되지 않았다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/ananta-release-date-record/"
+      },
+      {
+       "title": "무한대 소식이 없다는 추측은 어디까지 맞았나",
+       "summary": "커뮤니티의 행사 불참 추측과 뒤이은 출시일 발표를 비교한다. 행사 목록에서 무한대가 안 보인다는 Reddit 게시글의 관찰은 ‘그 목록을 확인했다’는 범위의 사실이었을 뿐인데, 이를 ‘다음 큰 소식이 훨씬 늦을 것’이라는 추측으로 확장했고 이후 게임스컴 발표와 공식 홈페이지로 출시일(2027년 1월 15일)이 나오면서 그 전망은 유지될 수 없게 됐다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/ananta-silence-rumor-followup/"
+      },
+      {
+       "title": "림버스 컴퍼니 동부 섕크 3과 홍루 — 속도·호흡·화상을 함께 보는 인격",
+       "summary": "공식 영문 스킬표로 살펴본 홍루의 조건부 강화와 대상 유지 문제. 홍루의 각성 효과는 속도 우위 하나가 아니라 자신의 호흡 유지와 적의 화상까지 세 조건이 동시에 걸려 있고, Nerve Strike - Hong Lu는 대상을 옮기면 이전 대상의 효과가 사라지는 지정형 효과다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-cinq-east-honglu-preview/"
+      },
+      {
+       "title": "림버스 컴퍼니 새벽 사무소 파우스트·그레고르 — 사망 시점보다 상태가 중요했던 이유",
+       "summary": "7월 패시브 문구 정정에서 달라진 표현과 달라지지 않은 효과를 구분한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-dawn-passive-state/"
+      },
+      {
+       "title": "림버스 컴퍼니 차원찢개 이상 미리보기 — 충전만 쌓으면 끝나는 구조는 아니었다",
+       "summary": "7월 23일 대상 신규 인격의 공식 이미지에서 충전·파열·속도 조건을 읽는다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-dimension-shredder-yisang-preview/"
+      },
+      {
+       "title": "림버스 컴퍼니 돈키호테 8월 E.G.O — 합에서 이겼을 때와 졌을 때를 나눠 읽기",
+       "summary": "8월 6일 대상 E.G.O 미리보기의 회복·보호막 조건과 공격 유형 정정을 정리한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-don-aug6-ego-preview/"
+      },
+      {
+       "title": "림버스 컴퍼니 그레고르 9월 E.G.O 미리보기 — 화상과 충전이 만나는 자리",
+       "summary": "Move-In Reg. 공식 카드의 조건을 바탕으로 조합에서 확인할 대상을 정리한다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-gregor-move-in-ego/"
+      },
+      {
+       "title": "림버스 시즌8 PUNCTUM — 9월 17일 시작, 오늘 예고에서 확정된 것만",
+       "summary": "9월 10일 정기 점검과 함께 나온 시즌8 예고에서 공식이 확정한 부분과 아직 안 정해진 부분을 구분했다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-season8-punctum-preview/"
+      },
+      {
+       "title": "림버스 두 달 일정 — 금요일 예고, 월요일 상세, 목요일 업데이트",
+       "summary": "세 번의 신규 인격·E.G.O 공지 묶음으로 관찰한 공개 순서와 간격. 7월 17일부터 8월 28일까지 네 차례 신규 인격·E.G.O 공지를 대조하면 금요일 대상 추출 예고, 사흘 뒤 월요일 스킬 미리보기, 다시 사흘 뒤 목요일 업데이트 적용이 반복됐고 공지 간격은 매번 14일이었다 — 다만 이건 두 달치 표본일 뿐 앞으로도 보장되는 주기는 아니다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-summer-release-rhythm/"
+      },
+      {
+       "title": "니케 드레이크: 그레이트 빌런 — 장탄 옵션을 그대로 복사하면 안 되는 이유",
+       "summary": "무기 전환과 잔탄 처리 때문에 달라지는 장비 검토 순서. 드레이크는 스스로 버스트를 쓰지 않아도 풀버스트 때 무기가 바뀌고 종료 시 잔탄이 비워지므로, 같은 풍압인 라플라스 이격에게 쓰던 장탄 중심 세팅을 그대로 옮기면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-drake-ammo-trap/"
+      },
+      {
+       "title": "니케 로산나·팬텀 애장품 — 긴 전투와 타겟 조건을 따로 보는 이유",
+       "summary": "7월 애장품으로 바뀐 두 딜러를 전투 길이와 대상 조건으로 구분한다. 로산나의 누적 강화는 장기전일수록 값어치가 커지고 팬텀은 애장품 적용 후 타겟 조건이 달라지므로, 둘을 묶어 ‘세졌다’고만 읽으면 실제로 어느 콘텐츠에 넣어야 할지 알 수 없다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-favorite-rosanna-phantom/"
+      },
+      {
+       "title": "니케 슈가·플로라 애장품 — 새 딜러보다 기존 지원 역할이 바뀐 날",
+       "summary": "7월 애장품 추가 후 샷건과 방어 무시 조합에서 달라진 검토 포인트. 슈가의 애장품은 수냉·철갑 샷건 딜러가 준비돼 있어야 값어치가 나고, 플로라는 40초 버스트 쿨타임 때문에 20초 순환 파티에 그냥 끼워 넣으면 편성 의도와 어긋난다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-favorite-sugar-flora/"
+      },
+      {
+       "title": "니케 니지마 마코토 첫 주 — 유키코 출시 전 평가는 어디까지였나",
+       "summary": "페르소나 협업 첫 주에 확정된 역할과 다음 주의 기대를 구분한다. 8월 13일 공개 평가는 마코토 단독 성능과 일주일 뒤 나올 유키코와의 연계 기대를 함께 담고 있었으므로, 첫날 평가를 실측처럼 그대로 받아들이면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-makoto-first-week/"
+      },
+      {
+       "title": "니케 맥스웰 이격 — 체력 버프가 필요한 파티부터 보자",
+       "summary": "7월 모집과 8월 운용 분석을 연결하되 자료의 이름 차이도 표시한다. 맥스웰 이격은 7월 23일 배포 자료엔 ‘오디너리 미케닉’, 8월 3일 인벤 운용 기사엔 ‘파워업’으로 이름이 달랐지만 같은 캐릭터이며, 최대 체력을 화력으로 바꾸는 라플라스 이격과 맞물릴 때 값어치가 난다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-maxwell-health-support/"
+      },
+      {
+       "title": "니케 마코토·유키코 후속 평가 — 레이드 성능을 범용 티어로 읽지 않기",
+       "summary": "출시 예고와 솔로 레이드 이후 평가 사이에서 달라진 근거를 비교한다. 8월 27일 후속 분석은 작열 솔로 레이드에서의 활용을 높게 평가했을 뿐이고, 돌파·장비·지원형·보스 조건이 다르면 같은 순위는 재현되지 않으므로 일반 스테이지나 PvP 성적으로 그대로 옮기면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-persona-followup/"
+      },
+      {
+       "title": "니케 2버스트 — 좋은 캐릭터가 많아도 파티 자리는 늘지 않는다",
+       "summary": "크라운·마앵·프민을 단일 순위가 아니라 역할과 편성 비용으로 보는 법. 메이드 마스트·앵커처럼 둘을 함께 넣는 2버스트 조합은 파티 다섯 자리 중 두 자리를 쓰므로, 크라운 같은 한 명짜리 지원형과 같은 저울에 놓고 비교하면 편성 비용을 놓친다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-second-burst-roster/"
+      },
+      {
+       "title": "니케 9월 3일 업데이트 — 17GB 재다운로드와 오늘(9/10) 마감·시작 이벤트",
+       "summary": "패치 시스템 교체로 전체 재다운로드가 필요했던 9월 3일 업데이트와, 9월 10일 기준으로 끝나거나 새로 열리는 이벤트를 정리했다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-sep3-full-redownload/"
+      },
+      {
+       "title": "니케 수영복 신데렐라·마르차나 — 같은 철갑 딜러를 어떻게 비교할까",
+       "summary": "7월 신규 여름 니케 두 명을 기존 계정의 빈자리 기준으로 읽는다. 같은 ‘철갑 딜러’라도 주력 파티의 화력이 모자란 건지, 서브 파티에 쓸 두 번째 딜러가 없는 건지에 따라 신데렐라와 마르차나 중 필요한 쪽이 갈린다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-summer-new-iron-pair/"
+      },
+      {
+       "title": "니케 수영복 도로시·일레그 복각 — 메인 딜러와 보조 자리를 구분하기",
+       "summary": "신규 여름 니케와 함께 열린 복각을 파티 내 자리 관점에서 정리한다. 도로시: 세렌디피티는 샷건 조합의 주요 공격수이고 일레그: 붐 앤 쇼크는 버스트를 자주 쓰지 않는 자리에서도 파티를 보조할 수 있어, 둘 다 수냉이어도 실제로 빠지는 자리가 다르다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-summer-rerun-dorothy-elegg/"
+      },
+      {
+       "title": "니케 아마기 유키코 — 딜러의 회복이 파티 한 자리를 바꿀 수 있을까",
+       "summary": "유키코 출시일 분석에서 회복·크라운·협업 조합을 읽는 기준. 유키코는 작열 3버스트 MG 딜러이면서 아군을 지속 회복시켜 크라운과 조합하면 작은 피해가 반복되는 전투를 버틸 수 있지만, 한 번에 큰 피해를 받는 보스에서 전담 힐러를 지워도 된다는 뜻은 아니다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-yukiko-team-slot/"
+      },
+      {
+       "title": "이환 8월 보상 달력 — 픽셀 2배와 폰즈 2배는 같은 행사가 아니다",
+       "summary": "7월 29일 공지의 두 배 이벤트를 재화·한도·제외 항목으로 나눈 기록.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-august-bonus-calendar/"
+      },
+      {
+       "title": "이환 밝은 달 특간 — 링코 신규·호토리 복각, 9월 30일 마감",
+       "summary": "9월 9일 점검 후 새로 열린 모집 두 개와, 같은 날 이미 끝난 현혹의 그림자 보드를 구분해 정리했다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-bright-moon-linko-hotori/"
+      },
+      {
+       "title": "이환 일로이 — 생명선 보드와 금기의 문을 구분한 모집 기록",
+       "summary": "7월 29일 신규 S급 캐릭터와 아크의 당시 획득 경로. 일로이는 생명선 보드에서, S급 아크 금기의 문은 별도의 아크 연구 모집에서 얻었고 둘 다 8월 19일 06:59(KST) 종료였다 — 한쪽에 쓴 재화를 다른 쪽 진행도로 착각하면 예산이 어긋난다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-illoi-lifeline-record/"
+      },
+      {
+       "title": "이환 들녘의 별장과 열풍 — 폰즈 사용처가 늘었을 때",
+       "summary": "1.3 신규 부동산·차량을 생활 재화의 선택 문제로 정리한다. 들녘의 별장은 690만 폰즈에 도시 타이쿤 13레벨 조건이 붙고 생산물을 활력제로 팔 수 있는 반면, 열풍 차량은 400만 폰즈로 조건 없이 사는 이동 수단이다 — 둘 다 영구 판매라 동시에 안 사도 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-villa-vehicle-budget/"
+      },
+      {
+       "title": "이환 잔홍 신규·나나리 복각 — 보드 특전 횟수를 합산하면 안 된다",
+       "summary": "1.3에서 함께 열린 두 보드의 신규·복각 구분과 독립 카운트. 나나리 복각 보드의 호랑이 특전 카운트는 그 보드 안에서만 쌓이고 잔홍 신규 보드의 횟수와는 독립 계산된다 — 단 이건 특전 카운트 규칙이지 모집 천장·이월 규칙까지 확장해 읽으면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-zanhong-nanari-board/"
+      },
+      {
+       "title": "7~9월 게임 기록 38편 — 신규 캐릭터와 업데이트 주기 한눈에 보기",
+       "summary": "여섯 게임의 두 달 자료를 캐릭터·복각·이벤트·후속 평가 순으로 모았다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/summer-2026-game-timeline/"
+      },
+      {
+       "title": "명조 3.5→3.6 — 새 지역 다음에는 무엇이 이어졌나",
+       "summary": "41일 간격의 두 버전에서 관찰한 지역·스토리·탐험 확장. 3.5(7/10)가 새 지역과 4장 초반을 열었다면 3.6(8/20)은 41일 뒤 같은 무대에서 이야기를 잇고 검 타는 이동·악기 연주 같은 탐험 기능을 더했다 — 두 버전을 무관한 새 출발로 보면 복귀 시작점을 잘못 잡는다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-36-story-cycle/"
+      },
+      {
+       "title": "명조 전도 방랑자 — 신규 모집과 별도로 확인할 변화",
+       "summary": "3.5에서 추가된 방랑자 속성과 스토리 진행을 구분한다. 전도 방랑자는 3.5 스토리를 진행하며 얻는 네 번째 공명 속성이고, 방패·검·석궁을 바꿔 쓰며 방어 성공과 연계되는 전투 방식이지 기존 속성보다 화력이 높다고 발표된 것은 아니다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-electro-rover/"
+      },
+      {
+       "title": "양양·현령과 수수 — 명조 3.5 신규 둘을 한날의 픽업으로 보면 안 된다",
+       "summary": "전반·후반 신규 공명자와 복각을 구분한 3.5 시작 기록. 양양·현령은 인멸·직검, 수수는 응결·증폭기로 소개된 신규고 린네·루크·에이메스는 복각이다 — 이름이 익숙한 ‘양양’도 기존 양양과 다른 신규 공명자이니 장비·역할을 그대로 넘겨짚으면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-yangyang-susu/"
+      },
+      {
+       "title": "청초·경연 — 명조 3.6 전반과 후반의 다른 선택",
+       "summary": "신규 공명자 두 명과 복각을 나눠 정리한 3.6 라인업 기록. 청초는 전반의 기류·직검, 경연은 후반의 용융·대검으로 소개됐다 — 같은 3.6 신캐라는 것 말고는 공유하는 게 없어서, ‘3.6 신캐 조합’이라는 이름만으로 둘을 함께 쓰기 좋다고 볼 근거는 없다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-36-qingxiao-jingran/"
+      },
+      {
+       "title": "젠레스 버전이 끝나도 이벤트가 남는 경우 — 3.1·3.2 달력 읽기",
+       "summary": "버전 종료와 개별 이벤트 마감이 일치하지 않는 두 사례. 3.1의 배송 이벤트 ‘Ding-Dong!",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-32-event-overlap/"
+      },
+      {
+       "title": "젠레스 존 제로 미야비·아리아·파이퍼 — 3.1에서 다시 볼 추가 능력 조건",
+       "summary": "신규 에이전트 외에 기존 파티의 조건 설명도 확인해야 하는 이유. 공식 영문 공지는 미야비·아리아·파이퍼 세 에이전트의 추가 능력 조건에 이상 캐릭터를 포함하는 문구 변경을 실었고, 이는 스킬·엔진·디스크 설명 최적화 묶음에 실린 항목이라 신캐 추가와 무관하게 지금도 유효하다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-existing-agent-conditions/"
+      },
+      {
+       "title": "젠레스 3.1 레미엘·시그리드 — 신규 둘의 역할부터 나눠 보기",
+       "summary": "이상과 강공, 서로 다른 역할로 안내된 3.1 신규 에이전트 기록. 레미엘(Lumiflux, 이상)과 시그리드(얼음, 강공)는 같은 버전에 나왔을 뿐 역할이 다르고, 각각 전용 S급 엔진이 따로 소개됐다고 해서 전용 엔진이 필수라는 결론은 나오지 않는다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-remielle-sigrid/"
+      },
+      {
+       "title": "클라렛·록시와 새 엔진 — 젠레스 3.2에서 구분할 획득 경로",
+       "summary": "신규 에이전트와 A·B급 엔진의 경로를 같은 모집으로 착각하지 않기. 3.2는 S급 엔진뿐 아니라 A·B급 Armorer 엔진도 함께 소개했는데, 일부는 도시 펀드 유료 플랜과 레벨 조건으로, 일부는 신호 검색이나 상점 경로로 얻도록 안내돼 있어 ‘새 엔진 추가’를 전부 무료 지급이나 전부 한정 모집으로 읽으면 안 된다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-32-claret-roxy-engines/"
+      },
+      {
+       "title": "무한대 DLSS 4.5 발표 — 지원 소식이 사양 검증은 아니다",
+       "summary": "8월 27일 공식 기술 발표에서 확인되는 것과 아직 판단할 수 없는 것을 구분했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/ananta-aug27-dlss-not-performance-proof/"
+      },
+      {
+       "title": "고양이 합치기 개발기 — 합쳐지는 것 다음에 남은 문제",
+       "summary": "고양이 11단계와 물리 충돌, 보상 동작을 만든 웹 프로토타입을 돌아봤다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/cat-merge-devlog/"
+      },
+      {
+       "title": "림버스 8월 20일 추가 공지 — 설명 수정과 실제 버그는 다르다",
+       "summary": "영문 설명 정정과 시작 정신력 오류를 구분해 오래된 공략을 읽는 기준을 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-aug20-text-or-bug/"
+      },
+      {
+       "title": "고래 합치기 개발기 — 게임이 끝나야 기록도 남는다",
+       "summary": "게임오버 유예 오류와 저장 경로를 고친 뒤 앱 제출까지 이어진 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/merge-whale-devlog/"
+      },
+      {
+       "title": "고래 키우기 개발기 — 돌봄 한 바퀴를 앱에서도 끝내기",
+       "summary": "먹이와 진화, 방생과 기록, 실제 광고 보상까지 이어지도록 고친 과정.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/my-whale-devlog/"
+      },
+      {
+       "title": "니케 7월 메티스 업데이트 기록 — 모집과 이벤트 마감은 같지 않았다",
+       "summary": "PROJECT MATIS와 두 신규 니케의 당시 일정을 구분한 종료 이벤트 기록이다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-july23-matis-record/"
+      },
+      {
+       "title": "니케 라플라스 이격 운용 메모 — 빠르게 누르기 전에 무기 전환부터",
+       "summary": "7월 공개 공략을 바탕으로 라플라스: 얼티밋 히어로의 운용 확인점을 정리한 자료 기반 가이드.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-laplace-july-operating-note/"
+      },
+      {
+       "title": "이환 1.3 복귀 — 새 스토리가 안 보이면 선행 임무부터",
+       "summary": "1.3의 스토리 개방과 종료된 한정 보드를 나눠 정리한 복귀 안내. 새 스토리 ‘안개 둥지 게임’은 이전 메인 임무 ‘적룡 토벌대’를 끝내야 열리고, 잔홍 한정 보드·나나리 복각은 9월 9일 06:59(KST)로 이미 끝났다 — 둘을 같은 ‘복귀하면 되는 일’로 묶으면 안 된다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-13-returning-unlocks/"
+      },
+      {
+       "title": "더 웨폰스 개발기 1 — 큰 기획에서 한 턴의 선택으로",
+       "summary": "실시간 전투 구상에서 대응 카드를 미리 놓는 예측형 전투로 좁힌 과정.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-01/"
+      },
+      {
+       "title": "더 웨폰스 개발기 2 — 전투가 보이게 만드는 작업",
+       "summary": "가로 화면, 전투 자산, 속성 판정으로 확장하며 구현과 설계를 구분한 기록.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-02/"
+      },
+      {
+       "title": "더 웨폰스 개발기 3 — 기능 완성 다음의 기준",
+       "summary": "보류된 프로토타입을 완성된 게임으로 옮길 때 확인할 항목과 재개 순서.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-03/"
+      },
+      {
+       "title": "명조 3.6 복귀 — 에코를 새로 파밍하기 전에 확인할 것",
+       "summary": "에코 추천 개선과 스토리·편의 기능을 바탕으로 복귀 계정의 확인 순서를 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-36-returning-echo-check/"
+      },
+      {
+       "title": "젠레스 3.1 복귀 체크리스트 — 끝난 보상과 남은 콘텐츠를 나눠 보자",
+       "summary": "3.1의 기간 한정 보상과 영구 콘텐츠를 구분하고, 복귀 계정에서 확인할 순서를 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-returning-checklist/"
+      },
+      {
+       "title": "젠레스 3.2 시작 — 신캐 평가보다 먼저 확인할 보상과 해금 조건",
+       "summary": "3.2 업데이트 당일 확인할 계정 조건과 출석 보상, 스토리 개방을 정리했다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/zzz-32-first-check/"
+      }
+     ]
+    },
+    {
+     "id": "fiction",
+     "label": {
+      "ko": "이야기",
+      "en": "Essays"
+     },
+     "blurb": {
+      "ko": "AI 시대의 일과 놀이에 대한 짧은 글",
+      "en": "Short essays on work and play in the age of AI"
+     },
+     "total": 5,
+     "url": "https://blog.kimjinwan.com/ko/fiction/",
+     "items": [
+      {
+       "title": "우리는 더 이상 일하지 않아도 되는가?(feat. AI)",
+       "summary": "열 살 딸에게서 'AI가 다 알려주는데 공부는 왜 해야 해?'라는 질문까지 듣게 되면서, 사람이 더 이상 일하지 않아도 되는 사회가 왔는지 인류의 오랜 변화에 비추어 따져 본다.",
+       "date": "2026-10-13",
+       "url": "https://blog.kimjinwan.com/ko/fiction/ai-still-have-to-work/"
+      },
+      {
+       "title": "생성형 AI를 우리는 감시·감독해내야만 한다",
+       "summary": "\"AI한테 시키면 다 해줘\" 이후, 읽히지 않는 보고서와 알맹이 빠진 문서가 오가기 시작했다. 사람을 위한 일이라면 AI의 생성물도 사람에게 유효해야 한다.",
+       "date": "2026-09-28",
+       "url": "https://blog.kimjinwan.com/ko/fiction/supervise-generative-ai/"
+      },
+      {
+       "title": "AI는 나를 대신해주지 않는다",
+       "summary": "자전거를 산다고 운동하는 사람이 되지는 않는다. AI라는 좋은 도구를 쓰기 전에 내가 원래 무엇을 하던 사람인지 돌아본다.",
+       "date": "2026-09-23",
+       "url": "https://blog.kimjinwan.com/ko/fiction/ai-does-not-replace-me/"
+      },
+      {
+       "title": "어릴 적 탐험의 즐거움은 평생 다시 느낄 수 없을지 모른다",
+       "summary": "딸아이에게 게임 공략을 알려주려다 멈춘 날, 글자를 읽지 못한 채 게임 세계를 헤매던 어린 시절을 떠올렸다.",
+       "date": "2026-09-14",
+       "url": "https://blog.kimjinwan.com/ko/fiction/childhood-exploration-joy/"
+      },
+      {
+       "title": "니케 DON 사태로 다시 생각한 '잘 만들어진 게임'",
+       "summary": "핵 사태가 터졌는데도 유저가 크게 빠지지 않을 것 같다고 느꼈다. 매력이 여러 갈래로 나뉜 게임이 사건을 견디는 방식에 대한 생각이다.",
+       "date": "2026-09-10",
+       "url": "https://blog.kimjinwan.com/ko/fiction/nikke-don-well-made-game/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "services",
+   "count": {
+    "value": 14,
+    "as_of": "2026-10-13",
+    "source": "kimjinwan/data/services.json 의 서비스 수; 읽을거리 본문은 kimjinwan-services/js/details.js 의 요약·주요 기능 2개·추천 대상 첫 항목"
+   },
+   "items": [
+    {
+     "id": "forge",
+     "text": {
+      "ko": "요구사항 정의에서 디자인·화면설계·개발 보조·익스포트까지 하나의 흐름으로 잇도록 직접 만든 웹서비스 제작 도구. 요구사항 정의 → 디자인 가이드 → IA · 키스크린 → 전체 목업 → 기획서 → UI 디자인 → 개발 보조 → 프로젝트 익스포트까지 단계마다 결과를 확인하며 이어 갑니다. 여섯 줄짜리 서술에서 시작해도 빠진 정보는 질문과 추천안으로, 확인이 필요한 건 웹 리서치로 채웁니다. 이런 분께 맞습니다: 고객 요구사항서를 받아 제안 · 기획을 빠르게 정리해야 하는 PM · 기획자 · 영업.",
+      "en": "A web-service production tool I built to connect requirements, design, screen specs, development assistance and export in one flow. Requirements, design guide, IA and key screens, full mockup, spec, UI design, dev assistance and export, each confirmed before the next. Start from a six-line description; missing details come back as questions with suggested answers, and web research covers what needs checking. A good fit for: PMs, planners and sales people who must turn a client requirements doc into a plan fast."
+     }
+    },
+    {
+     "id": "prism-studio",
+     "text": {
+      "ko": "독립 웹 편집기. 브라우저에서 레이어·선택 영역·마스크로 이미지를 편집하고, PSD 열기·저장을 지원합니다. 중첩 그룹과 그룹 마스크, 빠른 마스크, 모양 레이어, 펜 경로, 다양한 선택 도구를 지원합니다. PSD · TIFF · PNG · JPEG · WebP · GIF · SVG를 열고, 16비트 PSD 열기와 저장까지 다룹니다. 이런 분께 맞습니다: 포토샵 없이도 레이어 · 선택 영역 · 마스크로 이미지를 편집하고 싶은 사용자.",
+      "en": "An independent browser image editor I built, with layers, selections and masks, including PSD open and save. Nested groups with group masks, quick mask, shape layers, pen paths and many selection tools. Open PSD, TIFF, PNG, JPEG, WebP, GIF and SVG, including 16-bit PSD open and save. A good fit for: Users who want layer, selection and mask editing without Photoshop."
+     }
+    },
+    {
+     "id": "gizmo-store",
+     "text": {
+      "ko": "보고서 요약·메일 쓰기·회의록 정리 같은 일을 설치 없이 쓰는 작은 AI 도구를 모아 직접 운영하는 한국어 도구 가게. 문서 요약, 글쓰기, 회의 정리, 번역, 마케팅, 부동산, 학습 등 목적을 고르면 그 일에 맞는 도구만 모아 보여 줍니다. 프롬프트 쓰는 법, AI 답변 확인하는 법, 회사에서 쓸 때 지킬 것을 짧은 가이드로 안내합니다. 이런 분께 맞습니다: AI를 처음 써 보는데 어떤 도구부터 써야 할지 모르는 직장인.",
+      "en": "A Korean-language shop I run, collecting small AI tools for everyday work such as summarizing reports, writing email and organizing meeting notes, usable without installing anything. Pick a purpose such as summarizing, writing, meetings, translation, marketing, real estate or study to see only matching tools. Short guides on writing prompts, checking AI answers and using AI at work. A good fit for: Office workers new to AI who do not know where to start."
+     }
+    },
+    {
+     "id": "docloom",
+     "text": {
+      "ko": "TXT·MD·DOCX·HWP·HWPX·PUML 문서를 포맷별 전용 편집기로 만들고 고치는 웹 서비스. 문서는 서버로 보내지 않고 브라우저에만 저장하며, 사용자 PC의 AI 에이전트를 선택적으로 연결할 수 있습니다. TXT · MD · DOCX · HWP · HWPX · PUML 각각에 맞는 편집 화면과 도구가 열립니다. 파일을 열고 고치고 저장하는 모든 과정이 내 기기 안에서 끝나며 서버 전송이 없습니다. 계정도 가입도 필요 없습니다. 이런 분께 맞습니다: 한글(HWP · HWPX) 문서를 가볍게 열어 고쳐야 하는 직장인 · 공무원.",
+      "en": "A web service for creating and editing TXT, MD, DOCX, HWP, HWPX and PUML documents in a dedicated editor per format. Documents are never sent to a server and stay in the browser, and an AI agent on your own PC can optionally be connected. TXT, MD, DOCX, HWP, HWPX and PUML each open in a matching editor with its own tools. Opening, editing and saving all happen on your device with no server upload, and no account or sign-up. A good fit for: Office and public-sector workers who need to open and tweak HWP/HWPX documents quickly."
+     }
+    },
+    {
+     "id": "pitchwright",
+     "text": {
+      "ko": "RFP를 넣으면 요구사항 분석, 컴플라이언스 매트릭스, 목차별 본문 작성, 정합성 점검까지 단계별로 제안서를 쓰고, 기관 양식에 맞춰 DOCX·PPTX·XLSX·HWPX 등으로 내보내는 제안서 작성 웹서비스. PDF · DOCX · HWP · HWPX · TXT를 올리면 요구사항 · 평가항목 · 제약 · 확인 요청을 뽑고, ID(RFP-REQ-001…)는 코드가 매겨 다시 분석해도 바뀌지 않습니다. 모든 인용문을 원문과 대조해 없는 문장은 \"인용 미확인\"으로, 배점 숫자는 배점표와 맞는지 확인합니다. 이런 분께 맞습니다: 공공 입찰 · 국책/R&D · 민간 B2B 제안서를 정해진 평가 기준에 맞춰 써야 하는 제안 PM.",
+      "en": "A proposal-writing web service I built. Feed it an RFP and it works step by step through requirement analysis, a compliance matrix, section-by-section drafting and consistency checks, then exports to an agency's own form as DOCX, PPTX, XLSX, HWPX and more. Upload PDF, DOCX, HWP, HWPX or TXT to extract requirements, criteria, constraints and open questions. IDs are assigned by code and stay stable across re-runs. Every quote is checked against the source; missing ones show as \"unverified\", and scores are checked against the scoring table. A good fit for: Proposal managers writing public-tender, R&D or B2B proposals against fixed evaluation criteria."
+     }
+    },
+    {
+     "id": "casewright",
+     "text": {
+      "ko": "요구사항 정의서·기획서·화면설계서를 올리면 근거를 붙인 테스트 케이스(TC)를 만들고, 추천 양식이나 직접 올린 양식의 엑셀로 내보내는 웹 서비스. 판정은 코드의 게이트가 하고 AI는 제안만 합니다. 설정 → 자료 → 요구사항·조건 → 설계 → 테스트 케이스 → 게이트·추적표 → 내보내기. 27개 게이트가 PASS / FAIL / UNKNOWN으로 판정하고 빈 입력은 \"판정 불가\"입니다. 모든 조건 · 예상 결과에 원문 인용을 요구하고 코드가 원문과 대조합니다. 문서에 없는 결과는 지어내지 않고 \"근거 없음\"으로 남깁니다. 이런 분께 맞습니다: 요구사항 정의서 · 기획서 · 화면설계서를 바탕으로 테스트 케이스를 써야 하는 QA · 테스터.",
+      "en": "A web service that turns requirement, planning and screen-design documents into evidence-backed test cases and exports them to Excel, in a recommended form or one you upload. Code-based gates make the judgments, and the AI only proposes. Setup, documents, requirements and conditions, design, cases, gates and traceability, export. 27 gates return PASS / FAIL / UNKNOWN; empty input is \"cannot judge\". Every condition and expected result needs a source quote that code verifies. Results missing from documents are left as \"no evidence\" instead of invented. A good fit for: QA engineers and testers writing test cases from requirement, planning and screen documents."
+     }
+    },
+    {
+     "id": "fitwright",
+     "text": {
+      "ko": "공고 작성과 지원자 평가, 두 서비스로 채용 서류 검토를 돕는 웹 서비스. 공고는 근거와 함께 필수 스펙을 정하고, 평가는 이력서를 기준대로 단계마다 걸러 가중 점수와 면접 질문까지 이어갑니다. 점수와 판단 근거 대조는 AI가 아니라 코드가 합니다. 공고 작성(W1~W4)에서 필요 스펙을 근거와 함께 정해 공고문을 쓰고, 지원자 평가(G1~G6)에서 그 기준으로 이력서를 거릅니다. 따로 써도, 이어 써도 됩니다. 점수 근거는 이력서 원문 인용이며, 인용을 원문과 코드가 대조해 없으면 0점입니다. 이런 분께 맞습니다: 어떤 파트에 어떤 사람을 뽑을지부터 정리해 공고문을 써야 하는 채용 담당 · 팀장.",
+      "en": "A web service for hiring-document review, in two parts: writing a job post and evaluating applicants. The post fixes must-have specs with evidence, and the evaluation filters résumés against those criteria stage by stage into weighted scores and interview questions. Scores and evidence checks are done by code, not by the AI. Write the posting (W1-W4) with evidenced specs, then evaluate applicants (G1-G6) against them. Use either alone or chained. Scores need a résumé quote that code verifies against the source; without it the score is zero. A good fit for: Hiring managers who need to decide what kind of person each part needs and write the posting."
+     }
+    },
+    {
+     "id": "codemotionmaker",
+     "text": {
+      "ko": "말로 부탁하면 코드로 프레임을 그려 모션그래픽 MP4를 만드는 웹 서비스. 내 PC의 Claude·Codex가 코드를 짜고 내 PC의 Chrome이 한 프레임씩 찍어, 영상 편집 프로그램 없이 광고·소개·프로모션 영상을 만듭니다. 단계와 검사 55개가 박자·글꼴·소리를 고정합니다. 내 PC의 Claude · Codex가 모션그래픽을 코드로 짜고, 내 PC의 Chrome이 한 프레임씩 찍어 MP4를 만듭니다. 브리프 → 컨셉 → 비트 표 → 장면 · 소리 → 렌더 · 검수 → 시청 · 승인. \"몇 프레임에 무엇이\"를 정수 프레임으로 못 박은 표 하나를 영상과 소리가 같이 읽습니다. 이런 분께 맞습니다: 영상 편집 프로그램 없이 광고 · 소개 · 프로모션 모션그래픽이 필요한 마케터 · 1인 사업자.",
+      "en": "A web service that turns a plain request into a motion-graphics MP4 drawn as code. Your own Claude or Codex writes the frames and your Chrome captures them one by one, so ads, intros and promos need no video editor. A fixed pipeline and 55 checks keep timing, fonts and sound in line. Your PC's Claude or Codex writes the motion graphics as code and your Chrome captures frame by frame into an MP4. Brief, concept, beat table, scenes and sound, render and review, then watch and approve. One integer-frame beat table drives both picture and sound. A good fit for: Marketers and solo founders who need ad, intro or promo motion graphics without a video editor."
+     }
+    },
+    {
+     "id": "cel-studio",
+     "text": {
+      "ko": "영상이나 사진을 끌어다 놓으면 움짤(GIF)이 되는 한국어 브라우저 도구 모음. 영상·이미지를 GIF로 만들고, 프레임 편집기와 효과, 용량 줄이기, 시트 자르기, 영상 도구까지 한 곳에서 다룹니다. 파일은 가입이나 업로드 없이 내 브라우저 안에서만 처리됩니다. 구간 · 크기 · 프레임 속도 · 색상 · 디더링을 조절해 영상이나 사진 여러 장을 움짤로 만듭니다. 프레임 삭제 · 복제 · 순서 변경, 자르기 · 회전, 글자, 색 보정, 배경 제거, 속도와 반복 횟수까지 한 화면에서 다룹니다. 이런 분께 맞습니다: 영상 일부를 움짤(GIF)로 빠르게 만들고 싶은 블로거 · 커뮤니티 이용자.",
+      "en": "A Korean-language suite of browser tools: drop a video or photos and get a GIF. It turns video and images into GIFs and adds a frame editor with effects, file-size reduction, sprite-sheet cutting and video tools in one place. Files are processed only inside your browser, with no sign-up or upload. Turn a video or several photos into a GIF with range, size, frame rate, color and dithering controls. Delete, duplicate and reorder frames, crop, rotate, add text, color-correct, remove backgrounds and set speed and loops in one place. A good fit for: Bloggers and community users who want a quick GIF from part of a video."
+     }
+    },
+    {
+     "id": "kein-journal",
+     "text": {
+      "ko": "AI 자동화의 실패와 복구, 앱 제작과 심사, 플레이 중인 게임의 공식 공지를 출처와 날짜까지 구분해 남기는 제작 기록 블로그. AI가 조사와 초안을 쓰고, 독립 검토와 자동 공개 게이트를 통과한 글만 발행합니다. AI 사용기 · 게임 · 내 앱 · 내 이야기, 그리고 웹 도구 사용법을 나눠 읽을 수 있습니다. 공식 공지, 직접 겪은 일, 추정을 구분해 적고 출처와 날짜를 남깁니다. 이런 분께 맞습니다: AI 자동화가 실제로 실패하고 복구되는 과정을 솔직하게 읽고 싶은 개발자 · 기획자.",
+      "en": "A production-journal blog covering AI automation failures and recovery, app building and review, and sourced game updates. AI researches and drafts; only posts that pass an independent review and an automated release gate are published. Read AI usage notes, games, my apps and personal stories, plus web-tool how-tos. Official notices, first-hand experience and speculation are kept apart, with sources and dates. A good fit for: Developers and planners who want honest accounts of AI automation failures and recoveries."
+     }
+    },
+    {
+     "id": "kein-games",
+     "text": {
+      "ko": "설치와 가입 없이 브라우저에서 바로 플레이하는 웹게임 포털. 웹게임 파이프라인으로 양산하고, 편입 검사를 통과한 게임만 올립니다. 다운로드도 가입도 없이 액션 · 퍼즐 · 전략 · 아케이드 게임을 한곳에서 바로 시작합니다. 제목이나 태그로 검색하고 육성 · 캐주얼 · 퍼즐 · 머지 · 단어 · 관찰력 · 길찾기 · 아케이드 · 논리 · 리듬 같은 장르 칩으로 거릅니다. 이런 분께 맞습니다: 설치나 가입 없이 잠깐 즐길 게임을 찾는 사람.",
+      "en": "A browser game portal with no install or sign-up. Games come out of a pipeline I designed and are published only after passing admission checks. Start action, puzzle, strategy and arcade games in one place with no download or sign-up. Search by title or tag and filter by genre chips such as raising, casual, puzzle, merge, word, observation, pathfinding, arcade, logic and rhythm. A good fit for: People who want a quick game with no install or sign-up."
+     }
+    },
+    {
+     "id": "kein-tools",
+     "text": {
+      "ko": "계산기부터 PDF·이미지 처리까지, 가입과 업로드 없이 기기 안에서 처리하는 실용 웹 도구 모음. 웹 도구 공장에서 한 번에 하나씩 만들어 공개하고, 도구마다 규칙과 한계를 함께 적었습니다. 입력값과 파일을 가능한 한 사용자의 기기 안에서 처리합니다. 이미지 · PDF · QR · 게임 · 생활/학습 · 업무로 나눠 검색하고 거를 수 있습니다. 이런 분께 맞습니다: PDF 합치기 · 이미지 변환처럼 파일을 서버에 올리기 싫은 일을 처리하려는 사람.",
+      "en": "A collection of practical web tools, from calculators to PDF and image utilities, processed on your device with no sign-up or upload. The web tools factory builds them one at a time, and each tool lists its rules and limits. Inputs and files are processed on your device wherever possible. Search and filter across image, PDF, QR, game, life/study and work categories. A good fit for: People handling PDF or image tasks who do not want to upload files to a server."
+     }
+    },
+    {
+     "id": "proofdesk",
+     "text": {
+      "ko": "보고서 · 견적서 · 제안서 · 코드를 제출하기 전에 교정을 보는 검수 서비스. 오타, 안 맞는 숫자, 빈칸, 기간, 참여자와 공수 매칭, 요구사항 누락을 찾아 수정을 제안하고, 고친 결과를 다시 검수해 최종 확인서까지 받습니다. 맞는지는 계산하는 코드가 판정하고 AI는 근거와 함께 제안만 합니다. 합계 · 단가×수량 · 부가세 · 날짜 범위 · 요일 · 명단 일치 · 빈칸 · 자리표시자 · 비밀키 노출은 AI가 아니라 코드가 계산해서 판정합니다. AI가 짚은 모든 문제는 원문에서 그대로 복사한 인용이 있어야 하고, 코드가 문서와 대조해 없으면 목록에 오르지 못합니다. 이런 분께 맞습니다: 견적서 · 제안서 · 결과보고서를 제출하기 전에 숫자와 문구를 한 번 더 확인해야 하는 PM · 영업 · 사업 담당.",
+      "en": "A proofreading service to run before you submit reports, quotes, proposals and code. It finds typos, numbers that do not add up, blanks, date and staffing mismatches and missing requirements, proposes fixes, re-checks your corrections and issues a final sign-off. Code decides what is correct; the AI only proposes, with evidence. Totals, unit price × quantity, VAT, date ranges, weekdays, roster matches, blanks, placeholders and exposed secrets are computed and judged by code, not AI. Every AI finding needs a verbatim quote from the source; code checks it against the document and drops it if absent. A good fit for: PMs, sales and business staff who must double-check numbers and wording before submitting quotes, proposals and reports."
+     }
+    },
+    {
+     "id": "pagefold",
+     "text": {
+      "ko": "업로드 없이 브라우저 안에서 PDF를 합치고 나누고 고치는 웹 서비스. 쪽 정리 · 글자 · 형광펜 · 도형 · 서명 · 도장 · 가리기 · 양식 채우기를 하는 편집기와, 파일만 놓으면 바로 되는 합치기 · 나누기를 따로 제공합니다. 한글 PDF를 그대로 다루고 파일은 이 브라우저 밖으로 나가지 않습니다. 파일은 서버로 가지 않습니다. 이 사이트는 화면과 코드만 내려주는 정적 서버이고, 브라우저 보안 정책(CSP)으로 다른 곳으로의 전송도 막혀 있습니다. 여러 PDF를 끌어 순서를 정하고 파일마다 \"1-3, 7\"처럼 쓸 쪽만 골라 한 파일로 합칩니다. 이름순 정렬과 순서 뒤집기도 됩니다. 이런 분께 맞습니다: 계약서 · 신청서에 서명하고 날짜와 글자를 써 넣어 바로 돌려줘야 하는 직장인 · 프리랜서.",
+      "en": "A web service for merging, splitting and editing PDFs inside the browser without uploading. It has an editor for page management, text, highlights, shapes, signatures, stamps, redaction and form filling, plus standalone merge and split tools. Korean PDFs work as they are, and files never leave the browser. Files never go to a server. The site only serves static pages and a browser security policy (CSP) also blocks sending data elsewhere. Drag PDFs into order and pick pages per file such as \"1-3, 7\" before merging into one file. Name sort and reverse are included. A good fit for: Workers and freelancers who must sign, date and fill in contracts or forms and send them back quickly."
+     }
+    }
+   ]
+  },
+  {
+   "id": "games",
+   "url": "https://games.kimjinwan.com/",
+   "count": {
+    "value": 78,
+    "as_of": "2026-10-13",
+    "source": "kein-web-games/src/games.json 배열 길이(legacy 표시 1개 포함). 대표 12개는 featured 우선, 이후 slug 순; legacy 는 제외"
+   },
+   "items": [
+    {
+     "title": {
+      "ko": "애스터로이드 벨트",
+      "en": "Asteroids Belt"
+     },
+     "summary": "잔해를 파괴하고 구조 신호는 살려내며 우주 벨트를 돌파하세요. 장르는 액션·슈팅입니다. 조작은 키보드·터치, 한 판은 5~15분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/asteroids-belt/"
+    },
+    {
+     "title": {
+      "ko": "캐피 하이랜드",
+      "en": "Capy Highlands"
+     },
+     "summary": "카피바라와 함께 메마른 고원을 오르며 온천을 되찾으세요. 장르는 액션·서바이버입니다. 조작은 키보드·터치, 한 판은 10~20분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/capy-highlands/"
+    },
+    {
+     "title": {
+      "ko": "코스모 코기의 별자리 항로",
+      "en": "Cosmo Corgi Star Route"
+     },
+     "summary": "우주 항해사 코스모와 함께 반짝인 별의 순서를 기억하고 별자리 항로를 복원하세요. 50개 스테이지에서 미끼 신호, 제한 시간, 회전 성운이 차례로 등장합니다. 장르는 퍼즐·기억력입니다. 조작은 마우스·터치, 한 판은 3~8분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/cosmo-corgi-star-route/"
+    },
+    {
+     "title": {
+      "ko": "해류의 성가",
+      "en": "Current Canticle"
+     },
+     "summary": "생명 해류를 그리고 튕겨 산호의 색과 화음을 맞추는 네트워크 전략 게임입니다. 장르는 전략·퍼즐입니다. 조작은 마우스·터치, 한 판은 10~30분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/current-canticle/"
+    },
+    {
+     "title": {
+      "ko": "고래 합치기",
+      "en": "Merge Whale"
+     },
+     "summary": "같은 고래를 충돌시켜 더 큰 고래로 진화시키고 수조의 위험선을 버티세요. 장르는 퍼즐·머지입니다. 조작은 마우스·터치, 한 판은 3~15분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/merge-whale/"
+    },
+    {
+     "title": {
+      "ko": "몬스터 살아남기",
+      "en": "Monster Throne"
+     },
+     "summary": "몬스터 무리를 뚫고 성장해 최강의 왕좌를 차지하세요. 장르는 액션·서바이버입니다. 조작은 키보드·터치, 한 판은 10~20분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/monster-throne/"
+    },
+    {
+     "title": {
+      "ko": "네온 코일",
+      "en": "Neon Coil"
+     },
+     "summary": "빛의 궤적을 휘감아 드론과 미로를 돌파하는 네온 액션 퍼즐입니다. 장르는 액션·퍼즐입니다. 조작은 키보드·터치, 한 판은 5~15분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/neon-coil/"
+    },
+    {
+     "title": {
+      "ko": "폭풍유리 궤도",
+      "en": "Stormglass Orbit"
+     },
+     "summary": "세 룬 궤도를 회전시켜 충돌 순서를 설계하는 물리 전술 로그라이트입니다. 장르는 전략·로그라이트입니다. 조작은 마우스·터치·게임패드, 한 판은 15~40분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/stormglass-orbit/"
+    },
+    {
+     "title": {
+      "ko": "웨일 서바이버",
+      "en": "Whale Survivors"
+     },
+     "summary": "픽셀 고래를 움직여 몰려드는 적을 버티고 무기 조합을 완성하세요. 장르는 액션·서바이버입니다. 조작은 키보드·터치, 한 판은 10~20분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/whale-survivors/"
+    },
+    {
+     "title": {
+      "ko": "시그널 록",
+      "en": "Signal Lock"
+     },
+     "summary": "움직이는 신호를 추적하고 반응 시간을 줄여가는 정밀 에임 챌린지입니다. 장르는 액션·훈련입니다. 조작은 마우스·터치, 한 판은 2~5분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/aim-trainer/"
+    },
+    {
+     "title": {
+      "ko": "아크 일: 전기 경로 그리기",
+      "en": "Arc Eel"
+     },
+     "summary": "전기뱀장어와 EV-PULSE 원본 아크 경로를 그려 단자 쌍을 충돌 없이 연결하세요. 장르는 퍼즐·경로입니다. 조작은 마우스·터치, 한 판은 2~7분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/arc-eel/"
+    },
+    {
+     "title": {
+      "ko": "볼트 밸런스: 전력 균형",
+      "en": "Volt Balance"
+     },
+     "summary": "북극곰 관제사와 EV-PULSE 원본 전력 셀을 정렬해 출력 균형을 안정화하세요. 장르는 퍼즐·숫자입니다. 조작은 마우스·터치, 한 판은 2~7분 정도입니다.",
+     "url": "https://games.kimjinwan.com/play/balance-bear/"
+    }
+   ]
+  },
+  {
+   "id": "tools",
+   "url": "https://apps.kimjinwan.com/",
+   "count": {
+    "value": 57,
+    "as_of": "2026-10-13",
+    "source": "kein-web-tools/lib/tool-catalog.ts 의 tools 배열 항목(href) 수. 대표는 분류(이미지·PDF·QR·게임·생활·학습·업무)별 카탈로그 앞 2개; 요약 = 카탈로그 설명 + 각 도구 페이지 머리말 문단"
+   },
+   "items": [
+    {
+     "title": "이미지 용량 줄이기",
+     "category": "이미지",
+     "summary": "사진 크기와 품질을 조절해 JPG·WebP 파일 용량을 줄입니다. 사진의 최대 너비와 품질을 조절해 더 작은 파일로 저장합니다. 원본은 서버로 전송되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/image-compressor/"
+    },
+    {
+     "title": "이미지 형식 변환기",
+     "category": "이미지",
+     "summary": "HEIC·JPG·PNG·WebP 이미지를 원하는 형식으로 바꿉니다. HEIC·JPG·PNG·WebP 파일을 원하는 형식으로 바꿉니다. 사진은 기기 밖으로 나가지 않습니다.",
+     "url": "https://apps.kimjinwan.com/image-converter/"
+    },
+    {
+     "title": "이미지 PDF 변환기",
+     "category": "이미지",
+     "summary": "여러 사진을 순서대로 A4 PDF 한 파일로 만듭니다. 선택한 사진을 파일 순서대로 A4 PDF 한 개에 담습니다.",
+     "url": "https://apps.kimjinwan.com/image-to-pdf/"
+    },
+    {
+     "title": "PDF 페이지 정리",
+     "category": "PDF",
+     "summary": "페이지 순서를 바꾸거나 필요한 페이지만 새 PDF로 추출합니다. 페이지 번호 순서를 입력해 재정렬하거나 필요한 페이지만 새 PDF로 추출합니다.",
+     "url": "https://apps.kimjinwan.com/pdf-organizer/"
+    },
+    {
+     "title": "QR 코드 만들기",
+     "category": "QR",
+     "summary": "URL과 텍스트를 스캔 가능한 QR 코드 PNG로 만듭니다. URL이나 텍스트를 입력해 바로 스캔할 수 있는 PNG를 만듭니다.",
+     "url": "https://apps.kimjinwan.com/qr-generator/"
+    },
+    {
+     "title": "QR 코드 스캔·해석",
+     "category": "QR",
+     "summary": "사진과 카메라에서 QR 내용을 읽고 주소를 확인합니다. 사진이나 카메라에서 QR 내용을 읽고, 주소를 확인한 뒤 선택해서 엽니다.",
+     "url": "https://apps.kimjinwan.com/qr-reader/"
+    },
+    {
+     "title": "토너먼트 대진표 생성기",
+     "category": "게임",
+     "summary": "참가자 이름을 붙여 넣고 인쇄 가능한 단판 대진표를 만듭니다. 참가자를 한 줄에 한 명씩 입력하면 부전승을 포함한 단판 대진표를 만듭니다. 명단은 서버에 저장되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/tournament-bracket/"
+    },
+    {
+     "title": "날짜 계산기·디데이",
+     "category": "생활·학습",
+     "summary": "두 날짜 사이 일수와 디데이를 세고, 기준일에 일·주를 더한 날짜와 요일을 구합니다. 두 날짜 사이가 며칠인지 세고, 기준일에 일이나 주를 더한 날짜와 요일을 구합니다. 입력값은 브라우저 안에서만 계산합니다.",
+     "url": "https://apps.kimjinwan.com/date-calculator/"
+    },
+    {
+     "title": "단가 비교 계산기",
+     "category": "생활·학습",
+     "summary": "용량과 묶음 수가 다른 상품의 실제 단가를 같은 기준으로 비교합니다. 가격 ÷ 전체 용량으로 실제 단가를 맞춰 비교합니다. 입력값은 서버로 전송되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/unit-price/"
+    },
+    {
+     "title": "글자 수·읽기 시간 계산기",
+     "category": "생활·학습",
+     "summary": "공백 포함 글자 수와 단어 수, 예상 읽기 시간을 즉시 확인합니다. 한국어 원고와 블로그 글의 길이를 브라우저에서 계산합니다. 입력한 내용은 브라우저 밖으로 전송되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/word-counter/"
+    },
+    {
+     "title": "좌석 배치표 생성기",
+     "category": "생활·학습",
+     "summary": "고정 좌석을 지키면서 나머지 인원을 섞어 인쇄합니다. 한 줄에 한 명씩 입력하고 고정 좌석을 제외한 자리를 섞습니다. 이름은 서버에 저장되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/seating-chart/"
+    },
+    {
+     "title": "프로젝트 체크리스트",
+     "category": "업무",
+     "summary": "단계·작업·담당자를 묶어 복사하고 인쇄합니다. 단계, 작업, 담당자를 한 줄씩 입력해 바로 체크하고 복사하거나 인쇄합니다. 내용은 서버에 저장되지 않습니다.",
+     "url": "https://apps.kimjinwan.com/project-checklist/"
+    }
+   ]
+  },
+  {
+   "id": "gizmo",
+   "url": "https://gizmo-store.com/",
+   "count": {
+    "value": 50,
+    "as_of": "2026-10-13",
+    "source": "https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순"
+   },
+   "groups": [
+    {
+     "id": "research",
+     "label": {
+      "ko": "조사·리서치",
+      "en": "Research"
+     },
+     "items": [
+      {
+       "title": "참고문헌 정리 (있는 출처만)",
+       "tagline": "내가 가진 출처 목록을 일정한 형식으로 정리해 줘요",
+       "summary": "내가 가진 출처 목록을 일정한 형식으로 정리해 줘요 리포트·논문에서 참고문헌을 정리하는 분.",
+       "url": "https://gizmo-store.com/tool/citation-organizer"
+      },
+      {
+       "title": "선택지 조사·비교 틀",
+       "tagline": "제품·서비스·방법을 같은 기준으로 조사해 비교표로 만들 틀을 줘요",
+       "summary": "제품·서비스·방법을 같은 기준으로 조사해 비교표로 만들 틀을 줘요 구매·도입 전에 비교 조사를 하는 분.",
+       "url": "https://gizmo-store.com/tool/compare-options-research"
+      },
+      {
+       "title": "딥리서치 요청서 만들기",
+       "tagline": "AI의 조사 기능에 맡길 일을 빠짐없이 지시하는 요청서를 써 줘요",
+       "summary": "AI의 조사 기능에 맡길 일을 빠짐없이 지시하는 요청서를 써 줘요 \"조사해 줘\"라고만 해서 얕은 결과를 받은 분.",
+       "url": "https://gizmo-store.com/tool/deep-research-brief"
+      },
+      {
+       "title": "자료 폴더·이름 규칙 만들기",
+       "tagline": "쌓여 가는 자료를 찾기 쉽게 정리하는 규칙을 정해 줘요",
+       "summary": "쌓여 가는 자료를 찾기 쉽게 정리하는 규칙을 정해 줘요 파일이 뒤죽박죽인 분.",
+       "url": "https://gizmo-store.com/tool/folder-system"
+      },
+      {
+       "title": "용어집 만들기",
+       "tagline": "새 분야의 낯선 용어를 정리해 한눈에 보이게 해 줘요",
+       "summary": "새 분야의 낯선 용어를 정리해 한눈에 보이게 해 줘요 낯선 분야를 빨리 이해해야 하는 분.",
+       "url": "https://gizmo-store.com/tool/glossary-builder"
+      },
+      {
+       "title": "가설 세우고 확인 계획 짜기",
+       "tagline": "추측을 확인 가능한 가설과 작은 실험으로 바꿔 줘요",
+       "summary": "추측을 확인 가능한 가설과 작은 실험으로 바꿔 줘요 \"아마 이럴 것 같은데\"를 확인하고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/hypothesis-test"
+      },
+      {
+       "title": "인터뷰 내용에서 발견 뽑기",
+       "tagline": "인터뷰·면담 기록에서 반복되는 주제와 인용할 말을 정리해 줘요",
+       "summary": "인터뷰·면담 기록에서 반복되는 주제와 인용할 말을 정리해 줘요 고객·사용자 인터뷰를 진행한 분.",
+       "url": "https://gizmo-store.com/tool/interview-synthesis"
+      },
+      {
+       "title": "강의·영상 내용 정리",
+       "tagline": "받아 적은 글이나 자막을 구조화된 노트로 바꿔 줘요",
+       "summary": "받아 적은 글이나 자막을 구조화된 노트로 바꿔 줘요 강의, 세미나, 영상 내용을 정리하는 분.",
+       "url": "https://gizmo-store.com/tool/lecture-to-notes"
+      },
+      {
+       "title": "시장조사 틀",
+       "tagline": "시장 규모·고객·경쟁·트렌드를 조사할 항목과 방법을 짜 줘요",
+       "summary": "시장 규모·고객·경쟁·트렌드를 조사할 항목과 방법을 짜 줘요 창업·신규 사업·기획을 준비하는 분.",
+       "url": "https://gizmo-store.com/tool/market-research-frame"
+      },
+      {
+       "title": "여러 자료 종합하기",
+       "tagline": "자료 여러 개를 읽고 일치하는 점과 엇갈리는 점을 정리해 줘요",
+       "summary": "자료 여러 개를 읽고 일치하는 점과 엇갈리는 점을 정리해 줘요 자료를 쌓아 두고 정리를 못 하는 분.",
+       "url": "https://gizmo-store.com/tool/multi-source-synthesis"
+      },
+      {
+       "title": "자료 메모 정리 (한 장 노트)",
+       "tagline": "흩어진 메모와 발췌를 주제별 노트로 정리해 줘요",
+       "summary": "흩어진 메모와 발췌를 주제별 노트로 정리해 줘요 자료를 모았는데 쓸 수 있는 형태가 아닌 분.",
+       "url": "https://gizmo-store.com/tool/notes-organizer"
+      },
+      {
+       "title": "읽을 자료 우선순위 정하기",
+       "tagline": "자료 목록에서 먼저 읽을 것과 건너뛸 것을 가려 줘요",
+       "summary": "자료 목록에서 먼저 읽을 것과 건너뛸 것을 가려 줘요 읽을 게 산더미인 분.",
+       "url": "https://gizmo-store.com/tool/reading-priority"
+      },
+      {
+       "title": "조사 계획 세우기",
+       "tagline": "막연한 궁금증을 답할 수 있는 질문과 조사 순서로 바꿔 줘요",
+       "summary": "막연한 궁금증을 답할 수 있는 질문과 조사 순서로 바꿔 줘요 무엇부터 조사해야 할지 막막한 모든 분.",
+       "url": "https://gizmo-store.com/tool/research-plan"
+      },
+      {
+       "title": "조사 보고서 구성",
+       "tagline": "조사 결과를 읽는 사람이 바로 이해하는 보고서 틀로 짜 줘요",
+       "summary": "조사 결과를 읽는 사람이 바로 이해하는 보고서 틀로 짜 줘요 조사한 걸 정리해 발표·보고해야 하는 분.",
+       "url": "https://gizmo-store.com/tool/research-report-outline"
+      },
+      {
+       "title": "검색어 만들기 (논문·뉴스·자료)",
+       "tagline": "찾고 싶은 주제를 효과적인 검색어 조합으로 바꿔 줘요",
+       "summary": "찾고 싶은 주제를 효과적인 검색어 조합으로 바꿔 줘요 검색해도 엉뚱한 결과만 나오는 분.",
+       "url": "https://gizmo-store.com/tool/search-query-builder"
+      },
+      {
+       "title": "딥리서치 요청서 스킬",
+       "tagline": "조사 기능이 있는 AI에 맡길 요청서를 같은 틀로 만들어요",
+       "summary": "조사 기능이 있는 AI에 맡길 요청서를 같은 틀로 만들어요 조사를 AI에게 자주 맡기는 분.",
+       "url": "https://gizmo-store.com/tool/skill-deep-research-brief-skill"
+      },
+      {
+       "title": "자료 노트 정리 스킬",
+       "tagline": "흩어진 메모를 주제별 노트로 정리하되 출처를 만들어 붙이지 않아요",
+       "summary": "흩어진 메모를 주제별 노트로 정리하되 출처를 만들어 붙이지 않아요 메모와 발췌가 쌓이는 분.",
+       "url": "https://gizmo-store.com/tool/skill-note-organizer-skill"
+      },
+      {
+       "title": "조사 계획 스킬",
+       "tagline": "조사 주제를 받으면 늘 같은 방식으로 질문을 쪼개 조사 계획을 만들어요",
+       "summary": "조사 주제를 받으면 늘 같은 방식으로 질문을 쪼개 조사 계획을 만들어요 조사를 자주 하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-research-planner"
+      },
+      {
+       "title": "자료 종합 스킬",
+       "tagline": "여러 자료를 같은 틀로 종합하고 확신 정도를 표시해요",
+       "summary": "여러 자료를 같은 틀로 종합하고 확신 정도를 표시해요 여러 자료를 비교해야 하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-research-synthesizer"
+      },
+      {
+       "title": "출처 평가 스킬",
+       "tagline": "출처를 받을 때마다 같은 점검표로 신뢰도 확인 포인트를 알려요",
+       "summary": "출처를 받을 때마다 같은 점검표로 신뢰도 확인 포인트를 알려요 자료를 근거로 쓰는 분.",
+       "url": "https://gizmo-store.com/tool/skill-source-evaluator"
+      },
+      {
+       "title": "출처 믿을 만한지 따져 보기",
+       "tagline": "기사·블로그·보고서가 얼마나 믿을 만한지 점검표로 확인해 줘요",
+       "summary": "기사·블로그·보고서가 얼마나 믿을 만한지 점검표로 확인해 줘요 인터넷 자료를 근거로 쓰려는 분.",
+       "url": "https://gizmo-store.com/tool/source-credibility"
+      },
+      {
+       "title": "통계·숫자 제대로 해석하기",
+       "tagline": "기사나 보고서의 숫자를 읽을 때 속지 않게 점검해 줘요",
+       "summary": "기사나 보고서의 숫자를 읽을 때 속지 않게 점검해 줘요 숫자가 많은 자료를 읽는 분.",
+       "url": "https://gizmo-store.com/tool/stats-interpretation"
+      },
+      {
+       "title": "설문 결과 읽기",
+       "tagline": "설문 응답을 정리하고 말할 수 있는 것과 없는 것을 구분해 줘요",
+       "summary": "설문 응답을 정리하고 말할 수 있는 것과 없는 것을 구분해 줘요 설문 결과를 보고서에 써야 하는 분.",
+       "url": "https://gizmo-store.com/tool/survey-analysis"
+      },
+      {
+       "title": "설문 설계하기",
+       "tagline": "알고 싶은 것을 답하기 쉬운 설문 문항으로 바꿔 줘요",
+       "summary": "알고 싶은 것을 답하기 쉬운 설문 문항으로 바꿔 줘요 고객·학생·구성원 설문을 만드는 분.",
+       "url": "https://gizmo-store.com/tool/survey-design"
+      }
+     ]
+    },
+    {
+     "id": "career",
+     "label": {
+      "ko": "업무·커리어",
+      "en": "Work & career"
+     },
+     "items": [
+      {
+       "title": "커리어 전환 로드맵",
+       "tagline": "다른 직무로 옮기기 위한 현실적인 단계를 같이 정리해 줘요",
+       "summary": "다른 직무로 옮기기 위한 현실적인 단계를 같이 정리해 줘요 직무를 바꾸고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/career-pivot"
+      },
+      {
+       "title": "재직자 커피챗 질문",
+       "tagline": "관심 있는 회사·직무의 재직자에게 물을 질문을 준비해 줘요",
+       "summary": "관심 있는 회사·직무의 재직자에게 물을 질문을 준비해 줘요 회사를 직접 확인하고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/coffee-chat-questions"
+      },
+      {
+       "title": "입사 첫 90일 계획",
+       "tagline": "새 회사에서 첫 3개월 동안 할 일을 단계별로 정리해 줘요",
+       "summary": "새 회사에서 첫 3개월 동안 할 일을 단계별로 정리해 줘요 새로 입사했거나 입사 예정인 분.",
+       "url": "https://gizmo-store.com/tool/first-90-days"
+      },
+      {
+       "title": "Fitwright — 채용 공고 작성과 이력서 1차 검토",
+       "tagline": "필요한 사람에 맞게 공고를 쓰고, 그 기준으로 이력서를 근거와 함께 점수 매겨 정리해요",
+       "summary": "필요한 사람에 맞게 공고를 쓰고, 그 기준으로 이력서를 근거와 함께 점수 매겨 정리해요 채용 공고를 쓰는 분, 쌓인 이력서를 일관된 기준으로 1차 검토해야 하는 채용 담당자·팀장.",
+       "url": "https://gizmo-store.com/tool/fitwright"
+      },
+      {
+       "title": "경력 공백 설명하기",
+       "tagline": "공백 기간을 정직하고 담담하게 설명하는 문장을 만들어 줘요",
+       "summary": "공백 기간을 정직하고 담담하게 설명하는 문장을 만들어 줘요 휴직·공백기가 걱정되는 분.",
+       "url": "https://gizmo-store.com/tool/gap-explain"
+      },
+      {
+       "title": "인수인계서 만들기",
+       "tagline": "내 업무를 후임이 바로 이어받도록 정리해 줘요",
+       "summary": "내 업무를 후임이 바로 이어받도록 정리해 줘요 퇴사·이동을 앞둔 분.",
+       "url": "https://gizmo-store.com/tool/handover-doc"
+      },
+      {
+       "title": "헤드헌터·채용 담당자 답장",
+       "tagline": "제안 메일에 관심 있는 척 아닌 척 정중하게 답해 줘요",
+       "summary": "제안 메일에 관심 있는 척 아닌 척 정중하게 답해 줘요 이직 제안 연락을 받은 분.",
+       "url": "https://gizmo-store.com/tool/headhunter-reply"
+      },
+      {
+       "title": "경험을 면접 답변으로 (STAR)",
+       "tagline": "내 경험 하나를 면접 답변 구조로 바꿔 줘요",
+       "summary": "내 경험 하나를 면접 답변 구조로 바꿔 줘요 \"경험을 말해 보세요\"에 두서없이 말하게 되는 분.",
+       "url": "https://gizmo-store.com/tool/interview-answers-star"
+      },
+      {
+       "title": "면접 후 감사 메일",
+       "tagline": "면접 뒤 짧은 감사와 보충 이야기를 전하는 메일을 써 줘요",
+       "summary": "면접 뒤 짧은 감사와 보충 이야기를 전하는 메일을 써 줘요 면접을 마친 분.",
+       "url": "https://gizmo-store.com/tool/interview-thankyou"
+      },
+      {
+       "title": "오퍼 여러 개 비교",
+       "tagline": "합격한 곳들을 내 기준으로 비교하고 결정 전 질문을 정리해 줘요",
+       "summary": "합격한 곳들을 내 기준으로 비교하고 결정 전 질문을 정리해 줘요 합격 통보를 둘 이상 받은 분.",
+       "url": "https://gizmo-store.com/tool/offer-compare"
+      },
+      {
+       "title": "퇴사 통보 준비",
+       "tagline": "퇴사 의사를 전할 말과 메일을 정리해 줘요",
+       "summary": "퇴사 의사를 전할 말과 메일을 정리해 줘요 퇴사를 결심한 분. (노동법 판단은 하지 않아요)",
+       "url": "https://gizmo-store.com/tool/resign-notice"
+      },
+      {
+       "title": "연봉 협상 대화 준비",
+       "tagline": "희망 연봉을 근거와 함께 말하는 방법을 준비해 줘요",
+       "summary": "희망 연봉을 근거와 함께 말하는 방법을 준비해 줘요 연봉 협상이 어색한 분.",
+       "url": "https://gizmo-store.com/tool/salary-negotiation"
+      },
+      {
+       "title": "회사 조사·채점 스킬",
+       "tagline": "회사를 조사해 내 기준으로 점수와 근거·출처·신뢰도를 정리하는 방식을 가르쳐요",
+       "summary": "회사를 조사해 내 기준으로 점수와 근거·출처·신뢰도를 정리하는 방식을 가르쳐요 이직을 준비하며 여러 회사를 비교하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-company-research-scorer"
+      },
+      {
+       "title": "오퍼 비교 스킬",
+       "tagline": "여러 오퍼를 내 기준 가중치로 같은 방식으로 비교해요",
+       "summary": "여러 오퍼를 내 기준 가중치로 같은 방식으로 비교해요 이직 오퍼를 비교하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-offer-comparer"
+      },
+      {
+       "title": "이력서 맞춤 수정 스킬",
+       "tagline": "채용 공고에 맞춰 이력서를 조정하되 없는 경력은 만들지 않도록 가르쳐요",
+       "summary": "채용 공고에 맞춰 이력서를 조정하되 없는 경력은 만들지 않도록 가르쳐요 여러 곳에 지원하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-resume-tailor-skill"
+      },
+      {
+       "title": "이직 사유 답변 준비",
+       "tagline": "면접에서 \"왜 이직하나요?\"에 정직하고 긍정적으로 답하는 방법을 정리해 줘요",
+       "summary": "면접에서 \"왜 이직하나요?\"에 정직하고 긍정적으로 답하는 방법을 정리해 줘요 이직 사유가 부정적이라 말하기 부담스러운 분.",
+       "url": "https://gizmo-store.com/tool/why-leave-answer"
+      }
+     ]
+    },
+    {
+     "id": "creative",
+     "label": {
+      "ko": "창작",
+      "en": "Creative"
+     },
+     "items": [
+      {
+       "title": "CodeMotionMaker — 말로 부탁하는 모션그래픽",
+       "tagline": "원하는 영상을 말로 설명하면 내 AI가 코드로 프레임을 그리고, 내 PC가 MP4로 만들어요",
+       "summary": "원하는 영상을 말로 설명하면 내 AI가 코드로 프레임을 그리고, 내 PC가 MP4로 만들어요 소개 영상·타이틀·설명용 모션그래픽이 필요하지만 편집 프로그램은 쓰기 싫은 분, 이미 Claude Code나 Codex를 쓰고 있는 분.",
+       "url": "https://gizmo-store.com/tool/codemotionmaker"
+      },
+      {
+       "title": "Codex 이미지 파이프라인 키트 (투명 PNG·프레임 세트)",
+       "tagline": "Codex 내장 이미지 생성을 터미널에서 불러, 투명 배경 PNG와 애니메이션 프레임을 프로젝트에 바로 쓸 파일로 가져와요",
+       "summary": "Codex 내장 이미지 생성을 터미널에서 불러, 투명 배경 PNG와 애니메이션 프레임을 프로젝트에 바로 쓸 파일로 가져와요 Codex 를 쓰는 개발자·게임 제작자 중, 만들어진 이미지를 프로젝트에 투명 PNG나 프레임 세트로 넣어야 하는 분. 터미널 명령을 직접 실행할 수 있는 분.",
+       "url": "https://gizmo-store.com/tool/codex-imagegen-kit"
+      },
+      {
+       "title": "Figma 브라우저 제어 키트 (MCP 없이)",
+       "tagline": "내 크롬의 Figma 탭을 Claude 가 직접 조종해 Figma 파일을 읽고 그리고 고쳐요",
+       "summary": "내 크롬의 Figma 탭을 Claude 가 직접 조종해 Figma 파일을 읽고 그리고 고쳐요 Claude Code·Claude 앱으로 Figma 작업을 시키고 싶지만 MCP 설정이나 호출 한도가 부담인 분, 크롬 브라우저 제어가 무엇인지 알고 위험을 감수할 수 있는 분.",
+       "url": "https://gizmo-store.com/tool/figma-browser-kit"
+      },
+      {
+       "title": "Forge — 요구사항에서 기획서·목업까지",
+       "tagline": "요구사항을 넣으면 정의서, 디자인 가이드, 핵심 화면, 목업 사이트, 기획서까지 단계별로 만들어 줘요",
+       "summary": "요구사항을 넣으면 정의서, 디자인 가이드, 핵심 화면, 목업 사이트, 기획서까지 단계별로 만들어 줘요 앱·서비스 아이디어를 기획서와 화면 시안으로 먼저 정리하고 싶은 분, 이미 Claude Code나 Codex를 쓰고 있어서 기획 작업에도 연결해 보고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/forge-planning"
+      },
+      {
+       "title": "기획 핑퐁 스킬 (아이디어 확장 + 충돌 검사)",
+       "tagline": "키워드 하나에서 갈래를 뻗고, 새 결정이 앞선 결정과 부딪히는지 매번 검사해요",
+       "summary": "키워드 하나에서 갈래를 뻗고, 새 결정이 앞선 결정과 부딪히는지 매번 검사해요 게임·서비스·세계관·스토리를 AI와 주고받으며 기획하는 분.",
+       "url": "https://gizmo-store.com/tool/skill-planning-pingpong"
+      },
+      {
+       "title": "이미지 품질 평가 스킬 (점수 대신 기준표·비교)",
+       "tagline": "AI에게 \"이거 괜찮아?\"라고 묻는 대신, 기준표와 레퍼런스 대조로 판정하게 해요",
+       "summary": "AI에게 \"이거 괜찮아?\"라고 묻는 대신, 기준표와 레퍼런스 대조로 판정하게 해요 AI로 만든 일러스트·캐릭터·UI 이미지가 쓸 만한지 일관되게 거르고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/skill-visual-quality-eval"
+      }
+     ]
+    },
+    {
+     "id": "dev",
+     "label": {
+      "ko": "개발",
+      "en": "Development"
+     },
+     "items": [
+      {
+       "title": "Casewright — 근거 있는 테스트 케이스 만들기",
+       "tagline": "요구사항·기획서에서 근거가 붙은 테스트 케이스를 만들고 엑셀 양식으로 내보내요",
+       "summary": "요구사항·기획서에서 근거가 붙은 테스트 케이스를 만들고 엑셀 양식으로 내보내요 QA·테스트 담당자, 기획서를 보고 테스트 케이스를 정리해야 하는 개발자·기획자.",
+       "url": "https://gizmo-store.com/tool/casewright"
+      },
+      {
+       "title": "출시 가능성 감사 스킬 (프로토타입을 완성이라 부르지 않기)",
+       "tagline": "만든 게임·앱이 어느 단계인지 증거로 판정하고, 상태 이름을 함부로 올리지 못하게 해요",
+       "summary": "만든 게임·앱이 어느 단계인지 증거로 판정하고, 상태 이름을 함부로 올리지 못하게 해요 게임·앱을 만들어 팔거나 광고로 수익을 내려는 분, AI가 \"다 됐어요\"라고 할 때 믿어도 되는지 확인하고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/skill-release-readiness-audit"
+      }
+     ]
+    },
+    {
+     "id": "writing",
+     "label": {
+      "ko": "글쓰기",
+      "en": "Writing"
+     },
+     "items": [
+      {
+       "title": "DocLoom — 브라우저 문서 편집기",
+       "tagline": "txt·md·docx·hwp·hwpx·puml 문서를 포맷별 전용 편집기로 만들고 고쳐요. 내 PC의 AI를 연결할 수도 있어요",
+       "summary": "txt·md·docx·hwp·hwpx·puml 문서를 포맷별 전용 편집기로 만들고 고쳐요. 내 PC의 AI를 연결할 수도 있어요 메모, 보고서, 한글 문서, 마크다운, 다이어그램을 설치 없이 한곳에서 다루고 싶은 분. 이미 Claude Code나 Codex를 쓰고 있어서 문서 작업에도 연결해 보고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/docloom"
+      },
+      {
+       "title": "Pitchwright — RFP에서 제안서까지",
+       "tagline": "RFP를 올리면 요구사항 추적표와 컴플라이언스 매트릭스를 만들고 제안서를 단계별로 써 나가요",
+       "summary": "RFP를 올리면 요구사항 추적표와 컴플라이언스 매트릭스를 만들고 제안서를 단계별로 써 나가요 공공·민간 제안서를 쓰는 분, RFP 요구사항을 빠뜨리지 않았는지 점검하고 싶은 분.",
+       "url": "https://gizmo-store.com/tool/pitchwright"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

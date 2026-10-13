@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유</title>
+<meta name="description" content="만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/blog/apps/age-calculator/">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유">
+<meta property="og:description" content="만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.">
+<meta property="og:url" content="https://kimjinwan.com/content/blog/apps/age-calculator/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유">
+<meta name="twitter:description" content="만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=15c229e3e4">
+<meta name="twitter:image:alt" content="“블로그 글 285편과 서비스·웹게임·웹 도구 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/age-calculator/#article","url":"https://kimjinwan.com/content/blog/apps/age-calculator/","headline":"만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유","description":"만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.","inLanguage":"ko","datePublished":"2026-09-28","dateModified":"2026-09-28","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/age-calculator/"},"image":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=15c229e3e4"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/age-calculator/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"블로그","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"앱 제작·심사","item":"https://kimjinwan.com/content/blog/apps/"},{"@type":"ListItem","position":5,"name":"만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유","item":"https://kimjinwan.com/content/blog/apps/age-calculator/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.34">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      <a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" class="btn btn-primary nav-cta"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span></a></li><li><a href="/content/blog/apps/"><span data-lang-ko>앱 제작·심사</span><span data-lang-en>Apps</span></a></li><li aria-current="page"><span lang="ko">만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span><span class="subnav-n mono">285</span></a></li><li><a href="/content/services/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span><span class="subnav-n mono">14</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>기즈모 스토어</span><span data-lang-en>Gizmo Store</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">78</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li></ul></nav>
+  <article class="detail" data-kind="blog">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>앱 제작·심사</span><span data-lang-en>Apps</span> · 2026-09-28</p>
+      <h1 class="sec-title detail-title"><span lang="ko">만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유</span></h1></header>
+    <div class="detail-body"><p>앱 소개</p><div><span>발행 <time datetime="2026-09-28T00:00:00.000Z">2026. 9. 28.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>나이를 물었을 때 숫자가 한두 살씩 어긋나는 상황에서 어떤 셈법으로 말한 것인지 먼저 가리게 한다.</p></div><div><strong>핵심 내용</strong><p>연 나이와 세는 나이는 항상 1만큼 차이 나고, 만 나이는 생일 전이면 연 나이보다 1 적고 생일이 지나면 연 나이와 같아진다.</p></div><div><strong>읽고 나서</strong><p>생년월일과 기준일을 넣고 세 가지 나이와 다음 생일까지 남은 날짜를 함께 확인한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#나이가-세-개인-이유">나이가 세 개인 이유</a></li><li><a href="#결과를-읽는-법">결과를 읽는 법</a></li><li><a href="#쓰면-안-되는-곳">쓰면 안 되는 곳</a></li><li><a href="#계산-방식">계산 방식</a></li></ul></details><div><h2 id="나이가-세-개인-이유">나이가 세 개인 이유</h2>
+<p>2000년 12월 25일에 태어난 사람에게 2026년 9월 14일 기준으로 나이를 물으면 답이 셋 나온다. <strong>만 나이 25세, 연 나이 26세, 세는 나이 27세</strong>다. 셋 다 틀린 값이 아니다. 무엇을 기준으로 올리느냐가 다를 뿐이다.</p>
+<ul>
+<li><strong>만 나이</strong>는 태어난 날을 0세로 두고 생일이 지날 때마다 1씩 올린다.</li>
+<li><strong>연 나이</strong>는 생일과 상관없이 기준 연도에서 출생 연도를 뺀다.</li>
+<li><strong>세는 나이</strong>는 태어난 해를 1세로 치고 해가 바뀔 때마다 1씩 올린다. 계산으로는 연 나이에 1을 더한 값이다.</li>
+</ul>
+<p>같은 사람이 생일을 지난 뒤라면 어떨까. 2000년 5월 15일생은 같은 기준일에 만 나이 26세, 연 나이 26세, 세는 나이 27세다. 만 나이와 연 나이가 같아지는 것은 <strong>올해 생일이 이미 지났을 때뿐</strong>이다. “나 26살”이라는 말이 서로 다른 두 사람에게서 나와도 실제 생년이 다를 수 있는 이유가 여기 있다.</p>
+<p><a href="https://apps.kimjinwan.com/age-calculator/" target="_blank" rel="noopener noreferrer">만 나이 계산기 열기</a></p>
+<h2 id="결과를-읽는-법">결과를 읽는 법</h2>
+<p>계산기는 생년월일과 기준일을 받아 다섯 가지를 보여준다. 만 나이, 연 나이, 세는 나이, 태어난 지 며칠째인지, 다음 생일과 그날까지 남은 일수다. 기준일은 기본으로 오늘이지만 바꿀 수 있어서, “내년 3월에는 만 몇 살인가”처럼 미래 시점의 나이도 확인할 수 있다.</p>
+<p>만 나이 칸에는 “법적 표준”이라는 표시가 붙어 있다. 도구는 2023년 만 나이 통일법 이후 법령·계약서·공문서가 별도 표기가 없는 한 만 나이를 기준으로 본다고 안내한다. 연 나이는 일부 법령이 그대로 쓰는 방식으로, 세는 나이는 법적 효력이 없는 관습적 셈법으로 구분해 둔다. 서류에 적을 숫자라면 만 나이를, 대화에서 상대가 말한 나이를 해석할 때는 세 값을 나란히 놓고 보는 쪽이 빠르다.</p>
+<p>생일 당일에는 만 나이가 그날 바로 오른다. 다음 생일까지 남은 일수는 0이 되고 화면에는 “오늘”로 표시된다.</p>
+<h2 id="쓰면-안-되는-곳">쓰면 안 되는 곳</h2>
+<ul>
+<li><strong>자격이나 의무가 생기는 시점을 확정하는 용도</strong>로는 부족하다. 도구는 나이 셈법을 보여줄 뿐이고, 실제 기준은 해당 법령 원문과 소관 기관 안내를 따라야 한다.</li>
+<li><strong>입학·취학 연령처럼 특정 절단일을 쓰는 제도</strong>는 이 계산과 기준이 다를 수 있다. 생일이 아니라 정해진 날짜를 기준으로 나이를 끊는 제도라면 결과가 한 살 어긋날 수 있다.</li>
+<li>생년월일이 기준일보다 미래이면 계산하지 않는다. 존재하지 않는 날짜(2월 30일 같은)도 받지 않는다. 생년월일 입력은 1900년 1월 1일부터 오늘까지로 제한된다.</li>
+</ul>
+<h2 id="계산-방식">계산 방식</h2>
+<p>도구는 기준일과 생년월일의 월·일만 비교해 올해 생일이 지났는지를 먼저 가린다. 지났거나 오늘이 생일이면 연도 차이가 곧 만 나이이고, 아직이면 거기서 1을 뺀다. 연 나이는 연도 차이 그대로, 세는 나이는 연 나이에 1을 더한다.</p>
+<p>날짜는 모두 UTC 자정으로 읽어 일수를 센다. 시간대 때문에 하루가 밀리는 일을 막기 위해서다. 2월 29일 생일은 따로 보정하지 않는다. 평년에는 2월 29일이 없으므로 다음 생일이 3월 1일로 넘어가고, 윤년에는 2월 29일 그대로 생일이 온다. 2000년 2월 29일생이라면 2024년 2월 29일에 만 24세가 되고, 2026년 9월 기준 다음 생일은 2027년 3월 1일로 나온다.</p>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/logic-workbench/">논리 게이트: 회로 실험실 — 배선과 진리표를 함께 검산하는 제작 앱</a><p>게이트를 연결하고 입력별 신호·진리표를 확인하도록 만든 조합 논리회로 앱이다. 현재 App Store Connect 상태는 제출 준비 중이다.</p></li><li><a href="/content/blog/apps/subnet-calculator/">서브넷 계산기: CIDR 계획 — IPv4 블록 분할을 검토하는 앱</a><p>IPv4 주소 계산과 VLSM 분할 계획을 함께 보여주는 제작 앱이다. 10월 2일 App Store Connect 상태는 심사 대기 중이다.</p></li><li><a href="/content/blog/apps/amount-to-korean/">금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유</a><p>숫자 금액을 계약서·수표용 한글 금액 표기(일금 OOO원정)로 바꿀 때 &#39;일십&#39;, &#39;일백&#39;처럼 1을 빼지 않는 규칙과 중간 0을 처리하는 방식을 정리했다.</p></li></ul></aside></div>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/apps/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 모아보기</span><span data-lang-en>Browse services</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+</body></html>

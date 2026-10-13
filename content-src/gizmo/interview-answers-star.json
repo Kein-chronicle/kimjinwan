@@ -1,0 +1,21 @@
+{
+ "slug": "interview-answers-star",
+ "kind": "text",
+ "purpose": "career",
+ "title": "경험을 면접 답변으로 (STAR)",
+ "tagline": "내 경험 하나를 면접 답변 구조로 바꿔 줘요",
+ "url": "https://gizmo-store.com/tool/interview-answers-star",
+ "download": "https://gizmo-store.com/tool/interview-answers-star/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "ae4c6f0308d06be32b774c537e556582281ff8c3c5febb080c3bade52cfb3117",
+ "description": "내 경험 하나를 면접 답변 구조로 바꿔 줘요. \"경험을 말해 보세요\"에 두서없이 말하게 되는 분.",
+ "audience": "\"경험을 말해 보세요\"에 두서없이 말하게 되는 분.",
+ "result": "STAR 구조의 1분 답변과 후속 질문 대비가 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "내 경험 하나를 면접 답변으로 정리해 줘.\n\n경험(있었던 일을 편하게): [여기에 적으세요]\n자주 나오는 질문 유형: [예: 가장 어려웠던 프로젝트, 갈등을 해결한 경험, 실패한 경험]\n지원 직무: [여기에 적으세요]\n\n만들 것:\n1. STAR(상황 - 과제 - 행동 - 결과) 구조로 1분 분량 답변 (소리 내어 말하기 좋게)\n2. 이 경험이 어울리는 질문 유형 3가지\n3. 면접관이 이어서 파고들 질문 5개와 내가 준비할 답의 방향\n4. 답에서 내 역할이 모호해 보이는 부분\n내가 말하지 않은 사실이나 숫자는 만들지 말고, 부족한 건 질문으로 알려 줘."
+}

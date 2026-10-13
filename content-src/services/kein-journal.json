@@ -1,0 +1,118 @@
+{
+ "id": "kein-journal",
+ "tags": [
+  "블로그",
+  "AI 사용기",
+  "앱 제작",
+  "게임 공략",
+  "7개 언어"
+ ],
+ "audience": [
+  {
+   "ko": "AI 자동화가 실제로 실패하고 복구되는 과정을 솔직하게 읽고 싶은 개발자 · 기획자",
+   "en": "Developers and planners who want honest accounts of AI automation failures and recoveries"
+  },
+  {
+   "ko": "앱을 만들어 심사받고 출시하는 과정의 실제 기록이 궁금한 1인 개발자",
+   "en": "Solo developers curious about real records of building, reviewing and releasing apps"
+  },
+  {
+   "ko": "플레이 중인 게임의 공식 공지와 공략을 출처와 날짜까지 구분해 보고 싶은 게이머",
+   "en": "Gamers who want official game updates and guides with sources and dates kept apart"
+  },
+  {
+   "ko": "웹 도구의 사용법 글을 찾는 사용자",
+   "en": "Users looking for how-to articles on the web tools"
+  }
+ ],
+ "features": [
+  {
+   "t": {
+    "ko": "네 개의 축",
+    "en": "Four tracks"
+   },
+   "d": {
+    "ko": "AI 사용기 · 게임 · 내 앱 · 내 이야기, 그리고 웹 도구 사용법을 나눠 읽을 수 있습니다.",
+    "en": "Read AI usage notes, games, my apps and personal stories, plus web-tool how-tos."
+   }
+  },
+  {
+   "t": {
+    "ko": "출처와 날짜를 구분",
+    "en": "Sources and dates separated"
+   },
+   "d": {
+    "ko": "공식 공지, 직접 겪은 일, 추정을 구분해 적고 출처와 날짜를 남깁니다.",
+    "en": "Official notices, first-hand experience and speculation are kept apart, with sources and dates."
+   }
+  },
+  {
+   "t": {
+    "ko": "독립 검토 + 자동 공개 게이트",
+    "en": "Independent review plus release gate"
+   },
+   "d": {
+    "ko": "AI가 조사 · 초안을 쓰고, 독립 검토와 자동 공개 게이트를 통과한 글만 발행합니다.",
+    "en": "AI researches and drafts; only posts that pass independent review and an automated release gate are published."
+   }
+  },
+  {
+   "t": {
+    "ko": "걸러 보기 · 주제별 보기",
+    "en": "Filters and topic browsing"
+   },
+   "d": {
+    "ko": "주제와 분류로 글을 거르고, 연재 목차로 이어 읽을 수 있습니다.",
+    "en": "Filter posts by topic and category and follow series through their index."
+   }
+  },
+  {
+   "t": {
+    "ko": "7개 언어",
+    "en": "Seven languages"
+   },
+   "d": {
+    "ko": "한국어 · English · 日本語 · 繁體中文 · Deutsch · Français · Español.",
+    "en": "Korean, English, Japanese, Traditional Chinese, German, French and Spanish."
+   }
+  }
+ ],
+ "steps": [
+  {
+   "ko": "관심 있는 축(AI 사용기 · 게임 · 내 앱 · 내 이야기 · 웹 도구)을 고릅니다.",
+   "en": "Pick a track: AI notes, games, my apps, personal stories or web tools."
+  },
+  {
+   "ko": "걸러 보기나 연재 목차로 글을 찾아 읽습니다.",
+   "en": "Find posts with the filters or a series index."
+  },
+  {
+   "ko": "언어 선택기로 읽는 언어를 바꿀 수 있습니다.",
+   "en": "Switch the reading language with the language selector."
+  }
+ ],
+ "notes": [
+  {
+   "ko": "글은 AI의 도움을 받아 쓰되 출처 = 사용 허락이 아니라는 원칙으로 다룹니다.",
+   "en": "Posts are written with AI help under the principle that a source is not a license to reuse."
+  },
+  {
+   "ko": "글 수는 계속 늘어납니다.",
+   "en": "The number of posts keeps growing."
+  }
+ ],
+ "facts": {
+  "login": {
+   "ko": "가입 · 로그인 없음",
+   "en": "No sign-up or login"
+  },
+  "device": {
+   "ko": "웹 브라우저(PC · 모바일)",
+   "en": "Web browser (desktop and mobile)"
+  },
+  "data": {
+   "ko": "7개 언어",
+   "en": "Seven languages"
+  }
+ }
+}

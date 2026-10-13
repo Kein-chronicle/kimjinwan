@@ -10,7 +10,9 @@ export const CAREER_YEARS = 11;
 export const ROLE_LINE = '개발자 · PM';
 
 export function facts(data, projects) {
-  return {years: CAREER_YEARS, factories: data.factories.length, projects: projects.length, services: data.services.length};
+  const hub = id => data.contentHub.sections.find(s => s.id === id).count.value;
+  return {years: CAREER_YEARS, factories: data.factories.length, projects: projects.length, services: data.services.length,
+    posts: hub('blog'), games: hub('games'), tools: hub('tools')};
 }
 
 // 페이지별 메타 + 카드 문구. key 는 assets/og/<key>.png 이름이기도 하다.
@@ -42,6 +44,12 @@ export function pageMeta(f) {
       kicker: 'CAREER',
       headline: `${f.years}년, 현장에서 쌓은 경력과 프로젝트 ${f.projects}개`,
     },
+    content: {
+      title: '콘텐츠 허브 — 글·서비스·웹게임·웹 도구 · 김진완',
+      description: `블로그 글 ${f.posts}편, 서비스 ${f.services}곳, 웹게임 ${f.games}개, 웹 도구 ${f.tools}개 중 대표 항목을 제목과 요약으로 바로 읽을 수 있게 한곳에 모았습니다. 마음에 드는 글이나 도구로 곧장 이동하세요.`,
+      kicker: 'CONTENT',
+      headline: `블로그 글 ${f.posts}편과 서비스·웹게임·웹 도구 모음`,
+    },
     // game/index.html 은 손으로 쓴 파일이다. 아래 문구와 같은지 site.test.mjs 가 검사한다.
     game: {
       title: '김진완 인생게임 — Career Run',
@@ -52,7 +60,7 @@ export function pageMeta(f) {
   };
 }
 
-export const CARD_KEYS = ['home', 'works', 'factories', 'career', 'game'];
+export const CARD_KEYS = ['home', 'works', 'factories', 'career', 'content', 'game'];
 export const cardPath = key => `assets/og/${key}.png`;
 export const cardAlt = m => m.alt || `“${m.headline}” — Kein 로고와 김진완 · ${ROLE_LINE}, kimjinwan.com이 적힌 공유 카드`;
 // 카드에 실제로 찍히는 문구(lock 대조 대상)

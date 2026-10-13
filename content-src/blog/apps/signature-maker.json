@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "signature-maker",
+ "title": "투명 서명 이미지 만들기 — 문서에 사인 넣기",
+ "description": "손가락이나 마우스로 서명을 그리고 투명 PNG로 저장할 때의 보안 주의사항이다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/signature-maker/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>종이 스캔 없이 문서 편집기에 넣을 서명 이미지를 만들게 한다.</p></div><div><strong>핵심 내용</strong><p>서명 파일은 중요한 개인정보이므로 사용 후 저장·공유 위치를 확인한다.</p></div><div><strong>읽고 나서</strong><p>펜 색과 굵기를 정해 서명한 뒤 투명 PNG로 받는다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#투명-png\">투명 PNG</a></li><li><a href=\"#보안\">보안</a></li></ul></details><div><h2 id=\"투명-png\">투명 PNG</h2>\n<p>배경 없이 선만 저장하므로 문서 편집기에서 글 위나 서명 칸에 배치할 수 있다.</p>\n<p><a href=\"https://apps.kimjinwan.com/signature-maker/\">서명·도장 이미지 만들기 열기</a></p>\n<h2 id=\"보안\">보안</h2>\n<p>서명 이미지는 계약과 승인에 악용될 수 있다. 공용 기기에서는 다운로드 파일을 남기지 않는다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/json-formatter/\">JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기</a><p>API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.</p></li><li><a href=\"/ko/apps/dedupe-lines/\">중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유</a><p>한 줄씩 입력한 목록에서 중복을 정리하고 첫 등장 순서와 원문 줄 번호를 확인한다. 공백·대소문자 비교 옵션이 결과를 바꾸는 범위와 빈 줄 처리의 차이를 설명한다.</p></li><li><a href=\"/ko/apps/logic-workbench/\">논리 게이트: 회로 실험실 — 배선과 진리표를 함께 검산하는 제작 앱</a><p>게이트를 연결하고 입력별 신호·진리표를 확인하도록 만든 조합 논리회로 앱이다. 현재 App Store Connect 상태는 제출 준비 중이다.</p></li></ul></aside>"
+}

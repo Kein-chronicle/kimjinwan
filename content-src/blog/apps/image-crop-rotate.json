@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "image-crop-rotate",
+ "title": "이미지 자르기·회전 — 정사각형과 16:9 비율 맞추기",
+ "description": "사진을 원본 비율에 맞춰 자르고 90도 단위로 회전해 새 이미지로 저장하는 방법이다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/image-crop-rotate/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>게시물과 문서에 필요한 화면 비율만 남기고 방향을 바로잡는다.</p></div><div><strong>핵심 내용</strong><p>프리셋을 적용한 뒤 시작점과 크기를 조절하고 결과 해상도를 확인한다.</p></div><div><strong>읽고 나서</strong><p>이미지를 선택하고 비율, 영역, 회전 각도를 정해 내려받는다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#비율-프리셋\">비율 프리셋</a></li><li><a href=\"#원본-보관\">원본 보관</a></li></ul></details><div><h2 id=\"비율-프리셋\">비율 프리셋</h2>\n<p>정사각형은 프로필과 상품 썸네일, 16:9는 영상 표지와 발표 화면에 주로 쓴다. 프리셋은 원본 크기를 기준으로 중앙 영역을 계산하며 슬라이더로 시작점과 크기를 다시 조절할 수 있다.</p>\n<p><a href=\"https://apps.kimjinwan.com/image-crop-rotate/\">이미지 자르기·회전 열기</a></p>\n<h2 id=\"원본-보관\">원본 보관</h2>\n<p>결과는 서버에 올리지 않고 새 파일로 만든다. JPEG를 반복해서 편집하면 화질이 낮아질 수 있으므로 원본에서 한 번에 자르는 편이 낫다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/image-watermark/\">이미지 워터마크 넣기 — 사진에 출처 문구 표시</a><p>사진에 문구·위치·크기·투명도를 정해 워터마크를 넣는 방법과 보호 범위를 설명한다.</p></li><li><a href=\"/ko/apps/photo-collage/\">사진 여러 장 합치기 — 가로·세로·격자 콜라주</a><p>2장부터 9장까지 사진을 한 캔버스에 배치하고 간격과 배경색을 조절하는 방법이다.</p></li><li><a href=\"/ko/apps/json-formatter/\">JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기</a><p>API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.</p></li></ul></aside>"
+}

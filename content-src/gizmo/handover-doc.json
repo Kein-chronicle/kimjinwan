@@ -1,0 +1,21 @@
+{
+ "slug": "handover-doc",
+ "kind": "text",
+ "purpose": "career",
+ "title": "인수인계서 만들기",
+ "tagline": "내 업무를 후임이 바로 이어받도록 정리해 줘요",
+ "url": "https://gizmo-store.com/tool/handover-doc",
+ "download": "https://gizmo-store.com/tool/handover-doc/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "e1e1081ba6a1df62e7824dda3fc6748f57bbf2ccae15b7544ba9afba1f1485d4",
+ "description": "내 업무를 후임이 바로 이어받도록 정리해 줘요. 퇴사·이동을 앞둔 분.",
+ "audience": "퇴사·이동을 앞둔 분.",
+ "result": "업무 목록, 순서, 담당자, 주의점이 있는 인수인계서가 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "인수인계서를 만들어 줘. 비밀번호나 보안 정보는 문서에 넣지 않을 거야.\n\n내 업무(두서없이): [여기에 적으세요]\n후임의 경험 수준: [예: 같은 업무는 처음]\n\n구성:\n1. 업무별: 무엇을 / 언제 / 어떻게 / 누구와 / 어디에 자료가 있는지\n2. 정기 업무 캘린더 (월간·주간·분기)\n3. 진행 중인 일의 현재 상태와 다음 할 일\n4. 자주 생기는 문제와 해결법\n5. 연락해야 할 사람 목록 (역할 중심)\n6. 모르면 아는 사람에게 물어봐야 할 것\n내가 말하지 않은 내용은 [채울 것]으로 비워 둬. 계정 정보는 \"별도 안전한 방법으로 전달\"이라고만 적어 줘."
+}

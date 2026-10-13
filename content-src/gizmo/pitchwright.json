@@ -1,0 +1,22 @@
+{
+ "slug": "pitchwright",
+ "kind": "web",
+ "purpose": "writing",
+ "title": "Pitchwright — RFP에서 제안서까지",
+ "tagline": "RFP를 올리면 요구사항 추적표와 컴플라이언스 매트릭스를 만들고 제안서를 단계별로 써 나가요",
+ "url": "https://gizmo-store.com/tool/pitchwright",
+ "toolUrl": "https://pitchwright.kimjinwan.com",
+ "difficulty": "normal",
+ "aiLabel": "ai-assisted",
+ "hash": "e9d9cee3b1259bee6c1f3a34ff1d61d86c5c5e62022a946c851e67dcf91ba827",
+ "description": "제안요청서(RFP)·요구사항·기간·인력을 넣으면 제안서를 단계별로 작성하도록 돕는 웹 서비스예요. 먼저 제안 대상을 고르고, RFP를 분석해 요구사항을 뽑고, 빠뜨린 항목이 없는지 컴플라이언스 매트릭스(CSV·XLSX)로 정리해요. 이어서 목차별 본문 작성과 숫자·내용 정합성 점검, DOCX·Markdown 출력까지 열려 있어요. 숫자는 AI가 만들지 않고 직접 넣은 값으로 점검해요. AI는 내 컴퓨터의 Claude Code 또는 Codex를 연결해서 써요. 지금은 베타이고, 제출 양식 자동 채움 같은 기능은 아직 준비 중이에요.",
+ "audience": "공공·민간 제안서를 쓰는 분, RFP 요구사항을 빠뜨리지 않았는지 점검하고 싶은 분.",
+ "result": "RFP 요구사항 추적표, 컴플라이언스 매트릭스(CSV·XLSX), 목차별 제안서 본문, 정합성 점검 결과, DOCX·Markdown 파일.",
+ "steps": [
+  "[써 보기]를 눌러 새 창에서 열고 로그인해요.",
+  "앱 안의 연결 안내에 따라 내 컴퓨터의 Claude Code 또는 Codex를 연결해요.",
+  "제안 대상과 사업 정보를 적고 RFP 문서를 올려요.",
+  "요구사항 분석과 컴플라이언스 매트릭스를 확인한 뒤 목차별 본문 작성, 정합성 점검, 내보내기 순서로 진행해요."
+ ],
+ "trouble": "로그인(이메일·Google·Apple)이 필요해요. AI 기능은 내 컴퓨터에 Claude Code 또는 Codex가 이미 설치되어 있고, 앱 안의 연결 안내에 따라 연결 프로그램(Agent)을 실행해 코드로 이어야 해요. 자료를 올리면 내용이 내 PC의 연결 프로그램을 거쳐 내 계정의 AI 제공자(Anthropic·OpenAI)로 전달되니, 개인정보나 기밀이 든 자료는 신중하게 다뤄 주세요. AI 결과는 틀릴 수 있어요. 숫자·근거는 꼭 원문과 대조해 확인해 주세요. 지금은 베타라 양식 채움·네이티브 형식 출력은 아직 열리지 않았어요."
+}

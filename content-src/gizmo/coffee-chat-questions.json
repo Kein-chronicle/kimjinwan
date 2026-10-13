@@ -1,0 +1,21 @@
+{
+ "slug": "coffee-chat-questions",
+ "kind": "text",
+ "purpose": "career",
+ "title": "재직자 커피챗 질문",
+ "tagline": "관심 있는 회사·직무의 재직자에게 물을 질문을 준비해 줘요",
+ "url": "https://gizmo-store.com/tool/coffee-chat-questions",
+ "download": "https://gizmo-store.com/tool/coffee-chat-questions/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "8e90fda42f259b3b97a951fbe05d3edf00dc2fb55d0f344364a8410446d8b479",
+ "description": "관심 있는 회사·직무의 재직자에게 물을 질문을 준비해 줘요. 회사를 직접 확인하고 싶은 분.",
+ "audience": "회사를 직접 확인하고 싶은 분.",
+ "result": "요청 메시지와 질문 15개, 질문을 가리는 법이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "재직자나 해당 직무 종사자와 대화(커피챗)하려고 해.\n\n상대: [예: 대기업 마케팅팀 3년 차]\n내 목적: [예: 이직 가능성 탐색]\n대화 시간: [예: 30분]\n\n만들 것:\n1. 처음 연락하는 메시지 (짧고 부담 없게, 이유와 시간 제안)\n2. 질문 15개 (업무의 하루, 좋은 점과 어려운 점, 평가 방식, 팀 문화, 성장 경로 등) — 무례하거나 상대 회사의 기밀을 묻는 질문은 제외\n3. 대화 중 들은 말을 다루는 법 (한 사람의 경험일 뿐이라는 점, 여러 명에게 물어 비교하기)\n4. 대화 후 감사 메시지 예시"
+}

@@ -5,7 +5,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 
 const read = f => fs.readFileSync(f, 'utf8');
-const PAGES = ['index.html', 'works/index.html', 'factories/index.html', 'career/index.html'];
+const PAGES = ['index.html', 'works/index.html', 'factories/index.html', 'career/index.html', 'content/index.html'];
 const LD = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
 
 test('외부 서브도메인 링크는 모두 새 창·noopener 로 연다', () => {
@@ -49,12 +49,12 @@ test('모든 페이지에 메타·파비콘·애드센스 계정 메타·JSON-LD
   const schema = JSON.parse(read('index.html').match(LD)[1]);
   assert.ok(schema['@graph'].some(x => x['@type'] === 'ProfilePage'));
 });
-test('sitemap 에 네 페이지와 게임이 있다', () => {
+test('sitemap 에 다섯 페이지와 게임이 있다', () => {
   const x = read('sitemap.xml');
-  for (const p of ['/', '/works/', '/factories/', '/career/', '/game/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc>`), p);
+  for (const p of ['/', '/works/', '/factories/', '/career/', '/content/', '/game/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc>`), p);
 });
 test('canonical 은 페이지별 자기 URL 이다', () => {
-  const want = {'index.html': '/', 'works/index.html': '/works/', 'factories/index.html': '/factories/', 'career/index.html': '/career/'};
+  const want = {'index.html': '/', 'works/index.html': '/works/', 'factories/index.html': '/factories/', 'career/index.html': '/career/', 'content/index.html': '/content/'};
   for (const [f, p] of Object.entries(want)) assert.ok(read(f).includes(`<link rel="canonical" href="https://kimjinwan.com${p}">`), f);
   assert.ok(read('game/index.html').includes('rel="canonical"'));
 });
@@ -103,8 +103,9 @@ test('theme-core 는 head 안에서 본문보다 먼저 실행된다', () => {
 });
 test('한국어 1인칭 대명사(제가·저는·저의 등)가 화면·데이터·메타 어디에도 없다 — "직접 …" 표현을 쓴다', () => {
   const BAN = /제가|저는|저의|저를|저에게|제게|저희|(?:^|[\s>("'])제\s/m;
-  const files = [...PAGES, 'game/index.html', 'js/data.js', 'js/main.js', 'scripts/build.mjs', 'scripts/lib/render.mjs', 'scripts/lib/og.mjs', 'scripts/build_og.mjs',
-    ...fs.readdirSync('data').map(f => 'data/' + f), ...fs.readdirSync('src', {recursive: true}).filter(f => f.endsWith('.html')).map(f => 'src/' + f)];
+  // content/index.html 은 블로그·기즈모 원문의 제목·설명을 그대로 옮겨 싣는다 → 원문은 고치지 않으므로 이 검사에서 뺀다(허브가 직접 쓴 문구는 src/content.html·render.mjs 로 검사된다. tests/content.test.mjs 참고).
+  const files = [...PAGES.filter(f => f !== 'content/index.html'), 'game/index.html', 'js/data.js', 'js/main.js', 'scripts/build.mjs', 'scripts/lib/render.mjs', 'scripts/lib/og.mjs', 'scripts/build_og.mjs',
+    ...fs.readdirSync('data').filter(f => f !== 'content-hub.json').map(f => 'data/' + f), ...fs.readdirSync('src', {recursive: true}).filter(f => f.endsWith('.html')).map(f => 'src/' + f)];
   for (const f of files) {
     const m = read(f).match(BAN);
     assert.equal(m, null, `${f}: "${m && read(f).slice(Math.max(0, m.index - 20), m.index + 20)}"`);
@@ -116,7 +117,7 @@ import {loadData, stampOf, cardUrl} from '../scripts/build.mjs';
 import {parseProjects} from '../scripts/lib/projects.mjs';
 import {facts, pageMeta, cardText, cardPath, cardAlt, CARD_KEYS, SITE_NAME} from '../scripts/lib/og.mjs';
 
-const ALL = {'index.html': 'home', 'works/index.html': 'works', 'factories/index.html': 'factories', 'career/index.html': 'career', 'game/index.html': 'game'};
+const ALL = {'index.html': 'home', 'works/index.html': 'works', 'factories/index.html': 'factories', 'career/index.html': 'career', 'content/index.html': 'content', 'game/index.html': 'game'};
 const headOf = h => h.slice(h.indexOf('<head>'), h.indexOf('</head>'));
 const metaOf = (h, attr, name) => { const m = h.match(new RegExp(`<meta ${attr}="${name.replace(/[.:]/g, '\\$&')}" content="([^"]*)">`)); return m && m[1].replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); };
 const ogm = (h, n) => metaOf(h, 'property', n);
@@ -208,7 +209,7 @@ test('JSON-LD: Person 은 knowsAbout·jobTitle 을 갖고 sameAs·image 는 없�
   const profile = loadData().profile;
   for (const [f, key] of Object.entries(ALL)) {
     const g = JSON.parse(read(f).match(LD)[1])['@graph'];
-    const page = g.find(x => ['WebPage', 'ProfilePage'].includes(x['@type']));
+    const page = g.find(x => ['WebPage', 'CollectionPage', 'ProfilePage'].includes(x['@type']));
     assert.ok(page, f);
     assert.equal(page.primaryImageOfPage.url, cardUrl(cardPath(key)), f);
     assert.equal(page.thumbnailUrl, cardUrl(cardPath(key)), f);
@@ -228,7 +229,7 @@ test('JSON-LD: Person 은 knowsAbout·jobTitle 을 갖고 sameAs·image 는 없�
 });
 test('sitemap lastmod 는 데이터 스탬프를 따른다, 매니페스트는 유효하다', () => {
   const x = read('sitemap.xml'), stamp = stampOf(loadData());
-  for (const p of ['/', '/works/', '/factories/', '/career/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc><lastmod>${stamp}</lastmod>`), p);
+  for (const p of ['/', '/works/', '/factories/', '/career/', '/content/']) assert.ok(x.includes(`<loc>https://kimjinwan.com${p}</loc><lastmod>${stamp}</lastmod>`), p);
   const mf = JSON.parse(read('manifest.json'));
   assert.equal(mf.short_name, 'Kein');
   for (const i of mf.icons) assert.ok(fs.existsSync(i.src.slice(1)), i.src);

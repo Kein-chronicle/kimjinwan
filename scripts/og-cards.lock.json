@@ -52,6 +52,19 @@
     "sha256": "dcb6fb39e3201c12a530215bfb4a4b8a9bb262ef12adf5fc60102655609d7de4",
     "bytes": 14680
   },
+  "content": {
+    "file": "assets/og/content.png",
+    "text": {
+      "wordmark": "Kein",
+      "name": "김진완",
+      "role": "개발자 · PM",
+      "kicker": "CONTENT",
+      "headline": "블로그 글 285편과 서비스·웹게임·웹 도구 모음",
+      "domain": "kimjinwan.com"
+    },
+    "sha256": "15c229e3e430d22be025c990d73a2df46f46ce914c983bda520479a5587644cd",
+    "bytes": 13669
+  },
   "game": {
     "file": "assets/og/game.png",
     "text": {

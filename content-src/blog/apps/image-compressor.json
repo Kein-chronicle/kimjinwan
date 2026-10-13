@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "image-compressor",
+ "title": "이미지 용량 줄이기 — 품질과 크기를 조절하는 기준",
+ "description": "JPG·PNG·WebP 사진을 브라우저에서 압축할 때 품질과 최대 너비를 고르는 방법을 설명한다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/image-compressor/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>사진 화질을 불필요하게 망치지 않으면서 업로드와 공유에 적합한 용량으로 줄이게 한다.</p></div><div><strong>핵심 내용</strong><p>사진은 품질 70~85%에서 시작하고 글자 이미지는 결과를 확대해 확인한다.</p></div><div><strong>읽고 나서</strong><p>원본을 선택하고 최대 너비와 품질을 조절해 결과를 비교한다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#먼저-줄일-값\">먼저 줄일 값</a></li><li><a href=\"#개인정보\">개인정보</a></li></ul></details><div><h2 id=\"먼저-줄일-값\">먼저 줄일 값</h2>\n<p>카메라 원본을 화면용으로 쓴다면 픽셀 크기를 먼저 줄이고 품질을 조절한다. 문서 캡처처럼 글자가 있으면 압축 뒤 확대 확인이 필요하다.</p>\n<p><a href=\"https://apps.kimjinwan.com/image-compressor/\">이미지 용량 줄이기 열기</a></p>\n<h2 id=\"개인정보\">개인정보</h2>\n<p>이미지는 서버로 전송되지 않는다. 결과 파일을 받은 뒤 원본과 글자·얼굴 경계를 비교해야 한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/image-converter/\">이미지 형식 변환 — HEIC·JPG·PNG·WebP 선택법</a><p>아이폰 HEIC와 JPG·PNG·WebP를 브라우저에서 변환하고 목적에 맞는 형식을 고르는 방법이다.</p></li><li><a href=\"/ko/apps/json-formatter/\">JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기</a><p>API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.</p></li><li><a href=\"/ko/apps/dedupe-lines/\">중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유</a><p>한 줄씩 입력한 목록에서 중복을 정리하고 첫 등장 순서와 원문 줄 번호를 확인한다. 공백·대소문자 비교 옵션이 결과를 바꾸는 범위와 빈 줄 처리의 차이를 설명한다.</p></li></ul></aside>"
+}

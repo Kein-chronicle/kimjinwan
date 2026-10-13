@@ -1,0 +1,21 @@
+{
+ "slug": "hypothesis-test",
+ "kind": "text",
+ "purpose": "research",
+ "title": "가설 세우고 확인 계획 짜기",
+ "tagline": "추측을 확인 가능한 가설과 작은 실험으로 바꿔 줘요",
+ "url": "https://gizmo-store.com/tool/hypothesis-test",
+ "download": "https://gizmo-store.com/tool/hypothesis-test/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "7c287e62f26d134c4b9cf16d5c98699924e209bbb23948de0dbfff0815688446",
+ "description": "추측을 확인 가능한 가설과 작은 실험으로 바꿔 줘요. \"아마 이럴 것 같은데\"를 확인하고 싶은 분.",
+ "audience": "\"아마 이럴 것 같은데\"를 확인하고 싶은 분.",
+ "result": "가설, 확인할 지표, 확인 방법, 틀렸을 때의 해석이 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "내 추측을 검증할 계획을 세우고 싶어.\n\n내 추측: [예: 상세페이지에 후기를 먼저 보여 주면 구매가 늘 것 같다]\n지금 쓸 수 있는 것: [예: 월 방문자 3,000명, 엑셀]\n기간: [예: 4주]\n\n정리할 것:\n1. 확인 가능한 가설 문장 (무엇이 어떻게 바뀌면 맞다고 볼지)\n2. 반대 가설 (그렇지 않다면 무엇일지)\n3. 확인할 지표와 현재 값 재는 방법\n4. 가장 작게 확인하는 방법 (비교 대상, 기간, 표본 크기가 충분한지 점검)\n5. 결과가 나왔을 때 해석: 오르면 / 안 오르면 / 애매하면\n6. 결과를 흐릴 수 있는 다른 요인\n결과를 미리 예측하지 말고, 계획만 도와줘."
+}

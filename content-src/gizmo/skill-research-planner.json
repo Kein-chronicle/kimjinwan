@@ -1,0 +1,22 @@
+{
+ "slug": "skill-research-planner",
+ "kind": "text",
+ "purpose": "research",
+ "title": "조사 계획 스킬",
+ "tagline": "조사 주제를 받으면 늘 같은 방식으로 질문을 쪼개 조사 계획을 만들어요",
+ "url": "https://gizmo-store.com/tool/skill-research-planner",
+ "download": "https://gizmo-store.com/tool/skill-research-planner/download",
+ "difficulty": "normal",
+ "aiLabel": "ai-assisted",
+ "hash": "9f944cdc94626fd701512239dc4524a8adc8ba429841b3749cb9e421784989d8",
+ "description": "조사 주제를 받으면 늘 같은 방식으로 질문을 쪼개 조사 계획을 만들어요. 스킬을 지원하는 AI 도구(Claude Code 등)에 한 번 넣어 두면, 같은 일을 시킬 때마다 같은 방식으로 해 줘요.",
+ "audience": "조사를 자주 하는 분.",
+ "result": "궁금한 것만 말하면 핵심 질문, 하위 질문, 자료 종류, 순서를 줘요.",
+ "steps": [
+  "[파일로 내려받기]로 SKILL.md를 받아요.",
+  "쓰는 AI 도구의 “스킬 폴더”에 research-planner 폴더를 만들고 그 안에 파일을 넣어요. (위치는 도구마다 달라서 쓰는 도구의 스킬 안내를 확인해 주세요.)",
+  "관련된 일을 시키면 AI가 이 설명서대로 일해요."
+ ],
+ "prompt": "---\nname: research-planner\ndescription: 막연한 조사 주제를 받아 결정에 쓸 수 있는 핵심 질문과 하위 질문, 필요한 자료 종류, 조사 순서와 끝낼 기준으로 정리한다. 사용자가 조사나 리서치 계획을 요청할 때 사용한다.\n---\n\n# 조사 계획\n\n## 먼저 확인\n궁금한 것, 쓰임새와 읽을 사람, 쓸 수 있는 시간, 이미 아는 것을 한 번에 묻는다.\n\n## 출력\n1. 핵심 질문 한 문장(답이 나오면 결정할 수 있는 형태)\n2. 하위 질문 5~8개\n3. 질문마다 필요한 자료 종류와 찾을 곳의 유형\n4. 조사 순서와 시간 배분\n5. 끝낼 기준\n6. 이 조사의 한계\n\n## 규칙\n- 계획을 세울 뿐, 자료에서 확인하지 않은 사실을 단정하지 않는다.\n- 검색 도구가 있어도 사용자가 요청하기 전에는 조사를 시작하지 않는다.",
+ "trouble": "스킬이 작동하지 않으면 폴더 이름이 파일 안의 name(research-planner)과 같은지 확인하세요. 스킬 폴더 위치는 도구마다 달라요. 쓰는 도구의 설명서를 확인해 주세요."
+}

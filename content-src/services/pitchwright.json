@@ -1,0 +1,136 @@
+{
+ "id": "pitchwright",
+ "tags": [
+  "RFP",
+  "제안서",
+  "컴플라이언스 매트릭스",
+  "견적",
+  "발표 자료"
+ ],
+ "audience": [
+  {
+   "ko": "공공 입찰 · 국책/R&D · 민간 B2B 제안서를 정해진 평가 기준에 맞춰 써야 하는 제안 PM",
+   "en": "Proposal managers writing public-tender, R&D or B2B proposals against fixed evaluation criteria"
+  },
+  {
+   "ko": "RFP 요구사항을 하나도 빠뜨리지 않았는지 증명해야 하는 사업 개발 · 영업 담당",
+   "en": "Business development and sales staff who must show no RFP requirement was missed"
+  },
+  {
+   "ko": "기간 · M/M · 단가 · 부가세 계산이 틀리면 안 되는 견적 담당",
+   "en": "Estimators whose duration, man-month, rate and VAT figures must be exact"
+  },
+  {
+   "ko": "발주처 Word · 한글(HWPX) · Excel · PPT 양식에 맞춰 제출본을 만들어야 하는 팀",
+   "en": "Teams that must fill a client's Word, HWPX, Excel or PowerPoint template for submission"
+  }
+ ],
+ "features": [
+  {
+   "t": {
+    "ko": "RFP 분석과 요구사항 ID",
+    "en": "RFP analysis with stable IDs"
+   },
+   "d": {
+    "ko": "PDF · DOCX · HWP · HWPX · TXT를 올리면 요구사항 · 평가항목 · 제약 · 확인 요청을 뽑고, ID(RFP-REQ-001…)는 코드가 매겨 다시 분석해도 바뀌지 않습니다.",
+    "en": "Upload PDF, DOCX, HWP, HWPX or TXT to extract requirements, criteria, constraints and open questions. IDs are assigned by code and stay stable across re-runs."
+   }
+  },
+  {
+   "t": {
+    "ko": "지어낸 인용은 표시",
+    "en": "Fabricated quotes are flagged"
+   },
+   "d": {
+    "ko": "모든 인용문을 원문과 대조해 없는 문장은 \"인용 미확인\"으로, 배점 숫자는 배점표와 맞는지 확인합니다.",
+    "en": "Every quote is checked against the source; missing ones show as \"unverified\", and scores are checked against the scoring table."
+   }
+  },
+  {
+   "t": {
+    "ko": "컴플라이언스 매트릭스",
+    "en": "Compliance matrix"
+   },
+   "d": {
+    "ko": "요구사항 ↔ 평가항목 매핑을 AI가 제안하고 사람이 확정합니다. 필수 요구사항이 빠지면 확정할 수 없고, CSV · XLSX로 내려받습니다.",
+    "en": "AI proposes the requirement-to-criterion mapping and you confirm. Missing mandatory requirements block confirmation; export as CSV or XLSX."
+   }
+  },
+  {
+   "t": {
+    "ko": "정확한 일정 · 인력 · 견적",
+    "en": "Exact schedule, staffing and pricing"
+   },
+   "d": {
+    "ko": "단계 · WBS · 월별 M/M · 등급별 단가 · 3층 견적을 소수 오차 없이 계산하고, 수식이 살아 있는 견적 Excel은 다시 계산해 맞아야만 내려줍니다.",
+    "en": "Phases, WBS, monthly M/M, rates and three-layer pricing are computed exactly; the pricing Excel with live formulas is only released after it recalculates correctly."
+   }
+  },
+  {
+   "t": {
+    "ko": "목차별 본문과 정합성 점검",
+    "en": "Section drafting and consistency checks"
+   },
+   "d": {
+    "ko": "목차 항목마다 직접 쓰거나 회사 소개서 등으로 AI 초안을 만들고, 비어 있는 장 · 요구/평가 응답 · 직접 쓴 숫자를 AI 없이 검사합니다.",
+    "en": "Write each section yourself or draft from company documents, then check empty chapters, requirement coverage and hand-typed numbers without AI."
+   }
+  },
+  {
+   "t": {
+    "ko": "양식 채우기 · 제출 정화",
+    "en": "Template filling and submission cleaning"
+   },
+   "d": {
+    "ko": "Word · PowerPoint · Excel · 한글(HWPX) · PDF 양식을 채우고, 댓글 · 추적 변경 · 숨김 글자 · 작성자 정보를 지우며, 제출본 해시를 기록합니다.",
+    "en": "Fill Word, PowerPoint, Excel, HWPX and PDF templates, strip comments, tracked changes, hidden text and author data, and record the submission hash."
+   }
+  }
+ ],
+ "steps": [
+  {
+   "ko": "제안 대상(공공 입찰 · 국책 · 민간 · 사내)과 사업 정보를 정합니다.",
+   "en": "Choose the proposal type and enter the project details."
+  },
+  {
+   "ko": "RFP를 올리면 요구사항 · 평가항목을 뽑아 컴플라이언스 매트릭스를 만듭니다.",
+   "en": "Upload the RFP; requirements and criteria are extracted into a compliance matrix."
+  },
+  {
+   "ko": "전략 · 목차 · 일정 · 인력 · 견적을 정하고 목차별 본문을 씁니다.",
+   "en": "Set strategy, outline, schedule, staffing and pricing, then write each section."
+  },
+  {
+   "ko": "정합성 점검을 통과하면 Word · 양식 채움 · 발표 자료로 내보냅니다.",
+   "en": "Pass the consistency check, then export Word, filled templates and slides."
+  }
+ ],
+ "notes": [
+  {
+   "ko": "AI 판단은 서버가 아니라 내 PC의 Claude Code · Codex(내 구독)가 합니다. 서비스 서버에는 모델이 없습니다.",
+   "en": "The AI work runs on your own PC through Claude Code or Codex (your subscription). The service server has no model."
+  },
+  {
+   "ko": "결과 예시와 화면은 가상의 RFP · 회사 · 인력 · 단가로 만든 것이며 실제 기관의 제안서나 실적이 아닙니다.",
+   "en": "The example outputs and screens use a fictional RFP, company, staff and rates; they are not any real organization's proposal."
+  },
+  {
+   "ko": "구형 .hwp 양식은 HWPX로 저장해 올리면 됩니다.",
+   "en": "Legacy .hwp templates should be saved as HWPX before uploading."
+  }
+ ],
+ "facts": {
+  "login": {
+   "ko": "이메일 · Google · Apple 가입",
+   "en": "Sign up with email, Google or Apple"
+  },
+  "device": {
+   "ko": "PC 웹 브라우저 + 내 PC 에이전트(한 번 연결)",
+   "en": "Desktop browser + your PC agent (connect once)"
+  },
+  "ai": {
+   "ko": "내 Claude · ChatGPT 구독(Claude Code · Codex)",
+   "en": "Your Claude or ChatGPT subscription (Claude Code / Codex)"
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "slug": "gap-explain",
+ "kind": "text",
+ "purpose": "career",
+ "title": "경력 공백 설명하기",
+ "tagline": "공백 기간을 정직하고 담담하게 설명하는 문장을 만들어 줘요",
+ "url": "https://gizmo-store.com/tool/gap-explain",
+ "download": "https://gizmo-store.com/tool/gap-explain/download",
+ "difficulty": "easy",
+ "aiLabel": "ai-assisted",
+ "hash": "eaa5ac2fd768833e01cbe4a08f1b681fea6fb3219786817b283ccd42d3fcceb3",
+ "description": "공백 기간을 정직하고 담담하게 설명하는 문장을 만들어 줘요. 휴직·공백기가 걱정되는 분.",
+ "audience": "휴직·공백기가 걱정되는 분.",
+ "result": "이력서·면접에서 쓸 설명 문장과 예상 질문 대비가 나와요.",
+ "steps": [
+  "[내용 복사하기]를 눌러요.",
+  "쓰는 AI 대화창(ChatGPT, Claude 등)을 열고 붙여넣어요.",
+  "[대괄호]를 내 상황으로 바꾸고 Enter를 눌러요."
+ ],
+ "prompt": "경력 공백 기간을 설명하는 방법을 도와줘. 사실을 숨기지 않고 담담하게 말하고 싶어.\n\n공백 기간과 이유(말해도 되는 만큼): [예: 2023.04~2024.01, 가족 돌봄과 이직 준비]\n그 기간에 한 일(공부, 프로젝트, 자격증 등): [여기에 적으세요]\n\n만들 것:\n1. 이력서에 쓸 한두 줄\n2. 면접에서 질문받았을 때 30초 답변\n3. 하면 안 되는 설명과 이유\n4. 이후 일에 대한 준비가 되어 있음을 보여 주는 근거 (내가 실제로 한 것만)\n사적인 사정은 말할 의무가 없는 선도 알려 줘."
+}

@@ -1,0 +1,9 @@
+{
+ "category": "apps",
+ "slug": "random-roulette",
+ "title": "랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기",
+ "description": "중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.",
+ "date": "2026-09-10",
+ "url": "https://blog.kimjinwan.com/ko/apps/random-roulette/",
+ "body": "<p>앱 소개</p><div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>당번, 발표 순서, 메뉴처럼 가벼운 결정을 기기 안에서 무작위로 정한다.</p></div><div><strong>핵심 내용</strong><p>회전 애니메이션과 당첨 계산은 분리되며 공식 경품 추첨 증명 용도는 아니다.</p></div><div><strong>읽고 나서</strong><p>후보를 줄바꿈이나 쉼표로 입력하고 목록을 확인한 뒤 룰렛을 돌린다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#후보-목록-확인\">후보 목록 확인</a></li><li><a href=\"#추첨-방식과-한계\">추첨 방식과 한계</a></li></ul></details><div><h2 id=\"후보-목록-확인\">후보 목록 확인</h2>\n<p>2개부터 50개까지 입력할 수 있다. 같은 이름을 중복으로 넣어 확률이 달라지는 실수를 막기 위해 중복 후보는 허용하지 않는다.</p>\n<p><a href=\"https://apps.kimjinwan.com/random-roulette/\">랜덤 추첨 룰렛 열기</a></p>\n<h2 id=\"추첨-방식과-한계\">추첨 방식과 한계</h2>\n<p>브라우저의 Web Crypto 난수로 당첨 인덱스를 먼저 결정하고 룰렛은 그 결과를 보여준다. 후보와 결과를 서버에 저장하지 않는다. 감사 기록이나 법적 증명이 필요한 공식 경품 추첨에는 전용 시스템을 사용해야 한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/secret-santa/\">시크릿 산타·마니또 추첨기 — 자기 이름이 뽑히지 않게 나누는 방법</a><p>마니또·시크릿 산타 추첨에서 아무도 자기 자신을 뽑지 않고, 커플이나 가족끼리 걸리지 않게 선물 상대를 배정하는 방식을 정리했다.</p></li><li><a href=\"/ko/apps/json-formatter/\">JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기</a><p>API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.</p></li><li><a href=\"/ko/apps/dedupe-lines/\">중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유</a><p>한 줄씩 입력한 목록에서 중복을 정리하고 첫 등장 순서와 원문 줄 번호를 확인한다. 공백·대소문자 비교 옵션이 결과를 바꾸는 범위와 빈 줄 처리의 차이를 설명한다.</p></li></ul></aside>"
+}

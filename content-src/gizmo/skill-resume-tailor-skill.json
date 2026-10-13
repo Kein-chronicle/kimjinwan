@@ -1,0 +1,22 @@
+{
+ "slug": "skill-resume-tailor-skill",
+ "kind": "text",
+ "purpose": "career",
+ "title": "이력서 맞춤 수정 스킬",
+ "tagline": "채용 공고에 맞춰 이력서를 조정하되 없는 경력은 만들지 않도록 가르쳐요",
+ "url": "https://gizmo-store.com/tool/skill-resume-tailor-skill",
+ "download": "https://gizmo-store.com/tool/skill-resume-tailor-skill/download",
+ "difficulty": "normal",
+ "aiLabel": "ai-assisted",
+ "hash": "0d9f068c7b6b5b110f61b5b4ac8183dbe89b8f6847e8c6efb230471dccdcbc57",
+ "description": "채용 공고에 맞춰 이력서를 조정하되 없는 경력은 만들지 않도록 가르쳐요. 스킬을 지원하는 AI 도구(Claude Code 등)에 한 번 넣어 두면, 같은 일을 시킬 때마다 같은 방식으로 해 줘요.",
+ "audience": "여러 곳에 지원하는 분.",
+ "result": "공고와 이력서를 주면 대응표와 고친 문장을 줘요.",
+ "steps": [
+  "[파일로 내려받기]로 SKILL.md를 받아요.",
+  "쓰는 AI 도구의 “스킬 폴더”에 resume-tailor-skill 폴더를 만들고 그 안에 파일을 넣어요. (위치는 도구마다 달라서 쓰는 도구의 스킬 안내를 확인해 주세요.)",
+  "관련된 일을 시키면 AI가 이 설명서대로 일해요."
+ ],
+ "prompt": "---\nname: resume-tailor-skill\ndescription: 채용 공고와 사용자의 이력서를 비교해 대응 관계를 정리하고, 사실에 근거해 문장을 조정한다. 사용자가 이력서 수정이나 공고 맞춤 이력서를 요청할 때 사용한다.\n---\n\n# 이력서 맞춤 수정\n\n## 순서\n1. 공고의 핵심 요구 5가지를 뽑는다.\n2. 사용자 경력 중 대응되는 것과 약한 것을 표로 정리한다(약하면 약하다고 쓴다).\n3. 경력 순서와 강조할 내용을 제안한다.\n4. 문장을 \"원래 → 수정\" 형태로 고친다.\n5. 면접에서 약점으로 지적받을 부분 3가지를 알려 준다.\n\n## 규칙\n- 사용자가 하지 않은 일, 경력, 숫자를 만들지 않는다. 숫자가 없으면 [숫자 입력]으로 비운다.\n- 키워드를 억지로 넣지 않는다.\n- 개인정보(연락처, 주소)를 요구하지 않고, 보이면 가리라고 안내한다.",
+ "trouble": "스킬이 작동하지 않으면 폴더 이름이 파일 안의 name(resume-tailor-skill)과 같은지 확인하세요. 스킬 폴더 위치는 도구마다 달라요. 쓰는 도구의 설명서를 확인해 주세요."
+}

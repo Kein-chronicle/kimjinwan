@@ -1,0 +1,132 @@
+{
+ "id": "cel-studio",
+ "tags": [
+  "GIF",
+  "움짤",
+  "영상 변환",
+  "용량 줄이기",
+  "브라우저 로컬"
+ ],
+ "audience": [
+  {
+   "ko": "영상 일부를 움짤(GIF)로 빠르게 만들고 싶은 블로거 · 커뮤니티 이용자",
+   "en": "Bloggers and community users who want a quick GIF from part of a video"
+  },
+  {
+   "ko": "GIF 용량이 너무 커서 \"500KB 이하로\" 줄여야 하는 사람",
+   "en": "People who must shrink a GIF to a target size such as under 500 KB"
+  },
+  {
+   "ko": "프레임 하나하나를 지우고 순서를 바꾸고 글자를 얹고 싶은 편집자",
+   "en": "Editors who want to delete, reorder and caption individual frames"
+  },
+  {
+   "ko": "스프라이트 시트를 칸마다 잘라 움직이는 파일로 바꾸려는 게임 · 이모티콘 제작자",
+   "en": "Game and emoji creators turning sprite sheets into animated files"
+  }
+ ],
+ "features": [
+  {
+   "t": {
+    "ko": "영상 → GIF, 사진 → GIF",
+    "en": "Video to GIF, photos to GIF"
+   },
+   "d": {
+    "ko": "구간 · 크기 · 프레임 속도 · 색상 · 디더링을 조절해 영상이나 사진 여러 장을 움짤로 만듭니다.",
+    "en": "Turn a video or several photos into a GIF with range, size, frame rate, color and dithering controls."
+   }
+  },
+  {
+   "t": {
+    "ko": "프레임 편집기",
+    "en": "Frame editor"
+   },
+   "d": {
+    "ko": "프레임 삭제 · 복제 · 순서 변경, 자르기 · 회전, 글자, 색 보정, 배경 제거, 속도와 반복 횟수까지 한 화면에서 다룹니다.",
+    "en": "Delete, duplicate and reorder frames, crop, rotate, add text, color-correct, remove backgrounds and set speed and loops in one place."
+   }
+  },
+  {
+   "t": {
+    "ko": "목표 용량 맞추기",
+    "en": "Hit a target file size"
+   },
+   "d": {
+    "ko": "\"500KB 이하로\"처럼 목표만 적으면 색 · 손실 · 크기 · 프레임을 알아서 낮춥니다.",
+    "en": "Type a goal like \"under 500 KB\" and colors, loss, size and frames are reduced automatically."
+   }
+  },
+  {
+   "t": {
+    "ko": "여러 형식",
+    "en": "Many formats"
+   },
+   "d": {
+    "ko": "GIF · APNG · WebP · MP4 · WebM으로 저장하고, 움직이는 AVIF와 SVG도 열어 편집할 수 있습니다.",
+    "en": "Save as GIF, APNG, WebP, MP4 or WebM, and open animated AVIF and SVG for editing."
+   }
+  },
+  {
+   "t": {
+    "ko": "시트 자르기 · 영상 도구",
+    "en": "Sheet cutter and video tools"
+   },
+   "d": {
+    "ko": "격자 스프라이트 시트를 칸 수 자동 추정으로 잘라 움직이는 파일로 만들고, 영상 구간 · 속도 · 회전 · 소리(끄기 · 볼륨 · 페이드 · WAV 추출)를 바꿉니다.",
+    "en": "Cut grid sprite sheets with auto-detected cells, and change video range, speed, rotation and sound (mute, volume, fade, WAV export)."
+   }
+  },
+  {
+   "t": {
+    "ko": "서버로 올라가지 않습니다",
+    "en": "Nothing is uploaded"
+   },
+   "d": {
+    "ko": "변환은 이 탭 안에서만 돌고, 브라우저 보안 규칙으로 외부 전송 자체를 막아 두었습니다.",
+    "en": "Conversion runs only inside this tab, and browser security rules block outbound transfer entirely."
+   }
+  }
+ ],
+ "steps": [
+  {
+   "ko": "영상(MP4 · MOV · WebM)이나 사진, 기존 GIF를 끌어다 놓습니다.",
+   "en": "Drag in a video (MP4, MOV, WebM), photos or an existing GIF."
+  },
+  {
+   "ko": "보여 줄 구간과 너비, 프레임 속도를 고르고 필요하면 프레임을 손봅니다.",
+   "en": "Choose the range, width and frame rate, and tweak frames if needed."
+  },
+  {
+   "ko": "GIF · APNG · WebP · MP4로 내려받습니다. 용량이 크면 목표 용량만 적어 줄입니다.",
+   "en": "Download as GIF, APNG, WebP or MP4; type a target size if it is too big."
+  }
+ ],
+ "notes": [
+  {
+   "ko": "무료이고 로그인이 없으며 안내와 오류 문구까지 한국어입니다.",
+   "en": "Free, no login, and every message including errors is in Korean."
+  },
+  {
+   "ko": "AVIF · JPEG XL 저장과 MP3 변환은 아직 없습니다(브라우저가 직접 만들지 못해 별도 부품이 필요). 영상 저장 형식은 브라우저가 지원하는 것만 보입니다.",
+   "en": "AVIF/JPEG XL saving and MP3 conversion are not available yet (they need extra components). Video save formats depend on what your browser supports."
+  },
+  {
+   "ko": "큰 영상(수백 MB)은 메모리 상한에서 막고 안내합니다.",
+   "en": "Very large videos (hundreds of MB) stop at a memory limit with a notice."
+  }
+ ],
+ "facts": {
+  "login": {
+   "ko": "가입 · 로그인 없음",
+   "en": "No sign-up or login"
+  },
+  "device": {
+   "ko": "웹 브라우저(Chrome · Firefox · Safari 계열)",
+   "en": "Web browser (Chrome, Firefox, Safari family)"
+  },
+  "data": {
+   "ko": "파일은 이 브라우저 안에서만 처리",
+   "en": "Files are processed inside this browser only"
+  }
+ }
+}
