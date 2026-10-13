@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.32 배포 기록 — 2026-10-13
+
+Pagefold(pagefold.kimjinwan.com, PDF 편집 · 합치기 · 나누기)를 서비스에 추가했다(`document`, LIVE, 메인 1280×800 썸네일). 서비스 수 14곳 반영(메타·JSON-LD·카테고리 수), 공유 카드 재생성, sitemap lastmod 갱신. 서비스 모아보기(service.kimjinwan.com)에도 같은 서비스와 상세·스크린샷 7장을 넣어 같이 배포했다. 직전 1.3.31 은 복구용 유지. ads.txt·app-ads.txt 해시 422f460a… 확인.
+
 ## 1.3.28 배포 기록 — 2026-10-12
 
 홈 공유 카드(og:image · twitter:image)를 히어로 소개 영상의 마지막 장면(`assets/hero/jinwan-share-frame.png`, 영상 14.2초 프레임)으로 교체했다. 카드 생성기(`scripts/build_og.mjs`)가 이 프레임이 있으면 홈 카드를 1200×630 가운데 잘라내기로 만들고, 대체 텍스트도 영상 장면 설명으로 바꿨다. 영상을 다시 만들면 프레임을 다시 뽑아 같은 이름으로 두고 build_og → build 순서로 돌린다. 직전 1.3.27 은 복구용 유지.
