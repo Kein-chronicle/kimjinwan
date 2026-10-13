@@ -2218,10 +2218,10 @@
    "id": "games",
    "url": "https://games.kimjinwan.com/",
    "count": {
-    "value": 17,
+    "value": 31,
     "total": 77,
     "as_of": "2026-10-14",
-    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 17개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
+    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 31개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
     {
@@ -2244,6 +2244,48 @@
         "터치"
        ],
        "url": "https://games.kimjinwan.com/play/arc-eel/"
+      },
+      {
+       "slug": "balance-bear",
+       "title": {
+        "ko": "볼트 밸런스: 전력 균형",
+        "en": "Volt Balance"
+       },
+       "summary": "북극곰 정비사와 함께 전기차 바닥 아래의 배터리 셀을 같은 색끼리 모아 정렬하는 색 분류 퍼즐입니다.",
+       "session": "2~7분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/balance-bear/"
+      },
+      {
+       "slug": "block-beaver",
+       "title": {
+        "ko": "블록 비버: 줄 채우기",
+        "en": "Block Beaver"
+       },
+       "summary": "안전모를 쓴 비버가 지켜보는 가운데, 8×8 작업장 칸에 작은 블록을 하나씩 놓아 가로줄이나 세로줄을 채워 지우는 퍼즐 게임입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/block-beaver/"
+      },
+      {
+       "slug": "circuit-lynx",
+       "title": {
+        "ko": "서킷 링크스: 회로 연결 퍼즐",
+        "en": "Circuit Lynx"
+       },
+       "summary": "칸마다 놓인 회로 조각을 눌러 돌려서 배터리에서 나온 전류가 끊기지 않고 목적지 단자까지 닿게 하는 회전 연결 퍼즐입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/circuit-lynx/"
       },
       {
        "slug": "clockwork-harbor",
@@ -2274,6 +2316,20 @@
        "url": "https://games.kimjinwan.com/play/cloud-sheep-forest-words/"
       },
       {
+       "slug": "cloud-sheep-wordpath",
+       "title": {
+        "ko": "구름양의 낱말길",
+        "en": "Cloud Sheep Word Path"
+       },
+       "summary": "구름양이 내 주는 낱말을 보고 흩어진 글자 타일을 순서대로 눌러 완성하는, 50단계짜리 한글 낱말 만들기 게임입니다.",
+       "session": "3~6분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/cloud-sheep-wordpath/"
+      },
+      {
        "slug": "cosmo-corgi-star-route",
        "title": {
         "ko": "코스모 코기의 별자리 항로",
@@ -2300,6 +2356,47 @@
         "터치"
        ],
        "url": "https://games.kimjinwan.com/play/firefly-signal-school/"
+      },
+      {
+       "slug": "forest-fox-differences",
+       "title": {
+        "ko": "숲속 여우 탐정단",
+        "en": "숲속 여우 탐정단"
+       },
+       "summary": "탐정 모자를 쓴 여우와 함께 나란히 놓인 두 장의 방 그림에서 서로 다른 세 군데를 찾아 누르는 틀린 그림 찾기 게임입니다.",
+       "session": "3~8분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/forest-fox-differences/"
+      },
+      {
+       "slug": "ghost-bubble-groups",
+       "title": {
+        "ko": "고스트 버블 그룹스",
+        "en": "고스트 버블 그룹스"
+       },
+       "summary": "같은 색 유령이 세 마리 이상 붙은 덩어리를 눌러 한 번에 모으고, 정해진 횟수 안에 목표 마릿수를 채우는 군집 수집 퍼즐입니다.",
+       "session": "2-5분",
+       "controls": [
+        "버블 군집 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/ghost-bubble-groups/"
+      },
+      {
+       "slug": "glyph-owl",
+       "title": {
+        "ko": "글리프 헌터: 다른 문자 찾기",
+        "en": "Glyph Hunter"
+       },
+       "summary": "탐정 모자를 쓴 부엉이와 함께 똑같은 글자가 가득한 격자에서 단 하나만 다른 글자를 찾아 누르는 관찰력 게임입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/glyph-owl/"
       },
       {
        "slug": "honeybee-garden-trail",
@@ -2396,6 +2493,34 @@
        "url": "https://games.kimjinwan.com/play/aim-trainer/"
       },
       {
+       "slug": "asteroids-belt",
+       "title": {
+        "ko": "애스터로이드 벨트",
+        "en": "Asteroids Belt"
+       },
+       "summary": "작은 청소 로봇선을 몰아 항로를 막은 우주 잔해를 쏘고 부수되, 붉게 점멸하는 구조 캡슐은 건드리지 않아야 하는 세로 슈팅 게임입니다.",
+       "session": "5~15분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/asteroids-belt/"
+      },
+      {
+       "slug": "capy-highlands",
+       "title": {
+        "ko": "캐피 하이랜드",
+        "en": "Capy Highlands"
+       },
+       "summary": "카피바라를 몰아 몰려드는 들쥐와 멧돼지 떼 속에서 120초를 버티며 무기 카드를 모아 키우는 도트 그래픽의 서바이벌 액션입니다.",
+       "session": "10~20분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/capy-highlands/"
+      },
+      {
        "slug": "shadow-orbit-explorer",
        "title": {
         "ko": "섀도우 오빗 익스플로러",
@@ -2425,6 +2550,58 @@
         "방향키"
        ],
        "url": "https://games.kimjinwan.com/play/star-scout-survivors/"
+      }
+     ]
+    },
+    {
+     "id": "strategy",
+     "label": {
+      "ko": "전략",
+      "en": "Strategy"
+     },
+     "items": [
+      {
+       "slug": "bubble-front-command",
+       "title": {
+        "ko": "버블 프론트 커맨드",
+        "en": "버블 프론트 커맨드"
+       },
+       "summary": "여우 영웅 퍽을 세 전선 사이로 움직이고 방패병·궁수·지원술사를 내보내 적 거점을 무너뜨리는 가로 화면 전선 방어 게임입니다.",
+       "session": "4-8분",
+       "controls": [
+        "소환 슬롯 터치",
+        "숫자키"
+       ],
+       "url": "https://games.kimjinwan.com/play/bubble-front-command/"
+      },
+      {
+       "slug": "current-canticle",
+       "title": {
+        "ko": "해류의 성가",
+        "en": "Current Canticle"
+       },
+       "summary": "손가락으로 물살을 그려 물고기 떼를 같은 색의 산호까지 인도하고, 흩어진 바다의 합창 24곡을 하나씩 되살리는 해류 연결 퍼즐입니다.",
+       "session": "10~30분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/current-canticle/"
+      },
+      {
+       "slug": "signal-tower-guard",
+       "title": {
+        "ko": "시그널 타워 가드",
+        "en": "시그널 타워 가드"
+       },
+       "summary": "경로 주변에 포탑을 배치하고 점증 웨이브를 막는 방어 전략",
+       "session": "5-10분",
+       "controls": [
+        "전장 터치 이동·배치",
+        "WASD·방향키",
+        "게임패드"
+       ],
+       "url": "https://games.kimjinwan.com/play/signal-tower-guard/"
       }
      ]
     },
@@ -2494,26 +2671,71 @@
      ]
     },
     {
-     "id": "strategy",
+     "id": "rhythm",
      "label": {
-      "ko": "전략",
-      "en": "Strategy"
+      "ko": "리듬",
+      "en": "Rhythm"
      },
      "items": [
       {
-       "slug": "signal-tower-guard",
+       "slug": "echo-prism-beat",
        "title": {
-        "ko": "시그널 타워 가드",
-        "en": "시그널 타워 가드"
+        "ko": "에코 프리즘 비트",
+        "en": "에코 프리즘 비트"
        },
-       "summary": "경로 주변에 포탑을 배치하고 점증 웨이브를 막는 방어 전략",
-       "session": "5-10분",
+       "summary": "D, F, J, K 네 개의 키에 맞춰 위에서 내려오는 색색의 막대를 판정선에서 받아 내는 4레인 리듬 게임입니다.",
+       "session": "2-5분",
        "controls": [
-        "전장 터치 이동·배치",
-        "WASD·방향키",
-        "게임패드"
+        "D F J K",
+        "레인 터치"
        ],
-       "url": "https://games.kimjinwan.com/play/signal-tower-guard/"
+       "url": "https://games.kimjinwan.com/play/echo-prism-beat/"
+      }
+     ]
+    },
+    {
+     "id": "training",
+     "label": {
+      "ko": "훈련",
+      "en": "Training"
+     },
+     "items": [
+      {
+       "slug": "color-chameleon",
+       "title": {
+        "ko": "컬러 카멜레온: 색깔 테스트",
+        "en": "Color Chameleon"
+       },
+       "summary": "화면에 크게 뜬 색 이름의 뜻은 무시하고, 글자가 실제로 칠해진 색과 같은 이름의 버튼을 눌러야 하는 색 판독 반응 퍼즐입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/color-chameleon/"
+      }
+     ]
+    },
+    {
+     "id": "word",
+     "label": {
+      "ko": "단어",
+      "en": "Word"
+     },
+     "items": [
+      {
+       "slug": "category-cat",
+       "title": {
+        "ko": "카테고리 캣: 단어 그룹",
+        "en": "Category Cat"
+       },
+       "summary": "안경 쓴 고양이 사서와 함께 섞여 있는 열두 개의 단어에서 같은 주제끼리 네 개씩 세 묶음으로 가르는 단어 분류 퍼즐입니다.",
+       "session": "2~6분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/category-cat/"
       }
      ]
     }
