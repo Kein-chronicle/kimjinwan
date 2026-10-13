@@ -266,9 +266,12 @@ export function pageFoot(page) {
 // ===== 콘텐츠 허브(/content/) =====
 // 항목마다 제목 + 요약 본문이 HTML 에 그대로 실린다. 본문이 한국어뿐인 항목(블로그 글·게임 설명·도구 설명)은 영어 모드에서도 같은 한국어를 보여 주고 lang="ko" 로 밝힌다.
 export const HUB_SECTIONS = [
+  {id: 'column', icon: 'file-text', title: {ko: '케인칼럼', en: 'Kein Column'},
+    intro: {ko: 'AI 시대의 일과 놀이에 대한 칼럼입니다. 일, 공부, 게임에서 마주친 장면을 출발점으로 AI를 어떻게 볼지 정리했고, 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
+      en: 'Columns on work and play in the age of AI. Each starts from a scene in work, study or games and sorts out how to look at AI, and every column can be read in full right here. The columns are written in Korean.'}},
   {id: 'blog', icon: 'book-open', title: {ko: '블로그', en: 'Journal'},
-    intro: {ko: 'AI 에이전트가 직접 쓴 업무일지, 앱을 만들고 심사에 제출한 기록, AI 시대의 일과 놀이에 대한 짧은 글을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
-      en: 'Work logs that AI agents wrote themselves, records of building and submitting apps, and short essays on work and play in the age of AI. Every post can be read in full right here. The posts are written in Korean.'}},
+    intro: {ko: 'AI 에이전트가 직접 쓴 업무일지와 앱을 만들고 심사에 제출한 기록을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
+      en: 'Work logs that AI agents wrote themselves and records of building and submitting apps. Every post can be read in full right here. The posts are written in Korean.'}},
   {id: 'gamenews', icon: 'globe', title: {ko: '게임 소식', en: 'Game news'},
     intro: {ko: '즐기는 게임의 공식 공지와 업데이트, 공략 정리와 직접 만든 게임의 개발기를 출처와 날짜까지 남겼습니다. 게임별로 골라 볼 수 있고, 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
       en: 'Sourced notes on official announcements, updates and guides for the games I play, plus devlogs of the games I make. Pick a game to filter, and read every post in full here. The posts are written in Korean.'}},
@@ -296,7 +299,7 @@ const AI_LABEL = {'ai-assisted': {ko: 'AI 도움을 받아 만듦', en: 'Made wi
 // 블로그 본문 HTML: 같은 허브 안에 있는 글·목록은 허브 주소로 잇고, 허브에 없는 블로그 주소는 링크를 풀어 글자만 남긴다.
 // 그 밖의 외부 주소는 새 창으로 연다. 이미지는 blog 서브도메인 절대 주소를 그대로 참조한다.
 export function rewriteBlogBody(html, mirrored) {
-  const cats = new Set(['ai', 'apps', 'fiction']);
+  const cats = new Set(['ai', 'apps']); // 블로그 카테고리 색인. fiction 은 허브에서 케인칼럼(/content/column/)으로 독립했다
   return html
     .replace(/<a\b([^>]*?)\shref="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, pre, href, post, inner) => {
       if (href.startsWith('#') || href.startsWith('mailto:')) return m;
@@ -306,6 +309,7 @@ export function rewriteBlogBody(html, mirrored) {
         const a = to => `<a${pre} href="${to}"${post}>${inner}</a>`;
         if (q && !q[1]) return a(`/content/blog/${q[3] || ''}`);
         if (q && q[1] === 'games') return q[2] ? (mirrored.has(`games/${q[2]}`) ? a(`${mirrorPath('game-news', q[2])}${q[3] || ''}`) : inner) : a(`/content/game-news/${q[3] || ''}`);
+        if (q && q[1] === 'fiction') return q[2] ? (mirrored.has(`fiction/${q[2]}`) ? a(`${mirrorPath('column', q[2])}${q[3] || ''}`) : inner) : a(`/content/column/${q[3] || ''}`);
         if (q && q[1] && !q[2] && cats.has(q[1])) return a(`/content/blog/${q[1]}/${q[3] || ''}`);
         if (q && q[2] && mirrored.has(`${q[1]}/${q[2]}`)) return a(`${mirrorPath('blog', `${q[1]}/${q[2]}`)}${q[3] || ''}`);
         return inner; // 허브에 없는 블로그 주소(소개·문의 등)는 링크를 풀어 글자만 남긴다

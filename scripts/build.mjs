@@ -69,9 +69,9 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
       {'@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/`},
       {'@type': 'ListItem', position: 2, name: SUBPAGES.find(x => x.key === page.key).label.ko, item: url}]});
   if (page.key === 'content' && contentHub) {
-    const names = {blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구', apps: '내 앱'};
-    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 6,
-      itemListElement: ['blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
+    const names = {column: '케인칼럼', blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구', apps: '내 앱'};
+    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 7,
+      itemListElement: ['column', 'blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
   }
   return `<script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': g}).replace(/</g, '\\u003c')}</script>`;
 }
@@ -81,9 +81,11 @@ const jsonFiles = dir => fs.existsSync(path.join(ROOT, dir)) ? fs.readdirSync(pa
 export function mirrorPages(data) {
   const hub = data.contentHub, grp = id => hub.sections.find(x => x.id === id).groups;
   const labelOf = (id, k) => grp(id).find(g => g.id === k).label;
-  const blog = jsonFiles('content-src/blog').map(f => json(f)), news = jsonFiles('content-src/gamenews').map(f => json(f));
-  const mirrored = new Set([...blog.map(b => `${b.category}/${b.slug}`), ...news.map(n => `games/${n.slug}`)]);
+  const column = jsonFiles('content-src/column').map(f => json(f)), blog = jsonFiles('content-src/blog').map(f => json(f)), news = jsonFiles('content-src/gamenews').map(f => json(f));
+  const mirrored = new Set([...column.map(c => `fiction/${c.slug}`), ...blog.map(b => `${b.category}/${b.slug}`), ...news.map(n => `games/${n.slug}`)]);
   const pages = [];
+  for (const c of column) pages.push({kind: 'column', path: mirrorPath('column', c.slug), title: c.title, description: c.description, date: c.date, metaLabel: grp('column')[0].label,
+    crumbs: mirrorTrail(data, 'column'), body: rewriteBlogBody(c.body, mirrored), section: grp('column')[0].label.ko});
   for (const b of blog) pages.push({kind: 'blog', path: mirrorPath('blog', `${b.category}/${b.slug}`), title: b.title, description: b.description, date: b.date, metaLabel: labelOf('blog', b.category),
     crumbs: mirrorTrail(data, 'blog', b.category), body: rewriteBlogBody(b.body, mirrored), section: labelOf('blog', b.category).ko});
   for (const n of news) pages.push({kind: 'gamenews', path: mirrorPath('game-news', n.slug), title: n.title, description: n.description, date: n.date, metaLabel: labelOf('gamenews', n.game),
@@ -165,6 +167,7 @@ export function buildAll({write = true} = {}) {
     ...Object.fromEntries(ICON_NAMES.map(n => ['ico_' + n, icon(n, {size: 18})])),
     ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], rocket: ['rocket', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     head_links: '',
+    hub_column_count: String(data.contentHub.sections.find(x => x.id === 'column').count.value),
     hub_blog_count: String(data.contentHub.sections.find(x => x.id === 'blog').count.value),
     hub_gamenews_count: String(data.contentHub.sections.find(x => x.id === 'gamenews').count.value),
     hub_games_count: String(data.contentHub.sections.find(x => x.id === 'games').count.value),

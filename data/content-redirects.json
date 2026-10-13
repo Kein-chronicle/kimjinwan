@@ -1,7 +1,37 @@
 {
  "as_of": "2026-10-14",
- "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로 옮긴 매핑. nginx 301 용.",
+ "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로 옮긴 매핑. nginx 301 용.",
  "redirects": [
+  {
+   "from": "/content/blog/fiction/",
+   "to": "/content/column/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/fiction/ai-does-not-replace-me/",
+   "to": "/content/column/ai-does-not-replace-me/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/fiction/ai-still-have-to-work/",
+   "to": "/content/column/ai-still-have-to-work/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/fiction/childhood-exploration-joy/",
+   "to": "/content/column/childhood-exploration-joy/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/fiction/nikke-don-well-made-game/",
+   "to": "/content/column/nikke-don-well-made-game/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/fiction/supervise-generative-ai/",
+   "to": "/content/column/supervise-generative-ai/",
+   "status": 301
+  },
   {
    "from": "/content/blog/games/",
    "to": "/content/game-news/",

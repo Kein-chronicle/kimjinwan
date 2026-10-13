@@ -90,9 +90,10 @@ function validateProfile(p, err) {
 export const HUB_MIN_SUMMARY = 40;
 export const HUB_MIN_GIZMO_SUMMARY = 30; // 한 줄 설명 + 추천 대상 한 줄
 export const HUB_MIN_BLOG_SUMMARY = 20; // 전체 글을 싣는 블로그·게임 소식은 짧은 설명이 있는 글도 있다
-export const HUB_SECTION_IDS = ['blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'];
+export const HUB_SECTION_IDS = ['column', 'blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'];
 const URL_RULE = {
-  blog: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/(ai|apps|fiction)\/[\w-]+\/$/.test(u),
+  column: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/fiction\/[\w-]+\/$/.test(u), // 케인칼럼 = 블로그 fiction 폴더의 글
+  blog: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/(ai|apps)\/[\w-]+\/$/.test(u),
   gamenews: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/games\/[\w-]+\/$/.test(u),
   gizmo: u => /^https:\/\/gizmo-store\.com\/tool\/[\w-]+$/.test(u),
   games: u => /^https:\/\/games\.kimjinwan\.com\/play\/[\w-]+\/$/.test(u),
@@ -115,14 +116,14 @@ function validateContentHub(hub, err) {
       const w = `${w0}.${g.id}`;
       if (!biOk(g.label)) err.push(`${w}: label needs ko/en`);
       if (!g.items || !g.items.length) err.push(`${w}: needs items`);
-      if (s.id === 'blog' || s.id === 'gamenews') { if (g.total !== g.items.length) err.push(`${w}: total must equal items`); }
+      if (s.id === 'column' || s.id === 'blog' || s.id === 'gamenews') { if (g.total !== g.items.length) err.push(`${w}: total must equal items`); }
       for (const it of g.items || []) {
         n++; const iw = `${w}.${it.url}`;
         if (!(s.id === 'apps' && it.status === 'in_review') && !URL_RULE[s.id](it.url || '')) err.push(`${iw}: url does not match the ${s.id} pattern`);
         const key = it.url || `${s.id}:${it.slug}`; if (seen.has(key)) err.push(`${iw}: duplicate url`); seen.add(key);
         const title = s.id === 'games' ? (it.title && it.title.ko && it.title.en) : it.title;
         if (!title) err.push(`${iw}: title required`);
-        if (s.id === 'blog' || s.id === 'gamenews') { if (!DATE.test(it.date || '')) err.push(`${iw}: date required`); text(iw, it.summary, HUB_MIN_BLOG_SUMMARY); }
+        if (s.id === 'column' || s.id === 'blog' || s.id === 'gamenews') { if (!DATE.test(it.date || '')) err.push(`${iw}: date required`); text(iw, it.summary, HUB_MIN_BLOG_SUMMARY); }
         else if (s.id === 'gizmo') { if (typeof it.summary !== 'string' || it.summary.length < HUB_MIN_GIZMO_SUMMARY) err.push(`${iw}: summary (tagline + audience) needs at least ${HUB_MIN_GIZMO_SUMMARY} chars`); if ('download' in it) err.push(`${iw}: download link must not be stored`); }
         else { text(iw, it.summary, 20); if (!it.slug) err.push(`${iw}: slug required`); }
       }

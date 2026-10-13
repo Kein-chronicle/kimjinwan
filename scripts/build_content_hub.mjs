@@ -5,7 +5,7 @@
 // 산출: data/content-hub.json(색인) + data/content-redirects.json(옛→새 경로) + content-src/excluded.json(제외 사유) + content-src/{blog,gizmo}/**.json(개별 페이지 본문 스냅샷). 모두 메모리에서 끝까지 만든 뒤에 쓴다 — 어느 단계든 실패하면 기존 산출물은 그대로다.
 // 시각을 읽지 않는다: 기준일은 --as-of 로 받고, 같은 입력 저장소 상태면 출력은 바이트까지 같다.
 // 읽기만 하는 출처(형제 저장소, 수정 금지):
-//   blog     ~/Projects/kein-blog/web/content/ko/{ai,apps,games,fiction}/*.md (frontmatter) + web/dist/ko/<카테고리>/<slug>/ 실존 확인
+//   blog     ~/Projects/kein-blog/web/content/ko/{ai,apps,games,fiction}/*.md (frontmatter; fiction 은 허브에서 케인칼럼 섹션 column, games 는 게임 소식 섹션 gamenews) + web/dist/ko/<카테고리>/<slug>/ 실존 확인
 //   games    ~/Projects/kein-web-games/src/games.json(메타) + 허브 편집 원본 data/authoring/games/*.json(우선) + 소스 추출(폴백: kein-game-forge README·설계 문서 등)
 //   tools    ~/Projects/kein-web-tools/lib/tool-catalog.ts
 //   gizmo    https://gizmo-store.com/api/v1/items (공개 API, 네트워크 필요 — 실패하면 기존 JSON 을 건드리지 않고 exit 1). 색인엔 제목·한줄설명, 상세엔 설명류 필드와 text 항목의 download 본문 전문
@@ -52,9 +52,9 @@ function frontmatter(file) {
 }
 const BLOG_ORIGIN = 'https://blog.kimjinwan.com';
 const EXTRA = new Map(); // 쓸 파일(상대경로 → 객체)
-// 블로그 카테고리: 이 배열의 순서가 칩·색인·랜딩 나열의 단일 기준이다(전체 → 이야기 → 에이전트 업무일지 → 앱 제작·심사).
+// 블로그 카테고리: 이 배열의 순서가 칩·색인·랜딩 나열의 단일 기준이다(전체 → 에이전트 업무일지 → 앱 제작·심사).
+// 옛 '이야기'(kein-blog 의 fiction 폴더)는 블로그에서 빠져 케인칼럼(columnSection)이 됐다.
 const BLOG_CATS = [
-  {id: 'fiction', label: {ko: '이야기', en: 'Essays'}, blurb: {ko: 'AI 시대의 일과 놀이에 대한 짧은 글', en: 'Short essays on work and play in the age of AI'}},
   {id: 'ai', label: {ko: '에이전트 업무일지', en: 'Agent work log'}, blurb: {ko: 'AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지', en: 'A log that AI agents kept themselves of the failures, recoveries and verification results from their own work'}},
   {id: 'apps', label: {ko: '앱 제작·심사', en: 'Apps'}, blurb: {ko: '앱을 만들고 심사에 제출하며 남긴 제작·심사 기록', en: 'Records of building apps and submitting them for review'}},
 ];
@@ -113,6 +113,20 @@ function blogSection() {
   return {id: 'blog', url: `${BLOG_ORIGIN}/ko/`, count: {value: total, as_of: AS_OF, source: `카테고리 ${BLOG_CATS.map(c => c.id).join('·')}: ${BLOG_SRC}`}, groups};
 }
 const REDIRECTS = [];
+// 케인칼럼 = kein-blog 의 fiction 폴더 글. 서브카테고리 없이 한 그룹(id fiction)에 전부 담는다. 허브 주소는 /content/column/<slug>/.
+const COLUMN = {id: 'fiction', label: {ko: '케인칼럼', en: 'Kein Column'}, blurb: {ko: 'AI 시대의 일과 놀이에 대한 칼럼', en: 'Columns on work and play in the age of AI'}};
+function columnSection() {
+  const posts = readPosts(COLUMN.id);
+  for (const p of posts) {
+    EXTRA.set(`content-src/column/${p.slug}.json`, {slug: p.slug, title: p.title, description: p.summary, date: p.date, url: p.url, body: p.body});
+    REDIRECTS.push([`/content/blog/fiction/${p.slug}/`, `/content/column/${p.slug}/`]);
+  }
+  REDIRECTS.push(['/content/blog/fiction/', '/content/column/']);
+  const pages = Math.max(1, Math.ceil(posts.length / 20));
+  for (let n = 2; n <= pages; n++) REDIRECTS.push([`/content/blog/fiction/page/${n}/`, `/content/column/page/${n}/`]);
+  return {id: 'column', url: `${BLOG_ORIGIN}/ko/fiction/`, count: {value: posts.length, as_of: AS_OF, source: `케인칼럼 = 구 블로그 '이야기' 카테고리(fiction 폴더). ${BLOG_SRC}`},
+    groups: [{id: COLUMN.id, label: COLUMN.label, blurb: COLUMN.blurb, total: posts.length, url: `${BLOG_ORIGIN}/ko/fiction/`, items: posts.map(p => ({title: p.title, summary: p.summary, date: p.date, url: p.url}))}]};
+}
 function newsSection() {
   const posts = readPosts('games'), byGame = new Map(NEWS_GAMES.map(g => [g.topic, []]));
   for (const p of posts) {
@@ -210,7 +224,7 @@ async function gizmoSection() {
     count: {value: items.length, as_of: AS_OF, source: 'https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순'}, groups};
 }
 
-const blog = blogSection();
+const column = columnSection(), blog = blogSection();
 const slugOf = u => u.split('/').filter(Boolean).pop();
 const blogApps = new Map(blog.groups.find(g => g.id === 'apps').items.map(i => [slugOf(i.url), {title: i.title, path: `/content/blog/apps/${slugOf(i.url)}/`}]));
 const news = newsSection(), gizmo = await gizmoSection();
@@ -222,10 +236,10 @@ function appsSection() {
   if (r.warnings.length) console.error('apps authoring 경고:\n  ' + r.warnings.join('\n  '));
   return r.section;
 }
-const out = {as_of: AS_OF, sections: [blog, news, gizmo, gamesSection(), toolsSection(blogApps), appsSection()]};
+const out = {as_of: AS_OF, sections: [column, blog, news, gizmo, gamesSection(), toolsSection(blogApps), appsSection()]};
 const files = new Map([['data/content-hub.json', JSON.stringify(out, null, 1) + '\n']]);
 // 옛 경로 → 새 경로 매핑(서버 쪽 301 에 쓴다 — 여기서는 매핑만 남긴다)
-files.set('data/content-redirects.json', JSON.stringify({as_of: AS_OF, note: '이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로 옮긴 매핑. nginx 301 용.', redirects: REDIRECTS.sort((a, b) => a[0].localeCompare(b[0])).map(([from, to]) => ({from, to, status: 301}))}, null, 1) + '\n');
+files.set('data/content-redirects.json', JSON.stringify({as_of: AS_OF, note: '이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로 옮긴 매핑. nginx 301 용.', redirects: REDIRECTS.sort((a, b) => a[0].localeCompare(b[0])).map(([from, to]) => ({from, to, status: 301}))}, null, 1) + '\n');
 files.set('content-src/excluded.json', JSON.stringify({as_of: AS_OF, games: EXCLUDED.games, tools: EXCLUDED.tools, apps: EXCLUDED.apps}, null, 1) + '\n');
 for (const [rel, obj] of [...EXTRA].sort((a, b) => a[0].localeCompare(b[0]))) files.set(rel, JSON.stringify(obj, null, 1) + '\n');
 const KEEP = new Set(['content-src/images.json', 'content-src/apps-store.json']); // build_content_images.mjs 가 관리하는 파일

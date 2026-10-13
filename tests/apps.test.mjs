@@ -144,7 +144,7 @@ test('내 앱: 이미지 — 파일·매니페스트·크기 예산·alt·width/
     assert.doesNotMatch(mainOf(h), /mzstatic|https:\/\/[\w.-]*kimjinwan\.com\/assets/, f);
   }
 });
-test('내 앱: 구조화 데이터 — 상세는 MobileApplication(스토어 주소·가격·버전), 목록은 CollectionPage + ItemList, 랜딩 ItemList 6개', () => {
+test('내 앱: 구조화 데이터 — 상세는 MobileApplication(스토어 주소·가격·버전), 목록은 CollectionPage + ItemList, 랜딩 ItemList(섹션 7개)', () => {
   const ld = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   const d = ld(out['content/apps/dream-meaning/index.html']), app = d.find(x => x['@type'] === 'MobileApplication');
   assert.equal(app.operatingSystem, 'iOS'); assert.equal(app.installUrl, 'https://apps.apple.com/kr/app/id6805266362'); assert.equal(app.offers.price, '0');
@@ -152,7 +152,7 @@ test('내 앱: 구조화 데이터 — 상세는 MobileApplication(스토어 주
   const l = ld(out['content/apps/index.html']); assert.ok(l.some(x => x['@type'] === 'CollectionPage'));
   assert.equal(l.find(x => x['@type'] === 'ItemList').itemListElement.length, PER_PAGE);
   const land = ld(out['content/index.html']).find(x => x['@type'] === 'ItemList').itemListElement;
-  assert.equal(land.length, 6); assert.equal(land.at(-1).url, 'https://kimjinwan.com/content/apps/');
+  assert.equal(land.length, 7); assert.equal(land.at(-1).url, 'https://kimjinwan.com/content/apps/');
 });
 test('내 앱: 사이트맵에 색인·분류·쪽·상세가 전부 있고 /content/blog/apps/ 와 경로가 겹치지 않는다', () => {
   const sm = out['sitemap.xml'], locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);

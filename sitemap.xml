@@ -6,6 +6,7 @@
   <url><loc>https://kimjinwan.com/career/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/game/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/3/</loc><lastmod>2026-10-14</lastmod></url>
@@ -17,7 +18,6 @@
   <url><loc>https://kimjinwan.com/content/blog/page/9/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/10/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/11/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/page/3/</loc><lastmod>2026-10-14</lastmod></url>
@@ -85,6 +85,11 @@
   <url><loc>https://kimjinwan.com/content/apps/category/faith/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/apps/category/life/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/apps/category/mind/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/ai-does-not-replace-me/</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/ai-still-have-to-work/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/childhood-exploration-joy/</loc><lastmod>2026-09-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/nikke-don-well-made-game/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/column/supervise-generative-ai/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/admob-store-search-zero-results/</loc><lastmod>2026-09-17</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-colleagues-01/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-colleagues-02/</loc><lastmod>2026-09-09</lastmod></url>
@@ -287,11 +292,6 @@
   <url><loc>https://kimjinwan.com/content/blog/apps/word-counter/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/apps/yok/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/apps/yumyum-type-test/</loc><lastmod>2026-09-13</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/ai-does-not-replace-me/</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/ai-still-have-to-work/</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/childhood-exploration-joy/</loc><lastmod>2026-09-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/nikke-don-well-made-game/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/fiction/supervise-generative-ai/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta-aug27-dlss-not-performance-proof/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta-release-date-record/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta-seven-year-support-pledge/</loc><lastmod>2026-09-16</lastmod></url>
