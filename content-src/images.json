@@ -1137,6 +1137,227 @@
     "moonhare-hills.webp": 13202
    }
   },
+  "neon-beat-operator": {
+   "from": "{\"srcs\":[\"neon-beat-operator-0.png\",\"neon-beat-operator-4.png\",\"neon-beat-operator-8.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "neon-beat-operator-1.webp": 18474,
+    "neon-beat-operator-2.webp": 21292,
+    "neon-beat-operator-hero.webp": 22534,
+    "neon-beat-operator.webp": 7984
+   }
+  },
+  "neon-coil": {
+   "from": "{\"srcs\":[\"neon-coil-0.png\",\"neon-coil-1.png\",\"neon-coil-5.png\",\"neon-coil-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "neon-coil-1.webp": 6002,
+    "neon-coil-2.webp": 6090,
+    "neon-coil-3.webp": 6968,
+    "neon-coil-hero.webp": 8030,
+    "neon-coil.webp": 2354
+   }
+  },
+  "neon-firefly": {
+   "from": "{\"srcs\":[\"neon-firefly-0.png\",\"neon-firefly-mid.png\",\"neon-firefly-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "neon-firefly-1.webp": 18014,
+    "neon-firefly-2.webp": 21488,
+    "neon-firefly-hero.webp": 15842,
+    "neon-firefly.webp": 6478
+   }
+  },
+  "nonogram-sheep": {
+   "from": "{\"srcs\":[\"nonogram-sheep-0.png\",\"nonogram-sheep-s3.png\",\"nonogram-sheep-clear.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "nonogram-sheep-1.webp": 19528,
+    "nonogram-sheep-2.webp": 21332,
+    "nonogram-sheep-hero.webp": 14946,
+    "nonogram-sheep.webp": 6226
+   }
+  },
+  "nova-fox-breakout": {
+   "from": "{\"srcs\":[\"nova-fox-breakout-0.png\",\"nova-fox-breakout-1.png\",\"nova-fox-breakout-2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "nova-fox-breakout-1.webp": 21550,
+    "nova-fox-breakout-2.webp": 16398,
+    "nova-fox-breakout-hero.webp": 17178,
+    "nova-fox-breakout.webp": 8722
+   }
+  },
+  "nova-lane-sprint": {
+   "from": "{\"srcs\":[\"nova-lane-sprint-0.png\",\"nova-lane-sprint-2.png\",\"nova-lane-sprint-7.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "nova-lane-sprint-1.webp": 8368,
+    "nova-lane-sprint-2.webp": 8196,
+    "nova-lane-sprint-hero.webp": 8286,
+    "nova-lane-sprint.webp": 3792
+   }
+  },
+  "number-rabbit": {
+   "from": "{\"srcs\":[\"number-rabbit-0.png\",\"number-rabbit-mid.png\",\"number-rabbit-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "number-rabbit-1.webp": 18598,
+    "number-rabbit-2.webp": 22738,
+    "number-rabbit-hero.webp": 13828,
+    "number-rabbit.webp": 6996
+   }
+  },
+  "nyx-mirror-ruins": {
+   "from": "{\"srcs\":[\"nyx-mirror-ruins-0.png\",\"nyx-mirror-ruins-1.png\",\"nyx-mirror-ruins-2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "nyx-mirror-ruins-1.webp": 16256,
+    "nyx-mirror-ruins-2.webp": 14756,
+    "nyx-mirror-ruins-hero.webp": 15466,
+    "nyx-mirror-ruins.webp": 6886
+   }
+  },
   "owl-hangul-detective": {
    "card": [
     640,
@@ -1158,6 +1379,124 @@
     "owl-hangul-detective.webp": 11892
    }
   },
+  "parking-raccoon": {
+   "from": "{\"srcs\":[\"parking-raccoon-0.png\",\"parking-raccoon-3.png\",\"parking-raccoon-clear.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "parking-raccoon-1.webp": 23546,
+    "parking-raccoon-2.webp": 22788,
+    "parking-raccoon-hero.webp": 18060,
+    "parking-raccoon.webp": 7416
+   }
+  },
+  "pearl-otter-shuffle": {
+   "from": "{\"srcs\":[\"pearl-otter-shuffle-0.png\",\"pearl-otter-shuffle-mid.png\",\"pearl-otter-shuffle-n2.png\",\"pearl-otter-shuffle-res.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "pearl-otter-shuffle-1.webp": 11524,
+    "pearl-otter-shuffle-2.webp": 11578,
+    "pearl-otter-shuffle-3.webp": 7134,
+    "pearl-otter-shuffle-hero.webp": 9732,
+    "pearl-otter-shuffle.webp": 4694
+   }
+  },
+  "pipe-octopus": {
+   "from": "{\"srcs\":[\"pipe-octopus-0.png\",\"pipe-octopus-mid.png\",\"pipe-octopus-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "pipe-octopus-1.webp": 20800,
+    "pipe-octopus-2.webp": 23784,
+    "pipe-octopus-hero.webp": 17362,
+    "pipe-octopus.webp": 6908
+   }
+  },
+  "pirate-cafe-command": {
+   "from": "{\"srcs\":[\"pirate-cafe-command-0.png\",\"pirate-cafe-command-3.png\",\"pirate-cafe-command-7.png\",\"pirate-cafe-command-6.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "pirate-cafe-command-1.webp": 39586,
+    "pirate-cafe-command-2.webp": 38284,
+    "pirate-cafe-command-3.webp": 16808,
+    "pirate-cafe-command-hero.webp": 21244,
+    "pirate-cafe-command.webp": 18092
+   }
+  },
   "popo-pearl-sort": {
    "card": [
     640,
@@ -1177,6 +1516,60 @@
     "popo-pearl-sort-1.webp": 24616,
     "popo-pearl-sort-hero.webp": 54168,
     "popo-pearl-sort.webp": 20972
+   }
+  },
+  "puck-coral-front": {
+   "from": "{\"srcs\":[\"puck-coral-front-0.png\",\"puck-coral-front-1.png\",\"puck-coral-front-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "puck-coral-front-1.webp": 20440,
+    "puck-coral-front-2.webp": 15766,
+    "puck-coral-front-hero.webp": 16486,
+    "puck-coral-front.webp": 8190
+   }
+  },
+  "pulse-bat": {
+   "from": "{\"srcs\":[\"pulse-bat-0.png\",\"pulse-bat-o3.png\",\"pulse-bat-fail.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "pulse-bat-1.webp": 39878,
+    "pulse-bat-2.webp": 12950,
+    "pulse-bat-hero.webp": 10468,
+    "pulse-bat.webp": 10210
    }
   },
   "shadow-orbit-explorer": {
@@ -1271,6 +1664,33 @@
     "star-scout-survivors-2.webp": 13666,
     "star-scout-survivors-hero.webp": 6126,
     "star-scout-survivors.webp": 2538
+   }
+  },
+  "tori-meteor-run": {
+   "from": "{\"srcs\":[\"tori-meteor-run-0.png\",\"tori-meteor-run-2.png\",\"tori-meteor-run-7.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "tori-meteor-run-1.webp": 10402,
+    "tori-meteor-run-2.webp": 13744,
+    "tori-meteor-run-hero.webp": 12466,
+    "tori-meteor-run.webp": 4328
    }
   }
  },
