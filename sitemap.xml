@@ -69,11 +69,11 @@
   <url><loc>https://kimjinwan.com/content/tools/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/page/3/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/category/image/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/category/life-study/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/category/work/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/tools/category/image/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/tools/category/game/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/category/pdf/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/category/game/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/category/qr/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/apps/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/apps/page/2/</loc><lastmod>2026-10-14</lastmod></url>
@@ -500,32 +500,42 @@
   <url><loc>https://kimjinwan.com/content/tools/age-calculator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/amount-to-korean/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/annual-leave-calculator/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/app-icon-generator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/background-remover/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/bill-split/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/csv-json/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/date-calculator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/dedupe-lines/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/device-mockup/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/discount-calculator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/event-deadline/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/gif-maker/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/gpa-calculator/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/id-photo-maker/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/image-compressor/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/image-converter/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/image-crop-rotate/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/image-ocr/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/image-redactor/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/image-to-pdf/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/image-watermark/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/json-formatter/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/loan-calculator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/math-worksheet/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/metadata-remover/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/palette-extractor/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/password-generator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-compressor/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-merge/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/pdf-organizer/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-sign/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-split/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-to-image/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pdf-watermark/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/photo-collage/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/project-checklist/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/pull-planner/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/qr-generator/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/qr-reader/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/random-roulette/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/return-checklist/</loc><lastmod>2026-10-14</lastmod></url>
@@ -533,6 +543,8 @@
   <url><loc>https://kimjinwan.com/content/tools/seating-chart/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/secret-santa/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/severance-pay-calculator/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/signature-maker/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/tools/social-image-resizer/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/text-diff/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/timezone-converter/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/tools/tournament-bracket/</loc><lastmod>2026-10-14</lastmod></url>

@@ -1,56 +1,7 @@
 {
  "as_of": "2026-10-14",
  "games": [],
- "tools": [
-  {
-   "id": "social-image-resizer",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "image-crop-rotate",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "photo-collage",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "image-redactor",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "metadata-remover",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "id-photo-maker",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "app-icon-generator",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "palette-extractor",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "signature-maker",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "pdf-organizer",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "qr-generator",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  },
-  {
-   "id": "device-mockup",
-   "reason": "이미지 없음(라이브 화면 캡처 실패 또는 미실행)"
-  }
- ],
+ "tools": [],
  "apps": [
   {
    "id": "tradeoff-compass",

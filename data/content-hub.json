@@ -3411,12 +3411,140 @@
    "id": "tools",
    "url": "https://apps.kimjinwan.com/",
    "count": {
-    "value": 45,
+    "value": 57,
     "total": 57,
     "as_of": "2026-10-14",
-    "source": "kein-web-tools/lib/tool-catalog.ts 의 도구 57개 중 소개글에 쓸 사실이 확인되는 45개. 사실 출처: 카탈로그 설명 + app/<slug>/page.tsx 의 정적 한국어 문구(머리말·입력 항목·버튼·안내 문단). 화면 이미지는 content-src/images.json"
+    "source": "kein-web-tools/lib/tool-catalog.ts 의 도구 57개 중 소개글에 쓸 사실이 확인되는 57개. 사실 출처: 카탈로그 설명 + app/<slug>/page.tsx 의 정적 한국어 문구(머리말·입력 항목·버튼·안내 문단). 화면 이미지는 content-src/images.json"
    },
    "groups": [
+    {
+     "id": "image",
+     "label": {
+      "ko": "이미지",
+      "en": "Image"
+     },
+     "items": [
+      {
+       "slug": "image-compressor",
+       "title": "이미지 용량 줄이기",
+       "summary": "사진 크기와 품질을 조절해 JPG·WebP 파일 용량을 줄입니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-compressor/"
+      },
+      {
+       "slug": "image-converter",
+       "title": "이미지 형식 변환기",
+       "summary": "HEIC·JPG·PNG·WebP 이미지를 원하는 형식으로 바꿉니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-converter/"
+      },
+      {
+       "slug": "social-image-resizer",
+       "title": "SNS 이미지 리사이즈",
+       "summary": "사진을 인스타그램·유튜브·블로그 대표 규격에 맞춥니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/social-image-resizer/"
+      },
+      {
+       "slug": "image-crop-rotate",
+       "title": "이미지 자르기·회전",
+       "summary": "사진 영역을 비율대로 자르고 90도 단위로 회전합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-crop-rotate/"
+      },
+      {
+       "slug": "image-watermark",
+       "title": "이미지 워터마크 넣기",
+       "summary": "사진에 문구와 위치, 투명도를 정해 새 이미지로 저장합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-watermark/"
+      },
+      {
+       "slug": "photo-collage",
+       "title": "사진 여러 장 합치기",
+       "summary": "2~9장의 사진을 가로·세로·격자 한 장으로 합칩니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/photo-collage/"
+      },
+      {
+       "slug": "gif-maker",
+       "title": "사진으로 GIF 만들기",
+       "summary": "2~20장의 사진을 순서대로 움직이는 GIF로 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/gif-maker/"
+      },
+      {
+       "slug": "image-redactor",
+       "title": "이미지 모자이크·가리기",
+       "summary": "사진에서 선택한 얼굴·번호판·문서 영역을 모자이크 처리합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-redactor/"
+      },
+      {
+       "slug": "metadata-remover",
+       "title": "사진 메타데이터 제거",
+       "summary": "사진의 GPS·촬영 기기·EXIF 정보를 없앤 새 파일을 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/metadata-remover/"
+      },
+      {
+       "slug": "background-remover",
+       "title": "누끼·배경 제거",
+       "summary": "인물과 상품의 배경을 브라우저 AI로 지워 투명 PNG를 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/background-remover/"
+      },
+      {
+       "slug": "id-photo-maker",
+       "title": "증명사진 제작기",
+       "summary": "배경색과 얼굴 위치를 조절해 증명사진 규격 PNG를 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/id-photo-maker/"
+      },
+      {
+       "slug": "app-icon-generator",
+       "title": "앱 아이콘·파비콘 생성기",
+       "summary": "이미지 한 장으로 앱과 웹용 PNG 아이콘 묶음을 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/app-icon-generator/"
+      },
+      {
+       "slug": "palette-extractor",
+       "title": "사진 색상 팔레트 추출기",
+       "summary": "사진에서 대표색을 찾아 HEX·RGB 값으로 복사합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/palette-extractor/"
+      },
+      {
+       "slug": "signature-maker",
+       "title": "서명·도장 이미지 만들기",
+       "summary": "손가락이나 마우스로 서명해 투명 PNG로 저장합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/signature-maker/"
+      },
+      {
+       "slug": "image-to-pdf",
+       "title": "이미지 PDF 변환기",
+       "summary": "여러 사진을 순서대로 A4 PDF 한 파일로 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-to-pdf/"
+      },
+      {
+       "slug": "image-ocr",
+       "title": "이미지 글자 추출 OCR",
+       "summary": "사진과 스크린샷에서 한국어·영어 텍스트를 추출합니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/image-ocr/"
+      },
+      {
+       "slug": "device-mockup",
+       "title": "스마트폰 목업 생성기",
+       "summary": "앱 스크린샷을 스마트폰 프레임에 넣어 홍보 PNG로 만듭니다.",
+       "category": "이미지",
+       "url": "https://apps.kimjinwan.com/device-mockup/"
+      }
+     ]
+    },
     {
      "id": "life-study",
      "label": {
@@ -3611,60 +3739,60 @@
      ]
     },
     {
-     "id": "image",
+     "id": "pdf",
      "label": {
-      "ko": "이미지",
-      "en": "Image"
+      "ko": "PDF",
+      "en": "PDF"
      },
      "items": [
       {
-       "slug": "image-compressor",
-       "title": "이미지 용량 줄이기",
-       "summary": "사진 크기와 품질을 조절해 JPG·WebP 파일 용량을 줄입니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/image-compressor/"
+       "slug": "pdf-organizer",
+       "title": "PDF 페이지 정리",
+       "summary": "페이지 순서를 바꾸거나 필요한 페이지만 새 PDF로 추출합니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-organizer/"
       },
       {
-       "slug": "image-converter",
-       "title": "이미지 형식 변환기",
-       "summary": "HEIC·JPG·PNG·WebP 이미지를 원하는 형식으로 바꿉니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/image-converter/"
+       "slug": "pdf-merge",
+       "title": "PDF 합치기",
+       "summary": "여러 PDF의 순서를 정해 한 파일로 안전하게 합칩니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-merge/"
       },
       {
-       "slug": "image-watermark",
-       "title": "이미지 워터마크 넣기",
-       "summary": "사진에 문구와 위치, 투명도를 정해 새 이미지로 저장합니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/image-watermark/"
+       "slug": "pdf-split",
+       "title": "PDF 분할·페이지 추출",
+       "summary": "페이지 범위를 새 PDF로 뽑거나 페이지별 파일로 나눕니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-split/"
       },
       {
-       "slug": "gif-maker",
-       "title": "사진으로 GIF 만들기",
-       "summary": "2~20장의 사진을 순서대로 움직이는 GIF로 만듭니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/gif-maker/"
+       "slug": "pdf-to-image",
+       "title": "PDF JPG·PNG 변환",
+       "summary": "PDF 각 페이지를 선명한 JPG 또는 PNG 이미지로 저장합니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-to-image/"
       },
       {
-       "slug": "background-remover",
-       "title": "누끼·배경 제거",
-       "summary": "인물과 상품의 배경을 브라우저 AI로 지워 투명 PNG를 만듭니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/background-remover/"
+       "slug": "pdf-compressor",
+       "title": "PDF 용량 줄이기",
+       "summary": "이미지가 많은 PDF를 화질 단계별로 다시 압축합니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-compressor/"
       },
       {
-       "slug": "image-to-pdf",
-       "title": "이미지 PDF 변환기",
-       "summary": "여러 사진을 순서대로 A4 PDF 한 파일로 만듭니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/image-to-pdf/"
+       "slug": "pdf-sign",
+       "title": "PDF 서명 넣기",
+       "summary": "서명 이미지를 원하는 페이지와 위치에 삽입합니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-sign/"
       },
       {
-       "slug": "image-ocr",
-       "title": "이미지 글자 추출 OCR",
-       "summary": "사진과 스크린샷에서 한국어·영어 텍스트를 추출합니다.",
-       "category": "이미지",
-       "url": "https://apps.kimjinwan.com/image-ocr/"
+       "slug": "pdf-watermark",
+       "title": "PDF 워터마크 넣기",
+       "summary": "문구와 투명도, 각도를 정해 PDF 페이지에 표시합니다.",
+       "category": "PDF",
+       "url": "https://apps.kimjinwan.com/pdf-watermark/"
       }
      ]
     },
@@ -3720,63 +3848,19 @@
      ]
     },
     {
-     "id": "pdf",
-     "label": {
-      "ko": "PDF",
-      "en": "PDF"
-     },
-     "items": [
-      {
-       "slug": "pdf-merge",
-       "title": "PDF 합치기",
-       "summary": "여러 PDF의 순서를 정해 한 파일로 안전하게 합칩니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-merge/"
-      },
-      {
-       "slug": "pdf-split",
-       "title": "PDF 분할·페이지 추출",
-       "summary": "페이지 범위를 새 PDF로 뽑거나 페이지별 파일로 나눕니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-split/"
-      },
-      {
-       "slug": "pdf-to-image",
-       "title": "PDF JPG·PNG 변환",
-       "summary": "PDF 각 페이지를 선명한 JPG 또는 PNG 이미지로 저장합니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-to-image/"
-      },
-      {
-       "slug": "pdf-compressor",
-       "title": "PDF 용량 줄이기",
-       "summary": "이미지가 많은 PDF를 화질 단계별로 다시 압축합니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-compressor/"
-      },
-      {
-       "slug": "pdf-sign",
-       "title": "PDF 서명 넣기",
-       "summary": "서명 이미지를 원하는 페이지와 위치에 삽입합니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-sign/"
-      },
-      {
-       "slug": "pdf-watermark",
-       "title": "PDF 워터마크 넣기",
-       "summary": "문구와 투명도, 각도를 정해 PDF 페이지에 표시합니다.",
-       "category": "PDF",
-       "url": "https://apps.kimjinwan.com/pdf-watermark/"
-      }
-     ]
-    },
-    {
      "id": "qr",
      "label": {
       "ko": "QR",
       "en": "QR"
      },
      "items": [
+      {
+       "slug": "qr-generator",
+       "title": "QR 코드 만들기",
+       "summary": "URL과 텍스트를 스캔 가능한 QR 코드 PNG로 만듭니다.",
+       "category": "QR",
+       "url": "https://apps.kimjinwan.com/qr-generator/"
+      },
       {
        "slug": "qr-reader",
        "title": "QR 코드 스캔·해석",
