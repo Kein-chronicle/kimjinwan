@@ -296,5 +296,27 @@
    "ko": "제출 전에 교정을 봅니다",
    "en": "Proof-check before you submit"
   }
+ },
+ {
+  "id": "pagefold",
+  "name": "Pagefold",
+  "kind": "service",
+  "status": "live",
+  "featured": true,
+  "category": "document",
+  "summary": {
+   "ko": "업로드 없이 브라우저 안에서 PDF를 합치고 나누고 고치는 웹 서비스. 쪽 정리 · 글자 · 형광펜 · 도형 · 서명 · 도장 · 가리기 · 양식 채우기를 하는 편집기와, 파일만 놓으면 바로 되는 합치기 · 나누기를 따로 제공합니다. 한글 PDF를 그대로 다루고 파일은 이 브라우저 밖으로 나가지 않습니다.",
+   "en": "A web service for merging, splitting and editing PDFs inside the browser without uploading. It has an editor for page management, text, highlights, shapes, signatures, stamps, redaction and form filling, plus standalone merge and split tools. Korean PDFs work as they are, and files never leave the browser."
+  },
+  "ai_tools": [
+   "Claude Code"
+  ],
+  "url": "https://pagefold.kimjinwan.com/",
+  "thumb": "assets/services/pagefold.png",
+  "updated": "2026-10-13",
+  "tagline": {
+   "ko": "업로드 없이 브라우저에서 PDF 편집 · 합치기 · 나누기",
+   "en": "Edit, merge and split PDFs in the browser, no upload"
+  }
  }
 ]
