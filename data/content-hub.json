@@ -2218,10 +2218,10 @@
    "id": "games",
    "url": "https://games.kimjinwan.com/",
    "count": {
-    "value": 61,
+    "value": 76,
     "total": 77,
     "as_of": "2026-10-14",
-    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 61개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
+    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 76개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
     {
@@ -2553,6 +2553,19 @@
        "url": "https://games.kimjinwan.com/play/mine-mole/"
       },
       {
+       "slug": "mori-lantern-cluster",
+       "title": {
+        "ko": "모리 랜턴 클러스터",
+        "en": "모리 랜턴 클러스터"
+       },
+       "summary": "초록 후드를 쓴 올빼미 등불지기 모리와 함께 5행 9열로 늘어선 색색의 유령 중 같은 빛의 군집을 눌러 모으는 짧은 군집 제거 게임입니다.",
+       "session": "2-5분",
+       "controls": [
+        "군집 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/mori-lantern-cluster/"
+      },
+      {
        "slug": "neon-firefly",
        "title": {
         "ko": "네온 루미: 불빛 반전 퍼즐",
@@ -2650,6 +2663,77 @@
         "터치"
        ],
        "url": "https://games.kimjinwan.com/play/popo-pearl-sort/"
+      },
+      {
+       "slug": "raccoon-gear-align",
+       "title": {
+        "ko": "라쿤의 톱니 정렬소",
+        "en": "Raccoon Gear Alignment"
+       },
+       "summary": "고글을 쓴 정비공 너구리의 작업장에서 3×3 톱니를 눌러 돌려, 모든 톱니의 표시가 위쪽을 가리키게 맞추는 회전 퍼즐입니다.",
+       "session": "3~6분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/raccoon-gear-align/"
+      },
+      {
+       "slug": "sort-penguin",
+       "title": {
+        "ko": "소트 펭귄: 컬러 정렬",
+        "en": "Sort Penguin"
+       },
+       "summary": "색 블록 탑을 쌓은 펭귄 마스코트와 함께 시험관 사이로 색 구슬을 옮겨, 한 관에 한 가지 색만 남도록 분류하는 정리 퍼즐입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/sort-penguin/"
+      },
+      {
+       "slug": "stargazer-glyph-case",
+       "title": {
+        "ko": "별눈 부엉이의 글자 수사",
+        "en": "Stargazer Owl: Odd Glyph Case"
+       },
+       "summary": "별눈 부엉이 탐정의 글자 수사에서 25칸 격자 속 비슷한 글자들 사이에 하나만 섞인 다른 글자를 찾아 눌러, 걸린 시간을 기록하는 관찰력 게임입니다.",
+       "session": "2~5분",
+       "controls": [
+        "마우스",
+        "터치",
+        "키보드"
+       ],
+       "url": "https://games.kimjinwan.com/play/stargazer-glyph-case/"
+      },
+      {
+       "slug": "sudoku-crane",
+       "title": {
+        "ko": "스도쿠 학: 미니 4×4",
+        "en": "Sudoku Crane"
+       },
+       "summary": "붉은 이마의 학이 숫자 판을 들여다보는 가운데, 4×4 격자의 빈칸을 눌러 1부터 4를 가로·세로·2×2 구역에 한 번씩만 채우는 미니 스도쿠입니다.",
+       "session": "2~7분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/sudoku-crane/"
+      },
+      {
+       "slug": "twin-fox",
+       "title": {
+        "ko": "트윈 폭스: 다른 그림 찾기",
+        "en": "Twin Fox"
+       },
+       "summary": "안경을 쓴 여우와 함께 위아래로 놓인 두 개의 기호 격자를 비교해, 아래 그림에서 달라진 칸 세 개를 모두 찾아 누르는 틀린 그림 찾기입니다.",
+       "session": "1~5분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/twin-fox/"
       }
      ]
     },
@@ -2820,6 +2904,20 @@
        "url": "https://games.kimjinwan.com/play/shadow-orbit-explorer/"
       },
       {
+       "slug": "skyline-gliders",
+       "title": {
+        "ko": "스카이라인 글라이더",
+        "en": "Skyline Gliders"
+       },
+       "summary": "밤 도심 한복판에서 날다람쥐를 몰아 비둘기와 쥐 떼를 버티며 2분을 살아남고 무기 카드를 키워 가는 도트 그래픽 생존 액션입니다.",
+       "session": "10~20분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/skyline-gliders/"
+      },
+      {
        "slug": "star-scout-survivors",
        "title": {
         "ko": "스타 스카우트 서바이벌",
@@ -2847,76 +2945,34 @@
         "화면 상단 터치로 점프"
        ],
        "url": "https://games.kimjinwan.com/play/tori-meteor-run/"
-      }
-     ]
-    },
-    {
-     "id": "arcade",
-     "label": {
-      "ko": "아케이드",
-      "en": "Arcade"
-     },
-     "items": [
-      {
-       "slug": "comet-cafe-rush",
-       "title": {
-        "ko": "코멧 카페 러시",
-        "en": "코멧 카페 러시"
-       },
-       "summary": "여우 셰프 미모를 직접 움직여 우주 손님의 주문을 조리하고 전달하는 캐릭터 중심 카페 러시",
-       "session": "1-4분",
-       "controls": [
-        "WASD·방향키 이동",
-        "E·Space 조리",
-        "Shift·F 대시",
-        "터치 이동·조리 버튼",
-        "게임패드 왼쪽 스틱·A·B"
-       ],
-       "url": "https://games.kimjinwan.com/play/comet-cafe-rush/"
       },
       {
-       "slug": "hammer-hamster",
+       "slug": "typo-survivors",
        "title": {
-        "ko": "해머 햄스터: 순발력 게임",
-        "en": "Hammer Hamster"
+        "ko": "오타 서바이버",
+        "en": "Typo Survivors"
        },
-       "summary": "빨간 망치를 든 햄스터를 응원하며 구멍에서 튀어나오는 빛나는 목표만 재빨리 두드리고, 위험 표시가 붙은 폭탄은 건드리지 않는 두더지 잡기형 아케이드입니다.",
-       "session": "1~3분",
+       "summary": "교정관 올빼미가 되어 심야 도서관의 오타 괴물 떼를 피해 다니며 새벽까지 버티고, 모은 정정포인트로 무기와 패시브를 키우는 세로 화면 서바이버입니다.",
+       "session": "10~20분",
        "controls": [
-        "마우스",
+        "키보드",
         "터치"
        ],
-       "url": "https://games.kimjinwan.com/play/hammer-hamster/"
+       "url": "https://games.kimjinwan.com/play/typo-survivors/"
       },
       {
-       "slug": "helix-descent",
+       "slug": "whale-survivors",
        "title": {
-        "ko": "헬릭스 디센트",
-        "en": "Helix Descent"
+        "ko": "웨일 서바이버",
+        "en": "Whale Survivors"
        },
-       "summary": "화면 가운데에서 계속 떨어지는 두더지 드릴리 아래로 나선 통로의 틈을 맞추려고 화면을 좌우로 돌리며, 얼마나 깊이 내려갈 수 있는지 겨루는 낙하 아케이드입니다.",
-       "session": "2~8분",
+       "summary": "노을 진 바다를 헤엄치는 픽셀 외뿔고래를 몰아 흰동가리와 해마 떼를 버티며 2분을 살아남고, 무기 카드를 모아 키우는 서바이벌 액션입니다.",
+       "session": "10~20분",
        "controls": [
-        "마우스",
+        "키보드",
         "터치"
        ],
-       "url": "https://games.kimjinwan.com/play/helix-descent/"
-      },
-      {
-       "slug": "soda-stack-signal",
-       "title": {
-        "ko": "소다 스택 시그널",
-        "en": "소다 스택 시그널"
-       },
-       "summary": "너구리 기사 리벳이 직접 크레인을 몰아 소다 화물을 쌓는 물리 밸런스 아케이드",
-       "session": "1-4분",
-       "controls": [
-        "A·D/방향키 이동",
-        "Space·화면 터치 투하",
-        "Shift·F 자이로 제동",
-        "게임패드 스틱·A·B"
-       ],
-       "url": "https://games.kimjinwan.com/play/soda-stack-signal/"
+       "url": "https://games.kimjinwan.com/play/whale-survivors/"
       }
      ]
     },
@@ -2983,6 +3039,119 @@
         "게임패드"
        ],
        "url": "https://games.kimjinwan.com/play/signal-tower-guard/"
+      },
+      {
+       "slug": "stormglass-orbit",
+       "title": {
+        "ko": "폭풍유리 궤도",
+        "en": "Stormglass Orbit"
+       },
+       "summary": "세 겹의 원형 궤도에 놓인 원소 구슬 고리를 돌려 배열하고 중앙의 코어를 끌어 발사해, 폭풍 속에서 적과 겨루는 원소 배치 전략 게임입니다.",
+       "session": "15~40분",
+       "controls": [
+        "마우스",
+        "터치",
+        "게임패드"
+       ],
+       "url": "https://games.kimjinwan.com/play/stormglass-orbit/"
+      },
+      {
+       "slug": "volt-marten-bastion",
+       "title": {
+        "ko": "볼트 마튼 바스티온",
+        "en": "볼트 마튼 바스티온"
+       },
+       "summary": "공구를 든 담비 볼트와 함께 하늘색 곡선 침입로 주변을 눌러 포탑을 세우고, 자동으로 조준하는 포탑으로 색색의 침입자를 막는 짧은 경로 방어 게임입니다.",
+       "session": "5-10분",
+       "controls": [
+        "거점 터치",
+        "방향키"
+       ],
+       "url": "https://games.kimjinwan.com/play/volt-marten-bastion/"
+      }
+     ]
+    },
+    {
+     "id": "arcade",
+     "label": {
+      "ko": "아케이드",
+      "en": "Arcade"
+     },
+     "items": [
+      {
+       "slug": "comet-cafe-rush",
+       "title": {
+        "ko": "코멧 카페 러시",
+        "en": "코멧 카페 러시"
+       },
+       "summary": "여우 셰프 미모를 직접 움직여 우주 손님의 주문을 조리하고 전달하는 캐릭터 중심 카페 러시",
+       "session": "1-4분",
+       "controls": [
+        "WASD·방향키 이동",
+        "E·Space 조리",
+        "Shift·F 대시",
+        "터치 이동·조리 버튼",
+        "게임패드 왼쪽 스틱·A·B"
+       ],
+       "url": "https://games.kimjinwan.com/play/comet-cafe-rush/"
+      },
+      {
+       "slug": "hammer-hamster",
+       "title": {
+        "ko": "해머 햄스터: 순발력 게임",
+        "en": "Hammer Hamster"
+       },
+       "summary": "빨간 망치를 든 햄스터를 응원하며 구멍에서 튀어나오는 빛나는 목표만 재빨리 두드리고, 위험 표시가 붙은 폭탄은 건드리지 않는 두더지 잡기형 아케이드입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/hammer-hamster/"
+      },
+      {
+       "slug": "helix-descent",
+       "title": {
+        "ko": "헬릭스 디센트",
+        "en": "Helix Descent"
+       },
+       "summary": "화면 가운데에서 계속 떨어지는 두더지 드릴리 아래로 나선 통로의 틈을 맞추려고 화면을 좌우로 돌리며, 얼마나 깊이 내려갈 수 있는지 겨루는 낙하 아케이드입니다.",
+       "session": "2~8분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/helix-descent/"
+      },
+      {
+       "slug": "rivet-cloud-stack",
+       "title": {
+        "ko": "리벳 클라우드 스택",
+        "en": "리벳 클라우드 스택"
+       },
+       "summary": "안전모를 쓴 비버 크레인 기사 리벳과 함께 크레인에 매달려 흔들리는 화물 상자를 알맞은 때에 떨어뜨려 바닥판 위에 곧게 쌓아 올리는 밸런스 스택입니다.",
+       "session": "2-4분",
+       "controls": [
+        "위치 조정",
+        "투하 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/rivet-cloud-stack/"
+      },
+      {
+       "slug": "soda-stack-signal",
+       "title": {
+        "ko": "소다 스택 시그널",
+        "en": "소다 스택 시그널"
+       },
+       "summary": "너구리 기사 리벳이 직접 크레인을 몰아 소다 화물을 쌓는 물리 밸런스 아케이드",
+       "session": "1-4분",
+       "controls": [
+        "A·D/방향키 이동",
+        "Space·화면 터치 투하",
+        "Shift·F 자이로 제동",
+        "게임패드 스틱·A·B"
+       ],
+       "url": "https://games.kimjinwan.com/play/soda-stack-signal/"
       }
      ]
     },
@@ -3089,6 +3258,57 @@
      ]
     },
     {
+     "id": "word",
+     "label": {
+      "ko": "단어",
+      "en": "Word"
+     },
+     "items": [
+      {
+       "slug": "category-cat",
+       "title": {
+        "ko": "카테고리 캣: 단어 그룹",
+        "en": "Category Cat"
+       },
+       "summary": "안경 쓴 고양이 사서와 함께 섞여 있는 열두 개의 단어에서 같은 주제끼리 네 개씩 세 묶음으로 가르는 단어 분류 퍼즐입니다.",
+       "session": "2~6분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/category-cat/"
+      },
+      {
+       "slug": "word-frog",
+       "title": {
+        "ko": "한글 박사 개구리: 단어 추리",
+        "en": "Word Frog"
+       },
+       "summary": "졸업모를 쓴 한글 박사 개구리가 낸 힌트를 읽고 흩어진 글자 여덟 개 중에서 세 글자 낱말을 골라 순서대로 짓는 한글 낱말 퀴즈입니다.",
+       "session": "2~5분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/word-frog/"
+      },
+      {
+       "slug": "word-worm",
+       "title": {
+        "ko": "워드 웜: 단어 순서 찾기",
+        "en": "Word Worm"
+       },
+       "summary": "안경을 쓰고 책 더미 위에 앉은 분홍 벌레와 함께 4×4 글자판에서 제시된 낱말의 글자를 첫 글자부터 차례로 눌러 완성하는 낱말 찾기 퍼즐입니다.",
+       "session": "2~5분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/word-worm/"
+      }
+     ]
+    },
+    {
      "id": "training",
      "label": {
       "ko": "훈련",
@@ -3149,25 +3369,25 @@
      ]
     },
     {
-     "id": "word",
+     "id": "raising",
      "label": {
-      "ko": "단어",
-      "en": "Word"
+      "ko": "육성",
+      "en": "Raising"
      },
      "items": [
       {
-       "slug": "category-cat",
+       "slug": "my-whale",
        "title": {
-        "ko": "카테고리 캣: 단어 그룹",
-        "en": "Category Cat"
+        "ko": "고래 키우기",
+        "en": "My Whale"
        },
-       "summary": "안경 쓴 고양이 사서와 함께 섞여 있는 열두 개의 단어에서 같은 주제끼리 네 개씩 세 묶음으로 가르는 단어 분류 퍼즐입니다.",
-       "session": "2~6분",
+       "summary": "정체를 알 수 없는 어린 고래를 바다에서 먹이고 씻기고 재우며 청소년, 어른으로 키워 가는 다마고치식 육성 게임입니다.",
+       "session": "5분~장기",
        "controls": [
         "마우스",
         "터치"
        ],
-       "url": "https://games.kimjinwan.com/play/category-cat/"
+       "url": "https://games.kimjinwan.com/play/my-whale/"
       }
      ]
     }
