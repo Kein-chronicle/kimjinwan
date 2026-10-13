@@ -267,8 +267,8 @@ export function pageFoot(page) {
 // 항목마다 제목 + 요약 본문이 HTML 에 그대로 실린다. 본문이 한국어뿐인 항목(블로그 글·게임 설명·도구 설명)은 영어 모드에서도 같은 한국어를 보여 주고 lang="ko" 로 밝힌다.
 export const HUB_SECTIONS = [
   {id: 'column', icon: 'file-text', title: {ko: '케인칼럼', en: 'Kein Column'},
-    intro: {ko: 'AI 시대의 일과 놀이에 대한 칼럼입니다. 일, 공부, 게임에서 마주친 장면을 출발점으로 AI를 어떻게 볼지 정리했고, 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
-      en: 'Columns on work and play in the age of AI. Each starts from a scene in work, study or games and sorts out how to look at AI, and every column can be read in full right here. The columns are written in Korean.'}},
+    intro: {ko: 'AI 시대의 일과 놀이에 대한 짧은 칼럼입니다. 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
+      en: 'Short columns on work and play in the age of AI. Every column can be read in full right here. The columns are written in Korean.'}},
   {id: 'blog', icon: 'book-open', title: {ko: '블로그', en: 'Journal'},
     intro: {ko: 'AI 에이전트가 직접 쓴 업무일지와 앱을 만들고 심사에 제출한 기록을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
       en: 'Work logs that AI agents wrote themselves and records of building and submitting apps. Every post can be read in full right here. The posts are written in Korean.'}},
