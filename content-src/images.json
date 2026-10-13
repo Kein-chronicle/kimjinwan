@@ -306,6 +306,7 @@
    }
   },
   "cloud-sheep-forest-words": {
+   "from": "{\"srcs\":[\"cloud-sheep-forest-words-0.png\",\"cloud-sheep-forest-words-wrong1.png\",\"cloud-sheep-forest-words-w2.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -316,14 +317,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "cloud-sheep-forest-words-1.webp": 21376,
-    "cloud-sheep-forest-words-hero.webp": 35768,
-    "cloud-sheep-forest-words.webp": 12992
+    "cloud-sheep-forest-words-1.webp": 11914,
+    "cloud-sheep-forest-words-2.webp": 6976,
+    "cloud-sheep-forest-words-hero.webp": 10698,
+    "cloud-sheep-forest-words.webp": 4788
    }
   },
   "cloud-sheep-wordpath": {
@@ -386,6 +392,7 @@
    }
   },
   "comet-cafe-rush": {
+   "from": "{\"srcs\":[\"comet-cafe-rush-0.png\",\"comet-cafe-rush-1.png\",\"comet-cafe-rush-8.png\",\"comet-cafe-rush-11.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -398,15 +405,26 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
     ]
    ],
    "bytes": {
-    "comet-cafe-rush-1.webp": 23976,
-    "comet-cafe-rush-hero.webp": 88632,
-    "comet-cafe-rush.webp": 33436
+    "comet-cafe-rush-1.webp": 26198,
+    "comet-cafe-rush-2.webp": 29410,
+    "comet-cafe-rush-3.webp": 17150,
+    "comet-cafe-rush-hero.webp": 23452,
+    "comet-cafe-rush.webp": 11908
    }
   },
   "cosmo-corgi-star-route": {
+   "from": "{\"srcs\":[\"cosmo-corgi-star-route-0.png\",\"cosmo-corgi-star-route-mid.png\",\"cosmo-corgi-star-route-st1.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -417,14 +435,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "cosmo-corgi-star-route-1.webp": 29634,
-    "cosmo-corgi-star-route-hero.webp": 49136,
-    "cosmo-corgi-star-route.webp": 19950
+    "cosmo-corgi-star-route-1.webp": 15976,
+    "cosmo-corgi-star-route-2.webp": 9532,
+    "cosmo-corgi-star-route-hero.webp": 11894,
+    "cosmo-corgi-star-route.webp": 5232
    }
   },
   "current-canticle": {
@@ -487,6 +510,7 @@
    }
   },
   "firefly-signal-school": {
+   "from": "{\"srcs\":[\"firefly-signal-school-0.png\",\"firefly-signal-school-r2.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -497,14 +521,46 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
     ]
    ],
    "bytes": {
-    "firefly-signal-school-1.webp": 28068,
-    "firefly-signal-school-hero.webp": 51800,
-    "firefly-signal-school.webp": 16678
+    "firefly-signal-school-1.webp": 7752,
+    "firefly-signal-school-hero.webp": 17076,
+    "firefly-signal-school.webp": 3052
+   }
+  },
+  "flow-gecko": {
+   "from": "{\"srcs\":[\"flow-gecko-0.png\",\"flow-gecko-a2.png\",\"flow-gecko-e1.png\",\"flow-gecko-clr.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "flow-gecko-1.webp": 16550,
+    "flow-gecko-2.webp": 16320,
+    "flow-gecko-3.webp": 18904,
+    "flow-gecko-hero.webp": 10160,
+    "flow-gecko.webp": 5016
    }
   },
   "forest-fox-differences": {
@@ -540,6 +596,7 @@
    }
   },
   "four-sight": {
+   "from": "{\"srcs\":[\"four-sight-0.png\",\"four-sight-lose.png\",\"four-sight-lose2.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -550,14 +607,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "four-sight-1.webp": 14534,
-    "four-sight-hero.webp": 17516,
-    "four-sight.webp": 6830
+    "four-sight-1.webp": 17482,
+    "four-sight-2.webp": 8700,
+    "four-sight-hero.webp": 11518,
+    "four-sight.webp": 6892
    }
   },
   "ghost-bubble-groups": {
@@ -721,6 +783,7 @@
    }
   },
   "honeybee-garden-trail": {
+   "from": "{\"srcs\":[\"honeybee-garden-trail-0.png\",\"honeybee-garden-trail-mid.png\",\"honeybee-garden-trail-st1.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -731,14 +794,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "honeybee-garden-trail-1.webp": 26572,
-    "honeybee-garden-trail-hero.webp": 40742,
-    "honeybee-garden-trail.webp": 16646
+    "honeybee-garden-trail-1.webp": 13188,
+    "honeybee-garden-trail-2.webp": 9288,
+    "honeybee-garden-trail-hero.webp": 11186,
+    "honeybee-garden-trail.webp": 4688
    }
   },
   "line-spider": {
@@ -801,6 +869,7 @@
    }
   },
   "luno-rune-vault": {
+   "from": "{\"srcs\":[\"luno-rune-vault-0.png\",\"luno-rune-vault-mid.png\",\"luno-rune-vault-st1.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -811,14 +880,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "luno-rune-vault-1.webp": 23488,
-    "luno-rune-vault-hero.webp": 56100,
-    "luno-rune-vault.webp": 22148
+    "luno-rune-vault-1.webp": 13686,
+    "luno-rune-vault-2.webp": 10140,
+    "luno-rune-vault-hero.webp": 9216,
+    "luno-rune-vault.webp": 4426
    }
   },
   "mako-skyport-command": {
@@ -854,6 +928,7 @@
    }
   },
   "mandu-house": {
+   "from": "{\"srcs\":[\"mandu-house-0.png\",\"mandu-house-recipe.png\",\"mandu-house-picked.png\",\"mandu-house-after.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -866,12 +941,22 @@
     [
      540,
      960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "mandu-house-1.webp": 13454,
-    "mandu-house-hero.webp": 10444,
-    "mandu-house.webp": 4274
+    "mandu-house-1.webp": 9664,
+    "mandu-house-2.webp": 10376,
+    "mandu-house-3.webp": 11252,
+    "mandu-house-hero.webp": 10908,
+    "mandu-house.webp": 4338
    }
   },
   "maze-mouse": {
@@ -1418,6 +1503,7 @@
    }
   },
   "owl-hangul-detective": {
+   "from": "{\"srcs\":[\"owl-hangul-detective-0.png\",\"owl-hangul-detective-cur.png\",\"owl-hangul-detective-win.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1428,14 +1514,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "owl-hangul-detective-1.webp": 22338,
-    "owl-hangul-detective-hero.webp": 32186,
-    "owl-hangul-detective.webp": 11892
+    "owl-hangul-detective-1.webp": 13618,
+    "owl-hangul-detective-2.webp": 9356,
+    "owl-hangul-detective-hero.webp": 11704,
+    "owl-hangul-detective.webp": 5188
    }
   },
   "parking-raccoon": {
@@ -1557,6 +1648,7 @@
    }
   },
   "popo-pearl-sort": {
+   "from": "{\"srcs\":[\"popo-pearl-sort-0.png\",\"popo-pearl-sort-play.png\",\"popo-pearl-sort-st1.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1567,14 +1659,19 @@
    ],
    "shots": [
     [
-     1280,
-     720
+     540,
+     960
+    ],
+    [
+     540,
+     960
     ]
    ],
    "bytes": {
-    "popo-pearl-sort-1.webp": 24616,
-    "popo-pearl-sort-hero.webp": 54168,
-    "popo-pearl-sort.webp": 20972
+    "popo-pearl-sort-1.webp": 13542,
+    "popo-pearl-sort-2.webp": 9974,
+    "popo-pearl-sort-hero.webp": 10436,
+    "popo-pearl-sort.webp": 4342
    }
   },
   "puck-coral-front": {
@@ -1686,27 +1783,7 @@
    }
   },
   "shadow-orbit-explorer": {
-   "card": [
-    640,
-    400
-   ],
-   "hero": [
-    1280,
-    720
-   ],
-   "shots": [
-    [
-     1280,
-     720
-    ]
-   ],
-   "bytes": {
-    "shadow-orbit-explorer-1.webp": 21848,
-    "shadow-orbit-explorer-hero.webp": 120102,
-    "shadow-orbit-explorer.webp": 40374
-   }
-  },
-  "signal-tower-guard": {
+   "from": "{\"srcs\":[\"shadow-orbit-explorer-0.png\",\"shadow-orbit-explorer-2.png\",\"shadow-orbit-explorer-6.png\",\"shadow-orbit-explorer-7.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1723,13 +1800,50 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     720
     ]
    ],
    "bytes": {
-    "signal-tower-guard-1.webp": 20798,
-    "signal-tower-guard-2.webp": 22382,
-    "signal-tower-guard-hero.webp": 103066,
-    "signal-tower-guard.webp": 37310
+    "shadow-orbit-explorer-1.webp": 13300,
+    "shadow-orbit-explorer-2.webp": 17840,
+    "shadow-orbit-explorer-3.webp": 13148,
+    "shadow-orbit-explorer-hero.webp": 21086,
+    "shadow-orbit-explorer.webp": 5852
+   }
+  },
+  "signal-tower-guard": {
+   "from": "{\"srcs\":[\"signal-tower-guard-0.png\",\"signal-tower-guard-3.png\",\"signal-tower-guard-7.png\",\"signal-tower-guard-9.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "signal-tower-guard-1.webp": 26866,
+    "signal-tower-guard-2.webp": 25380,
+    "signal-tower-guard-3.webp": 17462,
+    "signal-tower-guard-hero.webp": 20120,
+    "signal-tower-guard.webp": 11236
    }
   },
   "skyline-gliders": {
@@ -1765,6 +1879,7 @@
    }
   },
   "soda-stack-signal": {
+   "from": "{\"srcs\":[\"soda-stack-signal-0.png\",\"soda-stack-signal-3.png\",\"soda-stack-signal-7.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1777,12 +1892,17 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     720
     ]
    ],
    "bytes": {
-    "soda-stack-signal-1.webp": 20740,
-    "soda-stack-signal-hero.webp": 105714,
-    "soda-stack-signal.webp": 39674
+    "soda-stack-signal-1.webp": 16346,
+    "soda-stack-signal-2.webp": 20420,
+    "soda-stack-signal-hero.webp": 20058,
+    "soda-stack-signal.webp": 7010
    }
   },
   "sort-penguin": {
@@ -1813,6 +1933,7 @@
    }
   },
   "star-scout-survivors": {
+   "from": "{\"srcs\":[\"star-scout-survivors-0.png\",\"star-scout-survivors-3.png\",\"star-scout-survivors-7.png\",\"star-scout-survivors-12.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1829,13 +1950,18 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     720
     ]
    ],
    "bytes": {
-    "star-scout-survivors-1.webp": 16550,
-    "star-scout-survivors-2.webp": 13666,
-    "star-scout-survivors-hero.webp": 6126,
-    "star-scout-survivors.webp": 2538
+    "star-scout-survivors-1.webp": 13914,
+    "star-scout-survivors-2.webp": 14964,
+    "star-scout-survivors-3.webp": 18876,
+    "star-scout-survivors-hero.webp": 15954,
+    "star-scout-survivors.webp": 5850
    }
   },
   "stargazer-glyph-case": {
