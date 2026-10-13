@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {validate, HUB_MIN_SUMMARY} from '../scripts/lib/validate.mjs';
+import {validate} from '../scripts/lib/validate.mjs';
 import {loadData, buildAll} from '../scripts/build.mjs';
 import {PER_PAGE} from '../scripts/lib/hub.mjs';
 
@@ -11,7 +11,7 @@ const D = loadData();
 const hub = D.contentHub;
 const out = buildAll({write: false});
 const sec = id => hub.sections.find(s => s.id === id);
-const flat = s => (s.groups ? s.groups.flatMap(g => g.items) : s.items);
+const flat = s => s.groups.flatMap(g => g.items);
 const SITE = 'https://kimjinwan.com';
 const BAN = /제가|저는|저의|저를|저에게|제게|저희|(?:^|[\s>("'])제\s/m;
 const text = h => h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
@@ -20,28 +20,33 @@ const canon = h => h.match(/<link rel="canonical" href="([^"]*)">/)[1];
 const contentFiles = Object.keys(out).filter(f => f.startsWith('content/'));
 const pathOf = f => '/' + f.replace(/index\.html$/, '');
 const ceilDiv = n => Math.max(1, Math.ceil(n / PER_PAGE));
-
-const blog = sec('blog'), gizmo = sec('gizmo');
 const slugOf = u => u.split('/').filter(Boolean).pop();
+
+const blog = sec('blog'), news = sec('gamenews'), gizmo = sec('gizmo'), games = sec('games'), tools = sec('tools');
+const NAV_IDS = ['blog', 'gamenews', 'gizmo', 'games', 'tools'];
+const BASE = {blog: '/content/blog/', gamenews: '/content/game-news/', gizmo: '/content/gizmo/', games: '/content/games/', tools: '/content/tools/'};
+const SUBPATH = {blog: '', gamenews: '', gizmo: 'purpose/', games: 'genre/', tools: 'category/'};
+const sections = {blog, gamenews: news, gizmo, games, tools};
 
 // 기대하는 색인 경로 집합을 데이터에서 따로 계산한다(구현과 독립)
 function expectedIndexPaths() {
   const set = new Set(['/content/']);
   const add = (base, n) => { for (let i = 1; i <= ceilDiv(n); i++) set.add(i === 1 ? base : `${base}page/${i}/`); };
-  add('/content/blog/', blog.count.value);
-  for (const g of blog.groups) add(`/content/blog/${g.id}/`, g.items.length);
-  add('/content/gizmo/', gizmo.count.value);
-  for (const g of gizmo.groups) add(`/content/gizmo/purpose/${g.id}/`, g.items.length);
-  set.add('/content/games/'); set.add('/content/tools/');
+  for (const id of NAV_IDS) {
+    add(BASE[id], sections[id].count.value);
+    for (const g of sections[id].groups) add(`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length);
+  }
   return set;
 }
-const detailPaths = () => new Set([...flat(blog).map(i => `/content/blog/${i.url.split('/').slice(-3, -1).join('/')}/`), ...flat(gizmo).map(i => `/content/gizmo/${slugOf(i.url)}/`)]);
+const detailOf = (id, it, g) => id === 'blog' ? `/content/blog/${it.url.split('/').slice(-3, -1).join('/')}/` : id === 'gamenews' ? `/content/game-news/${slugOf(it.url)}/` : id === 'gizmo' ? `/content/gizmo/${slugOf(it.url)}/` : `/content/${id}/${it.slug}/`;
+const detailPaths = () => new Set(NAV_IDS.flatMap(id => flat(sections[id]).map(it => detailOf(id, it))));
 
 test('콘텐츠 허브 데이터는 검증을 통과한다', () => assert.deepEqual(validate(D), []));
-test('섹션 네 개, 숫자마다 as_of·source, 블로그·기즈모는 전체 항목', () => {
-  assert.deepEqual(hub.sections.map(s => s.id), ['blog', 'games', 'tools', 'gizmo']);
-  for (const s of hub.sections) { assert.match(s.count.as_of, /^\d{4}-\d{2}-\d{2}$/, s.id); assert.ok(s.count.source.length > 20, s.id); assert.ok(s.count.value >= flat(s).length, s.id); }
-  assert.equal(flat(blog).length, blog.count.value); assert.equal(flat(gizmo).length, gizmo.count.value);
+test('섹션 다섯 개(블로그·게임 소식·AI 활용 가이드·웹게임·웹 도구), 숫자마다 as_of·source, 항목 수 = 개수', () => {
+  assert.deepEqual(hub.sections.map(s => s.id), NAV_IDS);
+  for (const s of hub.sections) { assert.match(s.count.as_of, /^\d{4}-\d{2}-\d{2}$/, s.id); assert.ok(s.count.source.length > 20, s.id); assert.equal(flat(s).length, s.count.value, s.id); }
+  assert.ok(games.count.total >= games.count.value && tools.count.total >= tools.count.value);
+  assert.ok(blog.groups.every(g => ['fiction', 'ai', 'apps'].includes(g.id)), '블로그에는 게임 글이 없다');
   for (const it of flat(gizmo)) assert.ok(it.summary.length >= 30, it.url);
 });
 test('색인 페이지 집합이 데이터에서 계산한 기대값과 정확히 같다(쪽 수 정합)', () => {
@@ -51,25 +56,30 @@ test('색인 페이지 집합이 데이터에서 계산한 기대값과 정확�
   assert.deepEqual([...idx].filter(p => det.has(p)).sort(), [...det].sort());
   assert.equal(contentFiles.length, expected.size + det.size);
 });
-test('경로 충돌이 없다: 상세 slug 가 쪽·분류 경로 이름과 겹치지 않고, 출력 경로는 모두 유일하다', () => {
-  for (const it of flat(blog)) { const [cat, slug] = it.url.split('/').slice(-3, -1); assert.ok(!['page'].includes(slug), `blog slug ${cat}/${slug}`); assert.ok(!/^\d+$/.test(slug) || true); }
-  for (const g of blog.groups) assert.notEqual(g.id, 'page');
+test('경로 충돌이 없다: 상세 slug·분류 id 가 쪽·분류 경로 이름과 겹치지 않고, 출력 경로는 모두 유일하다', () => {
+  for (const it of flat(blog)) assert.notEqual(slugOf(it.url), 'page');
+  for (const g of blog.groups) assert.ok(!['page'].includes(g.id));
+  const newsSlugs = new Set(flat(news).map(it => slugOf(it.url)));
+  for (const g of news.groups) { assert.ok(!newsSlugs.has(g.id) && g.id !== 'page', `game id ${g.id}`); }
+  assert.ok(!newsSlugs.has('page'));
   for (const it of flat(gizmo)) assert.ok(!['page', 'purpose'].includes(slugOf(it.url)), slugOf(it.url));
+  for (const it of flat(games)) assert.ok(!['page', 'genre'].includes(it.slug), it.slug);
+  for (const it of flat(tools)) assert.ok(!['page', 'category'].includes(it.slug), it.slug);
   const paths = contentFiles.map(pathOf);
   assert.equal(new Set(paths).size, paths.length);
   const det = detailPaths();
   for (const p of expectedIndexPaths()) assert.ok(!det.has(p), 'collision ' + p);
 });
 test('색인 페이지: 자기 canonical, 쪽당 20건 이하, prev/next 가 서로 맞물린다', () => {
-  const bases = [['/content/blog/', blog.count.value], ...blog.groups.map(g => [`/content/blog/${g.id}/`, g.items.length]), ['/content/gizmo/', gizmo.count.value],
-    ...gizmo.groups.map(g => [`/content/gizmo/purpose/${g.id}/`, g.items.length])];
+  const bases = NAV_IDS.flatMap(id => [[BASE[id], sections[id].count.value], ...sections[id].groups.map(g => [`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length])]);
+  const ITEM = /<li class="(?:hub-row|gcard|tcard)">/g;
   for (const [base, n] of bases) {
     const total = ceilDiv(n);
     for (let i = 1; i <= total; i++) {
       const p = i === 1 ? base : `${base}page/${i}/`, h = out[p.slice(1) + 'index.html'];
       assert.ok(h, p);
       assert.equal(canon(h), SITE + p, p);
-      assert.ok((h.match(/<li class="hub-row">/g) || []).length <= PER_PAGE, p);
+      assert.ok((h.match(ITEM) || []).length <= PER_PAGE, p);
       const prev = h.match(/<link rel="prev" href="([^"]*)">/), next = h.match(/<link rel="next" href="([^"]*)">/);
       assert.equal(prev && prev[1], i > 1 ? SITE + (i === 2 ? base : `${base}page/${i - 1}/`) : null, p + ' prev');
       assert.equal(next && next[1], i < total ? SITE + `${base}page/${i + 1}/` : null, p + ' next');
@@ -80,49 +90,95 @@ test('색인 페이지: 자기 canonical, 쪽당 20건 이하, prev/next 가 서
     assert.ok(!out[`${base.slice(1)}page/${total + 1}/index.html`], base + ' 과다 쪽');
   }
 });
-test('모든 글·기즈모 항목이 각 분류 목록의 정확히 한 쪽에 한 번씩, 전체 목록에도 한 번씩 나온다(중복·누락 없음)', () => {
-  const rows = h => [...h.matchAll(/<li class="hub-row">[\s\S]*?<a class="hub-rt" href="([^"]*)"/g)].map(m => m[1]);
+test('모든 항목이 각 분류 목록의 정확히 한 쪽에 한 번씩, 전체 목록에도 한 번씩 나온다(중복·누락 없음)', () => {
+  const rows = h => [...h.matchAll(/<li class="(?:hub-row|gcard|tcard)">(?:<span class="hub-meta[^>]*>[^<]*<\/span>)?<a (?:class="hub-rt" )?href="([^"]*)"/g)].map(m => m[1]);
   const collect = (base, n) => { const all = []; for (let i = 1; i <= ceilDiv(n); i++) all.push(...rows(out[(i === 1 ? base : `${base}page/${i}/`).slice(1) + 'index.html'])); return all; };
-  const hrefOfPost = it => `/content/blog/${it.url.split('/').slice(-3, -1).join('/')}/`;
-  const allBlog = collect('/content/blog/', blog.count.value);
-  assert.deepEqual([...allBlog].sort(), flat(blog).map(hrefOfPost).sort());
-  const perCat = blog.groups.flatMap(g => collect(`/content/blog/${g.id}/`, g.items.length));
-  assert.deepEqual([...perCat].sort(), [...allBlog].sort());
-  const allG = collect('/content/gizmo/', gizmo.count.value), hrefG = it => `/content/gizmo/${slugOf(it.url)}/`;
-  assert.deepEqual([...allG].sort(), flat(gizmo).map(hrefG).sort());
-  assert.deepEqual([...gizmo.groups.flatMap(g => collect(`/content/gizmo/purpose/${g.id}/`, g.items.length))].sort(), [...allG].sort());
-  for (const h of [...allBlog, ...allG]) assert.ok(out[h.slice(1) + 'index.html'], h);
+  for (const id of NAV_IDS) {
+    const s = sections[id], all = collect(BASE[id], s.count.value), want = flat(s).map(it => detailOf(id, it));
+    assert.deepEqual([...all].sort(), [...want].sort(), id + ' 전체 목록');
+    const perCat = s.groups.flatMap(g => collect(`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length));
+    assert.deepEqual([...perCat].sort(), [...all].sort(), id + ' 분류별 목록 합');
+    for (const h of all) assert.ok(out[h.slice(1) + 'index.html'], h);
+  }
 });
-test('랜딩: 섹션 카드 4장, 각 카드 대표 3건 이하, 개수·기준일 표기, 긴 목록 없음', () => {
+test('랜딩: 섹션 카드 5장, 각 카드 대표 3건 이하, 개수·기준일 표기, 긴 목록 없음', () => {
   const h = out['content/index.html'];
   const cards = h.match(/<article class="card hub-card">[\s\S]*?<\/article>/g);
-  assert.equal(cards.length, 4);
-  for (const c of cards) { assert.ok((c.match(/<li>/g) || []).length <= 3); assert.match(c, /\d{4}-\d{2}-\d{2}/); assert.match(c, /href="\/content\/(blog|gizmo|games|tools)\/"/); }
-  assert.equal((h.match(/<li>/g) || []).filter(Boolean).length < 40, true);
+  assert.equal(cards.length, 5);
+  cards.forEach((c, i) => { assert.ok((c.match(/<li>/g) || []).length <= 3); assert.match(c, /\d{4}-\d{2}-\d{2}/); assert.ok(c.includes(`href="${BASE[NAV_IDS[i]]}"`), NAV_IDS[i]); });
   assert.doesNotMatch(h, /class="hub-list"/);
   assert.equal((h.match(/<h1[\s>]/g) || []).length, 1);
 });
-test('보조 내비: 모든 /content/ 페이지에 같은 다섯 항목(전체·블로그·AI 활용 가이드·웹게임·웹 도구), 현재 위치 하나만 강조, 개수 표기', () => {
+test('보조 내비: 전체·블로그·게임 소식·AI 활용 가이드·웹게임·웹 도구, 현재 위치 하나만 강조, 개수 표기', () => {
   for (const f of contentFiles) {
     const h = out[f], nav = h.match(/<nav class="subnav"[\s\S]*?<\/nav>/);
     assert.ok(nav, f);
     const links = [...nav[0].matchAll(/<a href="([^"]*)"([^>]*)>/g)];
-    assert.deepEqual(links.map(m => m[1]), ['/content/', '/content/blog/', '/content/gizmo/', '/content/games/', '/content/tools/'], f);
+    assert.deepEqual(links.map(m => m[1]), ['/content/', ...NAV_IDS.map(id => BASE[id])], f);
     assert.equal(links.filter(m => m[2].includes('aria-current="page"')).length, 1, f);
-    for (const [id, n] of [['blog', blog.count.value], ['gizmo', gizmo.count.value]]) assert.ok(nav[0].includes(`href="/content/${id}/"`) && nav[0].includes(`>${n}</span>`), f + id);
+    for (const id of NAV_IDS) assert.ok(nav[0].includes(`href="${BASE[id]}"`) && nav[0].includes(`>${sections[id].count.value}</span>`), f + id);
   }
-  assert.match(out['content/blog/ai/index.html'], /<nav class="chipbar" aria-label="blog categories">/);
+  const labels = out['content/index.html'].match(/<nav class="subnav"[\s\S]*?<\/nav>/)[0];
+  for (const l of ['블로그', '게임 소식', 'AI 활용 가이드', '웹게임', '웹 도구']) assert.ok(labels.includes(`<span data-lang-ko>${l}</span>`), l);
+  assert.ok(labels.includes('Game news'));
 });
-test('상세 페이지: canonical 은 자기 주소, 원문 링크·표기·원문 연결 JSON-LD 가 없다', () => {
+test('블로그 카테고리 칩 순서: 전체 → 이야기 → 에이전트 업무일지 → 앱 제작·심사(색인·카테고리·쪽 모두), 이름 변경 반영', () => {
+  const ORDER = ['전체', '이야기', '에이전트 업무일지', '앱 제작·심사'];
+  const pagesToCheck = ['content/blog/index.html', 'content/blog/page/2/index.html', ...['fiction', 'ai', 'apps'].map(c => `content/blog/${c}/index.html`), 'content/blog/ai/page/2/index.html'];
+  for (const f of pagesToCheck) {
+    const bar = out[f].match(/<nav class="chipbar" aria-label="blog categories">[\s\S]*?<\/nav>/)[0];
+    assert.deepEqual([...bar.matchAll(/<span data-lang-ko>([^<]*)<\/span>/g)].map(m => m[1]), ORDER, f);
+  }
+  assert.deepEqual(blog.groups.map(g => g.id), ['fiction', 'ai', 'apps']);
+  assert.ok(out['content/blog/index.html'].includes('Agent work log'));
+  // 옛 이름이 화면 문구·메타·JSON-LD 어디에도 없다(글 본문 속 문장은 고치지 않는다)
+  for (const f of contentFiles) {
+    const h = out[f], chrome = h.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
+    assert.doesNotMatch(chrome.replace(/AI 사용기:/g, ''), /AI 사용기|에이전트 작업 회고|AI field notes/, f); // 'AI 사용기:' 는 일부 글 제목의 접두어(원 글 데이터)
+  }
+  assert.doesNotMatch(JSON.stringify(blog.groups.map(g => g.label)), /AI 사용기|작업 회고/);
+  assert.match(blog.groups.find(g => g.id === 'ai').blurb.ko, /기록한 일지/);
+  assert.doesNotMatch(read('docs/CONTENT_HUB_CHECKER.md'), /AI 사용기|에이전트 작업 회고/);
+});
+test('게임 소식: 블로그와 분리됐고(옛 경로 없음) 모든 글이 정확히 한 게임 서브카테고리에 속한다 — 게임별 개수표', () => {
+  assert.ok(!contentFiles.some(f => f.startsWith('content/blog/games/')));
+  assert.ok(!fs.existsSync('content/blog/games') && !fs.existsSync('content-src/blog/games'));
+  const slugs = flat(news).map(i => slugOf(i.url));
+  assert.equal(new Set(slugs).size, slugs.length);
+  assert.equal(news.groups.reduce((a, g) => a + g.items.length, 0), news.count.value);
+  for (const g of news.groups) assert.equal(g.total, g.items.length);
+  assert.deepEqual(news.groups.map(g => g.id), ['nikke', 'limbus', 'nte', 'zzz', 'wuwa', 'ananta', 'my-games', 'etc']);
+  const idx = out['content/game-news/index.html'];
+  for (const g of news.groups) assert.ok(idx.includes(`href="/content/game-news/${g.id}/"`) && idx.includes(`>${g.total}</span>`), g.id);
+  // 글 본문 속 옛 게임 경로 링크는 새 경로로 바뀐다
+  for (const [f, h] of Object.entries(out).filter(([f]) => f.startsWith('content/'))) assert.doesNotMatch(h, /href="\/content\/blog\/games\//, f);
+});
+test('옛→새 경로 매핑(data/content-redirects.json): 정합, 모든 to 가 실제 페이지, 모든 옛 글이 새 경로로 대체된다', () => {
+  const r = JSON.parse(read('data/content-redirects.json')).redirects;
+  const froms = r.map(x => x.from); assert.equal(new Set(froms).size, froms.length);
+  for (const x of r) { assert.equal(x.status, 301); assert.ok(x.from.startsWith('/content/blog/games/'), x.from); assert.ok(out[x.to.slice(1) + 'index.html'], x.to); assert.ok(!out[x.from.slice(1) + 'index.html'], '옛 경로가 아직 있다: ' + x.from); }
+  const wantPosts = flat(news).map(i => `/content/blog/games/${slugOf(i.url)}/`);
+  for (const f of wantPosts) assert.ok(froms.includes(f), f);
+  assert.ok(froms.includes('/content/blog/games/'));
+  assert.equal(froms.filter(f => /\/page\/\d+\/$/.test(f)).length, ceilDiv(news.count.value) - 1);
+  assert.equal(r.length, news.count.value + 1 + ceilDiv(news.count.value) - 1);
+});
+const ldOf = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+const MAIN = {Article: 1, VideoGame: 1, SoftwareApplication: 1};
+test('상세 페이지: canonical 은 자기 주소, 원문 링크·표기·원문 연결 JSON-LD 가 없다, 종류별 구조화 데이터', () => {
+  const kindOf = p => p.split('/')[2];
+  const TYPE = {blog: 'Article', 'game-news': 'Article', gizmo: 'Article', games: 'VideoGame', tools: 'SoftwareApplication'};
   for (const p of detailPaths()) {
     const h = out[p.slice(1) + 'index.html'];
     assert.equal(canon(h), SITE + p, p);
     assert.ok(h.includes(`<meta property="og:url" content="${SITE + p}">`), p);
     assert.doesNotMatch(h, /isBasedOn|sameAs|detail-src|class="detail-note"/, p);
-    const g = JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-    const art = g.find(x => x['@type'] === 'Article');
-    assert.equal(art.mainEntityOfPage['@id'], SITE + p, p); assert.equal(art.url, SITE + p, p);
-    assert.deepEqual(art.author, {'@id': `${SITE}/#person`}); assert.equal(g.find(x => x['@type'] === 'Person').name, '김진완');
+    const g = ldOf(h), main = g.find(x => MAIN[x['@type']]);
+    assert.equal(main['@type'], TYPE[kindOf(p)], p);
+    assert.equal(main.mainEntityOfPage['@id'], SITE + p, p); assert.equal(main.url, SITE + p, p);
+    assert.deepEqual(main.author, {'@id': `${SITE}/#person`}); assert.equal(g.find(x => x['@type'] === 'Person').name, '김진완');
+    if (main['@type'] === 'Article' && kindOf(p) !== 'gizmo') assert.ok(main.articleSection, p);
+    if (main['@type'] !== 'Article') { assert.match(main.image, /^https:\/\/kimjinwan\.com\/assets\/content\/(games|tools)\/[\w-]+-hero\.webp$/, p); assert.ok(fs.existsSync(main.image.replace(SITE + '/', '')), p); }
     const bc = g.find(x => x['@type'] === 'BreadcrumbList').itemListElement;
     assert.ok(bc.length >= 4 && bc[0].name === '홈' && bc[1].name === '콘텐츠 허브' && bc.at(-1).item === SITE + p, p);
     assert.equal((h.match(/<h1[\s>]/g) || []).length, 1, p);
@@ -131,13 +187,141 @@ test('상세 페이지: canonical 은 자기 주소, 원문 링크·표기·원�
 test('/content/ 아래 어떤 HTML 에도 블로그 원문 링크(blog.kimjinwan.com/ko/…)·원문 표기 UI 가 없다(이미지 src 제외)', () => {
   for (const f of contentFiles) {
     const h = noCode(out[f]);
-    for (const m of h.matchAll(/href="(https?:\/\/[^"]*)"/g)) if (!D.services.some(sv => sv.url === m[1])) assert.doesNotMatch(m[1], /blog\.kimjinwan\.com\/ko\//, f); // 서비스 '열기' 진입 링크는 허용
+    for (const m of h.matchAll(/href="(https?:\/\/[^"]*)"/g)) assert.doesNotMatch(m[1], /blog\.kimjinwan\.com\/ko\//, f);
     assert.doesNotMatch(h, /data-lang-en>Original</, f);
-    assert.doesNotMatch((h.match(/\s(?:class|id|aria-label)="[^"]*"/g) || []).join(''), /사본|미러|mirror/i, f + ' 마크업(클래스·속성)'); // 글 본문 속 단어는 고치지 않는다
+    assert.doesNotMatch((h.match(/\s(?:class|id|aria-label)="[^"]*"/g) || []).join(''), /사본|미러|mirror/i, f + ' 마크업(클래스·속성)');
   }
-  // 직접 쓴 UI 문구(템플릿·렌더러)에 '원문'·'사본' 표기가 없다(옮긴 글 본문은 고치지 않는다)
   for (const f of ['src/content.html', 'src/content-list.html', 'src/detail.html', 'scripts/lib/hub.mjs', 'scripts/lib/render.mjs']) assert.doesNotMatch(read(f), /원문|사본|미러/, f);
 });
+test('웹게임·웹 도구 가시 텍스트에 원문·기즈모가 없고, 이용 버튼은 정해진 형식의 새 창 링크다', () => {
+  const vis = h => { const x = h.replace(/<script[\s\S]*?<\/script>/g, ''); return text(x) + ' ' + [...x.matchAll(/\s(?:alt|aria-label|title|content)="([^"]*)"/g)].map(m => m[1]).join(' '); };
+  for (const [kind, label, href] of [['games', '게임하러 가기', s => `https://games.kimjinwan.com/play/${s}/`], ['tools', '도구 열기', s => `https://apps.kimjinwan.com/${s}/`]]) {
+    for (const it of flat(sections[kind])) {
+      const h = out[`content/${kind}/${it.slug}/index.html`];
+      assert.doesNotMatch(vis(h).replace(/https?:\/\/\S+/g, ''), /원문|기즈모|Gizmo/i, it.slug);
+      const a = h.match(new RegExp(`<a class="btn btn-primary" href="${href(it.slug).replace(/[./]/g, '\\$&')}" target="_blank" rel="noopener noreferrer"><span data-lang-ko>${label}</span>`));
+      assert.ok(a, `${it.slug} 이용 버튼`);
+      assert.equal((h.match(/class="btn btn-primary"/g) || []).length, 1, it.slug);
+    }
+    const idx = out[`content/${kind}/index.html`];
+    assert.doesNotMatch(vis(idx).replace(/https?:\/\/\S+/g, ''), /원문|기즈모|Gizmo/i, kind + ' 목록');
+    const g0 = idx.indexOf('<ul class="hub-grid'); assert.doesNotMatch(idx.slice(g0, idx.indexOf('</ul>', g0)), /target="_blank"/, kind + ' 목록 카드는 허브 상세로 간다');
+  }
+});
+test('웹게임·웹 도구 상세: 필수 섹션·본문 길이 하한·이미지(자체 호스팅, 크기 속성, alt)', () => {
+  const MAXCARD = 60 * 1024, MAXHERO = 220 * 1024;
+  for (const kind of ['games', 'tools']) for (const it of flat(sections[kind])) {
+    const h = out[`content/${kind}/${it.slug}/index.html`], body = h.slice(h.indexOf('<div class="detail-body">'), h.indexOf('</main>'));
+    const t = text(body).replace(/\s+/g, ' ');
+    assert.ok(t.length >= (kind === 'games' ? 250 : 400), `${kind}/${it.slug}: ${t.length}`);
+    assert.match(body, kind === 'games' ? /<h2><span data-lang-ko>게임 정보<\/span>/ : /<h2><span data-lang-ko>쓰는 방법<\/span>/, it.slug);
+    const imgs = [...h.slice(h.indexOf('<main')).matchAll(/<img\b[^>]*>/g)].map(m => m[0]);
+    assert.ok(imgs.length >= 1, it.slug);
+    for (const im of imgs) {
+      const src = im.match(/src="([^"]*)"/)[1];
+      assert.match(src, new RegExp(`^/assets/content/${kind}/[\\w-]+\\.webp$`), im);
+      assert.ok(fs.existsSync(src.slice(1)), src);
+      assert.match(im, /\swidth="\d+" height="\d+"/, im); assert.match(im, /\salt="[^"]{4,}"/, im);
+      const rec = D.images[kind][it.slug], file = src.split('/').pop();
+      assert.ok(file in rec.bytes, file);
+      assert.ok(rec.bytes[file] <= (/-hero|-\d\.webp$/.test(file) ? MAXHERO : MAXCARD), `${file} ${rec.bytes[file]}`);
+      assert.equal(fs.statSync(src.slice(1)).size, rec.bytes[file], file);
+    }
+    assert.doesNotMatch(h, /<img[^>]*src="https?:/, it.slug + ' 서브도메인 핫링크 금지');
+  }
+});
+test('웹게임·웹 도구 목록 카드: 이미지·제목·한 줄 소개, 첫 줄 이미지는 즉시 로딩 나머지는 lazy, 카드 전체가 상세 링크', () => {
+  for (const [kind, cls] of [['games', 'gcard'], ['tools', 'tcard']]) {
+    const h = out[`content/${kind}/index.html`], cards = h.match(new RegExp(`<li class="${cls}">[\\s\\S]*?</li>`, 'g'));
+    assert.ok(cards.length >= 15 || kind === 'games');
+    cards.forEach((c, i) => {
+      assert.equal((c.match(/<a /g) || []).length, 1); assert.match(c, new RegExp(`href="/content/${kind}/[\\w-]+/"`));
+      assert.match(c, /<img [^>]*width="640" height="400" alt="[^"]+"/);
+      assert.equal(/loading="lazy"/.test(c), i >= 3, `${kind} card ${i}`);
+    });
+  }
+});
+test('상세 본문끼리 문장이 겹치지 않는다(템플릿 문장으로 길이를 채우지 않았다)', () => {
+  for (const kind of ['games', 'tools']) {
+    const sets = new Map();
+    for (const it of flat(sections[kind])) {
+      const h = out[`content/${kind}/${it.slug}/index.html`], body = h.slice(h.indexOf('<div class="detail-body">'), h.indexOf('</main>'));
+      sets.set(it.slug, new Set([...body.matchAll(/<(?:p|li|h3)\b[^>]*>([^<]{12,})<\/(?:p|li|h3)>/g)].map(m => m[1].trim())));
+    }
+    const count = new Map(); for (const s of sets.values()) for (const x of s) count.set(x, (count.get(x) || 0) + 1);
+    let worst = 0, sum = 0;
+    for (const [slug, s] of sets) { const dup = [...s].filter(x => count.get(x) > 1).length / Math.max(1, s.size); worst = Math.max(worst, dup); sum += dup; assert.ok(dup <= 0.4, `${kind}/${slug} 중복 문장 ${(dup * 100).toFixed(0)}%`); }
+    assert.ok(sum / sets.size <= 0.12, `${kind} 평균 중복률 ${(sum / sets.size * 100).toFixed(1)}%`);
+  }
+});
+test('이미지 용량 예산: 이미지 총량 4MB 이하, 상세 HTML 평균 80KB 이하', () => {
+  const files = fs.readdirSync('assets/content', {recursive: true}).filter(f => f.endsWith('.webp'));
+  const total = files.reduce((a, f) => a + fs.statSync('assets/content/' + f).size, 0);
+  assert.ok(total <= 4 * 1024 * 1024, `images ${total}`);
+  const sizes = contentFiles.map(f => Buffer.byteLength(out[f])); assert.ok(sizes.reduce((a, b) => a + b, 0) / sizes.length <= 80 * 1024);
+  const manifestFiles = ['games', 'tools'].flatMap(k => Object.entries(D.images[k]).flatMap(([slug, r]) => Object.keys(r.bytes).map(f => `${k}/${f}`)));
+  assert.deepEqual(files.sort(), manifestFiles.sort(), 'assets/content 와 images.json 이 일치한다');
+});
+test('상세 본문 길이 하한(블로그·게임 소식·가이드)과 스크립트 없음', () => {
+  const MIN = {blog: 150, 'game-news': 150, gizmo: 250};
+  for (const p of detailPaths()) {
+    const h = out[p.slice(1) + 'index.html'], kind = p.split('/')[2];
+    const body = text(h.slice(h.indexOf('<div class="detail-body">'), h.indexOf('</main>'))).replace(/\s+/g, ' ');
+    if (MIN[kind]) assert.ok(body.length >= MIN[kind], `${p}: ${body.length}`);
+    assert.doesNotMatch(h.slice(h.indexOf('<main'), h.indexOf('</main>')), /<script|<iframe|\son\w+=/i, p);
+  }
+});
+test('내부 링크는 모두 실제 페이지/파일로 풀리고, 새 창 링크는 noopener 를 가진다', () => {
+  const pages = new Set(Object.keys(out));
+  for (const f of contentFiles) {
+    const h = noCode(out[f]);
+    for (const m of h.matchAll(/\b(?:href|src)="(\/[^"]*)"/g)) {
+      const p = decodeURIComponent(m[1].split('#')[0].split('?')[0]);
+      if (p === '/') continue;
+      assert.ok(p.endsWith('/') ? pages.has(p.slice(1) + 'index.html') || fs.existsSync(p.slice(1) + 'index.html') : fs.existsSync(p.slice(1)), `${f}: broken ${m[1]}`);
+      assert.doesNotMatch(m[1], /^\/ko\//, f);
+    }
+    for (const m of h.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert.match(m[0], /rel="[^"]*noopener[^"]*"/, f);
+    for (const m of h.matchAll(/<a\b[^>]*href="https:\/\/[^"]*"[^>]*>/g)) assert.match(m[0], /target="_blank"/, f + m[0]);
+  }
+});
+test('사이트맵: 색인·상세 /content/ 페이지 전부(자기 canonical)와 핵심 페이지, 중복 없음', () => {
+  const x = read('sitemap.xml'), locs = [...x.matchAll(/<loc>([^<]*)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)].map(m => m[1]);
+  assert.equal(new Set(locs).size, locs.length);
+  const inMap = new Set(locs.filter(u => u.startsWith(`${SITE}/content/`)).map(u => u.slice(SITE.length)));
+  assert.deepEqual([...inMap].sort(), contentFiles.map(pathOf).sort());
+  for (const p of ['/', '/works/', '/factories/', '/career/', '/game/']) assert.ok(locs.includes(SITE + p), p);
+  assert.equal(x, out['sitemap.xml'], 'sitemap.xml 은 build 산출물이다');
+  assert.doesNotMatch(x, /\/content\/blog\/games\//);
+});
+test('직접 쓴 허브 문구(템플릿·렌더러)에 1인칭·이모지·TODO 가 없다(옮겨 온 글은 고치지 않는다)', () => {
+  const emoji = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/u;
+  for (const f of ['src/content.html', 'src/content-list.html', 'src/detail.html', 'scripts/lib/render.mjs', 'scripts/lib/hub.mjs']) { const t = read(f); assert.equal(t.match(BAN), null, f); assert.ok(!emoji.test(t), f); assert.ok(!/TODO/.test(t), f); }
+});
+test('랜딩 JSON-LD 는 섹션 ItemList, 색인 쪽은 CollectionPage + ItemList(쪽당 항목 수와 일치, 주소는 허브 상세)', () => {
+  const land = ldOf(out['content/index.html']);
+  assert.ok(land.some(x => x['@type'] === 'CollectionPage'));
+  const il = land.find(x => x['@type'] === 'ItemList').itemListElement; assert.equal(il.length, 5);
+  assert.ok(il.some(x => x.url === `${SITE}/content/game-news/`));
+  const g = ldOf(out['content/blog/page/2/index.html']);
+  assert.ok(g.some(x => x['@type'] === 'CollectionPage' && x.url === `${SITE}/content/blog/page/2/`));
+  const items = g.find(x => x['@type'] === 'ItemList'); assert.equal(items.numberOfItems, PER_PAGE);
+  for (const it of items.itemListElement) assert.match(it.url, /^https:\/\/kimjinwan\.com\/content\//);
+});
+test('빌드는 형제 저장소·네트워크를 읽지 않는다(content-src 스냅샷만 본다), 홈에서 허브로 간다', () => {
+  assert.doesNotMatch(read('scripts/build.mjs') + read('scripts/lib/render.mjs') + read('scripts/lib/hub.mjs'), /Projects\/|homedir|fetch\(|https?\.get/);
+  assert.ok(read('index.html').includes('href="/content/"'));
+});
+test('검증 규칙: 요약이 짧거나 호스트가 다르거나 중복이면 잡는다', () => {
+  const bad = JSON.parse(JSON.stringify(hub));
+  bad.sections[3].groups[0].items[0].summary = '짧음';
+  bad.sections[4].groups[0].items[0].url = 'https://example.com/x/';
+  bad.sections[2].groups[0].items[1].url = bad.sections[2].groups[0].items[0].url;
+  const e = validate({...D, contentHub: bad}).join('\n');
+  assert.match(e, /summary needs at least/); assert.match(e, /does not match the tools pattern/); assert.match(e, /duplicate url/);
+});
+
+// ── AI 활용 가이드 상세·복사 버튼·이름 ──
 test('기즈모 상세: text 항목은 프롬프트 전문을 pre/code 로 싣는다(길이 하한·이스케이프·줄바꿈 유지), web 항목은 전문 없이 써 보기 링크', () => {
   const unescape = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
   let nText = 0, nWeb = 0;
@@ -168,63 +352,6 @@ test('기즈모 상세: text 항목은 프롬프트 전문을 pre/code 로 싣�
   for (const [f, h] of gh) for (const m of h.matchAll(/href="(https:\/\/gizmo-store\.com[^"]*)"/g)) assert.match(m[1], /^https:\/\/gizmo-store\.com\/tool\/[\w-]+\/download$/, f);
   assert.equal(gh.filter(([, h]) => h.includes('/js/copy.js')).length, 44);
 });
-test('상세 본문 길이 하한', () => {
-  const MIN = {blog: 150, gizmo: 250};
-  for (const p of detailPaths()) {
-    const h = out[p.slice(1) + 'index.html'], kind = p.split('/')[2];
-    const body = text(h.slice(h.indexOf('<div class="detail-body">'), h.indexOf('</main>'))).replace(/\s+/g, ' ');
-    assert.ok(body.length >= MIN[kind], `${p}: ${body.length}`);
-    assert.doesNotMatch(h.slice(h.indexOf('<main'), h.indexOf('</main>')), /<script|<iframe|\son\w+=/i, p);
-  }
-});
-test('내부 링크는 모두 실제 페이지/파일로 풀리고, 새 창 링크는 noopener 를 가진다', () => {
-  const pages = new Set(Object.keys(out));
-  for (const f of contentFiles) {
-    const h = noCode(out[f]);
-    for (const m of h.matchAll(/\b(?:href|src)="(\/[^"]*)"/g)) {
-      const p = decodeURIComponent(m[1].split('#')[0].split('?')[0]);
-      if (p === '/') continue;
-      assert.ok(p.endsWith('/') ? pages.has(p.slice(1) + 'index.html') || fs.existsSync(p.slice(1) + 'index.html') : fs.existsSync(p.slice(1)), `${f}: broken ${m[1]}`);
-      assert.doesNotMatch(m[1], /^\/ko\//, f);
-    }
-    for (const m of h.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert.match(m[0], /rel="[^"]*noopener[^"]*"/, f);
-    for (const m of h.matchAll(/<a\b[^>]*href="https:\/\/[^"]*"[^>]*>/g)) if (!/kimjinwan\.com\/?"/.test(m[0]) || true) assert.match(m[0], /target="_blank"/, f + m[0]);
-  }
-});
-test('사이트맵: 색인·상세 /content/ 페이지 전부(자기 canonical)와 핵심 페이지, 중복 없음', () => {
-  const x = read('sitemap.xml'), locs = [...x.matchAll(/<loc>([^<]*)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)].map(m => m[1]);
-  assert.equal(new Set(locs).size, locs.length);
-  const inMap = new Set(locs.filter(u => u.startsWith(`${SITE}/content/`)).map(u => u.slice(SITE.length)));
-  assert.deepEqual([...inMap].sort(), contentFiles.map(pathOf).sort());
-  for (const p of ['/', '/works/', '/factories/', '/career/', '/game/']) assert.ok(locs.includes(SITE + p), p);
-  assert.equal(x, out['sitemap.xml'], 'sitemap.xml 은 build 산출물이다');
-});
-test('직접 쓴 허브 문구(템플릿·렌더러)에 1인칭·이모지·TODO 가 없다(옮겨 온 글은 고치지 않는다)', () => {
-  const emoji = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/u;
-  for (const f of ['src/content.html', 'src/content-list.html', 'src/detail.html', 'scripts/lib/render.mjs', 'scripts/lib/hub.mjs']) { const t = read(f); assert.equal(t.match(BAN), null, f); assert.ok(!emoji.test(t), f); assert.ok(!/TODO/.test(t), f); }
-});
-test('랜딩 JSON-LD 는 섹션 ItemList, 색인 쪽은 CollectionPage + ItemList(쪽당 항목 수와 일치)', () => {
-  const ld = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-  const land = ld(out['content/index.html']);
-  assert.ok(land.some(x => x['@type'] === 'CollectionPage'));
-  assert.equal(land.find(x => x['@type'] === 'ItemList').itemListElement.length, 4);
-  const g = ld(out['content/blog/page/2/index.html']);
-  assert.ok(g.some(x => x['@type'] === 'CollectionPage' && x.url === `${SITE}/content/blog/page/2/`));
-  assert.equal(g.find(x => x['@type'] === 'ItemList').numberOfItems, PER_PAGE);
-});
-test('빌드는 형제 저장소·네트워크를 읽지 않는다(content-src 스냅샷만 본다), 홈에서 허브로 간다', () => {
-  assert.doesNotMatch(read('scripts/build.mjs') + read('scripts/lib/render.mjs') + read('scripts/lib/hub.mjs'), /Projects\/|homedir|fetch\(|https?\.get/);
-  assert.ok(read('index.html').includes('href="/content/"'));
-});
-test('검증 규칙: 요약이 짧거나 호스트가 다르거나 중복이면 잡는다', () => {
-  const bad = JSON.parse(JSON.stringify(hub));
-  bad.sections[1].items[0].summary = '짧음';
-  bad.sections[2].items[0].url = 'https://example.com/x/';
-  bad.sections[3].groups[0].items[1].url = bad.sections[3].groups[0].items[0].url;
-  const e = validate({...D, contentHub: bad}).join('\n');
-  assert.match(e, /summary needs at least/); assert.match(e, /host must be apps\.kimjinwan\.com/); assert.match(e, /duplicate url/);
-});
-
 test('서비스 섹션은 허브에서 빠졌다: 경로·데이터·소스 읽기·사이트맵·내비·문구 어디에도 없다(서비스 소개는 /works/ 가 맡는다)', () => {
   assert.ok(!contentFiles.some(f => f.startsWith('content/services/')));
   assert.ok(!fs.existsSync('content/services') && !fs.existsSync('content-src/services'));

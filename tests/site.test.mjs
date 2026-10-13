@@ -23,7 +23,7 @@ test('홈이 블로그·웹도구·웹게임·Forge·Prism 으로 연결된다',
   for (const u of ['https://blog.kimjinwan.com/ko/', 'https://apps.kimjinwan.com/', 'https://games.kimjinwan.com/', 'https://forge.kimjinwan.com/', 'https://prism-studio.kimjinwan.com/'])
     assert.ok(h.includes(`href="${u}`), u);
 });
-test('robots.txt 는 주요 사이트맵(홈 · 블로그 · 웹 도구 · 웹게임 · 서비스 모아보기)을 명시한다', () => {
+test('robots.txt 는 주요 사이트맵(홈 · 블로그 · 웹 도구 · 웹게임 · 서비스 허브)을 명시한다', () => {
   const r = read('robots.txt');
   for (const s of ['https://kimjinwan.com', 'https://blog.kimjinwan.com', 'https://apps.kimjinwan.com', 'https://games.kimjinwan.com', 'https://service.kimjinwan.com'])
     assert.ok(r.includes(`Sitemap: ${s}/sitemap.xml`), s);
@@ -85,7 +85,7 @@ test('모든 페이지에 내비게이션이 있다', () => {
     const h = read(f);
     const nav = h.match(/<nav id="nav" aria-label="Main">[\s\S]*?<\/nav>/);
     assert.ok(nav, f + ' site nav (labelled landmark)');
-    for (const p of ['/', 'https://service.kimjinwan.com/', '/factories/', '/career/']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
+    for (const p of ['/', 'https://service.kimjinwan.com/', '/#services', '/#factories', '/#experience', '/content/']) assert.ok(nav[0].includes(`href="${p}"`), f + p);
     const map = h.match(/<nav class="foot-map" aria-label="Site map">[\s\S]*?<\/nav>/)[0];
     for (const p of ['/works/', '/factories/']) assert.ok(map.includes(`href="${p}"`), f + ' foot-map ' + p);
   }

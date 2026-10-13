@@ -1,0 +1,421 @@
+{
+ "as_of": "2026-10-13",
+ "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로 옮긴 매핑. nginx 301 용.",
+ "redirects": [
+  {
+   "from": "/content/blog/games/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/ananta-aug27-dlss-not-performance-proof/",
+   "to": "/content/game-news/ananta-aug27-dlss-not-performance-proof/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/ananta-release-date-record/",
+   "to": "/content/game-news/ananta-release-date-record/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/ananta-seven-year-support-pledge/",
+   "to": "/content/game-news/ananta-seven-year-support-pledge/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/ananta-silence-rumor-followup/",
+   "to": "/content/game-news/ananta-silence-rumor-followup/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/cat-merge-devlog/",
+   "to": "/content/game-news/cat-merge-devlog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-1115-known-issues-save-restore/",
+   "to": "/content/game-news/limbus-1115-known-issues-save-restore/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-aug20-text-or-bug/",
+   "to": "/content/game-news/limbus-aug20-text-or-bug/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-canto10-early-unlock/",
+   "to": "/content/game-news/limbus-canto10-early-unlock/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-chapter10-part1-mobile-specs/",
+   "to": "/content/game-news/limbus-chapter10-part1-mobile-specs/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-cinq-east-honglu-preview/",
+   "to": "/content/game-news/limbus-cinq-east-honglu-preview/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-dawn-passive-state/",
+   "to": "/content/game-news/limbus-dawn-passive-state/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-dimension-shredder-yisang-preview/",
+   "to": "/content/game-news/limbus-dimension-shredder-yisang-preview/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-don-aug6-ego-preview/",
+   "to": "/content/game-news/limbus-don-aug6-ego-preview/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-gregor-move-in-ego/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-oct1-hotfix-refund-window/",
+   "to": "/content/game-news/limbus-oct1-hotfix-refund-window/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-oct2-survey-mobile-update/",
+   "to": "/content/game-news/limbus-oct2-survey-mobile-update/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-oct8-mobile-memory-optimization/",
+   "to": "/content/game-news/limbus-oct8-mobile-memory-optimization/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-rodion-alteration-shop-extraction/",
+   "to": "/content/game-news/limbus-rodion-alteration-shop-extraction/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-rodion-kit-and-update-sep24/",
+   "to": "/content/game-news/limbus-rodion-kit-and-update-sep24/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-season8-punctum-preview/",
+   "to": "/content/game-news/limbus-season8-punctum-preview/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-summer-release-rhythm/",
+   "to": "/content/game-news/limbus-summer-release-rhythm/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/limbus-tgs2026-booth-sellout/",
+   "to": "/content/game-news/limbus-tgs2026-booth-sellout/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/merge-whale-devlog/",
+   "to": "/content/game-news/merge-whale-devlog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/my-whale-devlog/",
+   "to": "/content/game-news/my-whale-devlog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-belorta-pumpkin-witch-guide/",
+   "to": "/content/game-news/nikke-belorta-pumpkin-witch-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-drake-ammo-trap/",
+   "to": "/content/game-news/nikke-drake-ammo-trap/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-favorite-rosanna-phantom/",
+   "to": "/content/game-news/nikke-favorite-rosanna-phantom/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-favorite-sugar-flora/",
+   "to": "/content/game-news/nikke-favorite-sugar-flora/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-july23-matis-record/",
+   "to": "/content/game-news/nikke-july23-matis-record/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-laplace-july-operating-note/",
+   "to": "/content/game-news/nikke-laplace-july-operating-note/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-makoto-first-week/",
+   "to": "/content/game-news/nikke-makoto-first-week/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-maxwell-health-support/",
+   "to": "/content/game-news/nikke-maxwell-health-support/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-oct8-belorta-pumpkin-witch-recruitment/",
+   "to": "/content/game-news/nikke-oct8-belorta-pumpkin-witch-recruitment/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-persona-followup/",
+   "to": "/content/game-news/nikke-persona-followup/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-second-burst-roster/",
+   "to": "/content/game-news/nikke-second-burst-roster/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep11-ban-controversy-silence/",
+   "to": "/content/game-news/nikke-sep11-ban-controversy-silence/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep12-association-deadline/",
+   "to": "/content/game-news/nikke-sep12-association-deadline/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep16-cheat-response-apology/",
+   "to": "/content/game-news/nikke-sep16-cheat-response-apology/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep17-guilty-mighty-bunny-update/",
+   "to": "/content/game-news/nikke-sep17-guilty-mighty-bunny-update/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep22-swift-bunny-official-confirm/",
+   "to": "/content/game-news/nikke-sep22-swift-bunny-official-confirm/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep23-post-apology-sanctions-season41/",
+   "to": "/content/game-news/nikke-sep23-post-apology-sanctions-season41/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep27-minikke-cinderella-episode/",
+   "to": "/content/game-news/nikke-sep27-minikke-cinderella-episode/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-sep3-full-redownload/",
+   "to": "/content/game-news/nikke-sep3-full-redownload/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-soda-twinkling-bunny-build/",
+   "to": "/content/game-news/nikke-soda-twinkling-bunny-build/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-summer-new-iron-pair/",
+   "to": "/content/game-news/nikke-summer-new-iron-pair/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-summer-rerun-dorothy-elegg/",
+   "to": "/content/game-news/nikke-summer-rerun-dorothy-elegg/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-yukiko-team-slot/",
+   "to": "/content/game-news/nikke-yukiko-team-slot/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-13-returning-unlocks/",
+   "to": "/content/game-news/nte-13-returning-unlocks/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-14-first-day-priorities/",
+   "to": "/content/game-news/nte-14-first-day-priorities/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-14-preview-broadcast/",
+   "to": "/content/game-news/nte-14-preview-broadcast/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-14-raven-akane-fuka-paradise/",
+   "to": "/content/game-news/nte-14-raven-akane-fuka-paradise/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-august-bonus-calendar/",
+   "to": "/content/game-news/nte-august-bonus-calendar/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-bright-moon-linko-hotori/",
+   "to": "/content/game-news/nte-bright-moon-linko-hotori/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-illoi-lifeline-record/",
+   "to": "/content/game-news/nte-illoi-lifeline-record/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-pixel-burst-double-reward/",
+   "to": "/content/game-news/nte-pixel-burst-double-reward/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-sep16-ddos-maintenance-annulith/",
+   "to": "/content/game-news/nte-sep16-ddos-maintenance-annulith/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-sep17-breeze-riding-event/",
+   "to": "/content/game-news/nte-sep17-breeze-riding-event/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-villa-vehicle-budget/",
+   "to": "/content/game-news/nte-villa-vehicle-budget/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nte-zanhong-nanari-board/",
+   "to": "/content/game-news/nte-zanhong-nanari-board/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/page/2/",
+   "to": "/content/game-news/page/2/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/page/3/",
+   "to": "/content/game-news/page/3/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/page/4/",
+   "to": "/content/game-news/page/4/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/summer-2026-game-timeline/",
+   "to": "/content/game-news/summer-2026-game-timeline/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/the-weapons-01/",
+   "to": "/content/game-news/the-weapons-01/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/the-weapons-02/",
+   "to": "/content/game-news/the-weapons-02/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/the-weapons-03/",
+   "to": "/content/game-news/the-weapons-03/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-35-36-story-cycle/",
+   "to": "/content/game-news/wuwa-35-36-story-cycle/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-35-electro-rover/",
+   "to": "/content/game-news/wuwa-35-electro-rover/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-35-yangyang-susu/",
+   "to": "/content/game-news/wuwa-35-yangyang-susu/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-36-qingxiao-jingran/",
+   "to": "/content/game-news/wuwa-36-qingxiao-jingran/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-36-returning-echo-check/",
+   "to": "/content/game-news/wuwa-36-returning-echo-check/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-37-hsin-suoming-preview/",
+   "to": "/content/game-news/wuwa-37-hsin-suoming-preview/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/wuwa-37-livestream-release-oct/",
+   "to": "/content/game-news/wuwa-37-livestream-release-oct/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-31-32-event-overlap/",
+   "to": "/content/game-news/zzz-31-32-event-overlap/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-31-existing-agent-conditions/",
+   "to": "/content/game-news/zzz-31-existing-agent-conditions/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-31-remielle-sigrid/",
+   "to": "/content/game-news/zzz-31-remielle-sigrid/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-31-returning-checklist/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-32-claret-roxy-engines/",
+   "to": "/content/game-news/zzz-32-claret-roxy-engines/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-32-first-check/",
+   "to": "/content/game-news/zzz-32-first-check/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-hollow-vanguards-signup/",
+   "to": "/content/game-news/zzz-hollow-vanguards-signup/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-hoyoland2026-offline-ticket/",
+   "to": "/content/game-news/zzz-hoyoland2026-offline-ticket/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/zzz-oct3-hobbling-crow-event/",
+   "to": "/content/game-news/zzz-oct3-hobbling-crow-event/",
+   "status": 301
+  }
+ ]
+}

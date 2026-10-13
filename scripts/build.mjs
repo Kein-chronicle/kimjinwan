@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
+import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {hubModel, contentNav, landingHtml, mirrorTrail} from './lib/hub.mjs';
@@ -18,7 +18,7 @@ const rd = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const json = p => JSON.parse(rd(p));
 
 export function loadData() {
-  return {services: json('data/services.json'), collections: json('data/collections.json'), factories: json('data/factories.json'), profile: json('data/profile.json'), contentHub: json('data/content-hub.json')};
+  return {services: json('data/services.json'), collections: json('data/collections.json'), factories: json('data/factories.json'), profile: json('data/profile.json'), contentHub: json('data/content-hub.json'), images: json('content-src/images.json')};
 }
 
 // 페이지 표. 제목·설명·공유 카드 문구는 scripts/lib/og.mjs 의 pageMeta 한 곳에서 온다(카드 PNG 와 같은 출처).
@@ -68,9 +68,9 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
       {'@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/`},
       {'@type': 'ListItem', position: 2, name: SUBPAGES.find(x => x.key === page.key).label.ko, item: url}]});
   if (page.key === 'content' && contentHub) {
-    const names = {blog: '블로그', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구'};
-    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 4,
-      itemListElement: ['blog', 'gizmo', 'games', 'tools'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id}/`}))});
+    const names = {blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구'};
+    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 5,
+      itemListElement: ['blog', 'gamenews', 'gizmo', 'games', 'tools'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
   }
   return `<script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': g}).replace(/</g, '\\u003c')}</script>`;
 }
@@ -78,14 +78,23 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
 // 콘텐츠 허브 개별 페이지(원문 사본). 본문 스냅샷은 content-src/(scripts/build_content_hub.mjs 가 만든다) — 빌드는 형제 저장소·네트워크를 읽지 않는다.
 const jsonFiles = dir => fs.existsSync(path.join(ROOT, dir)) ? fs.readdirSync(path.join(ROOT, dir), {recursive: true}).filter(f => f.endsWith('.json')).sort().map(f => `${dir}/${f}`) : [];
 export function mirrorPages(data) {
-  const blogLabel = Object.fromEntries(data.contentHub.sections.find(x => x.id === 'blog').groups.map(g => [g.id, g.label]));
-  const blog = jsonFiles('content-src/blog').map(f => json(f));
-  const mirrored = new Set(blog.map(b => `${b.category}/${b.slug}`));
+  const hub = data.contentHub, grp = id => hub.sections.find(x => x.id === id).groups;
+  const labelOf = (id, k) => grp(id).find(g => g.id === k).label;
+  const blog = jsonFiles('content-src/blog').map(f => json(f)), news = jsonFiles('content-src/gamenews').map(f => json(f));
+  const mirrored = new Set([...blog.map(b => `${b.category}/${b.slug}`), ...news.map(n => `games/${n.slug}`)]);
   const pages = [];
-  for (const b of blog) pages.push({kind: 'blog', path: mirrorPath('blog', `${b.category}/${b.slug}`), title: b.title, description: b.description, date: b.date, catLabel: blogLabel[b.category],
-    crumbs: mirrorTrail(data, 'blog', b.category), body: rewriteBlogBody(b.body, mirrored)});
+  for (const b of blog) pages.push({kind: 'blog', path: mirrorPath('blog', `${b.category}/${b.slug}`), title: b.title, description: b.description, date: b.date, metaLabel: labelOf('blog', b.category),
+    crumbs: mirrorTrail(data, 'blog', b.category), body: rewriteBlogBody(b.body, mirrored), section: labelOf('blog', b.category).ko});
+  for (const n of news) pages.push({kind: 'gamenews', path: mirrorPath('game-news', n.slug), title: n.title, description: n.description, date: n.date, metaLabel: labelOf('gamenews', n.game),
+    crumbs: mirrorTrail(data, 'gamenews', n.game), body: rewriteBlogBody(n.body, mirrored), section: labelOf('gamenews', n.game).ko});
   for (const f of jsonFiles('content-src/gizmo')) { const g = json(f);
     pages.push({kind: 'gizmo', path: mirrorPath('gizmo', g.slug), title: g.title, description: g.tagline, purpose: g.purpose, crumbs: mirrorTrail(data, 'gizmo', g.purpose), body: gizmoBody(g)}); }
+  for (const f of jsonFiles('content-src/games')) { const g = json(f), genre = grp('games').find(x => x.items.some(i => i.slug === g.slug));
+    pages.push({kind: 'games', path: mirrorPath('games', g.slug), title: g.title.ko, shortTitle: g.title.ko, lang: 'bi', name: g.title, description: g.description, metaLabel: genre.label, crumbs: mirrorTrail(data, 'games', genre.id),
+      body: gameBody(g, data.images.games[g.slug]), schemaType: 'VideoGame', image: `/assets/content/games/${g.slug}-hero.webp`, genre: g.categories[0], section: genre.label.ko}); }
+  for (const f of jsonFiles('content-src/tools')) { const t = json(f), cat = grp('tools').find(x => x.items.some(i => i.slug === t.slug));
+    pages.push({kind: 'tools', path: mirrorPath('tools', t.slug), title: t.title, shortTitle: t.title, description: t.description, metaLabel: cat.label, crumbs: mirrorTrail(data, 'tools', cat.id),
+      body: toolBody(t, data.images.tools[t.slug]), schemaType: 'SoftwareApplication', image: `/assets/content/tools/${t.slug}-hero.webp`, genre: t.categories[0], section: cat.label.ko}); }
   return pages;
 }
 // 상세·색인 페이지 공용 JSON-LD. 상세는 Article(허브 주소가 mainEntityOfPage), 색인은 CollectionPage + ItemList.
@@ -95,9 +104,15 @@ function hubSchema(m, stamp, {profile}, type) {
   const g = [
     {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: SITE_NAME, inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
     {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: ['Kim Jinwan', 'Kein'], url: `${SITE}/`, jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en)},
-    type === 'Article'
+    type === 'Article' && m.schemaType === 'VideoGame'
+      ? {'@type': 'VideoGame', '@id': `${url}#game`, url, name: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', genre: m.genre, applicationCategory: 'Game', gamePlatform: 'Web browser', operatingSystem: 'Any',
+        image: SITE + m.image, author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}}
+      : type === 'Article' && m.schemaType === 'SoftwareApplication'
+      ? {'@type': 'SoftwareApplication', '@id': `${url}#app`, url, name: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web browser',
+        image: SITE + m.image, author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}}
+      : type === 'Article'
       ? {'@type': 'Article', '@id': `${url}#article`, url, headline: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', ...(m.date ? {datePublished: m.date} : {}), dateModified: m.date || stamp,
-        author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}, image: img, thumbnailUrl: img}
+        author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}, image: img, thumbnailUrl: img, ...(m.section ? {articleSection: m.section} : {})}
       : {'@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: m.title, description: m.description, inLanguage: 'ko', dateModified: stamp, isPartOf: {'@id': `${SITE}/#website`}, about: {'@id': `${SITE}/#person`}, breadcrumb: {'@id': `${url}#breadcrumb`}, primaryImageOfPage: img},
     {'@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: trail.map((t, i) => ({'@type': 'ListItem', position: i + 1, name: t.name, item: t.item}))},
   ];
@@ -142,6 +157,7 @@ export function buildAll({write = true} = {}) {
     ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], rocket: ['rocket', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     head_links: '',
     hub_blog_count: String(data.contentHub.sections.find(x => x.id === 'blog').count.value),
+    hub_gamenews_count: String(data.contentHub.sections.find(x => x.id === 'gamenews').count.value),
     hub_games_count: String(data.contentHub.sections.find(x => x.id === 'games').count.value),
     hub_gizmo_count: String(data.contentHub.sections.find(x => x.id === 'gizmo').count.value),
     hub_tools_count: String(data.contentHub.sections.find(x => x.id === 'tools').count.value),
@@ -170,7 +186,7 @@ export function buildAll({write = true} = {}) {
   for (const m of mirrorPages(data)) {
     const ctx = {...ctxBase, ...shared, nav_links: navLinks('content'), foot_map: footMap('content'), title: esc(clip(m.title, 70)), description: esc(clip(m.description, 300)),
       canonical: `${SITE}${m.path}`, schema: hubSchema(m, STAMP, data, 'Article'), hub_subnav: contentNav(m.kind, data.contentHub),
-      mirror_crumbs: mirrorCrumbs(m), mirror_head: mirrorHead(m), mirror_title: m.lang === 'bi' ? esc(m.name) : `<span lang="ko">${esc(m.shortTitle || m.title)}</span>`,
+      mirror_crumbs: mirrorCrumbs(m), mirror_head: mirrorHead(m), mirror_title: m.lang === 'bi' ? (typeof m.name === 'object' ? bi(m.name) : esc(m.name)) : `<span lang="ko">${esc(m.shortTitle || m.title)}</span>`,
       mirror_kind: m.kind, mirror_body: m.body, page_foot: mirrorFoot(m),
       page_scripts: m.body.includes('data-copy-target=') ? '<script src="/js/copy.js" defer></script>\n' : ''};
     out[`${m.path.slice(1)}index.html`] = fill(rd('src/detail.html'), ctx, {...partials, head: fill(partials.head, ctx, {})});

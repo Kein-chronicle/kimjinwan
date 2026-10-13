@@ -214,7 +214,7 @@ export const SUBPAGES = [
   {key: 'content', href: '/content/', label: {ko: '콘텐츠 허브', en: 'Content hub'}}, // 추가 순서가 곧 인덱스([3]) — navLinks·footMap 이 인덱스로 고른다
 ];
 const HOME = {key: 'home', href: '/', label: {ko: '홈', en: 'Home'}};
-const HUB = {href: 'https://service.kimjinwan.com/', label: {ko: '서비스 모아보기', en: 'Browse services'}}; // 서비스 스토어(별도 사이트)
+const HUB = {href: 'https://service.kimjinwan.com/', label: {ko: '서비스 허브', en: 'Service hub'}}; // 서비스 스토어(별도 사이트)
 const cur = (key, page) => key === page ? ' aria-current="page"' : '';
 
 // Kein 마크: 둥근 사각 타일 + 기하 K + 앞으로 튀어나가는 점. 32 격자, 색은 CSS 토큰(.km-*)이 정한다.
@@ -228,13 +228,19 @@ export const logo = (cls = 'logo') => `<a href="/" class="${cls}" aria-label="Ke
 const extLink = l => `<a href="${l.href}" ${EXT}>${bi(l.label)}${ext}</a>`;
 
 export function navLinks(page) {
-  // 홈 → 서비스 → AI 공장 → 경력 → 콘텐츠 허브 → 연락하기 | 서비스 모아보기. 마지막은 같은 레벨의 메뉴가 아니라 다른 사이트(service.kimjinwan.com, 새 창)로 가는 바로가기라 구분선과 다른 모양(.nav-ext)으로 둔다.
-  const items = [SUBPAGES[2], SUBPAGES[1], SUBPAGES[0], SUBPAGES[3]];
+  // 홈 · 서비스 · AI 공장 · 경력 · 연락하기 | (구분선) | 콘텐츠 허브 · 서비스 허브. 뒤 두 항목은 일반 메뉴가 아니라 바로가기 알약(.nav-ext)이다.
+  // 서비스·AI 공장·경력은 페이지 이동이 아니라 홈 섹션 앵커다(/#services …). 홈에서는 js/nav-spy.js 가 같은 문서 스크롤 + 현재 섹션 강조를 맡고,
+  // 다른 페이지에서는 홈으로 이동한 뒤 앵커로 스크롤한다. 정적 aria-current 는 홈 링크(홈 페이지)와 콘텐츠 허브(콘텐츠 페이지)에만 둔다.
+  const anchor = (id, label) => `<a href="/#${id}" data-spy="${id}">${bi(label)}</a>`;
   return [
-    `<a href="${HOME.href}"${cur(HOME.key, page)}>${bi(HOME.label)}</a>`,
-    ...items.map(l => `<a href="${l.href}"${cur(l.key, page)}>${bi(l.label)}</a>`),
-    `<a href="#contact" class="btn btn-primary nav-cta">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
+    `<a href="${HOME.href}" data-spy="top"${cur(HOME.key, page)}>${bi(HOME.label)}</a>`,
+    anchor('services', {ko: '서비스', en: 'Services'}),
+    anchor('factories', {ko: 'AI 공장', en: 'Factories'}),
+    anchor('experience', {ko: '경력', en: 'Career'}),
+    `<a href="#contact" data-spy="contact">${bi({ko: '연락하기', en: 'Contact'})}</a>`,
     `<span class="nav-sep" aria-hidden="true"></span>`,
+    // 콘텐츠 허브는 같은 사이트 안 페이지(새 창·↗ 없음), 서비스 허브는 외부 사이트(새 창·↗). 둘 다 .nav-ext 알약.
+    `<a class="nav-ext" href="${SUBPAGES[3].href}"${cur(SUBPAGES[3].key, page)}>${icon('book-open', {size: 15})}${bi(SUBPAGES[3].label)}</a>`,
     `<a class="nav-ext" href="${HUB.href}" ${EXT} title="${esc(HUB.label.ko)} — service.kimjinwan.com">${icon('layers', {size: 15})}${bi(HUB.label)}${ext}</a>`,
   ].join('\n      ');
 }
@@ -260,17 +266,20 @@ export function pageFoot(page) {
 // 항목마다 제목 + 요약 본문이 HTML 에 그대로 실린다. 본문이 한국어뿐인 항목(블로그 글·게임 설명·도구 설명)은 영어 모드에서도 같은 한국어를 보여 주고 lang="ko" 로 밝힌다.
 export const HUB_SECTIONS = [
   {id: 'blog', icon: 'book-open', title: {ko: '블로그', en: 'Journal'},
-    intro: {ko: 'AI 자동화의 실패와 복구, 앱 제작과 심사, 플레이 중인 게임의 공식 공지를 출처와 날짜까지 남기는 블로그입니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
-      en: 'A journal of AI automation failures and recovery, app production and review, and sourced game updates. Read the title and summary of the latest posts in each category right here, then open the full post. The posts are written in Korean.'}},
-  {id: 'games', icon: 'gamepad', title: {ko: '웹게임', en: 'Web games'},
-    intro: {ko: '설치 없이 브라우저에서 바로 하는 게임입니다. 대표 게임의 장르, 조작 방법, 한 판 길이를 적었습니다. 게임 설명은 한국어입니다.',
-      en: 'Games that run straight in the browser with no install. Each entry lists genre, controls and session length. Game descriptions are written in Korean.'}},
-  {id: 'tools', icon: 'wrench', title: {ko: '웹 도구', en: 'Web tools'},
-    intro: {ko: '브라우저에서 바로 쓰는 계산기와 변환기입니다. 분류별 대표 도구가 무엇을 입력받아 무엇을 내놓는지 적었습니다. 도구 설명은 한국어입니다.',
-      en: 'Calculators and converters that work in the browser. Each entry says what the tool takes in and what it gives back. Tool descriptions are written in Korean.'}},
+    intro: {ko: 'AI 에이전트가 직접 쓴 업무일지, 앱을 만들고 심사에 제출한 기록, AI 시대의 일과 놀이에 대한 짧은 글을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
+      en: 'Work logs that AI agents wrote themselves, records of building and submitting apps, and short essays on work and play in the age of AI. Every post can be read in full right here. The posts are written in Korean.'}},
+  {id: 'gamenews', icon: 'globe', title: {ko: '게임 소식', en: 'Game news'},
+    intro: {ko: '즐기는 게임의 공식 공지와 업데이트, 공략 정리와 직접 만든 게임의 개발기를 출처와 날짜까지 남겼습니다. 게임별로 골라 볼 수 있고, 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
+      en: 'Sourced notes on official announcements, updates and guides for the games I play, plus devlogs of the games I make. Pick a game to filter, and read every post in full here. The posts are written in Korean.'}},
   {id: 'gizmo', icon: 'sparkles', title: {ko: 'AI 활용 가이드', en: 'AI usage guides'},
     intro: {ko: '설치 없이 쓰는 프롬프트·스킬 가이드입니다. 용도별로 묶어 이름과 한 줄 설명을 적었고, 항목마다 설명·대상·사용 방법과 프롬프트 전문을 이 사이트 안에서 읽을 수 있습니다. 설명은 한국어입니다.',
       en: 'Prompt and skill guides you can use without installing anything. Entries are grouped by purpose with a name and a one-line description; each has its own page with description, audience, steps and the full prompt. Descriptions are written in Korean.'}},
+  {id: 'games', icon: 'gamepad', title: {ko: '웹게임', en: 'Web games'},
+    intro: {ko: '설치 없이 브라우저에서 바로 하는 게임입니다. 게임마다 소개와 조작 방법, 진행 규칙, 플레이 화면을 실었고 마음에 들면 바로 시작할 수 있습니다. 설명은 한국어입니다.',
+      en: 'Games that run straight in the browser with no install. Each page has an introduction, controls, rules and gameplay screens, and a button to start playing. Descriptions are written in Korean.'}},
+  {id: 'tools', icon: 'wrench', title: {ko: '웹 도구', en: 'Web tools'},
+    intro: {ko: '브라우저에서 바로 쓰는 계산기와 변환기입니다. 도구마다 무엇을 입력받아 무엇을 내놓는지, 알아둘 한계는 무엇인지 화면 캡처와 함께 적었습니다. 설명은 한국어입니다.',
+      en: 'Calculators and converters that work in the browser. Each page shows a screen capture and says what the tool takes in, what it gives back and what limits to know. Descriptions are written in Korean.'}},
 ];
 
 // ===== 콘텐츠 허브 상세 페이지(/content/<종류>/…/) — 허브가 자기 주소를 canonical 로 가진다 =====
@@ -283,16 +292,18 @@ const AI_LABEL = {'ai-assisted': {ko: 'AI 도움을 받아 만듦', en: 'Made wi
 // 블로그 본문 HTML: 같은 허브 안에 있는 글·목록은 허브 주소로 잇고, 허브에 없는 블로그 주소는 링크를 풀어 글자만 남긴다.
 // 그 밖의 외부 주소는 새 창으로 연다. 이미지는 blog 서브도메인 절대 주소를 그대로 참조한다.
 export function rewriteBlogBody(html, mirrored) {
-  const cats = new Set(['ai', 'apps', 'games', 'fiction']);
+  const cats = new Set(['ai', 'apps', 'fiction']);
   return html
     .replace(/<a\b([^>]*?)\shref="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, pre, href, post, inner) => {
       if (href.startsWith('#') || href.startsWith('mailto:')) return m;
       const u = href.startsWith('/') ? BLOG_ORIGIN + href : href;
       if (/^https:\/\/blog\.kimjinwan\.com\//.test(u)) {
         const q = u.replace(BLOG_ORIGIN, '').match(/^\/ko\/(?:(ai|apps|games|fiction)\/(?:([^/#?]+)\/)?)?(#.*)?$/);
-        if (q && !q[1]) return `<a${pre} href="/content/blog/${q[3] || ''}"${post}>${inner}</a>`;
-        if (q && q[1] && !q[2] && cats.has(q[1])) return `<a${pre} href="/content/blog/${q[1]}/${q[3] || ''}"${post}>${inner}</a>`;
-        if (q && q[2] && mirrored.has(`${q[1]}/${q[2]}`)) return `<a${pre} href="${mirrorPath('blog', `${q[1]}/${q[2]}`)}${q[3] || ''}"${post}>${inner}</a>`;
+        const a = to => `<a${pre} href="${to}"${post}>${inner}</a>`;
+        if (q && !q[1]) return a(`/content/blog/${q[3] || ''}`);
+        if (q && q[1] === 'games') return q[2] ? (mirrored.has(`games/${q[2]}`) ? a(`${mirrorPath('game-news', q[2])}${q[3] || ''}`) : inner) : a(`/content/game-news/${q[3] || ''}`);
+        if (q && q[1] && !q[2] && cats.has(q[1])) return a(`/content/blog/${q[1]}/${q[3] || ''}`);
+        if (q && q[2] && mirrored.has(`${q[1]}/${q[2]}`)) return a(`${mirrorPath('blog', `${q[1]}/${q[2]}`)}${q[3] || ''}`);
         return inner; // 허브에 없는 블로그 주소(소개·문의 등)는 링크를 풀어 글자만 남긴다
       }
       if (!/^https:\/\//.test(u)) return m;
@@ -325,7 +336,7 @@ ${h2({ko: '정보', en: 'Info'})}<dl class="detail-facts">${info.map(([l, v]) =>
 }
 // 상단: 용도·분류·날짜 줄
 export function mirrorHead(m) {
-  const meta = [m.kind === 'blog' ? bi(m.catLabel) : '', m.kind === 'gizmo' ? bi(GIZMO_PURPOSE_LABEL[m.purpose]) : '', m.date ? esc(m.date) : ''].filter(Boolean).join(' · ');
+  const meta = [m.metaLabel ? bi(m.metaLabel) : '', m.kind === 'gizmo' ? bi(GIZMO_PURPOSE_LABEL[m.purpose]) : '', m.date ? esc(m.date) : ''].filter(Boolean).join(' · ');
   return meta ? `<p class="hub-meta mono">${meta}</p>` : '';
 }
 export function mirrorCrumbs(m) {
@@ -340,4 +351,43 @@ export function crumbTrail(items) {
 export function mirrorFoot(m) {
   const back = m.crumbs.at(-1);
   return `<div class="page-foot"><a class="btn btn-ghost back-home" href="${esc(back.href)}">${icon('arrow-left', {size: 16})}${bi({ko: '목록으로 돌아가기', en: 'Back to the list'})}</a></div>`;
+}
+
+// ── 웹게임 · 웹 도구 상세 본문 ───────────────────────────────────────────
+const IMG = '/assets/content';
+const figure = (kind, slug, name, rec, alt, cls = 'detail-hero') => `<figure class="${cls}"><img src="${IMG}/${kind}/${slug}-hero.webp" width="${rec.hero[0]}" height="${rec.hero[1]}" alt="${esc(alt)}" fetchpriority="high"></figure>`;
+const ORIENT = {'가로': {ko: '가로 화면', en: 'Landscape'}, '세로': {ko: '세로 화면', en: 'Portrait'}, '세로·가로': {ko: '세로·가로 모두', en: 'Portrait or landscape'}, '반응형': {ko: '화면 크기에 맞춰 바뀜', en: 'Adapts to the screen'}};
+export function gameBody(g, rec) {
+  const title = g.title.ko;
+  const info = [[{ko: '분류', en: 'Genre'}, esc(g.categories.join('·'))], g.tags?.length ? [{ko: '태그', en: 'Tags'}, esc(g.tags.join(' · '))] : null,
+    g.session ? [{ko: '한 판 길이', en: 'Session'}, esc(g.session)] : null, g.orientation ? [{ko: '화면', en: 'Screen'}, bi(ORIENT[g.orientation] || {ko: g.orientation, en: g.orientation})] : null,
+    g.stageCount ? [{ko: '스테이지', en: 'Stages'}, `${g.stageCount}`] : null, g.controls?.length ? [{ko: '조작 방식', en: 'Input'}, esc(g.controls.join(', '))] : null].filter(Boolean);
+  const list = items => `<ul>${items.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ul>`;
+  const sec = (label, inner) => inner ? `${h2(label)}${inner}` : '';
+  const shots = (rec.shots || []).map((sz, i) => `<figure><img src="${IMG}/games/${g.slug}-${i + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(`${title} 플레이 화면 ${i + 1}`)}" loading="lazy"></figure>`).join('');
+  return `${figure('games', g.slug, title, rec, `${title} 대표 이미지`)}
+<p class="detail-cta"><a class="btn btn-primary" href="https://games.kimjinwan.com/play/${esc(g.slug)}/" ${EXT}>${bi({ko: '게임하러 가기', en: 'Play now'})}${ext}</a></p>
+<p class="detail-lead" lang="ko">${esc(g.description)}</p>
+${g.pitch ? `<p lang="ko">${esc(g.pitch)}</p>` : ''}${g.lead ? `<p lang="ko">${esc(g.lead)}</p>` : ''}
+${sec({ko: '게임 정보', en: 'Game info'}, `<dl class="detail-facts">${info.map(([l, v]) => `<dt>${bi(l)}</dt><dd lang="ko">${v}</dd>`).join('')}</dl>`)}
+${sec({ko: '조작 방법', en: 'Controls'}, g.controlsDetail?.length ? list(g.controlsDetail) : '')}
+${sec({ko: '규칙', en: 'Rules'}, g.rules?.length ? list(g.rules) : '')}
+${sec({ko: '진행', en: 'Progress'}, g.progress?.length ? list(g.progress) : '')}
+${sec({ko: '스테이지 안내 예시', en: 'Stage hints'}, g.stageGuides?.length ? list(g.stageGuides) : '')}
+${shots ? `${h2({ko: '플레이 화면', en: 'Gameplay'})}<div class="detail-gallery">${shots}</div>` : ''}`;
+}
+export function toolBody(t, rec) {
+  const name = t.title;
+  const steps = [];
+  if (t.inputs?.length) steps.push(`화면의 항목(${t.inputs.join(', ')})을 채우거나 고릅니다.`);
+  if (t.actions?.length) steps.push(`필요하면 버튼(${t.actions.join(', ')})을 눌러 결과를 가져갑니다.`);
+  const blocks = (t.blocks || []).filter(b => b.text !== t.intro && b.text !== t.description && b.text !== t.does);
+  return `${figure('tools', t.slug, name, rec, `${name} 화면`)}
+<p class="detail-cta"><a class="btn btn-primary" href="https://apps.kimjinwan.com/${esc(t.slug)}/" ${EXT}>${bi({ko: '도구 열기', en: 'Open the tool'})}${ext}</a></p>
+<p class="detail-lead" lang="ko">${esc(t.description)}</p>
+${t.intro && t.intro !== t.description ? `<p lang="ko">${esc(t.intro)}</p>` : ''}
+${steps.length ? `${h2({ko: '쓰는 방법', en: 'How to use'})}<ol>${steps.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ol>` : ''}
+${blocks.length ? `${h2({ko: '알아두면 좋은 점', en: 'Good to know'})}${blocks.map(b => b.t === 'h' ? `<h3 lang="ko">${esc(b.text)}</h3>` : `<p lang="ko">${esc(b.text)}</p>`).join('')}` : ''}
+${h2({ko: '정보', en: 'Info'})}<dl class="detail-facts"><dt>${bi({ko: '분류', en: 'Category'})}</dt><dd lang="ko">${esc(t.categories.join(' · '))}</dd></dl>
+${t.guide ? `<p class="detail-more"><a href="${esc(t.guide.path)}" lang="ko">자세한 사용 가이드 읽기</a></p>` : ''}`;
 }

@@ -9,8 +9,8 @@ const SUB = {works: '/works/', factories: '/factories/', career: '/career/', con
 const siteNav = h => h.match(/<nav id="nav" aria-label="Main">[\s\S]*?\n<\/nav>/)[0];
 const main = h => h.slice(h.indexOf('<main'), h.indexOf('</main>'));
 
-test('내비: 홈·서비스·AI 공장·경력·콘텐츠 허브·연락하기 다음에 서비스 모아보기(service.kimjinwan.com, 구분선 뒤 별도 .nav-ext) 순서, aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
-  const WANT = [['/', '홈'], ['/works/', '서비스'], ['/factories/', 'AI 공장'], ['/career/', '경력'], ['/content/', '콘텐츠 허브'], ['#contact', '연락하기'], ['https://service.kimjinwan.com/', '서비스 모아보기']];
+test('내비: 홈·서비스·AI 공장·경력·콘텐츠 허브·연락하기 다음에 서비스 허브(service.kimjinwan.com, 구분선 뒤 별도 .nav-ext) 순서, aria-current 는 현재 페이지가 메뉴에 있을 때만 하나', () => {
+  const WANT = [['/', '홈'], ['/#services', '서비스'], ['/#factories', 'AI 공장'], ['/#experience', '경력'], ['#contact', '연락하기'], ['/content/', '콘텐츠 허브'], ['https://service.kimjinwan.com/', '서비스 허브']];
   for (const [f, key] of Object.entries(PAGES)) {
     const nav = siteNav(read(f));
     const menu = nav.slice(nav.indexOf('id="nav-menu"'));
@@ -18,9 +18,16 @@ test('내비: 홈·서비스·AI 공장·경력·콘텐츠 허브·연락하기 
     assert.deepEqual(links.map(m => m[1].match(/href="([^"]*)"/)[1]), WANT.map(w => w[0]), f);
     links.forEach((m, i) => assert.ok(m[2].includes(`<span data-lang-ko>${WANT[i][1]}</span>`), f + ' label ' + WANT[i][1]));
     const current = links.map(m => m[1]).filter(a => a.includes('aria-current="page"'));
-    const own = key === 'home' ? '/' : SUB[key];
-    if (WANT.some(w => w[0] === own)) { assert.equal(current.length, 1, f); assert.ok(current[0].includes(`href="${own}"`), f + ' current=' + current[0]); }
+    // 정적 강조는 홈(홈 페이지)과 콘텐츠 허브(콘텐츠 페이지)에만. 홈의 섹션 강조는 nav-spy.js 가 동적으로 준다. /works/ 등에서는 강조 없음.
+    const own = key === 'home' ? '/' : key === 'content' ? '/content/' : null;
+    if (own) { assert.equal(current.length, 1, f); assert.ok(current[0].includes(`href="${own}"`), f + ' current=' + current[0]); }
     else assert.equal(current.length, 0, f + ' (page not in menu: reached via in-page links, site map and page foot)');
+    for (const m of links.filter(m => /data-spy=/.test(m[1]) && !/contact/.test(m[1]))) assert.ok(/href="\/(#[a-z]+)?"/.test(m[1]), f + ' ' + m[1]);
+    // 연락하기는 버튼이 아니라 일반 텍스트 링크, 콘텐츠 허브·서비스 허브는 같은 .nav-ext 알약(허브는 새 창·↗ 없음, 서비스 허브는 새 창)
+    assert.doesNotMatch(links[4][1], /btn|nav-cta/, f);
+    const pills = links.filter(m => /class="nav-ext"/.test(m[1])); assert.equal(pills.length, 2, f);
+    assert.ok(!/target=/.test(pills[0][1]) && !/ico-ext/.test(pills[0][2]), f + ' 허브 알약'); assert.match(pills[1][1], /target="_blank" rel="noopener noreferrer"/, f);
+    assert.ok(links.indexOf(pills[0]) === 5 && links.indexOf(pills[1]) === 6, f + ' 순서');
   }
 });
 test('홈 섹션 앵커(/#ai 등)는 홈에 실존하는 id 로 간다', () => {
@@ -108,4 +115,21 @@ test('파비콘은 새 Kein 마크로 교체됐고 비어 있지 않다', async 
   // build_icons.py 도 같은 기하를 쓴다
   const py = read('scripts/build_icons.py');
   assert.ok(py.includes('(19.1, 16.1), (22.5, 19.5), (18.5, 23.5)') && py.includes('DOT = (25.5, 25.5, 3.25)'));
+});
+
+test('스크롤스파이: 화면에 가장 크게 보이는 섹션을 고르고, 안 보이면 없음 — 정적 마크업은 JS 없이 홈 링크만 aria-current="page"', async () => {
+  const {createRequire} = await import('node:module');
+  const spy = createRequire(import.meta.url)('../js/nav-spy.js');
+  assert.deepEqual(spy.ORDER, ['top', 'services', 'factories', 'experience', 'contact']);
+  assert.equal(spy.pickCurrent({experience: 100, contact: 400}), 'contact');
+  assert.equal(spy.pickCurrent({top: 600, services: 100}), 'top');
+  assert.equal(spy.pickCurrent({top: 40, services: 500, factories: 200}), 'services');
+  assert.equal(spy.pickCurrent({factories: 300, experience: 301}), 'experience');
+  assert.equal(spy.pickCurrent({}), null); assert.equal(spy.pickCurrent({top: 0, services: 0}), null);
+  const home = read('index.html'), menu = siteNav(home).slice(siteNav(home).indexOf('id="nav-menu"'));
+  assert.equal((menu.match(/aria-current/g) || []).length, 1);
+  assert.match(menu, /<a href="\/" data-spy="top" aria-current="page">/);
+  for (const id of ['top', 'services', 'factories', 'experience', 'contact']) assert.ok(home.includes(`id="${id}"`), id);
+  for (const f of Object.keys(PAGES)) assert.ok(read(f).includes('<script src="/js/nav-spy.js" defer></script>'), f);
+  assert.doesNotMatch(read('js/nav-spy.js'), /innerHTML|eval\(/);
 });

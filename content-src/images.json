@@ -1,0 +1,961 @@
+{
+ "games": {
+  "clockwork-harbor": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "clockwork-harbor-1.webp": 35156,
+    "clockwork-harbor-hero.webp": 41010,
+    "clockwork-harbor.webp": 13752
+   }
+  },
+  "cloud-sheep-forest-words": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "cloud-sheep-forest-words-1.webp": 21376,
+    "cloud-sheep-forest-words-hero.webp": 35768,
+    "cloud-sheep-forest-words.webp": 12992
+   }
+  },
+  "comet-cafe-rush": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "comet-cafe-rush-1.webp": 23976,
+    "comet-cafe-rush-hero.webp": 88632,
+    "comet-cafe-rush.webp": 33436
+   }
+  },
+  "cosmo-corgi-star-route": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "cosmo-corgi-star-route-1.webp": 29634,
+    "cosmo-corgi-star-route-hero.webp": 49136,
+    "cosmo-corgi-star-route.webp": 19950
+   }
+  },
+  "firefly-signal-school": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "firefly-signal-school-1.webp": 28068,
+    "firefly-signal-school-hero.webp": 51800,
+    "firefly-signal-school.webp": 16678
+   }
+  },
+  "four-sight": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "four-sight-1.webp": 14534,
+    "four-sight-hero.webp": 17516,
+    "four-sight.webp": 6830
+   }
+  },
+  "honeybee-garden-trail": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "honeybee-garden-trail-1.webp": 26572,
+    "honeybee-garden-trail-hero.webp": 40742,
+    "honeybee-garden-trail.webp": 16646
+   }
+  },
+  "luno-rune-vault": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "luno-rune-vault-1.webp": 23488,
+    "luno-rune-vault-hero.webp": 56100,
+    "luno-rune-vault.webp": 22148
+   }
+  },
+  "mandu-house": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "mandu-house-1.webp": 13454,
+    "mandu-house-hero.webp": 10444,
+    "mandu-house.webp": 4274
+   }
+  },
+  "owl-hangul-detective": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "owl-hangul-detective-1.webp": 22338,
+    "owl-hangul-detective-hero.webp": 32186,
+    "owl-hangul-detective.webp": 11892
+   }
+  },
+  "popo-pearl-sort": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "popo-pearl-sort-1.webp": 24616,
+    "popo-pearl-sort-hero.webp": 54168,
+    "popo-pearl-sort.webp": 20972
+   }
+  },
+  "shadow-orbit-explorer": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "shadow-orbit-explorer-1.webp": 21848,
+    "shadow-orbit-explorer-hero.webp": 120102,
+    "shadow-orbit-explorer.webp": 40374
+   }
+  },
+  "signal-tower-guard": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "signal-tower-guard-1.webp": 20798,
+    "signal-tower-guard-2.webp": 22382,
+    "signal-tower-guard-hero.webp": 103066,
+    "signal-tower-guard.webp": 37310
+   }
+  },
+  "soda-stack-signal": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "soda-stack-signal-1.webp": 20740,
+    "soda-stack-signal-hero.webp": 105714,
+    "soda-stack-signal.webp": 39674
+   }
+  },
+  "star-scout-survivors": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "star-scout-survivors-1.webp": 16550,
+    "star-scout-survivors-2.webp": 13666,
+    "star-scout-survivors-hero.webp": 6126,
+    "star-scout-survivors.webp": 2538
+   }
+  }
+ },
+ "tools": {
+  "age-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "age-calculator-hero.webp": 18102,
+    "age-calculator.webp": 7776
+   }
+  },
+  "amount-to-korean": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "amount-to-korean-hero.webp": 22460,
+    "amount-to-korean.webp": 9726
+   }
+  },
+  "annual-leave-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "annual-leave-calculator-hero.webp": 22412,
+    "annual-leave-calculator.webp": 9554
+   }
+  },
+  "background-remover": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "background-remover-hero.webp": 22106,
+    "background-remover.webp": 8792
+   }
+  },
+  "bill-split": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "bill-split-hero.webp": 22908,
+    "bill-split.webp": 9994
+   }
+  },
+  "csv-json": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "csv-json-hero.webp": 22058,
+    "csv-json.webp": 9416
+   }
+  },
+  "date-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "date-calculator-hero.webp": 18596,
+    "date-calculator.webp": 8272
+   }
+  },
+  "dedupe-lines": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "dedupe-lines-hero.webp": 17584,
+    "dedupe-lines.webp": 7522
+   }
+  },
+  "discount-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "discount-calculator-hero.webp": 17756,
+    "discount-calculator.webp": 7350
+   }
+  },
+  "event-deadline": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "event-deadline-hero.webp": 19584,
+    "event-deadline.webp": 8152
+   }
+  },
+  "gif-maker": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "gif-maker-hero.webp": 19170,
+    "gif-maker.webp": 7392
+   }
+  },
+  "gpa-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "gpa-calculator-hero.webp": 25584,
+    "gpa-calculator.webp": 10188
+   }
+  },
+  "image-compressor": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-compressor-hero.webp": 20016,
+    "image-compressor.webp": 7874
+   }
+  },
+  "image-converter": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-converter-hero.webp": 18088,
+    "image-converter.webp": 7326
+   }
+  },
+  "image-ocr": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-ocr-hero.webp": 14314,
+    "image-ocr.webp": 6378
+   }
+  },
+  "image-to-pdf": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-to-pdf-hero.webp": 16998,
+    "image-to-pdf.webp": 7080
+   }
+  },
+  "image-watermark": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "image-watermark-hero.webp": 18256,
+    "image-watermark.webp": 7254
+   }
+  },
+  "json-formatter": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "json-formatter-hero.webp": 27102,
+    "json-formatter.webp": 11282
+   }
+  },
+  "loan-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "loan-calculator-hero.webp": 24398,
+    "loan-calculator.webp": 10422
+   }
+  },
+  "math-worksheet": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "math-worksheet-hero.webp": 20902,
+    "math-worksheet.webp": 9462
+   }
+  },
+  "password-generator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "password-generator-hero.webp": 22170,
+    "password-generator.webp": 9590
+   }
+  },
+  "pdf-compressor": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-compressor-hero.webp": 20238,
+    "pdf-compressor.webp": 7770
+   }
+  },
+  "pdf-merge": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-merge-hero.webp": 19414,
+    "pdf-merge.webp": 7526
+   }
+  },
+  "pdf-sign": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-sign-hero.webp": 19630,
+    "pdf-sign.webp": 7598
+   }
+  },
+  "pdf-split": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-split-hero.webp": 20226,
+    "pdf-split.webp": 8070
+   }
+  },
+  "pdf-to-image": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-to-image-hero.webp": 19682,
+    "pdf-to-image.webp": 7784
+   }
+  },
+  "pdf-watermark": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pdf-watermark-hero.webp": 19472,
+    "pdf-watermark.webp": 7632
+   }
+  },
+  "project-checklist": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "project-checklist-hero.webp": 24184,
+    "project-checklist.webp": 10176
+   }
+  },
+  "pull-planner": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "pull-planner-hero.webp": 20970,
+    "pull-planner.webp": 9016
+   }
+  },
+  "qr-reader": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "qr-reader-hero.webp": 18974,
+    "qr-reader.webp": 7596
+   }
+  },
+  "random-roulette": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "random-roulette-hero.webp": 20194,
+    "random-roulette.webp": 9130
+   }
+  },
+  "return-checklist": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "return-checklist-hero.webp": 24890,
+    "return-checklist.webp": 10150
+   }
+  },
+  "savings-interest-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "savings-interest-calculator-hero.webp": 24616,
+    "savings-interest-calculator.webp": 10396
+   }
+  },
+  "seating-chart": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "seating-chart-hero.webp": 18816,
+    "seating-chart.webp": 8092
+   }
+  },
+  "secret-santa": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "secret-santa-hero.webp": 24518,
+    "secret-santa.webp": 10068
+   }
+  },
+  "severance-pay-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "severance-pay-calculator-hero.webp": 25834,
+    "severance-pay-calculator.webp": 10924
+   }
+  },
+  "text-diff": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "text-diff-hero.webp": 16616,
+    "text-diff.webp": 7018
+   }
+  },
+  "timezone-converter": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "timezone-converter-hero.webp": 21648,
+    "timezone-converter.webp": 9340
+   }
+  },
+  "tournament-bracket": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "tournament-bracket-hero.webp": 19756,
+    "tournament-bracket.webp": 8570
+   }
+  },
+  "typing-speed-test": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "typing-speed-test-hero.webp": 19646,
+    "typing-speed-test.webp": 8210
+   }
+  },
+  "unit-converter": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "unit-converter-hero.webp": 18538,
+    "unit-converter.webp": 7664
+   }
+  },
+  "unit-price": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "unit-price-hero.webp": 21246,
+    "unit-price.webp": 9158
+   }
+  },
+  "vat-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "vat-calculator-hero.webp": 23302,
+    "vat-calculator.webp": 9760
+   }
+  },
+  "volumetric-weight-calculator": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "volumetric-weight-calculator-hero.webp": 18712,
+    "volumetric-weight-calculator.webp": 7804
+   }
+  },
+  "word-counter": {
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1200,
+    750
+   ],
+   "bytes": {
+    "word-counter-hero.webp": 18160,
+    "word-counter.webp": 8026
+   }
+  }
+ }
+}

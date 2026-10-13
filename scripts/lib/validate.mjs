@@ -87,66 +87,46 @@ function validateProfile(p, err) {
 }
 
 // 콘텐츠 허브: 항목마다 제목 + 읽을 수 있는 요약 본문, 해당 서브도메인 https 링크, 중복 없음, 숫자엔 as_of·source.
-const HUB_HOST = {blog: 'blog.kimjinwan.com', games: 'games.kimjinwan.com', tools: 'apps.kimjinwan.com', gizmo: 'gizmo-store.com'};
 export const HUB_MIN_SUMMARY = 40;
 export const HUB_MIN_GIZMO_SUMMARY = 30; // 한 줄 설명 + 추천 대상 한 줄
-export const HUB_MIN_BLOG_SUMMARY = 20; // 전체 글을 싣는 블로그는 짧은 설명이 있는 글도 있다
+export const HUB_MIN_BLOG_SUMMARY = 20; // 전체 글을 싣는 블로그·게임 소식은 짧은 설명이 있는 글도 있다
+export const HUB_SECTION_IDS = ['blog', 'gamenews', 'gizmo', 'games', 'tools'];
+const URL_RULE = {
+  blog: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/(ai|apps|fiction)\/[\w-]+\/$/.test(u),
+  gamenews: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/games\/[\w-]+\/$/.test(u),
+  gizmo: u => /^https:\/\/gizmo-store\.com\/tool\/[\w-]+$/.test(u),
+  games: u => /^https:\/\/games\.kimjinwan\.com\/play\/[\w-]+\/$/.test(u),
+  tools: u => /^https:\/\/apps\.kimjinwan\.com\/[\w-]+\/$/.test(u),
+};
 function validateContentHub(hub, err) {
   if (!DATE.test(hub.as_of || '')) err.push('contentHub.as_of must be YYYY-MM-DD');
   const ids = (hub.sections || []).map(s => s.id);
-  if (ids.join() !== 'blog,games,tools,gizmo') err.push(`contentHub.sections must be blog,games,tools,gizmo (got ${ids})`);
+  if (ids.join() !== HUB_SECTION_IDS.join()) err.push(`contentHub.sections must be ${HUB_SECTION_IDS} (got ${ids})`);
   const seen = new Set();
-  const url = (w, u, host) => {
-    if (!HTTPS.test(u || '')) { err.push(`${w}: url must be https`); return; }
-    if (host && new URL(u).host !== host) err.push(`${w}: url host must be ${host}`);
-    if (seen.has(u)) err.push(`${w}: duplicate url ${u}`);
-    seen.add(u);
-  };
-  const text = (w, t, min = HUB_MIN_SUMMARY) => { if (typeof t !== 'string' || t.trim().length < min) err.push(`${w}: summary needs at least ${min} chars`); };
+  const text = (w, t, min) => { if (typeof t !== 'string' || t.trim().length < min) err.push(`${w}: summary needs at least ${min} chars`); };
   for (const s of hub.sections || []) {
-    const c = s.count;
-    if (!c || !Number.isInteger(c.value) || c.value < 1 || !DATE.test(c.as_of || '') || !c.source) err.push(`contentHub.${s.id}: count needs value, as_of and source`);
-    url(`contentHub.${s.id}`, s.url, HUB_HOST[s.id]);
-    if (s.id === 'gizmo') {
-      let n = 0;
-      for (const g of s.groups || []) {
-        if (!biOk(g.label)) err.push(`contentHub.gizmo.${g.id}: label needs ko/en`);
-        for (const it of g.items || []) {
-          n++; const iw = `contentHub.gizmo.${it.url}`;
-          if (!it.title || typeof it.tagline !== 'string' || it.tagline.length < 15) err.push(`${iw}: title and tagline (15+ chars) required`);
-          if (typeof it.summary !== 'string' || it.summary.length < HUB_MIN_GIZMO_SUMMARY) err.push(`${iw}: summary (tagline + audience) needs at least ${HUB_MIN_GIZMO_SUMMARY} chars`);
-          url(iw, it.url, HUB_HOST.gizmo);
-          if (!/^https:\/\/gizmo-store\.com\/tool\/[\w-]+$/.test(it.url || '')) err.push(`${iw}: must be a /tool/<slug> page`);
-          if ('download' in it) err.push(`${iw}: download link must not be stored`);
-        }
-      }
-      if (c && n !== c.value) err.push(`contentHub.gizmo: count ${c.value} != ${n} items`);
-    } else if (s.id === 'blog') {
-      if (!Array.isArray(s.groups) || !s.groups.length) err.push('contentHub.blog: groups required');
-      let total = 0;
-      for (const g of s.groups || []) {
-        const w = `contentHub.blog.${g.id}`;
-        if (!biOk(g.label) || !biOk(g.blurb)) err.push(`${w}: label/blurb need ko/en`);
-        if (!Number.isInteger(g.total) || g.total < g.items.length) err.push(`${w}: total must be >= items`);
-        total += g.total;
-        if (!g.items.length) err.push(`${w}: needs items`);
-        for (const it of g.items) {
-          const iw = `${w}.${it.url}`;
-          if (!it.title || !DATE.test(it.date || '')) err.push(`${iw}: title and date required`);
-          text(iw, it.summary, HUB_MIN_BLOG_SUMMARY); url(iw, it.url, HUB_HOST.blog);
-          if (!(it.url || '').startsWith(`https://blog.kimjinwan.com/ko/${g.id}/`)) err.push(`${iw}: url must be under /ko/${g.id}/`);
-        }
-      }
-      if (c && total !== c.value) err.push(`contentHub.blog: count ${c.value} != sum of group totals ${total}`);
-    } else {
-      if (!(s.items || []).length) err.push(`contentHub.${s.id}: needs items`);
-      if (c && (s.items || []).length > c.value) err.push(`contentHub.${s.id}: more items than count`);
-      for (const it of s.items || []) {
-        const iw = `contentHub.${s.id}.${it.url}`;
-        const t = s.id === 'games' ? (it.title && it.title.ko && it.title.en) : it.title;
-        if (!t) err.push(`${iw}: title required`);
-        text(iw, it.summary); url(iw, it.url, HUB_HOST[s.id]);
+    const c = s.count, w0 = `contentHub.${s.id}`;
+    if (!c || !Number.isInteger(c.value) || c.value < 1 || !DATE.test(c.as_of || '') || !c.source) err.push(`${w0}: count needs value, as_of and source`);
+    if (!HTTPS.test(s.url || '')) err.push(`${w0}: url must be https`);
+    if (!Array.isArray(s.groups) || !s.groups.length) { err.push(`${w0}: groups required`); continue; }
+    let n = 0;
+    for (const g of s.groups) {
+      const w = `${w0}.${g.id}`;
+      if (!biOk(g.label)) err.push(`${w}: label needs ko/en`);
+      if (!g.items || !g.items.length) err.push(`${w}: needs items`);
+      if (s.id === 'blog' || s.id === 'gamenews') { if (g.total !== g.items.length) err.push(`${w}: total must equal items`); }
+      for (const it of g.items || []) {
+        n++; const iw = `${w}.${it.url}`;
+        if (!URL_RULE[s.id](it.url || '')) err.push(`${iw}: url does not match the ${s.id} pattern`);
+        if (seen.has(it.url)) err.push(`${iw}: duplicate url`); seen.add(it.url);
+        const title = s.id === 'games' ? (it.title && it.title.ko && it.title.en) : it.title;
+        if (!title) err.push(`${iw}: title required`);
+        if (s.id === 'blog' || s.id === 'gamenews') { if (!DATE.test(it.date || '')) err.push(`${iw}: date required`); text(iw, it.summary, HUB_MIN_BLOG_SUMMARY); }
+        else if (s.id === 'gizmo') { if (typeof it.summary !== 'string' || it.summary.length < HUB_MIN_GIZMO_SUMMARY) err.push(`${iw}: summary (tagline + audience) needs at least ${HUB_MIN_GIZMO_SUMMARY} chars`); if ('download' in it) err.push(`${iw}: download link must not be stored`); }
+        else { text(iw, it.summary, 20); if (!it.slug) err.push(`${iw}: slug required`); }
       }
     }
+    if (c && n !== c.value) err.push(`${w0}: count ${c.value} != ${n} items`);
+    if (c && c.total !== undefined && c.total < c.value) err.push(`${w0}: total must be >= value`);
   }
 }

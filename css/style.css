@@ -299,12 +299,13 @@ body.en .sec-sub[data-lang-en],body.en p[data-lang-en]{display:block}
 }
 @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 .nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:var(--accent-ink)}
-/* 서비스 모아보기: 같은 레벨 메뉴가 아니라 다른 사이트로 나가는 바로가기 — 구분선 + 점선 테두리 알약 */
+/* 서비스 허브: 같은 레벨 메뉴가 아니라 다른 사이트로 나가는 바로가기 — 구분선 + 점선 테두리 알약 */
 .nav-sep{align-self:center;width:1px;height:22px;background:var(--line);margin:0 -6px}
 .nav-links a.nav-ext{gap:6px;padding:6px 12px;border:1px dashed var(--faint);border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);background:transparent}
 .nav-links a.nav-ext .ico{width:15px;height:15px;color:var(--accent)}
 .nav-links a.nav-ext .ico-ext{width:12px;height:12px;margin-left:0;opacity:.8}
 .nav-links a.nav-ext:hover{color:var(--text);border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.nav-links a.nav-ext[aria-current="page"]{color:var(--text);text-decoration:none;border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
 
 /* ===== icons ===== */
 .ico{width:1em;height:1em;flex:none;vertical-align:-.125em}
@@ -500,7 +501,7 @@ main>.wrap>.page-foot{margin:0 0 72px}
   .js .nav-links a[aria-current="page"]{text-decoration:none;color:var(--accent);box-shadow:inset 3px 0 0 var(--accent);padding-left:14px}
   .js .nav-links .nav-sep{width:auto;height:0;margin:14px 0 4px;border-top:1px solid var(--line);background:none}
   .js .nav-links a.nav-ext{justify-content:center;margin-top:8px;padding:11px 18px;font-size:15px;border-bottom:1px dashed var(--faint)}
-  .js .nav-links .nav-cta{margin-top:14px;justify-content:center;border-bottom:1px solid var(--accent);padding:12px 18px}
+  .js .nav-links a.nav-ext[aria-current="page"]{box-shadow:none;padding:11px 18px;border-bottom:1px solid var(--accent)}
   html:not(.js) #nav{position:relative}
   html:not(.js) .nav-in{flex-wrap:wrap}
   html:not(.js) .nav-links{order:3;width:100%;margin:0;flex-wrap:wrap;gap:8px 18px}
@@ -711,3 +712,28 @@ main>.wrap>.page-foot{margin:0 0 72px}
 .copy-btn[data-state="fail"]::after{content:"!";margin-left:6px;color:var(--accent)}
 .copy-status{font-size:14px;color:var(--muted)}
 .copy-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* 웹게임·웹 도구 이미지 카드 그리드 */
+.hub-grid{list-style:none;display:grid;gap:20px;margin:6px 0 8px}
+.hub-grid-games{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hub-grid-tools{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gcard a,.tcard a{display:flex;flex-direction:column;height:100%;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .15s,transform .15s}
+.gcard a:hover,.tcard a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.gcard img,.tcard img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:var(--card2)}
+.gcard-b{display:flex;flex-direction:column;gap:8px;padding:16px 18px 18px;flex:1}
+.gcard-t{font-size:18px;font-weight:750;line-height:1.35}
+.gcard-s{color:var(--muted);font-size:14.5px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gcard-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.tcard-b{display:flex;flex-direction:column;gap:4px;padding:12px 14px 14px;flex:1}
+.tcard-t{font-size:15px;font-weight:750;line-height:1.35}
+.tcard-s{color:var(--muted);font-size:13px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:1100px){.hub-grid-tools{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.hub-grid-games{grid-template-columns:repeat(2,minmax(0,1fr))}.hub-grid-tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.hub-grid-games{grid-template-columns:minmax(0,1fr)}.hub-grid-tools{gap:12px}}
+.detail-hero{margin:0 0 20px}
+.detail-hero img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.detail-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:0 0 20px}
+.detail-gallery img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.detail-more{margin-top:24px}
+.detail-more a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.gcard-c .chip{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gcard-b,.tcard-b{min-width:0}.gcard-c{min-width:0}
