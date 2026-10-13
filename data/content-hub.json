@@ -2218,10 +2218,10 @@
    "id": "games",
    "url": "https://games.kimjinwan.com/",
    "count": {
-    "value": 46,
+    "value": 61,
     "total": 77,
     "as_of": "2026-10-14",
-    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 46개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
+    "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 61개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
     {
@@ -2553,6 +2553,34 @@
        "url": "https://games.kimjinwan.com/play/mine-mole/"
       },
       {
+       "slug": "neon-firefly",
+       "title": {
+        "ko": "네온 루미: 불빛 반전 퍼즐",
+        "en": "Neon Lumi"
+       },
+       "summary": "반딧불이 루미와 함께 칸을 누르면 그 칸과 위아래 왼쪽 오른쪽 이웃의 불이 켜졌다 꺼졌다 바뀌는 격자에서, 모든 칸을 밝히는 불 켜기 퍼즐입니다.",
+       "session": "2~7분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/neon-firefly/"
+      },
+      {
+       "slug": "nonogram-sheep",
+       "title": {
+        "ko": "픽셀 쉽: 5×5 노노그램",
+        "en": "Pixel Sheep"
+       },
+       "summary": "행과 열에 적힌 숫자 단서를 읽고 5×5 칸 중 어느 곳을 채울지 추리해 숨겨진 픽셀 그림을 완성하는 양 캐릭터의 노노그램 퍼즐입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/nonogram-sheep/"
+      },
+      {
        "slug": "owl-hangul-detective",
        "title": {
         "ko": "별눈 부엉이의 한글 탐정소",
@@ -2566,6 +2594,48 @@
         "키보드"
        ],
        "url": "https://games.kimjinwan.com/play/owl-hangul-detective/"
+      },
+      {
+       "slug": "parking-raccoon",
+       "title": {
+        "ko": "파킹 라쿤: 주차장 탈출",
+        "en": "Parking Raccoon"
+       },
+       "summary": "경찰 모자를 쓴 너구리가 교통 정리를 하는 6×6 주차장에서, 앞을 막은 방해 차를 비켜 놓고 빨간 내 차를 오른쪽 출구로 빼내는 슬라이딩 퍼즐입니다.",
+       "session": "2~8분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/parking-raccoon/"
+      },
+      {
+       "slug": "pearl-otter-shuffle",
+       "title": {
+        "ko": "진주 수달의 조개 셔플",
+        "en": "Pearl Otter Shell Shuffle"
+       },
+       "summary": "수달 선원이 보여 주는 진주가 든 조개를 눈으로 따라가다, 조개들이 자리를 바꾸는 셔플이 끝나면 진주 조개를 골라내는 야바위형 기억 게임입니다.",
+       "session": "2~4분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/pearl-otter-shuffle/"
+      },
+      {
+       "slug": "pipe-octopus",
+       "title": {
+        "ko": "파이프 옥토: 연결 퍼즐",
+        "en": "Pipe Octo"
+       },
+       "summary": "작업모를 쓴 문어 배관공과 함께 칸마다 놓인 파이프 조각을 눌러 돌려, 왼쪽 위 START에서 오른쪽 아래 END까지 한 줄로 이어 주는 회전 배관 퍼즐입니다.",
+       "session": "2~7분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/pipe-octopus/"
       },
       {
        "slug": "popo-pearl-sort",
@@ -2675,6 +2745,64 @@
        "url": "https://games.kimjinwan.com/play/moonhare-hills/"
       },
       {
+       "slug": "neon-coil",
+       "title": {
+        "ko": "네온 코일",
+        "en": "Neon Coil"
+       },
+       "summary": "초록 회로 생명체 Volt를 몰아 스파크를 먹으며 몸을 키우되, 벽과 자기 몸통과 경비 드론에 닿으면 바로 끝나는 세로 화면의 스네이크형 아케이드입니다.",
+       "session": "5~15분",
+       "controls": [
+        "키보드",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/neon-coil/"
+      },
+      {
+       "slug": "nova-fox-breakout",
+       "title": {
+        "ko": "노바 폭스 브레이크아웃",
+        "en": "노바 폭스 브레이크아웃"
+       },
+       "summary": "푸른 여우 탐사대원 노바가 성운 속에서 자동으로 쏘는 사격으로 둘러싼 색색의 구슬 무리를 뚫고, 고립된 탐사대로 가는 길을 여는 짧은 생존 사격 게임입니다.",
+       "session": "3-8분",
+       "controls": [
+        "드래그 이동",
+        "대시 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/nova-fox-breakout/"
+      },
+      {
+       "slug": "nova-lane-sprint",
+       "title": {
+        "ko": "노바 레인 스프린트",
+        "en": "노바 레인 스프린트"
+       },
+       "summary": "세 개의 레인 위에서 하늘색 로봇을 좌우로 옮기고 점프시켜, 위에서 떨어지는 붉은 장애물을 피해 가며 달리는 짧은 레인 러너입니다.",
+       "session": "2-5분",
+       "controls": [
+        "키보드 방향키",
+        "화면 좌우 터치",
+        "화면 상단 터치로 점프"
+       ],
+       "url": "https://games.kimjinwan.com/play/nova-lane-sprint/"
+      },
+      {
+       "slug": "nyx-mirror-ruins",
+       "title": {
+        "ko": "닉스 미러 루인즈",
+        "en": "닉스 미러 루인즈"
+       },
+       "summary": "후드를 쓴 고양이 닉스를 몰고 보랏빛 거울 유적의 높고 낮은 벽 사이를 지나며, 이동 코어를 회수하는 횡스크롤 탐험 게임입니다.",
+       "session": "5-12분",
+       "controls": [
+        "이동",
+        "점프",
+        "공격"
+       ],
+       "url": "https://games.kimjinwan.com/play/nyx-mirror-ruins/"
+      },
+      {
        "slug": "shadow-orbit-explorer",
        "title": {
         "ko": "섀도우 오빗 익스플로러",
@@ -2704,6 +2832,21 @@
         "방향키"
        ],
        "url": "https://games.kimjinwan.com/play/star-scout-survivors/"
+      },
+      {
+       "slug": "tori-meteor-run",
+       "title": {
+        "ko": "토리의 유성 배달",
+        "en": "Tori Meteor Courier"
+       },
+       "summary": "소포를 맨 다람쥐 배달원 토리를 세 개의 레인 사이로 옮기며 별 소포를 모으고, 떨어지는 붉은 유성은 피해 구간 배달을 마치는 레인 러너입니다.",
+       "session": "2~5분",
+       "controls": [
+        "키보드 방향키",
+        "화면 좌우 터치",
+        "화면 상단 터치로 점프"
+       ],
+       "url": "https://games.kimjinwan.com/play/tori-meteor-run/"
       }
      ]
     },
@@ -2813,6 +2956,20 @@
        "url": "https://games.kimjinwan.com/play/current-canticle/"
       },
       {
+       "slug": "puck-coral-front",
+       "title": {
+        "ko": "퍽 코랄 프론트",
+        "en": "퍽 코랄 프론트"
+       },
+       "summary": "제복을 입은 펭귄 지휘관 퍽이 산호 전선의 소환 위치를 정해 가며 근접, 원거리, 지원 병과를 배치해 밀려난 전선을 되찾는 짧은 전선 전략 게임입니다.",
+       "session": "4-8분",
+       "controls": [
+        "유닛 슬롯",
+        "전선 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/puck-coral-front/"
+      },
+      {
        "slug": "signal-tower-guard",
        "title": {
         "ko": "시그널 타워 가드",
@@ -2863,29 +3020,20 @@
         "숫자키"
        ],
        "url": "https://games.kimjinwan.com/play/mimi-orbit-diner/"
-      }
-     ]
-    },
-    {
-     "id": "board",
-     "label": {
-      "ko": "보드",
-      "en": "Board"
-     },
-     "items": [
+      },
       {
-       "slug": "four-sight",
+       "slug": "pirate-cafe-command",
        "title": {
-        "ko": "포 사이트",
-        "en": "Four Sight"
+        "ko": "파이럿 카페 커맨드",
+        "en": "파이럿 카페 커맨드"
        },
-       "summary": "서로 다른 AI 상대를 읽고 패배 뒤 놓친 한 수를 복기하는 사목 전략 게임입니다.",
-       "session": "3~10분",
+       "summary": "해적 모자를 쓴 레서판다 선장의 배 위 카페에서 주문표를 보고 재료 보급, 조리, 서빙, 선원 배치를 직접 눌러 가며 주문 세 개를 채우는 운영 게임입니다.",
+       "session": "5-10분",
        "controls": [
-        "마우스",
-        "터치"
+        "하단 작업 버튼 터치",
+        "숫자키 1-4"
        ],
-       "url": "https://games.kimjinwan.com/play/four-sight/"
+       "url": "https://games.kimjinwan.com/play/pirate-cafe-command/"
       }
      ]
     },
@@ -2909,6 +3057,34 @@
         "레인 터치"
        ],
        "url": "https://games.kimjinwan.com/play/echo-prism-beat/"
+      },
+      {
+       "slug": "neon-beat-operator",
+       "title": {
+        "ko": "네온 비트 오퍼레이터",
+        "en": "네온 비트 오퍼레이터"
+       },
+       "summary": "보라색 박쥐 디제이 에코가 지켜보는 네 개의 네온 레인에서 D, F, J, K 키로 판정선에 닿는 신호를 쳐 내는 4레인 리듬 게임입니다.",
+       "session": "2-5분",
+       "controls": [
+        "D F J K",
+        "레인 터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/neon-beat-operator/"
+      },
+      {
+       "slug": "pulse-bat",
+       "title": {
+        "ko": "펄스 비트: 리듬 타이밍",
+        "en": "Pulse Beat"
+       },
+       "summary": "공전하는 노란 구슬이 흰 구슬과 겹치는 순간을 눌러 모터 RPM을 끌어올리는, 박쥐 마스코트가 곁에서 박자를 들어 주는 원형 타이밍 게임입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/pulse-bat/"
       }
      ]
     },
@@ -2932,6 +3108,43 @@
         "터치"
        ],
        "url": "https://games.kimjinwan.com/play/color-chameleon/"
+      },
+      {
+       "slug": "number-rabbit",
+       "title": {
+        "ko": "넘버 러시: 숫자 순서 터치",
+        "en": "Number Rush"
+       },
+       "summary": "빨간 머리띠를 맨 달리기 토끼가 응원하는 가운데, 격자에 흩어진 숫자를 1부터 끝 번호까지 순서대로 가장 빠르게 눌러 나가는 순발력 게임입니다.",
+       "session": "1~3분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/number-rabbit/"
+      }
+     ]
+    },
+    {
+     "id": "board",
+     "label": {
+      "ko": "보드",
+      "en": "Board"
+     },
+     "items": [
+      {
+       "slug": "four-sight",
+       "title": {
+        "ko": "포 사이트",
+        "en": "Four Sight"
+       },
+       "summary": "서로 다른 AI 상대를 읽고 패배 뒤 놓친 한 수를 복기하는 사목 전략 게임입니다.",
+       "session": "3~10분",
+       "controls": [
+        "마우스",
+        "터치"
+       ],
+       "url": "https://games.kimjinwan.com/play/four-sight/"
       }
      ]
     },
