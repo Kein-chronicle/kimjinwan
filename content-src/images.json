@@ -624,6 +624,102 @@
     "glyph-owl.webp": 7464
    }
   },
+  "hammer-hamster": {
+   "from": "{\"srcs\":[\"hammer-hamster-0.png\",\"hammer-hamster-3.png\",\"hammer-hamster-2.png\",\"hammer-hamster-1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "hammer-hamster-1.webp": 20954,
+    "hammer-hamster-2.webp": 19744,
+    "hammer-hamster-3.webp": 23410,
+    "hammer-hamster-hero.webp": 15888,
+    "hammer-hamster.webp": 6682
+   }
+  },
+  "hare-dragon-palace": {
+   "from": "{\"srcs\":[\"hare-dragon-palace-0.png\",\"hare-dragon-palace-1.png\",\"hare-dragon-palace-s16.png\",\"hare-dragon-palace-end.png\"],\"cardI\":2}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "hare-dragon-palace-1.webp": 42766,
+    "hare-dragon-palace-2.webp": 40410,
+    "hare-dragon-palace-3.webp": 64092,
+    "hare-dragon-palace-hero.webp": 43076,
+    "hare-dragon-palace.webp": 14264
+   }
+  },
+  "helix-descent": {
+   "from": "{\"srcs\":[\"helix-descent-0.png\",\"helix-descent-1.png\",\"helix-descent-3.png\",\"helix-descent-4.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "helix-descent-1.webp": 7554,
+    "helix-descent-2.webp": 6010,
+    "helix-descent-3.webp": 8424,
+    "helix-descent-hero.webp": 8596,
+    "helix-descent.webp": 2934
+   }
+  },
   "honeybee-garden-trail": {
    "card": [
     640,
@@ -643,6 +739,65 @@
     "honeybee-garden-trail-1.webp": 26572,
     "honeybee-garden-trail-hero.webp": 40742,
     "honeybee-garden-trail.webp": 16646
+   }
+  },
+  "line-spider": {
+   "from": "{\"srcs\":[\"line-spider-0.png\",\"line-spider-1.png\",\"line-spider-5.png\",\"line-spider-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "line-spider-1.webp": 23566,
+    "line-spider-2.webp": 23408,
+    "line-spider-3.webp": 21942,
+    "line-spider-hero.webp": 17682,
+    "line-spider.webp": 7498
+   }
+  },
+  "lumi-sequence": {
+   "from": "{\"srcs\":[\"lumi-sequence-0.png\",\"lumi-sequence-wrong.png\",\"lumi-sequence-r3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "lumi-sequence-1.webp": 9614,
+    "lumi-sequence-2.webp": 7046,
+    "lumi-sequence-hero.webp": 9222,
+    "lumi-sequence.webp": 4138
    }
   },
   "luno-rune-vault": {
@@ -666,6 +821,38 @@
     "luno-rune-vault.webp": 22148
    }
   },
+  "mako-skyport-command": {
+   "from": "{\"srcs\":[\"mako-skyport-command-0.png\",\"mako-skyport-command-1.png\",\"mako-skyport-command-6.png\",\"mako-skyport-command-3.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "mako-skyport-command-1.webp": 19746,
+    "mako-skyport-command-2.webp": 22534,
+    "mako-skyport-command-3.webp": 16836,
+    "mako-skyport-command-hero.webp": 18712,
+    "mako-skyport-command.webp": 8434
+   }
+  },
   "mandu-house": {
    "card": [
     640,
@@ -685,6 +872,269 @@
     "mandu-house-1.webp": 13454,
     "mandu-house-hero.webp": 10444,
     "mandu-house.webp": 4274
+   }
+  },
+  "maze-mouse": {
+   "from": "{\"srcs\":[\"maze-mouse-0.png\",\"maze-mouse-wrong.png\",\"maze-mouse-st2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "maze-mouse-1.webp": 20316,
+    "maze-mouse-2.webp": 23130,
+    "maze-mouse-hero.webp": 16424,
+    "maze-mouse.webp": 6956
+   }
+  },
+  "memory-elephant": {
+   "from": "{\"srcs\":[\"memory-elephant-0.png\",\"memory-elephant-mismatch.png\",\"memory-elephant-st1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "memory-elephant-1.webp": 23292,
+    "memory-elephant-2.webp": 22632,
+    "memory-elephant-hero.webp": 17806,
+    "memory-elephant.webp": 7252
+   }
+  },
+  "merge-cat": {
+   "from": "{\"srcs\":[\"merge-cat-0.png\",\"merge-cat-3.png\",\"merge-cat-5.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "merge-cat-1.webp": 10862,
+    "merge-cat-2.webp": 20658,
+    "merge-cat-hero.webp": 28402,
+    "merge-cat.webp": 3800
+   }
+  },
+  "merge-slime": {
+   "from": "{\"srcs\":[\"merge-slime-0.png\",\"merge-slime-m20.png\",\"merge-slime-s2.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "merge-slime-1.webp": 20772,
+    "merge-slime-2.webp": 19878,
+    "merge-slime-hero.webp": 15092,
+    "merge-slime.webp": 6744
+   }
+  },
+  "merge-whale": {
+   "from": "{\"srcs\":[\"merge-whale-0.png\",\"merge-whale-6.png\",\"merge-whale-7.png\",\"merge-whale-1.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "merge-whale-1.webp": 11022,
+    "merge-whale-2.webp": 12212,
+    "merge-whale-3.webp": 6806,
+    "merge-whale-hero.webp": 6188,
+    "merge-whale.webp": 4102
+   }
+  },
+  "mimi-orbit-diner": {
+   "from": "{\"srcs\":[\"mimi-orbit-diner-0.png\",\"mimi-orbit-diner-1.png\",\"mimi-orbit-diner-p2.png\",\"mimi-orbit-diner-res.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "mimi-orbit-diner-1.webp": 18968,
+    "mimi-orbit-diner-2.webp": 21604,
+    "mimi-orbit-diner-3.webp": 15854,
+    "mimi-orbit-diner-hero.webp": 16270,
+    "mimi-orbit-diner.webp": 8294
+   }
+  },
+  "mine-mole": {
+   "from": "{\"srcs\":[\"mine-mole-0.png\",\"mine-mole-1.png\",\"mine-mole-8.png\",\"mine-mole-4.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ],
+    [
+     540,
+     960
+    ]
+   ],
+   "bytes": {
+    "mine-mole-1.webp": 17918,
+    "mine-mole-2.webp": 18860,
+    "mine-mole-3.webp": 22124,
+    "mine-mole-hero.webp": 13624,
+    "mine-mole.webp": 5954
+   }
+  },
+  "monster-throne": {
+   "from": "{\"srcs\":[\"monster-throne-0.png\",\"monster-throne-play.png\",\"monster-throne-end.png\",\"monster-throne-res.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "monster-throne-1.webp": 27156,
+    "monster-throne-2.webp": 7790,
+    "monster-throne-3.webp": 41442,
+    "monster-throne-hero.webp": 32716,
+    "monster-throne.webp": 10394
+   }
+  },
+  "moonhare-hills": {
+   "from": "{\"srcs\":[\"moonhare-hills-0.png\",\"moonhare-hills-s16.png\",\"moonhare-hills-end.png\"],\"cardI\":1}",
+   "card": [
+    640,
+    400
+   ],
+   "hero": [
+    1280,
+    720
+   ],
+   "shots": [
+    [
+     1280,
+     720
+    ],
+    [
+     1280,
+     720
+    ]
+   ],
+   "bytes": {
+    "moonhare-hills-1.webp": 36816,
+    "moonhare-hills-2.webp": 51794,
+    "moonhare-hills-hero.webp": 53524,
+    "moonhare-hills.webp": 13202
    }
   },
   "owl-hangul-detective": {
