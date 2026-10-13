@@ -1,0 +1,77 @@
+{
+ "slug": "expiration-tracker",
+ "name": "Expiration Tracker: Use First",
+ "storeId": "6808538170",
+ "storeUrl": "https://apps.apple.com/kr/app/id6808538170",
+ "status": "live",
+ "category": "life",
+ "oneLiner": "이름과 인쇄된 유통기한, 보관 위치만 입력하면 지난 것과 곧 먹어야 할 것을 날짜 순서로 맨 위에 올려 주는 유통기한 관리 앱이다.",
+ "about": "먼저 먹어야 할 것을 오늘 날짜 기준으로 보여 주는 앱이다. 첫 화면은 만료 시점을 하루 단위 칸으로 나눈 '만료 지평선'이고, 이미 지난 것과 오늘, 내일, 곧 먹을 것이 색으로 구분되며 임박한 항목이 위에 자동으로 올라온다. 예를 들어 하루 지난 그릭 요거트와 오늘까지인 우유가 그 순서로 보인다.\n추가는 몇 초면 끝난다. 이름, 인쇄된 날짜, 수량, 보관 위치만 고르면 되고 바코드 조회나 제품 데이터베이스는 없다. 보관 위치는 주방 냉장고, 냉동실, 팬트리처럼 집에 맞게 만들고 이름을 바꾸거나 순서를 정할 수 있다. 다 먹었거나 버린 항목은 이력에 통째로 남아 복원하거나 새 날짜로 다시 채울 수 있고, 항목이나 위치 수에 제한은 없다. 이번에 먼저 쓸 것의 목록은 수량과 위치가 담긴 카드로 공유할 수 있다.",
+ "audience": "냉장고와 팬트리에서 먹을 때를 놓쳐 버리는 일이 잦은 사람, 가족이 함께 쓰는 식재료 목록을 간단히 관리하고 싶은 사람에게 맞는다.",
+ "features": [
+  "만료됨, 오늘, 먼저 쓸 것, 곧, 나중 단계로 매일 날짜를 기준으로 다시 분류하고 임박한 순으로 정렬한다.",
+  "이름, 인쇄된 날짜, 수량, 보관 위치를 입력하는 빠른 추가 화면이 있다.",
+  "보관 위치를 직접 만들고 이름 변경, 순서 변경, 삭제를 할 수 있다.",
+  "다 먹음과 폐기를 이력에 보존하고 복원하거나 새 날짜로 다시 채운다.",
+  "먼저 쓸 항목을 카드로 공유한다. 카드 색상 세 가지는 보상형 광고로 열린다."
+ ],
+ "howTo": [
+  "Quick Add에서 이름, 인쇄된 날짜, 수량, 보관 위치를 입력하고 저장한다.",
+  "첫 화면의 '먼저 쓰기' 목록에서 임박한 항목을 확인한다.",
+  "다 먹으면 소비 처리하고, 버렸다면 폐기 처리해 이력에서 필요할 때 되살린다."
+ ],
+ "notes": [
+  "바코드나 제품 정보를 조회하지 않고 모든 항목과 이력은 이 기기에만 저장된다.",
+  "항목 수와 용량 제한이 없고 결제 경로도 없다.",
+  "앱 화면은 영어이고 화면 아래에 배너 광고가 붙는다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Expiration Tracker 앱 아이콘, 자주색 바탕에 달력이 달린 붉은 유리병이 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "첫 화면. 하루 단위 만료 지평선 아래에 그릭 요거트, 우유, 시금치가 임박한 순서로 나열된다"
+  },
+  {
+   "role": "screen",
+   "alt": "빠른 추가 화면. 품목 이름, 인쇄된 날짜, 수량, 보관 위치 입력칸과 저장 버튼이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "보관 위치 화면. 주방 냉장고, 냉동실, 팬트리 등 위치 목록과 편집 버튼이 보인다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6808538170 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/expiration-tracker/03-spec/screens.json",
+   "app-factory/catalog/expiration-tracker/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.expirationtracker",
+  "version": "1.0",
+  "genre": "Food & Drink",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-16",
+  "updated": "2026-09-16",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Expiration Tracker: Use First — 유통기한·사용기한 우선순위 기록",
+  "path": "/content/blog/apps/expiration-tracker/"
+ }
+}

@@ -1,0 +1,1047 @@
+{
+ "as_of": "2026-10-14",
+ "source": "https://itunes.apple.com/lookup?id=1446513824&entity=software&country=kr (공개 API) 응답에서 앱 이름·번들 ID·버전·분류·지원 언어·기기·최소 OS·가격·출시일·갱신일·연령 등급만 옮겼다",
+ "developer_total": 50,
+ "apps": {
+  "1446513825": {
+   "name": "오늘 딱 하나 - 하루 목표",
+   "bundleId": "com.theteam.i-am-nice",
+   "version": "1.1",
+   "genre": "Productivity",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2019-01-05",
+   "updated": "2026-09-23",
+   "rating": "4+"
+  },
+  "1521773296": {
+   "name": "BrightPocket: Compliment Log",
+   "bundleId": "com.kimjinwan.good",
+   "version": "1.2",
+   "genre": "Lifestyle",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2020-07-06",
+   "updated": "2026-09-25",
+   "rating": "4+"
+  },
+  "1521985749": {
+   "name": "급노트 QuickInbox",
+   "bundleId": "com.kimjinwan.sudden-note",
+   "version": "1.3",
+   "genre": "Productivity",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2020-07-04",
+   "updated": "2026-09-20",
+   "rating": "4+"
+  },
+  "1523017286": {
+   "name": "OneView: Expiring Secret",
+   "bundleId": "com.kimjinwan.lockin-message",
+   "version": "1.1",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2020-07-10",
+   "updated": "2026-09-22",
+   "rating": "4+"
+  },
+  "1524590153": {
+   "name": "랜덤픽: 룰렛과 팀 나누기",
+   "bundleId": "com.kimjinwan.ramdom",
+   "version": "1.1",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2020-08-16",
+   "updated": "2026-09-18",
+   "rating": "4+"
+  },
+  "1527738243": {
+   "name": "DiceFeel: D20 Dice Roller",
+   "bundleId": "com.kimjinwan.shuffle-dice",
+   "version": "2.1",
+   "genre": "Games",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2020-08-14",
+   "updated": "2026-09-28",
+   "rating": "4+"
+  },
+  "1528133014": {
+   "name": "CoffeeCut: 카페인 기록",
+   "bundleId": "com.kimjinwan.coffee-counter",
+   "version": "1.0",
+   "genre": "Health & Fitness",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-11",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6761509288": {
+   "name": "냠냠 성격 테스트",
+   "bundleId": "com.kimjinwan.yumyum-type-test",
+   "version": "1.1",
+   "genre": "Reference",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "26.4",
+   "price": 0,
+   "released": "2026-04-02",
+   "updated": "2026-04-03",
+   "rating": "4+"
+  },
+  "6761618848": {
+   "name": "VocaPuff - English",
+   "bundleId": "com.kimjinwan.vocapuff",
+   "version": "1.1.1",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-04-07",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6761673297": {
+   "name": "매일 성경 - 온라인 필사",
+   "bundleId": "com.kimjinwan.dailybiblewriting",
+   "version": "1.0.1",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "16.0",
+   "price": 0,
+   "released": "2026-04-07",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6761699855": {
+   "name": "VocaPuff - Japanese",
+   "bundleId": "com.kimjinwan.vocapuff-japanese",
+   "version": "1.0.1",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-04-07",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6761739785": {
+   "name": "VocaPuff - Chinese",
+   "bundleId": "com.kimjinwan.vocapuff-chinese",
+   "version": "1.0.1",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-04-09",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6762281001": {
+   "name": "작은 답안지 - Pocket Answer",
+   "bundleId": "com.kimjinwan.pocket-answer",
+   "version": "1.1",
+   "genre": "Lifestyle",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.6",
+   "price": 0,
+   "released": "2026-09-05",
+   "updated": "2026-09-07",
+   "rating": "4+"
+  },
+  "6762328904": {
+   "name": "Merge Cat - 고양이 합치기",
+   "bundleId": "com.kimjinwan.merge-cat",
+   "version": "1.0",
+   "genre": "Games",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.6",
+   "price": 0,
+   "released": "2026-04-16",
+   "updated": "2026-04-16",
+   "rating": "4+"
+  },
+  "6762495404": {
+   "name": "Whale Book - 고래 사전",
+   "bundleId": "com.kimjinwan.whale-book",
+   "version": "1.1",
+   "genre": "Book",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.6",
+   "price": 0,
+   "released": "2026-09-05",
+   "updated": "2026-09-07",
+   "rating": "4+"
+  },
+  "6762496731": {
+   "name": "My Whale - 고래 키우기",
+   "bundleId": "com.kimjinwan.my-whale",
+   "version": "1.1",
+   "genre": "Games",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.6",
+   "price": 0,
+   "released": "2026-09-05",
+   "updated": "2026-09-07",
+   "rating": "4+"
+  },
+  "6762507392": {
+   "name": "Whale Survivors - 픽셀 고래 살아남기",
+   "bundleId": "com.kimjinwan.whale-survivors",
+   "version": "1.0",
+   "genre": "Games",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "15.0",
+   "price": 0,
+   "released": "2026-08-31",
+   "updated": "2026-08-31",
+   "rating": "4+"
+  },
+  "6762543798": {
+   "name": "Merge Whale - 고래 합치기",
+   "bundleId": "com.kimjinwan.merge-whale",
+   "version": "1.1",
+   "genre": "Games",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.6",
+   "price": 0,
+   "released": "2026-09-05",
+   "updated": "2026-09-07",
+   "rating": "4+"
+  },
+  "6805266362": {
+   "name": "Dream Meaning: Symbol Reader",
+   "bundleId": "com.kimjinwan.dreammeaning",
+   "version": "1.0.1",
+   "genre": "Lifestyle",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-03",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6805464656": {
+   "name": "Reaction Time Test: Millis",
+   "bundleId": "com.kimjinwan.reactiontime",
+   "version": "1.0.1",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-03",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6806231749": {
+   "name": "얼음 발자국",
+   "bundleId": "com.kimjinwan.floesteps",
+   "version": "1.0",
+   "genre": "Games",
+   "languages": [
+    "EN",
+    "KO"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6806554857": {
+   "name": "먹빛 겹치기",
+   "bundleId": "com.kimjinwan.inkfold",
+   "version": "1.0",
+   "genre": "Games",
+   "languages": [
+    "EN",
+    "KO"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-09",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6806565297": {
+   "name": "Score Keeper: Card & Board",
+   "bundleId": "com.kimjinwan.scorekeeper",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6806565445": {
+   "name": "Sight Reading: Note Trainer!",
+   "bundleId": "com.kimjinwan.notereading",
+   "version": "1.0",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-11",
+   "updated": "2026-09-11",
+   "rating": "4+"
+  },
+  "6806565533": {
+   "name": "Pace Calculator: Race Plan",
+   "bundleId": "com.kimjinwan.pacecalculator",
+   "version": "1.0",
+   "genre": "Health & Fitness",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-12",
+   "updated": "2026-09-12",
+   "rating": "4+"
+  },
+  "6807052194": {
+   "name": "Chess Clock: Time Controls",
+   "bundleId": "com.kimjinwan.chessclock",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "12+"
+  },
+  "6807052400": {
+   "name": "Math Worksheet: Answer Key",
+   "bundleId": "com.kimjinwan.mathworksheet",
+   "version": "1.0",
+   "genre": "Education",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6807052551": {
+   "name": "Seating Chart: Seat Rules",
+   "bundleId": "com.kimjinwan.seatingchart",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6808241732": {
+   "name": "Word Counter: Reading Time",
+   "bundleId": "com.kimjinwan.wordcounter",
+   "version": "1.0",
+   "genre": "Productivity",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6808241774": {
+   "name": "Unit Price: Which Is Cheaper",
+   "bundleId": "com.kimjinwan.unitprice",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-12",
+   "updated": "2026-09-12",
+   "rating": "4+"
+  },
+  "6808241911": {
+   "name": "Bike Tire Pressure: Any Width",
+   "bundleId": "com.kimjinwan.biketirepressure",
+   "version": "1.0",
+   "genre": "Sports",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-09",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6808538046": {
+   "name": "Crochet Row Counter: Repeat",
+   "bundleId": "com.kimjinwan.crochetrowcounter",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6808538170": {
+   "name": "Expiration Tracker: Use First",
+   "bundleId": "com.kimjinwan.expirationtracker",
+   "version": "1.0",
+   "genre": "Food & Drink",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6808538442": {
+   "name": "Tournament Bracket: Undo Safe",
+   "bundleId": "com.kimjinwan.tournamentbracket",
+   "version": "1.0",
+   "genre": "Sports",
+   "languages": [
+    "EN"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809071968": {
+   "name": "Cut List: Named Parts",
+   "bundleId": "com.kimjinwan.cutlist",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809071971": {
+   "name": "Pool Calculator: Own Chems",
+   "bundleId": "com.kimjinwan.poolcalculator",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072365": {
+   "name": "Triangle Solver Two Answers",
+   "bundleId": "com.kimjinwan.trianglesolver",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072410": {
+   "name": "Jet Lag: Both Clocks",
+   "bundleId": "com.kimjinwan.jetlag",
+   "version": "1.0",
+   "genre": "Travel",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072458": {
+   "name": "Concrete Bags and Yards",
+   "bundleId": "com.kimjinwan.concretebags",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072464": {
+   "name": "Plate Calculator: What You Own",
+   "bundleId": "com.kimjinwan.platecalculator",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072488": {
+   "name": "Depth of Field: Two Subjects",
+   "bundleId": "com.kimjinwan.depthoffield",
+   "version": "1.0",
+   "genre": "Photo & Video",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-16",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072490": {
+   "name": "Dew Point: Vent Check",
+   "bundleId": "com.kimjinwan.dewpoint",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809072493": {
+   "name": "Stair Calculator: Both Ways",
+   "bundleId": "com.kimjinwan.staircalculator",
+   "version": "1.0",
+   "genre": "Utilities",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-15",
+   "updated": "2026-09-16",
+   "rating": "4+"
+  },
+  "6809195605": {
+   "name": "교회력: 서방과 동방",
+   "bundleId": "com.kimjinwan.churchcalendar",
+   "version": "1.0",
+   "genre": "Reference",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6809288637": {
+   "name": "성경 통독 계획: 페이스",
+   "bundleId": "com.kimjinwan.readingpace",
+   "version": "1.0",
+   "genre": "Reference",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-09",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6809303727": {
+   "name": "성경 암송: 내 본문",
+   "bundleId": "com.kimjinwan.versememory",
+   "version": "1.0",
+   "genre": "Reference",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6809599027": {
+   "name": "동물 성격: 듀엣",
+   "bundleId": "com.kimjinwan.animalpersonality",
+   "version": "1.0",
+   "genre": "Lifestyle",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-10",
+   "updated": "2026-09-10",
+   "rating": "4+"
+  },
+  "6810340099": {
+   "name": "Fast Plate: 금식 음식 판정",
+   "bundleId": "com.kimjinwan.fastplate",
+   "version": "1.0",
+   "genre": "Reference",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-12",
+   "updated": "2026-09-13",
+   "rating": "4+"
+  },
+  "6810637563": {
+   "name": "Hymn Crosswalk: 본문과 운율",
+   "bundleId": "com.kimjinwan.hymncrosswalk",
+   "version": "1.0",
+   "genre": "Reference",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-12",
+   "updated": "2026-09-13",
+   "rating": "4+"
+  },
+  "6812976085": {
+   "name": "누비즈: 성격 심리테스트",
+   "bundleId": "com.kimjinwan.nuvvies",
+   "version": "1.0",
+   "genre": "Entertainment",
+   "languages": [
+    "EN",
+    "FR",
+    "DE",
+    "JA",
+    "KO",
+    "ES",
+    "ZH"
+   ],
+   "devices": [
+    "iPhone",
+    "iPad"
+   ],
+   "minOs": "17.0",
+   "price": 0,
+   "released": "2026-09-24",
+   "updated": "2026-09-24",
+   "rating": "4+"
+  }
+ }
+}

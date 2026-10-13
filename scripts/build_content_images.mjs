@@ -7,6 +7,7 @@
 // 소스(하이브리드):
 //   게임(편집 원본 있음) = 직접 플레이하며 찍은 캡처 PNG. 원본 data/authoring/games/<id>.json 의 images[].src 파일을 --raw <폴더>(또는 환경변수 GAME_SHOTS_DIR)에서 읽는다.
 //     images[0] → <slug>-hero.webp(≤1280폭·≤150KB), images[1..] → <slug>-1..3.webp(≤150KB), 카드 <slug>.webp(640×400·≤40KB) = images[cardIndex ?? 첫 비-타이틀]. 원본 PNG 목록이 바뀌면(매니페스트 from) 그 게임만 다시 만든다.
+//   (앱 이미지는 build_content_apps_images.mjs 가 만든다 — 이 스크립트는 매니페스트의 apps 항목을 그대로 보존한다)
 //   게임(편집 원본 없음) = 포털 커버(kein-web-games/dist/covers) + 로컬 빌드(dist/builds/<slug>/)를 헤드리스로 띄운 실제 화면(기존 방식 그대로).
 //   도구 = 라이브 페이지 화면.
 // 편집 원본이 있는 게임의 이미지만 지우고 다시 만든다. 편집 원본이 없는 게임의 이미지·매니페스트는 건드리지 않는다.
@@ -142,6 +143,7 @@ function serve(root) {
 }
 
 const manifest = fs.existsSync(path.join(ROOT, 'content-src/images.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'content-src/images.json'), 'utf8')) : {games: {}, tools: {}};
+const APPS_KEEP = manifest.apps; // 앱 이미지는 build_content_apps_images.mjs 가 관리한다 — 여기서는 그대로 보존
 const have = (kind, slug, ...names) => !FORCE && manifest[kind]?.[slug] && names.every(n => fs.existsSync(path.join(OUT[kind], n)));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kein-img-'));
 const cdp = await launchChrome(tmp);
@@ -205,7 +207,7 @@ try {
 } finally { cdp.close(); srv.close(); await sleep(300); fs.rmSync(tmp, {recursive: true, force: true}); }
 
 // 바이트 수를 매니페스트에 기록(결정적 정렬)
-const sorted = {games: {}, tools: {}};
+const sorted = {games: {}, tools: {}, ...(APPS_KEEP ? {apps: APPS_KEEP} : {})};
 for (const kind of ['games', 'tools']) for (const slug of Object.keys(manifest[kind]).sort()) {
   const rec = manifest[kind][slug]; const files = fs.readdirSync(OUT[kind]).filter(f => f === `${slug}.webp` || f.startsWith(`${slug}-`) && /^-(hero|\d)\.webp$/.test(f.slice(slug.length)));
   rec.bytes = Object.fromEntries(files.sort().map(f => [f, fs.statSync(path.join(OUT[kind], f)).size])); sorted[kind][slug] = rec;

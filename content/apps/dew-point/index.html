@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dew Point: Vent Check</title>
+<meta name="description" content="내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/apps/dew-point/">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Dew Point: Vent Check">
+<meta property="og:description" content="내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.">
+<meta property="og:url" content="https://kimjinwan.com/content/apps/dew-point/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=eabb577fa6">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=eabb577fa6">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="“글 285편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dew Point: Vent Check">
+<meta name="twitter:description" content="내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=eabb577fa6">
+<meta name="twitter:image:alt" content="“글 285편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"MobileApplication","@id":"https://kimjinwan.com/content/apps/dew-point/#app","url":"https://kimjinwan.com/content/apps/dew-point/","name":"Dew Point: Vent Check","description":"내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.","inLanguage":"ko","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS","requirements":"iOS 17.0 or later","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"installUrl":"https://apps.apple.com/kr/app/id6809072490","downloadUrl":"https://apps.apple.com/kr/app/id6809072490","softwareVersion":"1.0","datePublished":"2026-09-15","dateModified":"2026-09-16","image":"https://kimjinwan.com/assets/content/apps/dew-point-icon.webp","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/apps/dew-point/"}},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/apps/dew-point/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"내 앱","item":"https://kimjinwan.com/content/apps/"},{"@type":"ListItem","position":4,"name":"계산·측정","item":"https://kimjinwan.com/content/apps/category/calc/"},{"@type":"ListItem","position":5,"name":"Dew Point: Vent Check","item":"https://kimjinwan.com/content/apps/dew-point/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.38">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/" data-spy="top"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="/#services" data-spy="services"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a>
+      <a href="/#factories" data-spy="factories"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/#experience" data-spy="experience"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" data-spy="contact"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-ext" href="/content/" aria-current="page"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2z"/><path d="M12 6v14"/></svg><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a class="nav-ext" href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer" title="서비스 허브 — service.kimjinwan.com"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+<script src="/js/nav-spy.js" defer></script>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span></a></li><li><a href="/content/apps/category/calc/"><span data-lang-ko>계산·측정</span><span data-lang-en>Calculators</span></a></li><li aria-current="page"><span lang="ko">Dew Point: Vent Check</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/blog/"><span data-lang-ko>블로그</span><span data-lang-en>Journal</span><span class="subnav-n mono">206</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">79</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">17</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">45</span></a></li><li><a href="/content/apps/" aria-current="page"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
+  <article class="detail" data-kind="apps">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>계산·측정</span><span data-lang-en>Calculators</span></p>
+      <h1 class="sec-title detail-title"><span lang="ko">Dew Point: Vent Check</span></h1></header>
+    <div class="detail-body"><div class="app-hero"><img class="app-icon" src="/assets/content/apps/dew-point-icon.webp" width="256" height="256" alt="Dew Point 앱 아이콘, 어두운 바탕에 하늘색 물방울이 그려져 있다" fetchpriority="high">
+<div class="app-hero-b"><p class="detail-lead" lang="ko">내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.</p><p class="app-badges"><span class="chip" lang="ko">계산·측정</span><span class="chip chip-status chip-live"><span data-lang-ko>앱스토어 제공 중</span><span data-lang-en>On the App Store</span></span></p><p class="detail-cta"><a class="btn btn-primary" href="https://apps.apple.com/kr/app/id6809072490" target="_blank" rel="noopener noreferrer"><span data-lang-ko>App Store에서 보기</span><span data-lang-en>View on the App Store</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></p></div></div>
+<div class="app-shots" role="group" aria-label="screens"><figure><img src="/assets/content/apps/dew-point-1.webp" width="400" height="866" alt="공기 화면. 이 방 21도 60퍼센트와 바깥 5도 90퍼센트를 입력하고 환기하면 4.43 g/kg 마른다는 결과가 보인다"></figure><figure><img src="/assets/content/apps/dew-point-2.webp" width="400" height="866" alt="표면 화면. 창유리, 벽 모서리, 욕실 타일마다 결로까지 남은 여유 도수가 막대로 표시된다" loading="lazy"></figure><figure><img src="/assets/content/apps/dew-point-3.webp" width="400" height="866" alt="보고 카드 화면. 침실의 두 공기 상태와 표면별 판정이 한 장에 정리되어 있다" loading="lazy"></figure></div>
+<h2><span data-lang-ko>이런 앱입니다</span><span data-lang-en>About</span></h2><p lang="ko">앱이 측정하거나 날씨 서버에서 값을 받아 오지 않는다. 사용자가 자기 온도계와 습도계에서 읽은 이 방의 값과 들여올 바깥 공기의 값을 직접 입력하고, 앱은 그 값이 무엇을 뜻하는지 알려 준다. 앱 안에 네트워크 코드가 없다고 스토어 설명에 적혀 있다.</p><p lang="ko">상대습도는 온도에 따라 달라지므로 두 공기를 퍼센트로 비교하지 않고 건조 공기 1kg당 물의 그램 수로 한 축에 놓고 비교한다. 겨울에 바깥이 5도, 습도 90퍼센트여도 실내 21도, 60퍼센트 방보다 물을 절반쯤만 품고 있어서, 창문을 열면 방이 마르는 방향이라는 식의 답이 나온다. 바깥 공기를 얼마나 들일지 슬라이더로 정하면 섞인 뒤의 온도, 습도, 이슬점도 예측한다.</p>
+<h2><span data-lang-ko>이런 분께 맞습니다</span><span data-lang-en>Who it is for</span></h2><p lang="ko">겨울철 창문 결로나 옷장 뒤 곰팡이가 걱정인 사람, 환기가 실제로 습기를 줄이는지 확인하고 싶은 사람, 카메라 렌즈나 배관처럼 특정 표면에 이슬이 맺힐 온도를 알고 싶은 사람에게 맞는다.</p>
+<h2><span data-lang-ko>핵심 기능</span><span data-lang-en>Key features</span></h2><ul><li lang="ko">이 방과 다른 공기의 온도·습도를 입력하면 어느 쪽이 실제로 더 마른 공기인지 건조 공기 1kg당 물 그램 수로 판정한다.</li><li lang="ko">슬라이더로 바깥 공기를 들이는 비율을 정하면 섞인 뒤의 온도, 습도, 이슬점을 보여 준다.</li><li lang="ko">창유리, 옷장 뒤 벽 모서리, 카메라 렌즈처럼 이름 붙인 표면마다 결로까지, 곰팡이가 자랄 수 있는 표면 습도 80퍼센트까지 몇 도 남았는지 표시한다.</li><li lang="ko">방마다 두 공기 상태와 표면을 저장해 두고 다시 불러올 수 있다.</li><li lang="ko">결과를 한 장의 보고 카드로 만들어 공유한다.</li></ul>
+<h2><span data-lang-ko>사용 방법</span><span data-lang-en>How to use</span></h2><ol><li lang="ko">Air 화면에서 이 방과 바깥(또는 다른 방)의 온도와 습도를 입력한다.</li><li lang="ko">Surfaces에서 걱정되는 표면의 이름과 온도를 더한다.</li><li lang="ko">Report card에서 환기 방향과 각 표면의 여유 도수를 확인하고 필요하면 공유한다.</li></ol>
+<h2><span data-lang-ko>알아둘 점</span><span data-lang-en>Good to know</span></h2><ul><li lang="ko">앱은 습도를 재지 않으며 날씨를 예측하지 않는다. 결과는 입력한 순간의 판단이다.</li><li lang="ko">결로를 없애는 세 가지 손잡이의 필요량은 보상형 광고를 본 뒤 열린다.</li><li lang="ko">단위 세트는 섭씨·g/kg과 화씨·gr/lb 두 가지 중에서 고르고, 한국어를 포함한 7개 언어를 지원한다.</li></ul>
+<h2><span data-lang-ko>앱 정보</span><span data-lang-en>App info</span></h2><dl class="detail-facts"><dt><span data-lang-ko>분류</span><span data-lang-en>Category</span></dt><dd lang="ko"><span data-lang-ko>계산·측정</span><span data-lang-en>Calculators</span></dd><dt><span data-lang-ko>스토어 분류</span><span data-lang-en>Store category</span></dt><dd lang="ko">유틸리티</dd><dt><span data-lang-ko>제공 상태</span><span data-lang-en>Status</span></dt><dd lang="ko"><span data-lang-ko>앱스토어 제공 중</span><span data-lang-en>On the App Store</span></dd><dt><span data-lang-ko>가격</span><span data-lang-en>Price</span></dt><dd lang="ko">무료</dd><dt><span data-lang-ko>출시일</span><span data-lang-en>Released</span></dt><dd lang="ko">2026년 9월 15일</dd><dt><span data-lang-ko>최근 갱신</span><span data-lang-en>Last updated</span></dt><dd lang="ko">2026년 9월 16일</dd><dt><span data-lang-ko>현재 버전</span><span data-lang-en>Version</span></dt><dd lang="ko">1.0</dd><dt><span data-lang-ko>지원 기기</span><span data-lang-en>Devices</span></dt><dd lang="ko">iPhone·iPad</dd><dt><span data-lang-ko>필요 OS</span><span data-lang-en>Requires</span></dt><dd lang="ko">iOS 17.0 이상</dd><dt><span data-lang-ko>스토어 표기 언어</span><span data-lang-en>Store languages</span></dt><dd lang="ko">영어, 프랑스어, 독일어, 일본어, 한국어, 스페인어, 중국어</dd><dt><span data-lang-ko>연령 등급</span><span data-lang-en>Age rating</span></dt><dd lang="ko">4+</dd><dt><span data-lang-ko>번들 ID</span><span data-lang-en>Bundle ID</span></dt><dd lang="ko"><code>com.kimjinwan.dewpoint</code></dd></dl>
+<p class="detail-more"><a href="/content/blog/apps/dew-point/" lang="ko">제작·심사 기록 읽기</a></p>
+<p class="detail-verified" lang="ko">2026-10-14 앱스토어 공개 정보와 앱 구성 기록으로 확인한 내용입니다.</p></div>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/apps/category/calc/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+
+</body></html>

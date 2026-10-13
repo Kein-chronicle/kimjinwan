@@ -1022,5 +1022,1357 @@
     "word-counter.webp": 8026
    }
   }
+ },
+ "apps": {
+  "animal-personality": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "animal-personality-1.webp": 15978,
+    "animal-personality-2.webp": 10142,
+    "animal-personality-3.webp": 20878,
+    "animal-personality-icon.webp": 5392
+   }
+  },
+  "bike-tire-pressure": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "bike-tire-pressure-1.webp": 12056,
+    "bike-tire-pressure-2.webp": 12336,
+    "bike-tire-pressure-3.webp": 14264,
+    "bike-tire-pressure-icon.webp": 1808
+   }
+  },
+  "chess-clock": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:2\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "chess-clock-1.webp": 8670,
+    "chess-clock-2.webp": 17482,
+    "chess-clock-3.webp": 14134,
+    "chess-clock-icon.webp": 1420
+   }
+  },
+  "church-calendar": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "church-calendar-1.webp": 14436,
+    "church-calendar-2.webp": 11492,
+    "church-calendar-3.webp": 11660,
+    "church-calendar-icon.webp": 4236
+   }
+  },
+  "coffee-cut": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "coffee-cut-1.webp": 9530,
+    "coffee-cut-2.webp": 12488,
+    "coffee-cut-3.webp": 9168,
+    "coffee-cut-icon.webp": 5030
+   }
+  },
+  "concrete-calculator": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "concrete-calculator-1.webp": 12450,
+    "concrete-calculator-2.webp": 12104,
+    "concrete-calculator-3.webp": 14916,
+    "concrete-calculator-icon.webp": 1854
+   }
+  },
+  "crochet-row-counter": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "crochet-row-counter-1.webp": 13274,
+    "crochet-row-counter-2.webp": 12602,
+    "crochet-row-counter-3.webp": 12672,
+    "crochet-row-counter-icon.webp": 6248
+   }
+  },
+  "cut-list": {
+   "from": "[\"store:icon\",\"store:4\",\"store:3\",\"store:6\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "cut-list-1.webp": 17404,
+    "cut-list-2.webp": 9930,
+    "cut-list-3.webp": 13048,
+    "cut-list-icon.webp": 2350
+   }
+  },
+  "daily-bible-writing": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "daily-bible-writing-1.webp": 17798,
+    "daily-bible-writing-2.webp": 19048,
+    "daily-bible-writing-3.webp": 25014,
+    "daily-bible-writing-icon.webp": 10032
+   }
+  },
+  "depth-of-field": {
+   "from": "[\"store:icon\",\"store:3\",\"store:1\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "depth-of-field-1.webp": 15272,
+    "depth-of-field-2.webp": 11312,
+    "depth-of-field-3.webp": 12686,
+    "depth-of-field-icon.webp": 1910
+   }
+  },
+  "dew-point": {
+   "from": "[\"store:icon\",\"store:6\",\"store:2\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "dew-point-1.webp": 13460,
+    "dew-point-2.webp": 13190,
+    "dew-point-3.webp": 15954,
+    "dew-point-icon.webp": 1838
+   }
+  },
+  "dream-meaning": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "dream-meaning-1.webp": 28922,
+    "dream-meaning-2.webp": 15470,
+    "dream-meaning-3.webp": 13316,
+    "dream-meaning-icon.webp": 2492
+   }
+  },
+  "expiration-tracker": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:2\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "expiration-tracker-1.webp": 13226,
+    "expiration-tracker-2.webp": 11508,
+    "expiration-tracker-3.webp": 12708,
+    "expiration-tracker-icon.webp": 3140
+   }
+  },
+  "fast-plate": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "fast-plate-1.webp": 12798,
+    "fast-plate-2.webp": 14146,
+    "fast-plate-3.webp": 9040,
+    "fast-plate-icon.webp": 4188
+   }
+  },
+  "floe-steps": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "floe-steps-1.webp": 12804,
+    "floe-steps-2.webp": 11580,
+    "floe-steps-3.webp": 11836,
+    "floe-steps-icon.webp": 6716
+   }
+  },
+  "good": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "good-1.webp": 10542,
+    "good-2.webp": 17074,
+    "good-3.webp": 10966,
+    "good-icon.webp": 5934
+   }
+  },
+  "hymn-crosswalk": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "hymn-crosswalk-1.webp": 13064,
+    "hymn-crosswalk-2.webp": 23786,
+    "hymn-crosswalk-3.webp": 23160,
+    "hymn-crosswalk-icon.webp": 1162
+   }
+  },
+  "ink-fold": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "ink-fold-1.webp": 8682,
+    "ink-fold-2.webp": 8042,
+    "ink-fold-3.webp": 6190,
+    "ink-fold-icon.webp": 4766
+   }
+  },
+  "jet-lag": {
+   "from": "[\"store:icon\",\"store:5\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "jet-lag-1.webp": 12198,
+    "jet-lag-2.webp": 18370,
+    "jet-lag-3.webp": 13806,
+    "jet-lag-icon.webp": 3580
+   }
+  },
+  "lockin-message": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "lockin-message-1.webp": 12218,
+    "lockin-message-2.webp": 9756,
+    "lockin-message-3.webp": 9048,
+    "lockin-message-icon.webp": 3498
+   }
+  },
+  "math-worksheet": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "math-worksheet-1.webp": 13824,
+    "math-worksheet-2.webp": 13246,
+    "math-worksheet-3.webp": 11994,
+    "math-worksheet-icon.webp": 2152
+   }
+  },
+  "merge-cat": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "merge-cat-1.webp": 28270,
+    "merge-cat-2.webp": 9690,
+    "merge-cat-3.webp": 30196,
+    "merge-cat-icon.webp": 14892
+   }
+  },
+  "merge-whale": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "merge-whale-1.webp": 5086,
+    "merge-whale-2.webp": 8858,
+    "merge-whale-3.webp": 9880,
+    "merge-whale-icon.webp": 7820
+   }
+  },
+  "my-whale": {
+   "from": "[\"store:icon\",\"store:3\",\"store:5\",\"store:1\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "my-whale-1.webp": 11466,
+    "my-whale-2.webp": 10732,
+    "my-whale-3.webp": 11028,
+    "my-whale-icon.webp": 11696
+   }
+  },
+  "note-reading": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "note-reading-1.webp": 8814,
+    "note-reading-2.webp": 13290,
+    "note-reading-3.webp": 15510,
+    "note-reading-icon.webp": 2076
+   }
+  },
+  "one-thing-today": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "one-thing-today-1.webp": 10278,
+    "one-thing-today-2.webp": 13334,
+    "one-thing-today-3.webp": 9658,
+    "one-thing-today-icon.webp": 2538
+   }
+  },
+  "pace-calculator": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "pace-calculator-1.webp": 13020,
+    "pace-calculator-2.webp": 17288,
+    "pace-calculator-3.webp": 22470,
+    "pace-calculator-icon.webp": 3248
+   }
+  },
+  "plate-calculator": {
+   "from": "[\"store:icon\",\"store:4\",\"store:5\",\"store:1\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "plate-calculator-1.webp": 10298,
+    "plate-calculator-2.webp": 12040,
+    "plate-calculator-3.webp": 12186,
+    "plate-calculator-icon.webp": 1960
+   }
+  },
+  "pocket-answer": {
+   "from": "[\"store:icon\",\"store:2\",\"store:4\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "pocket-answer-1.webp": 9168,
+    "pocket-answer-2.webp": 5612,
+    "pocket-answer-3.webp": 5940,
+    "pocket-answer-icon.webp": 9110
+   }
+  },
+  "pocket-monsters": {
+   "from": "[\"store:icon\",\"store:1\",\"store:4\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "pocket-monsters-1.webp": 12932,
+    "pocket-monsters-2.webp": 15416,
+    "pocket-monsters-3.webp": 12306,
+    "pocket-monsters-icon.webp": 2510
+   }
+  },
+  "pool-calculator": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:6\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "pool-calculator-1.webp": 11778,
+    "pool-calculator-2.webp": 18022,
+    "pool-calculator-3.webp": 15948,
+    "pool-calculator-icon.webp": 1692
+   }
+  },
+  "random-pick": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "random-pick-1.webp": 11568,
+    "random-pick-2.webp": 9526,
+    "random-pick-3.webp": 8134,
+    "random-pick-icon.webp": 3224
+   }
+  },
+  "reaction-time": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "reaction-time-1.webp": 15684,
+    "reaction-time-2.webp": 13450,
+    "reaction-time-3.webp": 8076,
+    "reaction-time-icon.webp": 2694
+   }
+  },
+  "reading-pace": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "reading-pace-1.webp": 7772,
+    "reading-pace-2.webp": 7506,
+    "reading-pace-3.webp": 8520,
+    "reading-pace-icon.webp": 892
+   }
+  },
+  "score-keeper": {
+   "from": "[\"store:icon\",\"store:1\",\"store:3\",\"store:2\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "score-keeper-1.webp": 19232,
+    "score-keeper-2.webp": 13584,
+    "score-keeper-3.webp": 14004,
+    "score-keeper-icon.webp": 1942
+   }
+  },
+  "seating-chart": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "seating-chart-1.webp": 15024,
+    "seating-chart-2.webp": 19222,
+    "seating-chart-3.webp": 11196,
+    "seating-chart-icon.webp": 2990
+   }
+  },
+  "shuffle-dice": {
+   "from": "[\"store:icon\",\"store:2\",\"store:3\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "shuffle-dice-1.webp": 10310,
+    "shuffle-dice-2.webp": 13646,
+    "shuffle-dice-3.webp": 8024,
+    "shuffle-dice-icon.webp": 8852
+   }
+  },
+  "stair-calculator": {
+   "from": "[\"store:icon\",\"store:1\",\"store:5\",\"store:6\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "stair-calculator-1.webp": 11400,
+    "stair-calculator-2.webp": 6530,
+    "stair-calculator-3.webp": 15914,
+    "stair-calculator-icon.webp": 1782
+   }
+  },
+  "sudden-note": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "sudden-note-1.webp": 8888,
+    "sudden-note-2.webp": 6646,
+    "sudden-note-3.webp": 5964,
+    "sudden-note-icon.webp": 4326
+   }
+  },
+  "tournament-bracket": {
+   "from": "[\"store:icon\",\"store:2\",\"store:3\",\"store:1\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "tournament-bracket-1.webp": 9722,
+    "tournament-bracket-2.webp": 13810,
+    "tournament-bracket-3.webp": 8660,
+    "tournament-bracket-icon.webp": 2782
+   }
+  },
+  "triangle-solver": {
+   "from": "[\"store:icon\",\"store:4\",\"store:2\",\"store:1\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "triangle-solver-1.webp": 14732,
+    "triangle-solver-2.webp": 9392,
+    "triangle-solver-3.webp": 21412,
+    "triangle-solver-icon.webp": 2298
+   }
+  },
+  "unit-price": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "unit-price-1.webp": 15468,
+    "unit-price-2.webp": 10822,
+    "unit-price-3.webp": 12774,
+    "unit-price-icon.webp": 1036
+   }
+  },
+  "verse-memory": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "verse-memory-1.webp": 9328,
+    "verse-memory-2.webp": 6182,
+    "verse-memory-3.webp": 7674,
+    "verse-memory-icon.webp": 1728
+   }
+  },
+  "vocapuff-chinese": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "vocapuff-chinese-1.webp": 20468,
+    "vocapuff-chinese-2.webp": 12272,
+    "vocapuff-chinese-3.webp": 12472,
+    "vocapuff-chinese-icon.webp": 7894
+   }
+  },
+  "vocapuff-english": {
+   "from": "[\"store:icon\",\"store:3\",\"store:4\",\"store:1\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "vocapuff-english-1.webp": 15280,
+    "vocapuff-english-2.webp": 12368,
+    "vocapuff-english-3.webp": 25562,
+    "vocapuff-english-icon.webp": 5284
+   }
+  },
+  "vocapuff-japanese": {
+   "from": "[\"store:icon\",\"store:2\",\"store:4\",\"store:6\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "vocapuff-japanese-1.webp": 9734,
+    "vocapuff-japanese-2.webp": 8038,
+    "vocapuff-japanese-3.webp": 7208,
+    "vocapuff-japanese-icon.webp": 7776
+   }
+  },
+  "whale-book": {
+   "from": "[\"store:icon\",\"store:2\",\"store:3\",\"store:5\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "whale-book-1.webp": 20416,
+    "whale-book-2.webp": 16480,
+    "whale-book-3.webp": 24722,
+    "whale-book-icon.webp": 14576
+   }
+  },
+  "whale-survivors": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:4\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     600,
+     277
+    ],
+    [
+     600,
+     277
+    ],
+    [
+     600,
+     277
+    ]
+   ],
+   "bytes": {
+    "whale-survivors-1.webp": 5152,
+    "whale-survivors-2.webp": 9990,
+    "whale-survivors-3.webp": 11564,
+    "whale-survivors-icon.webp": 10906
+   }
+  },
+  "word-counter": {
+   "from": "[\"store:icon\",\"store:3\",\"store:1\",\"store:2\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ],
+    [
+     400,
+     866
+    ]
+   ],
+   "bytes": {
+    "word-counter-1.webp": 28698,
+    "word-counter-2.webp": 17456,
+    "word-counter-3.webp": 16490,
+    "word-counter-icon.webp": 1358
+   }
+  },
+  "yumyum-type-test": {
+   "from": "[\"store:icon\",\"store:1\",\"store:2\",\"store:3\"]",
+   "icon": [
+    256,
+    256
+   ],
+   "shots": [
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ],
+    [
+     400,
+     865
+    ]
+   ],
+   "bytes": {
+    "yumyum-type-test-1.webp": 9144,
+    "yumyum-type-test-2.webp": 24478,
+    "yumyum-type-test-3.webp": 19882,
+    "yumyum-type-test-icon.webp": 3390
+   }
+  }
  }
 }

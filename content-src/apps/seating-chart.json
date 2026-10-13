@@ -1,0 +1,77 @@
+{
+ "slug": "seating-chart",
+ "name": "Seating Chart: Seat Rules",
+ "storeId": "6807052551",
+ "storeUrl": "https://apps.apple.com/kr/app/id6807052551",
+ "status": "live",
+ "category": "table",
+ "oneLiner": "같이 앉힐 사람과 떼어놓을 사람 같은 규칙을 입력하면 모든 좌석을 배정하고, 앉히지 못한 사람은 이름을 짚어 알려 주는 좌석 배치 앱이다.",
+ "about": "이름을 입력하고 규칙을 더하면 배치도가 나온다. 이 두 사람은 같이 앉히고, 저 두 사람은 한 테이블에 앉히지 말고, 이 사람은 헤드 테이블에 고정하고, 저 사람은 3번 테이블에서 빼라는 식의 규칙을 풀이기가 모두 반영한다.\n방이 맞지 않을 때 조용히 넘어가는 다른 앱과 달리, '누구는 3번 테이블이 가득 차서 배정하지 못했다'처럼 사람 이름으로 알려 주기 때문에 좌석을 늘리거나 규칙을 빼거나 그냥 두는 판단을 할 수 있다. 좌석을 길게 눌러 고정하면 다시 풀거나 테이블을 바꾸고 손님을 열 명 더 추가해도 그 자리는 움직이지 않는다. 손님, 테이블, 규칙, 행사 수에 제한이 없다.",
+ "audience": "결혼식 하객 좌석, 교실 자리, 연회와 회의, 모임의 테이블 배치를 맡은 사람에게 맞는다. 사람 사이 관계 때문에 같이 앉히거나 떼어놓아야 하는 조건이 많을수록 쓸모가 크다.",
+ "features": [
+  "같이 앉히기, 떼어놓기, 테이블 고정, 테이블 제외 네 가지 규칙을 입력한다.",
+  "지키지 못한 규칙과 배정하지 못한 사람을 이름과 이유로 알려 준다.",
+  "좌석을 길게 눌러 고정하면 다시 풀어도 그대로 유지된다.",
+  "웨딩, 교실, 연회, 회의, 파티, 커뮤니티 홀 등 24가지 배치 프리셋이 있고 테이블마다 모양과 좌석 수를 정한다.",
+  "테이블, 이름, 지켜진 규칙 수가 담긴 카드를 공유한다."
+ ],
+ "howTo": [
+  "Guests에서 손님 이름을 입력하고 Tables에서 테이블 구성을 고른다.",
+  "Seat Rules에서 같이 앉히기, 떼어놓기, 고정 등의 규칙을 더하고 'Build the chart'를 누른다.",
+  "배치도에서 배정하지 못한 사람 안내를 확인하고, 좌석을 고정한 뒤 다시 풀거나 카드를 공유한다."
+ ],
+ "notes": [
+  "같은 규칙으로 만든 대안 배치 3개는 보상형 광고를 본 뒤 열린다. 좌석 입력 중에는 광고가 끼어들지 않는다.",
+  "결혼식뿐 아니라 교실 배치에도 쓸 수 있다고 스토어 설명에 적혀 있다.",
+  "앱 화면은 영어이고 인터넷 없이 쓸 수 있다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Seating Chart 앱 아이콘, 초록 바탕에 흰 원탁과 둘레에 앉은 흰 점과 노란 점이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "배치도 화면. 테이블 1부터 3까지 이름이 배치되고 배정하지 못한 손님 경고와 대안 배치 버튼이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "좌석 규칙 화면. 함께 앉히기, 떼어놓기, 고정 규칙 목록과 규칙 입력 버튼이 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "행사 목록 화면. Ellis & Ray 행사의 테이블 모양 미리보기와 좌석 배치 열기 버튼이 있다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6807052551 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/seating-chart/03-spec/screens.json",
+   "app-factory/catalog/seating-chart/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.seatingchart",
+  "version": "1.0",
+  "genre": "Utilities",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-10",
+  "updated": "2026-09-10",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Seating Chart: Seat Rules — 함께·분리 조건 좌석 배치",
+  "path": "/content/blog/apps/seating-chart/"
+ }
+}

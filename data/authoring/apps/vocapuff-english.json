@@ -1,0 +1,58 @@
+{
+  "slug": "vocapuff-english",
+  "name": "VocaPuff - English",
+  "storeId": "6761618848",
+  "status": "live",
+  "category": "learn",
+  "oneLiner": "영단어 2,000개를 하루 10개씩 카드로 외우고, 퀴즈와 복습으로 반복하는 가벼운 영단어 암기 앱이다.",
+  "about": "홈 화면에서 오늘의 학습, 퀴즈, 어제 복습, 무한 모드, 단어 목록, 진행률 여섯 메뉴를 고른다. 단어 카드에는 영어 단어와 발음 듣기 버튼만 보이고 뜻은 가려져 있어서, 소리를 듣고 안다 또는 모른다 버튼으로 먼저 스스로 판단한 뒤 뜻을 확인한다. 모른다고 누른 단어는 바로 뜻이 펼쳐진다.\n하루 10개를 정해진 분량으로 학습하는 Daily 10, 열 문제를 네 개 보기로 푸는 Quiz 10, 전날 학습한 단어를 다시 보는 Review Yesterday, 끝없이 무작위로 나오는 Endless Mode로 같은 단어를 여러 방식으로 반복한다. 전체 2,000단어는 단어 목록에서 검색할 수 있고, 진행률 화면은 아는 단어 비율을 퍼센트로 보여 준다. 귀여운 구름 마스코트 VocaPuff가 화면마다 함께 나온다.",
+  "audience": "영단어를 어렵지 않게 매일 조금씩 꾸준히 외우고 싶은 사람, 암기 앱의 복잡한 설정이 부담스러운 사람, 하루 10분 안쪽으로 학습하고 싶은 사람에게 맞는다.",
+  "features": [
+    "Daily 10은 하루 10개 단어를 카드로 학습한다.",
+    "Quiz 10은 열 문제를 네 개 보기로 푸는 단어 시험이다.",
+    "Review Yesterday로 전날 학습한 단어를 다시 확인한다.",
+    "Endless Mode는 한도 없이 무작위로 단어를 반복한다.",
+    "Word List에서 2,000개 전체를 검색하고 Progress에서 학습 진행률을 본다."
+  ],
+  "howTo": [
+    "홈 화면에서 'Start with Daily 10'을 누르고 단어 카드를 확인한다.",
+    "단어를 듣고 Know 또는 Don't Know를 눌러 스스로 판단한다. 모르는 단어는 뜻이 바로 나온다.",
+    "다음 날은 Review Yesterday로 복습하고 Quiz 10으로 확인한다."
+  ],
+  "notes": [
+    "카드 설명과 메뉴 이름은 영어이고 단어의 뜻은 한국어로 표시된다.",
+    "화면 아래에 배너 광고가 붙는다(스크린샷 기준).",
+    "같은 방식으로 일본어와 중국어 버전이 따로 있다."
+  ],
+  "guide": "vocapuff-english",
+  "images": [
+    {
+      "src": "store:icon",
+      "role": "icon",
+      "alt": "VocaPuff - English 앱 아이콘, 연필을 든 구름 마스코트가 study 푯말을 들고 있다"
+    },
+    {
+      "src": "store:3",
+      "role": "screen",
+      "alt": "단어 카드 화면. abandon 단어와 발음 듣기 버튼, 뜻 가림 안내, Know와 Don't Know 버튼이 있다"
+    },
+    {
+      "src": "store:4",
+      "role": "screen",
+      "alt": "퀴즈 화면. 질문 1/10에 roam이 나오고 한국어 뜻 보기 네 개가 나열된다"
+    },
+    {
+      "src": "store:1",
+      "role": "screen",
+      "alt": "홈 화면. 2,000 Vocabulary Words 제목 아래에 Daily 10, Quiz 10, Review Yesterday, Endless Mode 메뉴가 있다"
+    }
+  ],
+  "verified": {
+    "date": "2026-10-14",
+    "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+    "sources": [
+      "iTunes lookup id6761618848 (kr)",
+      "스토어 설명문·스크린샷(앱 소스 저장소는 보관 위치에서 확인하지 못함)"
+    ]
+  }
+}

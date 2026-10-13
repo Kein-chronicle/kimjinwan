@@ -1,0 +1,77 @@
+{
+ "slug": "reaction-time",
+ "name": "Reaction Time Test: Millis",
+ "storeId": "6805464656",
+ "storeUrl": "https://apps.apple.com/kr/app/id6805464656",
+ "status": "live",
+ "category": "mind",
+ "oneLiner": "초록으로 바뀌는 순간 화면을 눌러 반응 속도를 밀리초로 재고, 다섯 번 시도의 중앙값과 편차까지 보여 주는 반응속도 테스트 앱이다.",
+ "about": "반응속도 앱 대부분은 손가락을 뗄 때 시계를 멈춘다. 이 앱은 손가락이 화면에 닿는 순간에 시계를 멈춰서, 손가락을 떼는 시간이 결과에 섞이지 않게 한다고 스토어 설명에 적혀 있다.\n테스트는 네 가지다. 화면이 초록으로 바뀌면 누르는 기본형, 네 칸 중 불이 켜진 칸을 누르는 선택형, 초록이면 누르고 빨강이면 참는 Go/No-Go, 움직이는 막대가 선에 닿는 순간을 맞추는 타이밍형이다. 한 번에 다섯 번 시도하고 최고 기록뿐 아니라 중앙값, 평균, 일관성을 한 장의 결과 카드로 묶어 준다.",
+ "audience": "내 반응속도가 실제로 얼마인지 숫자로 알고 싶은 사람, 게임이나 운동 전에 컨디션을 재 보고 싶은 사람, 점수 하나보다 평균과 편차를 보고 싶은 사람에게 맞는다.",
+ "features": [
+  "네 가지 측정 방식(기본, 선택, Go/No-Go, 타이밍)을 고를 수 있고 방식마다 개인 최고 기록이 따로 저장된다.",
+  "한 세션은 유효 시도 다섯 번이다. 100ms 미만은 성급한 터치, 3초 초과는 놓침으로 표시하고 계산에서 빼며 이유를 화면에 보여 준다.",
+  "결과 카드에는 중앙값, 최고, 평균, 편차와 시도별 막대 그래프, 앱 안의 자체 등급이 나온다.",
+  "세션 기록을 기록장에 저장하고 다시 볼 수 있으며, 결과 카드는 이미지로 공유할 수 있다.",
+  "광고를 보면 열리는 'Deep read' 해설이 있고, 측정과 기본 결과는 광고 없이 쓸 수 있다."
+ ],
+ "howTo": [
+  "첫 화면에서 네 가지 테스트 중 하나를 골라 시작 버튼을 누른다.",
+  "자극이 나타나면 화면 어디든 바로 누른다. 한 세션에서 다섯 번을 채운다.",
+  "결과 카드에서 중앙값과 편차를 확인하고, 저장하거나 공유하거나 다시 시도한다."
+ ],
+ "notes": [
+  "등급은 앱이 자체로 정한 구간이지 같은 나이대 사람들과 비교한 백분위가 아니다.",
+  "스토어 설명은 측정과 오락 용도이며 의학·인지 평가가 아니라고 밝힌다.",
+  "앱 화면은 영어이고, 하단 배너 광고가 붙는다. 인터넷 없이도 쓸 수 있다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Reaction Time 앱 아이콘, 검은 바탕에 초록 원과 그 둘레의 열린 고리가 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "결과 화면. 중앙값 221ms와 시도별 초록 막대 그래프, 최고·평균·일관성 수치가 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "기본 테스트 화면. 초록 바탕 한가운데 TAP 글자가 있고 아래에 시도 횟수가 표시된다"
+  },
+  {
+   "role": "screen",
+   "alt": "테스트 선택 화면. 기본, 선택, Go/No-Go, 타이밍 네 가지와 각각의 최고 기록, 시작 버튼이 있다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6805464656 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/reaction-time/03-spec/screens.json",
+   "app-factory/catalog/reaction-time/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.reactiontime",
+  "version": "1.0.1",
+  "genre": "Utilities",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-03",
+  "updated": "2026-09-11",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Reaction Time Test: Millis — 밀리초 반응속도 테스트",
+  "path": "/content/blog/apps/reaction-time/"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "slug": "pace-calculator",
+ "name": "Pace Calculator: Race Plan",
+ "storeId": "6806565533",
+ "storeUrl": "https://apps.apple.com/kr/app/id6806565533",
+ "status": "live",
+ "category": "calc",
+ "oneLiner": "거리·시간·페이스·속도 중 두 가지만 넣으면 나머지를 풀고, 구간별 기록표가 붙은 레이스 플랜 카드로 만들어 주는 달리기 계산기다.",
+ "about": "달리기에서 목표 시간으로 페이스를 구하거나, 페이스로 완주 시간을 구하는 일을 하나의 화면에서 해결한다. 거리, 시간, 페이스, 속도 네 값 중 아무 둘이나 입력하면 나머지 둘이 채워지고, 단위는 킬로미터와 마일 중에서 고른다.\n계산에서 끝나지 않고 목표 기록과 페이스, 구간별 누적 기록표를 한 장으로 묶은 레이스 플랜 카드를 만든다. 훈련 파트너에게 보내거나 대회 아침에 폰에서 열어 보는 용도다. 거리는 미터, 시간은 초로 들고 있다가 표시할 때만 반올림하기 때문에 계산기, 구간표, 카드의 숫자가 서로 어긋나지 않는다고 스토어 설명에 적혀 있다.",
+ "audience": "10K나 하프마라톤처럼 대회 목표 기록을 구간별로 쪼개 외우고 싶은 러너, 트랙 훈련에서 랩당 기록을 미리 계산하고 싶은 사람, 한 대회 기록으로 다른 거리의 목표를 가늠하고 싶은 사람에게 맞는다.",
+ "features": [
+  "거리·시간·페이스·속도 네 값 중 두 개를 입력하면 나머지를 계산하는 4방향 계산기다.",
+  "400m부터 100K까지 20개 대회 거리가 들어 있고 거리마다 그 거리가 요구하는 점을 한 줄로 설명한다.",
+  "구간별 기록표를 킬로미터, 마일, 트랙 랩 단위로 만들 수 있다.",
+  "일정하게(Even), 후반을 빠르게(Negative), 전반을 빠르게(Positive), 막판 스퍼트(Fast finish) 네 가지 페이스 전략을 고를 수 있다.",
+  "한 거리의 결과로 다른 거리의 환산 기록을 추정하는 표는 보상형 광고를 본 뒤 열린다."
+ ],
+ "howTo": [
+  "거리와 목표 시간(또는 페이스)을 입력하면 나머지 값이 자동으로 채워진다.",
+  "'Build race plan'을 눌러 페이스 전략과 단위를 고른다.",
+  "나온 플랜 카드를 공유하거나 저장해 대회 당일 다시 연다."
+ ],
+ "notes": [
+  "환산 기록은 지구력 모델(리겔, 1977)로 계산한 추정치이며 예측이 아니다. 앱은 코칭이 아니라 계산·계획 도구라고 스토어 설명에 적혀 있다.",
+  "저장한 계획은 이 기기에만 남고 계정이 필요 없다. 인터넷 없이도 동작한다.",
+  "앱 화면은 영어이고 하단에 배너 광고가 붙는다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Pace Calculator 앱 아이콘, 주황색 바탕에 검은 트랙 모양 타원이 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "계산 화면. 거리 10km와 시간 45:00을 넣자 페이스 4:30과 속도 13.33이 계산되어 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "레이스 플랜 화면. 목표 45:00과 페이스 4:30, 1km마다의 누적 기록표가 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "거리 목록 화면. 400m부터 5마일까지 대회 거리마다 짧은 설명이 달려 있다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6806565533 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/pace-calculator/03-spec/screens.json",
+   "app-factory/catalog/pace-calculator/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.pacecalculator",
+  "version": "1.0",
+  "genre": "Health & Fitness",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-12",
+  "updated": "2026-09-12",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Pace Calculator: Race Plan — 달리기 페이스·구간 기록 계산기",
+  "path": "/content/blog/apps/pace-calculator/"
+ }
+}

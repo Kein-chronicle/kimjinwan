@@ -12,7 +12,7 @@ export const ROLE_LINE = '개발자 · PM';
 export function facts(data, projects) {
   const hub = id => data.contentHub.sections.find(s => s.id === id).count.value;
   return {years: CAREER_YEARS, factories: data.factories.length, projects: projects.length, services: data.services.length,
-    posts: hub('blog'), news: hub('gamenews'), games: hub('games'), tools: hub('tools'), guides: hub('gizmo')};
+    posts: hub('blog'), news: hub('gamenews'), games: hub('games'), tools: hub('tools'), guides: hub('gizmo'), apps: hub('apps')};
 }
 
 // 페이지별 메타 + 카드 문구. key 는 assets/og/<key>.png 이름이기도 하다.
@@ -45,10 +45,10 @@ export function pageMeta(f) {
       headline: `${f.years}년, 현장에서 쌓은 경력과 프로젝트 ${f.projects}개`,
     },
     content: {
-      title: '콘텐츠 허브 — 글·게임 소식·가이드·웹게임·웹 도구 · 김진완',
-      description: `블로그 글 ${f.posts}편, 게임 소식 ${f.news}편, AI 활용 가이드 ${f.guides}개, 웹게임 ${f.games}개, 웹 도구 ${f.tools}개를 제목과 요약, 전문으로 바로 읽을 수 있게 한곳에 모았습니다. 마음에 드는 글이나 가이드로 곧장 이동하세요.`,
+      title: '콘텐츠 허브 — 글·게임 소식·가이드·웹게임·웹 도구·내 앱 · 김진완',
+      description: `블로그 글 ${f.posts}편, 게임 소식 ${f.news}편, AI 활용 가이드 ${f.guides}개, 웹게임 ${f.games}개, 웹 도구 ${f.tools}개, 앱스토어 앱 ${f.apps}개를 제목과 요약, 전문으로 바로 읽을 수 있게 한곳에 모았습니다. 마음에 드는 글이나 가이드로 곧장 이동하세요.`,
       kicker: 'CONTENT',
-      headline: `글 ${f.posts + f.news}편과 AI 활용 가이드·웹게임·웹 도구 모음`,
+      headline: `글 ${f.posts + f.news}편과 AI 활용 가이드·웹게임·웹 도구·앱 모음`,
     },
     // game/index.html 은 손으로 쓴 파일이다. 아래 문구와 같은지 site.test.mjs 가 검사한다.
     game: {

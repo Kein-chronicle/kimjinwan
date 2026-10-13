@@ -19,7 +19,7 @@ const r = buildGames({root: ROOT, all, asOf: hub.as_of, images, home: os.homedir
 if (r.warnings.length) console.error('games authoring 경고:\n  ' + r.warnings.join('\n  '));
 const i = hub.sections.findIndex(s => s.id === 'games');
 hub.sections[i] = r.section;
-const files = new Map([['data/content-hub.json', JSON.stringify(hub, null, 1) + '\n'], ['content-src/excluded.json', JSON.stringify({as_of: excl.as_of, games: r.excluded, tools: excl.tools}, null, 1) + '\n']]);
+const files = new Map([['data/content-hub.json', JSON.stringify(hub, null, 1) + '\n'], ['content-src/excluded.json', JSON.stringify({as_of: excl.as_of, games: r.excluded, tools: excl.tools, ...(excl.apps ? {apps: excl.apps} : {})}, null, 1) + '\n']]);
 for (const [rel, obj] of [...r.extra].sort((a, b) => a[0].localeCompare(b[0]))) files.set(rel, JSON.stringify(obj, null, 1) + '\n');
 const dir = path.join(ROOT, 'content-src/games'), stale = fs.existsSync(dir) ? fs.readdirSync(dir).map(f => 'content-src/games/' + f).filter(f => !files.has(f)) : [];
 const same = [...files].every(([rel, t]) => fs.existsSync(path.join(ROOT, rel)) && fs.readFileSync(path.join(ROOT, rel), 'utf8') === t) && !stale.length;

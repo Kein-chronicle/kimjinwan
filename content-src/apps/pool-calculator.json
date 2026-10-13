@@ -1,0 +1,83 @@
+{
+ "slug": "pool-calculator",
+ "name": "Pool Calculator: Own Chems",
+ "storeId": "6809071971",
+ "storeUrl": "https://apps.apple.com/kr/app/id6809071971",
+ "status": "live",
+ "category": "calc",
+ "oneLiner": "내가 가진 약품의 라벨 농도를 입력하면 수영장 수질 여섯 항목을 맞추는 투입량과 순서를 알려 주는 수영장 약품 계산기다.",
+ "about": "수영장 앱은 대개 사용자가 갖고 있지 않은 제품 기준의 숫자를 돌려준다. 이 앱은 선반에 있는 약품부터 입력받는다. 통에 적힌 73퍼센트, 31.45퍼센트, 12.5퍼센트 같은 농도를 그대로 넣으면 그 통에서 몇 그램, 몇 밀리리터를 넣을지 계산해 준다.\n수질은 유리 염소, pH, 총 알칼리도, 칼슘 경도, 안정제, 염분 여섯 값을 한 화면에서 목표 범위와 함께 막대로 보고 각 항목을 눌러 측정값을 입력한다. 처방은 알칼리도, pH, 경도, 안정제, 염분, 염소 순서로 짜이고 산과 염소가 한꺼번에 들어가지 않도록 대기 시간이 끼워진다. 약품 하나가 다른 수치를 얼마나 움직이는지도 단계마다 함께 표시된다.",
+ "audience": "가정용 수영장이나 풀을 직접 관리하며 시중 약품을 집에 쌓아 둔 사람, 약품을 넣을 때마다 다른 수치가 어떻게 변하는지 헷갈리는 사람에게 맞는다.",
+ "features": [
+  "약품의 이름, 용도, 라벨 농도를 직접 등록하고 어떤 브랜드와 농도든 사용한다.",
+  "수질 여섯 항목을 한 시트에서 목표 범위와 함께 확인하고 측정값을 바로 입력한다.",
+  "단계별 처방에 투입량과 각 투입이 칼슘 경도, 알칼리도, pH 등에 미치는 부수 효과가 같은 계산으로 함께 표시된다.",
+  "약품으로 낮출 수 없는 항목은 물을 몇 리터 교체해야 하는지로 답한다.",
+  "수영장 종류별 목표 범위 프리셋 9개를 고르거나 직접 고치고, 측정 기록은 이 기기에만 저장된다."
+ ],
+ "howTo": [
+  "Water 화면에서 수영장 크기를 입력하고 여섯 항목의 측정값을 하나씩 입력한다.",
+  "Shelf 화면에서 가진 약품과 라벨 농도를 등록한다.",
+  "'Build the plan'을 눌러 순서대로 투입량과 대기 시간, 마지막 재측정 안내를 따른다."
+ ],
+ "notes": [
+  "투입 전에 결과를 미리 보는 what-if 화면은 보상형 광고를 본 뒤 열리고, 처방 전체와 부수 효과는 광고 없이 보인다.",
+  "앱은 닫힌 물 모델로 계산하며 한 번에 넣는 산의 양과 pH 변화 폭에 상한을 둔다고 앱 안 설명에 적혀 있다.",
+  "한국어를 포함한 7개 언어를 지원하고 하단에 배너 광고가 붙는다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Pool Calculator 앱 아이콘, 청록 바탕에 물이 담긴 시험관이 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "수질 화면. 수영장 부피 37,854L 아래에 여섯 항목이 목표 범위 막대로 나란히 표시된다"
+  },
+  {
+   "role": "screen",
+   "alt": "약품 선반 화면. 차아염소산칼슘, 염산, 소다회 등 약품과 라벨 농도가 목록으로 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "처방 화면. 염산 218mL 투입과 30분 대기, 염소 투입 단계가 순서대로 나온다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6809071971 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/pool-calculator/03-spec/screens.json",
+   "app-factory/catalog/pool-calculator/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.poolcalculator",
+  "version": "1.0",
+  "genre": "Utilities",
+  "languages": [
+   "EN",
+   "FR",
+   "DE",
+   "JA",
+   "KO",
+   "ES",
+   "ZH"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-15",
+  "updated": "2026-09-16",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Pool Calculator: Own Chems — 보유 약품 기준 수영장 수질 계산기",
+  "path": "/content/blog/apps/pool-calculator/"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "slug": "note-reading",
+ "name": "Sight Reading: Note Trainer!",
+ "storeId": "6806565445",
+ "storeUrl": "https://apps.apple.com/kr/app/id6806565445",
+ "status": "live",
+ "category": "learn",
+ "oneLiner": "대보표에 음표 하나를 보여 주고 음이름이나 건반으로 답하게 하며, 틀린 음이 더 자주 나오도록 조절해 주는 악보 읽기 훈련 앱이다.",
+ "about": "한 음을 보고 이름을 말하고 다음으로 넘어가는 초견 훈련 앱이다. 음표 연습 앱 대부분이 보표의 절반만 보여 주는 것과 달리 기본 화면이 높은음자리와 낮은음자리를 함께 그린 대보표이고 보조선도 실제로 그려진다.\n음표는 소리로도 들려 주고 재생 버튼으로 몇 번이든 반복해 들을 수 있다. 틀리면 다음 문제로 넘어가기 전에 정답 음이 초록색으로 보표 위에 나타나고 정답 소리도 같이 들려서 눈과 귀로 동시에 정답을 익힌다. 소리는 녹음이 아니라 합성음이고 무음 스위치가 켜져도 나온다. 답마다 그 음의 정답률이 갱신되어 틀리는 음이 더 자주 나오고, 같은 음이 연속으로 나오지는 않는다. 드릴은 26가지로 높은음·낮은음 기본, 대보표, 가운데 도 주변, 보조선 세 줄, 조표 1샵부터 3플랫까지가 있고 직접 만들 수도 있다.",
+ "audience": "음악 기초 악보 읽기를 연습하는 학생, 보조선 음을 자꾸 헷갈리는 사람, 약한 음을 집중해서 반복하고 싶은 사람에게 맞는다.",
+ "features": [
+  "대보표를 기본으로 하며 보조선이 실제로 그려진다.",
+  "음표 소리를 합성음으로 들려 주고 정답을 놓치면 정답 음도 함께 들려 준다.",
+  "틀린 음이 더 자주 출제되고 같은 음은 연속으로 나오지 않는다.",
+  "기본, 보조선, 조표 등 26가지 드릴과 직접 만드는 맞춤 드릴이 있다.",
+  "세션이 끝나면 점수와 틀린 음 목록이 나온다."
+ ],
+ "howTo": [
+  "Choose drill에서 드릴을 고르거나 Custom drill에서 음자리표와 음 범위, 조표를 직접 정한다.",
+  "Practice 화면에서 음표를 보고 음이름 버튼이나 건반으로 답한다.",
+  "세션이 끝나면 Session result에서 틀린 음을 확인하고 Progress에서 약한 음의 추이를 본다."
+ ],
+ "notes": [
+  "마이크와 MIDI를 쓰지 않고 권한 요청이 없다.",
+  "음별 상세 정확도는 보상형 광고를 본 뒤 열리고 문제 풀이 중에는 광고가 끼어들지 않는다.",
+  "앱 화면은 영어이고 하단에 배너 광고가 있다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Sight Reading 앱 아이콘, 남색 바탕에 오선과 청록색 음표가 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "연습 화면. 보표 위에 음표 하나가 표시되고 아래에 C부터 G까지 음이름 버튼이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "홈 화면. 가장 약한 음 A5와 시작 버튼, 대보표 기본 드릴 정보가 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "세션 결과 화면. 정답률 85퍼센트와 틀린 음 목록, 결과 공유 버튼이 있다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6806565445 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/note-reading/03-spec/screens.json",
+   "app-factory/catalog/note-reading/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.notereading",
+  "version": "1.0",
+  "genre": "Education",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-11",
+  "updated": "2026-09-11",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Sight Reading: Note Trainer! — 오선 음표·건반 초견 연습",
+  "path": "/content/blog/apps/note-reading/"
+ }
+}

@@ -5,9 +5,10 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
+import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, appBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
+import {GENRE_SCHEMA} from './lib/apps_authoring.mjs';
 import {hubModel, contentNav, landingHtml, mirrorTrail} from './lib/hub.mjs';
 import {SITE, SITE_NAME, facts, pageMeta, cardPath, cardAlt} from './lib/og.mjs';
 const GAME_LASTMOD = '2026-10-06'; // /game/ 은 손으로 쓴 페이지 — 마지막 수정일 고정
@@ -68,9 +69,9 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
       {'@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/`},
       {'@type': 'ListItem', position: 2, name: SUBPAGES.find(x => x.key === page.key).label.ko, item: url}]});
   if (page.key === 'content' && contentHub) {
-    const names = {blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구'};
-    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 5,
-      itemListElement: ['blog', 'gamenews', 'gizmo', 'games', 'tools'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
+    const names = {blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구', apps: '내 앱'};
+    g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 6,
+      itemListElement: ['blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
   }
   return `<script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': g}).replace(/</g, '\\u003c')}</script>`;
 }
@@ -95,6 +96,9 @@ export function mirrorPages(data) {
   for (const f of jsonFiles('content-src/tools')) { const t = json(f), cat = grp('tools').find(x => x.items.some(i => i.slug === t.slug));
     pages.push({kind: 'tools', path: mirrorPath('tools', t.slug), title: t.title, shortTitle: t.title, description: t.description, metaLabel: cat.label, crumbs: mirrorTrail(data, 'tools', cat.id),
       body: toolBody(t, data.images.tools[t.slug]), schemaType: 'SoftwareApplication', image: `/assets/content/tools/${t.slug}-hero.webp`, genre: t.categories[0], section: cat.label.ko}); }
+  for (const f of jsonFiles('content-src/apps')) { const a = json(f), cat = grp('apps').find(x => x.items.some(i => i.slug === a.slug));
+    pages.push({kind: 'apps', path: mirrorPath('apps', a.slug), title: a.name, shortTitle: a.name, description: a.oneLiner, metaLabel: cat.label, crumbs: mirrorTrail(data, 'apps', cat.id),
+      body: appBody(a, data.images.apps[a.slug]), schemaType: 'MobileApplication', image: `/assets/content/apps/${a.slug}-icon.webp`, genre: a.store?.genre, appFact: a, section: cat.label.ko}); }
   return pages;
 }
 // 상세·색인 페이지 공용 JSON-LD. 상세는 Article(허브 주소가 mainEntityOfPage), 색인은 CollectionPage + ItemList.
@@ -106,6 +110,11 @@ function hubSchema(m, stamp, {profile}, type) {
     {'@type': 'Person', '@id': `${SITE}/#person`, name: '김진완', alternateName: ['Kim Jinwan', 'Kein'], url: `${SITE}/`, jobTitle: ['Software Product Manager', 'Developer'], knowsAbout: profile.strengths.map(s => s.title.en)},
     type === 'Article' && m.schemaType === 'VideoGame'
       ? {'@type': 'VideoGame', '@id': `${url}#game`, url, name: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', genre: m.genre, applicationCategory: 'Game', gamePlatform: 'Web browser', operatingSystem: 'Any',
+        image: SITE + m.image, author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}}
+      : type === 'Article' && m.schemaType === 'MobileApplication'
+      ? {'@type': 'MobileApplication', '@id': `${url}#app`, url, name: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', applicationCategory: GENRE_SCHEMA[m.genre] || 'UtilitiesApplication', operatingSystem: 'iOS',
+        ...(m.appFact.store?.minOs ? {requirements: `iOS ${m.appFact.store.minOs} or later`} : {}), ...(m.appFact.store?.price === 0 ? {offers: {'@type': 'Offer', price: '0', priceCurrency: 'KRW'}} : {}), ...(m.appFact.storeUrl ? {installUrl: m.appFact.storeUrl, downloadUrl: m.appFact.storeUrl} : {}),
+        ...(m.appFact.store?.version ? {softwareVersion: m.appFact.store.version} : {}), ...(m.appFact.store?.released ? {datePublished: m.appFact.store.released} : {}), ...(m.appFact.store?.updated ? {dateModified: m.appFact.store.updated} : {}),
         image: SITE + m.image, author: {'@id': `${SITE}/#person`}, publisher: {'@id': `${SITE}/#person`}, isPartOf: {'@id': `${SITE}/content/#webpage`}, mainEntityOfPage: {'@type': 'WebPage', '@id': url}}
       : type === 'Article' && m.schemaType === 'SoftwareApplication'
       ? {'@type': 'SoftwareApplication', '@id': `${url}#app`, url, name: m.shortTitle || m.title, description: m.description, inLanguage: 'ko', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Web browser',
@@ -161,6 +170,7 @@ export function buildAll({write = true} = {}) {
     hub_games_count: String(data.contentHub.sections.find(x => x.id === 'games').count.value),
     hub_gizmo_count: String(data.contentHub.sections.find(x => x.id === 'gizmo').count.value),
     hub_tools_count: String(data.contentHub.sections.find(x => x.id === 'tools').count.value),
+    hub_apps_count: String(data.contentHub.sections.find(x => x.id === 'apps').count.value),
     updated: STAMP,
     logo: logo(),
     logo_foot: logo('logo logo-foot'),

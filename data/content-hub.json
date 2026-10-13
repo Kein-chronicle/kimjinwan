@@ -2899,6 +2899,566 @@
      ]
     }
    ]
+  },
+  {
+   "id": "apps",
+   "url": "https://apps.apple.com/kr/developer/jinwan-kim/id1446513824",
+   "count": {
+    "value": 50,
+    "total": 50,
+    "as_of": "2026-10-13",
+    "source": "App Store 개발자 계정(Jinwan Kim, id1446513824)의 공개 앱 50개(iTunes lookup, 기준 2026-10-14) 중 소개글에 쓸 사실이 확인되는 50개. 우선순위: 허브 편집 원본 data/authoring/apps/<slug>.json(앱 소스·스토어 설명에서 확인한 사실로 쓴 한국어 소개) + 스토어 공개 정보 캐시 content-src/apps-store.json(이름·버전·분류·언어·가격·출시일). 이미지는 content-src/images.json 의 apps"
+   },
+   "groups": [
+    {
+     "id": "calc",
+     "label": {
+      "ko": "계산·측정",
+      "en": "Calculators"
+     },
+     "blurb": {
+      "ko": "운동·공사·촬영·장보기처럼 숫자를 맞춰야 하는 순간에 쓰는 계산기",
+      "en": "Calculators for moments when the numbers have to add up"
+     },
+     "items": [
+      {
+       "slug": "concrete-calculator",
+       "title": "Concrete Bags and Yards",
+       "summary": "슬래브, 벽, 기둥, 줄기초, 계단 거푸집의 치수를 줄자에서 읽은 그대로 넣으면 콘크리트 부피와 포대 수, 레미콘 주문량을 올림해서 알려 주는 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072458",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "cut-list",
+       "title": "Cut List: Named Parts",
+       "summary": "부품에 이름을 붙여 입력하면 자재 길이별로 톱날 두께까지 계산해 낭비가 적은 재단 배치와 절단 순서표를 만들어 주는 목재 재단 앱이다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809071968",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "depth-of-field",
+       "title": "Depth of Field: Two Subjects",
+       "summary": "화면에 담을 앞뒤 두 피사체의 거리를 넣으면 어디에 초점을 맞추고 조리개를 얼마로 써야 둘 다 선명한지 거꾸로 풀어 주는 심도 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072488",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "dew-point",
+       "title": "Dew Point: Vent Check",
+       "summary": "내가 가진 온습도계 값 두 쌍을 넣으면 창문을 열었을 때 방이 습해질지 마를지, 어느 표면에 결로가 맺힐지 알려 주는 이슬점 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072490",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "jet-lag",
+       "title": "Jet Lag: Both Clocks",
+       "summary": "출발지와 도착지의 현지 시각 두 개만 넣으면 취침, 기상, 빛 쬐기, 카페인 마감 시각을 집 시계와 현지 시계로 함께 적은 시차 적응 일정표를 만들어 준다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072410",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "plate-calculator",
+       "title": "Plate Calculator: What You Own",
+       "summary": "내가 가진 원판 구성과 바 무게를 그대로 입력해, 목표 무게를 가장 적은 원판으로 만드는 방법을 알려 주는 바벨 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072464",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "pool-calculator",
+       "title": "Pool Calculator: Own Chems",
+       "summary": "내가 가진 약품의 라벨 농도를 입력하면 수영장 수질 여섯 항목을 맞추는 투입량과 순서를 알려 주는 수영장 약품 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809071971",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "stair-calculator",
+       "title": "Stair Calculator: Both Ways",
+       "summary": "높이만 알아도, 길이나 디딤판 깊이를 함께 줘도 계단 단수 후보를 전부 보여 주고 스트링거 재단표까지 만들어 주는 계단 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072493",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "triangle-solver",
+       "title": "Triangle Solver Two Answers",
+       "summary": "세 변이나 두 변과 각처럼 여섯 가지 입력으로 삼각형을 풀고, 해가 둘이면 두 삼각형을 나란히, 해가 없으면 이유를 말해 주는 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809072365",
+       "released": "2026-09-15"
+      },
+      {
+       "slug": "pace-calculator",
+       "title": "Pace Calculator: Race Plan",
+       "summary": "거리·시간·페이스·속도 중 두 가지만 넣으면 나머지를 풀고, 구간별 기록표가 붙은 레이스 플랜 카드로 만들어 주는 달리기 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6806565533",
+       "released": "2026-09-12"
+      },
+      {
+       "slug": "unit-price",
+       "title": "Unit Price: Which Is Cheaper",
+       "summary": "가격, 묶음 개수, 용량을 진열대에 적힌 그대로 입력하면 어느 쪽이 단위당 더 싼지 맨 위에 짚어 주는 단가 비교 앱이다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808241774",
+       "released": "2026-09-12"
+      },
+      {
+       "slug": "word-counter",
+       "title": "Word Counter: Reading Time",
+       "summary": "글을 쓰거나 붙여넣는 즉시 단어·글자 수를 키보드 위에 보여 주고, 열 가지 통계와 읽는 시간, 목표 분량까지 알려 주는 글자 수 세기 앱이다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808241732",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "bike-tire-pressure",
+       "title": "Bike Tire Pressure: Any Width",
+       "summary": "체중, 타이어 폭, 노면을 넣으면 앞바퀴와 뒷바퀴의 권장 공기압 범위를 구하고, 타이어에 적힌 최대 공기압을 넘지 않게 잘라 주는 계산기다.",
+       "category": "calc",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808241911",
+       "released": "2026-09-09"
+      }
+     ],
+     "total": 13
+    },
+    {
+     "id": "table",
+     "label": {
+      "ko": "모임·보드게임 도구",
+      "en": "Table & group tools"
+     },
+     "blurb": {
+      "ko": "점수판·시계·대진표·추첨처럼 여럿이 모일 때 쓰는 도구",
+      "en": "Scoreboards, clocks, brackets and pickers for gatherings"
+     },
+     "items": [
+      {
+       "slug": "tournament-bracket",
+       "title": "Tournament Bracket: Undo Safe",
+       "summary": "참가자만 입력하면 단일·더블 엘리미네이션 대진표를 만들고, 앞 경기 결과를 고쳐도 영향받는 뒤 경기만 지워 주는 토너먼트 앱이다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808538442",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "chess-clock",
+       "title": "Chess Clock: Time Controls",
+       "summary": "피셔 증분, 브론스타인 딜레이, 초읽기 등 여섯 가지 시간 규칙을 고를 수 있고 대국이 끝나면 누가 어디서 시간을 썼는지 요약해 주는 체스 시계 앱이다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6807052194",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "score-keeper",
+       "title": "Score Keeper: Card & Board",
+       "summary": "카드·보드·다트·볼링 등 28가지 게임의 규칙을 알고 있는 점수판으로, 모든 플레이어와 라운드를 한 표에 보여 주고 어느 칸이든 고칠 수 있다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6806565297",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "seating-chart",
+       "title": "Seating Chart: Seat Rules",
+       "summary": "같이 앉힐 사람과 떼어놓을 사람 같은 규칙을 입력하면 모든 좌석을 배정하고, 앉히지 못한 사람은 이름을 짚어 알려 주는 좌석 배치 앱이다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6807052551",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "random-pick",
+       "title": "랜덤픽: 룰렛과 팀 나누기",
+       "summary": "선택지를 한 번 저장해 두고 룰렛, 중복 없는 추첨, 무작위 순서, 균형 팀 나누기에 계속 재사용하는 결정 도우미 앱이다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1524590153",
+       "released": "2020-08-16"
+      },
+      {
+       "slug": "shuffle-dice",
+       "title": "DiceFeel: D20 Dice Roller",
+       "summary": "d4부터 d100까지 최대 20개의 주사위를 한 식으로 묶어 굴리고 합계를 소리 내어 읽어 주는, 진동 반응이 있는 테이블탑 주사위 앱이다.",
+       "category": "table",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1527738243",
+       "released": "2020-08-14"
+      }
+     ],
+     "total": 6
+    },
+    {
+     "id": "game",
+     "label": {
+      "ko": "게임",
+      "en": "Games"
+     },
+     "blurb": {
+      "ko": "짧게 즐기는 퍼즐·생존·키우기 게임",
+      "en": "Short puzzle, survival and raising games"
+     },
+     "items": [
+      {
+       "slug": "floe-steps",
+       "title": "얼음 발자국",
+       "summary": "밀면 벽에 부딪힐 때까지 미끄러지고 지나온 얼음은 전부 무너지는, 어디서 멈출지를 묻는 100판짜리 경로 퍼즐 게임이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6806231749",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "ink-fold",
+       "title": "먹빛 겹치기",
+       "summary": "조각을 판에 겹쳐 놓아 칸마다 정해진 먹의 진하기를 정확히 맞추는, 겹침이 필수인 100판짜리 블록 퍼즐 게임이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6806554857",
+       "released": "2026-09-09"
+      },
+      {
+       "slug": "merge-whale",
+       "title": "Merge Whale - 고래 합치기",
+       "summary": "픽셀아트 고래를 수조에 떨어뜨려 같은 종끼리 합치면 더 큰 고래로 진화하는 물리 퍼즐 게임이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762543798",
+       "released": "2026-09-05"
+      },
+      {
+       "slug": "my-whale",
+       "title": "My Whale - 고래 키우기",
+       "summary": "정체를 알 수 없는 아기 고래에게 먹이를 주고 놀아 주며 키우면 약 하루 뒤 12종 중 하나로 진화하는 육성 게임이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762496731",
+       "released": "2026-09-05"
+      },
+      {
+       "slug": "whale-survivors",
+       "title": "Whale Survivors - 픽셀 고래 살아남기",
+       "summary": "픽셀 고래를 조작해 끝없이 몰려오는 위협을 피하고 능력을 골라 강해지는 서바이벌 액션 게임이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762507392",
+       "released": "2026-08-31"
+      },
+      {
+       "slug": "merge-cat",
+       "title": "Merge Cat - 고양이 합치기",
+       "summary": "동그랗게 말려 잠든 고양이를 떨어뜨려 같은 종끼리 합치며 11단계 고양이를 모으는 편안한 합치기 퍼즐이다.",
+       "category": "game",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762328904",
+       "released": "2026-04-16"
+      }
+     ],
+     "total": 6
+    },
+    {
+     "id": "learn",
+     "label": {
+      "ko": "배움·연습",
+      "en": "Learning"
+     },
+     "blurb": {
+      "ko": "단어, 악보, 연산 문제처럼 반복해서 익히는 앱",
+      "en": "Apps for drilling words, notes and arithmetic"
+     },
+     "items": [
+      {
+       "slug": "note-reading",
+       "title": "Sight Reading: Note Trainer!",
+       "summary": "대보표에 음표 하나를 보여 주고 음이름이나 건반으로 답하게 하며, 틀린 음이 더 자주 나오도록 조절해 주는 악보 읽기 훈련 앱이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6806565445",
+       "released": "2026-09-11"
+      },
+      {
+       "slug": "math-worksheet",
+       "title": "Math Worksheet: Answer Key",
+       "summary": "연산 종류와 자릿수, 문항 수를 고르면 세로식 문제지와 답안지를 한 쌍으로 만들어 주는 인쇄용 연산 문제지 앱이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6807052400",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "whale-book",
+       "title": "Whale Book - 고래 사전",
+       "summary": "고래 23종의 사진과 크기, 서식지, 먹이, 수명, 식별 특징을 한곳에서 읽는 모바일 고래 도감이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762495404",
+       "released": "2026-09-05"
+      },
+      {
+       "slug": "vocapuff-chinese",
+       "title": "VocaPuff - Chinese",
+       "summary": "중국어 단어를 한자와 병음, 한국어 뜻으로 하루 10개씩 외우고 학습 현황까지 확인하는 중국어 단어 암기 앱이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6761739785",
+       "released": "2026-04-09"
+      },
+      {
+       "slug": "vocapuff-english",
+       "title": "VocaPuff - English",
+       "summary": "영단어 2,000개를 하루 10개씩 카드로 외우고, 퀴즈와 복습으로 반복하는 가벼운 영단어 암기 앱이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6761618848",
+       "released": "2026-04-07"
+      },
+      {
+       "slug": "vocapuff-japanese",
+       "title": "VocaPuff - Japanese",
+       "summary": "일본어 단어를 한자, 읽는 법, 한국어 뜻 순서로 카드에 보여 주며 하루 10개씩 외우게 하는 일본어 단어 암기 앱이다.",
+       "category": "learn",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6761699855",
+       "released": "2026-04-07"
+      }
+     ],
+     "total": 6
+    },
+    {
+     "id": "faith",
+     "label": {
+      "ko": "신앙생활",
+      "en": "Faith"
+     },
+     "blurb": {
+      "ko": "성경 읽기·암송·교회력·금식처럼 신앙생활을 돕는 앱",
+      "en": "Apps that support Bible reading, memorization and the church year"
+     },
+     "items": [
+      {
+       "slug": "fast-plate",
+       "title": "Fast Plate: 금식 음식 판정",
+       "summary": "지키는 금식과 음식 이름을 고르면 먹어도 되는지, 제외인지, 라벨을 봐야 하는지를 이유와 함께 답해 주는 금식 음식 확인 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6810340099",
+       "released": "2026-09-12"
+      },
+      {
+       "slug": "hymn-crosswalk",
+       "title": "Hymn Crosswalk: 본문과 운율",
+       "summary": "이번 주 성경 본문을 넣으면 그 본문을 인용한 찬송을 많은 찬송가에 실린 순서로 찾아 주고, 운율이 같아 곡조를 바꿔 부를 수 있는 찬송까지 이어 주는 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6810637563",
+       "released": "2026-09-12"
+      },
+      {
+       "slug": "church-calendar",
+       "title": "교회력: 서방과 동방",
+       "summary": "아무 해나 넣으면 서방과 동방 교회의 부활절 같은 이동 축일 날짜를 한 행에 나란히 놓고 며칠 어긋나는지 보여 주는 교회력 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809195605",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "verse-memory",
+       "title": "성경 암송: 내 본문",
+       "summary": "쓰던 성경에서 본문을 붙여 넣으면 자주 틀리는 낱말부터 가려 가며 암송을 훈련시켜 주는 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809303727",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "reading-pace",
+       "title": "성경 통독 계획: 페이스",
+       "summary": "읽을 범위와 시작일, 종료일만 정하면 하루에 읽을 장과 절을 절 수로 고르게 나누어 주는 성경 통독 계획 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809288637",
+       "released": "2026-09-09"
+      },
+      {
+       "slug": "daily-bible-writing",
+       "title": "매일 성경 - 온라인 필사",
+       "summary": "오늘의 성경 구절을 직접 타이핑해 필사하고, 300구절 진행률과 달력 기록, 이미지 공유를 지원하는 필사 앱이다.",
+       "category": "faith",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6761673297",
+       "released": "2026-04-07"
+      }
+     ],
+     "total": 6
+    },
+    {
+     "id": "life",
+     "label": {
+      "ko": "생활·기록",
+      "en": "Daily life"
+     },
+     "blurb": {
+      "ko": "메모·목표·유통기한·취미 기록처럼 일상을 가볍게 남기는 앱",
+      "en": "Light apps for notes, goals, expiry dates and hobby counts"
+     },
+     "items": [
+      {
+       "slug": "crochet-row-counter",
+       "title": "Crochet Row Counter: Repeat",
+       "summary": "한 번 탭으로 단 수와 반복 구간 위치를 함께 올려 주고, 실수는 이력에서 되돌릴 수 있는 뜨개질 단 수 카운터다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808538046",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "expiration-tracker",
+       "title": "Expiration Tracker: Use First",
+       "summary": "이름과 인쇄된 유통기한, 보관 위치만 입력하면 지난 것과 곧 먹어야 할 것을 날짜 순서로 맨 위에 올려 주는 유통기한 관리 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6808538170",
+       "released": "2026-09-16"
+      },
+      {
+       "slug": "coffee-cut",
+       "title": "CoffeeCut: 카페인 기록",
+       "summary": "마신 음료와 크기, 잔 수만 고르면 카페인 양과 잠들 시간의 추정 잔량, 다음 잔의 예산을 계산해 주는 카페인 기록 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1528133014",
+       "released": "2026-09-11"
+      },
+      {
+       "slug": "lockin-message",
+       "title": "OneView: Expiring Secret",
+       "summary": "짧은 비밀 메시지를 기기에서 암호화해 한 번 열면 사라지는 링크로 만들어 주는 일회용 비밀 링크 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1523017286",
+       "released": "2020-07-10"
+      },
+      {
+       "slug": "good",
+       "title": "BrightPocket: Compliment Log",
+       "summary": "받은 칭찬과 스스로 뿌듯했던 순간을 비공개로 모아 두고 매일 한 장씩 다시 꺼내 보는 기록 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1521773296",
+       "released": "2020-07-06"
+      },
+      {
+       "slug": "sudden-note",
+       "title": "급노트 QuickInbox",
+       "summary": "앱, 위젯, 공유 시트에서 두 번의 조작으로 메모를 저장하고 1일·3일·7일 뒤 만료되도록 하는 임시 메모 받은함 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1521985749",
+       "released": "2020-07-04"
+      },
+      {
+       "slug": "one-thing-today",
+       "title": "오늘 딱 하나 - 하루 목표",
+       "summary": "끝없는 할 일 목록 대신 하루에 활성 목표를 정확히 하나만 남기고, 위젯과 알림으로 가까이 두게 하는 목표 앱이다.",
+       "category": "life",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id1446513825",
+       "released": "2019-01-05"
+      }
+     ],
+     "total": 7
+    },
+    {
+     "id": "mind",
+     "label": {
+      "ko": "테스트·재미",
+      "en": "Tests & fun"
+     },
+     "blurb": {
+      "ko": "꿈 해석·성격 테스트·반응속도 측정처럼 가볍게 해 보는 앱",
+      "en": "Dream readings, personality tests and reaction timing for a light moment"
+     },
+     "items": [
+      {
+       "slug": "pocket-monsters",
+       "title": "누비즈: 성격 심리테스트",
+       "summary": "본성, 관계 맺는 방식, 충전하는 방식을 5문항씩 따로 물어 32종 오리지널 캐릭터 중 세 마리를 만나게 하는 성격 심리테스트 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6812976085",
+       "released": "2026-09-24"
+      },
+      {
+       "slug": "animal-personality",
+       "title": "동물 성격: 듀엣",
+       "summary": "같은 스무 문항에 두 번 답해 친한 사람들 앞의 나와 새 모임에서의 나를 두 마리 동물로 나란히 비교하는 성격 테스트 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6809599027",
+       "released": "2026-09-10"
+      },
+      {
+       "slug": "pocket-answer",
+       "title": "작은 답안지 - Pocket Answer",
+       "summary": "다섯 가지 선택에 답하면 오늘의 마음에 맞는 짧은 조언 한 편을 카드로 건네주는 감성 조언 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6762281001",
+       "released": "2026-09-05"
+      },
+      {
+       "slug": "dream-meaning",
+       "title": "Dream Meaning: Symbol Reader",
+       "summary": "꿈에서 본 상징 1~3개와 그날 밤의 느낌을 골라 한 편의 글로 읽어 주는, 인터넷 없이 되는 해몽 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6805266362",
+       "released": "2026-09-03"
+      },
+      {
+       "slug": "reaction-time",
+       "title": "Reaction Time Test: Millis",
+       "summary": "초록으로 바뀌는 순간 화면을 눌러 반응 속도를 밀리초로 재고, 다섯 번 시도의 중앙값과 편차까지 보여 주는 반응속도 테스트 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6805464656",
+       "released": "2026-09-03"
+      },
+      {
+       "slug": "yumyum-type-test",
+       "title": "냠냠 성격 테스트",
+       "summary": "12개 질문에 답하면 16가지 음식 캐릭터 중 나를 닮은 하나를 결과 카드로 보여 주는 귀여운 성격 테스트 앱이다.",
+       "category": "mind",
+       "status": "live",
+       "url": "https://apps.apple.com/kr/app/id6761509288",
+       "released": "2026-04-02"
+      }
+     ],
+     "total": 6
+    }
+   ]
   }
  ]
 }

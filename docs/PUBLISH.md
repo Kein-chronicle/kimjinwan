@@ -39,6 +39,7 @@ scripts/publish.sh --reason "..." --force              # 소스 변화가 없어
 ## 호출 예
 - 게임: `scripts/publish.sh --reason "게임 <id> 허브 등록"`
 - 도구: `scripts/publish.sh --reason "도구 <slug> 허브 등록"`
+- 앱: `scripts/publish.sh --reason "앱 <이름> 허브 등록"`(편집 원본·이미지·스냅샷을 먼저 커밋, docs/AUTHORING_APPS.md)
 - 기즈모 항목: `scripts/publish.sh --reason "AI 활용 가이드 <slug> 반영"`
 - 사람 수동 점검: `scripts/publish.sh --reason "점검" --dry-run --force`
 

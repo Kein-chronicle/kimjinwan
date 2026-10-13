@@ -1,6 +1,7 @@
 // scripts/build_content_hub.mjs — 콘텐츠 허브(/content/) 데이터 스냅샷 생성기. 수동 실행:
 //   node scripts/build_content_hub.mjs --as-of 2026-10-13     # data/content-hub.json 을 다시 쓴다
 //   node scripts/build_content_hub.mjs --as-of 2026-10-13 --check   # 파일을 쓰지 않고 현재 파일과 같은지만 본다
+//   apps     허브 편집 원본 data/authoring/apps/*.json + 스토어 공개 정보 캐시 content-src/apps-store.json(캐시 갱신은 build_content_apps.mjs --refresh-store, 네트워크 필요)
 // 산출: data/content-hub.json(색인) + data/content-redirects.json(옛→새 경로) + content-src/excluded.json(제외 사유) + content-src/{blog,gizmo}/**.json(개별 페이지 본문 스냅샷). 모두 메모리에서 끝까지 만든 뒤에 쓴다 — 어느 단계든 실패하면 기존 산출물은 그대로다.
 // 시각을 읽지 않는다: 기준일은 --as-of 로 받고, 같은 입력 저장소 상태면 출력은 바이트까지 같다.
 // 읽기만 하는 출처(형제 저장소, 수정 금지):
@@ -14,6 +15,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {collectTool, toolBodyChars, toolEligible, parseToolCatalog, TOOL_IDS} from './lib/hub_sources.mjs';
 import {buildGames} from './lib/games_authoring.mjs';
+import {buildApps, readStore} from './lib/apps_authoring.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HOME = os.homedir();
@@ -128,10 +130,10 @@ function newsSection() {
 }
 
 // ── 웹게임 · 웹 도구: 로컬 저장소의 실제 자료에서 소개글을 만든다(사실이 모자라면 제외) ──
-const EXCLUDED = {games: [], tools: []};
+const EXCLUDED = {games: [], tools: [], apps: []};
 // 허브 화면에는 '원문' 표기를 쓰지 않는다 — 소스 문구 속 일반 낱말 '원문'은 같은 뜻의 '원본'으로 바꿔 싣는다.
 const nw = v => (typeof v === 'string' ? v.replace(/원문/g, '원본') : Array.isArray(v) ? v.map(nw) : v);
-const IMAGES = fs.existsSync(path.join(ROOT, 'content-src/images.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'content-src/images.json'), 'utf8')) : {games: {}, tools: {}};
+const IMAGES = fs.existsSync(path.join(ROOT, 'content-src/images.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'content-src/images.json'), 'utf8')) : {games: {}, tools: {}, apps: {}};
 function gamesSection() {
   const all = JSON.parse(fs.readFileSync(path.join(GAMES, 'src/games.json'), 'utf8')).filter(g => !g.legacy).sort((a, b) => a.slug.localeCompare(b.slug));
   const r = buildGames({root: ROOT, all, asOf: AS_OF, images: IMAGES, home: HOME, gamesRepo: GAMES}); // 편집 원본 우선·소스 추출 폴백 — build_content_games.mjs 와 같은 함수
@@ -212,13 +214,21 @@ const blog = blogSection();
 const slugOf = u => u.split('/').filter(Boolean).pop();
 const blogApps = new Map(blog.groups.find(g => g.id === 'apps').items.map(i => [slugOf(i.url), {title: i.title, path: `/content/blog/apps/${slugOf(i.url)}/`}]));
 const news = newsSection(), gizmo = await gizmoSection();
-const out = {as_of: AS_OF, sections: [blog, news, gizmo, gamesSection(), toolsSection(blogApps)]};
+// ── 내 앱: 편집 원본(data/authoring/apps) + 스토어 공개 정보 캐시(content-src/apps-store.json) — build_content_apps.mjs 와 같은 함수 ──
+function appsSection() {
+  const r = buildApps({root: ROOT, asOf: AS_OF, images: IMAGES, store: readStore(ROOT), blogApps});
+  for (const [rel, fact] of r.extra) EXTRA.set(rel, fact);
+  EXCLUDED.apps.push(...r.excluded);
+  if (r.warnings.length) console.error('apps authoring 경고:\n  ' + r.warnings.join('\n  '));
+  return r.section;
+}
+const out = {as_of: AS_OF, sections: [blog, news, gizmo, gamesSection(), toolsSection(blogApps), appsSection()]};
 const files = new Map([['data/content-hub.json', JSON.stringify(out, null, 1) + '\n']]);
 // 옛 경로 → 새 경로 매핑(서버 쪽 301 에 쓴다 — 여기서는 매핑만 남긴다)
 files.set('data/content-redirects.json', JSON.stringify({as_of: AS_OF, note: '이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로 옮긴 매핑. nginx 301 용.', redirects: REDIRECTS.sort((a, b) => a[0].localeCompare(b[0])).map(([from, to]) => ({from, to, status: 301}))}, null, 1) + '\n');
-files.set('content-src/excluded.json', JSON.stringify({as_of: AS_OF, games: EXCLUDED.games, tools: EXCLUDED.tools}, null, 1) + '\n');
+files.set('content-src/excluded.json', JSON.stringify({as_of: AS_OF, games: EXCLUDED.games, tools: EXCLUDED.tools, apps: EXCLUDED.apps}, null, 1) + '\n');
 for (const [rel, obj] of [...EXTRA].sort((a, b) => a[0].localeCompare(b[0]))) files.set(rel, JSON.stringify(obj, null, 1) + '\n');
-const KEEP = new Set(['content-src/images.json']); // build_content_images.mjs 가 관리하는 파일
+const KEEP = new Set(['content-src/images.json', 'content-src/apps-store.json']); // build_content_images.mjs 가 관리하는 파일
 const existing = fs.existsSync(path.join(ROOT, 'content-src')) ? fs.readdirSync(path.join(ROOT, 'content-src'), {recursive: true}).filter(f => f.endsWith('.json')).map(f => 'content-src/' + f) : [];
 const stale = existing.filter(f => !files.has(f) && !KEEP.has(f));
 const same = [...files].every(([rel, t]) => fs.existsSync(path.join(ROOT, rel)) && fs.readFileSync(path.join(ROOT, rel), 'utf8') === t) && !stale.length;
@@ -228,4 +238,4 @@ for (const f of stale) fs.rmSync(path.join(ROOT, f));
 for (const d of fs.readdirSync(path.join(ROOT, 'content-src'), {recursive: true}).map(f => path.join(ROOT, 'content-src', f)).filter(d => fs.statSync(d).isDirectory()).sort((a, b) => b.length - a.length)) if (!fs.readdirSync(d).length) fs.rmdirSync(d); // 비어 버린 폴더 정리
 const n = s => s.groups.map(g => `${g.id}:${g.items.length}`).join(' ');
 console.log(`wrote ${files.size} files (${stale.length} stale removed) —`, out.sections.map(s => `${s.id}(${n(s)}; count ${s.count.value}${s.count.total ? '/' + s.count.total : ''})`).join(' | '));
-console.log(`excluded: games ${EXCLUDED.games.length}, tools ${EXCLUDED.tools.length}`);
+console.log(`excluded: games ${EXCLUDED.games.length}, tools ${EXCLUDED.tools.length}, apps ${EXCLUDED.apps.length}`);

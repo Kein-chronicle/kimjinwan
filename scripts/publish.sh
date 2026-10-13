@@ -105,7 +105,7 @@ ssh_ "set -e; sudo mv /tmp/kj-$V1 $REL/releases/$V1; sudo chown -R root:root $RE
 
 # ---- 8. 검증(실패하면 즉시 롤백) ----
 FAIL=""
-for p in / /works/ /factories/ /career/ /game/ /content/ /content/games/ /content/tools/ /content/game-news/ /content/blog/ /content/gizmo/ /sitemap.xml /ads.txt /app-ads.txt; do
+for p in / /works/ /factories/ /career/ /game/ /content/ /content/games/ /content/tools/ /content/apps/ /content/game-news/ /content/blog/ /content/gizmo/ /sitemap.xml /ads.txt /app-ads.txt; do
   c="$(curl -s -o /dev/null -w '%{http_code}' "https://kimjinwan.com$p")"; [ "$c" = 200 ] || FAIL="$FAIL $c:$p"
 done
 for p in "" content/ content/games/; do

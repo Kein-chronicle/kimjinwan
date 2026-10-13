@@ -1,5 +1,6 @@
 // scripts/lib/render.mjs
 import {icon} from './icons.mjs';
+import {GENRE_KO, LANG_KO, STATUS_LABEL as APP_STATUS, APP_CATEGORIES} from './apps_authoring.mjs';
 export const EXT = 'target="_blank" rel="noopener noreferrer"';
 const STATUS_LABEL = {live: 'LIVE', released: 'RELEASED', experiment: 'EXPERIMENT', prelaunch: 'PRE-LAUNCH'};
 
@@ -280,6 +281,9 @@ export const HUB_SECTIONS = [
   {id: 'tools', icon: 'wrench', title: {ko: '웹 도구', en: 'Web tools'},
     intro: {ko: '브라우저에서 바로 쓰는 계산기와 변환기입니다. 도구마다 무엇을 입력받아 무엇을 내놓는지, 알아둘 한계는 무엇인지 화면 캡처와 함께 적었습니다. 설명은 한국어입니다.',
       en: 'Calculators and converters that work in the browser. Each page shows a screen capture and says what the tool takes in, what it gives back and what limits to know. Descriptions are written in Korean.'}},
+  {id: 'apps', icon: 'smartphone', title: {ko: '내 앱', en: 'My apps'},
+    intro: {ko: '앱스토어에서 내려받아 쓰는 모바일 앱입니다. 앱마다 아이콘과 화면, 무슨 앱인지, 어떤 사람에게 맞는지, 핵심 기능과 사용 방법, 알아둘 점을 적었고 앱스토어 바로가기를 달았습니다. 설명은 한국어입니다.',
+      en: 'Mobile apps you get from the App Store. Each page has the icon and screens, what the app is, who it suits, key features, how to use it and what to know, with a link to the App Store. Descriptions are written in Korean.'}},
 ];
 
 // ===== 콘텐츠 허브 상세 페이지(/content/<종류>/…/) — 허브가 자기 주소를 canonical 로 가진다 =====
@@ -397,6 +401,35 @@ ${h2({ko: '진행', en: 'Progress'})}${list(g.progress)}
 ${h2({ko: '처음 하는 사람을 위한 팁', en: 'Tips'})}${list(g.tips)}
 ${h2({ko: '플레이 화면', en: 'Gameplay'})}<p lang="ko">${esc(g.screens)}</p>${shots ? `<div class="detail-gallery">${shots}</div>` : ''}
 <p class="detail-verified" lang="ko">${esc(g.verified.date)} 직접 실행해 확인한 내용입니다.</p>`;
+}
+// ── 내 앱 상세 본문(편집 원본 → content-src/apps/<slug>.json) ──
+const APP_IMG = '/assets/content/apps';
+const fmtDate = d => (d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d.slice(0, 4)}년 ${Number(d.slice(5, 7))}월 ${Number(d.slice(8))}일` : '');
+export const hasHangul = v => /[가-힣]/.test(v);
+export function appBody(a, rec) {
+  const A = a.images || [], cat = APP_CATEGORIES.find(c => c.id === a.category);
+  const st = a.store || {}, list = items => `<ul>${items.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ul>`;
+  const shots = (rec.shots || []).map((sz, i) => `<figure${sz[0] > sz[1] ? ' class="wide"' : ''}><img src="${APP_IMG}/${a.slug}-${i + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(A[i + 1]?.alt || `${a.name} 화면 ${i + 1}`)}"${i ? ' loading="lazy"' : ''}></figure>`).join('');
+  const langs = (st.languages || []).map(l => LANG_KO[l]).filter(Boolean);
+  const facts = [[{ko: '분류', en: 'Category'}, bi(cat.label)], st.genre ? [{ko: '스토어 분류', en: 'Store category'}, esc(GENRE_KO[st.genre] || st.genre)] : null,
+    [{ko: '제공 상태', en: 'Status'}, bi(APP_STATUS[a.status])], st.price === 0 ? [{ko: '가격', en: 'Price'}, '무료'] : null,
+    st.released ? [{ko: '출시일', en: 'Released'}, esc(fmtDate(st.released))] : null, st.updated ? [{ko: '최근 갱신', en: 'Last updated'}, esc(fmtDate(st.updated))] : null,
+    st.version ? [{ko: '현재 버전', en: 'Version'}, esc(st.version)] : null, st.devices?.length ? [{ko: '지원 기기', en: 'Devices'}, esc(st.devices.join('·'))] : null,
+    st.minOs ? [{ko: '필요 OS', en: 'Requires'}, `iOS ${esc(st.minOs)} 이상`] : null, langs.length ? [{ko: '스토어 표기 언어', en: 'Store languages'}, esc(langs.join(', '))] : null,
+    st.rating ? [{ko: '연령 등급', en: 'Age rating'}, esc(st.rating)] : null, st.bundleId ? [{ko: '번들 ID', en: 'Bundle ID'}, `<code>${esc(st.bundleId)}</code>`] : null].filter(Boolean);
+  const buy = a.storeUrl ? `<p class="detail-cta"><a class="btn btn-primary" href="${esc(a.storeUrl)}" ${EXT}>${bi({ko: 'App Store에서 보기', en: 'View on the App Store'})}${ext}</a></p>`
+    : `<p class="detail-cta"><span class="btn btn-ghost" aria-disabled="true">${bi({ko: '심사 중 · 아직 스토어에 없음', en: 'In review · not on the store yet'})}</span></p>`;
+  return `<div class="app-hero"><img class="app-icon" src="${APP_IMG}/${a.slug}-icon.webp" width="${rec.icon[0]}" height="${rec.icon[1]}" alt="${esc(A[0]?.alt || `${a.name} 앱 아이콘`)}" fetchpriority="high">
+<div class="app-hero-b"><p class="detail-lead" lang="ko">${esc(a.oneLiner)}</p><p class="app-badges"><span class="chip" lang="ko">${esc(cat.label.ko)}</span><span class="chip chip-status chip-${a.status}">${bi(APP_STATUS[a.status])}</span></p>${buy}</div></div>
+<div class="app-shots" role="group" aria-label="screens">${shots}</div>
+${h2({ko: '이런 앱입니다', en: 'About'})}${a.about.split(/\n+/).map(x => `<p lang="ko">${esc(x)}</p>`).join('')}
+${h2({ko: '이런 분께 맞습니다', en: 'Who it is for'})}<p lang="ko">${esc(a.audience)}</p>
+${h2({ko: '핵심 기능', en: 'Key features'})}${list(a.features)}
+${h2({ko: '사용 방법', en: 'How to use'})}<ol>${a.howTo.map(x => `<li lang="ko">${esc(x)}</li>`).join('')}</ol>
+${h2({ko: '알아둘 점', en: 'Good to know'})}${list(a.notes)}
+${h2({ko: '앱 정보', en: 'App info'})}<dl class="detail-facts">${facts.map(([l, v]) => `<dt>${bi(l)}</dt><dd lang="ko">${v}</dd>`).join('')}</dl>
+${a.guide ? `<p class="detail-more"><a href="${esc(a.guide.path)}" lang="ko">제작·심사 기록 읽기</a></p>` : ''}
+<p class="detail-verified" lang="ko">${esc(a.verified.date)} 앱스토어 공개 정보와 앱 구성 기록으로 확인한 내용입니다.</p>`;
 }
 export function toolBody(t, rec) {
   const name = t.title;

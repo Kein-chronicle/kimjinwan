@@ -1,0 +1,84 @@
+{
+ "slug": "plate-calculator",
+ "name": "Plate Calculator: What You Own",
+ "storeId": "6809072464",
+ "storeUrl": "https://apps.apple.com/kr/app/id6809072464",
+ "status": "live",
+ "category": "calc",
+ "oneLiner": "내가 가진 원판 구성과 바 무게를 그대로 입력해, 목표 무게를 가장 적은 원판으로 만드는 방법을 알려 주는 바벨 계산기다.",
+ "about": "바벨에 얼마를 끼워야 목표 무게가 되는지 알려 주지만, 가상의 표준 원판 세트가 아니라 내가 가진 원판을 기준으로 계산한다. 원판 크기마다 몇 쌍을 갖고 있는지 입력하고, 집 랙과 헬스장처럼 장소마다 세트를 따로 저장해 바꿔 쓴다.\n바 무게도 20kg, 15kg, 44lb 올림픽 바, 트랩 바, EZ바 등 16개 프리셋 중에서 고르거나 직접 숫자를 입력한다. 가진 원판으로 정확히 만들 수 없는 무게를 입력하면 바로 아래와 바로 위의 가장 가까운 무게를 각각 차이와 함께 알려 준다. 만드는 방법이 여럿이면 들고 끼울 원판 수가 가장 적은 쪽을 고른다.",
+ "audience": "집에 원판이 몇 종류밖에 없는 사람, 헬스장마다 바 무게와 원판 구성이 달라 매번 암산하는 사람, 웜업 세트의 무게를 실제로 끼울 수 있는 값으로 맞추고 싶은 사람에게 맞는다.",
+ "features": [
+  "원판 크기별 보유 쌍 수를 입력하고 장소별로 세트를 따로 저장해 전환할 수 있다.",
+  "바 무게 프리셋 16개와 직접 입력을 지원한다.",
+  "정확히 만들 수 없는 무게는 가장 가까운 아래·위 무게와 각각의 차이를 보여 준다.",
+  "칼라(클립)를 켜면 양쪽 칼라 무게를 목표에서 먼저 빼고 계산한다.",
+  "킬로그램과 파운드가 모든 화면에 나란히 표시된다.",
+  "웜업 세트 3~5개의 무게를 끼울 수 있는 값으로 맞춰 준다. 세트 사이에 뺄 원판과 끼울 원판 목록은 보상형 광고를 본 뒤 열린다."
+ ],
+ "howTo": [
+  "Plates 탭에서 가진 원판의 크기와 쌍 수를 입력한다.",
+  "바 무게를 프리셋에서 고르거나 직접 입력한다.",
+  "목표 무게를 입력하면 한쪽에 끼울 원판 조합이 바 그림 위에 표시된다. 웜업이 필요하면 'Build the warm-up'을 누른다."
+ ],
+ "notes": [
+  "칼라 설정을 잘못 두면 모든 세트의 무게가 5kg 가까이 어긋나므로 처음에 칼라 사용 여부부터 맞춰 둔다.",
+  "앱은 원판 계산 도구이고 훈련 코칭이나 의학 조언이 아니라고 앱 안 안내에 적혀 있다.",
+  "영어, 한국어, 일본어, 중국어, 독일어, 프랑스어, 스페인어를 지원하고 하단에 배너 광고가 붙는다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Plate Calculator 앱 아이콘, 검은 바탕에 빨강·파랑·노랑 원판이 끼워진 바벨이 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "계산 화면. 100kg 바벨 그림에 양쪽 원판이 끼워져 있고 Plates, Gyms, Warm-up 버튼이 아래에 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "원판 설정 화면. 25kg부터 2.5kg까지 크기별 쌍 수를 늘리고 줄이는 버튼이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "웜업 화면. 세트 4개의 무게와 끼울 원판 구성이 목록으로 나온다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6809072464 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/plate-calculator/03-spec/screens.json",
+   "app-factory/catalog/plate-calculator/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.platecalculator",
+  "version": "1.0",
+  "genre": "Utilities",
+  "languages": [
+   "EN",
+   "FR",
+   "DE",
+   "JA",
+   "KO",
+   "ES",
+   "ZH"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-15",
+  "updated": "2026-09-16",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Plate Calculator: What You Own — 보유 원판 기준 바벨 중량 계산기",
+  "path": "/content/blog/apps/plate-calculator/"
+ }
+}

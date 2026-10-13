@@ -1,0 +1,77 @@
+{
+ "slug": "math-worksheet",
+ "name": "Math Worksheet: Answer Key",
+ "storeId": "6807052400",
+ "storeUrl": "https://apps.apple.com/kr/app/id6807052400",
+ "status": "live",
+ "category": "learn",
+ "oneLiner": "연산 종류와 자릿수, 문항 수를 고르면 세로식 문제지와 답안지를 한 쌍으로 만들어 주는 인쇄용 연산 문제지 앱이다.",
+ "about": "덧셈, 뺄셈, 곱셈, 나눗셈, 또는 네 가지를 섞은 문제지를 만드는 앱이다. 자릿수와 문항 수를 고르면 고르는 사이에 이미 문제지가 만들어진다. 답안지는 언제나 문제지와 함께 만들어져서 구독이나 업그레이드 없이 둘 다 쓸 수 있다.\n뺄셈과 나눗셈은 실제로 필산하는 방식 그대로 오른쪽 맞춤에 줄이 그어진 세로식으로 배치되고 받아올림 공간도 있다. 문제지 아래에는 시드 번호가 인쇄되며, 그 번호를 다시 입력하면 똑같은 문제지가 나온다. 결석한 학생이나 3주 뒤 재시험, 추가 인쇄에 쓰기 좋다. 1학년부터 4학년 수준의 프리셋이 27개 있고 받아올림, 받아내림, 나머지, 음수 결과는 각각 스위치로 켠다. 앱은 화면에서 풀게 하지 않고 점수나 별을 주지 않으며, 종이를 만드는 어른을 위한 도구다.",
+ "audience": "연산 연습지를 인쇄해 아이를 가르치는 부모와 교사, 채점용 답안지가 함께 필요한 사람에게 맞는다.",
+ "features": [
+  "덧셈, 뺄셈, 곱셈, 나눗셈과 혼합 문제를 자릿수와 문항 수로 정한다.",
+  "문제지와 답안지가 항상 한 쌍으로 만들어진다.",
+  "뺄셈과 나눗셈은 세로 필산 형식으로 배치한다.",
+  "문제지에 인쇄된 시드를 입력하면 같은 문제지가 다시 나온다.",
+  "1~4학년 수준의 프리셋 27개와 사용자 설정을 지원한다."
+ ],
+ "howTo": [
+  "Presets에서 프리셋을 고르거나 Builder에서 연산, 자릿수, 문항 수를 정한다.",
+  "Worksheet 화면의 문제지를 인쇄하거나 공유한다.",
+  "Answer key 화면의 답안지로 채점한다. 같은 문제지가 필요하면 시드를 입력한다."
+ ],
+ "notes": [
+  "문제를 화면에서 풀거나 점수를 기록하는 기능은 없다.",
+  "종이 화면 둘에는 광고가 붙지 않는다. 같은 설정의 변형 세 벌은 보상형 광고를 본 뒤 열린다.",
+  "앱 화면은 영어이고 인터넷 없이 쓸 수 있다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Math Worksheet 앱 아이콘, 줄 쳐진 종이와 붉은 체크 표시가 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "문제지 화면. 세로식 뺄셈 문제들이 오른쪽 맞춤으로 줄지어 있고 이름과 날짜 칸이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "답안지 화면. 문제 번호별 정답이 표로 정리되어 있고 공유·인쇄 버튼이 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "설정 화면. 두 자릿수 뺄셈 문제지 요약과 시드 번호, 문제지 열기 버튼이 있다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6807052400 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/math-worksheet/03-spec/screens.json",
+   "app-factory/catalog/math-worksheet/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.mathworksheet",
+  "version": "1.0",
+  "genre": "Education",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-10",
+  "updated": "2026-09-10",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Math Worksheet: Answer Key — 문제지와 답안지 자동 생성",
+  "path": "/content/blog/apps/math-worksheet/"
+ }
+}

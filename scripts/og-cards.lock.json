@@ -59,11 +59,11 @@
       "name": "김진완",
       "role": "개발자 · PM",
       "kicker": "CONTENT",
-      "headline": "글 285편과 AI 활용 가이드·웹게임·웹 도구 모음",
+      "headline": "글 285편과 AI 활용 가이드·웹게임·웹 도구·앱 모음",
       "domain": "kimjinwan.com"
     },
-    "sha256": "a20d80601dee8efb9074b2df42c68ae911238ae3061c8d901c16d3b864eed032",
-    "bytes": 14874
+    "sha256": "eabb577fa6b6ea3ddc0fd2032ac2663c32e5fa71ee69b0270df15d5b842cdda7",
+    "bytes": 15438
   },
   "game": {
     "file": "assets/og/game.png",

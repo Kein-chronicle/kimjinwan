@@ -90,13 +90,14 @@ function validateProfile(p, err) {
 export const HUB_MIN_SUMMARY = 40;
 export const HUB_MIN_GIZMO_SUMMARY = 30; // 한 줄 설명 + 추천 대상 한 줄
 export const HUB_MIN_BLOG_SUMMARY = 20; // 전체 글을 싣는 블로그·게임 소식은 짧은 설명이 있는 글도 있다
-export const HUB_SECTION_IDS = ['blog', 'gamenews', 'gizmo', 'games', 'tools'];
+export const HUB_SECTION_IDS = ['blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'];
 const URL_RULE = {
   blog: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/(ai|apps|fiction)\/[\w-]+\/$/.test(u),
   gamenews: u => /^https:\/\/blog\.kimjinwan\.com\/ko\/games\/[\w-]+\/$/.test(u),
   gizmo: u => /^https:\/\/gizmo-store\.com\/tool\/[\w-]+$/.test(u),
   games: u => /^https:\/\/games\.kimjinwan\.com\/play\/[\w-]+\/$/.test(u),
   tools: u => /^https:\/\/apps\.kimjinwan\.com\/[\w-]+\/$/.test(u),
+  apps: u => /^https:\/\/apps\.apple\.com\/kr\/app\/id\d+$/.test(u),
 };
 function validateContentHub(hub, err) {
   if (!DATE.test(hub.as_of || '')) err.push('contentHub.as_of must be YYYY-MM-DD');
@@ -117,8 +118,8 @@ function validateContentHub(hub, err) {
       if (s.id === 'blog' || s.id === 'gamenews') { if (g.total !== g.items.length) err.push(`${w}: total must equal items`); }
       for (const it of g.items || []) {
         n++; const iw = `${w}.${it.url}`;
-        if (!URL_RULE[s.id](it.url || '')) err.push(`${iw}: url does not match the ${s.id} pattern`);
-        if (seen.has(it.url)) err.push(`${iw}: duplicate url`); seen.add(it.url);
+        if (!(s.id === 'apps' && it.status === 'in_review') && !URL_RULE[s.id](it.url || '')) err.push(`${iw}: url does not match the ${s.id} pattern`);
+        const key = it.url || `${s.id}:${it.slug}`; if (seen.has(key)) err.push(`${iw}: duplicate url`); seen.add(key);
         const title = s.id === 'games' ? (it.title && it.title.ko && it.title.en) : it.title;
         if (!title) err.push(`${iw}: title required`);
         if (s.id === 'blog' || s.id === 'gamenews') { if (!DATE.test(it.date || '')) err.push(`${iw}: date required`); text(iw, it.summary, HUB_MIN_BLOG_SUMMARY); }

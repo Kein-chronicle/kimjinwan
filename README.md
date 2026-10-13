@@ -15,6 +15,7 @@ AI로 만들고 운영하는 서비스, 웹게임, 웹 도구, 블로그, 11년 
 - `docs/` — 스펙과 구현 계획
 - `docs/AUTHORING_GAMES.md` — 웹게임 소개 편집 원본(`data/authoring/games/<id>.json`) 작성 기준·템플릿·등록 절차(공장 게임 포지용). 점검: `node scripts/hub_check_game.mjs <id>`
 - `docs/AUTHORING_TOOLS.md` — 웹 도구 소개가 읽히는 곳(`tool-catalog.ts`·`page.tsx` 정적 문구)·자격 기준·부족할 때 고칠 위치(공장 웹툴용). 점검: `node scripts/hub_check_tool.mjs <slug>`
+- `docs/AUTHORING_APPS.md` — 내 앱(앱스토어 앱) 소개 편집 원본(`data/authoring/apps/<slug>.json`) 작성 기준·이미지 규칙·새 앱 추가 절차. 점검: `node scripts/hub_check_app.mjs <slug>`, 스냅샷: `node scripts/build_content_apps.mjs`
 - `build_data.py` + `trans_en.py` — projects.json → js/data.js 생성기(로컬용)
 
 ## 개발

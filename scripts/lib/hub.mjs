@@ -2,7 +2,8 @@
 // 한 페이지에 길게 나열하지 않는다: 랜딩(/content/) → 섹션 → 카테고리 → 페이지(20건) → 상세(/content/<종류>/…/).
 // 색인·상세 모두 자기 자신이 canonical 이다.
 import {icon} from './icons.mjs';
-import {esc, bi, EXT, ext, open, asOf, HUB_SECTIONS, mirrorPath, crumbTrail} from './render.mjs';
+import {esc, bi, EXT, ext, open, asOf, HUB_SECTIONS, mirrorPath, crumbTrail, hasHangul} from './render.mjs';
+import {STATUS_LABEL as APP_STATUS} from './apps_authoring.mjs';
 
 export const PER_PAGE = 20;
 export const SITE = 'https://kimjinwan.com';
@@ -14,7 +15,7 @@ export const pageHref = (base, n) => (n === 1 ? base : `${base}page/${n}/`);
 const slugOf = url => url.split('/').filter(Boolean).pop();
 
 // 섹션 순서 = 보조 내비 순서
-export const NAV = [['blog', 'blog'], ['gamenews', 'gamenews'], ['gizmo', 'gizmo'], ['games', 'games'], ['tools', 'tools']];
+export const NAV = [['blog', 'blog'], ['gamenews', 'gamenews'], ['gizmo', 'gizmo'], ['games', 'games'], ['tools', 'tools'], ['apps', 'apps']];
 const sec = (hub, id) => hub.sections.find(s => s.id === id);
 
 // 보조 내비(콘텐츠 영역 전용). 모바일에서는 CSS 가 가로 스크롤 칩으로 만든다.
@@ -74,7 +75,7 @@ const chip = t => `<span class="chip" lang="ko">${esc(t)}</span>`;
 
 export function hubModel(data) {
   const hub = data.contentHub, imgs = data.images;
-  const blog = sec(hub, 'blog'), news = sec(hub, 'gamenews'), gizmo = sec(hub, 'gizmo'), games = sec(hub, 'games'), tools = sec(hub, 'tools');
+  const blog = sec(hub, 'blog'), news = sec(hub, 'gamenews'), gizmo = sec(hub, 'gizmo'), games = sec(hub, 'games'), tools = sec(hub, 'tools'), apps = sec(hub, 'apps');
   const pages = [];
   const textRows = (kind, pathOf) => it => row({meta: esc(it.date), title: it.title, body: it.summary, href: pathOf(it)});
 
@@ -146,7 +147,28 @@ export function hubModel(data) {
     pages.push(...listPages({kind: 'tools', base: `/content/tools/category/${g.id}/`, tName: {ko: `웹 도구 · ${g.label.ko}`, en: `Web tools · ${g.label.en}`}, heading: g.label, lead: def('tools').intro, unit: {ko: '개'}, order: {ko: '이름순'},
       items: tl.filter(i => i.cat === g.id).sort((a, b) => a.slug.localeCompare(b.slug)), rowOf: toolCard, chips: tlChips(g.id), trail: [...trailTools, {label: bi(g.label), href: `/content/tools/category/${g.id}/`, name: g.label.ko}], jsonOf: jsonTl, count: tools.count, wrap: 'tools', note: noteHtml(tlNote)}));
 
-  return {pages, posts, nposts, gitems, gm, tl};
+  // ── 내 앱: 아이콘 + 스크린샷 스트립 카드(2열) + 분류 칩 ──
+  const trailApps = [{label: bi(def('apps').title), href: secPath('apps'), name: '내 앱'}];
+  const ap = apps.groups.flatMap(g => g.items.map(it => ({...it, cat: g.id, catLabel: g.label}))).sort((a, b) => (b.released || '').localeCompare(a.released || '') || a.slug.localeCompare(b.slug));
+  const appCard = (it, i) => {
+    const rec = imgs.apps[it.slug], href = mirrorPath('apps', it.slug), lang = hasHangul(it.title) ? 'ko' : 'en', lazy = i < 4 ? '' : ' loading="lazy"';
+    const strip = rec.shots.map((sz, k) => `<img src="/assets/content/apps/${it.slug}-${k + 1}.webp" width="${sz[0]}" height="${sz[1]}" alt="${esc(`${it.title} 화면 ${k + 1}`)}"${i < 2 ? '' : ' loading="lazy"'}>`).join('');
+    const store = it.url ? `<a class="btn btn-ghost acard-store" href="${esc(it.url)}" ${EXT}>${bi({ko: 'App Store에서 보기', en: 'View on the App Store'})}${ext}</a>` : '';
+    return `<li class="acard"><div class="acard-top"><a class="acard-main" href="${href}"><img class="acard-icon" src="/assets/content/apps/${it.slug}-icon.webp" width="${rec.icon[0]}" height="${rec.icon[1]}" alt="${esc(`${it.title} 앱 아이콘`)}"${lazy}><span class="acard-id"><strong class="acard-t" lang="${lang}">${esc(it.title)}</strong><span class="acard-s" lang="ko">${esc(it.summary)}</span></span></a>
+<span class="acard-meta"><span class="chip" lang="ko">${esc(it.catLabel.ko)}</span><span class="chip chip-status chip-${it.status}">${bi(APP_STATUS[it.status])}</span>${store}</span></div>
+<a class="acard-strip" href="${href}" aria-label="${esc(`${it.title} 화면 보기`)}">${strip}</a></li>`;
+  };
+  const apChips = on => chipBar('app categories', [{href: secPath('apps'), label: {ko: '전체', en: 'All'}, n: apps.count.value, on: on === 'all'},
+    ...apps.groups.map(g => ({href: `/content/apps/category/${g.id}/`, label: g.label, n: g.items.length, on: on === g.id}))]);
+  const jsonAp = it => ({name: it.title, url: SITE + mirrorPath('apps', it.slug)});
+  const apNote = {ko: `앱스토어에 올라와 있는 앱 ${apps.count.total}개 중 소개글에 쓸 사실이 확인되는 ${apps.count.value}개를 실었습니다.`, en: `${apps.count.value} of ${apps.count.total} App Store apps are listed here, those with enough verified facts for a write-up.`};
+  pages.push(...listPages({kind: 'apps', base: secPath('apps'), tName: {ko: '내 앱 전체', en: 'All my apps'}, heading: def('apps').title, lead: def('apps').intro, unit: {ko: '개'}, order: {ko: '최신 출시순'},
+    items: ap, rowOf: appCard, chips: apChips('all'), trail: trailApps, jsonOf: jsonAp, count: apps.count, wrap: 'apps', note: noteHtml(apNote)}));
+  for (const g of apps.groups)
+    pages.push(...listPages({kind: 'apps', base: `/content/apps/category/${g.id}/`, tName: {ko: `내 앱 · ${g.label.ko}`, en: `My apps · ${g.label.en}`}, heading: g.label, lead: g.blurb, unit: {ko: '개'}, order: {ko: '최신 출시순'},
+      items: ap.filter(i => i.cat === g.id), rowOf: appCard, chips: apChips(g.id), trail: [...trailApps, {label: bi(g.label), href: `/content/apps/category/${g.id}/`, name: g.label.ko}], jsonOf: jsonAp, count: apps.count, wrap: 'apps', note: noteHtml(apNote)}));
+
+  return {pages, posts, nposts, gitems, gm, tl, ap};
 }
 
 // 상세 페이지의 상위 경로(브레드크럼 중간 단계). m.crumbs 로 쓴다.
@@ -158,6 +180,7 @@ export function mirrorTrail(data, kind, catKey) {
   if (kind === 'gizmo') return [top('gizmo', 'AI 활용 가이드'), {label: bi(g('gizmo').label), href: `/content/gizmo/purpose/${catKey}/`, name: g('gizmo').label.ko}];
   if (kind === 'games') return [top('games', '웹게임'), {label: bi(g('games').label), href: `/content/games/genre/${catKey}/`, name: g('games').label.ko}];
   if (kind === 'tools') return [top('tools', '웹 도구'), {label: bi(g('tools').label), href: `/content/tools/category/${catKey}/`, name: g('tools').label.ko}];
+  if (kind === 'apps') return [top('apps', '내 앱'), {label: bi(g('apps').label), href: `/content/apps/category/${catKey}/`, name: g('apps').label.ko}];
   throw new Error(`mirrorTrail: unknown kind ${kind}`);
 }
 
@@ -182,5 +205,6 @@ export function landingHtml(data, model) {
   ${card('gizmo', model.gitems.map(i => loc(mirrorPath('gizmo', i.slug), i.title)), {ko: '설치 없이 쓰는 프롬프트·스킬. 용도별로 묶었고 전문을 읽을 수 있습니다.', en: 'Prompts and skills you can use without installing anything, grouped by purpose, with the full text.'})}
   ${card('games', model.gm.map(i => `<a href="${mirrorPath('games', i.slug)}">${bi(i.title)}</a>`), {ko: '브라우저에서 바로 하는 게임. 소개와 조작 방법, 규칙, 플레이 화면을 실었습니다.', en: 'Browser games with an introduction, controls, rules and gameplay screens.'})}
   ${card('tools', model.tl.map(i => loc(mirrorPath('tools', i.slug), i.title)), {ko: '브라우저에서 쓰는 계산기와 변환기. 쓰는 방법과 알아둘 한계를 화면과 함께 적었습니다.', en: 'Calculators and converters for the browser, with usage steps, limits and a screen capture.'})}
+  ${card('apps', model.ap.map(i => loc(mirrorPath('apps', i.slug), i.title)), {ko: '앱스토어에서 받는 모바일 앱. 아이콘과 화면, 핵심 기능과 사용 방법을 앱마다 적었고 스토어 바로가기를 달았습니다.', en: 'Mobile apps from the App Store, each with icon, screens, key features, how to use it and a store link.'})}
 </div>`;
 }

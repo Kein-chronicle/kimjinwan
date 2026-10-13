@@ -1,0 +1,77 @@
+{
+ "slug": "bike-tire-pressure",
+ "name": "Bike Tire Pressure: Any Width",
+ "storeId": "6808241911",
+ "storeUrl": "https://apps.apple.com/kr/app/id6808241911",
+ "status": "live",
+ "category": "calc",
+ "oneLiner": "체중, 타이어 폭, 노면을 넣으면 앞바퀴와 뒷바퀴의 권장 공기압 범위를 구하고, 타이어에 적힌 최대 공기압을 넘지 않게 잘라 주는 계산기다.",
+ "about": "타이어 옆면에 적힌 최대 공기압을 입력해야 하고, 추천값이 그 숫자를 넘으면 앱이 값을 자르고 색이 아니라 문장으로 알려 준다. 스토어 설명은 같은 분야의 다른 앱이 이 숫자를 묻지 않는다고 짚는다.\n결과는 하나의 값이 아니라 앞과 뒤 각각의 범위이고, 그 안에서 표시된 값을 고르는 방식이다. 체중은 앞뒤에 균등하게 나뉘지 않으므로 뒷바퀴 값이 앞바퀴와 다르게 나오며 노면에 따라 비율도 달라진다. 노면은 매끈한 도로, 거친 도로, 자갈, 싱글트랙, 모래·눈의 다섯 가지다. 공기를 넣은 온도와 달릴 때의 온도를 입력하면 기온이 낮아질 때의 압력 하락이 이미 반영된다. 폭은 45mm 그래블부터 2.8인치 팻바이크까지 앱이 제한하지 않는다.",
+ "audience": "도로, 그래블, 산악, 팻바이크를 가리지 않고 타는 사람, 계산식과 상수가 공개된 계산기를 선호하는 사람, 겨울에 공기압이 떨어지는 것까지 반영해 보고 싶은 사람에게 맞는다.",
+ "features": [
+  "라이더 체중, 장비 무게, 타이어 폭, 림 내폭, 튜브 유무, 노면 다섯 종으로 앞뒤 권장 범위를 계산한다.",
+  "입력한 타이어 최대 공기압으로 추천을 자르고 잘렸다면 문장으로 알려 준다.",
+  "공기를 넣은 온도와 라이딩 온도 차이에 따른 압력 변화를 결과에 반영한다.",
+  "단위는 psi, bar, kPa 중에서 고른다.",
+  "About 화면에 계산식과 상수, 기준으로 삼은 다섯 가지 설정을 공개한다."
+ ],
+ "howTo": [
+  "Bike 화면에서 체중, 장비 무게, 타이어 폭과 림 폭, 최대 공기압을 입력하고 튜브 유무를 고른다.",
+  "공기를 넣은 온도와 타는 온도, 노면을 고른다.",
+  "Pressure 화면의 앞뒤 막대에서 권장 범위를 확인하고 단위를 바꿔 본다."
+ ],
+ "notes": [
+  "자전거 두 대째부터 저장하는 기능은 보상형 광고를 본 뒤 열린다.",
+  "자전거나 타이어 모델 목록이 없고 서버와 통신하지 않는다.",
+  "앱 화면은 영어이고 하단에 배너 광고가 붙는다."
+ ],
+ "images": [
+  {
+   "role": "icon",
+   "alt": "Bike Tire Pressure 앱 아이콘, 검은 바탕에 연두색으로 일부 채워진 둥근 게이지가 그려져 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "결과 화면. 앞바퀴 23.9 psi와 뒷바퀴 28.1 psi 범위 막대가 있고 단위 선택 버튼이 아래에 있다"
+  },
+  {
+   "role": "screen",
+   "alt": "자전거 입력 화면. 라이더 78kg, 타이어 폭 45mm, 최대 공기압 60 psi, 튜브리스 선택이 보인다"
+  },
+  {
+   "role": "screen",
+   "alt": "최대 공기압 제한 화면. 뒷바퀴 값이 타이어 최대치 27.0 psi에서 잘렸다는 안내가 표시된다"
+  }
+ ],
+ "verified": {
+  "date": "2026-10-14",
+  "method": "앱스토어 공개 정보(iTunes lookup, kr)의 스토어 설명문과 스크린샷, 앱 화면 구성·핵심 기능 기록을 대조해 썼다. 앱을 직접 실행해 보지는 않았다.",
+  "sources": [
+   "iTunes lookup id6808241911 (kr)",
+   "app-factory/apps/REGISTRY.json core_function",
+   "app-factory/catalog/bike-tire-pressure/03-spec/screens.json",
+   "app-factory/catalog/bike-tire-pressure/07-release/metadata-en.md"
+  ]
+ },
+ "store": {
+  "bundleId": "com.kimjinwan.biketirepressure",
+  "version": "1.0",
+  "genre": "Sports",
+  "languages": [
+   "EN"
+  ],
+  "devices": [
+   "iPhone",
+   "iPad"
+  ],
+  "minOs": "17.0",
+  "price": 0,
+  "released": "2026-09-09",
+  "updated": "2026-09-10",
+  "rating": "4+"
+ },
+ "guide": {
+  "title": "Bike Tire Pressure: Any Width — 자전거 타이어 공기압 계산기",
+  "path": "/content/blog/apps/bike-tire-pressure/"
+ }
+}
