@@ -264,8 +264,8 @@ test('hub_check_tool: 1인칭·이모지가 실릴 문구에 있으면 실패, �
   assert.equal(cli('hub_check_tool.mjs', ['x', '--tools-repo', '/nonexistent/path']).code, 1);
 });
 test('hub_check_tool: 허브 빌드와 같은 판정 — 실제 저장소의 제외 도구는 미달, 포함 도구는 통과', () => {
-  const exList = rd('content-src/excluded.json').tools, inc = Object.keys(rd('content-src/images.json').tools)[0];
-  if (exList.length) assert.equal(cli('hub_check_tool.mjs', [exList[0].id]).code, 1); // 제외 도구가 없으면(전부 등록됨) 이 확인은 건너뛴다
+  const exList = rd('content-src/excluded.json').tools.filter((t) => String(t.reason).startsWith('소스')), inc = Object.keys(rd('content-src/images.json').tools)[0];
+  if (exList.length) assert.equal(cli('hub_check_tool.mjs', [exList[0].id]).code, 1); // 소스 사유로 제외된 도구가 없으면(이미지 없음 사유만 남았거나 전부 등록됨) 이 확인은 건너뛴다
   assert.equal(cli('hub_check_tool.mjs', [inc]).code, 0);
 });
 test('parseToolCatalog: 항목 수가 href 수와 다르면 예외, 이스케이프된 따옴표를 푼다', () => {
