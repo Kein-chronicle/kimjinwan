@@ -763,3 +763,6 @@ main>.wrap>.page-foot{margin:0 0 72px}
 .app-shots img{display:block;height:min(440px,70vw);width:auto;max-width:none;border-radius:14px;border:1px solid var(--line);background:var(--card2)}
 @media (max-width:760px){.hub-grid-apps{grid-template-columns:minmax(0,1fr)}.app-hero{gap:16px}.app-icon{width:84px;height:84px;border-radius:20px}}
 .app-shots figure.wide img{height:auto;width:min(640px,calc(100vw - 48px))}
+
+/* AI requirements are separate from purpose and build tools. */
+.ai-filter-block{margin:18px 0 28px}.ai-filter-title{font-size:16px;font-weight:700;margin:0 0 10px}.ai-filter{margin-bottom:10px}.ai-filter-help,.ai-note{font-size:14px!important;line-height:1.7;color:var(--muted)}.ai-badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.ai-badges .chip{font-size:14px}.ai-no-model{border-color:#598b71!important}.ai-ai-required{border-color:#bd874c!important}.ai-note{margin:8px 0 14px!important}[hidden]{display:none!important}

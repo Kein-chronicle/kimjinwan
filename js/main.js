@@ -184,42 +184,35 @@ function openGameAuto(){
   document.body.style.overflow='hidden';
 }
 
-// ===== /works 종류 필터 (JS 없으면 전부 보임, URL 해시로 딥링크: /works/#game) =====
+// Purpose/kind and AI requirements intersect; optional AI appears in both groups.
 (function(){
-  const grid=document.getElementById('works-grid');
-  if(!grid) return;
-  const btns=[...document.querySelectorAll('.filters [data-filter]')];
-  const kinds=btns.map(b=>b.dataset.filter);
-  function apply(k){
-    if(!kinds.includes(k)) k='all';
-    btns.forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter===k)));
-    grid.querySelectorAll('[data-kind]').forEach(el=>{el.hidden=!(k==='all'||el.dataset.kind===k);});
-  }
-  btns.forEach(b=>b.addEventListener('click',()=>{
-    const k=b.dataset.filter;
-    apply(k);
-    history.replaceState(null,'',k==='all'?location.pathname+location.search:'#'+k);
-  }));
-  const fromHash=()=>apply(location.hash.slice(1));
-  addEventListener('hashchange',fromHash);
-  fromHash();
+ const grid=document.getElementById('works-grid'); if(!grid)return;
+ const kinds=[...document.querySelectorAll('.filters [data-filter]')];
+ const ais=[...document.querySelectorAll('[data-works-ai]')];let kind='all',ai='all';
+ function apply(){
+  kinds.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===kind)));
+  ais.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.worksAi===ai)));
+  let count=0;grid.querySelectorAll('[data-kind]').forEach(el=>{el.hidden=!((kind==='all'||el.dataset.kind===kind)&&(ai==='all'||(el.dataset.ai||'').split(' ').includes(ai)));if(!el.hidden)count++;});
+  ['works-empty','works-empty-en'].forEach(id=>{const e=document.getElementById(id);if(e)e.hidden=count>0;});
+ }
+ function save(){history.replaceState(null,'','#'+kind+(ai==='all'?'':'/'+ai));apply();}
+ kinds.forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.filter;save();}));
+ ais.forEach(b=>b.addEventListener('click',()=>{ai=b.dataset.worksAi;save();}));
+ const fromHash=()=>{const parts=location.hash.slice(1).split('/');kind=kinds.some(b=>b.dataset.filter===parts[0])?parts[0]:'all';ai=ais.some(b=>b.dataset.worksAi===parts[1])?parts[1]:'all';apply();};
+ addEventListener('hashchange',fromHash);fromHash();
 })();
-
-// ===== 홈 02-1 서비스 분류 거르기 (JS 없으면 전부 보임) =====
 (function(){
-  const btns=[...document.querySelectorAll('[data-svc-cat]')];
-  if(!btns.length) return;
-  const fold=document.querySelector('.svc-fold');
-  function apply(k){
-    btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.svcCat===k)));
-    document.querySelectorAll('.svc-wide[data-category]').forEach(el=>{el.hidden=!(k==='all'||el.dataset.category===k);});
-    if(fold){
-      const sum=fold.querySelector('summary');
-      if(k==='all'){sum.hidden=false;}
-      else{fold.open=true;sum.hidden=true;}
-    }
-  }
-  btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.svcCat)));
+ const cats=[...document.querySelectorAll('[data-svc-cat]')];if(!cats.length)return;
+ const ais=[...document.querySelectorAll('[data-svc-ai]')];let cat='all',ai='all';
+ function apply(){
+  cats.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.svcCat===cat)));
+  ais.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.svcAi===ai)));
+  let count=0;document.querySelectorAll('.svc-wide[data-category]').forEach(el=>{el.hidden=!((cat==='all'||el.dataset.category===cat)&&(ai==='all'||(el.dataset.ai||'').split(' ').includes(ai)));if(!el.hidden)count++;});
+  const empty=document.getElementById('svc-empty');if(empty)empty.hidden=count>0;
+  const fold=document.querySelector('.svc-fold');if(fold){const sum=fold.querySelector('summary');sum.hidden=cat!=='all'||ai!=='all';if(sum.hidden)fold.open=true;}
+ }
+ cats.forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.svcCat;apply();}));
+ ais.forEach(b=>b.addEventListener('click',()=>{ai=b.dataset.svcAi;apply();}));
 })();
 
 // ===== 히어로 영상: 소리 켜기/끄기, 모션 줄이기 설정이면 자동재생 대신 포스터 =====

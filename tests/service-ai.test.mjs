@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {aiKeys} from '../scripts/lib/service-ai.mjs';
+import {serviceCard,serviceGroups} from '../scripts/lib/render.mjs';
+const services=JSON.parse(fs.readFileSync(new URL('../data/services.json',import.meta.url)));
+test('선택 연결은 독립 사용과 연결 지원에 모두 속하고 필수에 속하지 않는다',()=>{for(const id of ['prism-studio','docloom','proofdesk'])assert.deepEqual(aiKeys(services.find(s=>s.id===id)),['no-model','ai-supported']);});
+test('필수 연결은 독립 사용으로 잘못 분류하지 않는다',()=>{for(const id of ['forge','pitchwright','casewright','fitwright','codemotionmaker'])assert.deepEqual(aiKeys(services.find(s=>s.id===id)),['ai-supported','ai-required']);});
+test('제작 도구로 AI를 쓴 사실은 실행 요구사항과 별개다',()=>{const s=services.find(s=>s.id==='diffnook');assert(s.ai_tools.length);assert.deepEqual(aiKeys(s),['no-model']);});
+test('카드와 홈 필터가 동일한 연결 기준과 설명을 노출한다',()=>{const s=services.find(s=>s.id==='prism-studio');assert.match(serviceCard(s),/data-ai="no-model ai-supported"/);assert(serviceCard(s).includes(s.ai_connection_note.ko));const h=serviceGroups(services);for(const key of ['no-model','ai-supported','ai-required'])assert(h.includes(`data-svc-ai="${key}"`));});

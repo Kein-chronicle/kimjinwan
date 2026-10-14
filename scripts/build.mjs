@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, appBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES, HUB_SECTIONS} from './lib/render.mjs';
+import {aiFilters, serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, appBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES, HUB_SECTIONS} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {GENRE_SCHEMA} from './lib/apps_authoring.mjs';
@@ -186,6 +186,7 @@ export function buildAll({write = true} = {}) {
     factories: data.factories.map(f => factoryCard(f, byId)).join('\n'),
     factories_home: data.factories.map(f => factoryCard(f, byId, {link: true})).join('\n'),
     works_filters: worksFilters(),
+    ai_filters: aiFilters('data-works-ai', data.services),
     factory_nav: factoryNav(data.factories),
     pitch: bi(data.profile.pitch),
     strengths: data.profile.strengths.map(strengthItem).join('\n'),

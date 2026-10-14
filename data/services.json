@@ -20,6 +20,11 @@
   "tagline": {
    "ko": "요구사항에서 완성까지, 웹서비스 제작 도구",
    "en": "From requirements to a finished web service"
+  },
+  "ai_connection": "required",
+  "ai_connection_note": {
+   "ko": "요구사항 분석·기획·생성 작업에 내 Claude Code 또는 Codex 연결이 필요해요.",
+   "en": "Requirements analysis, planning and generation require your Claude Code or Codex connection."
   }
  },
  {
@@ -43,6 +48,11 @@
   "tagline": {
    "ko": "브라우저에서 하는 레이어·PSD 이미지 편집",
    "en": "Layer and PSD image editing in the browser"
+  },
+  "ai_connection": "optional",
+  "ai_connection_note": {
+   "ko": "이미지·레이어·PSD 편집은 연결 없이 사용해요. AI 채팅·채우기는 선택적으로 연결해요.",
+   "en": "Image, layer and PSD editing work without a connection. AI chat and fill use an optional connection."
   }
  },
  {
@@ -66,6 +76,11 @@
   "tagline": {
    "ko": "설치 없이 쓰는 작은 AI 도구 가게",
    "en": "A shop of small AI tools, no install"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "도구 탐색·설명 확인·다운로드는 연결 없이 가능해요. 개별 도구의 AI 실행 조건은 각 상세 안내를 확인하세요.",
+   "en": "Browsing tools, reading instructions and downloading need no connection. Each listed tool has its own AI requirements."
   }
  },
  {
@@ -89,6 +104,11 @@
   "tagline": {
    "ko": "문서 작업을 한곳에서, 서버 전송 없이",
    "en": "All your documents in one place, never sent to a server"
+  },
+  "ai_connection": "optional",
+  "ai_connection_note": {
+   "ko": "문서 편집·저장은 연결 없이 사용해요. AI 작성·수정은 선택적으로 연결해요.",
+   "en": "Edit and save documents without a connection. AI drafting and revision use an optional connection."
   }
  },
  {
@@ -112,6 +132,11 @@
   "tagline": {
    "ko": "RFP 한 부에서 제출할 제안서까지",
    "en": "From one RFP to a proposal ready to submit"
+  },
+  "ai_connection": "required",
+  "ai_connection_note": {
+   "ko": "RFP 분석과 제안서 본문 생성에 내 AI 에이전트 연결이 필요해요.",
+   "en": "RFP analysis and proposal drafting require your AI agent connection."
   }
  },
  {
@@ -135,6 +160,11 @@
   "tagline": {
    "ko": "요구사항에서 근거 있는 테스트 케이스까지",
    "en": "From requirements to evidence-backed test cases"
+  },
+  "ai_connection": "required",
+  "ai_connection_note": {
+   "ko": "요구사항에서 테스트 케이스를 생성하려면 내 AI 에이전트 연결이 필요해요.",
+   "en": "Generating test cases from requirements requires your AI agent connection."
   }
  },
  {
@@ -158,6 +188,11 @@
   "tagline": {
    "ko": "뽑을 사람을 정하고, 이력서를 기준대로 거르기",
    "en": "Define who to hire, screen résumés by your criteria"
+  },
+  "ai_connection": "required",
+  "ai_connection_note": {
+   "ko": "공고 작성과 이력서 분석·평가를 진행하려면 내 AI 에이전트 연결이 필요해요.",
+   "en": "Posting generation and resume analysis require your AI agent connection."
   }
  },
  {
@@ -181,6 +216,11 @@
   "tagline": {
    "ko": "말로 부탁하면 코드가 그려 주는 모션그래픽",
    "en": "Describe it, and code draws the motion graphics"
+  },
+  "ai_connection": "required",
+  "ai_connection_note": {
+   "ko": "요청을 영상 코드로 만드는 작업에 내 Claude Code 또는 Codex 연결이 필요해요.",
+   "en": "Turning a request into video code requires your Claude Code or Codex connection."
   }
  },
  {
@@ -203,6 +243,11 @@
   "tagline": {
    "ko": "영상 하나 놓으면 움짤이 나와요",
    "en": "Drop a video, get a GIF"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "GIF·영상·이미지 편집과 변환에 AI 모델 연결이 필요 없어요.",
+   "en": "GIF, video and image editing and conversion need no AI connection."
   }
  },
  {
@@ -226,6 +271,11 @@
   "tagline": {
    "ko": "고르고 바로 플레이",
    "en": "Pick one and play right away"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "게임 선택과 플레이에 AI 모델 연결이 필요 없어요.",
+   "en": "Choosing and playing games needs no AI connection."
   }
  },
  {
@@ -249,6 +299,11 @@
   "tagline": {
    "ko": "필요한 답만 빠르게",
    "en": "Just the answer you need, fast"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "계산기·문서·이미지 도구를 별도 AI 모델 연결 없이 사용해요.",
+   "en": "Use calculators, document and image tools without connecting an AI model."
   }
  },
  {
@@ -272,6 +327,11 @@
   "tagline": {
    "ko": "제출 전에 교정을 봅니다",
    "en": "Proof-check before you submit"
+  },
+  "ai_connection": "optional",
+  "ai_connection_note": {
+   "ko": "빈칸·합계·날짜 등 코드 검사는 연결 없이 사용해요. AI 검수는 선택적으로 연결해요.",
+   "en": "Code checks for blanks, totals and dates work without a connection. AI review is optional."
   }
  },
  {
@@ -294,6 +354,11 @@
   "tagline": {
    "ko": "업로드 없이 브라우저에서 PDF 편집 · 합치기 · 나누기",
    "en": "Edit, merge and split PDFs in the browser, no upload"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "PDF 편집·합치기·나누기에 AI 모델 연결이 필요 없어요.",
+   "en": "PDF editing, merging and splitting need no AI connection."
   }
  },
  {
@@ -316,6 +381,11 @@
   "tagline": {
    "ko": "문서 사이, 차이를 선명하게",
    "en": "See what changed between two documents"
+  },
+  "ai_connection": "none",
+  "ai_connection_note": {
+   "ko": "문서 비교·검색·보고서 저장에 AI 모델 연결이 필요 없어요.",
+   "en": "Document comparison, search and report export need no AI connection."
   }
  }
 ]

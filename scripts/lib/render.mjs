@@ -1,3 +1,4 @@
+import {AI_GROUPS, aiKeys} from './service-ai.mjs';
 // scripts/lib/render.mjs
 import {icon} from './icons.mjs';
 import {GENRE_KO, LANG_KO, STATUS_LABEL as APP_STATUS, APP_CATEGORIES} from './apps_authoring.mjs';
@@ -27,17 +28,23 @@ export function sortServices(services) {
   return [...services].sort((a, b) => a.name.localeCompare(b.name, 'en', {sensitivity: 'base'}));
 }
 
+const aiBadges = s => `<div class="ai-badges">${aiKeys(s).map(k => `<span class="chip ai-${k}">${bi(AI_GROUPS.find(g=>g.key===k).label)}</span>`).join('')}</div>${s.ai_connection_note ? `<p class="ai-note">${bi(s.ai_connection_note)}</p>` : ''}`;
+export function aiFilters(attribute, services = []) {
+  const options = [{key:'all',label:{ko:'전체',en:'All'}}, ...AI_GROUPS];
+  return `<div class="ai-filter-block"><p class="ai-filter-title">${bi({ko:'AI 연결 기준',en:'AI connection'})}</p><div class="svc-jump ai-filter" role="group" aria-label="AI connection filters">${options.map(g=>`<button type="button" class="pill" ${attribute}="${g.key}" aria-pressed="${g.key==='all'}">${bi(g.label)}${services.length ? `<span class="pill-n mono">${g.key==='all'?services.length:services.filter(s=>aiKeys(s).includes(g.key)).length}</span>` : ''}</button>`).join('')}</div><p class="ai-filter-help">${bi({ko:'별도 모델·에이전트 연결 기준이에요. 선택 연결 서비스는 중복 분류되며, 기본 기능과 AI 기능의 범위는 카드에서 확인하세요.',en:'Based on connecting an external model or agent. Optional connections appear in multiple groups; cards explain which features need AI.'})}</p></div>`;
+}
 export function serviceCard(s) {
   const thumb = s.thumb && !/^(https?:)?\/\//.test(s.thumb) ? '/' + s.thumb.replace(/^\/+/, '') : s.thumb;
   const shot = thumb
     ? `<img src="${esc(thumb)}" alt="${esc(s.name)} screenshot" loading="lazy" width="640" height="400">`
     : `<span class="mono shot-fallback">${esc(s.name.slice(0, 2).toUpperCase())}</span>`;
   const chips = s.ai_tools.map(t => `<span class="chip mono">${esc(t)}</span>`).join('');
-  return `<article class="card svc" data-kind="${esc(s.kind)}" data-category="${esc(s.category)}">
+  return `<article class="card svc" data-kind="${esc(s.kind)}" data-category="${esc(s.category)}" data-ai="${aiKeys(s).join(' ')}">
   <div class="svc-shot">${shot}</div>
   <div class="svc-body">
     <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${icon(KIND_ICON[s.kind] || 'layers', {size: 14})}${catOf(s) ? bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h3>${esc(s.name)}</h3>
+    ${aiBadges(s)}
     <p class="svc-tag">${bi(s.tagline)}</p>
     <p>${bi(s.summary)}</p>
     <div class="chips">${chips}</div>
@@ -54,11 +61,12 @@ export function serviceFeature(s) {
     : `<span class="mono shot-fallback">${esc(s.name.slice(0, 2).toUpperCase())}</span>`;
   const host = new URL(s.url).host;
   const chips = s.ai_tools.map(t => `<span class="chip mono">${esc(t)}</span>`).join('');
-  return `<article class="card svc-wide" id="svc-${esc(s.id)}" data-category="${esc(s.category)}">
+  return `<article class="card svc-wide" id="svc-${esc(s.id)}" data-category="${esc(s.category)}" data-ai="${aiKeys(s).join(' ')}">
   <div class="svcw-shot">${shot}</div>
   <div class="svcw-body">
     <div class="svc-meta"><span class="badge badge-${esc(s.status)} mono">${STATUS_LABEL[s.status]}</span><span class="kind mono">${catOf(s) ? icon(catOf(s).icon, {size: 14}) + bi(catOf(s).label) : esc(s.kind)}</span></div>
     <h5>${esc(s.name)}</h5>
+    ${aiBadges(s)}
     <p class="svc-tag">${bi(s.tagline)}</p>
     <p>${bi(s.summary)}</p>
     <div class="svcw-tools"><span class="svcw-lbl mono">${bi({ko: '함께 만든 AI', en: 'Built with'})}</span><div class="chips">${chips}</div></div>
@@ -79,7 +87,7 @@ export function serviceGroups(services) {
   const more = rest.length
     ? `\n<details class="fold svc-fold"><summary><span class="fold-open">${bi({ko: `${rest.length}개 더 보기`, en: `Show ${rest.length} more`})}</span><span class="fold-close">${bi({ko: '접기', en: 'Show less'})}</span></summary>\n<div class="svc-feature">${rest.map(serviceFeature).join('\n')}</div></details>`
     : '';
-  return `<div class="svc-jump" role="group" aria-label="service categories">${chips}</div>\n<div class="svc-feature" id="svc-grid">${shown}</div>${more}`;
+  return `<div class="svc-jump" role="group" aria-label="service categories">${chips}</div>${aiFilters('data-svc-ai', sorted)}\n<div class="svc-feature" id="svc-grid">${shown}</div><p id="svc-empty" hidden>${bi({ko:'선택한 조건에 맞는 서비스가 없어요.',en:'No services match these filters.'})}</p>${more}`;
 }
 
 export function collectionCard(c) {

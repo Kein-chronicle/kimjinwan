@@ -26,6 +26,8 @@ export function validate({services = [], collections = [], factories = [], profi
     if (!biOk(s.summary)) err.push(`${w}: summary needs ko/en`);
     if (!HTTPS.test(s.url || '')) err.push(`${w}: url must be https`);
     if (!DATE.test(s.updated || '')) err.push(`${w}: updated must be YYYY-MM-DD`);
+    if (!['none','optional','required'].includes(s.ai_connection)) err.push(`${w}: ai_connection must be none/optional/required`);
+    if (!biOk(s.ai_connection_note)) err.push(`${w}: ai_connection_note needs ko/en`);
     if (!Array.isArray(s.ai_tools)) err.push(`${w}: ai_tools must be array`);
   }
   const featured = services.filter(s => s.featured).length;

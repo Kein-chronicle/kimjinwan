@@ -5,6 +5,7 @@ import {validate} from '../scripts/lib/validate.mjs';
 
 const bi = (ko, en) => ({ko, en});
 const svc = (id, o = {}) => ({id, name: id, kind: 'service', status: 'live', featured: false, category: 'document',
+  ai_connection:'none', ai_connection_note:bi('연결 없이 사용','No connection needed'),
   summary: bi('요약', 'summary'), ai_tools: ['Claude Code'], url: `https://${id}.example.com/`,
   thumb: '', tagline: bi('한마디', 'tag'), updated: '2026-10-05', ...o});
 const col = (id, o = {}) => ({id, kind: 'game', name: bi('게임', 'Games'), summary: bi('요약', 'summary'),
@@ -86,3 +87,5 @@ test('실데이터의 웹 도구 공장도 source·as_of 가 빠지면 검증에
   const e = validate(d).join('\n');
   assert.match(e, /factories\.web-tools: metric needs source/); assert.match(e, /factories\.web-tools: metric as_of/);
 });
+
+test('AI 연결 기준 누락과 알 수 없는 값을 거부한다',()=>{const d=good();d.services[0].ai_connection='sometimes';delete d.services[1].ai_connection_note;assert.match(validate(d).join('\n'),/ai_connection must/);assert.match(validate(d).join('\n'),/ai_connection_note/);});
