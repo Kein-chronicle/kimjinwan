@@ -179,7 +179,7 @@ test('내 앱: 상세의 제작·심사 기록 링크는 실제 존재하는 허
     const m = out[f].match(/<a href="(\/content\/blog\/apps\/[\w-]+\/)" lang="ko">제작·심사 기록 읽기<\/a>/);
     if (m) { n++; assert.ok(out[m[1].slice(1) + 'index.html'], m[1]); }
   }
-  assert.ok(n >= 20);
+  assert.ok(n >= 10); // 2026-10-14 틀 반복 앱 소개 글을 내려 가이드 링크가 있는 앱이 줄었다(남은 글에만 링크)
 });
 test('내 앱: 스냅샷 생성기는 현재 산출물과 같다(--check)와 buildApps 는 같은 입력에서 같은 출력', () => {
   const r = spawnSync('node', ['scripts/build_content_apps.mjs', '--check'], {cwd: ROOT, encoding: 'utf8'});

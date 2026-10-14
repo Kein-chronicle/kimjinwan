@@ -237,9 +237,9 @@ function withdrawnRedirects(blog, news) {
   const live = new Set([...blog.groups, ...news.groups].flatMap(g => g.items.map(i => new URL(i.url).pathname.replace(/^\/ko\//, ''))));
   for (const {from, to} of JSON.parse(fs.readFileSync(f, 'utf8')).items) {
     const m = from.match(/^\/content\/(?:blog\/(ai|apps|games)|(game-news))\/([^/]+)\/$/);
-    if (!m) throw new Error(`content-withdrawn: 알 수 없는 주소 ${from}`);
-    const cat = m[1] || 'games';
-    if (live.has(`${cat}/${m[3]}/`)) throw new Error(`content-withdrawn: ${from} 는 아직 공개 목록에 있다 — 되살렸다면 목록에서 지운다`);
+    if (!m && !/^\/content\/(blog|game-news)\/(?:page\/\d+\/|[\w-]+\/)$/.test(from)) throw new Error(`content-withdrawn: 알 수 없는 주소 ${from}`); // 글 상세 또는 목록·쪽
+    const cat = m && (m[1] || 'games');
+    if (m && live.has(`${cat}/${m[3]}/`)) throw new Error(`content-withdrawn: ${from} 는 아직 공개 목록에 있다 — 되살렸다면 목록에서 지운다`);
     REDIRECTS.push([from, to]);
   }
 }

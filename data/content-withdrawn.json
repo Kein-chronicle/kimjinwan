@@ -311,6 +311,26 @@
    "from": "/content/blog/games/summer-2026-game-timeline/",
    "to": "/content/game-news/",
    "reason": "목차·링크 모음"
+  },
+  {
+   "from": "/content/blog/page/9/",
+   "to": "/content/blog/",
+   "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/blog/page/10/",
+   "to": "/content/blog/",
+   "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/blog/page/11/",
+   "to": "/content/blog/",
+   "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/game-news/etc/",
+   "to": "/content/game-news/",
+   "reason": "목차 글 하나뿐이던 기타 분류가 비었다"
   }
  ]
 }

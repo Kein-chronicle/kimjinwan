@@ -788,6 +788,26 @@
    "status": 301
   },
   {
+   "from": "/content/blog/page/10/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/page/11/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/page/9/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/etc/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
    "from": "/content/game-news/summer-2026-game-timeline/",
    "to": "/content/game-news/",
    "status": 301

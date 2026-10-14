@@ -176,7 +176,7 @@ test('게임 소식: 블로그와 분리됐고(옛 경로 없음) 모든 글이 
   assert.equal(new Set(slugs).size, slugs.length);
   assert.equal(news.groups.reduce((a, g) => a + g.items.length, 0), news.count.value);
   for (const g of news.groups) assert.equal(g.total, g.items.length);
-  assert.deepEqual(news.groups.map(g => g.id), ['nikke', 'limbus', 'nte', 'zzz', 'wuwa', 'ananta', 'my-games', 'etc']);
+  assert.deepEqual(news.groups.map(g => g.id), ['nikke', 'limbus', 'nte', 'zzz', 'wuwa', 'ananta', 'my-games']); // 2026-10-14 '기타'(목차 글 하나뿐)는 글을 내려 사라졌다
   const idx = out['content/game-news/index.html'];
   for (const g of news.groups) assert.ok(idx.includes(`href="/content/game-news/${g.id}/"`) && idx.includes(`>${g.total}</span>`), g.id);
   // 글 본문 속 옛 게임 경로 링크는 새 경로로 바뀐다
@@ -209,7 +209,7 @@ test('케인칼럼: 블로그에서 독립한 단일 목록 — 옛 경로·옛 
 test('옛→새 경로 매핑(data/content-redirects.json): 정합, 모든 to 가 실제 페이지, 모든 옛 글이 새 경로로 대체된다', () => {
   const r = JSON.parse(read('data/content-redirects.json')).redirects;
   const froms = r.map(x => x.from); assert.equal(new Set(froms).size, froms.length);
-  for (const x of r) { assert.equal(x.status, 301); assert.ok(/^\/content\/blog\/(games|fiction|ai|apps)\//.test(x.from), x.from); assert.ok(out[x.to.slice(1) + 'index.html'], x.to); assert.ok(!out[x.from.slice(1) + 'index.html'], '옛 경로가 아직 있다: ' + x.from); }
+  for (const x of r) { assert.equal(x.status, 301); assert.ok(/^\/content\/(blog\/(games|fiction|ai|apps|page)|game-news)\//.test(x.from), x.from); assert.ok(out[x.to.slice(1) + 'index.html'], x.to); assert.ok(!out[x.from.slice(1) + 'index.html'], '옛 경로가 아직 있다: ' + x.from); }
   const wantPosts = flat(news).map(i => `/content/blog/games/${slugOf(i.url)}/`);
   for (const f of wantPosts) assert.ok(froms.includes(f), f);
   assert.ok(froms.includes('/content/blog/games/'));
@@ -223,8 +223,13 @@ test('옛→새 경로 매핑(data/content-redirects.json): 정합, 모든 to �
     assert.equal(r.find(x => x.from === `/content/blog/${c}/`)?.to, '/content/blog/', c);
     for (let n = 2; n <= ceilDiv(nCat(c)); n++) assert.equal(r.find(x => x.from === `/content/blog/${c}/page/${n}/`)?.to, '/content/blog/', `${c} ${n}쪽`);
   }
-  assert.equal(r.filter(x => /^\/content\/blog\/(ai|apps)\//.test(x.from)).length, 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1, '글 상세는 옮기지 않는다');
-  assert.equal(r.length, (news.count.value + 1 + ceilDiv(news.count.value) - 1) + (column.count.value + 1 + ceilDiv(column.count.value) - 1) + 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1);
+  // 공개 목록에서 내린 글(data/content-withdrawn.json)만 글 상세·목록 쪽 매핑이 따로 더 있다. 살아 있는 글 상세는 옮기지 않는다.
+  const withdrawn = JSON.parse(read('data/content-withdrawn.json')).items;
+  assert.equal(new Set(withdrawn.map(x => x.from)).size, withdrawn.length);
+  for (const x of withdrawn) assert.equal(r.find(y => y.from === x.from)?.to, x.to, x.from);
+  const wFroms = new Set(withdrawn.map(x => x.from));
+  assert.equal(r.filter(x => /^\/content\/blog\/(ai|apps)\//.test(x.from) && !wFroms.has(x.from)).length, 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1, '살아 있는 글 상세는 옮기지 않는다');
+  assert.equal(r.length - withdrawn.length, (news.count.value + 1 + ceilDiv(news.count.value) - 1) + (column.count.value + 1 + ceilDiv(column.count.value) - 1) + 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1);
 });
 const ldOf = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 const MAIN = {Article: 1, VideoGame: 1, SoftwareApplication: 1, MobileApplication: 1};
