@@ -811,6 +811,21 @@
    "from": "/content/blog/ai/whale-survivors-10/",
    "to": "/content/blog/ai/whale-survivors-02/",
    "reason": "번들·네이티브 광고·스토어 제출의 독립 증거로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-02/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-05/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-06/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
   }
  ]
 }

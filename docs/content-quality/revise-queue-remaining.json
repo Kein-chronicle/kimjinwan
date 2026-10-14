@@ -1,10 +1,5 @@
 [
   {
-    "id": "ai-whale-survivors-02",
-    "final": 61.4,
-    "note": "WKWebView 번들 서빙+광고 메시지 연결 개요. 코드 구조를 정리해 보강하거나 01과 병합."
-  },
-  {
     "id": "ai-ai-workbench-07",
     "final": 62.4,
     "note": "블로그 제작 과정 자기참조 글로 독자가 얻을 것이 적음. career 글들과 묶어 '작성 기준' 한 페이지로."
@@ -18,11 +13,6 @@
     "id": "ai-ai-game-factory-02",
     "final": 62.6,
     "note": "소수 작품 집중 투자 결과 회고. 01과 병합."
-  },
-  {
-    "id": "ai-whale-survivors-10",
-    "final": 62.8,
-    "note": "ITMS-90474 상세는 별도 글에 있음. 링크하고 시리즈 마무리로 축소."
   },
   {
     "id": "ai-career-02",

@@ -33,6 +33,21 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-game-factory-02/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-05/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-06/",
+   "to": "/content/blog/ai/ai-game-factory-01/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-game-factory-10/",
    "to": "/content/blog/ai/ai-game-factory-09/",
    "status": 301

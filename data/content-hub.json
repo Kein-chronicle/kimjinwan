@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 107,
+    "value": 104,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 57,
+     "total": 54,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -296,16 +296,10 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-10/"
       },
       {
-       "title": "AI 게임 공장: 게임 하나가 아니라 만드는 과정을 만들고 싶었다",
-       "summary": "여러 장르를 반복해서 만들면 제작 공정도 만들 수 있을까. AI 게임 공장의 첫 실험과 생산량의 한계.",
+       "title": "게임을 더 고칠지 멈출지: 재투자·중단·부분완성 판단표",
+       "summary": "네 작품 집중 투자와 설계·플레이 단계 중단 기록을 비교한다. 개선 가설, 종료 조건, 보존 자산, 부분완성 전달 범위를 원장으로 남기는 방법.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-01/"
-      },
-      {
-       "title": "AI 게임 공장: 많이 만들기에서 네 작품에 집중하기로",
-       "summary": "네 작품을 골라 연출과 조작을 개선했지만 계속 투자할 이유는 얻지 못했다. 소수 집중 실험의 결과.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-02/"
       },
       {
        "title": "AI 게임 공장: 완료 보고 옆에 실제 확인한 것을 적기 시작했다",
@@ -318,18 +312,6 @@
        "summary": "React·Phaser로 전환하고 이미지 생성도 바꿨다. 그래도 만든 에셋이 실제 화면에 들어가는지는 따로 봐야 했다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-04/"
-      },
-      {
-       "title": "AI 게임 공장: 화면을 다듬고도 게임을 멈춘 이유",
-       "summary": "PRISM SURGE, SKY SALVO, SNOWBOUND. 설계 중단과 플레이 검증 실패, 결론이 남지 않은 상태를 나눠봤다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-05/"
-      },
-      {
-       "title": "AI 게임 공장: 완성 대신 부분완성이라고 적고 닫았다",
-       "summary": "EMBERLINE에서 치명적인 문제부터 고치고 나머지를 남겼다. 완성이라고 부르지 않고 작업을 닫은 기록.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-06/"
       },
       {
        "title": "AI 게임 공장: 방치형으로 장르를 좁혀봤다",
