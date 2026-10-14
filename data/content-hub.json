@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 112,
+    "value": 111,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 62,
+     "total": 61,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -284,20 +284,14 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-06/"
       },
       {
-       "title": "AI 동료 제작기: 먼저 연락하게 만들기 전에 보내지 않을 때를 정했다",
-       "summary": "먼저 말 걸기에는 문장 생성 외의 조건이 필요했다. 발송 간격과 현재 모드, 보내지 않을 상황을 정했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-07/"
-      },
-      {
        "title": "AI 동료 제작기: 사진을 만들었는데 대화에는 도착하지 않았다",
        "summary": "생성 성공과 전송 성공, 상황의 일관성은 달랐다. 사진과 음성을 붙이며 늘어난 확인 항목들.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-08/"
       },
       {
-       "title": "AI 동료 제작기: AI 동료도 조용히 멈추고 확인할 수 있어야 했다",
-       "summary": "답이 없을 때 처리와 전송을 구분하기. 상태·로그·무음·복구로 AI 작업을 확인하는 방법을 정리했다.",
+       "title": "봇이 답하지 않을 때: 수신·실행·결과·송신을 나눠 확인하는 법",
+       "summary": "무응답의 마지막 성공 구간과 선톡 억제 이유를 기록한다. 생성 도중 무음 전환, 중복 타이머, 송신 결과 미확인에 대한 운영표.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-10/"
       },

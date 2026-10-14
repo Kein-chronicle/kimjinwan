@@ -786,6 +786,11 @@
    "from": "/content/blog/ai/ai-colleagues-09/",
    "to": "/content/blog/ai/ai-colleagues-04/",
    "reason": "기억·임시 상태·설정 이전을 근거 코드와 점검표가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-07/",
+   "to": "/content/blog/ai/ai-colleagues-10/",
+   "reason": "선톡 허용 검사와 무응답 진단을 요청·송신 증거표로 통합"
   }
  ]
 }

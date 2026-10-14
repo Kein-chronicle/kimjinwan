@@ -23,6 +23,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-colleagues-07/",
+   "to": "/content/blog/ai/ai-colleagues-10/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-colleagues-09/",
    "to": "/content/blog/ai/ai-colleagues-04/",
    "status": 301
