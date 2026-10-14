@@ -578,6 +578,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/fiction/learning-ai-by-starting/",
+   "to": "/content/column/learning-ai-by-starting/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/fiction/nikke-don-well-made-game/",
    "to": "/content/column/nikke-don-well-made-game/",
    "status": 301

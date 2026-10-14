@@ -5,7 +5,7 @@
    "id": "column",
    "url": "https://blog.kimjinwan.com/ko/fiction/",
    "count": {
-    "value": 5,
+    "value": 6,
     "as_of": "2026-10-14",
     "source": "케인칼럼 = 구 블로그 '이야기' 카테고리(fiction 폴더). kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -20,9 +20,15 @@
       "ko": "AI 시대의 일과 놀이에 대한 칼럼",
       "en": "Columns on work and play in the age of AI"
      },
-     "total": 5,
+     "total": 6,
      "url": "https://blog.kimjinwan.com/ko/fiction/",
      "items": [
+      {
+       "title": "AI 사용법을 배우는 가장 좋은 방법은?",
+       "summary": "반년 만에 낡아버린 강의 자료와 10분 만에 접은 유료 강의 고민. 두 번의 교육 자료를 만들며 AI를 배우는 순서와 교육의 역할을 다시 생각했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/fiction/learning-ai-by-starting/"
+      },
       {
        "title": "우리는 더 이상 일하지 않아도 되는가?(feat. AI)",
        "summary": "열 살 딸에게서 'AI가 다 알려주는데 공부는 왜 해야 해?'라는 질문까지 듣게 되면서, 사람이 더 이상 일하지 않아도 되는 사회가 왔는지 인류의 오랜 변화에 비추어 따져 본다.",
