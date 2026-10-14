@@ -691,6 +691,76 @@
    "from": "/content/blog/page/7/",
    "to": "/content/blog/",
    "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/game-news/nte-august-bonus-calendar/",
+   "to": "/content/game-news/nte-14-first-day-priorities/",
+   "reason": "종료된 8월 행사 비교(내림, 이환 첫날 우선순위 글이 대신함)"
+  },
+  {
+   "from": "/content/blog/games/nte-august-bonus-calendar/",
+   "to": "/content/game-news/nte-14-first-day-priorities/",
+   "reason": "종료된 8월 행사 비교(내림, 이환 첫날 우선순위 글이 대신함)"
+  },
+  {
+   "from": "/content/game-news/zzz-31-32-event-overlap/",
+   "to": "/content/game-news/zzz-32-first-check/",
+   "reason": "지난 이벤트 마감 기록(내림, 3.2 첫 점검 글이 대신함)"
+  },
+  {
+   "from": "/content/blog/games/zzz-31-32-event-overlap/",
+   "to": "/content/game-news/zzz-32-first-check/",
+   "reason": "지난 이벤트 마감 기록(내림, 3.2 첫 점검 글이 대신함)"
+  },
+  {
+   "from": "/content/game-news/nikke-july23-matis-record/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 7월 모집·이벤트 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-july23-matis-record/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 7월 모집·이벤트 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nikke-sep12-association-deadline/",
+   "to": "/content/game-news/nikke-sep23-post-apology-sanctions-season41/",
+   "reason": "협회장 개인 입장문 한 건(내림, 9월 제재 사태 타임라인 글에 병합)"
+  },
+  {
+   "from": "/content/blog/games/nikke-sep12-association-deadline/",
+   "to": "/content/game-news/nikke-sep23-post-apology-sanctions-season41/",
+   "reason": "협회장 개인 입장문 한 건(내림, 9월 제재 사태 타임라인 글에 병합)"
+  },
+  {
+   "from": "/content/game-news/limbus-season8-punctum-preview/",
+   "to": "/content/game-news/limbus/",
+   "reason": "시즌8 시작 전 예고(내림, 종료된 예고글)"
+  },
+  {
+   "from": "/content/blog/games/limbus-season8-punctum-preview/",
+   "to": "/content/game-news/limbus/",
+   "reason": "시즌8 시작 전 예고(내림, 종료된 예고글)"
+  },
+  {
+   "from": "/content/game-news/wuwa-37-hsin-suoming-preview/",
+   "to": "/content/game-news/wuwa-37-livestream-release-oct/",
+   "reason": "방송 전 예고글(내림, 방송 정리 글에 병합)"
+  },
+  {
+   "from": "/content/blog/games/wuwa-37-hsin-suoming-preview/",
+   "to": "/content/game-news/wuwa-37-livestream-release-oct/",
+   "reason": "방송 전 예고글(내림, 방송 정리 글에 병합)"
+  },
+  {
+   "from": "/content/game-news/nikke-sep27-minikke-cinderella-episode/",
+   "to": "/content/game-news/nikke/",
+   "reason": "영상 공개 알림(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-sep27-minikke-cinderella-episode/",
+   "to": "/content/game-news/nikke/",
+   "reason": "영상 공개 알림(내림)"
   }
  ]
 }
