@@ -624,7 +624,7 @@
   },
   {
    "from": "/content/blog/games/limbus-season8-punctum-preview/",
-   "to": "/content/game-news/limbus-season8-punctum-preview/",
+   "to": "/content/game-news/limbus/",
    "status": 301
   },
   {
@@ -674,7 +674,7 @@
   },
   {
    "from": "/content/blog/games/nikke-july23-matis-record/",
-   "to": "/content/game-news/nikke-july23-matis-record/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
@@ -719,7 +719,7 @@
   },
   {
    "from": "/content/blog/games/nikke-sep12-association-deadline/",
-   "to": "/content/game-news/nikke-sep12-association-deadline/",
+   "to": "/content/game-news/nikke-sep23-post-apology-sanctions-season41/",
    "status": 301
   },
   {
@@ -744,7 +744,7 @@
   },
   {
    "from": "/content/blog/games/nikke-sep27-minikke-cinderella-episode/",
-   "to": "/content/game-news/nikke-sep27-minikke-cinderella-episode/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
@@ -794,7 +794,7 @@
   },
   {
    "from": "/content/blog/games/nte-august-bonus-calendar/",
-   "to": "/content/game-news/nte-august-bonus-calendar/",
+   "to": "/content/game-news/nte-14-first-day-priorities/",
    "status": 301
   },
   {
@@ -848,11 +848,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/page/4/",
-   "to": "/content/game-news/page/4/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/summer-2026-game-timeline/",
    "to": "/content/game-news/",
    "status": 301
@@ -899,7 +894,7 @@
   },
   {
    "from": "/content/blog/games/wuwa-37-hsin-suoming-preview/",
-   "to": "/content/game-news/wuwa-37-hsin-suoming-preview/",
+   "to": "/content/game-news/wuwa-37-livestream-release-oct/",
    "status": 301
   },
   {
@@ -909,7 +904,7 @@
   },
   {
    "from": "/content/blog/games/zzz-31-32-event-overlap/",
-   "to": "/content/game-news/zzz-31-32-event-overlap/",
+   "to": "/content/game-news/zzz-32-first-check/",
    "status": 301
   },
   {
@@ -988,6 +983,11 @@
    "status": 301
   },
   {
+   "from": "/content/game-news/limbus-season8-punctum-preview/",
+   "to": "/content/game-news/limbus/",
+   "status": 301
+  },
+  {
    "from": "/content/game-news/merge-whale-devlog/",
    "to": "/content/game-news/",
    "status": 301
@@ -1013,6 +1013,11 @@
    "status": 301
   },
   {
+   "from": "/content/game-news/nikke-july23-matis-record/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
    "from": "/content/game-news/nikke-makoto-first-week/",
    "to": "/content/game-news/nikke-persona-collab-guide/",
    "status": 301
@@ -1025,6 +1030,16 @@
   {
    "from": "/content/game-news/nikke-persona-followup/",
    "to": "/content/game-news/nikke-persona-collab-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-sep12-association-deadline/",
+   "to": "/content/game-news/nikke-sep23-post-apology-sanctions-season41/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-sep27-minikke-cinderella-episode/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
@@ -1048,6 +1063,11 @@
    "status": 301
   },
   {
+   "from": "/content/game-news/nte-august-bonus-calendar/",
+   "to": "/content/game-news/nte-14-first-day-priorities/",
+   "status": 301
+  },
+  {
    "from": "/content/game-news/nte-illoi-lifeline-record/",
    "to": "/content/game-news/nte-board-guide/",
    "status": 301
@@ -1055,6 +1075,11 @@
   {
    "from": "/content/game-news/nte-zanhong-nanari-board/",
    "to": "/content/game-news/nte-board-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/page/4/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
@@ -1075,6 +1100,16 @@
   {
    "from": "/content/game-news/the-weapons-03/",
    "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/wuwa-37-hsin-suoming-preview/",
+   "to": "/content/game-news/wuwa-37-livestream-release-oct/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/zzz-31-32-event-overlap/",
+   "to": "/content/game-news/zzz-32-first-check/",
    "status": 301
   },
   {
