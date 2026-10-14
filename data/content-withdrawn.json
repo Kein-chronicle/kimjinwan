@@ -806,6 +806,11 @@
    "to": "/content/blog/ai/whale-survivors-06/",
    "reason": "카드 상태 원장과 통합 플레이 검사로 병합",
    "from": "/content/blog/ai/whale-survivors-08/"
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-10/",
+   "to": "/content/blog/ai/whale-survivors-02/",
+   "reason": "번들·네이티브 광고·스토어 제출의 독립 증거로 통합"
   }
  ]
 }

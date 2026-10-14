@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 108,
+    "value": 107,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 58,
+     "total": 57,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -404,8 +404,8 @@
        "url": "https://blog.kimjinwan.com/ko/ai/career-02/"
       },
       {
-       "title": "AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다",
-       "summary": "SwiftUI와 웹뷰로 기존 게임을 아이폰에 담았다. 화면을 여는 것 외에 자산과 광고를 연결하는 일이 남았다.",
+       "title": "웹게임 iOS 포팅 점검: 번들·광고 복귀·심사 제출의 증거",
+       "summary": "Capacitor 웹 번들 반영, 보상형 광고의 닫힘과 보상 구분, 브라우저 캡처와 스토어 제출 기록의 한계를 소스로 확인한다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-02/"
       },
@@ -420,12 +420,6 @@
        "summary": "카드와 전투 이미지 수령 규격, 재생성 후보 비교, 물리 파일과 프레임 개수, 제작 자산과 설치 용량을 구분하는 원장.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-09/"
-      },
-      {
-       "title": "AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다",
-       "summary": "스토어 설명과 스크린샷, 빌드 설정을 준비하고 심사 제출까지. 게임 밖에서 이어진 개발 기록.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-10/"
       }
      ]
     },
