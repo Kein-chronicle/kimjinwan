@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "incomplete_at_user_deadline",
   "scope": "남은 53편, 평가 공정, 사이트맵 정리 완료",
   "quality_pipeline": "complete: independent review PASS; blog tests87; factory tests390, v0.1.9 local commit (no remote)",
   "articles": [
@@ -222,7 +222,11 @@
       "id": "news-wuwa-35-electro-rover",
       "final": 66.4,
       "note": "방랑자 전도가 스토리 진행으로 열린다는 정보가 핵심. 해금 임무 이름·단계를 출처와 함께 구체화하고 현재 3.6 이후 상태로 갱신.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "revised",
+      "target": "https://kimjinwan.com/content/game-news/wuwa-35-electro-rover/",
+      "release": "1.3.105",
+      "review": "kein-blog/production/ko-games-wuwa-35-electro-rover/work/review.json"
     },
     {
       "id": "news-wuwa-35-yangyang-susu",
@@ -468,7 +472,11 @@
       "id": "news-wuwa-35-36-story-cycle",
       "final": 70.6,
       "note": "3.5→3.6 지역 연속성 정리는 복귀 유저에게 유용. 3.7 예고 이후 갱신하고 현재 버전 기준 복귀 순서를 표로 정리.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "merged",
+      "target": "https://kimjinwan.com/content/game-news/wuwa-35-electro-rover/",
+      "release": "1.3.105",
+      "review": "kein-blog/production/ko-games-wuwa-35-electro-rover/work/review.json"
     },
     {
       "id": "news-nikke-sep22-swift-bunny-official-confirm",
@@ -487,9 +495,10 @@
       "review": "kein-blog/production/ko-ai-clean-clone-handoff-check/work/review.json"
     }
   ],
-  "sitemap": "hub complete 1.3.83; frozen blog maintenance pending",
+  "sitemap": "hub complete; frozen blog 0.2.101 maintenance deployment, see kein-blog/docs/maintenance/0.2.101",
   "live": {
     "hub": "1.3.86",
     "blog": "0.2.99"
-  }
+  },
+  "stop_reason": "사용자 지정 2026-10-14 15:00 KST 마감. 검증된 43개만 완료, 10개 후보·근거 보존."
 }

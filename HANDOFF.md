@@ -1,50 +1,56 @@
-# HANDOFF — kimjinwan.com 콘텐츠 허브 (2026-10-14, 남은 작업 전체 진행 중)
+# HANDOFF — kimjinwan.com 콘텐츠 품질 (2026-10-14, 15시 마감)
 
-이어받으면 `git log --oneline -3`, `cat VERSION`, 서버 `ssh -i ~/kjw.pem ubuntu@54.116.13.147 readlink /var/www/kimjinwan/current` 로 일치부터 확인한다. 작업 파일이 어디 있는지는 이 문서 §0 표, 작업 지침은 §1.
+## 현재 상태
 
-## 0. 지금 상태
-| 대상 | 상태 |
-|---|---|
-| kimjinwan.com | **1.3.98** 라이브(서버 current 일치). 브랜치 `static-site-2026`, 푸시 완료, 다음 원고·진행표 작업 중 |
-| 허브 섹션(서브 메뉴 순서) | 전체 / **케인칼럼**(`/content/column/` 5) / **에이전트 업무일지**(`/content/blog/`, 옛 '블로그', 칩 없는 단일 목록, 약 110편) / 게임 소식(약 55편) / AI 활용 가이드 50 / 웹게임 77 / 웹 도구 57 / 내 앱 50 |
-| 발행 | `scripts/publish.sh --reason "..."`(docs/PUBLISH.md). 섹션 감소는 변동 게이트(종료 코드 3 또는 10) → 이전 커밋과 직접 비교해 의도된 것이면 `--force` |
-| **콘텐츠 평가 자료** | **`docs/content-quality/`** : README(채점표·판정 기준·처리 현황), `auto.py`(1차 기계 채점), `qual.jsonl`(281편 2차 채점+처방), `qual-summary.md`, `revise-queue-remaining.json`(남은 보강 25편, 점수 낮은 순) |
-| kein-blog | 소스 0.2.100(품질 공정 v1·사이트맵·역할 소개 통합), main 푸시 완료. 후속 원고 작업 중. `production/active.json` = `ko-games-nte-villa-vehicle-budget`(게임 보강 순차 검토 시작) |
-| **blog.kimjinwan.com** | 서버 current = **0.2.99**. **3단계-B 게임 소식 7편 + ai-colleagues-03의 한국어 상세·번역 안내 56개 제거 완료**. 새 글 0, 사이트맵 211→203. HTTP 103경로·광고 파일 불변 확인, 0.2.98 롤백용 보존. |
-| 웹앱 도구 사이트 | apps.kimjinwan.com v0.1.82(푸터·헤더의 옛 블로그 글 링크 59곳을 허브 주소로 교체) |
-| 공장 허브 | **`blog` 잡 enabled:true**(21:15, 커밋 8df74aa, 원격 없음·로컬 커밋). 허브 자체는 유저가 따로 켠다. 체커 content-hub-sync 폐지. game-forge·web-tools·blog 잡은 허브 등록 절차 연결 완료 |
-| AdSense | kimjinwan.com 검토 요청은 유저가 눌렀고(10-13 밤) 결과 대기. 3회 거절 이력('가치가 별로 없는 콘텐츠'). **계정 조작은 에이전트가 하지 않는다**. 서브도메인 단독 등록 불가 |
-| ads.txt·app-ads.txt | 불변 SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0`. 배포 전후 라이브 해시 확인 |
+- 사용자 지시: **15시까지 검토·검증된 것만 등록하고, 미완료는 핸드오프·커밋·푸시 후 종료.** 완료 숫자를 맞추려고 검토를 생략하거나 글을 임의로 내리지 않는다.
+- 허브 `1.3.105`. `static-site-2026`. 정확한 라이브 릴리스는 서버 current와 `VERSION` 대조.
+- 블로그 소스 `0.2.101`, `main`. 동결 라이브도 `0.2.101`: 한국어25편·총175페이지 제거, 새 파일0, 본문153편 보존, 사이트맵203→37. 새 글의 발행처는 허브. 동결 서브도메인은 유지보수 산출물만 배포한다.
+- 최초 53개 항목 중 **43개 완료, 10개 남음**. 장부 `docs/content-quality/execution-2026-10-14.json`, 남은 목록 `revise-queue-remaining.json`.
+- AI 원본28개는 16개 대표글로 전부 보강·병합 완료. 게임 글은 아래 남은 목록 참조.
+- 블로그 품질 공정 v1 완료: 1차≥60, DUP<0.5, 독립Q1~Q5와 최종≥72, 명시적release=true. ready/check/verify/published에서 현행 코퍼스 재검사. 블로그87시험·공장390시험·독립코드검토 통과.
+- 허브 사이트맵: 2쪽 이후 목록 제외. robots의 블로그 사이트맵 나열 제거. 동결 블로그 상세 canonical은 허브이며 한국어 상세는 사이트맵에서 제외한다.
+- 웹게임 neon-beat-operator와 pulse-bat: 라이브 실제입력 성공 화면 확인, 독립검토와 소개/이미지점검 통과. 네온1·2세트100%/6500점, 펄스1세트1680RPM후성공. 최소성공RPM·전체완주·터치·소리 미확인. 사용자는 타이밍게임을 더 무리하게 시험하지 말고 코드예측을 구분해 쓰라고 지시했다.
 
-## 1. 이어서 할 일(우선순위순)
+## 바로 이어서 할 일
 
-**현재 진행표:** `docs/content-quality/execution-2026-10-14.json`. 최초 53개 ID를 유지하며 완료된 ID만 remaining 큐에서 뺀다. 현재 28개 완료·25개 남음. AI 항목 전체 완료, 게임 항목 진행 중. AI 동료 7개→4개 대표글, whale 7개→3개 대표글을 보강·병합해 1.3.89까지 라이브 반영했다. ai-colleagues-01→02 통합은 1.3.83 발행·HTTP 본문 검증 완료(87.4점). 평가 공정은 독립 코드 검토 통과(블로그 87 시험, 공장 390 시험). 허브 사이트맵 정리는 1.3.83 반영, 동결 블로그 산출물 정리는 후속 내림과 함께 진행한다.
+남은 원고는 **초안과 공식 근거 준비 완료, 공개 승인 아님**. `kein-blog/production/<ID>/work/candidate-config.json`, `candidate-body.md`, 원문텍스트·공식이미지를 읽는다. 도구 사본과 재개 주의는 `kein-blog/docs/editorial/reviews/2026-10-14-resume/README.md`.
 
-1. **완료 — 블로그 서브도메인 정리 배포(0.2.99)**: 내린 게임 소식 7편·ai-colleagues-03과 번역 안내 56개 제거, 목록·추천·연재 이전/다음·사이트맵 정리. 178편 본문은 기존 라이브와 일치(삭제 대상 이동 링크 제외), 새 글은 서브도메인에 올리지 않았다. 현재 소스 82/82 시험, 산출물 1,329파일 서버 SHA-256, HTTP 103경로 검증 통과. 재현·검증 기록은 `kein-blog/docs/maintenance/0.2.99/`. 허브도 내린 연재 이동 링크 정리를 1.3.82로 발행했고 195/195 시험·라이브 검증을 통과했다. 다음 우선순위는 아래 53편 보강이다.
-   - 재발 방지: 유지보수 사본은 node_modules를 독립 설치/복사한다. 공유 심링크로 동시에 빌드하면 Astro 캐시가 섞여 최신 본문이 과거 소스 빌드에 들어간다. 본문별 비교로 잡았고 오염 산출물은 배포하지 않았다.
-2. **남은 보강 25편**(`docs/content-quality/revise-queue-remaining.json`): 점수 낮은 순. 하위 것은 연재·개발일지(ai-colleagues-01·04·05·06·07·09·10, whale-survivors-02·05~10, ai-game-factory-01·02·05·06·08, career-01·02, ai-workbench-01·04·07)와 게임 소식. 처방 원칙: **연재는 3~4편으로 압축·독자 질문형 제목·내부 용어 풀이, 게임 소식은 시점·확정/미확정 구분·기준일·상시 정보 보강, 종료된 건 병합 또는 내림**. 공정은 kein-blog 계약 v3(기존 글 수정은 글마다 `production/ko-*` 계약 만들기·지문 재산출·독립 검토 1~3회·check/verify, **검토 release=false 면 발행 금지**), 중간 발행은 10편 정도씩.
-   - `ai-colleagues-05` 재작성 시 독립 검토(3차, release=false)가 짚은 것: ①"활동이 바뀔 때 식사 필드를 지운다"는 5월 23일 커밋(2f9cc8d)부터 있던 코드인데 5월 26일 문단에 붙어 있음 → 삭제하거나 출처 분리 ②"바쁨 상태에도 같은 문제가 있었다"와 소제목 "끝나지 않으면 남는다"는 근거 없음(69a3942·fed73f2는 기능 추가) → "같은 계열의 설계 사례"로 ③5월 29~30일 설정 교체 "같은 문제다"는 추정 → "같은 부류로 볼 수 있다" ④점검표 '충돌' 칸에 "프롬프트 규칙으로 추가, 효과 미검증", "큐를 비운다"는 "비우도록 유도한다" ⑤"음식 사진"은 "먹는 캡션이 달린 사진".
-   - 중단 시점에 `ai-colleagues-05` 가 수정 중이었다. 반쯤 쓴 작업(production/ko-ai-ai-colleagues-05)은 되돌렸고 부분 산출물은 scratchpad 에 따로 있다(없어도 무방). 처음부터 다시 한다.
-3. **블로그 공장에 평가 공정 추가**(유저 요청): `docs/content-quality/auto.py` 의 1차 채점을 `editorial.mjs check` 게이트로(기준 미달·기존 글과 DUP≥0.5 면 ready 불가), 독립 검토 호출이 Q1~Q5 를 채점해 최종 ≥72 여야 발행(미달이면 처방과 함께 revise), 소재 선정 단계에서 '사람이 찾아볼 질문인가'·기존 글과 겹침 선검사. `docs/editorial/PIPELINE.md`·공장 허브 `prompts/blog.md` 에 단계 추가, 채점기 단위 시험. 기준 사례: KEEP 대표(`qual-summary.md` §KEEP).
-4. **사이트맵 정리**: 허브 사이트맵(약 480건)에서 2쪽 이후 목록 페이지 제외 검토, 블로그 서브도메인 사이트맵에서 글 URL 제거(canonical 이 허브), robots.txt 의 서브도메인 사이트맵 목록 정리. 검색 등록(Search Console·네이버·IndexNow) 정리는 유저와 함께.
-5. 기타(급하지 않음): 옛 경로 301(nginx, `data/content-redirects.json`·`content-withdrawn.json` 매핑만 있음), 블로그 글 이미지가 blog.kimjinwan.com 절대 주소를 가리킴(서브도메인 끄는 날 자체 호스팅 필요), 웹게임 pulse-bat·neon-beat-operator 클리어 보강, `/content/blog/ai/`·`/content/blog/apps/` 목록 주소가 404 가 아니라 403(nginx 디렉터리 동작, 무해), 공장 허브 커밋은 원격이 없어 푸시 안 됨.
-6. **AdSense 결과 확인**(유저). 결과에 따라 방향 결정. 우리 쪽 작업은 가치 있는 글 비율을 높이는 것(§2 참고).
+순서: 원고별 brief/research/outline/draft 계약 → 순차 독립 내용검토 → 별도 공개검토 → check/verify → 블로그커밋푸시 → 허브발행 → published HTTP본문검증 → 장부완료. **release=false면 게시 금지.** 중단된 후보의 존재를 공개완료로 세지 않는다.
 
-## 2. 이번 작업의 요지(2026-10-14)
-- 목표: 애드센스 검토 크롤러가 볼 만큼 양과 **질**을 갖춘다. 유저 기준: "사람들이 찾아볼 만하고 얻어갈 게 있는 글인가"(직접 경험·허위 여부보다 가치).
-- 281편(업무일지 202 + 게임 소식 79)을 채점 → 새로 쓰기 118편은 처리 완료: 앱 소개 틀 글 42·삭제된 앱/상태 로그 16·목차 3편 내림(61), 이미지·PDF·QR 도구 글 26편을 깊은 가이드 5편으로 병합(`data/tool-guides.json` 이 도구 소개 페이지의 가이드 링크를 만든다, 가이드가 사라지면 생성 실패), 게임 소식·연재 24편 내림과 가이드 3편 신설, REWRITE 7편 재작성·앱 REVISE 12편 보강. 내린 글은 원고 보존(`status: draft`, `approved: false`), 옛→새 주소는 `data/content-withdrawn.json`(생성기가 `content-redirects.json` 에 합침).
-- 후처리 `web/src/unpublished-links.mjs`(kein-blog)가 내린 글을 가리키는 본문 링크를 dist 에서 걷어 낸다(원고 지문을 건드리지 않으려고).
+- `news-nikke-second-burst-roster`: 2버스트 파티 자리 비용 관점은 유용. 후보별(크라운·마스트·앵커·프리카·민트) 역할 비교표를 출처와 함께 추가하면 가치 상승.
+- `news-nikke-drake-ammo-trap`: 장탄 옵션을 그대로 옮기지 말라는 결론은 있으나 단일 출처(인벤)·수치 없음. 드레이크 스킬·무기 전환 구조와 추천 장비 옵션을 출처 여러 개로 비교 정리하면 대표 글 가능.
+- `news-zzz-32-claret-roxy-engines`: S급 엔진 vs A·B급 Armorer 엔진 획득 경로 구분은 쓸 만함. 엔진별 효과·획득 경로를 표로 정리하고 3.3 이후 갱신.
+- `news-ananta-silence-rumor-followup`: 지난 루머 회고로 지금 검색 수요가 낮음. 출시일 글에 한 단락으로 병합하거나 삭제.
+- `news-wuwa-35-yangyang-susu`: 3.5 신규(양양·현령·수수) 구분 정리. 3.5 종료로 낡음. 속성·역할 비교표를 출처와 함께 정리해 캐릭터 요약글로 전환하거나 3.5/3.6 글과 병합.
+- `news-wuwa-36-qingxiao-jingran`: 3.6 신규 둘의 속성·무기 차이. 위와 병합해 '명조 3.5~3.7 신규 공명자 정리표'로.
+- `news-nikke-oct8-belorta-pumpkin-witch-recruitment`: 벨로타 가이드(10/13)가 이 정보를 포함하므로 중복. 가이드로 병합하고 이 글은 리다이렉트하거나 삭제.
+- `news-nikke-laplace-july-operating-note`: 풀차지 5회→머신건 전환이라는 핵심은 쓸 만함. 현행 스킬 설명과 장탄 옵션 우선순위를 여러 출처로 비교한 캐릭터 가이드로 확장하고 maxwell 글과 병합.
+- `news-zzz-31-returning-checklist`: 복귀 체크리스트 형식은 유용(초보자 가이드·시즌3 제2장·베이글 프로젝트). 3.3 기준으로 갱신해 상시 복귀 가이드로 전환.
+- `news-nikke-sep22-swift-bunny-official-confirm`: '지난 글의 미확인이 사실은 공식이었다'는 정정 프레이밍이 독자에게 낯섦. sep17 글과 병합해 바니걸 시즌 일정표 하나로 정리하고 정정은 한 줄로.
 
-## 3. 허브 편집 원본·점검 도구
-- 게임 `data/authoring/games/<id>.json`(+진행표 `_progress.json`), 앱 `data/authoring/apps/<slug>.json`. 점검 `node scripts/hub_check_game.mjs <id> [--online] [--raw <캡처 폴더>]`, `hub_check_tool.mjs <slug>`, `hub_check_app.mjs <slug>`. 문서 `docs/AUTHORING_GAMES.md`·`AUTHORING_TOOLS.md`·`AUTHORING_APPS.md`·`PUBLISH.md`. 게임 캡처 원본은 `~/Projects/kein-game-forge/output/hub-captures/<id>/`(gitignore).
-- 구조: 상단 메뉴 홈·서비스·AI 공장·경력(홈 섹션 스크롤)·연락하기 | 콘텐츠 허브·서비스 허브. 콘텐츠 서브 메뉴 전체/블로그/게임 소식/AI 활용 가이드/웹게임/웹 도구/내 앱. 상세 canonical 은 자기 자신, '원문' 링크 없음. 이미지 자체 호스팅.
-- 이전 체커 문서 `docs/CONTENT_HUB_CHECKER.md` 는 폐지 안내만 남겼다.
+### 준비된 통합 방향
 
-## 3. 알려진 한계·미결정
-- 허브 본문이 blog.kimjinwan.com·gizmo-store.com 과 같아 중복 판정 위험(canonical 정리로 블로그 쪽은 해소 중, gizmo-store 는 별도 도메인). AdSense 통과 보장 없음.
+- 니케 드레이크+라플라스→드레이크 탄약/종료조건. Crown/Anchor 2버스트목록은 별도.
+- 니케 벨로타 모집→기존 벨로타 가이드. 풀차지 공격 vs 유령분장 중 풀차지 명중 구분. 시전자 기준92.4%≠최종피해증가.
+- 니케 신 모집→길티·신 일정비교. 두 모집공지9/12, 신프로필9/13. 10/14에 신모집까지종료했다고쓰지않는다.
+- ZZZ3.2엔진은5종획득경로 비교. 3.1복귀글은3.2일정과상시시스템을정리하고 비큐zzz-32-first-check의잘못된시간대안내도병합.
+- 명조는3.5방랑자+3.5~3.6스토리,3.5양양수수+3.6청효경연 두대표.
+- 무한대 침묵추측→기존출시일기록. 공식사이트의2027-01-15표기와행사부재추측을분리.
+- 림버스6개→그레고르대표의6사례조건읽기. 로쟈비큐공지의잘못된점검시각도통합. 원장에complete인지확인.
 
-## 4. 운영 메모
-- **배포(허브)**: `scripts/publish.sh --reason "..."` 하나뿐(`docs/PUBLISH.md`, 수동 배포 불필요). 접속 `ssh -i ~/kjw.pem ubuntu@54.116.13.147`, 릴리스 `/var/www/kimjinwan/releases/<V>`. **ads.txt·app-ads.txt 는 절대 수정 금지(sha256 `422f460a…49a0`), 배포 전후 라이브 해시 확인.** 생성물은 직접 고치지 않고 `node scripts/build.mjs`. 시험 `node --test tests/*.test.mjs`(195). 스크린샷은 로컬 `python3 -m http.server` + CDP(file:// 금지). PATH 에 `/opt/homebrew/bin` 필요.
-- 블로그 서브도메인 배포는 동결(새 글은 허브 발행). 서비스 허브 배포: kimjinwan-services `bash deploy/deploy.sh`(`node scripts/build_share.mjs`, playwright 는 ~/Projects/docloom).
-- 하위 에이전트는 순차로(유저 규칙), 컨텍스트가 길면 진행표 파일에 상태를 남기고 재개할 것.
-- 이 문서의 위쪽 표가 최신 커밋 기준이다. 세션을 이어받으면 `git log --oneline -3`, `git branch -a`, 라이브 `readlink /var/www/kimjinwan/current` 로 일치부터 확인.
+## 남은 운영 항목
+
+- nginx 옛주소301 적용: data/content-redirects.json 매핑은 생성되지만 서버규칙은 아직 미적용. /content/blog/ai/·apps/ 목록403도 이때정리.
+- 블로그 본문이미지의 blog.kimjinwan.com 절대주소 의존은 남음. 서브도메인 종료 전 자체호스팅 필요.
+- Search Console·네이버·IndexNow 등록정리는 사용자와 진행. AdSense검토결과는 사용자확인, 계정조작금지.
+- 공장 kein-factory-hub 0.1.9 로컬커밋5dc4091, 원격없어push불가. blog잡enabled21:15, 스케줄러는이번작업에서변경하지않음.
+
+## 배포와 검증
+
+- 허브 `scripts/publish.sh --reason "..." --force`가검증·패치버전·커밋푸시·업로드·HTTP검증수행. clean트리필수. 동시서비스작업이있었으므로남의변경을되돌리지않는다.
+- SSH `ssh -i ~/kjw.pem ubuntu@54.116.13.147`. 허브 `/var/www/kimjinwan/current`, 블로그 `/var/www/kein-blog/current`.
+- ads.txt·app-ads.txt 불변SHA256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0`.
+- 유지보수는독립node_modules. 새원고본문이동결산출물에섞이지않게기존라이브본문과전수대조. `kein-blog/docs/maintenance/0.2.101/`에내림목록·검증·전파일해시·HTTP기록.
+- 수정원고후보/공식근거는저장소에보존. /tmp의작업사본이사라져도내용검토를재개할수있다.
+
+최종 검증: 블로그 build·87시험, 허브202시험, 공장390시험 통과. 공장은 원격이 없어 로컬커밋만 존재한다.
