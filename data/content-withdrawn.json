@@ -669,23 +669,23 @@
   },
   {
    "from": "/content/game-news/nte-illoi-lifeline-record/",
-   "to": "/content/game-news/nte/",
-   "reason": "종료·중복 기록(내림)"
+   "to": "/content/game-news/nte-board-guide/",
+   "reason": "이환 한정 보드 정리 글로 병합"
   },
   {
    "from": "/content/blog/games/nte-illoi-lifeline-record/",
-   "to": "/content/game-news/nte/",
-   "reason": "종료·중복 기록(내림)"
+   "to": "/content/game-news/nte-board-guide/",
+   "reason": "이환 한정 보드 정리 글로 병합"
   },
   {
    "from": "/content/game-news/nte-zanhong-nanari-board/",
-   "to": "/content/game-news/nte/",
-   "reason": "종료·중복 기록(내림)"
+   "to": "/content/game-news/nte-board-guide/",
+   "reason": "이환 한정 보드 정리 글로 병합"
   },
   {
    "from": "/content/blog/games/nte-zanhong-nanari-board/",
-   "to": "/content/game-news/nte/",
-   "reason": "종료·중복 기록(내림)"
+   "to": "/content/game-news/nte-board-guide/",
+   "reason": "이환 한정 보드 정리 글로 병합"
   },
   {
    "from": "/content/blog/page/7/",
