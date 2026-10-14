@@ -461,6 +461,11 @@
    "from": "/content/blog/apps/palette-extractor/",
    "to": "/content/tools/palette-extractor/",
    "reason": "정보가 적어 내림(도구 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/page/8/",
+   "to": "/content/blog/",
+   "reason": "글이 줄어 목록 쪽 수가 줄었다"
   }
  ]
 }
