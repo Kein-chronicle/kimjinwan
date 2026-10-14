@@ -841,6 +841,36 @@
    "from": "/content/game-news/nte-bright-moon-linko-hotori/",
    "to": "/content/game-news/nte-board-guide/",
    "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-cinq-east-honglu-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-dawn-passive-state/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-dimension-shredder-yisang-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-don-aug6-ego-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-rodion-alteration-shop-extraction/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/limbus-rodion-kit-and-update-sep24/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
   }
  ]
 }

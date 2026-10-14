@@ -638,26 +638,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/limbus-cinq-east-honglu-preview/",
-   "to": "/content/game-news/limbus-cinq-east-honglu-preview/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/limbus-dawn-passive-state/",
-   "to": "/content/game-news/limbus-dawn-passive-state/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/limbus-dimension-shredder-yisang-preview/",
-   "to": "/content/game-news/limbus-dimension-shredder-yisang-preview/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/limbus-don-aug6-ego-preview/",
-   "to": "/content/game-news/limbus-don-aug6-ego-preview/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/limbus-gregor-move-in-ego/",
    "to": "/content/game-news/limbus-gregor-move-in-ego/",
    "status": 301
@@ -675,16 +655,6 @@
   {
    "from": "/content/blog/games/limbus-oct8-mobile-memory-optimization/",
    "to": "/content/game-news/limbus-oct8-mobile-memory-optimization/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/limbus-rodion-alteration-shop-extraction/",
-   "to": "/content/game-news/limbus-rodion-alteration-shop-extraction/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/limbus-rodion-kit-and-update-sep24/",
-   "to": "/content/game-news/limbus-rodion-kit-and-update-sep24/",
    "status": 301
   },
   {
@@ -1020,6 +990,36 @@
   {
    "from": "/content/game-news/etc/",
    "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-cinq-east-honglu-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-dawn-passive-state/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-dimension-shredder-yisang-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-don-aug6-ego-preview/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-rodion-alteration-shop-extraction/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/limbus-rodion-kit-and-update-sep24/",
+   "to": "/content/game-news/limbus-gregor-move-in-ego/",
    "status": 301
   },
   {

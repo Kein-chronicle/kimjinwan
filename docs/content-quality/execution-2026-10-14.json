@@ -250,13 +250,21 @@
       "id": "news-nte-bright-moon-linko-hotori",
       "final": 67.1,
       "note": "9/30에 마감된 보드 정리. 링코·호토리 캐릭터 소개로 전환하거나 병합.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "merged",
+      "target": "https://kimjinwan.com/content/game-news/nte-board-guide/",
+      "release": "1.3.103",
+      "review": "kein-blog/production/ko-games-nte-board-guide-20261014/work/review.json"
     },
     {
       "id": "news-zzz-hollow-vanguards-signup",
       "final": 67.1,
       "note": "글로벌 비공개 테스트 모집 공고. 모집 마감 여부와 한국 참여 가능 여부를 확인해 갱신하거나 종료 표기. 공식 신청 링크 안내 필수.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "withdrawn",
+      "release": "1.3.103",
+      "reason": "해당 모집 마감은 9월20일23:59UTC+8로 10월14일보다 이전이다. 장기 프로그램 자체 종료를 주장하지 않는다. 원고는 당시 신청 링크를 안내하는 단신이다.",
+      "review": "kein-blog/docs/editorial/reviews/2026-10-14-withdrawals/review.json"
     },
     {
       "id": "ai-ai-colleagues-07",
@@ -302,7 +310,11 @@
       "id": "news-nte-sep16-ddos-maintenance-annulith",
       "final": 68.3,
       "note": "긴급 점검·환석 500개 보상은 종료. 보상 조건 정리 정도라 보관용. 서비스 장애·보안 대응 이력 글로 병합하거나 색인 제외.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "withdrawn",
+      "release": "1.3.103",
+      "reason": "9월16일 점검 예고와 해당 보상 단신. 현재 운영상태·보상수령 가능성을 입증하지 않으며 우편 만료일은 확인하지 않았다.",
+      "review": "kein-blog/docs/editorial/reviews/2026-10-14-withdrawals/review.json"
     },
     {
       "id": "news-nikke-oct8-belorta-pumpkin-witch-recruitment",
@@ -392,13 +404,21 @@
       "id": "news-limbus-tgs2026-booth-sellout",
       "final": 70.4,
       "note": "TGS 2026 현장 소식(디지털데일리 인용). 행사 종료 후 검색 수요 낮음. 공식 후기·공개 콘텐츠 정리로 보강하거나 삭제.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "withdrawn",
+      "release": "1.3.103",
+      "reason": "9월20일 행사 부스의 당일 반응을 소개한 단신. 전체게임인기나 현행 방문가능성의 근거로 확대하지 않는다.",
+      "review": "kein-blog/docs/editorial/reviews/2026-10-14-withdrawals/review.json"
     },
     {
       "id": "news-nikke-sep3-full-redownload",
       "final": 70.4,
       "note": "9/3 업데이트 재다운로드 용량(17GB/22GB)은 유용했으나 일정 부분이 지남. '용량 요건' 중심으로 상시 가이드화하고 일정 표는 제거.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "withdrawn",
+      "release": "1.3.103",
+      "reason": "9월3일 특정 패치의 재다운로드 안내. 당시 용량을 현행 설치 최소요건으로 유지하지 않는다. 원문 현재 응답의 본문 진위는 별도 기록한다.",
+      "review": "kein-blog/docs/editorial/reviews/2026-10-14-withdrawals/review.json"
     },
     {
       "id": "news-nte-pixel-burst-double-reward",

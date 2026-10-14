@@ -1707,7 +1707,7 @@
    }
   },
   "pulse-bat": {
-   "from": "{\"srcs\":[\"pulse-bat-0.png\",\"pulse-bat-o3.png\",\"pulse-bat-fail.png\"],\"cardI\":1}",
+   "from": "{\"srcs\":[\"pulse-bat-0.png\",\"pulse-bat-o3.png\",\"pulse-bat-fail.png\",\"pulse-bat-success.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1724,11 +1724,16 @@
     [
      540,
      960
+    ],
+    [
+     1280,
+     1213
     ]
    ],
    "bytes": {
     "pulse-bat-1.webp": 39878,
     "pulse-bat-2.webp": 12950,
+    "pulse-bat-3.webp": 38754,
     "pulse-bat-hero.webp": 10468,
     "pulse-bat.webp": 10210
    }

@@ -714,7 +714,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 50,
+    "value": 44,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -813,7 +813,7 @@
       "ko": "림버스 컴퍼니",
       "en": "Limbus Company"
      },
-     "total": 15,
+     "total": 9,
      "items": [
       {
        "title": "림버스 10월 8일 모바일 최적화 예고 — 메모리 15% 감소는 어떤 조건의 수치인가",
@@ -840,18 +840,6 @@
        "url": "https://blog.kimjinwan.com/ko/games/limbus-1115-known-issues-save-restore/"
       },
       {
-       "title": "림버스 컴퍼니 로쟈 스킬 공개 — 9월 24일 업데이트, 10장 후편도 함께",
-       "summary": "프로젝트문이 9월 21일 스팀 공지로 로쟈(오트쿠튀르::수선실) 신규 인격의 스킬 구조와 9월 24일 정기 업데이트 내용을 공개했다. 관성 카운트를 쌓아 표식을 부여하는 서포트형 딜러이며, 메인 스토리 10장 후편도 같이 열린다.",
-       "date": "2026-09-21",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-rodion-kit-and-update-sep24/"
-      },
-      {
-       "title": "림버스 컴퍼니 신규 인격 오트쿠튀르::수선실 로쟈 — 9월 24일 KST 추출 시작",
-       "summary": "프로젝트문이 9월 18일 저녁 스팀에 공지한 로쟈 신규 인격 추출 일정과, 아직 확인되지 않은 스킬 정보를 정리했다.",
-       "date": "2026-09-19",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-rodion-alteration-shop-extraction/"
-      },
-      {
        "title": "림버스 컴퍼니 챕터10 파트1, 9월 17일 출시 — 모바일 권장사양 상향",
        "summary": "림버스 컴퍼니 공식 스팀 뉴스가 챕터10(파트1) 정기 업데이트를 9월 17일로 예고하며, 신규 시스템·시각효과로 늘어난 메모리 사용량에 맞춰 iOS 권장사양을 6GB 이상 RAM·iOS 26 이상으로 올렸다.",
        "date": "2026-09-16",
@@ -864,36 +852,6 @@
        "url": "https://blog.kimjinwan.com/ko/games/limbus-canto10-early-unlock/"
       },
       {
-       "title": "림버스 컴퍼니 동부 섕크 3과 홍루 — 속도·호흡·화상을 함께 보는 인격",
-       "summary": "공식 영문 스킬표로 살펴본 홍루의 조건부 강화와 대상 유지 문제. 홍루의 각성 효과는 속도 우위 하나가 아니라 자신의 호흡 유지와 적의 화상까지 세 조건이 동시에 걸려 있고, Nerve Strike - Hong Lu는 대상을 옮기면 이전 대상의 효과가 사라지는 지정형 효과다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-cinq-east-honglu-preview/"
-      },
-      {
-       "title": "림버스 컴퍼니 새벽 사무소 파우스트·그레고르 — 사망 시점보다 상태가 중요했던 이유",
-       "summary": "7월 패시브 문구 정정에서 달라진 표현과 달라지지 않은 효과를 구분한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-dawn-passive-state/"
-      },
-      {
-       "title": "림버스 컴퍼니 차원찢개 이상 미리보기 — 충전만 쌓으면 끝나는 구조는 아니었다",
-       "summary": "7월 23일 대상 신규 인격의 공식 이미지에서 충전·파열·속도 조건을 읽는다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-dimension-shredder-yisang-preview/"
-      },
-      {
-       "title": "림버스 컴퍼니 돈키호테 8월 E.G.O — 합에서 이겼을 때와 졌을 때를 나눠 읽기",
-       "summary": "8월 6일 대상 E.G.O 미리보기의 회복·보호막 조건과 공격 유형 정정을 정리한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-don-aug6-ego-preview/"
-      },
-      {
-       "title": "림버스 컴퍼니 그레고르 9월 E.G.O 미리보기 — 화상과 충전이 만나는 자리",
-       "summary": "Move-In Reg. 공식 카드의 조건을 바탕으로 조합에서 확인할 대상을 정리한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/limbus-gregor-move-in-ego/"
-      },
-      {
        "title": "림버스 두 달 일정 — 금요일 예고, 월요일 상세, 목요일 업데이트",
        "summary": "세 번의 신규 인격·E.G.O 공지 묶음으로 관찰한 공개 순서와 간격. 7월 17일부터 8월 28일까지 네 차례 신규 인격·E.G.O 공지를 대조하면 금요일 대상 추출 예고, 사흘 뒤 월요일 스킬 미리보기, 다시 사흘 뒤 목요일 업데이트 적용이 반복됐고 공지 간격은 매번 14일이었다 — 다만 이건 두 달치 표본일 뿐 앞으로도 보장되는 주기는 아니다.",
        "date": "2026-09-10",
@@ -904,6 +862,12 @@
        "summary": "영문 설명 정정과 시작 정신력 오류를 구분해 오래된 공략을 읽는 기준을 정리했다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/games/limbus-aug20-text-or-bug/"
+      },
+      {
+       "title": "림버스 스킬표 읽는 법: 그레고르·홍루·이상·돈키호테와 정정 사례",
+       "summary": "공식 미리보기와 정정 여섯 사례로 인격·E.G.O, 충전 위력·횟수, 조건식·대상·발동 시점과 발표 단계를 구분한다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/limbus-gregor-move-in-ego/"
       }
      ]
     },
