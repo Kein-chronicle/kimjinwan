@@ -146,8 +146,8 @@
        "url": "https://blog.kimjinwan.com/ko/ai/worker-done-operator-still-busy/"
       },
       {
-       "title": "AI 활용기: 받아쓰기 언어를 바꿨는데 옛 결과가 남는 캐시의 함정",
-       "summary": "실제 영상 제작의 STT 검증에서 음성 파일만 비교하던 캐시를 모델·요청 언어까지 비교하도록 바꾸고 원시 응답을 보존한 사례다.",
+       "title": "STT 캐시 검증: 파일·모델·언어가 바뀌면 재검사됐는가",
+       "summary": "보관된 재사용 함수로 일곱 입력과 요청 키 변경을 검사했다. 캐시 허용과 전사 품질, 요청 언어와 응답 언어, 재전사와 음성 수선을 구분한다.",
        "date": "2026-10-02",
        "url": "https://blog.kimjinwan.com/ko/ai/stt-cache-request-provenance/"
       },
