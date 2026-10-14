@@ -743,8 +743,8 @@
        "url": "https://blog.kimjinwan.com/ko/apps/date-calculator/"
       },
       {
-       "title": "게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기",
-       "summary": "게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.",
+       "title": "게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록",
+       "summary": "게임 이벤트 종료 시각을 한국 시간으로 정확히 바꾸는 방법, 서버 시간대별 변환표, 서머타임 변경일, 일정을 기록할 때 남겨야 할 항목을 정리했다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/apps/event-deadline/"
       },

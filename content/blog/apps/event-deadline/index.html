@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기</title>
-<meta name="description" content="게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.">
+<title>게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록</title>
+<meta name="description" content="게임 이벤트 종료 시각을 한국 시간으로 정확히 바꾸는 방법, 서버 시간대별 변환표, 서머타임 변경일, 일정을 기록할 때 남겨야 할 항목을 정리했다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기">
-<meta property="og:description" content="게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.">
+<meta property="og:title" content="게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록">
+<meta property="og:description" content="게임 이벤트 종료 시각을 한국 시간으로 정확히 바꾸는 방법, 서버 시간대별 변환표, 서머타임 변경일, 일정을 기록할 때 남겨야 할 항목을 정리했다.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/apps/event-deadline/">
 <meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
@@ -29,14 +29,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기">
-<meta name="twitter:description" content="게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.">
+<meta name="twitter:title" content="게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록">
+<meta name="twitter:description" content="게임 이벤트 종료 시각을 한국 시간으로 정확히 바꾸는 방법, 서버 시간대별 변환표, 서머타임 변경일, 일정을 기록할 때 남겨야 할 항목을 정리했다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta name="twitter:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/#article","url":"https://kimjinwan.com/content/blog/apps/event-deadline/","headline":"게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기","description":"게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.","inLanguage":"ko","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기","item":"https://kimjinwan.com/content/blog/apps/event-deadline/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/#article","url":"https://kimjinwan.com/content/blog/apps/event-deadline/","headline":"게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록","description":"게임 이벤트 종료 시각을 한국 시간으로 정확히 바꾸는 방법, 서버 시간대별 변환표, 서머타임 변경일, 일정을 기록할 때 남겨야 할 항목을 정리했다.","inLanguage":"ko","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/event-deadline/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록","item":"https://kimjinwan.com/content/blog/apps/event-deadline/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.61">
+<link rel="stylesheet" href="/css/style.css?v=1.3.62">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -67,18 +67,84 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기</span></li></ol></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록</span></li></ol></nav>
   <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">116</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">62</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-10</p>
-      <h1 class="sec-title detail-title"><span lang="ko">게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-09-10T00:00:00.000Z">2026. 9. 10.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>여러 게임의 이벤트 종료 시각을 놓치지 않으면서도 오래된 공략을 현재 일정으로 오인하지 않게 한다.</p></div><div><strong>핵심 내용</strong><p>공식 출처와 마지막 확인일이 없거나 14일이 지난 정보는 일정 결과에 넣지 않는 편이 안전하다.</p></div><div><strong>읽고 나서</strong><p>공식 공지에서 종료 시각과 시간대를 확인한 뒤 마감 달력에 입력한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#일정만-복사하면-부족한-이유">일정만 복사하면 부족한 이유</a></li><li><a href="#도구가-확인하는-항목">도구가 확인하는 항목</a></li><li><a href="#사용-전-확인">사용 전 확인</a></li></ul></details><div><h2 id="일정만-복사하면-부족한-이유">일정만 복사하면 부족한 이유</h2>
-<p>게임 이벤트는 공지일, 적용일, 종료일이 서로 다를 수 있고 서버별 시간대도 다르다. 종료 시각만 떼어 적으면 어느 지역 기준인지 알 수 없어 오히려 놓치기 쉽다.</p>
-<h2 id="도구가-확인하는-항목">도구가 확인하는 항목</h2>
-<p>게임, 이벤트 이름, 지역, 서버, 종료 시각, 선행 조건, 공식 공지 URL, 마지막 확인일을 함께 받는다. 종료된 일정은 기본 결과에서 제외하고, 확인 후 14일이 지난 정보는 다시 공식 공지를 보도록 차단한다.</p>
-<p><a href="https://apps.kimjinwan.com/event-deadline/" target="_blank" rel="noopener noreferrer">게임 이벤트 마감 달력 열기</a></p>
-<h2 id="사용-전-확인">사용 전 확인</h2>
-<p>도구가 공식 사이트의 변경 내용을 자동 수집하지는 않는다. 운영사가 일정을 바꿀 수 있으므로 실제 참여 전에는 저장한 원문을 다시 확인해야 한다.</p>
+      <h1 class="sec-title detail-title"><span lang="ko">게임 이벤트 마감 시각 읽는 법 — 서버 시간대 변환과 확인일 기록</span></h1></header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-09-10T00:00:00.000Z">2026. 9. 10.</time></span><span>수정 2026. 10. 14.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>공지의 종료 시각을 잘못 읽어 이벤트를 놓치는 일을 줄이도록 시간대 변환과 기록 기준을 알려 준다.</p></div><div><strong>핵심 내용</strong><p>공지의 종료 시각은 서버 시간대 기준이다. UTC 오프셋 차이만 더하면 한국 시간이 나오고, 일정에는 종료 시각·시간대·출처·확인일을 함께 적어야 한다.</p></div><div><strong>읽고 나서</strong><p>지금 진행 중인 이벤트 하나의 종료 시각을 한국 시간으로 바꿔 보고, 마감 달력 도구에 확인일과 함께 기록한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#공지의-시각은-한국-시간이-아닐-수-있다">공지의 시각은 한국 시간이 아닐 수 있다</a></li><li><a href="#변환은-오프셋-차이만-더하면-된다">변환은 오프셋 차이만 더하면 된다</a></li><li><a href="#서머타임이-끼면-한-시간이-틀어진다">서머타임이 끼면 한 시간이 틀어진다</a></li><li><a href="#일정에-남길-여덟-가지">일정에 남길 여덟 가지</a></li><li><a href="#마감-직전에-할-일">마감 직전에 할 일</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 게임 이벤트 종료 시각은 공지의 서버 시간대에 UTC 오프셋 차이를 더하면 한국 시간이 되고, 날짜가 넘어가는 변환이 가장 많이 틀린다.</p>
+</blockquote>
+<h2 id="공지의-시각은-한국-시간이-아닐-수-있다">공지의 시각은 한국 시간이 아닐 수 있다</h2>
+<p>해외 서버가 있는 게임의 공지는 서버 지역의 시간대로 종료 시각을 적는다. 한국 시간(KST, UTC+9)으로 착각하면 시각이 어긋나고, 날짜까지 틀릴 수 있다. 예를 들어 UTC+8 서버의 매일 오전 4시 초기화는 한국 시간으로 오전 5시다. 공지가 “서버 시간”이라고만 적었다면 어느 시간대인지부터 공식 FAQ나 공지 안내에서 확인한다.</p>
+<h2 id="변환은-오프셋-차이만-더하면-된다">변환은 오프셋 차이만 더하면 된다</h2>
+<p>KST는 UTC+9이므로 서버 시간대의 UTC 오프셋과의 차이를 더한다.</p>
+<table>
+<thead>
+<tr>
+<th>공지 시간대</th>
+<th>UTC 오프셋</th>
+<th>KST로 바꾸려면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UTC+8 (중국 표준시 등)</td>
+<td>+8</td>
+<td>+1시간</td>
+</tr>
+<tr>
+<td>일본 표준시</td>
+<td>+9</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>중부유럽 표준시(CET)</td>
+<td>+1</td>
+<td>+8시간</td>
+</tr>
+<tr>
+<td>미국 동부 표준시(EST)</td>
+<td>−5</td>
+<td>+14시간</td>
+</tr>
+<tr>
+<td>미국 태평양 표준시(PST)</td>
+<td>−8</td>
+<td>+17시간</td>
+</tr>
+</tbody>
+</table>
+<p>변환 예: 공지가 “11월 15일 23:59 (UTC−8)“이면 23:59 + 17시간 = 다음 날 16:59, 즉 한국에서는 11월 16일 오후 4시 59분이다. 날짜가 하루 넘어가는 변환이 가장 많이 틀리는 부분이다.</p>
+<h2 id="서머타임이-끼면-한-시간이-틀어진다">서머타임이 끼면 한 시간이 틀어진다</h2>
+<p>미국과 유럽 서버는 서머타임을 적용하면 오프셋이 한 시간 달라진다. 미국은 11월 첫째 일요일, 유럽은 10월 마지막 일요일에 서머타임이 끝난다. 2026년으로 계산하면 유럽은 10월 25일, 미국은 11월 1일이다. 서머타임 기간의 미국 태평양 시간(PDT)은 UTC−7이라 KST 변환이 +16시간이다. 이벤트가 이 날짜를 가로지른다면 공지가 “서버 시간”으로만 적혀 있어도 변환값이 달라지는지 확인한다. 헷갈리면 <a href="https://kimjinwan.com/content/tools/timezone-converter/" target="_blank" rel="noopener noreferrer">시간대 변환기</a>로 같은 시각을 양쪽에서 확인한다.</p>
+<h2 id="일정에-남길-여덟-가지">일정에 남길 여덟 가지</h2>
+<p><a href="https://apps.kimjinwan.com/event-deadline/" target="_blank" rel="noopener noreferrer">게임 이벤트 마감 달력</a>은 다음 여덟 항목을 입력받는다. 직접 표나 메모에 기록할 때도 같은 항목이 필요하다.</p>
+<ol>
+<li>게임</li>
+<li>이벤트 이름</li>
+<li>지역</li>
+<li>서버</li>
+<li>종료 시각</li>
+<li>마지막 확인일</li>
+<li>선행 조건 (예: 먼저 깨야 하는 스테이지)</li>
+<li>공식 공지 주소</li>
+</ol>
+<p>종료 시각은 이 글의 변환표로 한국 시간(기기 현지 시각)으로 바꾼 값을 넣는다. 공지의 원래 시간대는 메모에 함께 적어 두면 나중에 다시 확인하기 쉽다. 공지일과 실제 종료일이 다르면 종료일을 입력한다.</p>
+<p>이 도구는 마지막 확인일이 14일을 넘은 항목과 종료 시각이 지난 항목을 결과에서 제거하고, 공식 출처가 https 주소가 아니면 입력을 받지 않는다. 일정은 점검·연장·조기 종료로 바뀔 수 있으므로 확인일이 오래된 정보는 “아직 유효하다”는 근거가 못 된다. 커뮤니티 요약보다 개발사·퍼블리셔의 공식 공지를 출처로 삼는 이유도 같다.</p>
+<h2 id="마감-직전에-할-일">마감 직전에 할 일</h2>
+<ul>
+<li>종료 24시간 전에 공식 공지를 다시 열어 종료 시각이 그대로인지 확인한다.</li>
+<li>점검이나 연장 공지가 새로 올라왔는지 본다. 종료 시각은 이런 공지로 바뀔 수 있다.</li>
+<li>선행 조건이 있는 이벤트는 종료 시각보다 선행 조건을 끝내는 데 걸리는 시간이 더 중요하다.</li>
+</ul>
+<p><a href="https://kimjinwan.com/content/tools/event-deadline/" target="_blank" rel="noopener noreferrer">도구 소개 페이지</a>에서 입력 항목과 동작 방식을 볼 수 있다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>공지 시각의 시간대를 먼저 확인하고 KST(UTC+9)와의 차이를 더한다.</li>
+<li>미국·유럽 서버는 서머타임이 끝나는 날(2026년 유럽 10월 25일, 미국 11월 1일) 전후로 한 시간이 달라진다.</li>
+<li>일정에는 종료 시각·시간대·출처·확인일을 함께 적고 마감 24시간 전에 공지를 다시 연다.</li>
+</ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/image-size-format-guide/">사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준</a><p>사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.</p></li><li><a href="/content/blog/apps/image-size-spec-guide/">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</a><p>유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.</p></li><li><a href="/content/blog/apps/pdf-work-guide/">PDF 합치기·나누기·압축·서명 실무: 작업 순서와 지켜야 할 한계</a><p>제출용 PDF를 만들 때 합치기·나누기·페이지 정리·압축·이미지 변환·서명·워터마크를 어떤 순서로 쓰는지, 글자 검색이 사라지는 작업과 유지되는 작업을 가르는 기준과 한도 수치를 정리했다.</p></li></ul></aside></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
