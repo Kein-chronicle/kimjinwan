@@ -1,4 +1,4 @@
-# HANDOFF — kimjinwan.com 콘텐츠 허브 (2026-10-14 12:10, 콘텐츠 가치 보강 작업 중단 시점)
+# HANDOFF — kimjinwan.com 콘텐츠 허브 (2026-10-14, 블로그 서브도메인 0.2.99 정리 배포 완료)
 
 이어받으면 `git log --oneline -3`, `cat VERSION`, 서버 `ssh -i ~/kjw.pem ubuntu@54.116.13.147 readlink /var/www/kimjinwan/current` 로 일치부터 확인한다. 작업 파일이 어디 있는지는 이 문서 §0 표, 작업 지침은 §1.
 
@@ -9,15 +9,16 @@
 | 허브 섹션(서브 메뉴 순서) | 전체 / **케인칼럼**(`/content/column/` 5) / **에이전트 업무일지**(`/content/blog/`, 옛 '블로그', 칩 없는 단일 목록, 약 110편) / 게임 소식(약 55편) / AI 활용 가이드 50 / 웹게임 77 / 웹 도구 57 / 내 앱 50 |
 | 발행 | `scripts/publish.sh --reason "..."`(docs/PUBLISH.md). 섹션 감소는 변동 게이트(종료 코드 3 또는 10) → 이전 커밋과 직접 비교해 의도된 것이면 `--force` |
 | **콘텐츠 평가 자료** | **`docs/content-quality/`** : README(채점표·판정 기준·처리 현황), `auto.py`(1차 기계 채점), `qual.jsonl`(281편 2차 채점+처방), `qual-summary.md`, `revise-queue-remaining.json`(남은 보강 53편, 점수 낮은 순) |
-| kein-blog | 소스 0.2.98(허브 발행 글은 버전 안 올림), main 푸시 완료, 작업트리 깨끗. `production/active.json` = `ko-ai-ai-colleagues-02`(발행 완료 상태) |
-| **blog.kimjinwan.com** | 서버 current = **0.2.98**. **0.2.98 이후 내린 글(3단계-B에서 내린 게임 소식 7편 + ai-colleagues-03 병합)이 서브도메인엔 아직 살아 있다 → canonical 이 404 허브 주소를 가리킨다. 정리 배포(0.2.99) 필요**(§1-1) |
+| kein-blog | 소스 0.2.99(8편 내림·이동 링크 정리 유지보수), main 푸시 완료, 작업트리 깨끗. `production/active.json` = `ko-ai-ai-colleagues-02`(발행 완료 상태) |
+| **blog.kimjinwan.com** | 서버 current = **0.2.99**. **3단계-B 게임 소식 7편 + ai-colleagues-03의 한국어 상세·번역 안내 56개 제거 완료**. 새 글 0, 사이트맵 211→203. HTTP 103경로·광고 파일 불변 확인, 0.2.98 롤백용 보존. |
 | 웹앱 도구 사이트 | apps.kimjinwan.com v0.1.82(푸터·헤더의 옛 블로그 글 링크 59곳을 허브 주소로 교체) |
 | 공장 허브 | **`blog` 잡 enabled:true**(21:15, 커밋 8df74aa, 원격 없음·로컬 커밋). 허브 자체는 유저가 따로 켠다. 체커 content-hub-sync 폐지. game-forge·web-tools·blog 잡은 허브 등록 절차 연결 완료 |
 | AdSense | kimjinwan.com 검토 요청은 유저가 눌렀고(10-13 밤) 결과 대기. 3회 거절 이력('가치가 별로 없는 콘텐츠'). **계정 조작은 에이전트가 하지 않는다**. 서브도메인 단독 등록 불가 |
 | ads.txt·app-ads.txt | 불변 SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0`. 배포 전후 라이브 해시 확인 |
 
 ## 1. 이어서 할 일(우선순위순)
-1. **블로그 서브도메인 정리 배포(0.2.99)**: 직전 유지보수(0.2.91·0.2.96·0.2.98)와 같은 방식 — 서버 current(0.2.98)를 복제해 내린 글(허브 `data/content-withdrawn.json` 의 최신 항목 중 3단계-B 분: 게임 소식 7편 limbus-season8-punctum-preview·nikke-july23-matis-record·nikke-sep12-association-deadline·nikke-sep27-minikke-cinderella-episode·nte-august-bonus-calendar·wuwa-37-hsin-suoming-preview·zzz-31-32-event-overlap, ai-colleagues-03)의 디렉터리를 지우고 사이트맵·목록·연재 이전/다음 링크 정리, `current` 전환(이전 릴리스 보존, 롤백은 심링크). 새 글은 서브도메인에 올리지 않는다(동결). 절차 기록: kein-blog HANDOFF.md 최상단(3단계-A/B 기록).
+1. **완료 — 블로그 서브도메인 정리 배포(0.2.99)**: 내린 게임 소식 7편·ai-colleagues-03과 번역 안내 56개 제거, 목록·추천·연재 이전/다음·사이트맵 정리. 178편 본문은 기존 라이브와 일치(삭제 대상 이동 링크 제외), 새 글은 서브도메인에 올리지 않았다. 현재 소스 82/82 시험, 산출물 1,329파일 서버 SHA-256, HTTP 103경로 검증 통과. 재현·검증 기록은 `kein-blog/docs/maintenance/0.2.99/`. 다음 우선순위는 아래 53편 보강이다.
+   - 재발 방지: 유지보수 사본은 node_modules를 독립 설치/복사한다. 공유 심링크로 동시에 빌드하면 Astro 캐시가 섞여 최신 본문이 과거 소스 빌드에 들어간다. 본문별 비교로 잡았고 오염 산출물은 배포하지 않았다.
 2. **남은 보강 53편**(`docs/content-quality/revise-queue-remaining.json`): 점수 낮은 순. 하위 것은 연재·개발일지(ai-colleagues-01·04·05·06·07·09·10, whale-survivors-02·05~10, ai-game-factory-01·02·05·06·08, career-01·02, ai-workbench-01·04·07)와 게임 소식. 처방 원칙: **연재는 3~4편으로 압축·독자 질문형 제목·내부 용어 풀이, 게임 소식은 시점·확정/미확정 구분·기준일·상시 정보 보강, 종료된 건 병합 또는 내림**. 공정은 kein-blog 계약 v3(기존 글 수정은 글마다 `production/ko-*` 계약 만들기·지문 재산출·독립 검토 1~3회·check/verify, **검토 release=false 면 발행 금지**), 중간 발행은 10편 정도씩.
    - `ai-colleagues-05` 재작성 시 독립 검토(3차, release=false)가 짚은 것: ①"활동이 바뀔 때 식사 필드를 지운다"는 5월 23일 커밋(2f9cc8d)부터 있던 코드인데 5월 26일 문단에 붙어 있음 → 삭제하거나 출처 분리 ②"바쁨 상태에도 같은 문제가 있었다"와 소제목 "끝나지 않으면 남는다"는 근거 없음(69a3942·fed73f2는 기능 추가) → "같은 계열의 설계 사례"로 ③5월 29~30일 설정 교체 "같은 문제다"는 추정 → "같은 부류로 볼 수 있다" ④점검표 '충돌' 칸에 "프롬프트 규칙으로 추가, 효과 미검증", "큐를 비운다"는 "비우도록 유도한다" ⑤"음식 사진"은 "먹는 캡션이 달린 사진".
    - 중단 시점에 `ai-colleagues-05` 가 수정 중이었다. 반쯤 쓴 작업(production/ko-ai-ai-colleagues-05)은 되돌렸고 부분 산출물은 scratchpad 에 따로 있다(없어도 무방). 처음부터 다시 한다.
