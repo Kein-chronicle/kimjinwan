@@ -689,8 +689,8 @@
        "url": "https://blog.kimjinwan.com/ko/apps/one-thing-today/"
       },
       {
-       "title": "PocketBox: Links & Notes — 공유 시트 하나로 모이는 뒤섞인 보관함",
-       "summary": "링크·텍스트·사진을 공유 시트 하나로 받아 미확인 보관함에 모으고, 중복 링크는 자동으로 걸러내는 앱이다.",
+       "title": "링크 중복 저장 막는 법 — 추적 파라미터를 지우고 같은 주소를 하나로 묶기",
+       "summary": "같은 글인데 주소가 달라 중복 저장되는 이유와 utm·클릭 식별자 같은 추적 파라미터, 주소 정규화 규칙, 지우면 안 되는 파라미터를 정리했다.",
        "date": "2026-09-14",
        "url": "https://blog.kimjinwan.com/ko/apps/pocketbox/"
       },
