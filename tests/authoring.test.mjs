@@ -128,10 +128,10 @@ test('실제 허브: 모든 게임에 상세 스냅샷·상세 페이지·이미
   // 상세 폴더 수 = 게임 수(남는 옛 페이지 없음)
   assert.equal(fs.readdirSync(path.join(REPO, 'content/games')).filter(d => fs.existsSync(path.join(REPO, 'content/games', d, 'index.html')) && !['genre', 'page'].includes(d)).length, flatGames.length);
 });
-test('실제 허브: 사이트맵 URL 수 = 페이지 수(+ 사이트맵에 없는 0), 서브메뉴·랜딩·홈 수치가 게임 수와 일치', () => {
+test('실제 허브: 상세·첫 목록은 사이트맵 포함, 후속 목록 제외, 노출 수치가 게임 수와 일치', () => {
   const site = fs.readFileSync(path.join(REPO, 'sitemap.xml'), 'utf8'), locs = [...site.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   const pages = fs.readdirSync(path.join(REPO, 'content'), {recursive: true}).filter(f => f.endsWith('index.html')).map(f => `https://kimjinwan.com/content/${f.slice(0, -'index.html'.length)}`);
-  for (const p of pages) assert.ok(locs.includes(p), `${p} 가 사이트맵에 없다`);
+  for (const p of pages) assert.equal(locs.includes(p), !/\/page\/\d+\/$/.test(p), `${p} 사이트맵 정책 불일치`);
   const n = games.count.value;
   assert.match(fs.readFileSync(path.join(REPO, 'content/games/index.html'), 'utf8'), new RegExp(`subnav-n mono">${n}<`));
   assert.match(fs.readFileSync(path.join(REPO, 'content/index.html'), 'utf8'), new RegExp(`웹게임 ${n}개`));

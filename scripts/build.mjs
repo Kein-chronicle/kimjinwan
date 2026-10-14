@@ -10,6 +10,33 @@ import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {GENRE_SCHEMA} from './lib/apps_authoring.mjs';
 import {hubModel, contentNav, landingHtml, mirrorTrail} from './lib/hub.mjs';
+
+// content/ 아래 index.html은 모두 이 빌더의 산출물이다. 글·목록 축소 후 낡은 페이지를 남기지 않는다.
+export function pruneStaleContent(root, outputs) {
+  const base = path.join(root, 'content');
+  if (!fs.existsSync(base)) return [];
+  if (fs.lstatSync(base).isSymbolicLink()) throw new Error('content/ 심볼릭 링크는 생성물 정리 대상이 아니다');
+  const indexes = [];
+  function walk(dir, prefix = '') {
+    for (const entry of fs.readdirSync(dir, {withFileTypes:true})) {
+      if (entry.isSymbolicLink()) continue;
+      if (entry.isDirectory()) walk(path.join(dir, entry.name), prefix + entry.name + '/');
+      else if (entry.isFile() && entry.name === 'index.html') indexes.push(prefix + entry.name);
+    }
+  }
+  walk(base);
+  const removed = [];
+  for (const relative of indexes) {
+    const key = 'content/' + relative;
+    if (Object.hasOwn(outputs, key)) continue;
+    const file = path.join(base, relative);
+    if (!fs.lstatSync(file).isFile()) continue;
+    fs.unlinkSync(file); removed.push(key);
+    let dir = path.dirname(file);
+    while (dir !== base && fs.readdirSync(dir).length === 0) { fs.rmdirSync(dir); dir = path.dirname(dir); }
+  }
+  return removed;
+}
 import {SITE, SITE_NAME, facts, pageMeta, cardPath, cardAlt} from './lib/og.mjs';
 const GAME_LASTMOD = '2026-10-06'; // /game/ 은 손으로 쓴 페이지 — 마지막 수정일 고정
 const SERVICE_KINDS = ['blog', 'game', 'tool']; // 서비스 카드로 올라간 종류는 /works/ 컬렉션 카드에서 뺀다(중복 방지)
@@ -207,13 +234,14 @@ export function buildAll({write = true} = {}) {
   }
   // 사이트맵: 핵심 페이지 + 게임 + 허브 색인 + 허브 상세(모두 자기 canonical). 상세의 lastmod 는 글 날짜, 나머지는 데이터 스탬프.
   const urls = [['/', STAMP], ['/works/', STAMP], ['/factories/', STAMP], ['/career/', STAMP], ['/content/', STAMP], ['/game/', GAME_LASTMOD],
-    ...model.pages.filter(p => p.path !== '/content/').map(p => [p.path, STAMP]), ...mirrorPages(data).map(m => [m.path, m.date || STAMP])];
+    ...model.pages.filter(p => p.path !== '/content/' && !/\/page\/\d+\/$/.test(p.path)).map(p => [p.path, STAMP]), ...mirrorPages(data).map(m => [m.path, m.date || STAMP])];
   out['sitemap.xml'] = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([p, d]) => `  <url><loc>${SITE}${p}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`;
   if (write) for (const [file, html] of Object.entries(out)) {
     const dest = path.join(ROOT, file);
     fs.mkdirSync(path.dirname(dest), {recursive: true});
     fs.writeFileSync(dest, html);
   }
+  if (write) pruneStaleContent(ROOT, out);
   return out;
 }
 

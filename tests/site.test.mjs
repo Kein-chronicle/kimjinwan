@@ -23,9 +23,10 @@ test('홈이 블로그·웹도구·웹게임·Forge·Prism 으로 연결된다',
   for (const u of ['https://blog.kimjinwan.com/ko/', 'https://apps.kimjinwan.com/', 'https://games.kimjinwan.com/', 'https://forge.kimjinwan.com/', 'https://prism-studio.kimjinwan.com/'])
     assert.ok(h.includes(`href="${u}`), u);
 });
-test('robots.txt 는 주요 사이트맵(홈 · 블로그 · 웹 도구 · 웹게임 · 서비스 허브)을 명시한다', () => {
+test('robots.txt 는 독립 사이트맵을 유지하고 허브 정본과 겹치는 블로그는 제외한다', () => {
   const r = read('robots.txt');
-  for (const s of ['https://kimjinwan.com', 'https://blog.kimjinwan.com', 'https://apps.kimjinwan.com', 'https://games.kimjinwan.com', 'https://service.kimjinwan.com'])
+  assert.ok(!r.includes('Sitemap: https://blog.kimjinwan.com/sitemap.xml'));
+  for (const s of ['https://kimjinwan.com', 'https://apps.kimjinwan.com', 'https://games.kimjinwan.com', 'https://service.kimjinwan.com'])
     assert.ok(r.includes(`Sitemap: ${s}/sitemap.xml`), s);
 });
 test('서버에서 보존한 광고 파일을 유지한다', () => {

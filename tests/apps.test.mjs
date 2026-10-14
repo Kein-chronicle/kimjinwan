@@ -154,10 +154,10 @@ test('내 앱: 구조화 데이터 — 상세는 MobileApplication(스토어 주
   const land = ld(out['content/index.html']).find(x => x['@type'] === 'ItemList').itemListElement;
   assert.equal(land.length, 7); assert.equal(land.at(-1).url, 'https://kimjinwan.com/content/apps/');
 });
-test('내 앱: 사이트맵에 색인·분류·쪽·상세가 전부 있고 /content/blog/apps/ 와 경로가 겹치지 않는다', () => {
+test('내 앱: 사이트맵에 첫 색인·분류·상세가 있고 후속 쪽은 제외하며 경로가 겹치지 않는다', () => {
   const sm = out['sitemap.xml'], locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   assert.equal(new Set(locs).size, locs.length);
-  for (const f of appFiles) assert.ok(locs.includes('https://kimjinwan.com/' + f.replace(/index\.html$/, '')), f);
+  for (const f of appFiles) assert.equal(locs.includes('https://kimjinwan.com/' + f.replace(/index\.html$/, '')), !/\/page\/\d+\//.test(f), f);
   const mine = appFiles.map(f => '/' + f.replace(/index\.html$/, '')), blogApps = Object.keys(out).filter(f => f.startsWith('content/blog/apps/')).map(f => '/' + f.replace(/index\.html$/, ''));
   assert.ok(blogApps.length > 5);
   assert.equal(mine.filter(p => blogApps.includes(p)).length, 0);

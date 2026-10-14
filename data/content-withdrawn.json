@@ -771,6 +771,11 @@
    "from": "/content/blog/ai/ai-colleagues-03/",
    "to": "/content/blog/ai/ai-colleagues-02/",
    "reason": "AI 리뷰 적용 점검 글(02)로 병합"
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-01/",
+   "to": "/content/blog/ai/ai-colleagues-02/",
+   "reason": "역할 소개를 실행·검토 완료 증거표가 있는 AI 코드 리뷰 점검 글로 통합"
   }
  ]
 }

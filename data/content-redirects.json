@@ -8,6 +8,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-colleagues-01/",
+   "to": "/content/blog/ai/ai-colleagues-02/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-colleagues-03/",
    "to": "/content/blog/ai/ai-colleagues-02/",
    "status": 301

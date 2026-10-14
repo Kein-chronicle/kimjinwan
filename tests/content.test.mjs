@@ -355,11 +355,12 @@ test('내부 링크는 모두 실제 페이지/파일로 풀리고, 새 창 링�
     for (const m of h.matchAll(/<a\b[^>]*href="https:\/\/[^"]*"[^>]*>/g)) assert.match(m[0], /target="_blank"/, f + m[0]);
   }
 });
-test('사이트맵: 색인·상세 /content/ 페이지 전부(자기 canonical)와 핵심 페이지, 중복 없음', () => {
+test('사이트맵: 첫 목록·상세와 핵심 페이지, 후속 목록은 탐색 링크로 유지', () => {
   const x = read('sitemap.xml'), locs = [...x.matchAll(/<loc>([^<]*)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)].map(m => m[1]);
   assert.equal(new Set(locs).size, locs.length);
   const inMap = new Set(locs.filter(u => u.startsWith(`${SITE}/content/`)).map(u => u.slice(SITE.length)));
-  assert.deepEqual([...inMap].sort(), contentFiles.map(pathOf).sort());
+  assert.deepEqual([...inMap].sort(), contentFiles.map(pathOf).filter(p => !/\/page\/\d+\/$/.test(p)).sort());
+  assert.doesNotMatch(x, /<loc>[^<]*\/page\/\d+\/<\/loc>/);
   for (const p of ['/', '/works/', '/factories/', '/career/', '/game/']) assert.ok(locs.includes(SITE + p), p);
   assert.equal(x, out['sitemap.xml'], 'sitemap.xml 은 build 산출물이다');
   assert.doesNotMatch(x, /\/content\/blog\/games\//);

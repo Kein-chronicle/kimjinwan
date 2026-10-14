@@ -1,7 +1,35 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {buildAll} from '../scripts/build.mjs';
+import {buildAll, pruneStaleContent} from '../scripts/build.mjs';
+import path from 'node:path';
+import {tmpdir} from 'node:os';
+
+test('내린 상세·줄어든 목록만 제거하고 남은 페이지와 비HTML 파일을 보존한다', () => {
+  const root = fs.mkdtempSync(path.join(tmpdir(), 'hub-stale-'));
+  for (const f of ['content/blog/old/index.html', 'content/blog/page/9/index.html', 'content/blog/live/index.html', 'content/blog/asset.txt']) {
+    fs.mkdirSync(path.dirname(path.join(root, f)), {recursive:true}); fs.writeFileSync(path.join(root, f), '보존 검사용');
+  }
+  assert.equal(pruneStaleContent(root, {'content/blog/live/index.html':'새 본문'}).length, 2);
+  assert.ok(!fs.existsSync(path.join(root, 'content/blog/old')));
+  assert.ok(!fs.existsSync(path.join(root, 'content/blog/page')));
+  assert.equal(fs.readFileSync(path.join(root, 'content/blog/live/index.html'), 'utf8'), '보존 검사용');
+  assert.ok(fs.existsSync(path.join(root, 'content/blog/asset.txt')));
+  fs.rmSync(root, {recursive:true});
+});
+test('생성물 정리는 content 루트·하위 심링크의 외부 파일을 건드리지 않는다', () => {
+  const root = fs.mkdtempSync(path.join(tmpdir(), 'hub-stale-link-'));
+  const outside = fs.mkdtempSync(path.join(tmpdir(), 'hub-outside-'));
+  fs.writeFileSync(path.join(outside, 'index.html'), '외부 원본');
+  fs.symlinkSync(outside, path.join(root, 'content'));
+  assert.throws(() => pruneStaleContent(root, {}), /심볼릭 링크/);
+  fs.unlinkSync(path.join(root, 'content')); fs.mkdirSync(path.join(root, 'content'));
+  fs.symlinkSync(outside, path.join(root, 'content/nested'));
+  assert.deepEqual(pruneStaleContent(root, {}), []);
+  assert.equal(fs.readFileSync(path.join(outside, 'index.html'), 'utf8'), '외부 원본');
+  assert.ok(fs.lstatSync(path.join(root, 'content/nested')).isSymbolicLink());
+  fs.rmSync(root, {recursive:true}); fs.rmSync(outside, {recursive:true});
+});
 
 const GENERATED_HTML = ['index.html', 'works/index.html', 'factories/index.html', 'career/index.html', 'content/index.html'];
 const GENERATED = [...GENERATED_HTML, 'sitemap.xml'];

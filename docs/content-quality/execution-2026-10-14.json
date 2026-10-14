@@ -1,0 +1,330 @@
+{
+  "status": "in_progress",
+  "scope": "남은 53편, 평가 공정, 사이트맵 정리 완료",
+  "quality_pipeline": "implemented; independent code review pending",
+  "articles": [
+    {
+      "id": "ai-ai-colleagues-01",
+      "final": 60.5,
+      "note": "검색 의도가 약한 시리즈 도입글. 역할 분리(실행/검토/대화)별 '완료 증거' 기준을 비교표 하나로 정리하고, 제목을 'AI 에이전트 역할 나누는 법'처럼 독자 질문형으로 바꿔 시리즈 10편을 3~4편으로 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-06",
+      "final": 60.6,
+      "note": "말투 반복 문제 진단이 일반론. 반복 패턴 유형(길이·질문·이모지)별 대처를 표로 정리하거나 삭제·병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-05",
+      "final": 61.3,
+      "note": "카드용 vs 액션용 이미지 규격 계약. 계약 문서 요약표를 넣어 보강.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-02",
+      "final": 61.4,
+      "note": "WKWebView 번들 서빙+광고 메시지 연결 개요. 코드 구조를 정리해 보강하거나 01과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-07",
+      "final": 61.7,
+      "note": "온보딩·설명 늘어남 개요. 08과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-workbench-07",
+      "final": 62.4,
+      "note": "블로그 제작 과정 자기참조 글로 독자가 얻을 것이 적음. career 글들과 묶어 '작성 기준' 한 페이지로.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-career-01",
+      "final": 62.4,
+      "note": "경력 정리 일반론. 3편을 '프로젝트 포트폴리오 정리법' 한 편으로 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-game-factory-02",
+      "final": 62.6,
+      "note": "소수 작품 집중 투자 결과 회고. 01과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-04",
+      "final": 62.8,
+      "note": "프로필/현재 상태 분리 설계는 검색 가능 주제(챗봇 캐릭터 기억). 상태 스키마 예시를 표로 정리하고 05와 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-10",
+      "final": 62.8,
+      "note": "ITMS-90474 상세는 별도 글에 있음. 링크하고 시리즈 마무리로 축소.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-career-02",
+      "final": 63.0,
+      "note": "회사 조사 기준 일반론. 01과 병합 또는 공고 분해 표 추가.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-game-factory-05",
+      "final": 63.5,
+      "note": "중단 사례 3종 비교. 중단 기록 템플릿을 표로 정리하고 06과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-game-factory-01",
+      "final": 63.6,
+      "note": "대량 제작의 한계 회고. 검색 의도 낮음. 시리즈 10편을 4편 내외로 병합하고 핵심 수치(55개 중 24개 검증 흔적 약함)를 앞세울 것.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-09",
+      "final": 63.9,
+      "note": "설정 변경 시 의존 위치 점검 목록은 유용하나 사례가 캐릭터 이력 서술 위주. 체크리스트로 재구성해 04·05와 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-game-factory-08",
+      "final": 64.3,
+      "note": "이전 공장에서 가져온 것 선별 회고. 내부 프로젝트명 중심. 병합 후보.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-08",
+      "final": 64.4,
+      "note": "브랜치 병합 후 복구와 검사 추가. 07과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-09",
+      "final": 64.5,
+      "note": "2.1GB→207MB 자산 정리 수치. 줄이는 방법을 정리하면 가치 상승.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-05",
+      "final": 65.2,
+      "note": "'임시 상태에 만료·해제 조건' 원칙은 챗봇 설계자에게 유용. 04와 병합해 '챗봇 기억 설계' 한 편으로 압축.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-second-burst-roster",
+      "final": 65.8,
+      "note": "2버스트 파티 자리 비용 관점은 유용. 후보별(크라운·마스트·앵커·프리카·민트) 역할 비교표를 출처와 함께 추가하면 가치 상승.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-drake-ammo-trap",
+      "final": 65.9,
+      "note": "장탄 옵션을 그대로 옮기지 말라는 결론은 있으나 단일 출처(인벤)·수치 없음. 드레이크 스킬·무기 전환 구조와 추천 장비 옵션을 출처 여러 개로 비교 정리하면 대표 글 가능.",
+      "status": "pending"
+    },
+    {
+      "id": "news-zzz-32-claret-roxy-engines",
+      "final": 66.2,
+      "note": "S급 엔진 vs A·B급 Armorer 엔진 획득 경로 구분은 쓸 만함. 엔진별 효과·획득 경로를 표로 정리하고 3.3 이후 갱신.",
+      "status": "pending"
+    },
+    {
+      "id": "news-ananta-silence-rumor-followup",
+      "final": 66.4,
+      "note": "지난 루머 회고로 지금 검색 수요가 낮음. 출시일 글에 한 단락으로 병합하거나 삭제.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nte-villa-vehicle-budget",
+      "final": 66.4,
+      "note": "별장(690만 폰즈, 도시 타이쿤 13레벨)과 열풍(400만) 가격·조건 정리. 생산량·회수 기간 자료를 리서치해 비교하면 가치 상승.",
+      "status": "pending"
+    },
+    {
+      "id": "news-wuwa-35-electro-rover",
+      "final": 66.4,
+      "note": "방랑자 전도가 스토리 진행으로 열린다는 정보가 핵심. 해금 임무 이름·단계를 출처와 함께 구체화하고 현재 3.6 이후 상태로 갱신.",
+      "status": "pending"
+    },
+    {
+      "id": "news-wuwa-35-yangyang-susu",
+      "final": 66.5,
+      "note": "3.5 신규(양양·현령·수수) 구분 정리. 3.5 종료로 낡음. 속성·역할 비교표를 출처와 함께 정리해 캐릭터 요약글로 전환하거나 3.5/3.6 글과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-wuwa-36-qingxiao-jingran",
+      "final": 66.5,
+      "note": "3.6 신규 둘의 속성·무기 차이. 위와 병합해 '명조 3.5~3.7 신규 공명자 정리표'로.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-workbench-04",
+      "final": 67.1,
+      "note": "중단 판단 근거(운영비 0 vs 품질) 정리. 온디바이스 모델 품질 비교 자료를 리서치해 보강하면 가치 상승.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nte-bright-moon-linko-hotori",
+      "final": 67.1,
+      "note": "9/30에 마감된 보드 정리. 링코·호토리 캐릭터 소개로 전환하거나 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-zzz-hollow-vanguards-signup",
+      "final": 67.1,
+      "note": "글로벌 비공개 테스트 모집 공고. 모집 마감 여부와 한국 참여 가능 여부를 확인해 갱신하거나 종료 표기. 공식 신청 링크 안내 필수.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-07",
+      "final": 67.2,
+      "note": "'발송 허용 검사 → 생성' 순서 설계는 선톡/알림 기능 개발자에게 유용. 검사 항목 체크리스트를 표로 정리.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-workbench-01",
+      "final": 67.2,
+      "note": "공통 엔진/분야별 프로필 분리 설계 회고. 구분 표로 정리.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-whale-survivors-06",
+      "final": 67.4,
+      "note": "덱빌딩 59장 규칙·카드 수 보존 검사. 상대적으로 구체적.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-same-pattern-four-repos-one-day",
+      "final": 67.9,
+      "note": "제목('다 달랐다')이 내용(둘은 동일, 하나만 재작성)과 어긋남. 제목 정정, 해시 설계는 별도 글로 분리.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nte-sep16-ddos-maintenance-annulith",
+      "final": 68.3,
+      "note": "긴급 점검·환석 500개 보상은 종료. 보상 조건 정리 정도라 보관용. 서비스 장애·보안 대응 이력 글로 병합하거나 색인 제외.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-oct8-belorta-pumpkin-witch-recruitment",
+      "final": 68.6,
+      "note": "벨로타 가이드(10/13)가 이 정보를 포함하므로 중복. 가이드로 병합하고 이 글은 리다이렉트하거나 삭제.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-stt-cache-request-provenance",
+      "final": 69.4,
+      "note": "STT 캐시 키에 모델·언어 포함 원칙. 일반 캐시 키 설계 글로 확장하면 가치 상승.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-laplace-july-operating-note",
+      "final": 69.4,
+      "note": "풀차지 5회→머신건 전환이라는 핵심은 쓸 만함. 현행 스킬 설명과 장탄 옵션 우선순위를 여러 출처로 비교한 캐릭터 가이드로 확장하고 maxwell 글과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-gregor-move-in-ego",
+      "final": 69.5,
+      "note": "9월 3일 적용된 E.G.O 미리보기. 현행 수치로 갱신하거나 그레고르 정리글에 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-zzz-31-returning-checklist",
+      "final": 69.7,
+      "note": "복귀 체크리스트 형식은 유용(초보자 가이드·시즌3 제2장·베이글 프로젝트). 3.3 기준으로 갱신해 상시 복귀 가이드로 전환.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-colleagues-10",
+      "final": 69.8,
+      "note": "무응답 4구간 진단(수신·실행·생성·송신)이 유용. 봇 운영 일반론으로 제목 정리.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-ai-game-factory-06",
+      "final": 69.8,
+      "note": "'부분완성' 상태 정의가 쓸 만함. 05와 병합해 '프로젝트 중단·부분 출고 기록법'으로.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-cinq-east-honglu-preview",
+      "final": 69.8,
+      "note": "8월 17일 공식 스킬표 기반 해설. 현재 실장 이후 정보(실제 성능 평가)가 없어 구형 정보. 출시 후 공식 수치로 갱신하거나 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-dawn-passive-state",
+      "final": 69.8,
+      "note": "7월 문구 정정 해설로 현재 검색 수요 낮음. 파우스트·그레고르 패시브의 현행 동작 요약과 편성 메모 표로 정리하거나 캐릭터 가이드로 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-dimension-shredder-yisang-preview",
+      "final": 70.2,
+      "note": "7월 미리보기 해설. 현재 실장된 최종 스킬 수치로 갱신하지 않으면 낡은 정보. 갱신하거나 캐릭터 정리글로 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-don-aug6-ego-preview",
+      "final": 70.2,
+      "note": "8월 미리보기. 합 승패 효과 구분은 좋으나 시점 경과. 최종 수치 갱신 또는 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-rodion-alteration-shop-extraction",
+      "final": 70.4,
+      "note": "9/24 추출 시작 예고. 이후 공개된 스킬표·코스트로 갱신하거나 아래 rodion 글(kit-and-update-sep24)과 병합.",
+      "status": "pending"
+    },
+    {
+      "id": "news-limbus-tgs2026-booth-sellout",
+      "final": 70.4,
+      "note": "TGS 2026 현장 소식(디지털데일리 인용). 행사 종료 후 검색 수요 낮음. 공식 후기·공개 콘텐츠 정리로 보강하거나 삭제.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-sep3-full-redownload",
+      "final": 70.4,
+      "note": "9/3 업데이트 재다운로드 용량(17GB/22GB)은 유용했으나 일정 부분이 지남. '용량 요건' 중심으로 상시 가이드화하고 일정 표는 제거.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nte-pixel-burst-double-reward",
+      "final": 70.4,
+      "note": "9/21 종료된 이벤트. 일일 120·누적 840 한도 계산은 유용하므로 '반복되는 2배 이벤트 계산법' 상시 가이드로 재구성하거나 종료 표기 후 보관.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-worker-done-operator-still-busy",
+      "final": 70.6,
+      "note": "완료 시각·종료 시각·배정 시각 3분리. 내부 용어(운영자·작업자) 풀어쓰기.",
+      "status": "pending"
+    },
+    {
+      "id": "news-wuwa-35-36-story-cycle",
+      "final": 70.6,
+      "note": "3.5→3.6 지역 연속성 정리는 복귀 유저에게 유용. 3.7 예고 이후 갱신하고 현재 버전 기준 복귀 순서를 표로 정리.",
+      "status": "pending"
+    },
+    {
+      "id": "news-nikke-sep22-swift-bunny-official-confirm",
+      "final": 71.6,
+      "note": "'지난 글의 미확인이 사실은 공식이었다'는 정정 프레이밍이 독자에게 낯섦. sep17 글과 병합해 바니걸 시즌 일정표 하나로 정리하고 정정은 한 줄로.",
+      "status": "pending"
+    },
+    {
+      "id": "ai-clean-clone-handoff-check",
+      "final": 71.9,
+      "note": "유지 경계. 빈 클론 검증 체크리스트(설치·환경 진단·테스트)로 정리하면 가치 상승.",
+      "status": "pending"
+    }
+  ],
+  "sitemap": "pending",
+  "live": {
+    "hub": "1.3.82",
+    "blog": "0.2.99"
+  }
+}
