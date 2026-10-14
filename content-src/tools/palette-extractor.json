@@ -56,9 +56,5 @@
    "t": "p",
    "text": "색상 카드를 누르면 HEX 값이 클립보드에 복사됩니다."
   }
- ],
- "guide": {
-  "title": "사진 색상 팔레트 추출 — HEX·RGB 대표색 찾기",
-  "path": "/content/blog/apps/palette-extractor/"
- }
+ ]
 }

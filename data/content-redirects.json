@@ -43,6 +43,16 @@
    "status": 301
   },
   {
+   "from": "/content/blog/apps/app-icon-generator/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/background-remover/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/bike-tire-pressure/",
    "to": "/content/apps/bike-tire-pressure/",
    "status": 301
@@ -80,6 +90,11 @@
   {
    "from": "/content/blog/apps/depth-of-field/",
    "to": "/content/apps/depth-of-field/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/device-mockup/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
    "status": 301
   },
   {
@@ -123,13 +138,58 @@
    "status": 301
   },
   {
+   "from": "/content/blog/apps/gif-maker/",
+   "to": "/content/tools/gif-maker/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/house-ledger/",
    "to": "/content/blog/",
    "status": 301
   },
   {
+   "from": "/content/blog/apps/id-photo-maker/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/ikigai-map/",
    "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-compressor/",
+   "to": "/content/blog/apps/image-size-format-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-converter/",
+   "to": "/content/blog/apps/image-size-format-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-crop-rotate/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-ocr/",
+   "to": "/content/tools/image-ocr/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-redactor/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-to-pdf/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/image-watermark/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
    "status": 301
   },
   {
@@ -163,6 +223,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/apps/metadata-remover/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/monster-survivors/",
    "to": "/content/blog/",
    "status": 301
@@ -193,8 +258,48 @@
    "status": 301
   },
   {
-   "from": "/content/blog/apps/page/4/",
-   "to": "/content/blog/",
+   "from": "/content/blog/apps/palette-extractor/",
+   "to": "/content/tools/palette-extractor/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-compressor/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-merge/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-organizer/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-sign/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-split/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-to-image/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pdf-watermark/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/photo-collage/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
    "status": 301
   },
   {
@@ -218,6 +323,16 @@
    "status": 301
   },
   {
+   "from": "/content/blog/apps/qr-generator/",
+   "to": "/content/blog/apps/qr-code-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/qr-reader/",
+   "to": "/content/blog/apps/qr-code-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/reaction-time/",
    "to": "/content/apps/reaction-time/",
    "status": 301
@@ -235,6 +350,16 @@
   {
    "from": "/content/blog/apps/score-keeper/",
    "to": "/content/apps/score-keeper/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/signature-maker/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/social-image-resizer/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
    "status": 301
   },
   {
@@ -794,6 +919,11 @@
   },
   {
    "from": "/content/blog/page/11/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/page/8/",
    "to": "/content/blog/",
    "status": 301
   },

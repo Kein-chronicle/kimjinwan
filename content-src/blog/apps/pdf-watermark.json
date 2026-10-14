@@ -1,9 +1,0 @@
-{
- "category": "apps",
- "slug": "pdf-watermark",
- "title": "PDF 워터마크 넣기 — 문구·투명도·각도 설정",
- "description": "PDF 페이지에 검토용, 기밀, 사본 같은 문구를 반복 표시하는 방법과 글꼴 제한을 안내한다.",
- "date": "2026-09-10",
- "url": "https://blog.kimjinwan.com/ko/apps/pdf-watermark/",
- "body": "<div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>공유 문서의 용도와 취급 조건을 페이지 위에 눈에 띄게 표시한다.</p></div><div><strong>핵심 내용</strong><p>워터마크는 무단 복사를 막는 보안 기능이 아니며 문구가 본문을 가리지 않는지 확인해야 한다.</p></div><div><strong>읽고 나서</strong><p>문구와 적용 페이지, 크기, 투명도, 각도를 정해 새 PDF를 만든다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#읽히되-방해하지-않게\">읽히되 방해하지 않게</a></li><li><a href=\"#현재-글꼴-범위\">현재 글꼴 범위</a></li></ul></details><div><h2 id=\"읽히되-방해하지-않게\">읽히되 방해하지 않게</h2>\n<p>중앙 대각선은 표시가 잘 보이고, 낮은 투명도는 본문을 덜 가린다. 모든 페이지가 아니라 지정한 범위에만 넣을 수도 있다.</p>\n<p><a href=\"https://apps.kimjinwan.com/pdf-watermark/\">PDF 워터마크 넣기 열기</a></p>\n<h2 id=\"현재-글꼴-범위\">현재 글꼴 범위</h2>\n<p>기본 PDF 글꼴을 사용하므로 영문과 숫자 중심 문구가 가장 안정적이다. 워터마크는 소유권이나 접근 권한을 기술적으로 강제하지 않는다. 민감 문서는 별도의 암호화와 접근 통제가 필요하다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/pdf-compressor/\">PDF 용량 줄이기 — 이미지 문서를 가볍게 압축</a><p>사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.</p></li><li><a href=\"/ko/apps/pdf-merge/\">PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에</a><p>여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.</p></li><li><a href=\"/ko/apps/pdf-organizer/\">PDF 페이지 순서 변경·추출 — 번호 입력 사용법</a><p>PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.</p></li></ul></aside>"
-}

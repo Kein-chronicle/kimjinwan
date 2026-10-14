@@ -1,9 +1,0 @@
-{
- "category": "apps",
- "slug": "pdf-split",
- "title": "PDF 분할·페이지 추출 — 필요한 범위만 새 파일로",
- "description": "PDF에서 필요한 페이지 범위를 한 파일로 추출하거나 페이지마다 나누어 ZIP으로 저장하는 방법이다.",
- "date": "2026-09-10",
- "url": "https://blog.kimjinwan.com/ko/apps/pdf-split/",
- "body": "<div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>긴 문서에서 제출하거나 공유할 페이지만 골라 새 PDF로 만든다.</p></div><div><strong>핵심 내용</strong><p>페이지 번호는 PDF에 표시된 인쇄 번호가 아니라 파일의 실제 순서를 기준으로 입력한다.</p></div><div><strong>읽고 나서</strong><p>PDF를 선택하고 페이지 범위를 입력한 뒤 추출 방식을 고른다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#범위-입력법\">범위 입력법</a></li><li><a href=\"#한-파일과-개별-파일\">한 파일과 개별 파일</a></li></ul></details><div><h2 id=\"범위-입력법\">범위 입력법</h2>\n<p><code>1-3, 7, 10-12</code>처럼 연속 범위와 개별 페이지를 함께 입력할 수 있다. 표지 때문에 문서에 인쇄된 번호와 PDF 뷰어의 번호가 다르면 파일의 실제 페이지 순서를 따라야 한다.</p>\n<p><a href=\"https://apps.kimjinwan.com/pdf-split/\">PDF 분할·페이지 추출 열기</a></p>\n<h2 id=\"한-파일과-개별-파일\">한 파일과 개별 파일</h2>\n<p>선택한 페이지를 하나의 PDF로 묶거나 페이지별 PDF를 ZIP으로 받을 수 있다. 개인정보가 섞인 문서는 결과를 공유하기 전에 제외 대상 페이지가 남지 않았는지 다시 확인한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/pdf-compressor/\">PDF 용량 줄이기 — 이미지 문서를 가볍게 압축</a><p>사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.</p></li><li><a href=\"/ko/apps/pdf-merge/\">PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에</a><p>여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.</p></li><li><a href=\"/ko/apps/pdf-organizer/\">PDF 페이지 순서 변경·추출 — 번호 입력 사용법</a><p>PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.</p></li></ul></aside>"
-}

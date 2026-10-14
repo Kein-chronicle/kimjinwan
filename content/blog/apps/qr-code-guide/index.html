@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방</title>
+<meta name="description" content="QR 코드가 안 읽히는 이유를 내용 길이와 칸 수, 오류 정정 수준, 인쇄 크기로 계산해 보이고, 모르는 QR을 열기 전에 확인할 것을 미국 연방거래위원회 안내와 함께 정리했다.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/blog/apps/qr-code-guide/">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방">
+<meta property="og:description" content="QR 코드가 안 읽히는 이유를 내용 길이와 칸 수, 오류 정정 수준, 인쇄 크기로 계산해 보이고, 모르는 QR을 열기 전에 확인할 것을 미국 연방거래위원회 안내와 함께 정리했다.">
+<meta property="og:url" content="https://kimjinwan.com/content/blog/apps/qr-code-guide/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=d6e026e891">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=d6e026e891">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="“글 204편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방">
+<meta name="twitter:description" content="QR 코드가 안 읽히는 이유를 내용 길이와 칸 수, 오류 정정 수준, 인쇄 크기로 계산해 보이고, 모르는 QR을 열기 전에 확인할 것을 미국 연방거래위원회 안내와 함께 정리했다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=d6e026e891">
+<meta name="twitter:image:alt" content="“글 204편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/qr-code-guide/#article","url":"https://kimjinwan.com/content/blog/apps/qr-code-guide/","headline":"QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방","description":"QR 코드가 안 읽히는 이유를 내용 길이와 칸 수, 오류 정정 수준, 인쇄 크기로 계산해 보이고, 모르는 QR을 열기 전에 확인할 것을 미국 연방거래위원회 안내와 함께 정리했다.","inLanguage":"ko","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/qr-code-guide/"},"image":"https://kimjinwan.com/assets/og/content.png?v=d6e026e891","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=d6e026e891","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/qr-code-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방","item":"https://kimjinwan.com/content/blog/apps/qr-code-guide/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.55">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/" data-spy="top"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="/#services" data-spy="services"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a>
+      <a href="/#factories" data-spy="factories"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/#experience" data-spy="experience"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" data-spy="contact"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-ext" href="/content/" aria-current="page"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2z"/><path d="M12 6v14"/></svg><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a class="nav-ext" href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer" title="서비스 허브 — service.kimjinwan.com"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+<script src="/js/nav-spy.js" defer></script>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">121</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">78</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
+  <article class="detail" data-kind="blog">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-10-14</p>
+      <h1 class="sec-title detail-title"><span lang="ko">QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방</span></h1></header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-10-14T00:00:00.000Z">2026. 10. 14.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>QR 코드를 만들어 인쇄하거나 모르는 QR을 읽기 전에 읽기 쉬운 크기를 계산하고 안전하게 여는 순서를 스스로 정하게 돕는다.</p></div><div><strong>핵심 내용</strong><p>QR은 내용이 길수록 칸이 촘촘해져 작게 인쇄하면 읽히지 않는다. 짧은 주소를 쓰고 여백과 명암 대비를 지키며, 모르는 QR은 목적지 주소를 먼저 확인한 뒤 연다.</p></div><div><strong>읽고 나서</strong><p>QR에 넣을 주소를 가능한 한 짧게 줄이고, 인쇄할 크기에서 두 기종 이상의 휴대전화로 읽어 본다.</p></div></section><details><summary>목차</summary><ul><li><a href="#내용이-길수록-한-칸이-작아진다">내용이 길수록 한 칸이 작아진다</a></li><li><a href="#오류-정정-수준-높일수록-칸이-늘어난다">오류 정정 수준: 높일수록 칸이 늘어난다</a></li><li><a href="#만들-때-확인할-것">만들 때 확인할 것</a></li><li><a href="#모르는-qr을-읽을-때">모르는 QR을 읽을 때</a></li><li><a href="#흔한-실수와-한계">흔한 실수와 한계</a></li><li><a href="#바로-해-볼-도구">바로 해 볼 도구</a></li><li><a href="#출처와-기준일">출처와 기준일</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> QR 코드는 내용이 길수록 칸 수가 늘어 같은 크기에서 한 칸이 작아지므로 주소를 줄이고 여백과 대비를 지키며, 모르는 QR은 열기 전에 목적지 주소를 눈으로 확인하면 된다.</p>
+</blockquote>
+<p>가게 메뉴판에 붙인 QR이 안 읽힌다는 말을 듣거나, 문자로 온 QR을 스캔해도 되는지 망설인 적이 있다면 이 글이 맞다. 여기서는 QR을 만들 때 읽히는 크기를 계산하는 법, 오류 정정 수준을 고르는 기준, 그리고 모르는 QR을 안전하게 여는 순서를 적는다. 수치는 QR 코드를 개발한 덴소웨이브의 안내와 미국 연방거래위원회(FTC) 안내를 2026년 10월 14일에 확인한 것이고, 칸 수 측정은 이 사이트 QR 도구가 쓰는 라이브러리로 직접 쟀다.</p>
+<p>먼저 용어. 모듈은 QR을 이루는 작은 검은·흰 네모 한 칸이다. 오류 정정은 QR 일부가 더럽거나 가려져도 복원하도록 데이터를 덧붙여 두는 기능이다. 여백(조용한 영역)은 QR 바깥을 둘러싼 빈 테두리로, 읽는 기기가 코드의 경계를 찾는 데 쓴다. 단축 주소는 긴 주소를 짧게 바꿔 주는 서비스의 주소(bit.ly 같은 것)로, 눌러 보기 전에는 목적지를 알 수 없다.</p>
+<h2 id="내용이-길수록-한-칸이-작아진다">내용이 길수록 한 칸이 작아진다</h2>
+<p>QR의 크기는 칸 수로 정해지고, 칸 수는 담는 내용의 양과 오류 정정 수준이 정한다. 덴소웨이브는 QR이 21×21칸에서 177×177칸까지 있고 한 변이 4칸씩 늘어나는 형태이며, 가장 큰 크기에서 8비트 데이터로는 최대 2,953자를 담을 수 있다고 소개한다(이 최댓값이 어느 오류 정정 수준 기준인지는 확인하지 못했다). 일상에서는 주소 한 줄이 대부분이라 훨씬 작은 칸 수가 쓰인다.</p>
+<p>이 사이트 QR 만들기가 쓰는 라이브러리(qrcode 1.5.4)로 같은 설정(오류 정정 M, 여백 2칸)에서 길이가 다른 주소를 직접 만들어 칸 수를 쟀다.</p>
+<table>
+<thead>
+<tr>
+<th>주소 길이</th>
+<th>칸 수(M)</th>
+<th>512px 이미지에서 한 칸</th>
+<th>3cm로 인쇄하면 한 칸</th>
+<th>2cm로 인쇄하면 한 칸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27자</td>
+<td>29×29</td>
+<td>15.5px</td>
+<td>0.91mm</td>
+<td>0.61mm</td>
+</tr>
+<tr>
+<td>60자</td>
+<td>33×33</td>
+<td>13.8px</td>
+<td>0.81mm</td>
+<td>0.54mm</td>
+</tr>
+<tr>
+<td>145자</td>
+<td>49×49</td>
+<td>9.7px</td>
+<td>0.57mm</td>
+<td>0.38mm</td>
+</tr>
+<tr>
+<td>320자</td>
+<td>69×69</td>
+<td>7.0px</td>
+<td>0.41mm</td>
+<td>0.27mm</td>
+</tr>
+</tbody>
+</table>
+<p>한 칸의 크기는 인쇄 폭을 (칸 수 + 양쪽 여백 4칸)으로 나눈 값이다. 여기서 인쇄 폭은 이 도구가 만든 이미지 전체(여백 2칸씩 포함)의 폭이다. 예를 들어 27자 주소는 29+4 = 33칸이므로 3cm(30mm)로 인쇄하면 30÷33 = 0.91mm, 320자 주소는 69+4 = 73칸이라 30÷73 = 0.41mm다. 같은 3cm에서 주소만 길어져도 한 칸이 절반 이하가 된다. 덴소웨이브는 칸 크기를 정할 때 프린터의 성능을 고려해야 하고 읽는 기기도 영향을 준다고 안내한다. 이 글에서는 읽히는 최소 칸 크기 수치를 확인하지 못했으므로, 작게 인쇄할수록 주소를 줄이고 실제 인쇄물을 읽어 보는 것이 방법이다.</p>
+<p>이 사이트 QR 만들기도 같은 이유로 긴 주소는 짧게 줄여 넣으라고 안내한다. 여기서 단축 주소를 쓰면 칸 수가 줄어 읽기는 쉬워지지만, 아래에서 보듯 읽는 쪽에서 의심받는 주소가 된다. 자기 도메인에 짧은 경로를 만들어 연결하는 방법이 둘 다 해결한다(작성자의 판단이다).</p>
+<h2 id="오류-정정-수준-높일수록-칸이-늘어난다">오류 정정 수준: 높일수록 칸이 늘어난다</h2>
+<p>덴소웨이브는 보통 수준 M(15%)이 가장 많이 선택된다고 쓴다. 수준 L은 깨끗한 환경에서 데이터가 많을 때, Q나 H는 QR이 더러워지는 공장 환경에서 고를 수 있다고 하고, 수준 Q는 전체 코드워드의 25%를 복원한다고 설명한다. 수준을 올리면 오류 정정 능력이 커지지만 QR의 크기(칸 수)도 늘어난다고도 쓴다. L과 H의 복원 비율은 덴소웨이브 페이지에서 표가 이미지로 되어 있어 숫자를 옮기지 못했으므로 이 글에서는 싣지 않는다.</p>
+<p>같은 라이브러리로 60자 주소를 수준만 바꿔 만들면 L은 33칸, M은 33칸, Q는 37칸, H는 45칸이다. 145자 주소는 L 45칸, M 49칸, Q 57칸, H 65칸이다. 높은 수준을 고르는 비용이 이 칸 수 증가다. 이 사이트 QR 만들기는 수준을 M으로 고정하고 선택할 수 없다. 로고를 얹는 것처럼 모양을 꾸미는 것도 권하지 않는다. 덴소웨이브는 이미지 처리로 일그러졌거나 장식한 코드는 읽히지 않을 수 있다고 경고한다.</p>
+<h2 id="만들-때-확인할-것">만들 때 확인할 것</h2>
+<p>덴소웨이브는 QR 주위에 여백이 필요하다고 쓰고, 표준에 맞게 또렷하게 인쇄한 QR은 안정적으로 읽힌다고 안내한다. 이 사이트 도구 소개는 이 조건을 구체적으로 풀어 쓴다.</p>
+<ol>
+<li><strong>여백을 자르지 않는다.</strong> 도구는 이미지에 가장자리 여백 2칸을 포함해 만들고 배경을 흰색으로 고정한다. 이미지를 잘라 내 여백을 없애면 읽기가 어려워진다.</li>
+<li><strong>어두운 코드에 밝은 배경.</strong> 배경과 코드의 명암 차이를 크게 유지하고, 밝은 색 코드는 인식이 어려우므로 어두운 색을 쓴다. 이미지 크기는 128–2,048px 사이 정수로 정한다.</li>
+<li><strong>인쇄하기 전에 읽어 본다.</strong> 실제 인쇄 크기에서 휴대전화 두 종류 이상으로 시험한다. 위 표의 한 칸 크기가 아주 작다면 주소를 줄인다.</li>
+<li><strong>비밀 정보를 넣지 않는다.</strong> QR 안의 내용은 암호화되지 않으므로 누구나 스캔해 읽을 수 있다. 비밀번호나 주민번호를 넣지 않는다.</li>
+</ol>
+<h2 id="모르는-qr을-읽을-때">모르는 QR을 읽을 때</h2>
+<p>QR은 모양만 봐서는 목적지를 알 수 없다. 미국 연방거래위원회는 QR로 위험한 링크를 숨기는 사기를 경고하면서, 주소가 눈에 익어 보여도 철자가 틀렸거나 글자가 바뀐 것은 아닌지 확인하라고 쓴다. 또 예상하지 못한 이메일이나 문자 속 QR은, 특히 서둘러 행동하라고 재촉한다면 스캔하지 말라고 한다. 주차 요금기에 붙은 QR 위에 사기범이 자기 QR을 덮어 붙이는 사례가 보고된다고도 적는다.</p>
+<p>이 사이트 QR 스캔·해석 도구는 이 확인을 돕는 방식으로 만들어져 있다. 주소를 자동으로 열지 않고 전체 내용과 도메인을 먼저 보여 주며, 단축 주소와 웹이 아닌 실행 형식은 경고한다. 소스를 보면 단축 주소 경고 대상은 bit.ly, t.co, tinyurl.com, goo.gl, cutt.ly, url.kr이고, http와 https 가 아닌 주소 형식(mailto 같은 것)은 자동으로 열 수 없다고 막고, Wi-Fi·연락처·일반 텍스트는 해석만 해서 보여 준다. 이 목록 밖의 단축 서비스는 경고하지 않을 수 있으므로 주소가 낯설면 직접 판단한다. 카메라 영상은 브라우저에서만 읽고 저장하지 않으며, 카메라 권한을 주기 싫으면 스크린샷이나 사진 파일로 해석할 수 있다.</p>
+<p>읽는 순서는 이렇다. 이 순서는 위 안내에서 이끌어 낸 이 글의 권장이다.</p>
+<ol>
+<li>출처를 먼저 본다. 예상하지 못한 문자·메일의 QR이면 스캔하지 않는다.</li>
+<li>해석 결과의 도메인 철자를 읽는다. 아는 곳과 한 글자라도 다르면 열지 않는다.</li>
+<li>단축 주소면 열기 전에 보낸 사람에게 목적지를 묻는다.</li>
+<li>현장의 QR(요금기·안내판)은 위에 덧붙인 스티커가 아닌지 만져 보고, 결제나 로그인을 요구하면 공식 앱이나 직접 입력한 주소로 들어간다.</li>
+<li>열어서 개인정보·결제 정보를 요구하면 입력하지 않는다.</li>
+</ol>
+<h2 id="흔한-실수와-한계">흔한 실수와 한계</h2>
+<ul>
+<li><strong>긴 주소를 그대로 넣고 작게 인쇄한다.</strong> 표의 계산처럼 한 칸이 너무 작아진다.</li>
+<li><strong>여백을 잘라 낸다.</strong> 이미지 편집 중 가장자리를 자르면 읽기 어려워진다.</li>
+<li><strong>같은 색 계열로 꾸민다.</strong> 대비가 낮고 밝은 코드는 인식이 어렵다.</li>
+<li><strong>스캔 결과를 믿고 바로 연다.</strong> QR의 주소는 누구든 바꿀 수 있다.</li>
+</ul>
+<p>이 글의 한계도 밝힌다. 칸 수 표는 qrcode 1.5.4로 잰 값이며 다른 생성기는 칸 수가 다를 수 있다. 읽히는 최소 칸 크기와 여백 표준 칸 수는 확인하지 못했다. 오류 정정 L·H의 복원 비율과 국제 표준(ISO/IEC 18004) 원문은 열지 못했다. 한국의 QR 결제 안내나 법적 책임은 다루지 않았다.</p>
+<h2 id="바로-해-볼-도구">바로 해 볼 도구</h2>
+<ul>
+<li><a href="https://apps.kimjinwan.com/qr-generator/" target="_blank" rel="noopener noreferrer">QR 코드 만들기</a> — 주소·텍스트를 PNG로. <a href="https://kimjinwan.com/content/tools/qr-generator/" target="_blank" rel="noopener noreferrer">소개 페이지</a></li>
+<li><a href="https://apps.kimjinwan.com/qr-reader/" target="_blank" rel="noopener noreferrer">QR 코드 스캔·해석</a> — 열기 전에 주소 확인. <a href="https://kimjinwan.com/content/tools/qr-reader/" target="_blank" rel="noopener noreferrer">소개 페이지</a></li>
+</ul>
+<h2 id="출처와-기준일">출처와 기준일</h2>
+<p>모두 2026년 10월 14일에 확인했다.</p>
+<ul>
+<li>DENSO WAVE, QR Code 오류 정정: <a href="https://www.qrcode.com/en/about/error_correction.html" target="_blank" rel="noopener noreferrer">https://www.qrcode.com/en/about/error_correction.html</a></li>
+<li>DENSO WAVE, QR Code 만드는 법: <a href="https://www.qrcode.com/en/howto/generate.html" target="_blank" rel="noopener noreferrer">https://www.qrcode.com/en/howto/generate.html</a></li>
+<li>DENSO WAVE, QR Code 표준과 용량: <a href="https://www.qrcode.com/en/about/standards.html" target="_blank" rel="noopener noreferrer">https://www.qrcode.com/en/about/standards.html</a></li>
+<li>미국 연방거래위원회, Scammers hide harmful links in QR codes to steal your information: <a href="https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information" target="_blank" rel="noopener noreferrer">https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information</a></li>
+</ul>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>QR은 내용이 길수록 칸 수가 늘어 같은 인쇄 크기에서 한 칸이 작아지므로 주소를 줄이고 여백과 어두운 색 대비를 지킨다.</li>
+<li>오류 정정 수준을 올리면 복원력은 커지지만 칸 수도 늘고, 이 사이트 도구는 보통 수준인 M으로 고정되어 있다.</li>
+<li>모르는 QR은 주소를 먼저 눈으로 확인하고 예상하지 못한 문자·메일의 QR은 스캔하지 않으며 개인정보 입력을 요구하면 멈춘다.</li>
+</ul>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/image-size-format-guide/">사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준</a><p>사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.</p></li><li><a href="/content/blog/apps/image-size-spec-guide/">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</a><p>유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.</p></li><li><a href="/content/blog/apps/pdf-work-guide/">PDF 합치기·나누기·압축·서명 실무: 작업 순서와 지켜야 할 한계</a><p>제출용 PDF를 만들 때 합치기·나누기·페이지 정리·압축·이미지 변환·서명·워터마크를 어떤 순서로 쓰는지, 글자 검색이 사라지는 작업과 유지되는 작업을 가르는 기준과 한도 수치를 정리했다.</p></li></ul></aside></div>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+
+</body></html>

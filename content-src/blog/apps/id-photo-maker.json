@@ -1,9 +1,0 @@
-{
- "category": "apps",
- "slug": "id-photo-maker",
- "title": "증명사진 제작 — 배경색·얼굴 위치·규격 맞추기",
- "description": "투명 배경 사진을 증명사진 크기로 배치하고 공식 제출 전 확인할 조건을 설명한다.",
- "date": "2026-09-10",
- "url": "https://blog.kimjinwan.com/ko/apps/id-photo-maker/",
- "body": "<div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>누끼 결과를 원하는 배경색과 기본 인쇄 규격으로 정리하게 한다.</p></div><div><strong>핵심 내용</strong><p>크기가 맞아도 기관별 얼굴 비율과 촬영 조건을 통과한다는 뜻은 아니다.</p></div><div><strong>읽고 나서</strong><p>투명 PNG를 불러와 배경과 위치를 맞춘 뒤 제출 기관 규정을 확인한다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#투명-원본-준비\">투명 원본 준비</a></li><li><a href=\"#공식-규격\">공식 규격</a></li></ul></details><div><h2 id=\"투명-원본-준비\">투명 원본 준비</h2>\n<p>배경색을 바꾸려면 먼저 누끼 도구로 투명 PNG를 만든다. 확대와 세로 위치로 얼굴을 맞춘다.</p>\n<p><a href=\"https://apps.kimjinwan.com/id-photo-maker/\">증명사진 제작기 열기</a></p>\n<h2 id=\"공식-규격\">공식 규격</h2>\n<p>여권, 자격증, 이력서의 요구 조건은 다를 수 있다. 최종 제출 전에 공식 안내를 확인한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/image-size-format-guide/\">사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준</a><p>사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.</p></li><li><a href=\"/ko/apps/image-size-spec-guide/\">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</a><p>유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.</p></li><li><a href=\"/ko/apps/pdf-work-guide/\">PDF 합치기·나누기·압축·서명 실무: 작업 순서와 지켜야 할 한계</a><p>제출용 PDF를 만들 때 합치기·나누기·페이지 정리·압축·이미지 변환·서명·워터마크를 어떤 순서로 쓰는지, 글자 검색이 사라지는 작업과 유지되는 작업을 가르는 기준과 한도 수치를 정리했다.</p></li></ul></aside>"
-}

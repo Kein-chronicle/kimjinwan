@@ -1,9 +1,0 @@
-{
- "category": "apps",
- "slug": "pdf-merge",
- "title": "PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에",
- "description": "여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.",
- "date": "2026-09-10",
- "url": "https://blog.kimjinwan.com/ko/apps/pdf-merge/",
- "body": "<div><span>발행 <time datetime=\"2026-09-10T00:00:00.000Z\">2026. 9. 10.</time></span></div><section aria-label=\"글 요약\"><div><strong>이 글의 목적</strong><p>나뉜 신청서와 증빙 문서를 업로드 없이 한 PDF로 묶는다.</p></div><div><strong>핵심 내용</strong><p>병합 전 파일 순서를 확인하고 완성본의 첫 장과 마지막 장을 다시 연다.</p></div><div><strong>읽고 나서</strong><p>PDF를 추가하고 순서를 정한 뒤 합친 파일을 내려받는다.</p></div></section><details><summary>목차</summary><ul><li><a href=\"#순서부터-확인하기\">순서부터 확인하기</a></li><li><a href=\"#처리-범위\">처리 범위</a></li></ul></details><div><h2 id=\"순서부터-확인하기\">순서부터 확인하기</h2>\n<p>신청서, 영수증, 첨부 자료를 한 파일로 제출할 때는 파일명보다 실제 페이지 순서가 중요하다. 문서를 추가한 뒤 위아래 버튼으로 순서를 정하고, 필요 없는 파일은 제외한다.</p>\n<p><a href=\"https://apps.kimjinwan.com/pdf-merge/\">PDF 합치기 열기</a></p>\n<h2 id=\"처리-범위\">처리 범위</h2>\n<p>최대 20개, 합계 100MB까지 브라우저 안에서 합친다. 암호화되었거나 손상된 PDF는 처리되지 않을 수 있다. 내려받은 파일을 다시 열어 페이지 수와 앞뒤 순서를 확인해야 한다.</p>\n</div><aside><h2>같이 읽을 글</h2><ul><li><a href=\"/ko/apps/pdf-compressor/\">PDF 용량 줄이기 — 이미지 문서를 가볍게 압축</a><p>사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.</p></li><li><a href=\"/ko/apps/pdf-organizer/\">PDF 페이지 순서 변경·추출 — 번호 입력 사용법</a><p>PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.</p></li><li><a href=\"/ko/apps/pdf-split/\">PDF 분할·페이지 추출 — 필요한 범위만 새 파일로</a><p>PDF에서 필요한 페이지 범위를 한 파일로 추출하거나 페이지마다 나누어 ZIP으로 저장하는 방법이다.</p></li></ul></aside>"
-}

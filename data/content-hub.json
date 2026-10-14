@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 146,
+    "value": 121,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -517,7 +517,7 @@
       "ko": "앱을 만들고 심사에 제출하며 남긴 제작·심사 기록",
       "en": "Records of building apps and submitting them for review"
      },
-     "total": 75,
+     "total": 50,
      "url": "https://blog.kimjinwan.com/ko/apps/",
      "items": [
       {
@@ -543,6 +543,12 @@
        "summary": "사진에 숨은 위치·촬영 정보(EXIF)와 화면에 보이는 얼굴·번호·주소를 구분해, 메타데이터 제거·모자이크·워터마크가 각각 무엇을 지우고 무엇을 못 지우는지 연구 결과와 함께 정리했다.",
        "date": "2026-10-14",
        "url": "https://blog.kimjinwan.com/ko/apps/photo-privacy-guide/"
+      },
+      {
+       "title": "QR 코드 만들기와 안전하게 읽기: 내용 길이·오류 정정·인쇄 크기·사기 예방",
+       "summary": "QR 코드가 안 읽히는 이유를 내용 길이와 칸 수, 오류 정정 수준, 인쇄 크기로 계산해 보이고, 모르는 QR을 열기 전에 확인할 것을 미국 연방거래위원회 안내와 함께 정리했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/qr-code-guide/"
       },
       {
        "title": "JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기",
@@ -767,142 +773,10 @@
        "url": "https://blog.kimjinwan.com/ko/apps/date-calculator/"
       },
       {
-       "title": "앱 아이콘·파비콘 생성 — 원본과 여백 준비법",
-       "summary": "이미지 한 장을 앱과 웹 대표 PNG 크기로 만들 때 필요한 원본 품질과 여백 기준이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/app-icon-generator/"
-      },
-      {
-       "title": "누끼·배경 제거 — 브라우저 AI 결과 품질 높이기",
-       "summary": "인물과 상품 배경을 투명하게 만들 때 잘 분리되는 사진과 결과 확인 기준을 정리한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/background-remover/"
-      },
-      {
-       "title": "스마트폰 목업 생성 — 앱 스크린샷 홍보 이미지 만들기",
-       "summary": "앱 스크린샷을 일반 스마트폰 프레임과 배경에 넣어 홍보 PNG로 만드는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/device-mockup/"
-      },
-      {
        "title": "게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기",
        "summary": "게임 이벤트의 서버·지역·종료 시각·선행 조건을 공식 공지 주소와 함께 정리하는 브라우저 도구다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/apps/event-deadline/"
-      },
-      {
-       "title": "사진으로 GIF 만들기 — 프레임 순서와 속도 설정",
-       "summary": "여러 이미지를 움직이는 GIF로 묶고 크기와 프레임 간격을 정하는 방법과 형식의 한계를 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/gif-maker/"
-      },
-      {
-       "title": "증명사진 제작 — 배경색·얼굴 위치·규격 맞추기",
-       "summary": "투명 배경 사진을 증명사진 크기로 배치하고 공식 제출 전 확인할 조건을 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/id-photo-maker/"
-      },
-      {
-       "title": "이미지 용량 줄이기 — 품질과 크기를 조절하는 기준",
-       "summary": "JPG·PNG·WebP 사진을 브라우저에서 압축할 때 품질과 최대 너비를 고르는 방법을 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-compressor/"
-      },
-      {
-       "title": "이미지 형식 변환 — HEIC·JPG·PNG·WebP 선택법",
-       "summary": "아이폰 HEIC와 JPG·PNG·WebP를 브라우저에서 변환하고 목적에 맞는 형식을 고르는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-converter/"
-      },
-      {
-       "title": "이미지 자르기·회전 — 정사각형과 16:9 비율 맞추기",
-       "summary": "사진을 원본 비율에 맞춰 자르고 90도 단위로 회전해 새 이미지로 저장하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-crop-rotate/"
-      },
-      {
-       "title": "이미지 글자 추출 OCR — 한국어 인식률 높이기",
-       "summary": "사진과 스크린샷에서 한국어·영어 글자를 추출할 때 원본과 결과를 확인하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-ocr/"
-      },
-      {
-       "title": "사진 모자이크 — 얼굴·번호판·문서 정보 가리기",
-       "summary": "사진에서 선택한 영역을 모자이크 처리하고 공유 전에 확인할 개인정보 범위를 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-redactor/"
-      },
-      {
-       "title": "사진을 PDF로 변환 — 여러 장 순서와 A4 여백",
-       "summary": "여러 사진을 파일 순서대로 A4 PDF에 넣고 여백을 조절하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-to-pdf/"
-      },
-      {
-       "title": "이미지 워터마크 넣기 — 사진에 출처 문구 표시",
-       "summary": "사진에 문구·위치·크기·투명도를 정해 워터마크를 넣는 방법과 보호 범위를 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/image-watermark/"
-      },
-      {
-       "title": "사진 메타데이터 제거 — GPS·EXIF 없이 공유하기",
-       "summary": "사진 픽셀만 새 파일로 저장해 위치·촬영 기기 등 EXIF 정보를 제거하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/metadata-remover/"
-      },
-      {
-       "title": "사진 색상 팔레트 추출 — HEX·RGB 대표색 찾기",
-       "summary": "사진에서 자주 나타나는 색을 묶어 대표 팔레트로 만들고 활용하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/palette-extractor/"
-      },
-      {
-       "title": "PDF 용량 줄이기 — 이미지 문서를 가볍게 압축",
-       "summary": "사진과 스캔이 많은 PDF의 해상도와 품질을 낮춰 용량을 줄이는 방법과 손실 범위를 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-compressor/"
-      },
-      {
-       "title": "PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에",
-       "summary": "여러 PDF의 순서를 조정하고 브라우저 안에서 한 파일로 병합하는 방법과 확인할 점을 정리했다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-merge/"
-      },
-      {
-       "title": "PDF 페이지 순서 변경·추출 — 번호 입력 사용법",
-       "summary": "PDF 페이지 번호를 원하는 순서로 입력해 재정렬하거나 필요한 페이지만 추출한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-organizer/"
-      },
-      {
-       "title": "PDF 서명 넣기 — 서명 이미지를 원하는 위치에 배치",
-       "summary": "투명 PNG 서명을 PDF의 특정 페이지와 위치에 삽입하는 방법과 전자서명의 차이를 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-sign/"
-      },
-      {
-       "title": "PDF 분할·페이지 추출 — 필요한 범위만 새 파일로",
-       "summary": "PDF에서 필요한 페이지 범위를 한 파일로 추출하거나 페이지마다 나누어 ZIP으로 저장하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-split/"
-      },
-      {
-       "title": "PDF JPG·PNG 변환 — 페이지를 이미지로 저장하기",
-       "summary": "PDF 페이지를 JPG 또는 PNG로 렌더링하고 범위와 해상도를 조절하는 기준을 설명한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-to-image/"
-      },
-      {
-       "title": "PDF 워터마크 넣기 — 문구·투명도·각도 설정",
-       "summary": "PDF 페이지에 검토용, 기밀, 사본 같은 문구를 반복 표시하는 방법과 글꼴 제한을 안내한다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/pdf-watermark/"
-      },
-      {
-       "title": "사진 여러 장 합치기 — 가로·세로·격자 콜라주",
-       "summary": "2장부터 9장까지 사진을 한 캔버스에 배치하고 간격과 배경색을 조절하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/photo-collage/"
       },
       {
        "title": "프로젝트 체크리스트 생성기 — 단계·작업·담당자 묶어 인쇄하기",
@@ -917,18 +791,6 @@
        "url": "https://blog.kimjinwan.com/ko/apps/pull-planner/"
       },
       {
-       "title": "QR 코드 만들기 — URL·텍스트를 잘 스캔되게 저장하기",
-       "summary": "URL과 텍스트 QR을 만들 때 크기·색상·여백과 개인정보를 확인하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/qr-generator/"
-      },
-      {
-       "title": "QR 코드 해석 — 사진·카메라 스캔 전 주소 확인",
-       "summary": "QR 이미지와 카메라에서 내용을 읽고 위험 주소와 단축 URL을 확인하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/qr-reader/"
-      },
-      {
        "title": "랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기",
        "summary": "중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.",
        "date": "2026-09-10",
@@ -939,18 +801,6 @@
        "summary": "쉬었던 기간과 계정 진행도, 하루 가능 시간을 바탕으로 복귀 직후 확인할 일을 분리하는 브라우저 도구다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/apps/return-checklist/"
-      },
-      {
-       "title": "투명 서명 이미지 만들기 — 문서에 사인 넣기",
-       "summary": "손가락이나 마우스로 서명을 그리고 투명 PNG로 저장할 때의 보안 주의사항이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/signature-maker/"
-      },
-      {
-       "title": "SNS 이미지 리사이즈 — 게시물 규격과 크롭 확인",
-       "summary": "사진을 인스타그램·유튜브·블로그 대표 규격으로 자를 때 피사체를 보존하는 방법이다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/apps/social-image-resizer/"
       },
       {
        "title": "RandomPick: Wheel & Teams — 룰렛과 팀 나누기",
