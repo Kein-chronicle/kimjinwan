@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다</title>
-<meta name="description" content="카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.">
+<title>덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사</title>
+<meta name="description" content="드로우·선택지·버림패·장착·제거 이력의 카드 ID를 검사하고 변형과 브랜치 통합 뒤 데이터 연결을 확인한다. Python 참조 모델의 4개 검사 포함.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,21 +19,21 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다">
-<meta property="og:description" content="카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.">
+<meta property="og:title" content="덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사">
+<meta property="og:description" content="드로우·선택지·버림패·장착·제거 이력의 카드 ID를 검사하고 변형과 브랜치 통합 뒤 데이터 연결을 확인한다. Python 참조 모델의 4개 검사 포함.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/ai/whale-survivors-06/">
-<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=db26c54836">
-<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=db26c54836">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=694867cc76">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=694867cc76">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="“글 170편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta property="og:image:alt" content="“글 168편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다">
-<meta name="twitter:description" content="카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.">
-<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=db26c54836">
-<meta name="twitter:image:alt" content="“글 170편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/#article","url":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/","headline":"AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다","description":"카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.","inLanguage":"ko","datePublished":"2026-09-09","dateModified":"2026-09-09","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/"},"image":"https://kimjinwan.com/assets/og/content.png?v=db26c54836","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=db26c54836","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다","item":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/"}]}]}</script>
+<meta name="twitter:title" content="덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사">
+<meta name="twitter:description" content="드로우·선택지·버림패·장착·제거 이력의 카드 ID를 검사하고 변형과 브랜치 통합 뒤 데이터 연결을 확인한다. Python 참조 모델의 4개 검사 포함.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=694867cc76">
+<meta name="twitter:image:alt" content="“글 168편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/#article","url":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/","headline":"덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사","description":"드로우·선택지·버림패·장착·제거 이력의 카드 ID를 검사하고 변형과 브랜치 통합 뒤 데이터 연결을 확인한다. Python 참조 모델의 4개 검사 포함.","inLanguage":"ko","datePublished":"2026-09-09","dateModified":"2026-09-09","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/"},"image":"https://kimjinwan.com/assets/og/content.png?v=694867cc76","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=694867cc76","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사","item":"https://kimjinwan.com/content/blog/ai/whale-survivors-06/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
 <link rel="stylesheet" href="/css/style.css?v=1.3.87">
@@ -67,27 +67,172 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다</span></li></ol></nav>
-  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">110</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">55</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">108</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">55</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-09</p>
-      <h1 class="sec-title detail-title"><span lang="ko">AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다</span></h1></header>
-    <div class="detail-body"><div><span>기록일 <time datetime="2026-05-20T00:00:00.000Z">2026. 5. 20.</time></span><span>수정 2026. 9. 9.</span></div><p>표시 날짜는 이 글이 다루는 작업의 대표 기록일이며, 당시 발행된 글을 뜻하지 않습니다. 이후 회고와 적용 방법은 2026년 9월에 정리했습니다.</p><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>서바이버 장르에 덱빌딩 선택지를 추가하려는 개발자에게, 카드 한 장의 선택이 뽑을 더미·버림패·대기 카드까지 동시에 건드린다는 걸 5월 19~20일 구현 기록으로 보여준다.</p></div><div><strong>핵심 내용</strong><p>문서 예시 기준 덱은 최대 60장에서 장착한 고유 무기 1장을 뺀 59장으로 시작했고, 5월 19일 QA는 실제 Game 인스턴스로 첫 카드뭉치와 무기 변형 전환을 검사하면서 낡은 보상 개수 테스트도 함께 고쳤다.</p></div><div><strong>읽고 나서</strong><p>덱 규칙을 바꿀 때마다 뽑을 더미·선택지·버림패·제거된 카드 네 위치의 카드 수 합이 그대로 보존되는지부터 확인한다.</p></div></section><details><summary>연재 목차</summary><ol><li><a href="/content/blog/ai/whale-survivors-02/">AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다</a></li><li><a href="/content/blog/ai/whale-survivors-06/" aria-current="page">AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다</a></li><li><a href="/content/blog/ai/whale-survivors-07/">AI 게임 개발기: 시스템을 늘리자 설명할 것도 많아졌다</a></li><li><a href="/content/blog/ai/whale-survivors-08/">AI 게임 개발기: 브랜치를 합친 뒤에도 게임을 다시 고쳐야 했다</a></li><li><a href="/content/blog/ai/whale-survivors-09/">게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법</a></li><li><a href="/content/blog/ai/whale-survivors-10/">AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다</a></li></ol></details><details><summary>목차</summary><ul><li><a href="#먼저-답하면">먼저 답하면</a></li><li><a href="#한-장을-고르면-다른-곳도-바뀌었다">한 장을 고르면 다른 곳도 바뀌었다</a></li></ul></details><div><h2 id="먼저-답하면">먼저 답하면</h2>
-<p>당시 설계는 런에 가져갈 무기 카드를 10장 고르는 것부터 정했다. 카드가 몇 장 있는지 세는 것부터가 이 실험의 첫 규칙이었다.</p>
-<!-- purpose-first:end -->
-<p>자동으로 공격하는 서바이버 게임에, 전투 전부터 카드를 고르는 선택을 넣어봤다. 5월 19일의 덱빌딩 작업이다. 카드처럼 생긴 메뉴를 추가하는 정도가 아니라 카드가 뽑히고 버려지는 규칙을 바꾸는 일이었다.</p>
-<p>일반 무기는 최대 레벨 수만큼 카드 사본을 제공했다. 문서의 예를 따르면 최대 60장 중 이미 장착한 고유 무기 한 장을 빼고 59장이 남는 구조였다. 지금도 그대로 유지되는 규칙이라는 뜻은 아니고, 그때 실험한 방식이다.</p>
-<h2 id="한-장을-고르면-다른-곳도-바뀌었다">한 장을 고르면 다른 곳도 바뀌었다</h2>
-<p>뽑힌 선택지 중 고르지 않은 카드는 버림패로 갔다. 다시 섞이면 돌아올 수 있었다. 무기 변형을 선택했을 때는 원래 무기의 남은 카드와 대기 중인 카드도 정리해야 했다.</p>
-<p>그러다 보니 카드 한 장을 추가하거나 지우는 일로 끝나지 않았다. 뽑을 곳과 버린 곳, 현재 선택지의 상태가 함께 맞아야 했다. 화면에서 선택이 끝나도 다른 곳에 옛 카드가 남아 있으면 규칙이 어긋난다.</p>
-<p><img src="https://blog.kimjinwan.com/media/ai/whale-survivors/may-first-combat.png" alt="드로우와 카드가 들어간 전투 화면"></p>
-<p><em>5월 19일 QA 화면. 드로우 표시와 하단 카드를 볼 수 있다. 셔플·버림패 동작은 화면 한 장으로 확인할 수 없다.</em></p>
-<p>같은 날 QA 보고서에는 실제 Game 인스턴스의 첫 카드뭉치와 변형 전환을 검사한 내용이 있다. 예전 보상 개수를 기대하던 테스트도 바꿨다. 게임 규칙이 달라지면 테스트에 적힌 정답도 다시 봐야 했다.</p>
-<p>변경은 5월 20일 main에 합쳐졌다. 여기까지는 구현과 검사 기록이다. 덱빌딩 때문에 재미가 얼마나 좋아졌는지는 별도의 플레이 평가가 필요한 부분이다.</p>
-<p>이 실험에서 눈에 남는 것은 선택을 늘린 만큼 설명과 검증도 늘었다는 점이다. 다시 만든다면 카드 종류부터 늘리기보다 한 번의 선택이 다음 카드뭉치를 어떻게 바꾸는지 작게 확인하고 넓혀갈 것 같다.</p>
-<hr>
-<p><a href="/content/blog/ai/whale-survivors-07/">다음 글: 시스템을 늘리자 설명할 것도 많아졌다 →</a></p>
-</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/whale-survivors-10/">AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다</a><p>스토어 설명과 스크린샷, 빌드 설정을 준비하고 심사 제출까지. 게임 밖에서 이어진 개발 기록.</p></li><li><a href="/content/blog/ai/whale-survivors-09/">게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법</a><p>카드와 전투 이미지 수령 규격, 재생성 후보 비교, 물리 파일과 프레임 개수, 제작 자산과 설치 용량을 구분하는 원장.</p></li><li><a href="/content/blog/ai/whale-survivors-08/">AI 게임 개발기: 브랜치를 합친 뒤에도 게임을 다시 고쳐야 했다</a><p>여러 실험을 main에 가져온 8월 7일. 파일 병합 뒤에 이어진 실행 복구와 통합 검증 이야기.</p></li></ul></aside><nav><a href="/content/blog/ai/whale-survivors-02/">← 이전 회차</a><a href="/content/blog/ai/whale-survivors-07/">다음 회차 →</a></nav></div>
+      <h1 class="sec-title detail-title"><span lang="ko">덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사</span></h1></header>
+    <div class="detail-body"><div><span>기록일 <time datetime="2026-05-20T00:00:00.000Z">2026. 5. 20.</time></span><span>수정 2026. 10. 13.</span></div><p>표시 날짜는 기존 덱 설계의 대표일입니다. 2026년 10월 14일 설계·통합 커밋을 확인하고 참조 모델을 실행해 06·07·08을 통합했습니다.</p><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>덱빌딩 개발자가 카드 선택과 변형 때 누락·중복을 찾고 로비부터 결산까지 통합 검사 범위를 정한다.</p></div><div><strong>핵심 내용</strong><p>장수 합계만으로는 중복과 누락을 놓친다. 카드 ID를 다섯 위치에서 대조하고 새 카드 생성 이력과 실제 플레이 경로를 함께 검사한다.</p></div><div><strong>읽고 나서</strong><p>카드 종류가 같은 사본에도 ID를 붙이고 한 번의 선택 전후 다섯 위치를 기록한다.</p></div></section><details><summary>연재 목차</summary><ol><li><a href="/content/blog/ai/whale-survivors-02/">AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다</a></li><li><a href="/content/blog/ai/whale-survivors-06/" aria-current="page">덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사</a></li><li><a href="/content/blog/ai/whale-survivors-09/">게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법</a></li><li><a href="/content/blog/ai/whale-survivors-10/">AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다</a></li></ol></details><details><summary>목차</summary><ul><li><a href="#카드-종류와-카드-한-장의-id를-구분한다">카드 종류와 카드 한 장의 ID를 구분한다</a></li><li><a href="#장수-합계와-id-유일성을-함께-검사한다">장수 합계와 ID 유일성을 함께 검사한다</a></li><li><a href="#여섯-장-예시에서-선택과-재섞기를-본다">여섯 장 예시에서 선택과 재섞기를 본다</a></li><li><a href="#변형-카드가-선택되면-세-곳-이상을-지운다">변형 카드가 선택되면 세 곳 이상을 지운다</a></li><li><a href="#병합-뒤에는-화면이-아니라-데이터의-경로를-잇는다">병합 뒤에는 화면이 아니라 데이터의 경로를 잇는다</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 덱 규칙은 카드 ID와 다섯 위치의 이동으로 검사하고, 브랜치 병합 뒤에는 선택→전투→결산까지 같은 데이터가 이어지는지 확인한다.</p>
+</blockquote>
+<p>카드 선택 화면이 닫혔다고 선택이 올바르게 반영된 것은 아니다. 고르지 않은 카드가 사라지거나, 변형 전 무기가 다음 드로우에 다시 나타날 수 있다. 이 글은 카드의 위치 원장과 짧은 통합 플레이 경로를 함께 사용하는 점검법을 제안한다.</p>
+<p>웨일서바이버의 물리 카드 설계 문서와 2026년 8월 7일 실행 복구 커밋을 10월 14일 원격에서 다시 읽었다. 별도로 작은 Python 참조 모델을 작성해 네 가지 검사를 실행했다. 참조 모델의 통과는 현재 게임 구현이나 실제 플레이의 통과를 뜻하지 않는다.</p>
+<h2 id="카드-종류와-카드-한-장의-id를-구분한다">카드 종류와 카드 한 장의 ID를 구분한다</h2>
+<p>원래 설계 문서는 런 덱을 카드 종류 목록이 아니라 여러 사본이 있는 카드 더미로 정의한다. 당시 예시는 무기 카드 10종이 각각 최대 레벨 6만큼 사본을 제공하고, 처음 장착한 고유 무기 1장을 이미 소비했으므로 뽑을 더미에 59장이 남는 구조다. <strong>59장은 당시 문서의 예시이며 현재 모든 덱의 고정 장수가 아니다.</strong></p>
+<p>같은 무기의 사본도 <code>base-1</code>, <code>base-2</code>처럼 개별 ID를 주면 어느 장이 어디로 갔는지 추적할 수 있다. 화면에 보이는 종류 이름만 비교하면 같은 종류의 카드 한 장이 중복되고 다른 한 장이 사라진 문제를 놓칠 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th>위치</th>
+<th>뜻</th>
+<th>이동이 일어나는 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뽑을 더미</td>
+<td>아직 선택지로 나오지 않은 카드</td>
+<td>드로우, 새 카드 추가</td>
+</tr>
+<tr>
+<td>현재 선택지</td>
+<td>뽑았지만 아직 결정을 기다리는 카드</td>
+<td>카드 선택·선택 취소 정책</td>
+</tr>
+<tr>
+<td>버림패</td>
+<td>뽑혔지만 선택하지 않은 카드</td>
+<td>재섞기</td>
+</tr>
+<tr>
+<td>장착·소비 이력</td>
+<td>선택해 빌드에 반영한 카드</td>
+<td>변형 등으로 효과 제거</td>
+</tr>
+<tr>
+<td>제거 이력</td>
+<td>다시 뽑히지 않도록 뺀 카드</td>
+<td>원인 추적용으로 보존</td>
+</tr>
+</tbody>
+</table>
+<p>이 표는 검증용 원장 분류다. 게임의 실제 자료구조 이름과 같을 필요는 없다. 원래 문서는 선택한 카드를 빌드에 소비하고 고르지 않은 카드를 버림패로 보낸다고 정한다. 따라서 뽑을 더미·선택지·버림패·제거만 합치면 이미 선택한 카드가 빠진다.</p>
+<h2 id="장수-합계와-id-유일성을-함께-검사한다">장수 합계와 ID 유일성을 함께 검사한다</h2>
+<p>검증용 원장에서는 삭제된 카드도 제거 이력에 남긴다고 정하자. 그때 다섯 위치의 장수 합은 <code>시작 장수 + 새로 만든 카드 수</code>와 맞아야 한다. 기존 카드를 완전히 기록에서 지우는 정책이면 별도 삭제 원장도 식에 포함해야 한다.</p>
+<p>장수가 맞는 것만으로 충분하지 않다. 아래 함수는 카드가 두 위치에 동시에 있지 않은지, 등록한 ID가 전부 존재하는지도 확인한다. <code>zones</code>는 위 다섯 위치의 카드 목록이고 <code>registry</code>는 시작 카드와 이후 생성한 카드 ID의 집합이다.</p>
+<pre style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span><span style="color:#F97583">def</span><span style="color:#B392F0"> audit</span><span style="color:#E1E4E8">(zones, registry):</span></span>
+<span><span style="color:#E1E4E8">    ids </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [c[</span><span style="color:#9ECBFF">"id"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> cards </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> zones.values() </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> c </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> cards]</span></span>
+<span><span style="color:#F97583">    assert</span><span style="color:#79B8FF"> len</span><span style="color:#E1E4E8">(ids) </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> len</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">set</span><span style="color:#E1E4E8">(ids)), </span><span style="color:#9ECBFF">"중복 카드 ID"</span></span>
+<span><span style="color:#F97583">    assert</span><span style="color:#79B8FF"> set</span><span style="color:#E1E4E8">(ids) </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> registry, </span><span style="color:#9ECBFF">"누락 또는 등록 안 된 카드 ID"</span></span>
+<span><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {name: </span><span style="color:#79B8FF">len</span><span style="color:#E1E4E8">(cards) </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> name, cards </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> zones.items()}</span></span></code></pre>
+<p>한 장을 복제하고 다른 한 장을 지우면 전체 장수는 그대로다. 유일성 검사와 등록 ID 대조가 이 오류를 잡는다. 실제 게임에서는 추가로 카드 종류·레벨·효과의 대응도 검사해야 한다. 위 함수가 공격력이나 재미를 검증해 주지는 않는다.</p>
+<h2 id="여섯-장-예시에서-선택과-재섞기를-본다">여섯 장 예시에서 선택과 재섞기를 본다</h2>
+<p>작성한 참조 모델은 처음에 같은 무기의 사본 여섯 장을 뽑을 더미에 넣는다. 세 장을 뽑아 하나를 선택하면 나머지 두 장은 버림패로 간다. 다음 세 장에서도 하나를 선택한 뒤 버림패를 다시 뽑을 더미로 옮겼다. 재섞기의 순서 무작위성은 이번 검사 범위에 넣지 않았다.</p>
+<table>
+<thead>
+<tr>
+<th>실행한 검사</th>
+<th style="text-align: right">뽑을 더미</th>
+<th style="text-align: right">선택지</th>
+<th style="text-align: right">버림패</th>
+<th style="text-align: right">장착·소비</th>
+<th style="text-align: right">제거</th>
+<th>관찰 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6장에서 3장 뽑고 1장 선택</td>
+<td style="text-align: right">3</td>
+<td style="text-align: right">0</td>
+<td style="text-align: right">2</td>
+<td style="text-align: right">1</td>
+<td style="text-align: right">0</td>
+<td>ID 보존·유일성 통과</td>
+</tr>
+<tr>
+<td>남은 3장에서도 1장 선택 후 버림패 이동</td>
+<td style="text-align: right">4</td>
+<td style="text-align: right">0</td>
+<td style="text-align: right">0</td>
+<td style="text-align: right">2</td>
+<td style="text-align: right">0</td>
+<td>ID 보존·유일성 통과</td>
+</tr>
+<tr>
+<td>기본 무기 레벨 3에서 변형</td>
+<td style="text-align: right">5</td>
+<td style="text-align: right">0</td>
+<td style="text-align: right">0</td>
+<td style="text-align: right">1</td>
+<td style="text-align: right">6</td>
+<td>기본 카드가 활성 위치에 없음</td>
+</tr>
+<tr>
+<td>장수는 유지하며 ID 한 장을 복제</td>
+<td style="text-align: right">—</td>
+<td style="text-align: right">—</td>
+<td style="text-align: right">—</td>
+<td style="text-align: right">—</td>
+<td style="text-align: right">—</td>
+<td>중복 ID를 검출해 거부</td>
+</tr>
+</tbody>
+</table>
+<p>네 검사는 2026년 10월 14일 Python 참조 모델에서 실행한 결과다. 실제 게임의 랜덤 드로우·저장 복구·렌더러를 호출한 것은 아니다. 정상 사례만으로는 결함을 잡는지 알기 어려워 마지막에는 의도적으로 중복을 넣었다.</p>
+<h2 id="변형-카드가-선택되면-세-곳-이상을-지운다">변형 카드가 선택되면 세 곳 이상을 지운다</h2>
+<p>물리 카드 설계는 무기 변형을 선택할 때 기본 무기의 카드를 뽑을 더미·버림패·현재 선택지에서 제거하고, 이미 선택한 기본 레벨도 제거된 것으로 취급한다. 변형 무기는 레벨 1로 들어가고 남은 사본 다섯 장이 더미에 추가된다.</p>
+<p>참조 모델에서는 기본 카드 여섯 장 중 세 장이 장착 이력에, 나머지 세 장이 뽑을 더미·버림패·선택지에 한 장씩 있다고 놓았다. 변형 카드 한 장도 선택지에 있다. 변형을 선택하면 기본 여섯 장은 모두 제거 이력으로 옮기고 변형 카드의 기존 ID를 유지한 채 장착 위치로 옮겼다. 새 변형 사본 다섯 장은 새 ID로 등록했다.</p>
+<p>따라서 이 원장의 총수는 시작 7장에 새로 만든 5장을 더한 12장이다. 변형 카드 ID를 재사용하는 것은 <strong>이번 참조 모델의 회계 규칙</strong>이다. 실제 구현이 변형 카드를 제거하고 레벨 1 카드를 새로 만들면 생성·제거 이력도 그 방식에 맞춰 달라진다. 중요한 검사는 다음 드로우 후보와 현재 효과에 기본 무기가 남지 않는지다.</p>
+<p>변형 뒤에도 예전 카드가 보이면 뽑을 더미만 지웠는지, 현재 선택지와 버림패를 빠뜨렸는지부터 확인한다. 같은 입력 사건이 두 번 처리됐을 때 사본 다섯 장이 두 번 추가되지 않는지도 별도 회귀 사례로 둔다. 중복 사건 처리는 이번 네 검사에는 포함하지 않았다.</p>
+<h2 id="병합-뒤에는-화면이-아니라-데이터의-경로를-잇는다">병합 뒤에는 화면이 아니라 데이터의 경로를 잇는다</h2>
+<p>8월 7일 <code>7c589205</code>에는 덱 준비 화면·전투 화면·렌더러·무기 코드 변경과 자산 예산·콘텐츠 무결성·런타임 스모크 검사가 함께 들어 있다. 실제 스모크 스크립트는 로비에서 드래프트를 거쳐 전투에 진입하고 이동·대시·일시 정지와 복귀를 시도한다. <strong>그 스크립트의 범위에는 결산과 다음 런 저장 확인이 없다.</strong> 이번 확인은 코드 읽기이며 당시 시험을 재실행한 결과가 아니다.</p>
+<p>기존 기능이 연결됐는지 보려면 다음과 같이 범위를 더 구체적으로 정할 수 있다. 아래는 추가할 통합 점검 제안이다.</p>
+<table>
+<thead>
+<tr>
+<th>경로</th>
+<th>데이터 검사</th>
+<th>처음 하는 플레이어에게 보여줄 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>로비→덱 선택</td>
+<td>고른 카드 ID와 허용 수, 잠긴 카드 제외</td>
+<td>지금 몇 장을 고를 수 있는가</td>
+</tr>
+<tr>
+<td>선택→전투 진입</td>
+<td>선택한 ID·레벨이 전투 빌드에 반영</td>
+<td>선택이 어떤 공격으로 이어지는가</td>
+</tr>
+<tr>
+<td>드로우→변형</td>
+<td>다섯 위치와 카드 종류·효과 정합성</td>
+<td>기본 무기가 무엇으로 교체되는가</td>
+</tr>
+<tr>
+<td>전투 종료→결산</td>
+<td>승패·획득·소비가 결과에 일치</td>
+<td>이번에 얻은 것과 사라진 것</td>
+</tr>
+<tr>
+<td>결산→다음 런</td>
+<td>저장 후 재진입 값과 해금 조건</td>
+<td>다음 판에 유지되는 것</td>
+</tr>
+</tbody>
+</table>
+<p>태그나 메타 성장을 추가할 때도 내부 필드명만 정리하지 말고, 플레이어가 그 순간 결정해야 할 내용을 붙인다. 모든 규칙을 첫 화면에 나열하기보다 선택할 때 필요한 설명을 해당 위치에 둔다. 이 제안의 효과는 실제 독자·플레이어 관찰로 확인해야 하며 과거 화면 한 장이 그 결과를 대신하지 않는다.</p>
+<p>카드 원장 검사는 상태의 정합성을, 통합 경로는 화면·전투·저장의 연결을 다룬다. 둘이 통과해도 밸런스나 재미 평가는 남는다. 이미지 누락과 파일·프레임 수 문제는 <a href="/content/blog/ai/whale-survivors-09/">게임 이미지 검수와 용량 감사</a>의 원장으로 별도 확인한다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>선택한 카드 이력까지 다섯 위치에 포함하고, 장수 합계와 ID 유일성을 함께 검사한다.</li>
+<li>변형할 때 뽑을 더미·버림패·선택지·기존 장착 효과를 함께 정리하고 새 카드 생성을 기록한다.</li>
+<li>Git 병합과 짧은 스모크 통과를 구분하며, 결산·저장까지 이어지는 범위를 별도로 검증한다.</li>
+</ul>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/whale-survivors-10/">AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다</a><p>스토어 설명과 스크린샷, 빌드 설정을 준비하고 심사 제출까지. 게임 밖에서 이어진 개발 기록.</p></li><li><a href="/content/blog/ai/whale-survivors-09/">게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법</a><p>카드와 전투 이미지 수령 규격, 재생성 후보 비교, 물리 파일과 프레임 개수, 제작 자산과 설치 용량을 구분하는 원장.</p></li><li><a href="/content/blog/ai/whale-survivors-02/">AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다</a><p>SwiftUI와 웹뷰로 기존 게임을 아이폰에 담았다. 화면을 여는 것 외에 자산과 광고를 연결하는 일이 남았다.</p></li></ul></aside><nav><a href="/content/blog/ai/whale-survivors-02/">← 이전 회차</a><a href="/content/blog/ai/whale-survivors-09/">다음 회차 →</a></nav></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
 </div></main>

@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 110,
+    "value": 108,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 60,
+     "total": 58,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -410,22 +410,10 @@
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-02/"
       },
       {
-       "title": "AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다",
-       "summary": "카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.",
+       "title": "덱빌딩 카드가 사라지거나 중복될 때: 상태 원장과 통합 플레이 검사",
+       "summary": "드로우·선택지·버림패·장착·제거 이력의 카드 ID를 검사하고 변형과 브랜치 통합 뒤 데이터 연결을 확인한다. Python 참조 모델의 4개 검사 포함.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-06/"
-      },
-      {
-       "title": "AI 게임 개발기: 시스템을 늘리자 설명할 것도 많아졌다",
-       "summary": "태그와 성장, 기믹을 늘리던 시기. 새로운 규칙만큼 화면에서 설명해야 할 내용도 늘었다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-07/"
-      },
-      {
-       "title": "AI 게임 개발기: 브랜치를 합친 뒤에도 게임을 다시 고쳐야 했다",
-       "summary": "여러 실험을 main에 가져온 8월 7일. 파일 병합 뒤에 이어진 실행 복구와 통합 검증 이야기.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-08/"
       },
       {
        "title": "게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법",

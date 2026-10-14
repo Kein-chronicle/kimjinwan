@@ -796,6 +796,16 @@
    "from": "/content/blog/ai/whale-survivors-05/",
    "to": "/content/blog/ai/whale-survivors-09/",
    "reason": "이미지 수령 규격과 모바일 자산 감사를 단위별 원장으로 통합"
+  },
+  {
+   "to": "/content/blog/ai/whale-survivors-06/",
+   "reason": "카드 상태 원장과 통합 플레이 검사로 병합",
+   "from": "/content/blog/ai/whale-survivors-07/"
+  },
+  {
+   "to": "/content/blog/ai/whale-survivors-06/",
+   "reason": "카드 상태 원장과 통합 플레이 검사로 병합",
+   "from": "/content/blog/ai/whale-survivors-08/"
   }
  ]
 }

@@ -1,10 +1,5 @@
 [
   {
-    "id": "ai-whale-survivors-05",
-    "final": 61.3,
-    "note": "카드용 vs 액션용 이미지 규격 계약. 계약 문서 요약표를 넣어 보강."
-  },
-  {
     "id": "ai-whale-survivors-02",
     "final": 61.4,
     "note": "WKWebView 번들 서빙+광고 메시지 연결 개요. 코드 구조를 정리해 보강하거나 01과 병합."
@@ -58,11 +53,6 @@
     "id": "ai-whale-survivors-08",
     "final": 64.4,
     "note": "브랜치 병합 후 복구와 검사 추가. 07과 병합."
-  },
-  {
-    "id": "ai-whale-survivors-09",
-    "final": 64.5,
-    "note": "2.1GB→207MB 자산 정리 수치. 줄이는 방법을 정리하면 가치 상승."
   },
   {
     "id": "news-nikke-second-burst-roster",
