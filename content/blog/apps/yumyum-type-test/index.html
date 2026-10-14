@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트</title>
-<meta name="description" content="간단한 질문에 답하면 취향과 분위기에 맞는 음식 성격 유형을 보여주는 캐주얼 테스트 앱이다. 결과 카드를 친구와 공유할 수 있다.">
+<title>냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법</title>
+<meta name="description" content="질문 12개, 음식 캐릭터 16유형으로 이루어진 냠냠 성격 테스트의 구성과 결과 카드 모양, 그리고 성격 테스트 결과가 잘 맞는 것처럼 느껴지는 이유(바넘 효과)를 정리했다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트">
-<meta property="og:description" content="간단한 질문에 답하면 취향과 분위기에 맞는 음식 성격 유형을 보여주는 캐주얼 테스트 앱이다. 결과 카드를 친구와 공유할 수 있다.">
+<meta property="og:title" content="냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법">
+<meta property="og:description" content="질문 12개, 음식 캐릭터 16유형으로 이루어진 냠냠 성격 테스트의 구성과 결과 카드 모양, 그리고 성격 테스트 결과가 잘 맞는 것처럼 느껴지는 이유(바넘 효과)를 정리했다.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/apps/yumyum-type-test/">
 <meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
@@ -29,14 +29,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트">
-<meta name="twitter:description" content="간단한 질문에 답하면 취향과 분위기에 맞는 음식 성격 유형을 보여주는 캐주얼 테스트 앱이다. 결과 카드를 친구와 공유할 수 있다.">
+<meta name="twitter:title" content="냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법">
+<meta name="twitter:description" content="질문 12개, 음식 캐릭터 16유형으로 이루어진 냠냠 성격 테스트의 구성과 결과 카드 모양, 그리고 성격 테스트 결과가 잘 맞는 것처럼 느껴지는 이유(바넘 효과)를 정리했다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta name="twitter:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/#article","url":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/","headline":"냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트","description":"간단한 질문에 답하면 취향과 분위기에 맞는 음식 성격 유형을 보여주는 캐주얼 테스트 앱이다. 결과 카드를 친구와 공유할 수 있다.","inLanguage":"ko","datePublished":"2026-09-13","dateModified":"2026-09-13","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트","item":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/#article","url":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/","headline":"냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법","description":"질문 12개, 음식 캐릭터 16유형으로 이루어진 냠냠 성격 테스트의 구성과 결과 카드 모양, 그리고 성격 테스트 결과가 잘 맞는 것처럼 느껴지는 이유(바넘 효과)를 정리했다.","inLanguage":"ko","datePublished":"2026-09-13","dateModified":"2026-09-13","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법","item":"https://kimjinwan.com/content/blog/apps/yumyum-type-test/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.67">
+<link rel="stylesheet" href="/css/style.css?v=1.3.68">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -67,23 +67,33 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트</span></li></ol></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법</span></li></ol></nav>
   <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">116</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">62</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-13</p>
-      <h1 class="sec-title detail-title"><span lang="ko">냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-09-13T00:00:00.000Z">2026. 9. 13.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>가볍게 즐길 성격 테스트를 찾는 독자에게, 이 앱이 어떤 방식으로 결과를 보여주는지 확인하게 한다.</p></div><div><strong>핵심 내용</strong><p>두쫀쿠 감성의 그림체로 질문에 답하면 음식 성격 유형을 결과 카드로 보여주고 공유할 수 있는 캐주얼 테스트 앱이다. 심리 진단이 아니라 재미를 위한 콘텐츠로 소개된다.</p></div><div><strong>읽고 나서</strong><p>기능을 확인한 뒤 App Store에서 무료로 다운로드해 직접 사용한다.</p></div></section><a href="https://apps.apple.com/kr/app/%EB%83%A0%EB%83%A0-%EC%84%B1%EA%B2%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8/id6761509288" target="_blank" rel="noopener noreferrer">App Store에서 무료 다운로드 <span aria-hidden="true">↗</span></a><details><summary>목차</summary><ul><li><a href="#음식-캐릭터로-보는-성격-유형-테스트가-필요한-상황">음식 캐릭터로 보는 성격 유형 테스트가 필요한 상황</a></li><li><a href="#실제로-할-수-있는-일">실제로 할 수 있는 일</a></li><li><a href="#app-store에서-다운로드">App Store에서 다운로드</a></li><li><a href="#다운로드와-제공-상태">다운로드와 제공 상태</a></li><li><a href="#사용-전에-알아둘-점">사용 전에 알아둘 점</a></li></ul></details><div><img src="https://blog.kimjinwan.com/media/apps/6761509288.png" width="144" height="144" alt="냠냠 성격 테스트의 등록 아이콘" loading="lazy" />
-<h2 id="음식-캐릭터로-보는-성격-유형-테스트가-필요한-상황">음식 캐릭터로 보는 성격 유형 테스트가 필요한 상황</h2>
-<p>나와 닮은 음식 성격이 무엇인지 가볍게 확인하고 친구와 공유하고 싶을 때 쓰는 캐주얼 테스트다.</p>
-<h2 id="실제로-할-수-있는-일">실제로 할 수 있는 일</h2>
-<p>등록 설명에 따르면 간단한 질문에 답하면 취향과 분위기에 맞는 성격 유형을 두쫀쿠 감성의 결과 카드로 보여주고, 친구와 공유할 수 있다고 설명한다. 성격테스트·심리테스트나 음식·캐릭터 콘텐츠를 좋아하는 사람, 짧은 시간에 가볍게 즐길 앱을 찾는 사람에게 맞는다고 소개한다.</p>
-<h2 id="app-store에서-다운로드">App Store에서 다운로드</h2>
-<p><a href="https://apps.apple.com/kr/app/%EB%83%A0%EB%83%A0-%EC%84%B1%EA%B2%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8/id6761509288" target="_blank" rel="noopener noreferrer">App Store에서 냠냠 성격 테스트 무료 다운로드 →</a></p>
-<p>공개 스토어 조회에서 현재 제품 페이지가 확인됐다. 지원 OS는 iOS 26.4 이상이며, 국가나 기기에 따라 표시 여부가 달라질 수 있다.</p>
-<h2 id="다운로드와-제공-상태">다운로드와 제공 상태</h2>
-<p>2026년 9월 13일 App Store Connect에서 확인한 상태는 <strong>다운로드 가능</strong>이다. 개인 팀에 등록된 앱이며, 국가별 판매 가능 여부나 현재 서버 동작까지 전부 검증했다는 뜻은 아니다.</p>
-<h2 id="사용-전에-알아둘-점">사용 전에 알아둘 점</h2>
-<p>이 결과는 재미를 위한 것이며 임상 진단이나 고정된 성격 유형이 아니다. 소개의 기능은 등록된 제품 설명을 기준으로 정리했으며, 실제 화면과 문항은 이용 시 앱 안에서 다시 확인하는 것이 맞다.</p>
+      <h1 class="sec-title detail-title"><span lang="ko">냠냠 성격 테스트 — 12문항·16유형 구성과 성격 테스트 결과를 읽는 법</span></h1></header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-09-13T00:00:00.000Z">2026. 9. 13.</time></span><span>수정 2026. 10. 14.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>냠냠 성격 테스트가 어떤 구조인지 알고, 이런 테스트의 결과를 어떻게 읽을지 판단하게 한다.</p></div><div><strong>핵심 내용</strong><p>12개 질문에서 A·B 중 하나를 골라 16가지 음식 유형 중 하나가 나온다. 결과가 잘 맞게 느껴지는 데는 바넘 효과가 작용하므로 재미로 읽는 것이 맞다.</p></div><div><strong>읽고 나서</strong><p>앱에서 12문항을 풀어 보고, 결과 문단 중 맞는 문장과 아닌 문장을 하나씩 골라 본다.</p></div></section><a href="https://apps.apple.com/kr/app/%EB%83%A0%EB%83%A0-%EC%84%B1%EA%B2%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8/id6761509288" target="_blank" rel="noopener noreferrer">App Store에서 무료 다운로드 <span aria-hidden="true">↗</span></a><details><summary>목차</summary><ul><li><a href="#구성">구성</a></li><li><a href="#숫자로-보면">숫자로 보면</a></li><li><a href="#결과가-잘-맞게-느껴지는-이유">결과가 잘 맞게 느껴지는 이유</a></li><li><a href="#이런-테스트를-즐기는-법">이런 테스트를 즐기는 법</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 냠냠 성격 테스트는 A·B 질문 12개로 16가지 음식 유형 중 하나를 알려 주며, 이런 테스트의 결과가 잘 맞게 느껴지는 데는 바넘 효과가 작용한다.</p>
+</blockquote>
+<h2 id="구성">구성</h2>
+<p>냠냠 성격 테스트는 질문 12개와 음식 캐릭터 16유형으로 이루어진다. 질문마다 일러스트 한 장이 위에 놓이고 아래에 선택지가 A, B 두 개씩 나온다. 시작 화면의 문구는 “나를 닮은 16가지 유형 음식 캐릭터 찾기”다. 답을 마치면 ’봄동 비빔밥형’처럼 음식 이름이 붙은 유형이 나오고, 결과 카드에는 성향 설명 문단과 짧은 태그, 공유하기와 다시 해보기 버튼이 있다. 질문 화면 아래에는 배너 광고가 붙는다. 앱은 무료이며 iOS 26.4 이상을 요구한다(<a href="https://kimjinwan.com/content/apps/yumyum-type-test/" target="_blank" rel="noopener noreferrer">앱 소개 페이지</a>, 공개 스토어 정보 2026년 10월 14일 기준).</p>
+<h2 id="숫자로-보면">숫자로 보면</h2>
+<p>A·B 두 가지 선택이 12번이므로 답의 조합은 2의 12제곱, 4,096가지다. 결과는 16가지이므로 평균적으로 한 유형에 256가지 답 조합이 모인다. 질문이 유형을 어떻게 나누는지(예: 어떤 질문이 어느 축에 반영되는지)는 앱이 공개하지 않아 이 글에서 단정하지 않는다. 선택지가 둘뿐인 짧은 테스트는 답이 경계에 걸린 질문에서 어느 쪽을 고르느냐에 따라 유형이 갈릴 수 있다.</p>
+<h2 id="결과가-잘-맞게-느껴지는-이유">결과가 잘 맞게 느껴지는 이유</h2>
+<p>성격 테스트 결과는 누구에게나 해당될 법한 문장이 많아서 자기 이야기처럼 느껴지는 경향이 있다. 심리학자 버트럼 포러(Bertram Forer)는 1948년 학생들에게 성격 검사를 한 뒤 모두에게 같은 분석문을 나눠 주고 얼마나 맞는지 평가하게 했다. 39명의 평균은 5점 만점에 약 4.3점이었다(<a href="https://en.wikipedia.org/wiki/Barnum_effect" target="_blank" rel="noopener noreferrer">Wikipedia 기준</a>. 요약 자료에 따라 4.26으로 적힌 곳도 있다). 이를 바넘 효과(포러 효과)라고 부른다. 결과 카드에서 맞는 문장이 많다고 해서 테스트가 성격을 정확히 읽는다는 뜻은 아니다.</p>
+<h2 id="이런-테스트를-즐기는-법">이런 테스트를 즐기는 법</h2>
+<ul>
+<li>결과 문단에서 “맞다”고 느낀 문장과 “아니다”라고 느낀 문장을 하나씩 골라 본다. 두 가지가 다 나오면 자신을 읽는 연습이 된다.</li>
+<li>임상 진단이나 고정된 성격 유형으로 쓰지 않는다. 앱 설명도 가볍게 즐기는 콘텐츠를 지향한다고 밝힌다.</li>
+<li>친구와 결과를 공유할 때는 결과보다 “왜 그 답을 골랐는지”를 이야기하는 쪽이 대화가 길어진다.</li>
+</ul>
+<p>이 글의 앱 설명은 앱을 직접 실행해 확인한 것이 아니라 공개 스토어 정보와 화면 구성 기록을 근거로 한다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>12개 질문과 16가지 음식 캐릭터 유형으로 구성되고 결과 카드를 공유할 수 있다.</li>
+<li>답 조합 4,096가지가 16가지 결과로 모이므로 짧은 테스트의 결과는 쉽게 바뀔 수 있다.</li>
+<li>결과가 잘 맞는 느낌은 바넘 효과일 수 있으니 재미로 읽고 맞는 문장과 아닌 문장을 하나씩 고른다.</li>
+</ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/nuvvies/">누비즈: 성격 심리테스트 — 본성·관계·충전을 따로 보는 삼면 초상</a><p>하나의 유형표 대신 본성·관계 방식·충전 방식을 각각 5문항으로 따로 물어, 32종 오리지널 캐릭터 중 나를 닮은 삼면 초상을 만드는 앱이다.</p></li><li><a href="/content/blog/apps/brightpocket/">BrightPocket: Compliment Log — 칭찬과 작은 성취를 모아두는 금고</a><p>받은 칭찬과 스스로 뿌듯했던 순간을 태그로 정리해 다시 꺼내 보는 앱이다. 계정 없이 Face ID로만 잠근다.</p></li><li><a href="/content/blog/apps/one-thing-today/">One Thing Today: Daily Goal — 하루에 목표 하나만 남기는 위젯 앱</a><p>그날의 목표를 하나만 정해 홈 화면·잠금 화면 위젯에 띄우고, 실패 표시 없이 주간 리뷰로 돌아보는 앱이다.</p></li></ul></aside></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
