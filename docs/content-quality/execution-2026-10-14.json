@@ -212,7 +212,11 @@
       "id": "news-nte-villa-vehicle-budget",
       "final": 66.4,
       "note": "별장(690만 폰즈, 도시 타이쿤 13레벨)과 열풍(400만) 가격·조건 정리. 생산량·회수 기간 자료를 리서치해 비교하면 가치 상승.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "revised",
+      "target": "https://kimjinwan.com/content/game-news/nte-villa-vehicle-budget/",
+      "release": "1.3.100",
+      "review": "kein-blog/production/ko-games-nte-villa-vehicle-budget/work/review.json"
     },
     {
       "id": "news-wuwa-35-electro-rover",
