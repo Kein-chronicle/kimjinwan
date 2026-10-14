@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.104 발행 기록 — 2026-10-14
+
+자동 발행(scripts/publish.sh): reviewed limbus-gregor-move-in-ego. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.103 는 복구용 유지.
+
 ## 1.3.103 발행 기록 — 2026-10-14
 
 자동 발행(scripts/publish.sh): reviewed nte-board-guide. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.102 는 복구용 유지.
