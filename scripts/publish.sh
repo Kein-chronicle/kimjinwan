@@ -9,12 +9,13 @@
 #            3 변동 게이트에 걸려 되돌림(사람 확인 필요) · 4 시험 실패(되돌림) · 5 배포 검증 실패(롤백함) · 6 서버 사전 점검 실패
 set -uo pipefail
 
-REASON=""; DRY=0; FORCE=0; NO_PUSH=0; AS_OF="$(date +%F)"
+REASON=""; DRY=0; FORCE=0; NO_PUSH=0; SERVICES_ONLY=0; AS_OF="$(date +%F)"
 while [ $# -gt 0 ]; do
   case "$1" in
     --reason) REASON="${2:-}"; shift 2;;
     --dry-run) DRY=1; shift;;
     --force) FORCE=1; shift;;          # 소스 변화가 없어도 빌드·배포(점검용)
+    --services-only) SERVICES_ONLY=1; shift;; # 기존 콘텐츠 스냅샷을 보존하고 서비스 목록만 발행
     --no-push) NO_PUSH=1; shift;;
     --as-of) AS_OF="${2:-}"; shift 2;;
     -h|--help) sed -n 2,12p "$0"; exit 0;;
@@ -52,8 +53,12 @@ say "시작: $REASON (as-of $AS_OF, dry-run=$DRY)"; HEAD0="$(git rev-parse --sho
 
 # ---- 2. 소스 스냅샷 → 빌드 ----
 node -e "const d=JSON.parse(require('fs').readFileSync('data/content-hub.json','utf8'));console.log(JSON.stringify(Object.fromEntries(d.sections.map(s=>[s.id,s.count.value]))))" > /tmp/kj-pub-before.json 2>/dev/null || echo '{}' > /tmp/kj-pub-before.json
+if [ "$SERVICES_ONLY" -eq 0 ]; then
 if ! node scripts/build_content_hub.mjs --as-of "$AS_OF" >>"$LOG" 2>&1; then say "스냅샷 생성 실패(소스 접근/검증) — 변경을 되돌리고 멈춘다. 로그: $LOG"; restore; exit 4; fi
 node scripts/build_content_images.mjs >>"$LOG" 2>&1 || { say "이미지 생성 실패 — 로그: $LOG"; restore; exit 4; }
+else
+  say "서비스 목록 발행: 기존 콘텐츠 스냅샷 보존"
+fi
 node scripts/build.mjs >>"$LOG" 2>&1 || { say "빌드 실패 — 로그: $LOG"; restore; exit 4; }
 # 공유 카드 문구에 글 편수가 들어 있다(og-cards.lock.json). 새 글이 들어오면 문구가 바뀌므로 카드를 다시 만들고(바뀐 카드만 PNG 가 달라진다) 해시를 반영해 다시 빌드한다.
 node scripts/build_og.mjs >>"$LOG" 2>&1 || { say "공유 카드 생성 실패 — 로그: $LOG"; restore; exit 4; }
