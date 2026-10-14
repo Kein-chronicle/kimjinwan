@@ -3,6 +3,15 @@
  "tools": {
   "image-compressor": "image-size-format-guide",
   "image-converter": "image-size-format-guide",
-  "image-crop-rotate": "image-size-format-guide"
+  "image-crop-rotate": "image-size-format-guide",
+  "pdf-merge": "pdf-work-guide",
+  "pdf-split": "pdf-work-guide",
+  "pdf-organizer": "pdf-work-guide",
+  "pdf-compressor": "pdf-work-guide",
+  "pdf-to-image": "pdf-work-guide",
+  "image-to-pdf": "pdf-work-guide",
+  "pdf-sign": "pdf-work-guide",
+  "pdf-watermark": "pdf-work-guide",
+  "signature-maker": "pdf-work-guide"
  }
 }
