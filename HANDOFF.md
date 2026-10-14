@@ -1,32 +1,36 @@
-# HANDOFF — kimjinwan.com 콘텐츠 허브 (2026-10-14 새벽 마감 기준)
+# HANDOFF — kimjinwan.com 콘텐츠 허브 (2026-10-14 12:10, 콘텐츠 가치 보강 작업 중단 시점)
 
-이어받으면 `git log --oneline -3`, `cat VERSION`, 서버 `readlink /var/www/kimjinwan/current` 로 일치부터 확인한다.
+이어받으면 `git log --oneline -3`, `cat VERSION`, 서버 `ssh -i ~/kjw.pem ubuntu@54.116.13.147 readlink /var/www/kimjinwan/current` 로 일치부터 확인한다. 작업 파일이 어디 있는지는 이 문서 §0 표, 작업 지침은 §1.
 
 ## 0. 지금 상태
 | 대상 | 상태 |
 |---|---|
-| kimjinwan.com | **1.3.44** 라이브(서버 current 일치). 브랜치 `static-site-2026`, 푸시 완료, 작업트리 깨끗. 시험 194 통과 |
-| 허브 섹션 | 블로그 206, 게임 소식 79, AI 활용 가이드 50, **웹게임 77**(전부 직접 플레이 소개), 웹 도구 45, **내 앱 50** |
-| 발행 | `scripts/publish.sh` 가 유일한 길(`docs/PUBLISH.md`). 이번 밤 1.3.38~1.3.44 전부 이 스크립트로 발행 |
-| blog.kimjinwan.com | 0.2.88, 글 285편 canonical 은 허브 주소. 서브도메인은 유지·동결(새 글 배포 안 함) |
-| service.kimjinwan.com | Kein Journal 제거 완료(4bbba7e) |
-| kein-blog | `editorial.mjs published` 가 허브 URL 검증(d6c6573), deploy.md 는 허브 발행으로 교체 |
-| 공장 허브 | `blog` 잡 **비활성(enabled:false)**. 체커 content-hub-sync 폐지. `prompts/_content-hub.md` 가 publish.sh 호출 절차 |
-| AdSense | kimjinwan.com 재등록·소유권 확인 후 **검토 요청은 유저가 눌렀다(10-13 밤)**, 결과 대기. 3회 거절 이력. 서브도메인 단독 등록 불가. 계정 조작은 에이전트가 하지 않는다 |
-| ads.txt·app-ads.txt | 불변 SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0`, 배포 전후 확인 |
-| `wip/games-rewrite` | 옛 WIP. 필요한 건 main 에 이식 끝. **합치지 말 것**, 폐기 후보 |
+| kimjinwan.com | **1.3.81** 라이브(서버 current 일치). 브랜치 `static-site-2026`, 푸시 완료, 작업트리 깨끗 |
+| 허브 섹션(서브 메뉴 순서) | 전체 / **케인칼럼**(`/content/column/` 5) / **에이전트 업무일지**(`/content/blog/`, 옛 '블로그', 칩 없는 단일 목록, 약 110편) / 게임 소식(약 55편) / AI 활용 가이드 50 / 웹게임 77 / 웹 도구 57 / 내 앱 50 |
+| 발행 | `scripts/publish.sh --reason "..."`(docs/PUBLISH.md). 섹션 감소는 변동 게이트(종료 코드 3 또는 10) → 이전 커밋과 직접 비교해 의도된 것이면 `--force` |
+| **콘텐츠 평가 자료** | **`docs/content-quality/`** : README(채점표·판정 기준·처리 현황), `auto.py`(1차 기계 채점), `qual.jsonl`(281편 2차 채점+처방), `qual-summary.md`, `revise-queue-remaining.json`(남은 보강 53편, 점수 낮은 순) |
+| kein-blog | 소스 0.2.98(허브 발행 글은 버전 안 올림), main 푸시 완료, 작업트리 깨끗. `production/active.json` = `ko-ai-ai-colleagues-02`(발행 완료 상태) |
+| **blog.kimjinwan.com** | 서버 current = **0.2.98**. **0.2.98 이후 내린 글(3단계-B에서 내린 게임 소식 7편 + ai-colleagues-03 병합)이 서브도메인엔 아직 살아 있다 → canonical 이 404 허브 주소를 가리킨다. 정리 배포(0.2.99) 필요**(§1-1) |
+| 웹앱 도구 사이트 | apps.kimjinwan.com v0.1.82(푸터·헤더의 옛 블로그 글 링크 59곳을 허브 주소로 교체) |
+| 공장 허브 | **`blog` 잡 enabled:true**(21:15, 커밋 8df74aa, 원격 없음·로컬 커밋). 허브 자체는 유저가 따로 켠다. 체커 content-hub-sync 폐지. game-forge·web-tools·blog 잡은 허브 등록 절차 연결 완료 |
+| AdSense | kimjinwan.com 검토 요청은 유저가 눌렀고(10-13 밤) 결과 대기. 3회 거절 이력('가치가 별로 없는 콘텐츠'). **계정 조작은 에이전트가 하지 않는다**. 서브도메인 단독 등록 불가 |
+| ads.txt·app-ads.txt | 불변 SHA-256 `422f460a35c48c91e8ed9709c539a251055739f6adaefd3356db6ee502cd49a0`. 배포 전후 라이브 해시 확인 |
 
-## 1. 다음 작업(우선순위순)
-1. **AdSense 결과 확인**(유저). 거절이면 사유를 보고 콘텐츠 보강 방향 결정.
-2. **블로그 전환(F)**: 시험 글 1편을 `kein-blog automation/prompts/deploy.md` 5·6단계로 끝까지 공개(허브 발행+`published` 허브 URL 검증)해 확인 → 유저가 `factories.json` blog 잡 `enabled:true`(21:15). 체크리스트는 공장 허브 `docs/blog-hub-registration.md` §3-1.
-3. **웹 도구 12개 소개 제외** 해소: 정적 문구 300자 미만(social-image-resizer, image-crop-rotate, photo-collage, image-redactor, metadata-remover, id-photo-maker, app-icon-generator, palette-extractor, signature-maker, pdf-organizer, qr-generator, device-mockup). 웹툴 공장에서 도구 페이지 정적 문구 보강 후 `hub_check_tool.mjs <slug>` → 발행.
-4. **웹게임 보강**: pulse-bat·neon-beat-operator 는 클리어를 못 봐 "클리어 확인 못 함"으로 적었다. 사람이 클리어해 보강하면 좋다. 소리·터치·후반 스테이지는 게임마다 `verified.notes` 에 "확인 못 함"으로 남아 있다.
-5. **수치 정합**: 홈 히어로(collections.json 웹게임 77·도구 57)와 허브 도구 45 불일치(3번이 풀리면 줄어듦).
-6. **검색 정리**: 블로그 사이트맵에서 글 URL 제거 여부, Search Console·네이버·IndexNow 등록 정리, 옛 경로 301(nginx, `data/content-redirects.json` 83건 매핑만 있음).
-7. 블로그 글 이미지가 blog.kimjinwan.com 절대 주소를 가리킨다 — 서브도메인을 끄는 날 허브 자체 호스팅으로 이전 필요.
-8. 기즈모 스토어 AdSense 등록은 **보류**(상표 위험: 111퍼센트(주) 출원). 허브 링크는 허용. 공개 전 앱(Keeply·PicSell·Koefit)·심사 중 앱은 내 앱에 미포함(스토어 공개 후 `build_content_apps.mjs --refresh-store`).
+## 1. 이어서 할 일(우선순위순)
+1. **블로그 서브도메인 정리 배포(0.2.99)**: 직전 유지보수(0.2.91·0.2.96·0.2.98)와 같은 방식 — 서버 current(0.2.98)를 복제해 내린 글(허브 `data/content-withdrawn.json` 의 최신 항목 중 3단계-B 분: 게임 소식 7편 limbus-season8-punctum-preview·nikke-july23-matis-record·nikke-sep12-association-deadline·nikke-sep27-minikke-cinderella-episode·nte-august-bonus-calendar·wuwa-37-hsin-suoming-preview·zzz-31-32-event-overlap, ai-colleagues-03)의 디렉터리를 지우고 사이트맵·목록·연재 이전/다음 링크 정리, `current` 전환(이전 릴리스 보존, 롤백은 심링크). 새 글은 서브도메인에 올리지 않는다(동결). 절차 기록: kein-blog HANDOFF.md 최상단(3단계-A/B 기록).
+2. **남은 보강 53편**(`docs/content-quality/revise-queue-remaining.json`): 점수 낮은 순. 하위 것은 연재·개발일지(ai-colleagues-01·04·05·06·07·09·10, whale-survivors-02·05~10, ai-game-factory-01·02·05·06·08, career-01·02, ai-workbench-01·04·07)와 게임 소식. 처방 원칙: **연재는 3~4편으로 압축·독자 질문형 제목·내부 용어 풀이, 게임 소식은 시점·확정/미확정 구분·기준일·상시 정보 보강, 종료된 건 병합 또는 내림**. 공정은 kein-blog 계약 v3(기존 글 수정은 글마다 `production/ko-*` 계약 만들기·지문 재산출·독립 검토 1~3회·check/verify, **검토 release=false 면 발행 금지**), 중간 발행은 10편 정도씩.
+   - 중단 시점에 `ai-colleagues-05` 가 수정 중이었다. 반쯤 쓴 작업(production/ko-ai-ai-colleagues-05)은 되돌렸고 부분 산출물은 scratchpad 에 따로 있다(없어도 무방). 처음부터 다시 한다.
+3. **블로그 공장에 평가 공정 추가**(유저 요청): `docs/content-quality/auto.py` 의 1차 채점을 `editorial.mjs check` 게이트로(기준 미달·기존 글과 DUP≥0.5 면 ready 불가), 독립 검토 호출이 Q1~Q5 를 채점해 최종 ≥72 여야 발행(미달이면 처방과 함께 revise), 소재 선정 단계에서 '사람이 찾아볼 질문인가'·기존 글과 겹침 선검사. `docs/editorial/PIPELINE.md`·공장 허브 `prompts/blog.md` 에 단계 추가, 채점기 단위 시험. 기준 사례: KEEP 대표(`qual-summary.md` §KEEP).
+4. **사이트맵 정리**: 허브 사이트맵(약 480건)에서 2쪽 이후 목록 페이지 제외 검토, 블로그 서브도메인 사이트맵에서 글 URL 제거(canonical 이 허브), robots.txt 의 서브도메인 사이트맵 목록 정리. 검색 등록(Search Console·네이버·IndexNow) 정리는 유저와 함께.
+5. 기타(급하지 않음): 옛 경로 301(nginx, `data/content-redirects.json`·`content-withdrawn.json` 매핑만 있음), 블로그 글 이미지가 blog.kimjinwan.com 절대 주소를 가리킴(서브도메인 끄는 날 자체 호스팅 필요), 웹게임 pulse-bat·neon-beat-operator 클리어 보강, `/content/blog/ai/`·`/content/blog/apps/` 목록 주소가 404 가 아니라 403(nginx 디렉터리 동작, 무해), 공장 허브 커밋은 원격이 없어 푸시 안 됨.
+6. **AdSense 결과 확인**(유저). 결과에 따라 방향 결정. 우리 쪽 작업은 가치 있는 글 비율을 높이는 것(§2 참고).
 
-## 2. 허브 편집 원본·점검 도구
+## 2. 이번 작업의 요지(2026-10-14)
+- 목표: 애드센스 검토 크롤러가 볼 만큼 양과 **질**을 갖춘다. 유저 기준: "사람들이 찾아볼 만하고 얻어갈 게 있는 글인가"(직접 경험·허위 여부보다 가치).
+- 281편(업무일지 202 + 게임 소식 79)을 채점 → 새로 쓰기 118편은 처리 완료: 앱 소개 틀 글 42·삭제된 앱/상태 로그 16·목차 3편 내림(61), 이미지·PDF·QR 도구 글 26편을 깊은 가이드 5편으로 병합(`data/tool-guides.json` 이 도구 소개 페이지의 가이드 링크를 만든다, 가이드가 사라지면 생성 실패), 게임 소식·연재 24편 내림과 가이드 3편 신설, REWRITE 7편 재작성·앱 REVISE 12편 보강. 내린 글은 원고 보존(`status: draft`, `approved: false`), 옛→새 주소는 `data/content-withdrawn.json`(생성기가 `content-redirects.json` 에 합침).
+- 후처리 `web/src/unpublished-links.mjs`(kein-blog)가 내린 글을 가리키는 본문 링크를 dist 에서 걷어 낸다(원고 지문을 건드리지 않으려고).
+
+## 3. 허브 편집 원본·점검 도구
 - 게임 `data/authoring/games/<id>.json`(+진행표 `_progress.json`), 앱 `data/authoring/apps/<slug>.json`. 점검 `node scripts/hub_check_game.mjs <id> [--online] [--raw <캡처 폴더>]`, `hub_check_tool.mjs <slug>`, `hub_check_app.mjs <slug>`. 문서 `docs/AUTHORING_GAMES.md`·`AUTHORING_TOOLS.md`·`AUTHORING_APPS.md`·`PUBLISH.md`. 게임 캡처 원본은 `~/Projects/kein-game-forge/output/hub-captures/<id>/`(gitignore).
 - 구조: 상단 메뉴 홈·서비스·AI 공장·경력(홈 섹션 스크롤)·연락하기 | 콘텐츠 허브·서비스 허브. 콘텐츠 서브 메뉴 전체/블로그/게임 소식/AI 활용 가이드/웹게임/웹 도구/내 앱. 상세 canonical 은 자기 자신, '원문' 링크 없음. 이미지 자체 호스팅.
 - 이전 체커 문서 `docs/CONTENT_HUB_CHECKER.md` 는 폐지 안내만 남겼다.

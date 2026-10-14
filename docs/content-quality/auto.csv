@@ -1,0 +1,521 @@
+verdict,total,sec,slug,title,chars,dup,dupwith,A분량25,B독창30,C경험20,D구조10,E신뢰15
+REWRITE,35.8,blog/apps,signature-maker,투명 서명 이미지 만들기 — 문서에 사인 넣기,490,0.59,blog/apps/qr-generator,6.8,0.7,8.3,7.9,12.0
+REWRITE,36.3,blog/apps,id-photo-maker,증명사진 제작 — 배경색·얼굴 위치·규격 맞추기,506,0.57,blog/apps/image-to-pdf,7.0,1.1,8.3,7.9,12.0
+REWRITE,36.3,blog/apps,social-image-resizer,SNS 이미지 리사이즈 — 게시물 규격과 크롭 확인,513,0.58,blog/apps/event-deadline,7.1,0.9,8.3,7.9,12.0
+REWRITE,36.6,blog/apps,pdf-watermark,PDF 워터마크 넣기 — 문구·투명도·각도 설정,481,0.39,blog/apps/pdf-split,6.7,5.0,5.0,7.9,12.0
+REWRITE,37.3,blog/apps,palette-extractor,사진 색상 팔레트 추출 — HEX·RGB 대표색 찾기,488,0.59,blog/apps/id-photo-maker,6.8,0.6,10.0,7.9,12.0
+REWRITE,37.5,blog/apps,qr-generator,QR 코드 만들기 — URL·텍스트를 잘 스캔되게 저장하기,496,0.59,blog/apps/background-remover,6.9,0.7,10.0,7.9,12.0
+REWRITE,37.7,blog/apps,image-ocr,이미지 글자 추출 OCR — 한국어 인식률 높이기,502,0.58,blog/apps/background-remover,7.0,0.9,10.0,7.9,12.0
+REWRITE,37.7,blog/apps,image-to-pdf,사진을 PDF로 변환 — 여러 장 순서와 A4 여백,496,0.58,blog/apps/id-photo-maker,6.9,0.9,10.0,7.9,12.0
+REWRITE,38.1,blog/apps,background-remover,누끼·배경 제거 — 브라우저 AI 결과 품질 높이기,522,0.58,blog/apps/qr-generator,7.2,1.0,10.0,7.9,12.0
+REWRITE,38.3,blog/apps,image-redactor,사진 모자이크 — 얼굴·번호판·문서 정보 가리기,465,0.44,blog/apps/app-icon-generator,6.5,3.6,8.3,7.9,12.0
+REWRITE,38.3,blog/apps,qr-reader,QR 코드 해석 — 사진·카메라 스캔 전 주소 확인,522,0.56,blog/apps/qr-generator,7.2,1.2,10.0,7.9,12.0
+REWRITE,38.4,blog/apps,pdf-sign,PDF 서명 넣기 — 서명 이미지를 원하는 위치에 배치,577,0.52,blog/apps/event-deadline,8.0,2.1,8.3,7.9,12.0
+REWRITE,38.6,blog/apps,pdf-to-image,PDF JPG·PNG 변환 — 페이지를 이미지로 저장하기,593,0.51,blog/apps/gif-maker,8.2,2.1,8.3,7.9,12.0
+REWRITE,39.1,blog/apps,image-converter,이미지 형식 변환 — HEIC·JPG·PNG·WebP 선택법,497,0.42,blog/apps/image-compressor,6.9,3.9,8.3,7.9,12.0
+REWRITE,40.1,blog/apps,metadata-remover,사진 메타데이터 제거 — GPS·EXIF 없이 공유하기,468,0.43,blog/apps/image-converter,6.5,3.7,10.0,7.9,12.0
+REWRITE,41.6,blog/apps,gif-maker,사진으로 GIF 만들기 — 프레임 순서와 속도 설정,578,0.52,blog/apps/pdf-to-image,8.0,2.0,11.7,7.9,12.0
+REWRITE,41.8,blog/apps,device-mockup,스마트폰 목업 생성 — 앱 스크린샷 홍보 이미지 만들기,475,0.43,blog/apps/social-image-resizer,6.6,3.7,11.7,7.9,12.0
+REWRITE,42.7,blog/apps,pdf-compressor,PDF 용량 줄이기 — 이미지 문서를 가볍게 압축,508,0.26,blog/apps/pdf-split,7.1,10.8,5.0,7.9,12.0
+REWRITE,42.7,gizmo,interview-thankyou,면접 후 감사 메일,261,0.2,gizmo/career-pivot,13.1,14.0,1.7,5.0,9.0
+REWRITE,42.9,blog/apps,image-compressor,이미지 용량 줄이기 — 품질과 크기를 조절하는 기준,519,0.41,blog/apps/image-converter,7.2,4.1,11.7,7.9,12.0
+REWRITE,43.2,blog/apps,return-checklist,게임 복귀 체크리스트 — 기간 한정과 영구 할 일 나누기,654,0.43,blog/apps/background-remover,9.1,3.7,8.3,10,12.0
+REWRITE,44.4,blog/apps,pdf-merge,PDF 합치기 — 여러 문서를 원하는 순서로 한 파일에,478,0.27,blog/apps/pdf-organizer,6.6,9.5,8.3,7.9,12.0
+REWRITE,45.7,blog/apps,pdf-split,PDF 분할·페이지 추출 — 필요한 범위만 새 파일로,496,0.37,blog/apps/pdf-watermark,6.9,5.5,13.3,7.9,12.0
+REWRITE,45.8,blog/apps,random-roulette,랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기,578,0.35,blog/apps/event-deadline,8.0,6.2,11.7,7.9,12.0
+REWRITE,47.0,blog/apps,project-checklist,프로젝트 체크리스트 생성기 — 단계·작업·담당자 묶어 인쇄하기,629,0.47,blog/apps/event-deadline,8.7,3.0,13.3,10,12.0
+REWRITE,47.5,blog/apps,app-icon-generator,앱 아이콘·파비콘 생성 — 원본과 여백 준비법,504,0.42,blog/apps/device-mockup,7.0,4.0,16.7,7.9,12.0
+REWRITE,47.5,blog/apps,event-deadline,게임 이벤트 마감 달력 — 공식 출처와 종료 시각을 함께 기록하기,704,0.42,blog/apps/pdf-sign,9.8,4.0,11.7,10,12.0
+REWRITE,47.7,blog/apps,pull-planner,뽑기 재화 계획표 — 목표 횟수까지 하루 필요량 계산하기,639,0.44,blog/apps/event-deadline,8.9,3.5,13.3,10,12.0
+REWRITE,48.2,gizmo,forge-planning,Forge — 요구사항에서 기획서·목업까지,633,0.41,gizmo/casewright,25,4.2,3.3,6.7,9.0
+REWRITE,50.2,blog/apps,photo-collage,사진 여러 장 합치기 — 가로·세로·격자 콜라주,509,0.32,blog/apps/image-watermark,7.1,9.9,13.3,7.9,12.0
+REWRITE,50.6,gizmo,pitchwright,Pitchwright — RFP에서 제안서까지,708,0.39,gizmo/fitwright,25,4.9,5.0,6.7,9.0
+REWRITE,52.2,blog/apps,pdf-organizer,PDF 페이지 순서 변경·추출 — 번호 입력 사용법,413,0.34,blog/apps/pdf-split,5.7,6.5,20,7.9,12.0
+REWRITE,52.3,blog/apps,image-crop-rotate,이미지 자르기·회전 — 정사각형과 16:9 비율 맞추기,491,0.33,blog/apps/image-watermark,6.8,8.9,16.7,7.9,12.0
+REWRITE,52.3,gizmo,casewright,Casewright — 근거 있는 테스트 케이스 만들기,659,0.39,gizmo/forge-planning,25,4.9,6.7,6.7,9.0
+REWRITE,53.9,gizmo,fitwright,Fitwright — 채용 공고 작성과 이력서 1차 검토,723,0.35,gizmo/pitchwright,25,6.6,6.7,6.7,9.0
+REWRITE,54.0,gizmo,skill-note-organizer-skill,자료 노트 정리 스킬,605,0.34,gizmo/skill-deep-research-brief-skill,25,6.7,8.3,5.0,9.0
+REWRITE,54.5,gizmo,glossary-builder,용어집 만들기,525,0.43,gizmo/compare-options-research,25,3.8,11.7,5.0,9.0
+REWRITE,54.5,gizmo,notes-organizer,자료 메모 정리 (한 장 노트),515,0.43,gizmo/source-credibility,25,3.8,11.7,5.0,9.0
+REWRITE,54.8,gizmo,skill-source-evaluator,출처 평가 스킬,629,0.32,gizmo/skill-company-research-scorer,25,7.5,8.3,5.0,9.0
+REWRITE,55.1,blog/apps,focus-relay,Focus Relay: Team Timer — 차례를 넘기는 팀 집중 타이머,955,0.76,blog/apps/house-ledger,13.3,0.0,18.3,10,13.5
+REWRITE,55.2,blog/apps,house-ledger,House Ledger: Maintenance — 집 수리·점검 공유 장부,964,0.74,blog/apps/focus-relay,13.4,0.0,18.3,10,13.5
+REWRITE,55.3,blog/apps,gblog,GBlog — 삭제된 개인 블로그 앱 기록,958,0.66,blog/apps/kim-howl,13.3,0.0,20,10,12.0
+REWRITE,55.3,blog/apps,turnover-crew,Turnover Crew: Reset List — 공간 정리용 팀 체크리스트,972,0.74,blog/apps/focus-relay,13.5,0.0,18.3,10,13.5
+REWRITE,55.3,blog/apps,ventasbit,벤타스비트 — 가상자산 거래·입출금 앱 기록,851,0.69,blog/apps/ventas-wallet,11.8,0.0,20,10,13.5
+REWRITE,55.4,blog/apps,jet-lag,Jet Lag: Both Clocks — 출발지·도착지 시차 일정 계산기,1106,0.73,blog/apps/plate-calculator,15.4,0.0,16.6,10,13.5
+REWRITE,55.4,gizmo,headhunter-reply,헤드헌터·채용 담당자 답장,328,0.16,gizmo/first-90-days,16.4,16.7,8.3,5.0,9.0
+REWRITE,55.5,blog/apps,plate-calculator,Plate Calculator: What You Own — 보유 원판 기준 바벨 중량 계산기,1088,0.74,blog/apps/jet-lag,15.1,0.0,16.9,10,13.5
+REWRITE,55.7,blog/apps,image-watermark,이미지 워터마크 넣기 — 사진에 출처 문구 표시,504,0.33,blog/apps/photo-collage,7.0,8.8,20,7.9,12.0
+REWRITE,55.7,blog/apps,pace-calculator,Pace Calculator: Race Plan — 달리기 페이스·구간 기록 계산기,1015,0.73,blog/apps/jet-lag,14.1,0.0,18.1,10,13.5
+REWRITE,56.2,blog/apps,waye,웨이 - WA-YE — 지도 기반 사진·메시지 소통 앱,914,0.72,blog/apps/vigoright,12.7,0.0,20,10,13.5
+REWRITE,56.7,blog/apps,kim-howl,Kim Howl — 삭제된 개인 앱 기록,949,0.66,blog/apps/gblog,13.2,0.0,20,10,13.5
+REWRITE,56.7,blog/apps,save-anything,Save Anything — 삭제된 정보 저장 앱 기록,949,0.66,blog/apps/yok,13.2,0.0,20,10,13.5
+REWRITE,56.8,blog/apps,vigoright,VIGORIGHT - 비고라이트 — 눈 관리 정보·영상 앱 기록,955,0.71,blog/apps/waye,13.3,0.0,20,10,13.5
+REWRITE,57.0,blog/apps,monster-survivors,몬스터 살아남기 — 자동 공격 픽셀 생존 게임,915,0.58,blog/apps/my-whale,12.7,0.8,20,10,13.5
+REWRITE,57.0,blog/apps,yok,YOK - 신개념 욕 추천 어플리케이션 — 상황별 표현 추천 앱 개발 기록,970,0.66,blog/apps/save-anything,13.5,0.0,20,10,13.5
+REWRITE,57.1,blog/apps,bike-tire-pressure,Bike Tire Pressure: Any Width — 자전거 타이어 공기압 계산기,1077,0.7,blog/apps/reaction-time,15.0,0.0,18.7,10,13.5
+REWRITE,57.1,blog/apps,pollytelly,폴리텔리 - pollytelly — 위치 기반 동네 소셜 앱 기록,971,0.62,blog/apps/save-anything,13.5,0.1,20,10,13.5
+REWRITE,57.1,gizmo,skill-research-synthesizer,자료 종합 스킬,662,0.31,gizmo/skill-research-planner,25,8.1,10.0,5.0,9.0
+REWRITE,57.2,blog/apps,floe-steps,Floe Steps — 지나온 얼음이 무너지는 경로 퍼즐,1049,0.77,blog/apps/ink-fold,14.6,0.0,19.1,10,13.5
+REWRITE,57.2,blog/apps,ink-fold,Ink Fold: Overlap makes darker — 겹칠수록 진해지는 색 퍼즐,1044,0.76,blog/apps/floe-steps,14.5,0.0,19.2,10,13.5
+REWRITE,57.2,blog/apps,my-whale,My Whale - 고래 키우기 — 먹이고 진화시키는 고래 키우기 게임,1058,0.75,blog/apps/merge-whale,14.7,0.0,19.0,10,13.5
+REWRITE,57.2,blog/apps,reaction-time,Reaction Time Test: Millis — 밀리초 반응속도 테스트,1069,0.7,blog/apps/bike-tire-pressure,14.8,0.0,18.8,10,13.5
+REWRITE,57.2,blog/apps,vror,VROR — VR 안구 헬스케어 앱 기록,987,0.63,blog/apps/save-anything,13.7,0.0,20,10,13.5
+REWRITE,57.2,blog/apps,whale-survivors,Whale Survivors - 픽셀 고래 살아남기 — 픽셀 고래 생존·성장 게임,1067,0.73,blog/apps/my-whale,14.8,0.0,18.8,10,13.5
+REWRITE,57.3,blog/apps,merge-whale,Merge Whale - 고래 합치기 — 같은 고래를 합치는 물리 퍼즐,1028,0.76,blog/apps/my-whale,14.3,0.0,19.5,10,13.5
+REWRITE,57.6,blog/apps,ventas-wallet,VENTAS Modile 지갑 — 가상자산 지갑 앱 개발 기록,980,0.6,blog/apps/ventasbit,13.6,0.5,20,10,13.5
+REWRITE,57.7,blog/apps,note-reading,Sight Reading: Note Trainer! — 오선 음표·건반 초견 연습,893,0.53,blog/apps/verse-memory,12.4,1.8,20,10,13.5
+REWRITE,58.0,blog/apps,ventas,벤타스 — 가상자산 거래 앱 개발 기록,1046,0.63,blog/apps/vigoright,14.5,0.0,20,10,13.5
+REWRITE,58.1,blog/apps,ikigai-map,Ikigai Map: Four Circles — 네 개의 원으로 정리하는 이키가이 지도,1044,0.62,blog/apps/animal-personality,14.5,0.1,20,10,13.5
+REWRITE,58.1,gizmo,skill-resume-tailor-skill,이력서 맞춤 수정 스킬,650,0.33,gizmo/skill-deep-research-brief-skill,25,7.5,11.7,5.0,9.0
+REWRITE,58.2,blog/apps,unit-price,Unit Price: Which Is Cheaper — 묶음·용량별 단가 비교 계산기,1056,0.7,blog/apps/concrete-calculator,14.7,0.0,20,10,13.5
+REWRITE,58.3,blog/apps,reading-pace,Bible Reading Plan: Pace — 마감일 기준 성경 읽기 계획,1065,0.76,blog/apps/church-calendar,14.8,0.0,20,10,13.5
+REWRITE,58.3,gizmo,multi-source-synthesis,여러 자료 종합하기,558,0.4,gizmo/market-research-frame,25,4.3,15.0,5.0,9.0
+REWRITE,58.4,gizmo,market-research-frame,시장조사 틀,636,0.36,gizmo/multi-source-synthesis,25,6.0,13.3,5.0,9.0
+REWRITE,58.5,blog/apps,pocket-answer,작은 답안지 - Pocket Answer — 질문 뒤 짧은 답을 뽑는 앱,1079,0.75,blog/apps/dream-meaning,15.0,0.0,20,10,13.5
+REWRITE,58.5,blog/apps,verse-memory,Scripture Memory: Your Text — 직접 붙여넣는 성경 암송 연습,1082,0.75,blog/apps/church-calendar,15.0,0.0,20,10,13.5
+REWRITE,58.6,blog/apps,animal-personality,Animal Personality: Duet — 상황별 동물 성격 테스트,1088,0.74,blog/apps/dream-meaning,15.1,0.0,20,10,13.5
+REWRITE,58.6,blog/apps,chess-clock,Chess Clock: Time Controls — 증가·딜레이 규칙 체스 시계,1085,0.78,blog/apps/score-keeper,15.1,0.0,20,10,13.5
+REWRITE,58.6,blog/apps,church-calendar,Church Calendar: East & West — 동방·서방 교회력 비교 달력,1084,0.74,blog/apps/reading-pace,15.1,0.0,20,10,13.5
+REWRITE,58.6,blog/apps,dream-meaning,Dream Meaning: Symbol Reader — 꿈 상징을 고르는 오프라인 해몽 앱,1086,0.76,blog/apps/pocket-answer,15.1,0.0,20,10,13.5
+REWRITE,58.7,blog/apps,dew-point,Dew Point: Vent Check — 실내외 온습도 이슬점 계산기,1093,0.8,blog/apps/pool-calculator,15.2,0.0,20,10,13.5
+REWRITE,58.7,blog/apps,whale-book,Whale Book - 고래 사전 — 고래를 찾아 읽는 모바일 사전,1091,0.75,blog/apps/chess-clock,15.2,0.0,20,10,13.5
+REWRITE,58.8,blog/apps,depth-of-field,Depth of Field: Two Subjects — 두 피사체 심도 계산기,1101,0.78,blog/apps/triangle-solver,15.3,0.0,20,10,13.5
+REWRITE,58.9,blog/apps,word-counter,Word Counter: Reading Time — 글자 수·읽는 시간 계산기,1107,0.69,blog/apps/church-calendar,15.4,0.0,20,10,13.5
+REWRITE,58.9,tools,background-remover,누끼·배경 제거,347,0.02,tools/image-compressor,14.5,28.5,3.3,1.7,11.0
+REWRITE,59.0,blog/apps,score-keeper,Score Keeper: Card & Board — 보드게임 라운드 점수판,1113,0.76,blog/apps/chess-clock,15.5,0.0,20,10,13.5
+REWRITE,59.1,blog/apps,concrete-calculator,Concrete Bags and Yards — 콘크리트 부피·포대 수 계산기,1126,0.77,blog/apps/triangle-solver,15.6,0.0,20,10,13.5
+REWRITE,59.1,blog/apps,crochet-row-counter,Crochet Row Counter: Repeat — 뜨개질 단수·반복 카운터,1120,0.77,blog/apps/expiration-tracker,15.6,0.0,20,10,13.5
+REWRITE,59.1,blog/apps,stair-calculator,Stair Calculator: Both Ways — 공간 기준 계단 단수 계산기,1123,0.77,blog/apps/triangle-solver,15.6,0.0,20,10,13.5
+REWRITE,59.1,blog/apps,triangle-solver,Triangle Solver Two Answers — 두 해까지 보여주는 삼각형 계산기,1126,0.78,blog/apps/depth-of-field,15.6,0.0,20,10,13.5
+REWRITE,59.1,tools,random-roulette,랜덤 추첨 룰렛,359,0.04,blog/apps/secret-santa,15.0,28.1,3.3,1.7,11.0
+REWRITE,59.2,blog/apps,cut-list,Cut List: Named Parts — 부품 이름으로 만드는 재료 절단 목록,1128,0.76,blog/apps/dew-point,15.7,0.0,20,10,13.5
+REWRITE,59.2,blog/apps,vocapuff-chinese,VocaPuff - Chinese — 매일 10개씩 외우는 중국어 단어 암기 앱,1133,0.91,blog/apps/vocapuff-japanese,15.7,0.0,20,10,13.5
+REWRITE,59.2,blog/apps,vocapuff-japanese,VocaPuff - Japanese — 매일 10개씩 외우는 일본어 단어 암기 앱,1134,0.91,blog/apps/vocapuff-chinese,15.8,0.0,20,10,13.5
+REWRITE,59.2,gizmo,codemotionmaker,CodeMotionMaker — 말로 부탁하는 모션그래픽,688,0.38,gizmo/forge-planning,25,5.2,13.3,6.7,9.0
+REWRITE,59.3,blog/apps,expiration-tracker,Expiration Tracker: Use First — 유통기한·사용기한 우선순위 기록,1135,0.76,blog/apps/crochet-row-counter,15.8,0.0,20,10,13.5
+REWRITE,59.4,blog/apps,tournament-bracket,Tournament Bracket: Undo Safe — 결과 수정 가능한 토너먼트 대진표,1146,0.75,blog/apps/concrete-calculator,15.9,0.0,20,10,13.5
+REWRITE,59.4,tools,project-checklist,프로젝트 체크리스트,423,0.02,blog/apps/app-archive,17.6,29.1,0.0,1.7,11.0
+REWRITE,59.5,blog/apps,merge-cat,Merge Cat — 같은 고양이를 합치는 물리 퍼즐,971,0.5,blog/apps/merge-whale,13.5,2.5,20,10,13.5
+REWRITE,59.5,blog/apps,pool-calculator,Pool Calculator: Own Chems — 보유 약품 기준 수영장 수질 계산기,1149,0.76,blog/apps/dew-point,16.0,0.0,20,10,13.5
+REWRITE,59.6,blog/apps,vocapuff-english,VocaPuff - English — 매일 10개씩 외우는 영단어 암기 앱,1160,0.79,blog/apps/vocapuff-japanese,16.1,0.0,20,10,13.5
+REWRITE,59.6,gizmo,stats-interpretation,통계·숫자 제대로 해석하기,546,0.42,gizmo/compare-options-research,25,4.0,16.7,5.0,9.0
+REWRITE,59.8,gizmo,source-credibility,출처 믿을 만한지 따져 보기,637,0.36,gizmo/stats-interpretation,25,5.8,15.0,5.0,9.0
+REWRITE,59.9,gizmo,skill-offer-comparer,오퍼 비교 스킬,621,0.33,gizmo/skill-company-research-scorer,25,7.6,13.3,5.0,9.0
+REVISE,60.0,gizmo,skill-deep-research-brief-skill,딥리서치 요청서 스킬,700,0.29,gizmo/skill-note-organizer-skill,25,9.3,11.7,5.0,9.0
+REVISE,60.3,tools,qr-reader,QR 코드 스캔·해석,354,0.01,blog/apps/app-archive,14.8,29.5,1.7,3.3,11.0
+REVISE,60.5,gizmo,handover-doc,인수인계서 만들기,370,0.15,gizmo/career-pivot,18.5,18.0,10.0,5.0,9.0
+REVISE,60.5,gizmo,skill-research-planner,조사 계획 스킬,624,0.31,gizmo/skill-research-synthesizer,25,8.2,13.3,5.0,9.0
+REVISE,60.6,blog/apps,yumyum-type-test,냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트,987,0.45,blog/apps/animal-personality,13.7,3.4,20,10,13.5
+REVISE,60.7,blog/apps,coffee-cut,CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱,1166,0.37,blog/apps/pace-calculator,16.2,4.8,16.2,10,13.5
+REVISE,61.0,blog/apps,return-tag,빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록,1075,0.49,blog/apps/hobby-tracker-resume,14.9,2.6,20,10,13.5
+REVISE,61.1,blog/apps,prayer-practice,Prayer Practice: Your Words — 완성된 기도문 대신 다섯 단계 안내,1051,0.47,blog/apps/hobby-tracker-resume,14.6,3.0,20,10,13.5
+REVISE,61.1,blog/apps,seating-chart,Seating Chart: Seat Rules — 함께·분리 조건 좌석 배치,1146,0.54,blog/apps/chess-clock,15.9,1.7,20,10,13.5
+REVISE,61.1,blog/apps,tradeoff-compass,Dilemma Compass: Priorities — 두 선택지의 우선순위 비교,1102,0.5,blog/apps/ikigai-map,15.3,2.3,20,10,13.5
+REVISE,61.2,blog/apps,math-worksheet,Math Worksheet: Answer Key — 문제지와 답안지 자동 생성,1147,0.53,blog/apps/word-counter,15.9,1.7,20,10,13.5
+REVISE,61.4,blog/apps,five-shapes,Five Shapes — 도형을 탭하는 캐주얼 퍼즐,953,0.38,blog/apps/dicefeel,13.2,4.6,20,10,13.5
+REVISE,61.5,blog/apps,tithe-basis,Tithe Basis: Gross or Net — 십일조 기준을 고르지 않고 보여주는 계산기,1065,0.46,blog/apps/pocketbox,14.8,3.2,20,10,13.5
+REVISE,61.7,column,ai-does-not-replace-me,AI는 나를 대신해주지 않는다,1329,0.14,column/childhood-exploration-joy,16.6,18.0,7.1,7.9,12.0
+REVISE,61.7,tools,image-ocr,이미지 글자 추출 OCR,332,0.02,blog/apps/image-ocr,13.8,28.5,3.3,5.0,11.0
+REVISE,61.8,gizmo,reading-priority,읽을 자료 우선순위 정하기,345,0.16,gizmo/interview-synthesis,17.2,17.2,13.3,5.0,9.0
+REVISE,62.4,tools,metadata-remover,사진 메타데이터 제거,505,0.05,tools/image-compressor,21.0,27.0,1.7,1.7,11.0
+REVISE,62.6,blog/apps,daily-challenge,Daily Challenge: Tiny Actions — 계획 대신 앱이 골라주는 오늘의 행동,961,0.33,blog/apps/one-thing-today,13.3,5.7,20,10,13.5
+REVISE,62.9,blog/apps,hobby-tracker-resume,취미 기록: 다시 잇기 — 프로젝트 개수도 사진 개수도 안 자르는 취미 책갈피,1156,0.45,blog/apps/return-tag,16.1,3.3,20,10,13.5
+REVISE,63.0,gizmo,gap-explain,경력 공백 설명하기,353,0.18,gizmo/interview-answers-star,17.6,16.3,15.0,5.0,9.0
+REVISE,63.2,tools,pdf-sign,PDF 서명 넣기,413,0.05,tools/pdf-split,17.2,26.6,0.0,8.3,11.0
+REVISE,63.3,gizmo,interview-answers-star,경험을 면접 답변으로 (STAR),382,0.18,gizmo/gap-explain,19.1,16.9,13.3,5.0,9.0
+REVISE,63.4,blog/apps,sudden-note,급노트 — 바로 쓰는 빠른 메모 앱 기록,1154,0.42,blog/apps/lockin-message,16.0,3.8,20,10,13.5
+REVISE,63.5,gizmo,deep-research-brief,딥리서치 요청서 만들기,707,0.32,gizmo/compare-options-research,25,7.8,16.7,5.0,9.0
+REVISE,63.7,gizmo,compare-options-research,선택지 조사·비교 틀,570,0.39,gizmo/deep-research-brief,25,4.7,20,5.0,9.0
+REVISE,63.8,gamenews/nikke,nikke-summer-rerun-dorothy-elegg,니케 수영복 도로시·일레그 복각 — 메인 딜러와 보조 자리를 구분하기,1079,0.42,gamenews/nikke/nikke-summer-new-iron-pair,18.0,3.8,20,10,12.0
+REVISE,63.8,tools,pdf-watermark,PDF 워터마크 넣기,398,0.05,tools/pdf-sign,16.6,26.3,0.0,10,11.0
+REVISE,63.9,gizmo,why-leave-answer,이직 사유 답변 준비,405,0.16,gizmo/research-plan,20.2,18.0,11.7,5.0,9.0
+REVISE,64.0,gizmo,citation-organizer,참고문헌 정리 (있는 출처만),439,0.13,gizmo/source-credibility,21.9,19.7,8.3,5.0,9.0
+REVISE,64.0,gizmo,research-report-outline,조사 보고서 구성,392,0.14,gizmo/deep-research-brief,19.6,18.7,11.7,5.0,9.0
+REVISE,64.0,tools,image-watermark,이미지 워터마크 넣기,365,0.04,blog/apps/image-crop-rotate,15.2,27.7,0.0,10,11.0
+REVISE,64.1,blog/apps,pocketbox,PocketBox: Links & Notes — 공유 시트 하나로 모이는 뒤섞인 보관함,1198,0.42,blog/apps/tithe-basis,16.6,3.9,20,10,13.5
+REVISE,64.3,blog/apps,pack-last,짐 목록: 마지막 점검 — 전날 짐과 마지막 짐을 나누는 여행 체크리스트,1207,0.43,blog/apps/return-tag,16.8,4.1,20,10,13.5
+REVISE,64.4,blog/apps,dicefeel,DiceFeel: D20 Dice Roller — 합산까지 읽어주는 테이블탑 주사위,1098,0.33,blog/apps/five-shapes,15.2,5.6,20,10,13.5
+REVISE,64.6,gizmo,skill-company-research-scorer,회사 조사·채점 스킬,896,0.24,gizmo/skill-offer-comparer,25,12.3,13.3,5.0,9.0
+REVISE,64.7,column,supervise-generative-ai,생성형 AI를 우리는 감시·감독해내야만 한다,1377,0.14,column/ai-does-not-replace-me,17.2,18.6,7.0,10,12.0
+REVISE,64.7,tools,word-counter,글자 수·읽기 시간 계산기,466,0.02,blog/apps/word-counter,19.4,29.3,3.3,1.7,11.0
+REVISE,65.0,blog/apps,lockin-message,Lockin Message — 코드로 보관하는 잠금 메시지,1282,0.43,blog/apps/kim-howl,17.8,3.7,20,10,13.5
+REVISE,65.1,gamenews/zzz,zzz-31-existing-agent-conditions,젠레스 존 제로 미야비·아리아·파이퍼 — 3.1에서 다시 볼 추가 능력 조건,1131,0.4,gamenews/zzz/zzz-31-remielle-sigrid,18.9,4.3,20,10,12.0
+REVISE,65.4,column,ai-still-have-to-work,우리는 더 이상 일하지 않아도 되는가?(feat. AI),1481,0.12,column/ai-does-not-replace-me,18.5,20.4,4.5,10,12.0
+REVISE,65.5,gamenews/nikke,nikke-favorite-rosanna-phantom,니케 로산나·팬텀 애장품 — 긴 전투와 타겟 조건을 따로 보는 이유,1139,0.4,gamenews/nikke/nikke-favorite-sugar-flora,19.0,4.5,20,10,12.0
+REVISE,65.5,gizmo,research-plan,조사 계획 세우기,643,0.35,gizmo/market-research-frame,25,6.5,20,5.0,9.0
+REVISE,65.6,blog/apps,fast-plate,Fast Plate: 금식 음식 판정 — 이거 먹어도 되나 답하는 앱,1262,0.43,blog/apps/hymn-crosswalk,17.5,4.6,20,10,13.5
+REVISE,65.7,column,childhood-exploration-joy,어릴 적 탐험의 즐거움은 평생 다시 느낄 수 없을지 모른다,1686,0.14,column/nikke-don-well-made-game,21.1,18.4,6.3,7.9,12.0
+REVISE,65.7,gamenews/nikke,nikke-favorite-sugar-flora,니케 슈가·플로라 애장품 — 새 딜러보다 기존 지원 역할이 바뀐 날,1148,0.4,gamenews/nikke/nikke-favorite-rosanna-phantom,19.1,4.5,20,10,12.0
+REVISE,65.7,tools,return-checklist,게임 복귀 체크리스트,402,0.04,blog/apps/app-archive,16.8,28.0,5.0,5.0,11.0
+REVISE,65.8,blog/apps,give-me-random,RandomPick: Wheel & Teams — 룰렛과 팀 나누기,1203,0.38,blog/apps/sudden-note,16.7,5.6,20,10,13.5
+REVISE,65.8,gizmo,docloom,DocLoom — 브라우저 문서 편집기,1019,0.09,gizmo/forge-planning,25,23.5,1.7,6.7,9.0
+REVISE,66.1,gamenews/nikke,nikke-summer-new-iron-pair,니케 수영복 신데렐라·마르차나 — 같은 철갑 딜러를 어떻게 비교할까,1145,0.39,gamenews/nikke/nikke-summer-rerun-dorothy-elegg,19.1,5.0,20,10,12.0
+REVISE,66.1,gizmo,folder-system,자료 폴더·이름 규칙 만들기,350,0.15,gizmo/career-pivot,17.5,17.9,16.7,5.0,9.0
+REVISE,66.3,blog/apps,date-calculator,날짜 계산기·디데이 — D-1 이 하루 남았다는 뜻인 이유,997,0.26,blog/apps/chess-clock,13.8,10.5,20,10,12.0
+REVISE,66.3,gamenews/nikke,nikke-yukiko-team-slot,니케 아마기 유키코 — 딜러의 회복이 파티 한 자리를 바꿀 수 있을까,1158,0.37,gamenews/nikke/nikke-makoto-first-week,19.3,5.0,20,10,12.0
+REVISE,66.3,gamenews/zzz,zzz-31-remielle-sigrid,젠레스 3.1 레미엘·시그리드 — 신규 둘의 역할부터 나눠 보기,1197,0.4,gamenews/zzz/zzz-31-existing-agent-conditions,20.0,4.4,20,10,12.0
+REVISE,66.3,gizmo,coffee-chat-questions,재직자 커피챗 질문,355,0.15,gizmo/career-pivot,17.8,17.9,16.7,5.0,9.0
+REVISE,66.3,gizmo,survey-analysis,설문 결과 읽기,435,0.14,gizmo/interview-synthesis,21.8,18.9,11.7,5.0,9.0
+REVISE,66.4,gamenews/nikke,nikke-makoto-first-week,니케 니지마 마코토 첫 주 — 유키코 출시 전 평가는 어디까지였나,1149,0.38,gamenews/nikke/nikke-persona-followup,19.1,5.2,20,10,12.0
+REVISE,66.6,gamenews/nikke,nikke-persona-followup,니케 마코토·유키코 후속 평가 — 레이드 성능을 범용 티어로 읽지 않기,1176,0.38,gamenews/nikke/nikke-makoto-first-week,19.6,5.0,20,10,12.0
+REVISE,66.8,gamenews/nikke,nikke-maxwell-health-support,니케 맥스웰 이격 — 체력 버프가 필요한 파티부터 보자,1188,0.38,gamenews/nikke/nikke-drake-ammo-trap,19.8,5.0,20,10,12.0
+REVISE,66.9,gamenews/nikke,nikke-second-burst-roster,니케 2버스트 — 좋은 캐릭터가 많아도 파티 자리는 늘지 않는다,1163,0.37,gamenews/nikke/nikke-persona-followup,19.4,5.5,20,10,12.0
+REVISE,66.9,tools,seating-chart,좌석 배치표 생성기,418,0.02,blog/apps/seating-chart,17.4,28.5,5.0,5.0,11.0
+REVISE,67.2,blog/apps,daily-bible-writing,매일 성경 - 온라인 필사 — 타이핑으로 하는 하루 한 구절 필사,1182,0.34,blog/apps/hymn-crosswalk,16.4,7.3,20,10,13.5
+REVISE,67.2,gamenews/nikke,nikke-drake-ammo-trap,니케 드레이크: 그레이트 빌런 — 장탄 옵션을 그대로 복사하면 안 되는 이유,1197,0.37,gamenews/nikke/nikke-maxwell-health-support,20.0,5.3,20,10,12.0
+REVISE,67.2,gamenews/nte,nte-14-preview-broadcast,이환 1.4 프리뷰 방송 9월 16일 20시 30분,1029,0.3,gamenews/nte/nte-august-bonus-calendar,17.2,8.0,20,10,12.0
+REVISE,67.7,gamenews/nte,nte-august-bonus-calendar,이환 8월 보상 달력 — 픽셀 2배와 폰즈 2배는 같은 행사가 아니다,1125,0.33,gamenews/nte/nte-illoi-lifeline-record,18.8,7.0,20,10,12.0
+REVISE,67.8,gizmo,interview-synthesis,인터뷰 내용에서 발견 뽑기,377,0.17,gizmo/survey-analysis,18.9,16.7,18.3,5.0,9.0
+REVISE,67.9,gamenews/zzz,zzz-32-claret-roxy-engines,클라렛·록시와 새 엔진 — 젠레스 3.2에서 구분할 획득 경로,1261,0.38,gamenews/zzz/zzz-31-32-event-overlap,21.0,4.9,20,10,12.0
+REVISE,67.9,tools,gif-maker,사진으로 GIF 만들기,348,0.02,blog/apps/app-archive,14.5,29.0,8.3,5.0,11.0
+REVISE,68.0,column,nikke-don-well-made-game,니케 DON 사태로 다시 생각한 '잘 만들어진 게임',1813,0.14,column/childhood-exploration-joy,22.7,18.8,4.6,10,12.0
+REVISE,68.1,gamenews/nte,nte-zanhong-nanari-board,이환 잔홍 신규·나나리 복각 — 보드 특전 횟수를 합산하면 안 된다,1163,0.34,gamenews/nte/nte-villa-vehicle-budget,19.4,6.7,20,10,12.0
+REVISE,68.3,gamenews/nte,nte-illoi-lifeline-record,이환 일로이 — 생명선 보드와 금기의 문을 구분한 모집 기록,1170,0.33,gamenews/nte/nte-august-bonus-calendar,19.5,6.8,20,10,12.0
+REVISE,68.4,blog/apps,hymn-crosswalk,Hymn Crosswalk: 본문과 운율 — 성경 본문으로 찬송 찾는 앱,1365,0.38,blog/apps/fast-plate,19.0,5.9,20,10,13.5
+REVISE,68.4,gamenews/wuwa,wuwa-35-electro-rover,명조 전도 방랑자 — 신규 모집과 별도로 확인할 변화,1176,0.34,gamenews/wuwa/wuwa-35-yangyang-susu,19.6,6.8,20,10,12.0
+REVISE,68.5,gamenews/nte,nte-villa-vehicle-budget,이환 들녘의 별장과 열풍 — 폰즈 사용처가 늘었을 때,1179,0.34,gamenews/nte/nte-zanhong-nanari-board,19.7,6.9,20,10,12.0
+REVISE,68.5,gizmo,lecture-to-notes,강의·영상 내용 정리,373,0.15,gizmo/career-pivot,18.6,17.5,18.3,5.0,9.0
+REVISE,68.8,gamenews/limbus,limbus-gregor-move-in-ego,림버스 컴퍼니 그레고르 9월 E.G.O 미리보기 — 화상과 충전이 만나는 자리,1184,0.34,gamenews/limbus/limbus-don-aug6-ego-preview,19.7,7.1,20,10,12.0
+REVISE,68.8,gamenews/wuwa,wuwa-35-yangyang-susu,양양·현령과 수수 — 명조 3.5 신규 둘을 한날의 픽업으로 보면 안 된다,1221,0.34,gamenews/wuwa/wuwa-35-electro-rover,20.3,6.5,20,10,12.0
+REVISE,68.8,gamenews/wuwa,wuwa-36-qingxiao-jingran,청초·경연 — 명조 3.6 전반과 후반의 다른 선택,1209,0.33,gamenews/wuwa/wuwa-35-yangyang-susu,20.2,6.7,20,10,12.0
+REVISE,68.9,gizmo,hypothesis-test,가설 세우고 확인 계획 짜기,392,0.14,gizmo/interview-answers-star,19.6,18.7,16.7,5.0,9.0
+REVISE,69.0,blog/ai,ai-colleagues-06,AI 동료 제작기: 자연스럽게 말하라는 규칙도 반복되면 어색했다,1760,0.31,blog/ai/ai-colleagues-03,24.4,8.4,14.2,10,12.0
+REVISE,69.0,blog/apps,brightpocket,BrightPocket: Compliment Log — 칭찬과 작은 성취를 모아두는 금고,1207,0.29,blog/apps/one-thing-today,16.8,8.7,20,10,13.5
+REVISE,69.0,blog/apps,one-thing-today,One Thing Today: Daily Goal — 하루에 목표 하나만 남기는 위젯 앱,1291,0.27,blog/apps/ikigai-map,17.9,7.5,20,10,13.5
+REVISE,69.0,gizmo,resign-notice,퇴사 통보 준비,465,0.12,gizmo/career-pivot,23.2,20.1,11.7,5.0,9.0
+REVISE,69.3,tools,image-converter,이미지 형식 변환기,826,0.02,tools/image-compressor,25,28.3,0.0,5.0,11.0
+REVISE,69.5,gamenews/limbus,limbus-cinq-east-honglu-preview,림버스 컴퍼니 동부 섕크 3과 홍루 — 속도·호흡·화상을 함께 보는 인격,1176,0.31,gamenews/limbus/limbus-don-aug6-ego-preview,19.6,7.9,20,10,12.0
+REVISE,69.6,gamenews/limbus,limbus-dawn-passive-state,림버스 컴퍼니 새벽 사무소 파우스트·그레고르 — 사망 시점보다 상태가 중요했던 이유,1176,0.31,gamenews/limbus/limbus-cinq-east-honglu-preview,19.6,8.0,20,10,12.0
+REVISE,69.8,blog/ai,whale-survivors-04,AI 게임 개발기: 브라우저에서는 됐는데 실행 파일에서는 멈췄다,1506,0.34,blog/ai/whale-survivors-06,20.9,6.7,20,8.8,13.5
+REVISE,69.8,gamenews/zzz,zzz-31-32-event-overlap,젠레스 버전이 끝나도 이벤트가 남는 경우 — 3.1·3.2 달력 읽기,1362,0.38,gamenews/zzz/zzz-32-claret-roxy-engines,22.7,5.1,20,10,12.0
+KEEP,70.1,gamenews/nikke,nikke-soda-twinkling-bunny-build,니케 소다: 트윙클링 버니 — 큐브·스킬 우선순위 자료 정리,1199,0.3,gamenews/nikke/nikke-favorite-rosanna-phantom,20.0,8.1,20,10,12.0
+KEEP,70.2,blog/ai,whale-survivors-01,AI 게임 개발기: 러버블에서 고래 게임을 시작했다,1523,0.36,blog/ai/whale-survivors-02,21.2,6.8,20,8.8,13.5
+KEEP,70.3,gamenews/nte,nte-bright-moon-linko-hotori,"이환 밝은 달 특간 — 링코 신규·호토리 복각, 9월 30일 마감",1088,0.26,gamenews/nte/nte-13-returning-unlocks,18.1,10.2,20,10,12.0
+KEEP,70.4,gamenews/limbus,limbus-don-aug6-ego-preview,림버스 컴퍼니 돈키호테 8월 E.G.O — 합에서 이겼을 때와 졌을 때를 나눠 읽기,1218,0.31,gamenews/limbus/limbus-gregor-move-in-ego,20.3,8.1,20,10,12.0
+KEEP,70.5,blog/ai,ai-colleagues-07,AI 동료 제작기: 먼저 연락하게 만들기 전에 보내지 않을 때를 정했다,1758,0.31,blog/ai/ai-colleagues-03,24.4,8.1,15.9,10,12.0
+KEEP,70.5,gamenews/limbus,limbus-dimension-shredder-yisang-preview,림버스 컴퍼니 차원찢개 이상 미리보기 — 충전만 쌓으면 끝나는 구조는 아니었다,1212,0.3,gamenews/limbus/limbus-gregor-move-in-ego,20.2,8.3,20,10,12.0
+KEEP,70.6,gamenews/limbus,limbus-season8-punctum-preview,"림버스 시즌8 PUNCTUM — 9월 17일 시작, 오늘 예고에서 확정된 것만",1097,0.27,gamenews/limbus/limbus-canto10-early-unlock,18.3,10.3,20,10,12.0
+KEEP,70.7,blog/ai,whale-survivors-05,AI 게임 개발기: 이미지를 만드는 일과 게임에 넣는 일은 달랐다,1518,0.33,blog/ai/whale-survivors-07,21.1,7.4,20,8.8,13.5
+KEEP,70.7,gamenews/my-games,the-weapons-03,더 웨폰스 개발기 3 — 기능 완성 다음의 기준,915,0.24,gamenews/my-games/the-weapons-02,15.2,13.5,20,10,12.0
+KEEP,70.7,gizmo,first-90-days,입사 첫 90일 계획,379,0.15,gizmo/stats-interpretation,18.9,17.7,20,5.0,9.0
+KEEP,71.0,blog/ai,whale-survivors-06,AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다,1534,0.32,blog/ai/whale-survivors-03,21.3,7.4,20,8.8,13.5
+KEEP,71.1,blog/ai,whale-survivors-02,AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다,1582,0.35,blog/ai/whale-survivors-01,22.0,6.9,20,8.8,13.5
+KEEP,71.1,blog/ai,whale-survivors-08,AI 게임 개발기: 브랜치를 합친 뒤에도 게임을 다시 고쳐야 했다,1479,0.31,blog/ai/whale-survivors-06,20.5,8.3,20,8.8,13.5
+KEEP,71.2,blog/ai,ai-game-factory-10,AI 게임 공장: 심사 제출까지 온 뒤 돌아본 AI 게임 공장,1908,0.23,blog/ai/ai-game-factory-01,25,12.1,12.1,10,12.0
+KEEP,71.2,gamenews/nikke,nikke-sep12-association-deadline,"니케 협회장 ""일단 18일까지 기다려보자"" — 개인 입장문 정리",1249,0.3,gamenews/nikke/nikke-sep11-ban-controversy-silence,20.8,8.3,20,10,12.0
+KEEP,71.2,tools,qr-generator,QR 코드 만들기,507,0.01,tools/id-photo-maker,21.1,29.1,5.0,5.0,11.0
+KEEP,71.3,blog/ai,whale-survivors-09,AI 게임 개발기: 다시 모바일로 옮기면서 덜어낸 것들,1476,0.3,blog/ai/whale-survivors-07,20.5,8.6,20,8.8,13.5
+KEEP,71.5,gamenews/wuwa,wuwa-35-36-story-cycle,명조 3.5→3.6 — 새 지역 다음에는 무엇이 이어졌나,1247,0.29,gamenews/wuwa/wuwa-36-qingxiao-jingran,20.8,8.7,20,10,12.0
+KEEP,71.5,tools,signature-maker,서명·도장 이미지 만들기,476,0.01,tools/id-photo-maker,19.8,29.0,8.3,3.3,11.0
+KEEP,71.7,blog/ai,whale-survivors-07,AI 게임 개발기: 시스템을 늘리자 설명할 것도 많아졌다,1522,0.34,blog/ai/whale-survivors-03,21.1,6.8,20,8.8,15
+KEEP,71.7,gizmo,survey-design,설문 설계하기,406,0.13,gizmo/headhunter-reply,20.3,19.0,18.3,5.0,9.0
+KEEP,72.0,blog/apps,subnet-calculator,서브넷 계산기: CIDR 계획 — IPv4 블록 분할을 검토하는 앱,1197,0.25,blog/apps/logic-workbench,16.6,11.9,20,10,13.5
+KEEP,72.0,gizmo,search-query-builder,검색어 만들기 (논문·뉴스·자료),408,0.13,gizmo/career-pivot,20.4,19.2,18.3,5.0,9.0
+KEEP,72.0,tools,palette-extractor,사진 색상 팔레트 추출기,495,0.02,tools/image-crop-rotate,20.6,28.7,10.0,1.7,11.0
+KEEP,72.0,apps,crochet-row-counter,Crochet Row Counter: Repeat,686,0.04,apps/expiration-tracker,19.1,27.9,0.0,10,15
+KEEP,72.1,gamenews/limbus,limbus-oct1-hotfix-refund-window,림버스 10월 1일 핫픽스 — 재접속과 5층 보스 광기 환급 조건,1034,0.23,gamenews/limbus/limbus-oct2-survey-mobile-update,17.2,12.9,20,10,12.0
+KEEP,72.2,blog/ai,career-03,AI 커리어 관리 3 — 블로그를 다음 조사에 쓸 기록으로 만들기,1251,0.27,blog/ai/career-02,17.4,12.9,20,10,12.0
+KEEP,72.3,gamenews/ananta,ananta-release-date-record,무한대 출시일 공개 — 2027년 1월 15일과 아직 남은 질문,1142,0.31,gamenews/ananta/ananta-silence-rumor-followup,19.0,11.3,20,10,12.0
+KEEP,72.3,gamenews/my-games,the-weapons-02,더 웨폰스 개발기 2 — 전투가 보이게 만드는 작업,918,0.24,gamenews/my-games/the-weapons-03,15.3,13.5,20,10,13.5
+KEEP,72.4,blog/ai,whale-survivors-03,AI 게임 개발기: 스팀을 생각하니 조작부터 다시 봐야 했다,1551,0.33,blog/ai/whale-survivors-06,21.5,7.1,20,8.8,15
+KEEP,72.4,gamenews/my-games,the-weapons-01,더 웨폰스 개발기 1 — 큰 기획에서 한 턴의 선택으로,985,0.22,gamenews/my-games/the-weapons-02,16.4,14.0,20,10,12.0
+KEEP,72.8,gizmo,career-pivot,커리어 전환 로드맵,396,0.13,gizmo/coffee-chat-questions,19.8,19.0,20,5.0,9.0
+KEEP,72.9,blog/ai,ai-colleagues-05,AI 동료 제작기: 기억하는 것만큼 끝난 상황을 지우는 것도 중요했다,1761,0.3,blog/ai/ai-colleagues-02,24.5,8.5,18.0,10,12.0
+KEEP,72.9,gamenews/limbus,limbus-summer-release-rhythm,"림버스 두 달 일정 — 금요일 예고, 월요일 상세, 목요일 업데이트",1273,0.26,gamenews/limbus/limbus-dimension-shredder-yisang-preview,21.2,9.7,20,10,12.0
+KEEP,72.9,gamenews/zzz,zzz-oct3-hobbling-crow-event,젠레스 존 제로 10월 3일 탐정 이벤트 — 다음 의뢰가 안 열릴 때 확인할 두 조건,1171,0.21,gamenews/zzz/zzz-31-existing-agent-conditions,19.5,11.4,20,10,12.0
+KEEP,73.0,gizmo,skill-visual-quality-eval,이미지 품질 평가 스킬 (점수 대신 기준표·비교),1919,0.09,gizmo/skill-release-readiness-audit,25,22.7,11.2,5.0,9.0
+KEEP,73.6,blog/ai,career-01,AI 커리어 관리 1 — 이력서보다 먼저 내 작업을 모았다,1332,0.26,blog/ai/career-02,18.5,13.1,20,10,12.0
+KEEP,73.7,tools,pdf-to-image,PDF JPG·PNG 변환,376,0.02,tools/pdf-compressor,15.7,28.7,10.0,8.3,11.0
+KEEP,74.0,blog/ai,ai-game-factory-02,AI 게임 공장: 많이 만들기에서 네 작품에 집중하기로,1867,0.28,blog/ai/ai-game-factory-04,25,9.4,17.6,10,12.0
+KEEP,74.0,gamenews/nikke,nikke-oct8-belorta-pumpkin-witch-recruitment,"니케 벨로타: 펌킨 위치 픽업 — 10월 8일 점검 후 시작, 종료는 28일 23:59",1206,0.23,gamenews/nikke/nikke-belorta-pumpkin-witch-guide,20.1,11.9,20,10,12.0
+KEEP,74.1,blog/ai,ai-writing-index,"AI 사용기: 게임, 앱, 동료를 만들며 남긴 기록",1699,0.18,blog/ai/admob-store-search-zero-results,23.6,8.5,20,10,12.0
+KEEP,74.4,blog/ai,whale-survivors-10,AI 게임 개발기: 앱스토어에 올리는 데도 개발이 필요했다,1611,0.27,blog/ai/whale-survivors-09,22.4,9.8,20,8.8,13.5
+KEEP,74.5,blog/apps,dedupe-lines,중복 줄 제거기 — 공백 무시를 켜도 원문이 그대로 남는 이유,1495,0.14,blog/apps/csv-json,20.8,19.4,12.3,10,12.0
+KEEP,74.5,gamenews/my-games,my-whale-devlog,고래 키우기 개발기 — 돌봄 한 바퀴를 앱에서도 끝내기,918,0.18,gamenews/my-games/merge-whale-devlog,15.3,15.7,20,10,13.5
+KEEP,74.5,tools,event-deadline,게임 이벤트 마감 달력,536,0.05,blog/apps/event-deadline,22.3,27.8,3.3,10,11.0
+KEEP,74.6,blog/ai,ai-colleagues-04,AI 동료 제작기: 웅삐를 다음 날에도 이어지는 캐릭터로 만들기,1772,0.31,blog/ai/ai-colleagues-02,24.6,8.0,20,10,12.0
+KEEP,74.7,apps,pocket-answer,작은 답안지 - Pocket Answer,627,0.02,apps/my-whale,17.4,29.0,3.3,10,15
+KEEP,74.8,blog/ai,clean-clone-handoff-check,AI 활용기: 개발 인계 문서가 있어도 빈 클론에서 시작해 봐야 하는 이유,1421,0.22,blog/ai/stt-cache-request-provenance,19.7,13.0,20,10,12.0
+KEEP,74.9,apps,animal-personality,동물 성격: 듀엣,753,0.01,apps/daily-bible-writing,20.9,29.0,0.0,10,15
+KEEP,75.0,blog/ai,career-02,AI 커리어 관리 2 — 회사 이름보다 실제 일을 조사했다,1394,0.25,blog/ai/career-03,19.4,13.6,20,10,12.0
+KEEP,75.0,blog/apps,csv-json,CSV와 JSON 변환 — 따옴표 안의 쉼표가 열을 늘리지 않게 하려면,1488,0.16,blog/apps/text-diff,20.7,17.2,15.1,10,12.0
+KEEP,75.0,gamenews/limbus,limbus-canto10-early-unlock,림버스 챕터10 조기 개방 — 챕터1만 깨면 열린다,1291,0.24,gamenews/limbus/limbus-season8-punctum-preview,21.5,11.5,20,10,12.0
+KEEP,75.0,gamenews/my-games,merge-whale-devlog,고래 합치기 개발기 — 게임이 끝나야 기록도 남는다,893,0.19,gamenews/my-games/my-whale-devlog,14.9,16.6,20,10,13.5
+KEEP,75.1,blog/ai,ai-colleagues-02,AI 동료 제작기: 요카이는 제안서를 그대로 따라 하지 않게 했다,1787,0.31,blog/ai/ai-colleagues-04,24.8,8.3,20,10,12.0
+KEEP,75.1,apps,expiration-tracker,Expiration Tracker: Use First,735,0.03,apps/crochet-row-counter,20.4,28.0,1.7,10,15
+KEEP,75.4,blog/apps,logic-workbench,논리 게이트: 회로 실험실 — 배선과 진리표를 함께 검산하는 제작 앱,1375,0.22,blog/apps/subnet-calculator,19.1,12.8,20,10,13.5
+KEEP,75.6,blog/ai,ai-colleagues-03,AI 동료 제작기: 페어리의 검토는 정답보다 제안서에 가까웠다,1814,0.3,blog/ai/ai-colleagues-01,25,8.6,20,10,12.0
+KEEP,75.6,blog/apps,annual-leave-calculator,"연차 계산기 — 입사 1년 미만과 이후, 계산식이 왜 갈리는지",1289,0.19,blog/apps/severance-pay-calculator,17.9,15.7,20,10,12.0
+KEEP,75.8,blog/ai,browser-automation-window-ownership,AI 활용기: 브라우저 자동화가 사람의 탭을 건드릴 뻔했다,1601,0.2,blog/ai/admob-store-search-zero-results,22.2,14.5,17.1,10,12.0
+KEEP,75.9,blog/apps,savings-interest-calculator,적금 이자 계산기 — 연 4% 적금에 600만원을 넣어도 이자가 24만원이 아닌 이유,1453,0.22,blog/apps/loan-calculator,20.2,13.7,20,10,12.0
+KEEP,76.0,blog/ai,stt-cache-request-provenance,AI 활용기: 받아쓰기 언어를 바꿨는데 옛 결과가 남는 캐시의 함정,1502,0.22,blog/ai/clean-clone-handoff-check,20.9,13.1,20,10,12.0
+KEEP,76.1,blog/ai,ai-game-factory-03,AI 게임 공장: 완료 보고 옆에 실제 확인한 것을 적기 시작했다,1871,0.29,blog/ai/ai-game-factory-05,25,9.1,20,10,12.0
+KEEP,76.1,blog/ai,ai-game-factory-07,AI 게임 공장: 방치형으로 장르를 좁혀봤다,1897,0.29,blog/ai/ai-game-factory-05,25,9.1,20,10,12.0
+KEEP,76.1,gamenews/ananta,ananta-silence-rumor-followup,무한대 소식이 없다는 추측은 어디까지 맞았나,1246,0.27,gamenews/ananta/ananta-release-date-record,20.8,13.3,20,10,12.0
+KEEP,76.1,gamenews/nikke,nikke-laplace-july-operating-note,니케 라플라스 이격 운용 메모 — 빠르게 누르기 전에 무기 전환부터,1437,0.27,gamenews/nikke/nikke-july23-matis-record,23.9,10.2,20,10,12.0
+KEEP,76.2,blog/ai,ai-colleagues-08,AI 동료 제작기: 사진을 만들었는데 대화에는 도착하지 않았다,1802,0.29,blog/ai/ai-colleagues-09,25,9.2,20,10,12.0
+KEEP,76.2,blog/ai,ai-game-factory-05,AI 게임 공장: 화면을 다듬고도 게임을 멈춘 이유,1852,0.29,blog/ai/ai-game-factory-04,25,9.2,20,10,12.0
+KEEP,76.3,blog/ai,ai-colleagues-01,"AI 동료 제작기: 요카이, 페어리, 웅삐에게 다른 일을 맡겼다",1885,0.28,blog/ai/ai-colleagues-03,25,9.3,20,10,12.0
+KEEP,76.3,tools,secret-santa,시크릿 산타 / 마니또 추첨기,1192,0.03,blog/apps/secret-santa,25,27.8,9.2,3.3,11.0
+KEEP,76.5,blog/ai,ai-game-factory-01,AI 게임 공장: 게임 하나가 아니라 만드는 과정을 만들고 싶었다,1842,0.28,blog/ai/ai-game-factory-03,25,9.5,20,10,12.0
+KEEP,76.5,blog/apps,bill-split,더치페이 정산 계산기 — 맥주를 안 마신 사람까지 N분의 1을 내지 않게,1458,0.2,blog/apps/discount-calculator,20.2,14.2,20,10,12.0
+KEEP,76.6,gamenews/nikke,nikke-sep16-cheat-response-apology,"니케 유형석 디렉터, 제재 논란에 공식 사과 — 대응 개선안 3가지",1627,0.29,gamenews/nikke/nikke-sep23-post-apology-sanctions-season41,25,9.6,20,10,12.0
+KEEP,76.7,gamenews/limbus,limbus-oct8-mobile-memory-optimization,림버스 10월 8일 모바일 최적화 예고 — 메모리 15% 감소는 어떤 조건의 수치인가,1186,0.19,gamenews/limbus/limbus-oct1-hotfix-refund-window,19.8,14.9,20,10,12.0
+KEEP,76.7,gamenews/zzz,zzz-31-returning-checklist,젠레스 3.1 복귀 체크리스트 — 끝난 보상과 남은 콘텐츠를 나눠 보자,1489,0.27,gamenews/zzz/zzz-32-first-check,24.8,9.9,20,10,12.0
+KEEP,76.7,tools,image-redactor,이미지 모자이크·가리기,577,0.02,tools/image-crop-rotate,24.0,28.3,10.0,3.3,11.0
+KEEP,76.8,blog/ai,ai-game-factory-04,AI 게임 공장: Godot에서 웹으로 옮겨도 남았던 문제,1784,0.3,blog/ai/ai-game-factory-05,24.8,8.5,20,10,13.5
+KEEP,76.8,blog/ai,ai-workbench-06,AI 활용기: 마스코트 528프레임을 만들고도 완료는 아니었다,1694,0.25,blog/ai/ai-workbench-04,23.5,11.3,20,10,12.0
+KEEP,76.8,blog/apps,loan-calculator,대출 원리금 계산기 — 연 12%로 1년 빌려도 이자가 12%가 아닌 이유,1513,0.22,blog/apps/savings-interest-calculator,21.0,13.7,20,10,12.0
+KEEP,77.0,blog/ai,ai-colleagues-10,AI 동료 제작기: AI 동료도 조용히 멈추고 확인할 수 있어야 했다,1784,0.27,blog/ai/ai-colleagues-08,24.8,10.2,20,10,12.0
+KEEP,77.0,gamenews/nte,nte-13-returning-unlocks,이환 1.3 복귀 — 새 스토리가 안 보이면 선행 임무부터,1424,0.25,gamenews/nte/nte-zanhong-nanari-board,23.7,11.3,20,10,12.0
+KEEP,77.1,blog/ai,ai-game-factory-06,AI 게임 공장: 완성 대신 부분완성이라고 적고 닫았다,1830,0.3,blog/ai/ai-game-factory-04,25,8.6,20,10,13.5
+KEEP,77.2,blog/ai,ai-colleagues-09,AI 동료 제작기: 웅삐 설정을 바꿀 때 옛 설정이 따라왔다,1861,0.27,blog/ai/ai-colleagues-08,25,10.2,20,10,12.0
+KEEP,77.2,gamenews/zzz,zzz-32-first-check,젠레스 3.2 시작 — 신캐 평가보다 먼저 확인할 보상과 해금 조건,1523,0.26,gamenews/zzz/zzz-31-returning-checklist,25,10.2,20,10,12.0
+KEEP,77.2,tools,severance-pay-calculator,퇴직금 계산기,1037,0.3,blog/apps/severance-pay-calculator,25,12.9,20,8.3,11.0
+KEEP,77.5,blog/ai,ai-workbench-05,AI 활용기: 슬라임이 자꾸 사람처럼 나왔다,1731,0.25,blog/ai/ai-workbench-03,24.0,11.4,20,10,12.0
+KEEP,77.5,gamenews/nikke,nikke-july23-matis-record,니케 7월 메티스 업데이트 기록 — 모집과 이벤트 마감은 같지 않았다,1517,0.26,gamenews/nikke/nikke-laplace-july-operating-note,25,10.5,20,10,12.0
+KEEP,77.5,apps,whale-book,Whale Book - 고래 사전,637,0.0,apps/coffee-cut,17.7,29.8,5.0,10,15
+KEEP,77.6,tools,pull-planner,뽑기 재화 계획표,435,0.03,blog/apps/pull-planner,18.1,28.5,13.3,6.7,11.0
+KEEP,77.6,tools,tournament-bracket,토너먼트 대진표 생성기,466,0.02,tools/seating-chart,19.4,28.9,16.7,1.7,11.0
+KEEP,77.7,blog/ai,ai-workbench-04,AI 활용기: 로컬 AI 앱은 하나도 만들기 전에 멈췄다,1749,0.25,blog/ai/ai-workbench-03,24.3,11.4,20,10,12.0
+KEEP,77.7,blog/apps,severance-pay-calculator,퇴직금 계산기 — 평균임금 3/12가 상여금·연차수당에만 붙는 이유,1408,0.19,blog/apps/annual-leave-calculator,19.6,16.1,20,10,12.0
+KEEP,77.7,gamenews/zzz,zzz-hollow-vanguards-signup,"젠레스 존 제로, 미출시 콘텐츠 비공개 테스트 '할로우 뱅가드' 모집",1398,0.2,gamenews/zzz/zzz-31-32-event-overlap,23.3,12.4,20,10,12.0
+KEEP,77.8,tools,math-worksheet,수학 학습지 생성기,452,0.01,blog/apps/app-archive,18.8,29.6,11.7,6.7,11.0
+KEEP,77.9,gamenews/my-games,cat-merge-devlog,고양이 합치기 개발기 — 합쳐지는 것 다음에 남은 문제,974,0.17,gamenews/my-games/my-whale-devlog,16.2,18.2,20,10,13.5
+KEEP,77.9,tools,pdf-merge,PDF 합치기,742,0.02,tools/pdf-compressor,25,26.9,13.3,1.7,11.0
+KEEP,78.1,blog/ai,ai-workbench-01,AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다,1677,0.22,blog/ai/ai-workbench-03,23.3,12.8,20,10,12.0
+KEEP,78.2,blog/ai,ai-workbench-03,AI 활용기: 앱과 서버를 따로 만들었더니 데이터 이름부터 달랐다,1840,0.25,blog/ai/ai-workbench-04,25,11.2,20,10,12.0
+KEEP,78.3,blog/ai,ai-game-factory-08,AI 게임 공장: Swift로 옮기며 이전 공장에서 남길 것을 골랐다,1955,0.25,blog/ai/ai-game-factory-06,25,11.3,20,10,12.0
+KEEP,78.3,blog/apps,timezone-converter,시차 계산기 — 시차 4시간인데 날짜는 하루 다른 이유,1534,0.19,blog/apps/bill-split,21.3,15.0,20,10,12.0
+KEEP,78.3,gizmo,salary-negotiation,연봉 협상 대화 준비,462,0.1,gizmo/career-pivot,23.1,21.2,20,5.0,9.0
+KEEP,78.4,gamenews/limbus,limbus-tgs2026-booth-sellout,"림버스 컴퍼니, 도쿄게임쇼 2026 시연 40분 만에 마감 — 무엇을 보여줬나",1445,0.23,gamenews/limbus/limbus-rodion-alteration-shop-extraction,24.1,12.3,20,10,12.0
+KEEP,78.4,gamenews/nikke,nikke-sep3-full-redownload,니케 9월 3일 업데이트 — 17GB 재다운로드와 오늘(9/10) 마감·시작 이벤트,1465,0.24,gamenews/nikke/nikke-drake-ammo-trap,24.4,11.9,20,10,12.0
+KEEP,78.4,apps,floe-steps,얼음 발자국,650,0.03,apps/ink-fold,18.1,28.7,6.7,10,15
+KEEP,78.4,apps,whale-survivors,Whale Survivors - 픽셀 고래 살아남기,604,0,,16.8,30.0,6.7,10,15
+KEEP,78.6,gamenews/limbus,limbus-rodion-alteration-shop-extraction,림버스 컴퍼니 신규 인격 오트쿠튀르::수선실 로쟈 — 9월 24일 KST 추출 시작,1457,0.23,gamenews/limbus/limbus-tgs2026-booth-sellout,24.3,12.3,20,10,12.0
+KEEP,78.6,gamenews/nte,nte-pixel-burst-double-reward,이환 픽셀 대방출 — 9월 21일 새벽까지 4개 콘텐츠 보상 2배,1436,0.22,gamenews/nte/nte-sep16-ddos-maintenance-annulith,23.9,12.7,20,10,12.0
+KEEP,78.7,blog/apps,amount-to-korean,금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유,1567,0.19,blog/apps/discount-calculator,21.8,14.9,20,10,12.0
+KEEP,78.7,blog/apps,text-diff,텍스트 비교기 — 수정한 한 줄이 삭제와 추가로 나오는 이유,1420,0.15,blog/apps/csv-json,19.7,17.0,20,10,12.0
+KEEP,78.8,blog/ai,ai-workbench-02,AI 활용기: AI가 만든 검사기를 일부러 망가뜨려봤다,1701,0.22,blog/ai/ai-workbench-01,23.6,13.2,20,10,12.0
+KEEP,78.8,blog/apps,nuvvies,누비즈: 성격 심리테스트 — 본성·관계·충전을 따로 보는 삼면 초상,1452,0.21,blog/apps/brightpocket,20.2,15.1,20,10,13.5
+KEEP,78.8,gamenews/wuwa,wuwa-36-returning-echo-check,명조 3.6 복귀 — 에코를 새로 파밍하기 전에 확인할 것,1533,0.23,gamenews/wuwa/wuwa-36-qingxiao-jingran,25,11.8,20,10,12.0
+KEEP,78.8,apps,good,BrightPocket: Compliment Log,729,0.01,blog/apps/brightpocket,20.2,28.5,5.0,10,15
+KEEP,78.9,blog/ai,worker-done-operator-still-busy,AI 활용기: 작업자는 끝났는데 운영자는 계속 busy였다 — 완료 감지와 우선순위의 빈틈,1646,0.19,blog/ai/concurrent-session-unowns-your-repo,22.9,14.1,20,10,12.0
+KEEP,78.9,blog/apps,discount-calculator,할인율 계산기 — 20% 할인에 10% 쿠폰을 더해도 30% 할인이 아닌 이유,1581,0.19,blog/apps/loan-calculator,22.0,14.9,20,10,12.0
+KEEP,79.0,blog/apps,volumetric-weight-calculator,택배 부피무게 계산기 — 3kg짜리 상자가 4kg으로 청구되는 이유,1562,0.18,blog/apps/bill-split,21.7,15.3,20,10,12.0
+KEEP,79.1,apps,merge-whale,Merge Whale - 고래 합치기,694,0.0,apps/pocket-monsters,19.3,29.8,5.0,10,15
+KEEP,79.2,blog/apps,vat-calculator,부가세 계산기 — 합계금액의 10%는 부가세가 아니다,1635,0.2,blog/apps/discount-calculator,22.7,14.5,20,10,12.0
+KEEP,79.2,apps,bike-tire-pressure,Bike Tire Pressure: Any Width,734,0.03,apps/unit-price,20.4,27.2,6.7,10,15
+KEEP,79.3,gamenews/limbus,limbus-oct2-survey-mobile-update,림버스 10월 2일 — 5층 보스 설문 마감과 모바일 1.116.1 확인 순서,1270,0.18,gamenews/limbus/limbus-oct1-hotfix-refund-window,21.2,16.2,20,10,12.0
+KEEP,79.5,gamenews/nikke,nikke-sep23-post-apology-sanctions-season41,"니케, 사과문 이후 첫 무더기 제재 — 시즌41 하루 전 47+15개 계정",2018,0.24,gamenews/nikke/nikke-sep16-cheat-response-apology,25,12.5,20,10,12.0
+KEEP,79.5,apps,fast-plate,Fast Plate: 금식 음식 판정,768,0.09,blog/apps/fast-plate,21.3,24.8,8.3,10,15
+KEEP,79.6,blog/ai,ai-game-factory-09,AI 게임 공장: 게임을 고치다가 검사기도 다시 고쳤다,1892,0.25,blog/ai/ai-game-factory-04,25,11.1,20,10,13.5
+KEEP,79.6,tools,csv-json,CSV ↔ JSON 변환기,1012,0.04,blog/apps/dedupe-lines,25,25.4,14.8,3.3,11.0
+KEEP,79.8,blog/ai,same-pattern-four-repos-one-day,AI 활용기: 같은 통계 기능을 저장소 4개에 동시에 심었는데 코드가 다 달랐다,2942,0.12,blog/ai/clean-clone-handoff-check,25,19.8,13.0,10,12.0
+KEEP,79.9,gamenews/nikke,nikke-sep17-guilty-mighty-bunny-update,니케 9/17 업데이트 — 길티: 마이티 바니 신규 SSR과 코인 러시 쇼다운,1718,0.22,gamenews/nikke/nikke-sep22-swift-bunny-official-confirm,25,12.9,20,10,12.0
+KEEP,79.9,tools,device-mockup,스마트폰 목업 생성기,544,0.03,blog/apps/app-icon-generator,22.7,27.9,15.0,3.3,11.0
+KEEP,80.3,apps,seating-chart,Seating Chart: Seat Rules,749,0.03,apps/math-worksheet,20.8,27.8,6.7,10,15
+KEEP,80.6,gamenews/nikke,nikke-sep11-ban-controversy-silence,"니케 부정 프로그램 제재 논란 — 대표는 침묵, 부사장이 대신 나선 이유",1710,0.22,gamenews/nikke/nikke-sep12-association-deadline,25,13.6,20,10,12.0
+KEEP,80.7,gamenews/limbus,limbus-rodion-kit-and-update-sep24,"림버스 컴퍼니 로쟈 스킬 공개 — 9월 24일 업데이트, 10장 후편도 함께",1668,0.21,gamenews/limbus/limbus-1115-known-issues-save-restore,25,13.7,20,10,12.0
+KEEP,80.8,gamenews/nte,nte-sep16-ddos-maintenance-annulith,"이환 9/16 긴급 점검 — DDoS 공격 대응, 환석 500개 보상",1621,0.2,gamenews/nte/nte-pixel-burst-double-reward,25,13.8,20,10,12.0
+KEEP,80.9,gamenews/limbus,limbus-aug20-text-or-bug,림버스 8월 20일 추가 공지 — 설명 수정과 실제 버그는 다르다,1566,0.19,gamenews/limbus/limbus-cinq-east-honglu-preview,25,13.9,20,10,12.0
+KEEP,80.9,gizmo,offer-compare,오퍼 여러 개 비교,519,0.1,gizmo/multi-source-synthesis,25,21.9,20,5.0,9.0
+KEEP,81.0,blog/ai,ai-workbench-07,AI 활용기: AI에게 맡긴 일을 다시 AI와 정리했다,1777,0.2,blog/ai/ai-workbench-02,24.7,14.4,20,10,12.0
+KEEP,81.0,blog/apps,unit-converter,단위 변환기 — 레시피의 1컵이 200mL가 아닌 이유,1656,0.17,blog/apps/amount-to-korean,23.0,16.0,20,10,12.0
+KEEP,81.1,blog/apps,secret-santa,시크릿 산타·마니또 추첨기 — 자기 이름이 뽑히지 않게 나누는 방법,1613,0.12,blog/apps/random-roulette,22.4,19.7,17.0,10,12.0
+KEEP,81.1,apps,my-whale,My Whale - 고래 키우기,612,0.02,apps/pocket-answer,17.0,29.1,10.0,10,15
+KEEP,81.3,gizmo,skill-planning-pingpong,기획 핑퐁 스킬 (아이디어 확장 + 충돌 검사),1686,0.09,gizmo/skill-company-research-scorer,25,22.3,20,5.0,9.0
+KEEP,81.3,tools,text-diff,텍스트 비교기,856,0.03,blog/apps/dedupe-lines,25,27.0,15.0,3.3,11.0
+KEEP,81.4,apps,triangle-solver,Triangle Solver Two Answers,712,0.01,apps/church-calendar,19.8,28.3,8.3,10,15
+KEEP,81.5,blog/ai,asc-screenshot-additive-trap,AI 활용기: 반려 스크린샷을 고쳐 올렸는데 16장이 됐다,2090,0.18,blog/ai/hidden-truncation-trap,25,15.9,18.6,10,12.0
+KEEP,81.5,blog/ai,camera-two-targets-geometric-guarantee,AI 활용기: 카메라 파라미터를 조율하는 대신 '항상 화면 안'을 수식으로 못박았다,2737,0.12,blog/ai/double-dispatch-benchmark-lie,25,19.5,15.0,10,12.0
+KEEP,81.6,gamenews/nikke,nikke-sep22-swift-bunny-official-confirm,"니케 신: 스위프트 바니, 9월 24일 픽업 — 지난 글의 미확인 정보가 실은 이미 공식이었다",1814,0.2,gamenews/nikke/nikke-sep23-post-apology-sanctions-season41,25,14.6,20,10,12.0
+KEEP,81.8,gamenews/limbus,limbus-chapter10-part1-mobile-specs,"림버스 컴퍼니 챕터10 파트1, 9월 17일 출시 — 모바일 권장사양 상향",1719,0.19,gamenews/limbus/limbus-canto10-early-unlock,25,14.8,20,10,12.0
+KEEP,81.8,apps,coffee-cut,CoffeeCut: 카페인 기록,707,0.08,blog/apps/coffee-cut,19.6,25.5,11.7,10,15
+KEEP,82.0,gamenews/wuwa,wuwa-37-hsin-suoming-preview,명조 3.7 프리뷰 방송 9월 19일 — 신규 공명자 신·쇄명 먼저 확인,1458,0.16,gamenews/wuwa/wuwa-35-36-story-cycle,24.3,15.7,20,10,12.0
+KEEP,82.4,blog/ai,phantom-dependency-borrowed-node-modules,AI 활용기: 내 테스트가 남의 프로젝트 폴더에 빚지고 있었다,2459,0.17,blog/ai/gate-does-not-measure-what-you-want,25,16.6,18.8,10,12.0
+KEEP,82.7,blog/ai,gate-does-not-measure-what-you-want,AI 활용기: 게이트를 통과했다는 것과 원하는 게 됐다는 건 다른 얘기였다,2167,0.18,blog/ai/phantom-dependency-borrowed-node-modules,25,15.7,20,10,12.0
+KEEP,82.7,gamenews/nikke,nikke-sep27-minikke-cinderella-episode,니케 미니케: 타이니 테일즈 신데렐라 편 공개 — 동화 시리즈 네 번째 이야기,1949,0.18,gamenews/nikke/nikke-sep23-post-apology-sanctions-season41,25,15.7,20,10,12.0
+KEEP,82.7,gamenews/zzz,zzz-hoyoland2026-offline-ticket,"젠레스 존 제로 호요랜드2026 티켓 — 9월 14일 저녁 7시 예매 시작, 요일당 1매",1476,0.15,gamenews/zzz/zzz-31-32-event-overlap,24.6,16.1,20,10,12.0
+KEEP,82.7,tools,typing-speed-test,타자 속도 테스트,1018,0.04,blog/apps/church-calendar,25,25.0,20,1.7,11.0
+KEEP,83.0,blog/apps,gpa-calculator,학점 계산기 — 4.5 만점 평점에 4.3/4.5를 곱하면 안 되는 이유,1697,0.15,blog/apps/unit-converter,23.6,17.4,20,10,12.0
+KEEP,83.4,blog/ai,new-character-text-description-wrong-face,AI 활용기: 신규 게임 캐릭터를 글로만 설명해 그렸더니 전혀 다른 사람이 나왔다 — 공식 레퍼런스를 먼저 붙이는 순서,2454,0.14,blog/ai/concurrent-session-unowns-your-repo,25,18.6,17.8,10,12.0
+KEEP,83.4,gamenews/nte,nte-sep17-breeze-riding-event,이환 산들바람 속 라이딩 종료 후 — 자전거 초대는 만남의 순간에서 계속,1542,0.17,gamenews/nte/nte-14-first-day-priorities,25,16.4,20,10,12.0
+KEEP,83.4,tools,password-generator,비밀번호 생성기,1384,0.02,tools/amount-to-korean,25,28.4,15.7,3.3,11.0
+KEEP,83.5,tools,age-calculator,만 나이 계산기,957,0.07,blog/apps/age-calculator,25,24.1,20,3.3,11.0
+KEEP,83.6,gamenews/nte,nte-14-raven-akane-fuka-paradise,"이환 1.4 버전 프리뷰 방송 정리 — 신캐 레이븐·아카네 린, 신규 지역 공개",1556,0.15,gamenews/nte/nte-sep17-breeze-riding-event,25,16.6,20,10,12.0
+KEEP,83.6,tools,image-crop-rotate,이미지 자르기·회전,522,0.03,blog/apps/image-watermark,21.8,27.5,20,3.3,11.0
+KEEP,83.6,tools,unit-price,단가 비교 계산기,463,0.02,blog/apps/unit-price,19.3,28.3,16.7,8.3,11.0
+KEEP,83.7,tools,amount-to-korean,금액 한글 변환기,960,0.03,blog/apps/age-calculator,25,26.0,20,1.7,11.0
+KEEP,83.7,apps,merge-cat,Merge Cat - 고양이 합치기,629,0.03,apps/yumyum-type-test,17.5,27.9,13.3,10,15
+KEEP,83.8,apps,one-thing-today,오늘 딱 하나 - 하루 목표,671,0.02,blog/apps/one-thing-today,18.6,28.5,11.7,10,15
+KEEP,83.9,blog/ai,admob-store-search-zero-results,AI 활용기: AdMob이 라이브 앱을 '못 찾음'이라고 한 이유,2168,0.16,blog/ai/browser-automation-window-ownership,25,16.9,20,10,12.0
+KEEP,83.9,blog/ai,concurrent-session-unowns-your-repo,"AI 활용기: git status에 낯선 staged 파일이 있길래, 짐작하지 않고 먼저 물었다",2306,0.17,blog/ai/same-day-two-sessions-one-trailer,25,16.9,20,10,12.0
+KEEP,83.9,blog/apps,age-calculator,"만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유",1610,0.12,blog/apps/discount-calculator,22.4,19.5,20,10,12.0
+KEEP,83.9,blog/apps,typing-speed-test,타자 속도 테스트 — 총 타수와 순 타수가 다르게 나오는 이유,1476,0.09,blog/apps/vocapuff-chinese,20.5,21.4,20,10,12.0
+KEEP,83.9,tools,pdf-organizer,PDF 페이지 정리,556,0.03,blog/apps/pdf-compressor,23.2,26.4,20,3.3,11.0
+KEEP,84.1,blog/apps,password-generator,비밀번호 생성기 — 기호를 넣는 것보다 길이를 늘리는 쪽이 센 이유,1809,0.16,blog/apps/volumetric-weight-calculator,25,17.1,20,10,12.0
+KEEP,84.2,gamenews/nte,nte-14-first-day-priorities,이환 1.4 첫날 무엇부터 확인할까 — 우편 선물과 10월 21일 마감,1696,0.16,gamenews/nte/nte-sep17-breeze-riding-event,25,17.2,20,10,12.0
+KEEP,84.2,tools,annual-leave-calculator,연차 계산기,1105,0.05,tools/severance-pay-calculator,25,24.9,20,3.3,11.0
+KEEP,84.3,gizmo,skill-release-readiness-audit,출시 가능성 감사 스킬 (프로토타입을 완성이라 부르지 않기),2901,0.05,gizmo/skill-visual-quality-eval,25,25.3,20,5.0,9.0
+KEEP,84.4,blog/ai,unattended-three-failure-axes,"AI 활용기: 리뷰마다 다른 결함이 나온 무인 자동화, 원인은 네 가지였다",2246,0.16,blog/ai/schedule-drift-oneshot-chain,25,17.4,20,10,12.0
+KEEP,84.4,apps,reaction-time,Reaction Time Test: Millis,742,0.01,apps/word-counter,20.6,28.8,10.0,10,15
+KEEP,84.5,blog/apps,json-formatter,JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기,1637,0.14,blog/apps/dedupe-lines,22.7,19.7,20,10,12.0
+KEEP,84.5,tools,dedupe-lines,중복 줄 제거기,939,0.03,tools/json-formatter,25,26.9,16.7,5.0,11.0
+KEEP,84.5,apps,daily-bible-writing,매일 성경 - 온라인 필사,681,0.02,apps/merge-cat,18.9,28.9,11.7,10,15
+KEEP,84.5,apps,vocapuff-chinese,VocaPuff - Chinese,665,0.03,apps/vocapuff-english,18.5,27.7,13.3,10,15
+KEEP,84.5,apps,yumyum-type-test,냠냠 성격 테스트,605,0.03,apps/merge-cat,16.8,27.7,15.0,10,15
+KEEP,84.6,tools,pdf-compressor,PDF 용량 줄이기,775,0.03,tools/pdf-merge,25,26.9,18.3,3.3,11.0
+KEEP,84.9,apps,pocket-monsters,누비즈: 성격 심리테스트,773,0.05,blog/apps/nuvvies,21.5,26.8,11.7,10,15
+KEEP,85.1,blog/ai,apfs-du-df-clone-mismatch,AI 활용기: du가 41G라던 폴더를 지웠더니 13G만 비었다,2334,0.14,blog/ai/admob-store-search-zero-results,25,18.1,20,10,12.0
+KEEP,85.2,games,mori-lantern-cluster,모리 랜턴 클러스터,870,0.19,games/nyx-mirror-ruins,24.2,16.0,20,10,15
+KEEP,85.2,apps,note-reading,Sight Reading: Note Trainer!,743,0.02,apps/score-keeper,20.6,27.9,11.7,10,15
+KEEP,85.5,blog/ai,hidden-truncation-trap,AI 활용기: 100건까지만 응답하는 API를 4단계 끝나서야 알았다,2471,0.14,blog/ai/asc-screenshot-additive-trap,25,18.5,20,10,12.0
+KEEP,85.5,gamenews/wuwa,wuwa-37-livestream-release-oct,명조 3.7 버전 9월 30일 출시 확정 — 히신·쇄명 프리뷰 방송 정리,1845,0.12,gamenews/wuwa/wuwa-35-electro-rover,25,18.5,20,10,12.0
+KEEP,85.5,apps,chess-clock,Chess Clock: Time Controls,794,0.02,apps/seating-chart,22.1,28.5,10.0,10,15
+KEEP,85.6,blog/ai,declared-feedback-vs-executed-feedback,"AI 활용기: 게임 설정에 '피드백 3종'을 적어놨는데, 실제로 켜졌는지는 아무도 안 재고 있었다",3025,0.14,blog/ai/gate-does-not-measure-what-you-want,25,18.6,20,10,12.0
+KEEP,85.6,tools,loan-calculator,대출 원리금 계산기,1034,0.07,tools/savings-interest-calculator,25,24.6,20,5.0,11.0
+KEEP,85.8,blog/ai,schedule-drift-oneshot-chain,"AI 활용기: 반복 예약이 매일 30분씩 늦게 울린 이유, JS 타이머와 같은 병이었다",2635,0.13,blog/ai/unattended-three-failure-axes,25,18.8,20,10,12.0
+KEEP,85.9,blog/ai,fake-number-caught-before-publish,"AI 활용기: '조회수 안 나올 것 같다'는 반려 한 줄이 포맷도 고치고, 내가 몰래 넣은 가짜 해시값도 잡아냈다",2586,0.13,blog/ai/declared-feedback-vs-executed-feedback,25,18.9,20,10,12.0
+KEEP,86.1,apps,word-counter,Word Counter: Reading Time,762,0.02,apps/seating-chart,21.2,28.3,11.7,10,15
+KEEP,86.5,gamenews/limbus,limbus-1115-known-issues-save-restore,림버스 1.115.0 퀘스트 막힘 — '세이브 복원' 위치와 쓰면 안 되는 경우,2741,0.13,gamenews/limbus/limbus-rodion-kit-and-update-sep24,25,19.5,20,10,12.0
+KEEP,86.5,games,volt-marten-bastion,볼트 마튼 바스티온,904,0.18,games/mori-lantern-cluster,25,16.5,20,10,15
+KEEP,86.5,tools,timezone-converter,시차 계산기,1122,0.03,tools/age-calculator,25,27.2,20,3.3,11.0
+KEEP,86.6,apps,pace-calculator,Pace Calculator: Race Plan,799,0.02,apps/bike-tire-pressure,22.2,27.7,11.7,10,15
+KEEP,86.7,blog/ai,same-day-two-sessions-one-trailer,AI 활용기: 같은 날 두 세션이 남긴 커밋을 트레일러 한 줄로 구별했다,3034,0.13,blog/ai/concurrent-session-unowns-your-repo,25,19.7,20,10,12.0
+KEEP,86.7,games,arc-eel,아크 일: 전기 경로 그리기,800,0.01,games/circuit-lynx,22.2,29.5,10.0,10,15
+KEEP,86.7,tools,photo-collage,사진 여러 장 합치기,527,0.03,blog/apps/app-archive,22.0,27.1,20,6.7,11.0
+KEEP,86.8,tools,discount-calculator,할인율 계산기,1021,0.05,tools/savings-interest-calculator,25,25.8,20,5.0,11.0
+KEEP,86.8,tools,unit-converter,단위 변환기,949,0.04,tools/discount-calculator,25,25.8,20,5.0,11.0
+KEEP,86.9,blog/ai,macos-tcc-responsible-process,AI 활용기: Homebrew 파이썬을 올렸더니 무인 자동화 권한이 조용히 풀렸다,3348,0.12,blog/ai/gate-does-not-measure-what-you-want,25,19.9,20,10,12.0
+KEEP,86.9,gamenews/ananta,ananta-aug27-dlss-not-performance-proof,무한대 DLSS 4.5 발표 — 지원 소식이 사양 검증은 아니다,1509,0.15,gamenews/ananta/ananta-silence-rumor-followup,25,19.9,20,10,12.0
+KEEP,86.9,tools,app-icon-generator,앱 아이콘·파비콘 생성기,540,0.02,blog/apps/device-mockup,22.5,28.4,20,5.0,11.0
+KEEP,86.9,apps,math-worksheet,Math Worksheet: Answer Key,691,0.03,apps/seating-chart,19.2,27.7,15.0,10,15
+KEEP,87.0,gamenews/etc,summer-2026-game-timeline,7~9월 게임 기록 38편 — 신규 캐릭터와 업데이트 주기 한눈에 보기,3316,0.08,gamenews/nikke/nikke-drake-ammo-trap,25,20.0,20,10,12.0
+KEEP,87.1,games,nyx-mirror-ruins,닉스 미러 루인즈,966,0.17,games/mori-lantern-cluster,25,17.1,20,10,15
+KEEP,87.2,tools,image-to-pdf,이미지 PDF 변환기,685,0.03,tools/image-compressor,25,27.9,20,3.3,11.0
+KEEP,87.2,tools,social-image-resizer,SNS 이미지 리사이즈,542,0.02,tools/app-icon-generator,22.6,28.6,20,5.0,11.0
+KEEP,87.2,apps,random-pick,랜덤픽: 룰렛과 팀 나누기,712,0.01,apps/fast-plate,19.8,29.1,13.3,10,15
+KEEP,87.7,blog/ai,double-dispatch-benchmark-lie,AI 활용기: 내 성능 측정 코드가 스스로 거짓말을 하고 있었다,3010,0.11,blog/ai/macos-tcc-responsible-process,25,20.7,20,10,12.0
+KEEP,87.7,apps,dream-meaning,Dream Meaning: Symbol Reader,770,0.01,apps/reaction-time,21.4,29.6,11.7,10,15
+KEEP,88.1,blog/ai,ios-home-screen-display-name-plist,iOS 홈 화면 앱 이름이 다를 때: 최종 Info.plist부터 확인하기,4324,0.11,blog/ai/ipad-orientation-archive-itms-90474,25,21.1,20,10,12.0
+KEEP,88.1,blog/ai,ipad-orientation-archive-itms-90474,ITMS-90474 iPad 방향 오류: Archive의 전용 배열 확인하기,4925,0.11,blog/ai/ios-home-screen-display-name-plist,25,21.1,20,10,12.0
+KEEP,88.1,tools,pdf-split,PDF 분할·페이지 추출,723,0.03,tools/pdf-sign,25,27.1,20,5.0,11.0
+KEEP,88.2,blog/ai,exif-orientation-pil-sips-size,AI 활용기: 사진 가로세로가 거꾸로 측정된다: EXIF Orientation 때문에 PIL·sips 크기가 틀릴 때,4567,0.11,blog/ai/swift-int-double-fatal-error-nan-infinity,25,21.2,20,10,12.0
+KEEP,88.2,blog/ai,node-npm-no-such-file-path-wrapper,node·npm에서 No such file or directory: 삭제된 실행 파일을 부르는 래퍼 찾기,3605,0.1,blog/ai/phaser-is-not-defined-module-import,25,21.2,20,10,12.0
+KEEP,88.2,apps,vocapuff-japanese,VocaPuff - Japanese,680,0.01,apps/vocapuff-chinese,18.9,29.4,15.0,10,15
+KEEP,88.3,tools,image-compressor,이미지 용량 줄이기,814,0.03,tools/metadata-remover,25,27.3,20,5.0,11.0
+KEEP,88.4,tools,json-formatter,JSON 포매터·검증기,1113,0.03,blog/apps/json-formatter,25,27.4,20,5.0,11.0
+KEEP,88.4,apps,jet-lag,Jet Lag: Both Clocks,786,0.02,apps/depth-of-field,21.8,28.2,13.3,10,15
+KEEP,88.7,blog/ai,review-version-binding,"AI 활용기: 초안 검토 후 수정했다면, 승인 기록을 원고 버전에 묶는 방법",4054,0.1,blog/ai/admob-store-search-zero-results,25,21.7,20,10,12.0
+KEEP,88.9,games,rivet-cloud-stack,리벳 클라우드 스택,907,0.14,games/mori-lantern-cluster,25,18.9,20,10,15
+KEEP,89.0,games,nova-fox-breakout,노바 폭스 브레이크아웃,937,0.15,games/mako-skyport-command,25,19.0,20,10,15
+KEEP,89.1,apps,depth-of-field,Depth of Field: Two Subjects,817,0.03,apps/pool-calculator,22.7,28.0,13.3,10,15
+KEEP,89.6,gizmo,codex-imagegen-kit,Codex 이미지 파이프라인 키트 (투명 PNG·프레임 세트),3831,0.02,gizmo/figma-browser-kit,25,28.9,20,6.7,9.0
+KEEP,89.6,tools,id-photo-maker,증명사진 제작기,534,0.02,tools/image-crop-rotate,22.2,28.1,20,8.3,11.0
+KEEP,89.6,apps,lockin-message,OneView: Expiring Secret,697,0.02,apps/triangle-solver,19.4,28.6,16.7,10,15
+KEEP,89.7,blog/ai,phaser-is-not-defined-module-import,Phaser is not defined: Scene을 import했는데 Math에서 멈출 때,5243,0.08,blog/ai/node-npm-no-such-file-path-wrapper,25,22.7,20,10,12.0
+KEEP,89.7,gizmo,figma-browser-kit,Figma 브라우저 제어 키트 (MCP 없이),4402,0.02,gizmo/codex-imagegen-kit,25,29.0,20,6.7,9.0
+KEEP,89.8,gamenews/ananta,ananta-seven-year-support-pledge,"무한대(Ananta) 개발사, 출시 후 최소 7년 지원 계획 언급",1656,0.1,gamenews/ananta/ananta-silence-rumor-followup,25,22.8,20,10,12.0
+KEEP,89.8,games,mako-skyport-command,마코 스카이포트 커맨드,898,0.15,games/nova-fox-breakout,24.9,19.8,20,10,15
+KEEP,90.0,games,puck-coral-front,퍽 코랄 프론트,915,0.13,games/mori-lantern-cluster,25,20.0,20,10,15
+KEEP,90.2,tools,vat-calculator,부가세 계산기,1304,0.06,blog/apps/vat-calculator,25,25.8,20,8.3,11.0
+KEEP,90.4,blog/ai,swift-int-double-fatal-error-nan-infinity,AI 활용기: Swift Int(Double) 크래시 'Double value cannot be converted to Int' 원인과 막는 법,5860,0.08,blog/ai/exif-orientation-pil-sips-size,25,23.4,20,10,12.0
+KEEP,90.4,blog/ai,swiftui-numberpad-dismiss-focusstate,SwiftUI 숫자패드 닫기: 두 입력칸의 포커스를 nil로 해제하기,3919,0.11,blog/ai/swiftui-share-sheet-item-payload,25,21.9,20,10,13.5
+KEEP,90.4,tools,date-calculator,날짜 계산기·디데이,1077,0.03,blog/apps/date-calculator,25,27.8,20,6.7,11.0
+KEEP,90.4,apps,tournament-bracket,Tournament Bracket: Undo Safe,761,0.03,apps/bike-tire-pressure,21.1,27.5,16.7,10,15
+KEEP,90.5,games,skyline-gliders,스카이라인 글라이더,973,0.15,games/monster-throne,25,20.5,20,10,15
+KEEP,90.9,tools,savings-interest-calculator,적금 이자 계산기,1151,0.07,tools/loan-calculator,25,24.9,20,10,11.0
+KEEP,91.4,games,number-rabbit,넘버 러시: 숫자 순서 터치,793,0.05,games/twin-fox,22.0,24.4,20,10,15
+KEEP,91.5,games,whale-survivors,웨일 서바이버,998,0.13,games/moonhare-hills,25,21.5,20,10,15
+KEEP,91.7,gamenews/nikke,nikke-belorta-pumpkin-witch-guide,"니케 벨로타: 펌킨 위치, 뽑아야 할까 — 밀어줄 지속 대미지 딜러가 없다면 패스",4693,0.06,gamenews/nikke/nikke-oct8-belorta-pumpkin-witch-recruitment,25,24.7,20,10,12.0
+KEEP,91.7,games,monster-throne,몬스터 살아남기,1092,0.13,games/skyline-gliders,25,21.7,20,10,15
+KEEP,91.8,games,moonhare-hills,문헤어 힐스,1047,0.12,games/whale-survivors,25,21.8,20,10,15
+KEEP,92.1,apps,ink-fold,먹빛 겹치기,662,0.03,apps/floe-steps,18.4,28.7,20,10,15
+KEEP,92.3,games,stargazer-glyph-case,별눈 부엉이의 글자 수사,872,0.14,games/owl-hangul-detective,24.2,23.1,20,10,15
+KEEP,92.5,games,pipe-octopus,파이프 옥토: 연결 퍼즐,861,0.08,games/parking-raccoon,23.9,23.5,20,10,15
+KEEP,92.6,games,mine-mole,마인 몰: 안전한 지뢰찾기,813,0.05,games/maze-mouse,22.6,25.0,20,10,15
+KEEP,92.7,games,sort-penguin,소트 펭귄: 컬러 정렬,793,0.05,games/sudoku-crane,22.0,25.7,20,10,15
+KEEP,92.7,tools,volumetric-weight-calculator,택배 부피무게 계산기,906,0.04,tools/savings-interest-calculator,25,26.7,20,10,11.0
+KEEP,92.8,apps,shuffle-dice,DiceFeel: D20 Dice Roller,721,0.04,blog/apps/dicefeel,20.0,27.8,20,10,15
+KEEP,92.9,blog/ai,swiftui-share-sheet-item-payload,SwiftUI 공유 시트가 비어 있을 때: item으로 공유 데이터 함께 넘기기,4560,0.1,blog/ai/swiftui-numberpad-dismiss-focusstate,25,22.9,20,10,15
+KEEP,93.0,games,sudoku-crane,스도쿠 학: 미니 4×4,829,0.06,games/sort-penguin,23.0,24.9,20,10,15
+KEEP,93.0,tools,bill-split,더치페이 정산 계산기,986,0.05,blog/apps/bill-split,25,27.0,20,10,11.0
+KEEP,93.0,apps,unit-price,Unit Price: Which Is Cheaper,739,0.03,apps/bike-tire-pressure,20.5,27.5,20,10,15
+KEEP,93.1,games,owl-hangul-detective,별눈 부엉이의 한글 탐정소,929,0.13,games/stargazer-glyph-case,25,23.1,20,10,15
+KEEP,93.1,tools,gpa-calculator,학점 계산기,1176,0.04,blog/apps/gpa-calculator,25,27.1,20,10,11.0
+KEEP,93.6,blog/ai,bash-set-e-grep-silent-exit,set -e 스크립트가 에러 없이 중간에 끝날 때: 변수에 담은 grep 한 줄 찾기,5196,0.04,blog/ai/node-npm-no-such-file-path-wrapper,25,26.6,20,10,12.0
+KEEP,93.6,apps,sudden-note,급노트 QuickInbox,696,0.01,apps/church-calendar,19.3,29.2,20,10,15
+KEEP,93.7,games,word-worm,워드 웜: 단어 순서 찾기,838,0.05,games/twin-fox,23.3,25.4,20,10,15
+KEEP,93.7,apps,plate-calculator,Plate Calculator: What You Own,768,0.01,apps/depth-of-field,21.3,29.0,18.3,10,15
+KEEP,93.8,games,hare-dragon-palace,용궁의 토끼,1046,0.09,games/moonhare-hills,25,23.8,20,10,15
+KEEP,93.8,games,mimi-orbit-diner,미미 오빗 다이너,955,0.07,games/nyx-mirror-ruins,25,23.8,20,10,15
+KEEP,93.8,games,parking-raccoon,파킹 라쿤: 주차장 탈출,876,0.07,games/pipe-octopus,24.3,24.5,20,10,15
+KEEP,93.8,apps,vocapuff-english,VocaPuff - English,771,0.03,apps/vocapuff-chinese,21.4,27.4,20,10,15
+KEEP,94.0,games,circuit-lynx,서킷 링크스: 회로 연결 퍼즐,898,0.02,games/pulse-bat,24.9,29.1,15.0,10,15
+KEEP,94.0,games,firefly-signal-school,루미의 반딧불 신호학교,962,0.04,games/cloud-sheep-forest-words,25,26.0,20,10,13.0
+KEEP,94.0,games,raccoon-gear-align,라쿤의 톱니 정렬소,807,0.03,games/cosmo-corgi-star-route,22.4,26.6,20,10,15
+KEEP,94.0,apps,dew-point,Dew Point: Vent Check,799,0.01,apps/concrete-calculator,22.2,28.5,18.3,10,15
+KEEP,94.1,games,twin-fox,트윈 폭스: 다른 그림 찾기,848,0.05,games/word-worm,23.6,25.5,20,10,15
+KEEP,94.1,apps,hymn-crosswalk,Hymn Crosswalk: 본문과 운율,781,0.04,blog/apps/hymn-crosswalk,21.7,27.4,20,10,15
+KEEP,94.2,games,capy-highlands,캐피 하이랜드,1263,0.08,games/monster-throne,25,24.2,20,10,15
+KEEP,94.2,apps,reading-pace,성경 통독 계획: 페이스,742,0.02,apps/concrete-calculator,20.6,28.6,20,10,15
+KEEP,94.4,apps,pool-calculator,Pool Calculator: Own Chems,780,0.03,apps/depth-of-field,21.7,27.8,20,10,15
+KEEP,94.6,games,maze-mouse,메이즈 마우스: 숫자 미로,897,0.06,games/neon-firefly,24.9,24.7,20,10,15
+KEEP,94.8,games,neon-firefly,네온 루미: 불빛 반전 퍼즐,909,0.06,games/maze-mouse,25,24.8,20,10,15
+KEEP,94.9,apps,stair-calculator,Stair Calculator: Both Ways,773,0.02,apps/jet-lag,21.5,28.5,20,10,15
+KEEP,94.9,apps,verse-memory,성경 암송: 내 본문,746,0.01,apps/church-calendar,20.7,29.1,20,10,15
+KEEP,95.0,games,honeybee-garden-trail,꿀비의 꽃길 배달,909,0.07,games/popo-pearl-sort,25,25.0,20,10,15
+KEEP,95.0,games,nonogram-sheep,픽셀 쉽: 5×5 노노그램,854,0.05,games/sudoku-crane,23.7,26.2,20,10,15
+KEEP,95.1,games,balance-bear,볼트 밸런스: 전력 균형,813,0.01,games/neon-coil,22.6,29.2,18.3,10,15
+KEEP,95.1,games,memory-elephant,메모리 엘리펀트: 기억 카드,829,0.04,games/mine-mole,23.0,27.1,20,10,15
+KEEP,95.2,apps,church-calendar,교회력: 서방과 동방,779,0.02,apps/triangle-solver,21.6,28.6,20,10,15
+KEEP,95.4,games,cosmo-corgi-star-route,코스모 코기의 별자리 항로,966,0.05,games/honeybee-garden-trail,25,25.4,20,10,15
+KEEP,95.5,games,glyph-owl,글리프 헌터: 다른 문자 찾기,838,0.03,games/number-rabbit,23.3,27.2,20,10,15
+KEEP,95.6,games,echo-prism-beat,에코 프리즘 비트,904,0.05,games/mimi-orbit-diner,25,25.6,20,10,15
+KEEP,95.8,games,mandu-house,만두집,1083,0.0,games/merge-cat,25,29.7,16.0,10,15
+KEEP,95.8,games,popo-pearl-sort,포포의 진주 정리소,914,0.06,games/honeybee-garden-trail,25,25.8,20,10,15
+KEEP,95.9,games,cloud-sheep-forest-words,구름양의 숲말 탐험,916,0.05,games/cloud-sheep-wordpath,25,25.9,20,10,15
+KEEP,95.9,games,pulse-bat,펄스 비트: 리듬 타이밍,988,0.03,games/flow-gecko,25,27.6,18.3,10,15
+KEEP,95.9,games,word-frog,한글 박사 개구리: 단어 추리,912,0.04,games/neon-firefly,25,25.9,20,10,15
+KEEP,96.0,games,category-cat,카테고리 캣: 단어 그룹,865,0.04,games/mine-mole,24.0,27.0,20,10,15
+KEEP,96.0,games,nova-lane-sprint,노바 레인 스프린트,854,0.05,games/tori-meteor-run,23.7,27.3,20,10,15
+KEEP,96.1,games,color-chameleon,컬러 카멜레온: 색깔 테스트,837,0.02,games/hammer-hamster,23.2,27.8,20,10,15
+KEEP,96.1,games,merge-slime,머지 슬라임 256,887,0.05,games/maze-mouse,24.6,26.5,20,10,15
+KEEP,96.1,games,star-scout-survivors,스타 스카우트 서바이벌,1011,0.04,games/pirate-cafe-command,25,26.1,20,10,15
+KEEP,96.2,blog/apps,app-archive,"만들었던 앱들 — 출시와 심사, 내려간 기록까지",10875,0.04,blog/apps/five-shapes,25,26.2,20,10,15
+KEEP,96.2,apps,score-keeper,Score Keeper: Card & Board,843,0.02,apps/bike-tire-pressure,23.4,27.8,20,10,15
+KEEP,96.4,apps,cut-list,Cut List: Named Parts,795,0.01,apps/church-calendar,22.1,29.3,20,10,15
+KEEP,96.6,games,block-beaver,블록 비버: 줄 채우기,872,0.03,games/sort-penguin,24.2,27.4,20,10,15
+KEEP,96.6,games,cloud-sheep-wordpath,구름양의 낱말길,874,0.05,games/cloud-sheep-forest-words,24.3,27.3,20,10,15
+KEEP,96.6,games,pirate-cafe-command,파이럿 카페 커맨드,1039,0.04,games/star-scout-survivors,25,26.6,20,10,15
+KEEP,96.7,games,line-spider,라인 스파이더: 한붓그리기,847,0.02,games/block-beaver,23.5,28.2,20,10,15
+KEEP,96.7,games,tori-meteor-run,토리의 유성 배달,866,0.05,games/nova-lane-sprint,24.1,27.6,20,10,15
+KEEP,96.8,games,neon-beat-operator,네온 비트 오퍼레이터,876,0.03,games/echo-prism-beat,24.3,27.5,20,10,15
+KEEP,97.4,games,pearl-otter-shuffle,진주 수달의 조개 셔플,915,0.03,games/raccoon-gear-align,25,27.4,20,10,15
+KEEP,97.4,games,stormglass-orbit,폭풍유리 궤도,1212,0.01,games/signal-tower-guard,25,29.8,17.7,10,15
+KEEP,97.6,games,luno-rune-vault,루노의 룬 금고,900,0.03,games/firefly-signal-school,25,27.6,20,10,15
+KEEP,97.7,games,hammer-hamster,해머 햄스터: 순발력 게임,905,0.03,games/merge-slime,25,27.7,20,10,15
+KEEP,97.7,games,lumi-sequence,루미의 빛 순서,906,0.04,games/firefly-signal-school,25,27.7,20,10,15
+KEEP,98.0,games,flow-gecko,플로우 게코: 에너지 순서 기억,1027,0.02,games/pulse-bat,25,28.0,20,10,15
+KEEP,98.1,apps,concrete-calculator,Concrete Bags and Yards,877,0.01,apps/pool-calculator,24.4,28.7,20,10,15
+KEEP,98.4,games,comet-cafe-rush,코멧 카페 러시,1121,0.02,games/echo-prism-beat,25,28.4,20,10,15
+KEEP,98.6,games,shadow-orbit-explorer,섀도우 오빗 익스플로러,1133,0.01,games/neon-beat-operator,25,28.6,20,10,15
+KEEP,98.6,games,signal-tower-guard,시그널 타워 가드,1119,0.02,games/puck-coral-front,25,28.6,20,10,15
+KEEP,98.7,games,forest-fox-differences,숲속 여우 탐정단,877,0.01,games/stargazer-glyph-case,24.4,29.4,20,10,15
+KEEP,98.7,games,soda-stack-signal,소다 스택 시그널,1116,0.01,games/nyx-mirror-ruins,25,28.7,20,10,15
+KEEP,99.0,games,merge-cat,고양이 합치기,980,0.02,games/merge-whale,25,29.0,20,10,15
+KEEP,99.2,games,bubble-front-command,버블 프론트 커맨드,948,0.01,games/nova-fox-breakout,25,29.2,20,10,15
+KEEP,99.2,games,merge-whale,고래 합치기,1055,0.02,games/merge-cat,25,29.2,20,10,15
+KEEP,99.3,games,four-sight,포 사이트,957,0.01,games/honeybee-garden-trail,25,29.3,20,10,15
+KEEP,99.3,games,ghost-bubble-groups,고스트 버블 그룹스,932,0.01,games/mimi-orbit-diner,25,29.3,20,10,15
+KEEP,99.4,games,my-whale,고래 키우기,945,0.01,games/typo-survivors,25,29.4,20,10,15
+KEEP,99.4,games,neon-coil,네온 코일,1024,0.01,games/balance-bear,25,29.4,20,10,15
+KEEP,99.5,games,clockwork-harbor,Clockwork Harbor,888,0.0,games/raccoon-gear-align,24.7,29.8,20,10,15
+KEEP,99.5,games,typo-survivors,오타 서바이버,1131,0.01,games/my-whale,25,29.5,20,10,15
+KEEP,99.7,games,aim-trainer,시그널 록,1006,0.01,games/typo-survivors,25,29.7,20,10,15
+KEEP,99.7,games,current-canticle,해류의 성가,1058,0.0,games/bubble-front-command,25,29.7,20,10,15
+KEEP,99.7,games,helix-descent,헬릭스 디센트,1069,0.0,games/cloud-sheep-forest-words,25,29.7,20,10,15
+KEEP,99.9,games,asteroids-belt,애스터로이드 벨트,1116,0.0,games/echo-prism-beat,25,29.9,20,10,15
