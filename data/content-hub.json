@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 143,
+    "value": 144,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -517,7 +517,7 @@
       "ko": "앱을 만들고 심사에 제출하며 남긴 제작·심사 기록",
       "en": "Records of building apps and submitting them for review"
      },
-     "total": 72,
+     "total": 73,
      "url": "https://blog.kimjinwan.com/ko/apps/",
      "items": [
       {
@@ -525,6 +525,12 @@
        "summary": "사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.",
        "date": "2026-10-14",
        "url": "https://blog.kimjinwan.com/ko/apps/image-size-format-guide/"
+      },
+      {
+       "title": "PDF 합치기·나누기·압축·서명 실무: 작업 순서와 지켜야 할 한계",
+       "summary": "제출용 PDF를 만들 때 합치기·나누기·페이지 정리·압축·이미지 변환·서명·워터마크를 어떤 순서로 쓰는지, 글자 검색이 사라지는 작업과 유지되는 작업을 가르는 기준과 한도 수치를 정리했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/pdf-work-guide/"
       },
       {
        "title": "JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기",
