@@ -466,6 +466,161 @@
    "from": "/content/blog/page/8/",
    "to": "/content/blog/",
    "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/game-news/nikke-makoto-first-week/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/blog/games/nikke-makoto-first-week/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/game-news/nikke-persona-followup/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/blog/games/nikke-persona-followup/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/game-news/nikke-yukiko-team-slot/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/blog/games/nikke-yukiko-team-slot/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "reason": "니케 페르소나 협업 정리 글로 병합"
+  },
+  {
+   "from": "/content/game-news/cat-merge-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/cat-merge-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/merge-whale-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/merge-whale-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/my-whale-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/my-whale-devlog/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/the-weapons-01/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/the-weapons-01/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/the-weapons-02/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/the-weapons-02/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/the-weapons-03/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/blog/games/the-weapons-03/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지(검색 의도 없음, 내림)"
+  },
+  {
+   "from": "/content/game-news/nikke-summer-new-iron-pair/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 모집 비교 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-summer-new-iron-pair/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 모집 비교 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nikke-summer-rerun-dorothy-elegg/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 모집 비교 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-summer-rerun-dorothy-elegg/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료된 모집 비교 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/zzz-31-existing-agent-conditions/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "reason": "젠레스 3.1 종료 기록(내림, 복귀 체크리스트가 대신함)"
+  },
+  {
+   "from": "/content/blog/games/zzz-31-existing-agent-conditions/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "reason": "젠레스 3.1 종료 기록(내림, 복귀 체크리스트가 대신함)"
+  },
+  {
+   "from": "/content/game-news/zzz-31-remielle-sigrid/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "reason": "젠레스 3.1 종료 기록(내림, 복귀 체크리스트가 대신함)"
+  },
+  {
+   "from": "/content/blog/games/zzz-31-remielle-sigrid/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "reason": "젠레스 3.1 종료 기록(내림, 복귀 체크리스트가 대신함)"
+  },
+  {
+   "from": "/content/blog/ai/ai-game-factory-10/",
+   "to": "/content/blog/ai/ai-game-factory-09/",
+   "reason": "연재 중복·자기참조 글(내림)"
+  },
+  {
+   "from": "/content/blog/ai/career-03/",
+   "to": "/content/blog/ai/career-02/",
+   "reason": "연재 중복·자기참조 글(내림)"
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-01/",
+   "to": "/content/blog/ai/whale-survivors-02/",
+   "reason": "연재 중복·자기참조 글(내림)"
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-03/",
+   "to": "/content/blog/ai/whale-survivors-02/",
+   "reason": "연재 중복·자기참조 글(내림)"
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-04/",
+   "to": "/content/blog/ai/whale-survivors-05/",
+   "reason": "연재 중복·자기참조 글(내림)"
   }
  ]
 }
