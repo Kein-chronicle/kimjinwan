@@ -13,19 +13,15 @@
   <url><loc>https://kimjinwan.com/content/blog/page/4/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/5/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/page/6/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/page/7/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/page/3/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/page/4/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/zzz/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/wuwa/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/my-games/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/gizmo/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/gizmo/page/2/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/gizmo/page/3/</loc><lastmod>2026-10-14</lastmod></url>
@@ -94,7 +90,6 @@
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-game-factory-07/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-game-factory-08/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-game-factory-09/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/ai/ai-game-factory-10/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-workbench-01/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-workbench-02/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/ai-workbench-03/</loc><lastmod>2026-09-09</lastmod></url>
@@ -109,7 +104,6 @@
   <url><loc>https://kimjinwan.com/content/blog/ai/camera-two-targets-geometric-guarantee/</loc><lastmod>2026-09-19</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/career-01/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/career-02/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/ai/career-03/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/clean-clone-handoff-check/</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/concurrent-session-unowns-your-repo/</loc><lastmod>2026-09-23</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/declared-feedback-vs-executed-feedback/</loc><lastmod>2026-09-24</lastmod></url>
@@ -134,10 +128,7 @@
   <url><loc>https://kimjinwan.com/content/blog/ai/swiftui-numberpad-dismiss-focusstate/</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/swiftui-share-sheet-item-payload/</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/unattended-three-failure-axes/</loc><lastmod>2026-09-27</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-01/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-02/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-03/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-04/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-05/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-06/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/blog/ai/whale-survivors-07/</loc><lastmod>2026-09-09</lastmod></url>
@@ -199,7 +190,6 @@
   <url><loc>https://kimjinwan.com/content/game-news/ananta-release-date-record/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta-seven-year-support-pledge/</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/ananta-silence-rumor-followup/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/cat-merge-devlog/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus-1115-known-issues-save-restore/</loc><lastmod>2026-09-26</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus-aug20-text-or-bug/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus-canto10-early-unlock/</loc><lastmod>2026-09-13</lastmod></url>
@@ -217,18 +207,12 @@
   <url><loc>https://kimjinwan.com/content/game-news/limbus-season8-punctum-preview/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus-summer-release-rhythm/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/limbus-tgs2026-booth-sellout/</loc><lastmod>2026-09-20</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/merge-whale-devlog/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/my-whale-devlog/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-belorta-pumpkin-witch-guide/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-drake-ammo-trap/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-favorite-rosanna-phantom/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-favorite-sugar-flora/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-july23-matis-record/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-laplace-july-operating-note/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-makoto-first-week/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-maxwell-health-support/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-oct8-belorta-pumpkin-witch-recruitment/</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-persona-followup/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://kimjinwan.com/content/game-news/nikke-persona-collab-guide/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-second-burst-roster/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-sep11-ban-controversy-silence/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-sep12-association-deadline/</loc><lastmod>2026-09-12</lastmod></url>
@@ -239,24 +223,15 @@
   <url><loc>https://kimjinwan.com/content/game-news/nikke-sep27-minikke-cinderella-episode/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-sep3-full-redownload/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nikke-soda-twinkling-bunny-build/</loc><lastmod>2026-09-13</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-summer-new-iron-pair/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-summer-rerun-dorothy-elegg/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nikke-yukiko-team-slot/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-13-returning-unlocks/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-14-first-day-priorities/</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nte-14-preview-broadcast/</loc><lastmod>2026-09-13</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-14-raven-akane-fuka-paradise/</loc><lastmod>2026-09-21</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-august-bonus-calendar/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-bright-moon-linko-hotori/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nte-illoi-lifeline-record/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-pixel-burst-double-reward/</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-sep16-ddos-maintenance-annulith/</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-sep17-breeze-riding-event/</loc><lastmod>2026-09-17</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/nte-villa-vehicle-budget/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/nte-zanhong-nanari-board/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/the-weapons-01/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/the-weapons-02/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/the-weapons-03/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/wuwa-35-36-story-cycle/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/wuwa-35-electro-rover/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/wuwa-35-yangyang-susu/</loc><lastmod>2026-09-10</lastmod></url>
@@ -265,8 +240,6 @@
   <url><loc>https://kimjinwan.com/content/game-news/wuwa-37-hsin-suoming-preview/</loc><lastmod>2026-09-12</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/wuwa-37-livestream-release-oct/</loc><lastmod>2026-09-21</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/zzz-31-32-event-overlap/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/zzz-31-existing-agent-conditions/</loc><lastmod>2026-09-10</lastmod></url>
-  <url><loc>https://kimjinwan.com/content/game-news/zzz-31-remielle-sigrid/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/zzz-31-returning-checklist/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/zzz-32-claret-roxy-engines/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://kimjinwan.com/content/game-news/zzz-32-first-check/</loc><lastmod>2026-09-09</lastmod></url>

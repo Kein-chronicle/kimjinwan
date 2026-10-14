@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 121,
+    "value": 116,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 71,
+     "total": 66,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -380,12 +380,6 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-09/"
       },
       {
-       "title": "AI 게임 공장: 심사 제출까지 온 뒤 돌아본 AI 게임 공장",
-       "summary": "대량 제작, 집중 개선, 웹, 방치형, Swift를 거쳐 심사 제출까지. 다음 라인에 가져간 경험을 돌아봤다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-10/"
-      },
-      {
        "title": "AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다",
        "summary": "여러 분야의 앱 공장을 공통 엔진과 프로필로 나눴다. 반복되는 제작 규칙과 제품별 판단을 구분하기.",
        "date": "2026-09-09",
@@ -440,34 +434,10 @@
        "url": "https://blog.kimjinwan.com/ko/ai/career-02/"
       },
       {
-       "title": "AI 커리어 관리 3 — 블로그를 다음 조사에 쓸 기록으로 만들기",
-       "summary": "글을 올리는 것으로 끝내지 않고 수정일, 출처, 연재 목차를 유지하는 운영 방식.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/career-03/"
-      },
-      {
-       "title": "AI 게임 개발기: 러버블에서 고래 게임을 시작했다",
-       "summary": "러버블로 만든 작은 고래 게임이 앱 포팅과 스팀 실험으로 이어지기까지. 출발점에서 남은 것과 빠진 기록을 돌아봤다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-01/"
-      },
-      {
        "title": "AI 게임 개발기: 웹게임을 아이폰 앱 안에 넣어봤다",
        "summary": "SwiftUI와 웹뷰로 기존 게임을 아이폰에 담았다. 화면을 여는 것 외에 자산과 광고를 연결하는 일이 남았다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-02/"
-      },
-      {
-       "title": "AI 게임 개발기: 스팀을 생각하니 조작부터 다시 봐야 했다",
-       "summary": "패드와 키보드로 로비부터 결과창까지. 스팀을 준비하며 달라진 조작과 테스트 범위를 정리했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-03/"
-      },
-      {
-       "title": "AI 게임 개발기: 브라우저에서는 됐는데 실행 파일에서는 멈췄다",
-       "summary": "이미지 경로와 Windows 실행 문제를 고치고 데모 빌드를 나눴다. 개발 서버 밖에서 드러난 차이들.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-04/"
       },
       {
        "title": "AI 게임 개발기: 이미지를 만드는 일과 게임에 넣는 일은 달랐다",
@@ -828,7 +798,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 78,
+    "value": 60,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -839,8 +809,14 @@
       "ko": "니케",
       "en": "NIKKE"
      },
-     "total": 23,
+     "total": 16,
      "items": [
+      {
+       "title": "니케 페르소나 협업 정리 — 마코토·유키코는 지금 얻을 수 있나, 평가는 어디까지 맞나",
+       "summary": "8월 13일~9월 10일 열린 니케 x 페르소나 협업의 일정·획득 경로와 마코토·유키코·아이기스의 역할, 2주 사이 이어진 평가와 그 평가가 통하는 조건을 한 글로 정리했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-persona-collab-guide/"
+      },
       {
        "title": "니케 벨로타: 펌킨 위치, 뽑아야 할까 — 밀어줄 지속 대미지 딜러가 없다면 패스",
        "summary": "10월 8일 출시된 서포터 벨로타: 펌킨 위치를 영문·국내 4곳의 자료로 정리했다. 오른쪽 한 명만 강화하는 버퍼라서 그 자리에 세울 딜러가 있는지가 뽑기 기준이다.",
@@ -908,36 +884,6 @@
        "url": "https://blog.kimjinwan.com/ko/games/nikke-drake-ammo-trap/"
       },
       {
-       "title": "니케 로산나·팬텀 애장품 — 긴 전투와 타겟 조건을 따로 보는 이유",
-       "summary": "7월 애장품으로 바뀐 두 딜러를 전투 길이와 대상 조건으로 구분한다. 로산나의 누적 강화는 장기전일수록 값어치가 커지고 팬텀은 애장품 적용 후 타겟 조건이 달라지므로, 둘을 묶어 ‘세졌다’고만 읽으면 실제로 어느 콘텐츠에 넣어야 할지 알 수 없다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-favorite-rosanna-phantom/"
-      },
-      {
-       "title": "니케 슈가·플로라 애장품 — 새 딜러보다 기존 지원 역할이 바뀐 날",
-       "summary": "7월 애장품 추가 후 샷건과 방어 무시 조합에서 달라진 검토 포인트. 슈가의 애장품은 수냉·철갑 샷건 딜러가 준비돼 있어야 값어치가 나고, 플로라는 40초 버스트 쿨타임 때문에 20초 순환 파티에 그냥 끼워 넣으면 편성 의도와 어긋난다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-favorite-sugar-flora/"
-      },
-      {
-       "title": "니케 니지마 마코토 첫 주 — 유키코 출시 전 평가는 어디까지였나",
-       "summary": "페르소나 협업 첫 주에 확정된 역할과 다음 주의 기대를 구분한다. 8월 13일 공개 평가는 마코토 단독 성능과 일주일 뒤 나올 유키코와의 연계 기대를 함께 담고 있었으므로, 첫날 평가를 실측처럼 그대로 받아들이면 안 된다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-makoto-first-week/"
-      },
-      {
-       "title": "니케 맥스웰 이격 — 체력 버프가 필요한 파티부터 보자",
-       "summary": "7월 모집과 8월 운용 분석을 연결하되 자료의 이름 차이도 표시한다. 맥스웰 이격은 7월 23일 배포 자료엔 ‘오디너리 미케닉’, 8월 3일 인벤 운용 기사엔 ‘파워업’으로 이름이 달랐지만 같은 캐릭터이며, 최대 체력을 화력으로 바꾸는 라플라스 이격과 맞물릴 때 값어치가 난다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-maxwell-health-support/"
-      },
-      {
-       "title": "니케 마코토·유키코 후속 평가 — 레이드 성능을 범용 티어로 읽지 않기",
-       "summary": "출시 예고와 솔로 레이드 이후 평가 사이에서 달라진 근거를 비교한다. 8월 27일 후속 분석은 작열 솔로 레이드에서의 활용을 높게 평가했을 뿐이고, 돌파·장비·지원형·보스 조건이 다르면 같은 순위는 재현되지 않으므로 일반 스테이지나 PvP 성적으로 그대로 옮기면 안 된다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-persona-followup/"
-      },
-      {
        "title": "니케 2버스트 — 좋은 캐릭터가 많아도 파티 자리는 늘지 않는다",
        "summary": "크라운·마앵·프민을 단일 순위가 아니라 역할과 편성 비용으로 보는 법. 메이드 마스트·앵커처럼 둘을 함께 넣는 2버스트 조합은 파티 다섯 자리 중 두 자리를 쓰므로, 크라운 같은 한 명짜리 지원형과 같은 저울에 놓고 비교하면 편성 비용을 놓친다.",
        "date": "2026-09-10",
@@ -948,24 +894,6 @@
        "summary": "패치 시스템 교체로 전체 재다운로드가 필요했던 9월 3일 업데이트와, 9월 10일 기준으로 끝나거나 새로 열리는 이벤트를 정리했다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/games/nikke-sep3-full-redownload/"
-      },
-      {
-       "title": "니케 수영복 신데렐라·마르차나 — 같은 철갑 딜러를 어떻게 비교할까",
-       "summary": "7월 신규 여름 니케 두 명을 기존 계정의 빈자리 기준으로 읽는다. 같은 ‘철갑 딜러’라도 주력 파티의 화력이 모자란 건지, 서브 파티에 쓸 두 번째 딜러가 없는 건지에 따라 신데렐라와 마르차나 중 필요한 쪽이 갈린다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-summer-new-iron-pair/"
-      },
-      {
-       "title": "니케 수영복 도로시·일레그 복각 — 메인 딜러와 보조 자리를 구분하기",
-       "summary": "신규 여름 니케와 함께 열린 복각을 파티 내 자리 관점에서 정리한다. 도로시: 세렌디피티는 샷건 조합의 주요 공격수이고 일레그: 붐 앤 쇼크는 버스트를 자주 쓰지 않는 자리에서도 파티를 보조할 수 있어, 둘 다 수냉이어도 실제로 빠지는 자리가 다르다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-summer-rerun-dorothy-elegg/"
-      },
-      {
-       "title": "니케 아마기 유키코 — 딜러의 회복이 파티 한 자리를 바꿀 수 있을까",
-       "summary": "유키코 출시일 분석에서 회복·크라운·협업 조합을 읽는 기준. 유키코는 작열 3버스트 MG 딜러이면서 아군을 지속 회복시켜 크라운과 조합하면 작은 피해가 반복되는 전투를 버틸 수 있지만, 한 번에 큰 피해를 받는 보스에서 전담 힐러를 지워도 된다는 뜻은 아니다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nikke-yukiko-team-slot/"
       },
       {
        "title": "니케 7월 메티스 업데이트 기록 — 모집과 이벤트 마감은 같지 않았다",
@@ -1099,7 +1027,7 @@
       "ko": "이환",
       "en": "Neverness to Everness"
      },
-     "total": 12,
+     "total": 9,
      "items": [
       {
        "title": "이환 1.4 첫날 무엇부터 확인할까 — 우편 선물과 10월 21일 마감",
@@ -1132,12 +1060,6 @@
        "url": "https://blog.kimjinwan.com/ko/games/nte-pixel-burst-double-reward/"
       },
       {
-       "title": "이환 1.4 프리뷰 방송 9월 16일 20시 30분",
-       "summary": "이환 1.4 버전 '누구를 위하여 기도를 올리나' 프리뷰 특별 방송 일정이 공식 유튜브에 예고됐다. 방송 전이라 패치 내용은 아직 확인되지 않았다.",
-       "date": "2026-09-13",
-       "url": "https://blog.kimjinwan.com/ko/games/nte-14-preview-broadcast/"
-      },
-      {
        "title": "이환 8월 보상 달력 — 픽셀 2배와 폰즈 2배는 같은 행사가 아니다",
        "summary": "7월 29일 공지의 두 배 이벤트를 재화·한도·제외 항목으로 나눈 기록.",
        "date": "2026-09-10",
@@ -1150,22 +1072,10 @@
        "url": "https://blog.kimjinwan.com/ko/games/nte-bright-moon-linko-hotori/"
       },
       {
-       "title": "이환 일로이 — 생명선 보드와 금기의 문을 구분한 모집 기록",
-       "summary": "7월 29일 신규 S급 캐릭터와 아크의 당시 획득 경로. 일로이는 생명선 보드에서, S급 아크 금기의 문은 별도의 아크 연구 모집에서 얻었고 둘 다 8월 19일 06:59(KST) 종료였다 — 한쪽에 쓴 재화를 다른 쪽 진행도로 착각하면 예산이 어긋난다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nte-illoi-lifeline-record/"
-      },
-      {
        "title": "이환 들녘의 별장과 열풍 — 폰즈 사용처가 늘었을 때",
        "summary": "1.3 신규 부동산·차량을 생활 재화의 선택 문제로 정리한다. 들녘의 별장은 690만 폰즈에 도시 타이쿤 13레벨 조건이 붙고 생산물을 활력제로 팔 수 있는 반면, 열풍 차량은 400만 폰즈로 조건 없이 사는 이동 수단이다 — 둘 다 영구 판매라 동시에 안 사도 된다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/games/nte-villa-vehicle-budget/"
-      },
-      {
-       "title": "이환 잔홍 신규·나나리 복각 — 보드 특전 횟수를 합산하면 안 된다",
-       "summary": "1.3에서 함께 열린 두 보드의 신규·복각 구분과 독립 카운트. 나나리 복각 보드의 호랑이 특전 카운트는 그 보드 안에서만 쌓이고 잔홍 신규 보드의 횟수와는 독립 계산된다 — 단 이건 특전 카운트 규칙이지 모집 천장·이월 규칙까지 확장해 읽으면 안 된다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/nte-zanhong-nanari-board/"
       },
       {
        "title": "이환 1.3 복귀 — 새 스토리가 안 보이면 선행 임무부터",
@@ -1181,7 +1091,7 @@
       "ko": "젠레스 존 제로",
       "en": "Zenless Zone Zero"
      },
-     "total": 9,
+     "total": 7,
      "items": [
       {
        "title": "젠레스 존 제로 10월 3일 탐정 이벤트 — 다음 의뢰가 안 열릴 때 확인할 두 조건",
@@ -1206,18 +1116,6 @@
        "summary": "버전 종료와 개별 이벤트 마감이 일치하지 않는 두 사례. 3.1의 배송 이벤트 ‘Ding-Dong!",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/games/zzz-31-32-event-overlap/"
-      },
-      {
-       "title": "젠레스 존 제로 미야비·아리아·파이퍼 — 3.1에서 다시 볼 추가 능력 조건",
-       "summary": "신규 에이전트 외에 기존 파티의 조건 설명도 확인해야 하는 이유. 공식 영문 공지는 미야비·아리아·파이퍼 세 에이전트의 추가 능력 조건에 이상 캐릭터를 포함하는 문구 변경을 실었고, 이는 스킬·엔진·디스크 설명 최적화 묶음에 실린 항목이라 신캐 추가와 무관하게 지금도 유효하다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-existing-agent-conditions/"
-      },
-      {
-       "title": "젠레스 3.1 레미엘·시그리드 — 신규 둘의 역할부터 나눠 보기",
-       "summary": "이상과 강공, 서로 다른 역할로 안내된 3.1 신규 에이전트 기록. 레미엘(Lumiflux, 이상)과 시그리드(얼음, 강공)는 같은 버전에 나왔을 뿐 역할이 다르고, 각각 전용 S급 엔진이 따로 소개됐다고 해서 전용 엔진이 필수라는 결론은 나오지 않는다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/zzz-31-remielle-sigrid/"
       },
       {
        "title": "클라렛·록시와 새 엔진 — 젠레스 3.2에서 구분할 획득 경로",
@@ -1322,52 +1220,6 @@
        "summary": "8월 27일 공식 기술 발표에서 확인되는 것과 아직 판단할 수 없는 것을 구분했다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/games/ananta-aug27-dlss-not-performance-proof/"
-      }
-     ]
-    },
-    {
-     "id": "my-games",
-     "label": {
-      "ko": "내 게임 개발기",
-      "en": "My game devlogs"
-     },
-     "total": 6,
-     "items": [
-      {
-       "title": "고양이 합치기 개발기 — 합쳐지는 것 다음에 남은 문제",
-       "summary": "고양이 11단계와 물리 충돌, 보상 동작을 만든 웹 프로토타입을 돌아봤다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/cat-merge-devlog/"
-      },
-      {
-       "title": "고래 합치기 개발기 — 게임이 끝나야 기록도 남는다",
-       "summary": "게임오버 유예 오류와 저장 경로를 고친 뒤 앱 제출까지 이어진 기록.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/merge-whale-devlog/"
-      },
-      {
-       "title": "고래 키우기 개발기 — 돌봄 한 바퀴를 앱에서도 끝내기",
-       "summary": "먹이와 진화, 방생과 기록, 실제 광고 보상까지 이어지도록 고친 과정.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/my-whale-devlog/"
-      },
-      {
-       "title": "더 웨폰스 개발기 1 — 큰 기획에서 한 턴의 선택으로",
-       "summary": "실시간 전투 구상에서 대응 카드를 미리 놓는 예측형 전투로 좁힌 과정.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-01/"
-      },
-      {
-       "title": "더 웨폰스 개발기 2 — 전투가 보이게 만드는 작업",
-       "summary": "가로 화면, 전투 자산, 속성 판정으로 확장하며 구현과 설계를 구분한 기록.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-02/"
-      },
-      {
-       "title": "더 웨폰스 개발기 3 — 기능 완성 다음의 기준",
-       "summary": "보류된 프로토타입을 완성된 게임으로 옮길 때 확인할 항목과 재개 순서.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/games/the-weapons-03/"
       }
      ]
     }

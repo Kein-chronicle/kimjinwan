@@ -8,8 +8,18 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-game-factory-10/",
+   "to": "/content/blog/ai/ai-game-factory-09/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-writing-index/",
    "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/career-03/",
+   "to": "/content/blog/ai/career-02/",
    "status": 301
   },
   {
@@ -25,6 +35,21 @@
   {
    "from": "/content/blog/ai/page/4/",
    "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-01/",
+   "to": "/content/blog/ai/whale-survivors-02/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-03/",
+   "to": "/content/blog/ai/whale-survivors-02/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-04/",
+   "to": "/content/blog/ai/whale-survivors-05/",
    "status": 301
   },
   {
@@ -524,7 +549,7 @@
   },
   {
    "from": "/content/blog/games/cat-merge-devlog/",
-   "to": "/content/game-news/cat-merge-devlog/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
@@ -614,12 +639,12 @@
   },
   {
    "from": "/content/blog/games/merge-whale-devlog/",
-   "to": "/content/game-news/merge-whale-devlog/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
    "from": "/content/blog/games/my-whale-devlog/",
-   "to": "/content/game-news/my-whale-devlog/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
@@ -634,12 +659,12 @@
   },
   {
    "from": "/content/blog/games/nikke-favorite-rosanna-phantom/",
-   "to": "/content/game-news/nikke-favorite-rosanna-phantom/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nikke-favorite-sugar-flora/",
-   "to": "/content/game-news/nikke-favorite-sugar-flora/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
@@ -654,12 +679,12 @@
   },
   {
    "from": "/content/blog/games/nikke-makoto-first-week/",
-   "to": "/content/game-news/nikke-makoto-first-week/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nikke-maxwell-health-support/",
-   "to": "/content/game-news/nikke-maxwell-health-support/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
@@ -668,8 +693,13 @@
    "status": 301
   },
   {
+   "from": "/content/blog/games/nikke-persona-collab-guide/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/games/nikke-persona-followup/",
-   "to": "/content/game-news/nikke-persona-followup/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
    "status": 301
   },
   {
@@ -724,17 +754,17 @@
   },
   {
    "from": "/content/blog/games/nikke-summer-new-iron-pair/",
-   "to": "/content/game-news/nikke-summer-new-iron-pair/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nikke-summer-rerun-dorothy-elegg/",
-   "to": "/content/game-news/nikke-summer-rerun-dorothy-elegg/",
+   "to": "/content/game-news/nikke/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nikke-yukiko-team-slot/",
-   "to": "/content/game-news/nikke-yukiko-team-slot/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
    "status": 301
   },
   {
@@ -749,7 +779,7 @@
   },
   {
    "from": "/content/blog/games/nte-14-preview-broadcast/",
-   "to": "/content/game-news/nte-14-preview-broadcast/",
+   "to": "/content/game-news/nte-14-raven-akane-fuka-paradise/",
    "status": 301
   },
   {
@@ -769,7 +799,7 @@
   },
   {
    "from": "/content/blog/games/nte-illoi-lifeline-record/",
-   "to": "/content/game-news/nte-illoi-lifeline-record/",
+   "to": "/content/game-news/nte/",
    "status": 301
   },
   {
@@ -794,7 +824,7 @@
   },
   {
    "from": "/content/blog/games/nte-zanhong-nanari-board/",
-   "to": "/content/game-news/nte-zanhong-nanari-board/",
+   "to": "/content/game-news/nte/",
    "status": 301
   },
   {
@@ -808,28 +838,23 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/page/4/",
-   "to": "/content/game-news/page/4/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/summer-2026-game-timeline/",
    "to": "/content/game-news/",
    "status": 301
   },
   {
    "from": "/content/blog/games/the-weapons-01/",
-   "to": "/content/game-news/the-weapons-01/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
    "from": "/content/blog/games/the-weapons-02/",
-   "to": "/content/game-news/the-weapons-02/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
    "from": "/content/blog/games/the-weapons-03/",
-   "to": "/content/game-news/the-weapons-03/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
@@ -874,12 +899,12 @@
   },
   {
    "from": "/content/blog/games/zzz-31-existing-agent-conditions/",
-   "to": "/content/game-news/zzz-31-existing-agent-conditions/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
    "status": 301
   },
   {
    "from": "/content/blog/games/zzz-31-remielle-sigrid/",
-   "to": "/content/game-news/zzz-31-remielle-sigrid/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
    "status": 301
   },
   {
@@ -923,6 +948,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/page/7/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/page/8/",
    "to": "/content/blog/",
    "status": 301
@@ -933,13 +963,118 @@
    "status": 301
   },
   {
+   "from": "/content/game-news/cat-merge-devlog/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
    "from": "/content/game-news/etc/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/merge-whale-devlog/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/my-games/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/my-whale-devlog/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-favorite-rosanna-phantom/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-favorite-sugar-flora/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-makoto-first-week/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-maxwell-health-support/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-persona-followup/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-summer-new-iron-pair/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-summer-rerun-dorothy-elegg/",
+   "to": "/content/game-news/nikke/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nikke-yukiko-team-slot/",
+   "to": "/content/game-news/nikke-persona-collab-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nte-14-preview-broadcast/",
+   "to": "/content/game-news/nte-14-raven-akane-fuka-paradise/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nte-illoi-lifeline-record/",
+   "to": "/content/game-news/nte/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nte-zanhong-nanari-board/",
+   "to": "/content/game-news/nte/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/page/4/",
    "to": "/content/game-news/",
    "status": 301
   },
   {
    "from": "/content/game-news/summer-2026-game-timeline/",
    "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/the-weapons-01/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/the-weapons-02/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/the-weapons-03/",
+   "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/zzz-31-existing-agent-conditions/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/zzz-31-remielle-sigrid/",
+   "to": "/content/game-news/zzz-31-returning-checklist/",
    "status": 301
   }
  ]
