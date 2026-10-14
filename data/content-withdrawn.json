@@ -626,6 +626,66 @@
    "from": "/content/game-news/my-games/",
    "to": "/content/game-news/",
    "reason": "개발 일지 6편을 모두 내려 내 게임 개발기 분류가 비었다"
+  },
+  {
+   "from": "/content/game-news/nikke-favorite-rosanna-phantom/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-favorite-rosanna-phantom/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nikke-favorite-sugar-flora/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-favorite-sugar-flora/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nikke-maxwell-health-support/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nikke-maxwell-health-support/",
+   "to": "/content/game-news/nikke/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nte-14-preview-broadcast/",
+   "to": "/content/game-news/nte-14-raven-akane-fuka-paradise/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nte-14-preview-broadcast/",
+   "to": "/content/game-news/nte-14-raven-akane-fuka-paradise/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nte-illoi-lifeline-record/",
+   "to": "/content/game-news/nte/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nte-illoi-lifeline-record/",
+   "to": "/content/game-news/nte/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/game-news/nte-zanhong-nanari-board/",
+   "to": "/content/game-news/nte/",
+   "reason": "종료·중복 기록(내림)"
+  },
+  {
+   "from": "/content/blog/games/nte-zanhong-nanari-board/",
+   "to": "/content/game-news/nte/",
+   "reason": "종료·중복 기록(내림)"
   }
  ]
 }
