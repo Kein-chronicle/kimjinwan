@@ -798,7 +798,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 60,
+    "value": 61,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -1027,8 +1027,14 @@
       "ko": "이환",
       "en": "Neverness to Everness"
      },
-     "total": 9,
+     "total": 10,
      "items": [
+      {
+       "title": "이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리",
+       "summary": "이환의 한정 캐릭터 보드가 언제 열리고 닫히는지, 주사위 특전과 아크 연구 모집을 공지가 어떻게 따로 적는지, 복각 보드의 카운트는 어떻게 계산되는지를 공식 공지 세 건으로 정리했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/games/nte-board-guide/"
+      },
       {
        "title": "이환 1.4 첫날 무엇부터 확인할까 — 우편 선물과 10월 21일 마감",
        "summary": "9월 29일 공식 공지를 기준으로 이환 1.4 업데이트 첫날 받을 수 있는 우편 선물과 레이븐 모집 마감을 구분한다.",

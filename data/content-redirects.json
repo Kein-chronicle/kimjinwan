@@ -793,13 +793,18 @@
    "status": 301
   },
   {
+   "from": "/content/blog/games/nte-board-guide/",
+   "to": "/content/game-news/nte-board-guide/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/games/nte-bright-moon-linko-hotori/",
    "to": "/content/game-news/nte-bright-moon-linko-hotori/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nte-illoi-lifeline-record/",
-   "to": "/content/game-news/nte/",
+   "to": "/content/game-news/nte-board-guide/",
    "status": 301
   },
   {
@@ -824,7 +829,7 @@
   },
   {
    "from": "/content/blog/games/nte-zanhong-nanari-board/",
-   "to": "/content/game-news/nte/",
+   "to": "/content/game-news/nte-board-guide/",
    "status": 301
   },
   {
@@ -835,6 +840,11 @@
   {
    "from": "/content/blog/games/page/3/",
    "to": "/content/game-news/page/3/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/page/4/",
+   "to": "/content/game-news/page/4/",
    "status": 301
   },
   {
@@ -1034,17 +1044,12 @@
   },
   {
    "from": "/content/game-news/nte-illoi-lifeline-record/",
-   "to": "/content/game-news/nte/",
+   "to": "/content/game-news/nte-board-guide/",
    "status": 301
   },
   {
    "from": "/content/game-news/nte-zanhong-nanari-board/",
-   "to": "/content/game-news/nte/",
-   "status": 301
-  },
-  {
-   "from": "/content/game-news/page/4/",
-   "to": "/content/game-news/",
+   "to": "/content/game-news/nte-board-guide/",
    "status": 301
   },
   {
