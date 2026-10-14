@@ -761,8 +761,8 @@
        "url": "https://blog.kimjinwan.com/ko/apps/pull-planner/"
       },
       {
-       "title": "랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기",
-       "summary": "중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.",
+       "title": "랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교",
+       "summary": "가위바위보·제비뽑기·룰렛 같은 추첨 방식의 차이, 브라우저 난수(Web Crypto)가 단순 계산보다 공정한 이유, 모듈로 편향 계산 예시, 추첨 전에 합의할 것을 정리했다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/apps/random-roulette/"
       },

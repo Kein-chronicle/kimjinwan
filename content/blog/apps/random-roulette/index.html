@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기</title>
-<meta name="description" content="중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.">
+<title>랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교</title>
+<meta name="description" content="가위바위보·제비뽑기·룰렛 같은 추첨 방식의 차이, 브라우저 난수(Web Crypto)가 단순 계산보다 공정한 이유, 모듈로 편향 계산 예시, 추첨 전에 합의할 것을 정리했다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기">
-<meta property="og:description" content="중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.">
+<meta property="og:title" content="랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교">
+<meta property="og:description" content="가위바위보·제비뽑기·룰렛 같은 추첨 방식의 차이, 브라우저 난수(Web Crypto)가 단순 계산보다 공정한 이유, 모듈로 편향 계산 예시, 추첨 전에 합의할 것을 정리했다.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/apps/random-roulette/">
 <meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
@@ -29,14 +29,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기">
-<meta name="twitter:description" content="중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.">
+<meta name="twitter:title" content="랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교">
+<meta name="twitter:description" content="가위바위보·제비뽑기·룰렛 같은 추첨 방식의 차이, 브라우저 난수(Web Crypto)가 단순 계산보다 공정한 이유, 모듈로 편향 계산 예시, 추첨 전에 합의할 것을 정리했다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta name="twitter:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/#article","url":"https://kimjinwan.com/content/blog/apps/random-roulette/","headline":"랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기","description":"중복 없는 후보를 Web Crypto 난수로 추첨하고 참가자와 목록을 확인하는 방법을 정리했다.","inLanguage":"ko","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기","item":"https://kimjinwan.com/content/blog/apps/random-roulette/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/#article","url":"https://kimjinwan.com/content/blog/apps/random-roulette/","headline":"랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교","description":"가위바위보·제비뽑기·룰렛 같은 추첨 방식의 차이, 브라우저 난수(Web Crypto)가 단순 계산보다 공정한 이유, 모듈로 편향 계산 예시, 추첨 전에 합의할 것을 정리했다.","inLanguage":"ko","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/random-roulette/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교","item":"https://kimjinwan.com/content/blog/apps/random-roulette/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.65">
+<link rel="stylesheet" href="/css/style.css?v=1.3.66">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -67,16 +67,62 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기</span></li></ol></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교</span></li></ol></nav>
   <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">116</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">62</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-10</p>
-      <h1 class="sec-title detail-title"><span lang="ko">랜덤 추첨 룰렛 — 이름과 선택지 하나 뽑기</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-09-10T00:00:00.000Z">2026. 9. 10.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>당번, 발표 순서, 메뉴처럼 가벼운 결정을 기기 안에서 무작위로 정한다.</p></div><div><strong>핵심 내용</strong><p>회전 애니메이션과 당첨 계산은 분리되며 공식 경품 추첨 증명 용도는 아니다.</p></div><div><strong>읽고 나서</strong><p>후보를 줄바꿈이나 쉼표로 입력하고 목록을 확인한 뒤 룰렛을 돌린다.</p></div></section><details><summary>목차</summary><ul><li><a href="#후보-목록-확인">후보 목록 확인</a></li><li><a href="#추첨-방식과-한계">추첨 방식과 한계</a></li></ul></details><div><h2 id="후보-목록-확인">후보 목록 확인</h2>
-<p>2개부터 50개까지 입력할 수 있다. 같은 이름을 중복으로 넣어 확률이 달라지는 실수를 막기 위해 중복 후보는 허용하지 않는다.</p>
-<p><a href="https://apps.kimjinwan.com/random-roulette/" target="_blank" rel="noopener noreferrer">랜덤 추첨 룰렛 열기</a></p>
-<h2 id="추첨-방식과-한계">추첨 방식과 한계</h2>
-<p>브라우저의 Web Crypto 난수로 당첨 인덱스를 먼저 결정하고 룰렛은 그 결과를 보여준다. 후보와 결과를 서버에 저장하지 않는다. 감사 기록이나 법적 증명이 필요한 공식 경품 추첨에는 전용 시스템을 사용해야 한다.</p>
+      <h1 class="sec-title detail-title"><span lang="ko">랜덤 추첨 룰렛 — 공정하게 하나 뽑는 방법과 난수 방식 비교</span></h1></header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-09-10T00:00:00.000Z">2026. 9. 10.</time></span><span>수정 2026. 10. 14.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>당번·발표 순서·메뉴를 정할 때 공정성을 설명할 수 있는 추첨 방식을 고르게 한다.</p></div><div><strong>핵심 내용</strong><p>추첨의 공정성은 난수 품질과 규칙(후보 확정, 결과 후 변경 금지)으로 결정된다. 화면 회전은 연출이고 당첨은 난수로 먼저 정해진다.</p></div><div><strong>읽고 나서</strong><p>후보 목록을 참가자와 함께 확인한 뒤 룰렛을 한 번만 돌린다.</p></div></section><details><summary>목차</summary><ul><li><a href="#추첨-방식-비교">추첨 방식 비교</a></li><li><a href="#난수는-어떻게-뽑아야-하나">난수는 어떻게 뽑아야 하나</a></li><li><a href="#모듈로-편향-난수를-후보-수로-나눌-때-생기는-쏠림">모듈로 편향: 난수를 후보 수로 나눌 때 생기는 쏠림</a></li><li><a href="#추첨-전에-합의할-것">추첨 전에 합의할 것</a></li><li><a href="#한계">한계</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 추첨의 공정성은 난수 품질과 규칙으로 정해지며, 난수를 후보 수로 나눈 나머지로 고르면 앞쪽 후보가 약간 더 자주 뽑히는 쏠림이 생긴다.</p>
+</blockquote>
+<h2 id="추첨-방식-비교">추첨 방식 비교</h2>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>공정성</th>
+<th>약점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가위바위보</td>
+<td>2~3명이면 충분</td>
+<td>인원이 늘면 결승이 여러 번 필요</td>
+</tr>
+<tr>
+<td>종이 제비뽑기</td>
+<td>섞는 과정이 보이면 신뢰 높음</td>
+<td>접힌 모양·종이 질감으로 구분될 수 있음</td>
+</tr>
+<tr>
+<td>룰렛 앱</td>
+<td>후보와 난수 방식을 확인할 수 있으면 높음</td>
+<td>방식이 불투명하면 믿기 어려움</td>
+</tr>
+</tbody>
+</table>
+<p>표의 공정성 평가는 글쓴이의 판단이다.</p>
+<p><a href="https://apps.kimjinwan.com/random-roulette/" target="_blank" rel="noopener noreferrer">랜덤 추첨 룰렛</a>은 후보를 줄바꿈이나 쉼표로 2~50개까지 받고, 같은 후보를 두 번 넣으면 확률이 달라지므로 중복을 허용하지 않는다(<a href="https://kimjinwan.com/content/tools/random-roulette/" target="_blank" rel="noopener noreferrer">도구 소개 페이지</a>).</p>
+<h2 id="난수는-어떻게-뽑아야-하나">난수는 어떻게 뽑아야 하나</h2>
+<p>브라우저는 <code>Math.random()</code>과 <code>crypto.getRandomValues()</code> 두 가지를 제공한다. 후자는 암호용으로 쓸 수 있는 강도의 난수를 제공한다(<a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues" target="_blank" rel="noopener noreferrer">MDN, Crypto.getRandomValues()</a>). 이 도구는 Web Crypto 난수로 후보 인덱스를 정하고, 룰렛 회전은 그 결과를 보여 주는 애니메이션으로 분리했다.</p>
+<h2 id="모듈로-편향-난수를-후보-수로-나눌-때-생기는-쏠림">모듈로 편향: 난수를 후보 수로 나눌 때 생기는 쏠림</h2>
+<p>난수에서 후보를 고르는 간단한 방법은 “난수를 후보 수로 나눈 나머지”다. 이 방식에는 작은 쏠림이 있다. 0<del>255 범위 숫자(256가지)로 후보 50개를 고른다고 하자. 256 = 50 × 5 + 6이므로 나머지 0</del>5는 6번씩, 6~49는 5번씩 나온다. 앞쪽 6명은 6/256 ≈ 2.34%, 나머지는 5/256 ≈ 1.95%로 확률이 다르다. 난수 범위가 훨씬 크면 쏠림은 줄지만, 쏠림을 없애려면 남는 구간에서 나온 값을 버리고 다시 뽑는 방식을 쓴다. 이 도구가 쏠림을 어떻게 처리하는지는 도구 소개 페이지에 적혀 있지 않다. 참고로 난수 범위가 2의 32제곱(약 43억)이라면 후보 50개 중 앞쪽 46개가 나머지 4개보다 한 값씩만 더 걸려, 후보별 확률 차이는 43억분의 1 수준으로 사실상 무시할 수 있다. 앞의 예는 범위가 작을 때 왜 문제인지 보이려는 것이다.</p>
+<h2 id="추첨-전에-합의할-것">추첨 전에 합의할 것</h2>
+<ol>
+<li>후보 목록을 참가자와 함께 확인하고 확정한다.</li>
+<li>몇 번 뽑을지 먼저 정한다. 마음에 안 든다고 다시 돌리면 추첨이 아니다.</li>
+<li>결과가 나온 뒤에는 목록을 바꾸지 않는다.</li>
+<li>같은 이름이 있으면 번호나 소속을 붙여 구분한다.</li>
+</ol>
+<h2 id="한계">한계</h2>
+<p>이 도구에는 결과를 기록하거나 사후에 증명하는 기능이 없다. 감사 기록이 필요하거나 법적 효력이 있는 경품 추첨에는 전용 시스템이 필요하다. 이 도구는 가벼운 결정을 위한 것이다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>후보는 먼저 확정하고 한 번만 뽑으며 결과 뒤에는 목록을 바꾸지 않는다.</li>
+<li>0~255 난수로 후보 50개를 나머지로 고르면 앞쪽 6명이 2.34%, 나머지가 1.95%다.</li>
+<li>결과를 기록·증명하는 기능이 없어 사후 증명이 필요한 추첨에는 맞지 않는다.</li>
+</ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/secret-santa/">시크릿 산타·마니또 추첨기 — 자기 이름이 뽑히지 않게 나누는 방법</a><p>마니또·시크릿 산타 추첨에서 아무도 자기 자신을 뽑지 않고, 커플이나 가족끼리 걸리지 않게 선물 상대를 배정하는 방식을 정리했다.</p></li><li><a href="/content/blog/apps/image-size-format-guide/">사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준</a><p>사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.</p></li><li><a href="/content/blog/apps/image-size-spec-guide/">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</a><p>유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.</p></li></ul></aside></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
