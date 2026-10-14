@@ -1,0 +1,8 @@
+{
+ "note": "도구 slug → 블로그 apps 가이드 글 slug. build_content_hub.mjs 가 도구 소개 페이지의 guide 링크에 쓴다. 가이드가 공개 목록에 없으면 생성 실패.",
+ "tools": {
+  "image-compressor": "image-size-format-guide",
+  "image-converter": "image-size-format-guide",
+  "image-crop-rotate": "image-size-format-guide"
+ }
+}

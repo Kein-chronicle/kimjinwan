@@ -161,7 +161,11 @@ function gamesSection() {
   if (r.warnings.length) console.error('games authoring 경고:\n  ' + r.warnings.join('\n  '));
   return r.section;
 }
+// 도구 → 묶음 가이드(블로그 apps 글) 매핑. 얇은 도구별 글을 가이드 한 편으로 병합했을 때 도구 소개 페이지의 가이드 링크가 그 글로 이어진다.
+// 가리키는 글이 공개 목록에 없으면 링크가 깨지므로 생성을 멈춘다.
+const TOOL_GUIDES = fs.existsSync(path.join(ROOT, 'data/tool-guides.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'data/tool-guides.json'), 'utf8')).tools : {};
 function toolsSection(blogApps) {
+  for (const [tool, guide] of Object.entries(TOOL_GUIDES)) if (!blogApps.has(guide)) throw new Error(`tool-guides: ${tool} → ${guide} 는 공개 목록에 없다`);
   const entries = parseToolCatalog(fs.readFileSync(path.join(TOOLS, 'lib/tool-catalog.ts'), 'utf8'));
   const groups = new Map(); let n = 0;
   for (const e of entries) {
@@ -169,7 +173,7 @@ function toolsSection(blogApps) {
     if (!toolEligible(e, f)) { EXCLUDED.tools.push({id: slug, reason: `소스(page.tsx)에서 확인되는 사실 부족(${toolBodyChars(e, f)}자 < 300)`}); continue; }
     if (!IMAGES.tools[slug]) { EXCLUDED.tools.push({id: slug, reason: '이미지 없음(라이브 화면 캡처 실패 또는 미실행)'}); continue; }
     const cat = e.categories[0]; if (!TOOL_IDS[cat]) throw new Error(`tool ${slug}: unknown category ${cat}`);
-    const guide = blogApps.get(slug);
+    const guide = blogApps.get(TOOL_GUIDES[slug] || slug) || blogApps.get(slug);
     const fact = {slug, title: nw(e.name), description: nw(e.description), categories: e.categories, intro: nw(f.intro), does: nw(f.does), inputs: f.inputs, actions: f.actions, blocks: f.blocks, ...(guide ? {guide} : {})};
     for (const k of Object.keys(fact)) if (fact[k] === undefined) delete fact[k];
     EXTRA.set(`content-src/tools/${slug}.json`, fact);
