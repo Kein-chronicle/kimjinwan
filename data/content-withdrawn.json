@@ -766,6 +766,11 @@
    "from": "/content/game-news/page/4/",
    "to": "/content/game-news/",
    "reason": "글이 줄어 목록 쪽 수가 줄었다"
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-03/",
+   "to": "/content/blog/ai/ai-colleagues-02/",
+   "reason": "AI 리뷰 적용 점검 글(02)로 병합"
   }
  ]
 }
