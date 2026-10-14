@@ -798,7 +798,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 61,
+    "value": 62,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -809,8 +809,14 @@
       "ko": "니케",
       "en": "NIKKE"
      },
-     "total": 16,
+     "total": 17,
      "items": [
+      {
+       "title": "니케 애장품 4종과 풍압 신규 SSR 2종 정리 — 7월 23일 업데이트에서 누구를 먼저 키울까",
+       "summary": "7월 23일 니케 업데이트의 애장품 개방 조건과 팬텀·슈가·로산나·플로라 4종, 신규 풍압 SSR 라플라스·맥스웰의 역할을 인벤 분석과 챔피언 아레나 집계로 비교했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/games/nikke-jul23-treasured-item-guide/"
+      },
       {
        "title": "니케 페르소나 협업 정리 — 마코토·유키코는 지금 얻을 수 있나, 평가는 어디까지 맞나",
        "summary": "8월 13일~9월 10일 열린 니케 x 페르소나 협업의 일정·획득 경로와 마코토·유키코·아이기스의 역할, 2주 사이 이어진 평가와 그 평가가 통하는 조건을 한 글로 정리했다.",

@@ -659,12 +659,17 @@
   },
   {
    "from": "/content/blog/games/nikke-favorite-rosanna-phantom/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
    "from": "/content/blog/games/nikke-favorite-sugar-flora/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/games/nikke-jul23-treasured-item-guide/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
@@ -684,7 +689,7 @@
   },
   {
    "from": "/content/blog/games/nikke-maxwell-health-support/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
@@ -999,12 +1004,12 @@
   },
   {
    "from": "/content/game-news/nikke-favorite-rosanna-phantom/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
    "from": "/content/game-news/nikke-favorite-sugar-flora/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
@@ -1014,7 +1019,7 @@
   },
   {
    "from": "/content/game-news/nikke-maxwell-health-support/",
-   "to": "/content/game-news/nikke/",
+   "to": "/content/game-news/nikke-jul23-treasured-item-guide/",
    "status": 301
   },
   {
