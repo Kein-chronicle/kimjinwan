@@ -21,6 +21,8 @@
   "background-remover": "image-size-spec-guide",
   "image-redactor": "photo-privacy-guide",
   "metadata-remover": "photo-privacy-guide",
-  "image-watermark": "photo-privacy-guide"
+  "image-watermark": "photo-privacy-guide",
+  "qr-generator": "qr-code-guide",
+  "qr-reader": "qr-code-guide"
  }
 }

@@ -331,6 +331,136 @@
    "from": "/content/game-news/etc/",
    "to": "/content/game-news/",
    "reason": "목차 글 하나뿐이던 기타 분류가 비었다"
+  },
+  {
+   "from": "/content/blog/apps/image-compressor/",
+   "to": "/content/blog/apps/image-size-format-guide/",
+   "reason": "이미지 용량·형식 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-converter/",
+   "to": "/content/blog/apps/image-size-format-guide/",
+   "reason": "이미지 용량·형식 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-crop-rotate/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/social-image-resizer/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/id-photo-maker/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/app-icon-generator/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/device-mockup/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/photo-collage/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/background-remover/",
+   "to": "/content/blog/apps/image-size-spec-guide/",
+   "reason": "이미지 규격표 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-redactor/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
+   "reason": "사진 개인정보 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/metadata-remover/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
+   "reason": "사진 개인정보 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-watermark/",
+   "to": "/content/blog/apps/photo-privacy-guide/",
+   "reason": "사진 개인정보 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-compressor/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-merge/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-organizer/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-sign/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-split/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-to-image/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/pdf-watermark/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-to-pdf/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/signature-maker/",
+   "to": "/content/blog/apps/pdf-work-guide/",
+   "reason": "PDF 실무 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/qr-generator/",
+   "to": "/content/blog/apps/qr-code-guide/",
+   "reason": "QR 코드 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/qr-reader/",
+   "to": "/content/blog/apps/qr-code-guide/",
+   "reason": "QR 코드 가이드로 병합"
+  },
+  {
+   "from": "/content/blog/apps/image-ocr/",
+   "to": "/content/tools/image-ocr/",
+   "reason": "정보가 적어 내림(도구 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/gif-maker/",
+   "to": "/content/tools/gif-maker/",
+   "reason": "정보가 적어 내림(도구 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/palette-extractor/",
+   "to": "/content/tools/palette-extractor/",
+   "reason": "정보가 적어 내림(도구 소개 페이지가 대신함)"
   }
  ]
 }
