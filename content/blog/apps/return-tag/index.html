@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록</title>
-<meta name="description" content="공구 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 물건을, 통째로가 아니라 물건 하나씩 반환 확인하는 앱이다.">
+<title>빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기</title>
+<meta name="description" content="공구·책처럼 묶음으로 빌려줄 때 물건별로 반환을 확인하는 기록 항목과 방법, 민법상 사용대차의 반환 시기 규정을 정리했다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록">
-<meta property="og:description" content="공구 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 물건을, 통째로가 아니라 물건 하나씩 반환 확인하는 앱이다.">
+<meta property="og:title" content="빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기">
+<meta property="og:description" content="공구·책처럼 묶음으로 빌려줄 때 물건별로 반환을 확인하는 기록 항목과 방법, 민법상 사용대차의 반환 시기 규정을 정리했다.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/apps/return-tag/">
 <meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
@@ -29,14 +29,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록">
-<meta name="twitter:description" content="공구 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 물건을, 통째로가 아니라 물건 하나씩 반환 확인하는 앱이다.">
+<meta name="twitter:title" content="빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기">
+<meta name="twitter:description" content="공구·책처럼 묶음으로 빌려줄 때 물건별로 반환을 확인하는 기록 항목과 방법, 민법상 사용대차의 반환 시기 규정을 정리했다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta name="twitter:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/return-tag/#article","url":"https://kimjinwan.com/content/blog/apps/return-tag/","headline":"빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록","description":"공구 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 물건을, 통째로가 아니라 물건 하나씩 반환 확인하는 앱이다.","inLanguage":"ko","datePublished":"2026-09-16","dateModified":"2026-09-16","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/return-tag/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/return-tag/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록","item":"https://kimjinwan.com/content/blog/apps/return-tag/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/return-tag/#article","url":"https://kimjinwan.com/content/blog/apps/return-tag/","headline":"빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기","description":"공구·책처럼 묶음으로 빌려줄 때 물건별로 반환을 확인하는 기록 항목과 방법, 민법상 사용대차의 반환 시기 규정을 정리했다.","inLanguage":"ko","datePublished":"2026-09-16","dateModified":"2026-09-16","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/return-tag/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/return-tag/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기","item":"https://kimjinwan.com/content/blog/apps/return-tag/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.78">
+<link rel="stylesheet" href="/css/style.css?v=1.3.79">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -67,21 +67,68 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록</span></li></ol></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기</span></li></ol></nav>
   <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">116</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">62</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-16</p>
-      <h1 class="sec-title detail-title"><span lang="ko">빌려준 물건: 반환 태그 — 물건별로 하나씩 반환 확인하는 대여 기록</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-09-16T00:00:00.000Z">2026. 9. 16.</time></span><span>수정 2026. 9. 21.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>대여 관리 앱 대부분이 돈까지 정산하게 하는 문제를, 물건만 보는 이 앱이 어떻게 다루는지 보여주고 심사 진행 상태를 확인하게 한다.</p></div><div><strong>핵심 내용</strong><p>빌려준 물건을 인수인계 단위로 묶어 기록하고, 반환은 체크리스트로 물건별로 처리한다. 하나만 돌아와도 나머지는 그대로 &#39;남은 물건&#39;으로 갱신된다. 2026년 9월 17일 기준 App Store 심사에서 반려됐다.</p></div><div><strong>읽고 나서</strong><p>반려 사유를 확인해 수정 제출하는지 이 페이지에서 확인한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#빌려준-물건-반환-태그가-필요한-상황">빌려준 물건: 반환 태그가 필요한 상황</a></li><li><a href="#실제로-할-수-있는-일">실제로 할 수 있는 일</a></li><li><a href="#다운로드와-제공-상태">다운로드와 제공 상태</a></li><li><a href="#사용-전에-알아둘-점">사용 전에 알아둘 점</a></li></ul></details><div><img src="https://blog.kimjinwan.com/media/apps/6812553648.png" width="144" height="144" alt="빌려준 물건: 반환 태그의 등록 아이콘" loading="lazy" />
-<h2 id="빌려준-물건-반환-태그가-필요한-상황">빌려준 물건: 반환 태그가 필요한 상황</h2>
-<p>대부분의 대여 관리 앱은 물건과 함께 돈까지 정산하게 한다. 공구 한 세트나 책 여러 권처럼 묶음으로 빌려주거나 빌린 경우, 일부만 돌아왔을 때 “반환 완료” 버튼 하나로 전부 뭉개버리면 남은 물건이 무엇인지 알 수 없게 된다.</p>
-<h2 id="실제로-할-수-있는-일">실제로 할 수 있는 일</h2>
-<p>빌려주거나 빌린 물건을 인수인계 단위로 묶어 기록하고, 반환은 체크리스트로 물건별로 처리한다. 하나를 반환 처리해도 전부 끝난 것으로 처리하지 않고, 실제로 몇 개가 아직 안 돌아왔는지 그 자리에서 갱신된다. 홈 화면에는 열려 있는 모든 인수인계와 상대별 남은 물건 수가 한 번에 보인다. 같은 물건을 다시 빌려줄 때는 탭 한 번으로 같은 물건 이름 그대로 새 기록을 시작하고, 예전 기록은 이름 검색과 함께 반환 내역에 남는다.</p>
-<p>계정도 인터넷 연결도 필요 없다. 모든 기록은 기기 안 파일 하나에 저장되며, JSON으로 내보내고 불러와 직접 백업할 수 있다.</p>
-<h2 id="다운로드와-제공-상태">다운로드와 제공 상태</h2>
-<p>2026년 9월 16일 App Store Connect에서 확인한 상태는 <strong>심사 대기 중</strong>이며, 같은 날 등록된 뒤 심사에 제출됐다. 개인 팀에 등록된 앱이며, 심사 대기를 출시 완료로 바꾸어 적지 않았다. 국가별 판매 가능 여부나 실제 서버 동작까지 검증했다는 뜻은 아니다.</p>
-<h2 id="사용-전에-알아둘-점">사용 전에 알아둘 점</h2>
-<p>이 글은 앱 제작 단계에서 정리한 스토어 설명 자료를 근거로 썼으며, 실제 사용 후기가 아니다.</p>
+      <h1 class="sec-title detail-title"><span lang="ko">빌려준 물건 기록하는 법 — 물건 하나씩 반환 확인하고 분실 막기</span></h1></header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-09-16T00:00:00.000Z">2026. 9. 16.</time></span><span>수정 2026. 10. 14.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>빌려준 물건이 일부만 돌아왔을 때 무엇이 남았는지 알 수 있게 기록하는 방법을 알려 준다.</p></div><div><strong>핵심 내용</strong><p>묶음으로 빌려줄 때는 물건별로 기록하고 반환도 하나씩 체크한다. 반환 시기는 약정이 우선이고, 약정이 없으면 사용·수익이 끝난 때다.</p></div><div><strong>읽고 나서</strong><p>지금 빌려준 물건이 있다면 물건 이름, 빌려준 날, 돌려받을 날을 한 줄씩 적는다.</p></div></section><details><summary>목차</summary><ul><li><a href="#묶음으로-빌려주면-일부만-돌아온다">묶음으로 빌려주면 일부만 돌아온다</a></li><li><a href="#기록할-항목">기록할 항목</a></li><li><a href="#반환-시기에-대한-법의-기본-규칙">반환 시기에 대한 법의 기본 규칙</a></li><li><a href="#돌려받을-때">돌려받을 때</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 묶음으로 빌려준 물건은 물건별로 기록하고 반환도 하나씩 체크하면 일부만 돌아와도 남은 것을 알 수 있으며, 반환 시기는 약정이 우선이다.</p>
+</blockquote>
+<h2 id="묶음으로-빌려주면-일부만-돌아온다">묶음으로 빌려주면 일부만 돌아온다</h2>
+<p>공구 한 세트나 책 여러 권을 빌려주면 “반환 완료”를 한 번에 체크하기 어렵다. 책 세 권 중 두 권만 돌아왔는데 기록이 하나뿐이면 남은 한 권이 잊힌다. 그래서 인수인계 단위로 묶되 반환은 물건별로 체크한다.</p>
+<h2 id="기록할-항목">기록할 항목</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상대</td>
+<td>이름이나 별명</td>
+</tr>
+<tr>
+<td>물건</td>
+<td>드라이버 세트 (4개: 십자, 일자 2종, 육각)</td>
+</tr>
+<tr>
+<td>빌려준 날</td>
+<td>2026-10-01</td>
+</tr>
+<tr>
+<td>돌려받을 날</td>
+<td>2026-10-15 또는 “다 쓰면”</td>
+</tr>
+<tr>
+<td>상태</td>
+<td>상태가 눈에 띄면 한 줄</td>
+</tr>
+<tr>
+<td>반환</td>
+<td>물건마다 체크</td>
+</tr>
+</tbody>
+</table>
+<p>돈은 기록하지 않아도 된다. 물건만 보는 기록이 간단하고 오래 간다.</p>
+<h2 id="반환-시기에-대한-법의-기본-규칙">반환 시기에 대한 법의 기본 규칙</h2>
+<p>돈을 받지 않고 물건을 빌려주는 계약은 민법에서 사용대차라고 한다. 민법 제613조는 약정한 시기에 반환해야 한다고 정한다. 시기를 정하지 않았다면 계약이나 물건의 성질에 따른 사용·수익이 끝난 때 반환하고, 사용·수익하기에 충분한 기간이 지나면 빌려준 사람이 언제든 계약을 해지할 수 있다(<a href="https://korea.legal/wiki/%eb%af%bc%eb%b2%95-%ec%a0%9c613%ec%a1%b0/" target="_blank" rel="noopener noreferrer">민법 제613조 해설</a>). 그래서 돌려받을 날을 말로라도 합의하고 기록해 두면 나중에 확인하기 쉽다. 실제 분쟁은 개별 사정에 따라 다르므로 법률 전문가와 상담한다. 이 글은 법률 자문이 아니다.</p>
+<h2 id="돌려받을-때">돌려받을 때</h2>
+<ul>
+<li>빌려준 물건 목록을 보고 하나씩 체크한다.</li>
+<li>상태가 달라졌다면 그 자리에서 기록한다.</li>
+<li>일부만 돌아오면 남은 물건 수가 몇 개인지 적어 둔다.</li>
+<li>같은 물건을 다시 빌려줄 때는 예전 기록에서 복사해 새 기록으로 시작한다.</li>
+</ul>
+<p>이 글의 기록 항목은 글쓴이의 제안이다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>빌려준 물건은 상대·물건·빌려준 날·돌려받을 날·상태를 적고 반환은 물건마다 체크한다.</li>
+<li>반환 시기는 약정한 시기가 우선이고 약정이 없으면 사용·수익이 끝난 때다.</li>
+<li>이 글은 법률 자문이 아니다.</li>
+</ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/severance-pay-calculator/">퇴직금 계산기 — 평균임금 3/12가 상여금·연차수당에만 붙는 이유</a><p>입사일·퇴사일과 퇴직 전 3개월 임금총액을 넣으면 근로자퇴직급여보장법 제8조 기준 평균임금과 예상 퇴직금을 계산한다. 계속근로기간이 365일 미만이면 지급 의무가 없다는 것도 함께 보여준다.</p></li><li><a href="/content/blog/apps/annual-leave-calculator/">연차 계산기 — 입사 1년 미만과 이후, 계산식이 왜 갈리는지</a><p>입사일만 넣으면 근로기준법 제60조 기준으로 지금까지 쌓인 연차와 다음 발생일을 계산한다. 1년 미만은 개근 월 1일, 1년 이상은 15일에서 2년마다 1일씩 늘어난다.</p></li><li><a href="/content/blog/apps/pack-last/">여행 짐 싸기 체크리스트 — 전날 짐과 출발 직전 짐을 나누는 방법</a><p>전날 싸 두는 짐과 출발 직전에 챙기는 짐을 따로 나누는 체크리스트 구성법과 예시 목록, 기내에 지니고 탈 물건의 확인 기준을 정리했다.</p></li></ul></aside></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
