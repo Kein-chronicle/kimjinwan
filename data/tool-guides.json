@@ -3,7 +3,7 @@
  "tools": {
   "image-compressor": "image-size-format-guide",
   "image-converter": "image-size-format-guide",
-  "image-crop-rotate": "image-size-format-guide",
+  "image-crop-rotate": "image-size-spec-guide",
   "pdf-merge": "pdf-work-guide",
   "pdf-split": "pdf-work-guide",
   "pdf-organizer": "pdf-work-guide",
@@ -12,6 +12,12 @@
   "image-to-pdf": "pdf-work-guide",
   "pdf-sign": "pdf-work-guide",
   "pdf-watermark": "pdf-work-guide",
-  "signature-maker": "pdf-work-guide"
+  "signature-maker": "pdf-work-guide",
+  "social-image-resizer": "image-size-spec-guide",
+  "id-photo-maker": "image-size-spec-guide",
+  "app-icon-generator": "image-size-spec-guide",
+  "device-mockup": "image-size-spec-guide",
+  "photo-collage": "image-size-spec-guide",
+  "background-remover": "image-size-spec-guide"
  }
 }
