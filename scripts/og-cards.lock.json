@@ -59,11 +59,11 @@
       "name": "김진완",
       "role": "개발자 · PM",
       "kicker": "CONTENT",
-      "headline": "글 225편과 AI 활용 가이드·웹게임·웹 도구·앱 모음",
+      "headline": "글 226편과 AI 활용 가이드·웹게임·웹 도구·앱 모음",
       "domain": "kimjinwan.com"
     },
-    "sha256": "6dec5124b7125666647b2de11c2adbbe01ad14c54574260b642c67d058e9ce51",
-    "bytes": 15232
+    "sha256": "4a604e52e1896a02b07141daa5df455dcf4d86a14f145babf14c72625009c05d",
+    "bytes": 15342
   },
   "game": {
     "file": "assets/og/game.png",

@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 142,
+    "value": 143,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -517,9 +517,15 @@
       "ko": "앱을 만들고 심사에 제출하며 남긴 제작·심사 기록",
       "en": "Records of building apps and submitting them for review"
      },
-     "total": 71,
+     "total": 72,
      "url": "https://blog.kimjinwan.com/ko/apps/",
      "items": [
+      {
+       "title": "사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준",
+       "summary": "사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.",
+       "date": "2026-10-14",
+       "url": "https://blog.kimjinwan.com/ko/apps/image-size-format-guide/"
+      },
       {
        "title": "JSON 포매터·검증기 — 큰 숫자는 그대로 두고 공백만 정리하기",
        "summary": "API 응답과 설정 JSON을 2칸·4칸 또는 한 줄로 정리한다. 큰 정수와 숫자 표기를 보존하는 방식, 중복 키 오류, 문법 검사와 데이터 검증의 차이를 설명한다.",
