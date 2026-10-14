@@ -836,6 +836,11 @@
    "from": "/content/blog/ai/ai-workbench-07/",
    "to": "/content/blog/ai/career-01/",
    "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/nte-bright-moon-linko-hotori/",
+   "to": "/content/game-news/nte-board-guide/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
   }
  ]
 }

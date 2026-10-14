@@ -1282,7 +1282,7 @@
    }
   },
   "neon-beat-operator": {
-   "from": "{\"srcs\":[\"neon-beat-operator-0.png\",\"neon-beat-operator-4.png\",\"neon-beat-operator-8.png\"],\"cardI\":1}",
+   "from": "{\"srcs\":[\"neon-beat-operator-0.png\",\"neon-beat-operator-4.png\",\"neon-beat-operator-8.png\",\"neon-beat-operator-success.png\"],\"cardI\":1}",
    "card": [
     640,
     400
@@ -1299,11 +1299,16 @@
     [
      1280,
      720
+    ],
+    [
+     1280,
+     1213
     ]
    ],
    "bytes": {
     "neon-beat-operator-1.webp": 18474,
     "neon-beat-operator-2.webp": 21292,
+    "neon-beat-operator-3.webp": 34956,
     "neon-beat-operator-hero.webp": 22534,
     "neon-beat-operator.webp": 7984
    }

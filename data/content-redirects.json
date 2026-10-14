@@ -698,11 +698,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/limbus-tgs2026-booth-sellout/",
-   "to": "/content/game-news/limbus-tgs2026-booth-sellout/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/merge-whale-devlog/",
    "to": "/content/game-news/",
    "status": 301
@@ -813,11 +808,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/nikke-sep3-full-redownload/",
-   "to": "/content/game-news/nikke-sep3-full-redownload/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/nikke-soda-twinkling-bunny-build/",
    "to": "/content/game-news/nikke-soda-twinkling-bunny-build/",
    "status": 301
@@ -868,11 +858,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/nte-bright-moon-linko-hotori/",
-   "to": "/content/game-news/nte-bright-moon-linko-hotori/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/nte-illoi-lifeline-record/",
    "to": "/content/game-news/nte-board-guide/",
    "status": 301
@@ -880,11 +865,6 @@
   {
    "from": "/content/blog/games/nte-pixel-burst-double-reward/",
    "to": "/content/game-news/nte-pixel-burst-double-reward/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/nte-sep16-ddos-maintenance-annulith/",
-   "to": "/content/game-news/nte-sep16-ddos-maintenance-annulith/",
    "status": 301
   },
   {
@@ -995,11 +975,6 @@
   {
    "from": "/content/blog/games/zzz-32-first-check/",
    "to": "/content/game-news/zzz-32-first-check/",
-   "status": 301
-  },
-  {
-   "from": "/content/blog/games/zzz-hollow-vanguards-signup/",
-   "to": "/content/game-news/zzz-hollow-vanguards-signup/",
    "status": 301
   },
   {
@@ -1130,6 +1105,11 @@
   {
    "from": "/content/game-news/nte-august-bonus-calendar/",
    "to": "/content/game-news/nte-14-first-day-priorities/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/nte-bright-moon-linko-hotori/",
+   "to": "/content/game-news/nte-board-guide/",
    "status": 301
   },
   {

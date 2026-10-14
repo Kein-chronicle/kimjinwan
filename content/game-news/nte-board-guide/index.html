@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리</title>
-<meta name="description" content="이환의 한정 캐릭터 보드가 언제 열리고 닫히는지, 주사위 특전과 아크 연구 모집을 공지가 어떻게 따로 적는지, 복각 보드의 카운트는 어떻게 계산되는지를 공식 공지 세 건으로 정리했다.">
+<title>이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교</title>
+<meta name="description" content="네 공식 공지로 모집 기간·주사위와 열쇠·보드별 특전 카운트를 구분하고 링코·호토리의 가상 잔여 횟수를 계산한다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -19,21 +19,21 @@
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리">
-<meta property="og:description" content="이환의 한정 캐릭터 보드가 언제 열리고 닫히는지, 주사위 특전과 아크 연구 모집을 공지가 어떻게 따로 적는지, 복각 보드의 카운트는 어떻게 계산되는지를 공식 공지 세 건으로 정리했다.">
+<meta property="og:title" content="이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교">
+<meta property="og:description" content="네 공식 공지로 모집 기간·주사위와 열쇠·보드별 특전 카운트를 구분하고 링코·호토리의 가상 잔여 횟수를 계산한다.">
 <meta property="og:url" content="https://kimjinwan.com/content/game-news/nte-board-guide/">
-<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=b3c25c35fe">
-<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=b3c25c35fe">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f0931acb29">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f0931acb29">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="“글 162편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta property="og:image:alt" content="“글 157편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리">
-<meta name="twitter:description" content="이환의 한정 캐릭터 보드가 언제 열리고 닫히는지, 주사위 특전과 아크 연구 모집을 공지가 어떻게 따로 적는지, 복각 보드의 카운트는 어떻게 계산되는지를 공식 공지 세 건으로 정리했다.">
-<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=b3c25c35fe">
-<meta name="twitter:image:alt" content="“글 162편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/#article","url":"https://kimjinwan.com/content/game-news/nte-board-guide/","headline":"이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리","description":"이환의 한정 캐릭터 보드가 언제 열리고 닫히는지, 주사위 특전과 아크 연구 모집을 공지가 어떻게 따로 적는지, 복각 보드의 카운트는 어떻게 계산되는지를 공식 공지 세 건으로 정리했다.","inLanguage":"ko","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/"},"image":"https://kimjinwan.com/assets/og/content.png?v=b3c25c35fe","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=b3c25c35fe","articleSection":"이환"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"게임 소식","item":"https://kimjinwan.com/content/game-news/"},{"@type":"ListItem","position":4,"name":"이환","item":"https://kimjinwan.com/content/game-news/nte/"},{"@type":"ListItem","position":5,"name":"이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리","item":"https://kimjinwan.com/content/game-news/nte-board-guide/"}]}]}</script>
+<meta name="twitter:title" content="이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교">
+<meta name="twitter:description" content="네 공식 공지로 모집 기간·주사위와 열쇠·보드별 특전 카운트를 구분하고 링코·호토리의 가상 잔여 횟수를 계산한다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f0931acb29">
+<meta name="twitter:image:alt" content="“글 157편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/#article","url":"https://kimjinwan.com/content/game-news/nte-board-guide/","headline":"이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교","description":"네 공식 공지로 모집 기간·주사위와 열쇠·보드별 특전 카운트를 구분하고 링코·호토리의 가상 잔여 횟수를 계산한다.","inLanguage":"ko","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f0931acb29","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f0931acb29","articleSection":"이환"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/game-news/nte-board-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"게임 소식","item":"https://kimjinwan.com/content/game-news/"},{"@type":"ListItem","position":4,"name":"이환","item":"https://kimjinwan.com/content/game-news/nte/"},{"@type":"ListItem","position":5,"name":"이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교","item":"https://kimjinwan.com/content/game-news/nte-board-guide/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
 <link rel="stylesheet" href="/css/style.css?v=1.3.102">
@@ -67,15 +67,15 @@
 <script src="/js/nav-spy.js" defer></script>
 
 <main class="block page-top"><div class="wrap">
-  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span></a></li><li><a href="/content/game-news/nte/"><span data-lang-ko>이환</span><span data-lang-en>Neverness to Everness</span></a></li><li aria-current="page"><span lang="ko">이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리</span></li></ol></nav>
-  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">102</span></a></li><li><a href="/content/game-news/" aria-current="page"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">55</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span></a></li><li><a href="/content/game-news/nte/"><span data-lang-ko>이환</span><span data-lang-en>Neverness to Everness</span></a></li><li aria-current="page"><span lang="ko">이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">5</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">102</span></a></li><li><a href="/content/game-news/" aria-current="page"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="gamenews">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>이환</span><span data-lang-en>Neverness to Everness</span> · 2026-10-14</p>
-      <h1 class="sec-title detail-title"><span lang="ko">이환 한정 보드 읽는 법 — 주사위 특전·아크 모집·복각을 일로이·잔홍·레이븐 공지로 정리</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-10-14T00:00:00.000Z">2026. 10. 14.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>이환 한정 보드 모집을 앞두고 일정, 재화, 특전 횟수를 헷갈리는 유저가 공지의 어디를 봐야 하는지 알게 한다.</p></div><div><strong>핵심 내용</strong><p>이환 한정 보드는 3주 단위로 열리고, 공지는 보드를 주사위로 아크를 열쇠로 모집한다고 따로 적으며, 특전 횟수는 보드별로 독립 계산된다.</p></div><div><strong>읽고 나서</strong><p>다음 보드 공지가 나오면 종료 시각, 보드와 아크의 재화, 복각 포함 여부 세 가지만 먼저 표로 적는다.</p></div></section><details><summary>목차</summary><ul><li><a href="#한-장으로-보는-공지-세-건의-보드">한 장으로 보는 공지 세 건의 보드</a></li><li><a href="#보드는-어떻게-굴러가나">보드는 어떻게 굴러가나</a></li><li><a href="#보드는-주사위-아크는-열쇠--공지가-적은-재화는-다르다">보드는 주사위, 아크는 열쇠 — 공지가 적은 재화는 다르다</a></li><li><a href="#복각-보드의-카운트는-합산되지-않는다">복각 보드의 카운트는 합산되지 않는다</a></li><li><a href="#의상과-외형은-보드-밖에서도-갈린다">의상과 외형은 보드 밖에서도 갈린다</a></li><li><a href="#다음-보드-공지를-읽는-순서">다음 보드 공지를 읽는 순서</a></li><li><a href="#기준일과-출처">기준일과 출처</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
-<p><strong>한 줄 요약:</strong> 이환의 한정 보드는 3주 단위로 열리고, 공지는 보드와 아크를 다른 재화로 적으며 특전 횟수는 보드별로 따로 센다.</p>
+      <h1 class="sec-title detail-title"><span lang="ko">이환 보드·아크·복각 특전 읽기: 링코·호토리까지 네 공지 비교</span></h1></header>
+    <div class="detail-body"><div><span>기록일 <time datetime="2026-10-14T00:00:00.000Z">2026. 10. 14.</time></span><span>수정 2026. 10. 13.</span></div><p>2026년 10월 14일 네 공식 공지를 대조해 링코·호토리 소식을 통합했습니다. 과거 일정은 미래 고정 주기가 아니며 계산표는 가상 예시입니다.</p><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>같은공지의캐릭터보드와아크계획및특전카운트를분리한다.</p></div><div><strong>핵심 내용</strong><p>이환의 한정 보드 공지를 읽을 때는 종료 시각·캐릭터와 아크의 재화·특전 카운트를 분리하고, 과거 일정 간격을 앞으로의 고정 규칙으로 쓰지 않는다.</p></div><div><strong>읽고 나서</strong><p>현재 보드별 횟수·목표 특전·종료 시각과 아크 재화를 각각 기록한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#한-장으로-보는-공지-네-건의-보드">한 장으로 보는 공지 네 건의 보드</a></li><li><a href="#보드는-어떻게-굴러가나">보드는 어떻게 굴러가나</a></li><li><a href="#보드는-주사위-아크는-열쇠--공지가-적은-재화는-다르다">보드는 주사위, 아크는 열쇠 — 공지가 적은 재화는 다르다</a></li><li><a href="#복각-보드의-카운트는-합산되지-않는다">복각 보드의 카운트는 합산되지 않는다</a></li><li><a href="#링코호토리-사례에서-빠뜨리기-쉬운-세-가지">링코·호토리 사례에서 빠뜨리기 쉬운 세 가지</a></li><li><a href="#의상과-외형은-보드-밖에서도-갈린다">의상과 외형은 보드 밖에서도 갈린다</a></li><li><a href="#다음-보드-공지를-읽는-순서">다음 보드 공지를 읽는 순서</a></li><li><a href="#기준일과-출처">기준일과 출처</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 이환의 한정 보드 공지를 읽을 때는 종료 시각·캐릭터와 아크의 재화·특전 카운트를 분리하고, 과거 일정 간격을 앞으로의 고정 규칙으로 쓰지 않는다.</p>
 </blockquote>
-<h2 id="한-장으로-보는-공지-세-건의-보드">한 장으로 보는 공지 세 건의 보드</h2>
+<h2 id="한-장으로-보는-공지-네-건의-보드">한 장으로 보는 공지 네 건의 보드</h2>
 <p>이환의 한정 캐릭터는 ’보드’라는 방식으로 나온다. 복각은 이미 끝난 한정 모집을 다시 여는 것이고, 특간은 공지가 아크별 연구 모집 계획에 붙인 이름이다. 보드는 주사위를 던져 칸을 진행하는 한정 모집 화면이고, 한 보드에는 S급 캐릭터 한 명과 A급 캐릭터 세 명 안팎이 걸린다. 공식 공지를 날짜순으로 놓으면 규칙이 한눈에 보인다.</p>
 <table>
 <thead>
@@ -100,6 +100,12 @@
 <td>업데이트 후 ~ 9월 9일 06:59</td>
 </tr>
 <tr>
+<td>9월 9일 업데이트</td>
+<td>「주파수 로밍 중!」 링코</td>
+<td>「달빛 한 잔」 호토리 복각</td>
+<td>업데이트 후 ~ 9월 30일 06:59</td>
+</tr>
+<tr>
 <td>9월 30일 업데이트(1.4)</td>
 <td>「예언의 마지막 순간」 레이븐</td>
 <td>「단꿈에서 깨어날 때」 라크리모사 복각</td>
@@ -107,9 +113,9 @@
 </tr>
 </tbody>
 </table>
-<p>세 번의 보드 모두 날짜 기준으로 시작부터 종료까지 21일이다(레이븐 보드는 10월 21일 06:59에 끝난다). 모집 마감이 새벽 06:59라는 점도 같다. 마감 날짜만 보고 그날 밤까지라고 읽으면 하루를 잃는다. 1.4 공지에는 링코 한정 보드 「주파수 로밍 중!」이 9월 30일 06:59에 종료된다고 적혀 있다. 이 보드의 시작 시점은 세 공지에 없어서 위 표에는 넣지 않았다.</p>
+<p>네 사례 모두 업데이트 날짜에서 종료 날짜까지의 달력 간격은 21일이다. 시작은 업데이트 후이므로 실제 점검 종료부터 정확히 21×24시간을 이용할 수 있다는 뜻은 아니다. 네 공지의 마감은 06:59이며, 마감 날짜만 보고 그날 밤까지라고 읽으면 시각을 놓친다. 이 표의 반복은 관찰된 네 사례의 공통점이지 앞으로 모든 보드가 같은 주기로 열린다는 규칙은 아니다.</p>
 <h2 id="보드는-어떻게-굴러가나">보드는 어떻게 굴러가나</h2>
-<p>공지는 보드를 이렇게 설명한다. “보드에서 주사위를 던지면 일정 확률로 해당 보상을 미리 획득할 수 있으며” 라는 문장이 세 공지에 반복된다. 확률 수치는 어느 공지에도 없고, 천장(일정 횟수 이후 보장)에 대한 언급도 없다. 대신 누적 주사위 50회, 120회, 200회에 도달하면 해당 특전 이벤트에서 보상을 바로 받는 마일스톤이 있다. 특전의 이름은 보드마다 다르다.</p>
+<p>공지들은 주사위를 통해 보드의 해당 보상을 먼저 얻을 가능성과 누적 특전을 구분한다. 확률 수치는 어느 공지에도 없고, 천장(일정 횟수 이후 보장)에 대한 언급도 없다. 대신 누적 주사위 50회, 120회, 200회에 도달하면 해당 특전 이벤트에서 보상을 바로 받는 마일스톤이 있다. 특전의 이름은 보드마다 다르다.</p>
 <table>
 <thead>
 <tr>
@@ -135,6 +141,16 @@
 <td>50·120·200회</td>
 </tr>
 <tr>
+<td>링코 「주파수 로밍 중!」</td>
+<td>동기화 특전</td>
+<td>50·120·200회</td>
+</tr>
+<tr>
+<td>호토리 「달빛 한 잔」(복각)</td>
+<td>시계 특전</td>
+<td>50·120·200회</td>
+</tr>
+<tr>
 <td>레이븐 「예언의 마지막 순간」</td>
 <td>운세 특전</td>
 <td>50·120·200회</td>
@@ -146,7 +162,7 @@
 </tr>
 </tbody>
 </table>
-<p>보드를 열려면 메인 임무 「프롤로그 - 새로운 목적지 - ’에이본 골동품 가게’로 이동」을 끝내야 한다. 세 공지 모두 같은 조건을 보드와 아크 항목에 적었다. 이 글은 주사위를 얻는 경로와 비용은 다루지 않는다.</p>
+<p>보드를 열려면 메인 임무 「프롤로그 - 새로운 목적지 - ’에이본 골동품 가게’로 이동」을 끝내야 한다. 네 공지 모두 같은 조건을 보드와 아크 항목에 적었다. 이 글은 주사위를 얻는 경로와 비용은 다루지 않는다.</p>
 <h2 id="보드는-주사위-아크는-열쇠--공지가-적은-재화는-다르다">보드는 주사위, 아크는 열쇠 — 공지가 적은 재화는 다르다</h2>
 <p>같은 업데이트에는 캐릭터 보드와 별개로 아크 연구 모집이 열린다. 아크는 공지가 ’한정 S급 아크’라고 부르는 별도 보상이고, 공지는 아크의 효과를 설명하지 않는다. 공지가 밝힌 아크 모집의 구조는 같다. 「삼중 열쇠」 또는 그 아크 전용 열쇠를 쓰고, 아크별 「특간」 연구 모집 계획에서만 얻을 수 있으며, 이벤트가 끝나면 당분간 다시 얻을 수 없다.</p>
 <table>
@@ -174,6 +190,16 @@
 <td>타이거 열쇠 · 타이거 특간</td>
 </tr>
 <tr>
+<td>9월 9일</td>
+<td>원행자의 목소리(한정)</td>
+<td>만물의 소리 열쇠 · 만물의 소리 특간</td>
+</tr>
+<tr>
+<td>9월 9일</td>
+<td>시간 밖으로의 행진(복각)</td>
+<td>밝은 달 열쇠 · 밝은 달 특간</td>
+</tr>
+<tr>
 <td>9월 30일</td>
 <td>죄와 벌(한정)</td>
 <td>깃털 열쇠 · 깃털 특간</td>
@@ -187,8 +213,37 @@
 </table>
 <p>공지의 구분을 그대로 옮기면 캐릭터는 보드의 주사위로, 아크는 열쇠로 얻는다. 한쪽 재화가 다른 쪽에 통하는지, 보드 진행도가 아크 모집에 영향을 주는지는 공지에 없다. 그래서 예산은 둘을 따로 적어 두고 게임 안의 화면에서 확인하는 편이 안전하다.</p>
 <h2 id="복각-보드의-카운트는-합산되지-않는다">복각 보드의 카운트는 합산되지 않는다</h2>
-<p>1.3과 1.4는 신규 보드와 복각 보드를 같은 기간에 함께 열었다. 두 보드의 종료 시각이 같아서 하나의 모집처럼 보이지만 규칙은 분리돼 있다. 1.3 공지는 이렇게 적었다. “※호랑이 특전 이벤트 카운트는 오직 「초대 가주 넘버원」 보드에만 적용되며, 보드별로 독립 계산됩니다.” 1.4 공지도 라크리모사의 단꿈 특전에 같은 취지를 적고, 같은 보드 안에서는 카운트가 유지된다고 했다.</p>
+<p>1.3과 1.4는 신규 보드와 복각 보드를 같은 기간에 함께 열었다. 두 보드의 종료 시각이 같아서 하나의 모집처럼 보이지만 규칙은 분리돼 있다. 1.3 공지는 나나리 보드의 호랑이 특전을 다른 보드와 독립 계산한다고 안내했다. 1.4 공지도 라크리모사의 단꿈 특전에 같은 취지를 적고, 같은 보드 안에서는 카운트가 유지된다고 했다.</p>
 <p>그래서 잔홍 보드에서 던진 횟수는 나나리 특전에 보태지지 않는다. 이 규칙은 특전 이벤트 카운트에 관한 문장이다. 공지는 모집 확률이나 천장을 설명하지 않으므로 이 문장을 다른 규칙으로 넓혀 읽으면 안 된다. 두 보드를 모두 돌릴 계획이라면 보드마다 현재 횟수, 원하는 마일스톤, 쓸 재화를 한 줄씩 적으면 된다.</p>
+<h2 id="링코호토리-사례에서-빠뜨리기-쉬운-세-가지">링코·호토리 사례에서 빠뜨리기 쉬운 세 가지</h2>
+<p>9월 9일 공지에서 「밝은 달 특간」은 호토리 캐릭터 보드의 이름이 아니라 「시간 밖으로의 행진」 아크 연구 모집의 이름이다. 이전 소식 제목처럼 두 캐릭터 모집 전체를 밝은 달 특간이라고 부르면 재화와 경로가 섞인다.</p>
+<p>호토리의 시계 특전은 다른 보드와 독립 집계하며, 같은 이름의 보드가 다시 열릴 때 카운트를 유지한다고 안내됐다. 이는 그 특전의 규칙이다. 다른 모집의 천장·확률이나 모든 자원의 이월 규칙을 뜻하지 않는다.</p>
+<p>다음은 <strong>가상 카운트</strong>다. 링코 보드 80회와 호토리 보드 40회를 합쳐 어느 한쪽의 120회 특전을 받는 것으로 계산하면 안 된다. 링코 쪽 120회까지는 40회, 호토리 쪽 50회까지는 10회라는 각 보드의 차이를 따로 적는다. 실제 수령 여부와 재오픈 보존값은 현재 화면으로 확인한다.</p>
+<table>
+<thead>
+<tr>
+<th>가상 보드</th>
+<th>확인한 현재 횟수</th>
+<th>비교할 특전</th>
+<th>해당 보드의 추가 횟수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>링코</td>
+<td>80</td>
+<td>120</td>
+<td>40</td>
+</tr>
+<tr>
+<td>호토리</td>
+<td>40</td>
+<td>50</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>표는 캐릭터 획득 보장 횟수나 실제 계정 기록이 아니다. 특전까지 남은 횟수를 계산한 예시다. 마감된 보드의 남은 재화를 지금 쓰라는 안내로 읽지 않는다.</p>
 <h2 id="의상과-외형은-보드-밖에서도-갈린다">의상과 외형은 보드 밖에서도 갈린다</h2>
 <p>한정 보드에는 글라이더 등의 리버리(탈것 외형)와 코스튬이 붙는다. 그런데 같은 캐릭터의 의상이 모두 보드에서 나오는 것은 아니다. 공지를 모으면 획득 경로가 네 갈래다.</p>
 <table>
@@ -219,18 +274,19 @@
 </table>
 <p>일로이 공지의 쇼핑몰 의상은 판매 기간이 영구로 안내됐고 할인은 8월 19일 06:59까지였다. 할인이 끝난다는 말과 판매가 끝난다는 말을 다르게 읽어야 한다. 레이븐 「별지기」는 판매 기간이 상시이고, 18% 할인은 10월 7일 07:30부터 11월 11일 06:59까지다.</p>
 <h2 id="다음-보드-공지를-읽는-순서">다음 보드 공지를 읽는 순서</h2>
-<p>공지가 나오면 세 가지만 먼저 적으면 된다. 첫째, 종료 시각이다. 지금까지는 모두 06:59(KST)였다. 둘째, 보드와 아크의 재화와 모집 계획 이름이다. 셋째, 복각이 함께 열리는지, 복각이면 특전 카운트가 독립인지다. 이 세 줄이 정리되면 나머지(의상, 리버리)는 선택의 문제다.</p>
+<p>공지가 나오면 세 가지만 먼저 적으면 된다. 첫째, 종료 시각이다. 이 글에서 대조한 보드의 마감은 06:59(KST)였다. 다음 공지의 값을 다시 읽는다. 둘째, 보드와 아크의 재화와 모집 계획 이름이다. 셋째, 복각이 함께 열리는지, 복각이면 특전 카운트가 독립인지다. 이 세 줄이 정리되면 나머지(의상, 리버리)는 선택의 문제다.</p>
 <p>이 글은 모집 확률이나 캐릭터 성능을 다루지 않는다. 공지에 확률과 천장 수치가 없기 때문이다. 필요한 판단은 공지 문구와 게임 내 상세 화면으로 이어진다.</p>
 <h2 id="기준일과-출처">기준일과 출처</h2>
-<p>기준일은 2026년 10월 14일이다. 이환 공식 사이트 공지 세 건을 직접 읽어 정리했다. 모든 시각은 KST다. 직접 플레이한 기록이 아니다.</p>
+<p>기준일은 2026년 10월 14일이다. 이환 공식 사이트 공지 네 건을 직접 읽어 정리했다. 이 글의 보드·판매 일정은 KST 표기다. 같은 문서의 다른 이벤트에 적힌 서버 시간은 별도로 확인해야 한다. 직접 플레이한 기록이 아니다.</p>
 <ul>
 <li>7월 29일 서버 점검 공지(7월 28일 게시): <a href="https://nte.perfectworld.com/kr/article/news/gamenews/20260728/263292.html" target="_blank" rel="noopener noreferrer">https://nte.perfectworld.com/kr/article/news/gamenews/20260728/263292.html</a></li>
 <li>1.3 업데이트 공지(8월 18일 게시): <a href="https://nte.perfectworld.com/kr/article/news/gamenews/20260817/263607.html" target="_blank" rel="noopener noreferrer">https://nte.perfectworld.com/kr/article/news/gamenews/20260817/263607.html</a></li>
+<li>9월 9일 서버 점검 공지(9월 8일 URL, 원문 게시일은 화면 기준): <a href="https://nte.perfectworld.com/kr/article/news/gamenews/20260908/263945.html" target="_blank" rel="noopener noreferrer">https://nte.perfectworld.com/kr/article/news/gamenews/20260908/263945.html</a></li>
 <li>1.4 업데이트 공지(9월 29일 게시): <a href="https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html" target="_blank" rel="noopener noreferrer">https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html</a></li>
 </ul>
 <h2 id="세-줄-요약">세 줄 요약</h2>
 <ul>
-<li>이환 한정 보드는 업데이트 후 21일 뒤 06:59(KST)에 끝나며 복각 보드가 함께 열리기도 한다.</li>
+<li>과거 네 공지의 일정과 현재 개방 여부를 구분하고 다음 보드의 종료 시각을 새로 확인한다.</li>
 <li>공지는 캐릭터를 보드 주사위로, 아크를 삼중 열쇠나 전용 열쇠로 모집한다고 적으며 확률과 천장 수치는 없다.</li>
 <li>특전은 50·120·200회 마일스톤이고 복각 보드의 카운트는 보드별로 독립 계산된다.</li>
 </ul>

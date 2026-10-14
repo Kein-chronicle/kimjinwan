@@ -404,7 +404,11 @@
       "id": "news-nte-pixel-burst-double-reward",
       "final": 70.4,
       "note": "9/21 종료된 이벤트. 일일 120·누적 840 한도 계산은 유용하므로 '반복되는 2배 이벤트 계산법' 상시 가이드로 재구성하거나 종료 표기 후 보관.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "revised",
+      "target": "https://kimjinwan.com/content/game-news/nte-pixel-burst-double-reward/",
+      "release": "1.3.101",
+      "review": "kein-blog/production/ko-games-nte-pixel-burst-double-reward/work/review.json"
     },
     {
       "id": "ai-worker-done-operator-still-busy",
