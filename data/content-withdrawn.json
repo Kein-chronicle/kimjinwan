@@ -831,6 +831,11 @@
    "from": "/content/blog/ai/ai-game-factory-08/",
    "to": "/content/blog/ai/ai-workbench-01/",
    "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-workbench-07/",
+   "to": "/content/blog/ai/career-01/",
+   "reason": "중복 연재를 독자 질문·검증 근거가 있는 대표 글로 통합"
   }
  ]
 }

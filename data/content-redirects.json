@@ -58,6 +58,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-workbench-07/",
+   "to": "/content/blog/ai/career-01/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-writing-index/",
    "to": "/content/blog/",
    "status": 301

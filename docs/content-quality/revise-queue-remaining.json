@@ -15,11 +15,6 @@
     "note": "회사 조사 기준 일반론. 01과 병합 또는 공고 분해 표 추가."
   },
   {
-    "id": "ai-ai-game-factory-08",
-    "final": 64.3,
-    "note": "이전 공장에서 가져온 것 선별 회고. 내부 프로젝트명 중심. 병합 후보."
-  },
-  {
     "id": "news-nikke-second-burst-roster",
     "final": 65.8,
     "note": "2버스트 파티 자리 비용 관점은 유용. 후보별(크라운·마스트·앵커·프리카·민트) 역할 비교표를 출처와 함께 추가하면 가치 상승."
@@ -73,11 +68,6 @@
     "id": "news-zzz-hollow-vanguards-signup",
     "final": 67.1,
     "note": "글로벌 비공개 테스트 모집 공고. 모집 마감 여부와 한국 참여 가능 여부를 확인해 갱신하거나 종료 표기. 공식 신청 링크 안내 필수."
-  },
-  {
-    "id": "ai-ai-workbench-01",
-    "final": 67.2,
-    "note": "공통 엔진/분야별 프로필 분리 설계 회고. 구분 표로 정리."
   },
   {
     "id": "ai-same-pattern-four-repos-one-day",

@@ -136,7 +136,11 @@
       "id": "ai-ai-game-factory-08",
       "final": 64.3,
       "note": "이전 공장에서 가져온 것 선별 회고. 내부 프로젝트명 중심. 병합 후보.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "merged",
+      "target": "https://kimjinwan.com/content/blog/ai/ai-workbench-01/",
+      "release": "1.3.91",
+      "review": "kein-blog/production/ko-ai-ai-workbench-01/work/review.json"
     },
     {
       "id": "ai-whale-survivors-08",
@@ -248,7 +252,11 @@
       "id": "ai-ai-workbench-01",
       "final": 67.2,
       "note": "공통 엔진/분야별 프로필 분리 설계 회고. 구분 표로 정리.",
-      "status": "pending"
+      "status": "complete",
+      "disposition": "revised",
+      "target": "https://kimjinwan.com/content/blog/ai/ai-workbench-01/",
+      "release": "1.3.91",
+      "review": "kein-blog/production/ko-ai-ai-workbench-01/work/review.json"
     },
     {
       "id": "ai-whale-survivors-06",
