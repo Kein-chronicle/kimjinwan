@@ -776,6 +776,16 @@
    "from": "/content/blog/ai/ai-colleagues-01/",
    "to": "/content/blog/ai/ai-colleagues-02/",
    "reason": "역할 소개를 실행·검토 완료 증거표가 있는 AI 코드 리뷰 점검 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-05/",
+   "to": "/content/blog/ai/ai-colleagues-04/",
+   "reason": "기억·임시 상태·설정 이전을 근거 코드와 점검표가 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-09/",
+   "to": "/content/blog/ai/ai-colleagues-04/",
+   "reason": "기억·임시 상태·설정 이전을 근거 코드와 점검표가 있는 대표 글로 통합"
   }
  ]
 }

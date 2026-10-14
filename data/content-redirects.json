@@ -18,6 +18,16 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-colleagues-05/",
+   "to": "/content/blog/ai/ai-colleagues-04/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/ai-colleagues-09/",
+   "to": "/content/blog/ai/ai-colleagues-04/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-game-factory-10/",
    "to": "/content/blog/ai/ai-game-factory-09/",
    "status": 301
