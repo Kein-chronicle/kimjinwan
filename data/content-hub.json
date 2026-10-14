@@ -708,7 +708,7 @@
       },
       {
        "title": "CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱",
-       "summary": "카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.",
+       "summary": "카페인 하루 권고량(FDA 400mg), 커피 한 잔의 카페인 범위, 취침 시 잔량을 계산하는 식과 CoffeeCut 기록 앱의 사용법을 정리했다.",
        "date": "2026-09-13",
        "url": "https://blog.kimjinwan.com/ko/apps/coffee-cut/"
       },

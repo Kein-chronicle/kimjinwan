@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱</title>
-<meta name="description" content="카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.">
+<meta name="description" content="카페인 하루 권고량(FDA 400mg), 커피 한 잔의 카페인 범위, 취침 시 잔량을 계산하는 식과 CoffeeCut 기록 앱의 사용법을 정리했다.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="김진완">
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
@@ -20,7 +20,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱">
-<meta property="og:description" content="카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.">
+<meta property="og:description" content="카페인 하루 권고량(FDA 400mg), 커피 한 잔의 카페인 범위, 취침 시 잔량을 계산하는 식과 CoffeeCut 기록 앱의 사용법을 정리했다.">
 <meta property="og:url" content="https://kimjinwan.com/content/blog/apps/coffee-cut/">
 <meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
@@ -30,13 +30,13 @@
 <meta property="og:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱">
-<meta name="twitter:description" content="카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.">
+<meta name="twitter:description" content="카페인 하루 권고량(FDA 400mg), 커피 한 잔의 카페인 범위, 취침 시 잔량을 계산하는 식과 CoffeeCut 기록 앱의 사용법을 정리했다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=f4d641e661">
 <meta name="twitter:image:alt" content="“글 183편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/#article","url":"https://kimjinwan.com/content/blog/apps/coffee-cut/","headline":"CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱","description":"카페인 mg 수치를 몰라도 음료 종류와 크기, 잔 수만 고르면 하루 섭취량과 취침 시 추정값을 계산해주는 앱이다.","inLanguage":"ko","datePublished":"2026-09-13","dateModified":"2026-09-13","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱","item":"https://kimjinwan.com/content/blog/apps/coffee-cut/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/#article","url":"https://kimjinwan.com/content/blog/apps/coffee-cut/","headline":"CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱","description":"카페인 하루 권고량(FDA 400mg), 커피 한 잔의 카페인 범위, 취침 시 잔량을 계산하는 식과 CoffeeCut 기록 앱의 사용법을 정리했다.","inLanguage":"ko","datePublished":"2026-09-13","dateModified":"2026-09-13","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/"},"image":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=f4d641e661","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/coffee-cut/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱","item":"https://kimjinwan.com/content/blog/apps/coffee-cut/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.69">
+<link rel="stylesheet" href="/css/style.css?v=1.3.70">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -72,19 +72,27 @@
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-13</p>
       <h1 class="sec-title detail-title"><span lang="ko">CoffeeCut: 카페인 기록 — 음료와 잔 수만 고르는 카페인 추적 앱</span></h1></header>
-    <div class="detail-body"><div><span>발행 <time datetime="2026-09-13T00:00:00.000Z">2026. 9. 13.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>카페인 섭취를 줄이거나 조절하려는 독자에게, 수치를 외우지 않고도 오늘 마신 양을 기록·추정할 수 있는지 확인하게 한다.</p></div><div><strong>핵심 내용</strong><p>커피·차·탄산음료·에너지음료의 종류와 크기, 잔 수를 고르면 앱이 카페인 mg를 프리셋으로 추정하고, 설정한 취침 시간의 잔량 추정값과 다음 컵 예산을 함께 보여준다. 기록은 기기 안에만 저장된다.</p></div><div><strong>읽고 나서</strong><p>기능과 추정 방식을 확인한 뒤 App Store에서 무료로 다운로드해 직접 사용한다.</p></div></section><a href="https://apps.apple.com/kr/app/coffeecut-%EC%B9%B4%ED%8E%98%EC%9D%B8-%EA%B8%B0%EB%A1%9D/id1528133014" target="_blank" rel="noopener noreferrer">App Store에서 무료 다운로드 <span aria-hidden="true">↗</span></a><details><summary>목차</summary><ul><li><a href="#음료와-잔-수만-고르는-카페인-추적-앱이-필요한-상황">음료와 잔 수만 고르는 카페인 추적 앱이 필요한 상황</a></li><li><a href="#실제로-할-수-있는-일">실제로 할 수 있는 일</a></li><li><a href="#app-store에서-다운로드">App Store에서 다운로드</a></li><li><a href="#다운로드와-제공-상태">다운로드와 제공 상태</a></li><li><a href="#사용-전에-알아둘-점">사용 전에 알아둘 점</a></li></ul></details><div><img src="https://blog.kimjinwan.com/media/apps/1528133014.png" width="144" height="144" alt="CoffeeCut: 카페인 기록의 등록 아이콘" loading="lazy" />
-<h2 id="음료와-잔-수만-고르는-카페인-추적-앱이-필요한-상황">음료와 잔 수만 고르는 카페인 추적 앱이 필요한 상황</h2>
-<p>카페인 함유량을 mg 단위로 외워서 마시는 사람은 드물다는 문제의식에서, 사용자가 실제로 아는 정보(음료 종류·크기·잔 수)부터 받는 방식으로 만들어졌다.</p>
-<h2 id="실제로-할-수-있는-일">실제로 할 수 있는 일</h2>
-<p>등록 설명에 따르면 커피·차·탄산음료·에너지음료와 크기, 마신 잔 수를 고르면 카페인 mg를 프리셋으로 추정한다. 제품 라벨에 100ml당 함유량만 적혀 있으면 내장 환산기가 전체 용량의 카페인을 계산해준다고 설명한다.</p>
-<p>오늘 화면은 마신 양, 현재 추정 잔량, 설정한 취침 시간의 추정값과 다음 컵 예산을 함께 보여주며, 카페인 반감기 가정은 설정에서 바꿀 수 있다고 안내한다. 기록은 기기 안에만 저장되고 계정·클라우드 데이터베이스는 없다고 명시한다.</p>
-<h2 id="app-store에서-다운로드">App Store에서 다운로드</h2>
-<p><a href="https://apps.apple.com/kr/app/coffeecut-%EC%B9%B4%ED%8E%98%EC%9D%B8-%EA%B8%B0%EB%A1%9D/id1528133014" target="_blank" rel="noopener noreferrer">App Store에서 CoffeeCut: 카페인 기록 무료 다운로드 →</a></p>
-<p>공개 스토어 조회에서 현재 제품 페이지가 확인됐다. 지원 OS는 iOS 17.0 이상이며, 국가나 기기에 따라 표시 여부가 달라질 수 있다.</p>
-<h2 id="다운로드와-제공-상태">다운로드와 제공 상태</h2>
-<p>2026년 9월 13일 App Store Connect에서 확인한 상태는 <strong>다운로드 가능</strong>이다. 개인 팀에 등록된 앱이며, 국가별 판매 가능 여부나 현재 서버 동작까지 전부 검증했다는 뜻은 아니다.</p>
-<h2 id="사용-전에-알아둘-점">사용 전에 알아둘 점</h2>
-<p>등록 설명은 이 수치가 신체 측정값이나 의학적 안전 기준이 아니며, 임신·복약·질환이나 강한 카페인 반응이 있으면 전문가의 안내를 따르라고 명시한다. 소개의 기능은 등록된 제품 설명을 기준으로 정리했으며, 실제 추정 방식은 이용 시 앱 안에서 다시 확인하는 것이 맞다.</p>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-09-13T00:00:00.000Z">2026. 9. 13.</time></span><span>수정 2026. 10. 14.</span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>카페인 섭취를 줄이거나 조절하려는 독자에게, 수치를 외우지 않고도 오늘 마신 양을 기록·추정할 수 있는지 확인하게 한다.</p></div><div><strong>핵심 내용</strong><p>성인 하루 400mg이 일반적 기준이고 한 잔의 카페인은 음료마다 크게 다르다. 마신 시각과 반감기를 넣으면 취침 시 잔량을 추정할 수 있다.</p></div><div><strong>읽고 나서</strong><p>오늘 마신 음료를 기록해 취침 시 추정 잔량과 다음 잔 예산을 확인한다.</p></div></section><a href="https://apps.apple.com/kr/app/coffeecut-%EC%B9%B4%ED%8E%98%EC%9D%B8-%EA%B8%B0%EB%A1%9D/id1528133014" target="_blank" rel="noopener noreferrer">App Store에서 무료 다운로드 <span aria-hidden="true">↗</span></a><details><summary>목차</summary><ul><li><a href="#하루-얼마까지인가">하루 얼마까지인가</a></li><li><a href="#한-잔의-카페인은-천차만별이다">한 잔의 카페인은 천차만별이다</a></li><li><a href="#취침-시-잔량을-계산하는-식">취침 시 잔량을 계산하는 식</a></li><li><a href="#coffeecut이-하는-일">CoffeeCut이 하는 일</a></li><li><a href="#사용-전에">사용 전에</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 성인 하루 카페인 기준은 400mg이 널리 쓰이고 한 잔의 함량은 음료마다 크게 달라서, 마신 음료와 시각을 기록해 취침 시 잔량을 추정하는 방식이 쓸모 있다.</p>
+</blockquote>
+<img src="https://blog.kimjinwan.com/media/apps/1528133014.png" width="144" height="144" alt="CoffeeCut: 카페인 기록의 등록 아이콘" loading="lazy" />
+<h2 id="하루-얼마까지인가">하루 얼마까지인가</h2>
+<p>미국 FDA는 건강한 성인에게 하루 400밀리그램 정도의 카페인은 일반적으로 부정적 영향과 연결되지 않는 양이라고 설명한다. 임신 중이거나 임신을 계획·수유 중이면 제한이 필요한지 의료진과 상의하라고 안내한다(<a href="https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" target="_blank" rel="noopener noreferrer">FDA</a>). 한국 식약처도 성인 400mg, 임산부 300mg, 어린이·청소년 체중 1kg당 2.5mg 이하를 최대 일일 섭취 권고량으로 제시해 왔다(2007년 식약청 발표와 이후 보도 기준, <a href="https://www.etoday.co.kr/news/view/140965" target="_blank" rel="noopener noreferrer">이투데이</a>). 이 값은 개인의 안전선을 보장하는 수치가 아니라 일반 기준이다.</p>
+<h2 id="한-잔의-카페인은-천차만별이다">한 잔의 카페인은 천차만별이다</h2>
+<p>FDA 표에서 일반 브루 커피 12온스(약 355ml) 한 잔은 113<del>247mg 범위다. 같은 크기에서도 두 배 넘게 차이 난다. 디카페인도 0이 아니어서 8온스 한 잔에 2</del>15mg이 들어 있다. 그래서 “커피 몇 잔”으로 세는 것은 부정확하고, 음료·크기별로 기록하는 편이 낫다.</p>
+<h2 id="취침-시-잔량을-계산하는-식">취침 시 잔량을 계산하는 식</h2>
+<p>카페인은 시간이 지나면 일정 비율로 줄어든다. 반감기가 h시간이면 t시간 뒤 남는 양은 처음 양 × 0.5^(t/h)다. 반감기는 사람마다 크게 다르다. 계산 예시로 반감기를 5시간으로 가정하면, 오후 3시에 100mg을 마시고 오후 11시(8시간 뒤)에 남는 양은 100 × 0.5^1.6 ≈ 33mg이다. 반감기가 더 길면 더 많이 남는다. 이 값은 추정이지 체내 측정값이 아니다.</p>
+<h2 id="coffeecut이-하는-일">CoffeeCut이 하는 일</h2>
+<p><a href="https://kimjinwan.com/content/apps/coffee-cut/" target="_blank" rel="noopener noreferrer">CoffeeCut: 카페인 기록</a>은 음료 종류와 크기, 잔 수만 고르면 프리셋으로 카페인 mg를 추정한다. 라벨에 100ml당 함량만 있으면 환산기로 한 잔의 양을 구한다(예: 100ml당 40mg인 음료 250ml는 100mg). 오늘 화면에 마신 양, 현재 추정 잔량, 취침 시 추정 잔량, 다음 잔 예산이 나오고, 반감기 가정은 설정에서 바꿀 수 있다. 기록은 기기에만 저장되며 계정이 없다. 7일 리포트로 기록을 돌아볼 수 있다. 앱은 무료이며 iOS 17.0 이상, 한국어를 포함한 7개 언어를 지원한다(<a href="https://apps.apple.com/kr/app/coffeecut-%EC%B9%B4%ED%8E%98%EC%9D%B8-%EA%B8%B0%EB%A1%9D/id1528133014" target="_blank" rel="noopener noreferrer">App Store</a>).</p>
+<h2 id="사용-전에">사용 전에</h2>
+<p>앱의 수치는 신체 측정값이나 의학적 안전 기준이 아니다. 임신, 복약, 질환이 있거나 카페인에 강하게 반응한다면 전문가의 안내를 따른다.</p>
+<p>앱 설명은 앱을 직접 실행해 확인한 것이 아니라 스토어 설명과 화면 정보를 근거로 한다. 앱에는 광고가 있다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>FDA는 건강한 성인에게 하루 400mg 정도를 일반적으로 부정적 영향과 연결되지 않는 양이라고 설명한다.</li>
+<li>브루 커피 12온스의 카페인은 113~247mg으로 두 배 넘게 차이 나고 디카페인도 0이 아니다.</li>
+<li>취침 시 잔량은 처음 양 × 0.5^(경과시간÷반감기)로 추정하며 반감기는 개인차가 크다.</li>
+</ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/image-size-format-guide/">사진 용량 줄이기와 형식 고르기: JPG·PNG·WebP·HEIC 비교와 품질 값 기준</a><p>사진 용량이 큰 이유를 픽셀 수로 계산하고, JPG·PNG·WebP·HEIC를 용도별로 비교해 품질 70–85%와 최대 너비를 고르는 기준을 공식 문서 수치와 함께 정리했다.</p></li><li><a href="/content/blog/apps/image-size-spec-guide/">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</a><p>유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.</p></li><li><a href="/content/blog/apps/pdf-work-guide/">PDF 합치기·나누기·압축·서명 실무: 작업 순서와 지켜야 할 한계</a><p>제출용 PDF를 만들 때 합치기·나누기·페이지 정리·압축·이미지 변환·서명·워터마크를 어떤 순서로 쓰는지, 글자 검색이 사라지는 작업과 유지되는 작업을 가르는 기준과 한도 수치를 정리했다.</p></li></ul></aside></div>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
