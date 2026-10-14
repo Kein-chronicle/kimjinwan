@@ -18,7 +18,7 @@
       "id": "ai-ai-colleagues-06",
       "final": 60.6,
       "note": "말투 반복 문제 진단이 일반론. 반복 패턴 유형(길이·질문·이모지)별 대처를 표로 정리하거나 삭제·병합.",
-      "status": "pending"
+      "status": "independent_review"
     },
     {
       "id": "ai-whale-survivors-05",
@@ -60,7 +60,11 @@
       "id": "ai-ai-colleagues-04",
       "final": 62.8,
       "note": "프로필/현재 상태 분리 설계는 검색 가능 주제(챗봇 캐릭터 기억). 상태 스키마 예시를 표로 정리하고 05와 병합.",
-      "status": "independent_review"
+      "status": "complete",
+      "disposition": "revised",
+      "target": "https://kimjinwan.com/content/blog/ai/ai-colleagues-04/",
+      "release": "1.3.84",
+      "review": "kein-blog/production/ko-ai-ai-colleagues-04/work/review.json"
     },
     {
       "id": "ai-whale-survivors-10",
@@ -90,7 +94,11 @@
       "id": "ai-ai-colleagues-09",
       "final": 63.9,
       "note": "설정 변경 시 의존 위치 점검 목록은 유용하나 사례가 캐릭터 이력 서술 위주. 체크리스트로 재구성해 04·05와 병합.",
-      "status": "independent_review"
+      "status": "complete",
+      "disposition": "merged",
+      "target": "https://kimjinwan.com/content/blog/ai/ai-colleagues-04/",
+      "release": "1.3.84",
+      "review": "kein-blog/production/ko-ai-ai-colleagues-04/work/review.json"
     },
     {
       "id": "ai-ai-game-factory-08",
@@ -114,7 +122,11 @@
       "id": "ai-ai-colleagues-05",
       "final": 65.2,
       "note": "'임시 상태에 만료·해제 조건' 원칙은 챗봇 설계자에게 유용. 04와 병합해 '챗봇 기억 설계' 한 편으로 압축.",
-      "status": "independent_review"
+      "status": "complete",
+      "disposition": "merged",
+      "target": "https://kimjinwan.com/content/blog/ai/ai-colleagues-04/",
+      "release": "1.3.84",
+      "review": "kein-blog/production/ko-ai-ai-colleagues-04/work/review.json"
     },
     {
       "id": "news-nikke-second-burst-roster",
@@ -329,7 +341,7 @@
   ],
   "sitemap": "hub complete 1.3.83; frozen blog maintenance pending",
   "live": {
-    "hub": "1.3.83",
+    "hub": "1.3.84",
     "blog": "0.2.99"
   }
 }
