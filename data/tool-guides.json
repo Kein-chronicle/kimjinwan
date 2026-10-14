@@ -18,6 +18,9 @@
   "app-icon-generator": "image-size-spec-guide",
   "device-mockup": "image-size-spec-guide",
   "photo-collage": "image-size-spec-guide",
-  "background-remover": "image-size-spec-guide"
+  "background-remover": "image-size-spec-guide",
+  "image-redactor": "photo-privacy-guide",
+  "metadata-remover": "photo-privacy-guide",
+  "image-watermark": "photo-privacy-guide"
  }
 }
