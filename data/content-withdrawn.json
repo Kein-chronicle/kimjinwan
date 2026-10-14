@@ -619,7 +619,7 @@
   },
   {
    "from": "/content/blog/ai/whale-survivors-04/",
-   "to": "/content/blog/ai/whale-survivors-05/",
+   "to": "/content/blog/ai/whale-survivors-09/",
    "reason": "연재 중복·자기참조 글(내림)"
   },
   {
@@ -791,6 +791,11 @@
    "from": "/content/blog/ai/ai-colleagues-07/",
    "to": "/content/blog/ai/ai-colleagues-10/",
    "reason": "선톡 허용 검사와 무응답 진단을 요청·송신 증거표로 통합"
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-05/",
+   "to": "/content/blog/ai/whale-survivors-09/",
+   "reason": "이미지 수령 규격과 모바일 자산 감사를 단위별 원장으로 통합"
   }
  ]
 }

@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 111,
+    "value": 110,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 61,
+     "total": 60,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -410,12 +410,6 @@
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-02/"
       },
       {
-       "title": "AI 게임 개발기: 이미지를 만드는 일과 게임에 넣는 일은 달랐다",
-       "summary": "카드 그림과 전투 효과에 같은 규격을 쓸 수는 없었다. 생성한 이미지를 비교하고 적용하기까지.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-05/"
-      },
-      {
        "title": "AI 게임 개발기: 서바이버 게임에 덱빌딩을 넣어봤다",
        "summary": "카드를 고르는 메뉴에서 실제 카드뭉치로. 덱빌딩을 넣으면서 선택과 검증이 어떻게 달라졌는지.",
        "date": "2026-09-09",
@@ -434,8 +428,8 @@
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-08/"
       },
       {
-       "title": "AI 게임 개발기: 다시 모바일로 옮기면서 덜어낸 것들",
-       "summary": "전투 코어는 살리고 자산과 조작은 다시 정리했다. 모바일로 돌아오며 무엇을 남길지 골랐다.",
+       "title": "게임 이미지 검수와 용량 감사: 카드·액션·파일·프레임을 나누는 법",
+       "summary": "카드와 전투 이미지 수령 규격, 재생성 후보 비교, 물리 파일과 프레임 개수, 제작 자산과 설치 용량을 구분하는 원장.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/whale-survivors-09/"
       },

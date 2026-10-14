@@ -58,11 +58,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/ai/page/4/",
-   "to": "/content/blog/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/ai/whale-survivors-01/",
    "to": "/content/blog/ai/whale-survivors-02/",
    "status": 301
@@ -74,7 +69,12 @@
   },
   {
    "from": "/content/blog/ai/whale-survivors-04/",
-   "to": "/content/blog/ai/whale-survivors-05/",
+   "to": "/content/blog/ai/whale-survivors-09/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/whale-survivors-05/",
+   "to": "/content/blog/ai/whale-survivors-09/",
    "status": 301
   },
   {
