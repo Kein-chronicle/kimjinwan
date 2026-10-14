@@ -229,10 +229,25 @@ async function gizmoSection() {
     count: {value: items.length, as_of: AS_OF, source: 'https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순'}, groups};
 }
 
+// 공개 목록에서 내린 글(kein-blog status: draft)의 옛 주소 → 가장 가까운 남은 페이지. 손으로 관리하는 data/content-withdrawn.json 을 매핑에 합친다.
+// 되살아난(published) 글이 목록에 남아 있으면 모순이므로 생성을 멈춘다.
+function withdrawnRedirects(blog, news) {
+  const f = path.join(ROOT, 'data/content-withdrawn.json');
+  if (!fs.existsSync(f)) return;
+  const live = new Set([...blog.groups, ...news.groups].flatMap(g => g.items.map(i => new URL(i.url).pathname.replace(/^\/ko\//, ''))));
+  for (const {from, to} of JSON.parse(fs.readFileSync(f, 'utf8')).items) {
+    const m = from.match(/^\/content\/(?:blog\/(ai|apps|games)|(game-news))\/([^/]+)\/$/);
+    if (!m) throw new Error(`content-withdrawn: 알 수 없는 주소 ${from}`);
+    const cat = m[1] || 'games';
+    if (live.has(`${cat}/${m[3]}/`)) throw new Error(`content-withdrawn: ${from} 는 아직 공개 목록에 있다 — 되살렸다면 목록에서 지운다`);
+    REDIRECTS.push([from, to]);
+  }
+}
 const column = columnSection(), blog = blogSection();
 const slugOf = u => u.split('/').filter(Boolean).pop();
 const blogApps = new Map(blog.groups.find(g => g.id === 'apps').items.map(i => [slugOf(i.url), {title: i.title, path: `/content/blog/apps/${slugOf(i.url)}/`}]));
 const news = newsSection(), gizmo = await gizmoSection();
+withdrawnRedirects(blog, news);
 // ── 내 앱: 편집 원본(data/authoring/apps) + 스토어 공개 정보 캐시(content-src/apps-store.json) — build_content_apps.mjs 와 같은 함수 ──
 function appsSection() {
   const r = buildApps({root: ROOT, asOf: AS_OF, images: IMAGES, store: readStore(ROOT), blogApps});
@@ -244,7 +259,7 @@ function appsSection() {
 const out = {as_of: AS_OF, sections: [column, blog, news, gizmo, gamesSection(), toolsSection(blogApps), appsSection()]};
 const files = new Map([['data/content-hub.json', JSON.stringify(out, null, 1) + '\n']]);
 // 옛 경로 → 새 경로 매핑(서버 쪽 301 에 쓴다 — 여기서는 매핑만 남긴다)
-files.set('data/content-redirects.json', JSON.stringify({as_of: AS_OF, note: '이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로 옮긴 매핑. nginx 301 용.', redirects: REDIRECTS.sort((a, b) => a[0].localeCompare(b[0])).map(([from, to]) => ({from, to, status: 301}))}, null, 1) + '\n');
+files.set('data/content-redirects.json', JSON.stringify({as_of: AS_OF, note: '이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로, 공개 목록에서 내린 글(data/content-withdrawn.json)을 가장 가까운 남은 페이지로 옮긴 매핑. nginx 301 용.', redirects: REDIRECTS.sort((a, b) => a[0].localeCompare(b[0])).map(([from, to]) => ({from, to, status: 301}))}, null, 1) + '\n');
 files.set('content-src/excluded.json', JSON.stringify({as_of: AS_OF, games: EXCLUDED.games, tools: EXCLUDED.tools, apps: EXCLUDED.apps}, null, 1) + '\n');
 for (const [rel, obj] of [...EXTRA].sort((a, b) => a[0].localeCompare(b[0]))) files.set(rel, JSON.stringify(obj, null, 1) + '\n');
 const KEEP = new Set(['content-src/images.json', 'content-src/apps-store.json']); // build_content_images.mjs 가 관리하는 파일

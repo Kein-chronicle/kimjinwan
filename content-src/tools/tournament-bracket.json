@@ -44,9 +44,5 @@
    "t": "p",
    "text": "참가자가 4·8·16·32·64명이 아니면 빈 자리를 부전승으로 채웁니다. 부전승과 만난 참가자는 다음 라운드로 올라갑니다."
   }
- ],
- "guide": {
-  "title": "Tournament Bracket: Undo Safe — 결과 수정 가능한 토너먼트 대진표",
-  "path": "/content/blog/apps/tournament-bracket/"
- }
+ ]
 }

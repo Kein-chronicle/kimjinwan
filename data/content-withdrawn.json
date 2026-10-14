@@ -1,0 +1,316 @@
+{
+ "as_of": "2026-10-14",
+ "note": "공개 목록에서 내린 블로그 글(status: draft). 옛 주소 → 가장 가까운 남은 페이지(없으면 /content/blog/). build_content_hub.mjs 가 content-redirects.json 에 합친다. 되살린 글(status: published)이 여기 있으면 생성이 실패한다.",
+ "items": [
+  {
+   "from": "/content/blog/apps/animal-personality/",
+   "to": "/content/apps/animal-personality/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/bike-tire-pressure/",
+   "to": "/content/apps/bike-tire-pressure/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/chess-clock/",
+   "to": "/content/apps/chess-clock/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/church-calendar/",
+   "to": "/content/apps/church-calendar/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/concrete-calculator/",
+   "to": "/content/apps/concrete-calculator/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/crochet-row-counter/",
+   "to": "/content/apps/crochet-row-counter/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/cut-list/",
+   "to": "/content/apps/cut-list/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/depth-of-field/",
+   "to": "/content/apps/depth-of-field/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/dew-point/",
+   "to": "/content/apps/dew-point/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/dream-meaning/",
+   "to": "/content/apps/dream-meaning/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/expiration-tracker/",
+   "to": "/content/apps/expiration-tracker/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/floe-steps/",
+   "to": "/content/apps/floe-steps/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/ink-fold/",
+   "to": "/content/apps/ink-fold/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/jet-lag/",
+   "to": "/content/apps/jet-lag/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/merge-cat/",
+   "to": "/content/apps/merge-cat/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/merge-whale/",
+   "to": "/content/apps/merge-whale/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/my-whale/",
+   "to": "/content/apps/my-whale/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/note-reading/",
+   "to": "/content/apps/note-reading/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/pace-calculator/",
+   "to": "/content/apps/pace-calculator/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/plate-calculator/",
+   "to": "/content/apps/plate-calculator/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/pocket-answer/",
+   "to": "/content/apps/pocket-answer/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/pool-calculator/",
+   "to": "/content/apps/pool-calculator/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/reaction-time/",
+   "to": "/content/apps/reaction-time/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/reading-pace/",
+   "to": "/content/apps/reading-pace/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/score-keeper/",
+   "to": "/content/apps/score-keeper/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/stair-calculator/",
+   "to": "/content/apps/stair-calculator/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/tournament-bracket/",
+   "to": "/content/apps/tournament-bracket/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/triangle-solver/",
+   "to": "/content/apps/triangle-solver/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/unit-price/",
+   "to": "/content/apps/unit-price/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/verse-memory/",
+   "to": "/content/apps/verse-memory/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-chinese/",
+   "to": "/content/apps/vocapuff-chinese/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-english/",
+   "to": "/content/apps/vocapuff-english/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-japanese/",
+   "to": "/content/apps/vocapuff-japanese/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/whale-book/",
+   "to": "/content/apps/whale-book/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/whale-survivors/",
+   "to": "/content/apps/whale-survivors/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/word-counter/",
+   "to": "/content/apps/word-counter/",
+   "reason": "틀 반복 앱 소개(내 앱 소개 페이지가 대신함)"
+  },
+  {
+   "from": "/content/blog/apps/focus-relay/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/house-ledger/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/ikigai-map/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/turnover-crew/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/tradeoff-compass/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/five-shapes/",
+   "to": "/content/blog/",
+   "reason": "틀 반복 앱 소개(대응 소개 페이지 없음)"
+  },
+  {
+   "from": "/content/blog/apps/gblog/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/kim-howl/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/monster-survivors/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/pollytelly/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/save-anything/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/ventas/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/ventas-wallet/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/ventasbit/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/vigoright/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/vror/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/waye/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/yok/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/daily-challenge/",
+   "to": "/content/blog/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/lockin-message/",
+   "to": "/content/apps/lockin-message/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/sudden-note/",
+   "to": "/content/apps/sudden-note/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/apps/dicefeel/",
+   "to": "/content/apps/shuffle-dice/",
+   "reason": "삭제된 앱 기록·심사 상태 중심·상태 모순"
+  },
+  {
+   "from": "/content/blog/ai/ai-writing-index/",
+   "to": "/content/blog/",
+   "reason": "목차·링크 모음"
+  },
+  {
+   "from": "/content/blog/apps/app-archive/",
+   "to": "/content/apps/",
+   "reason": "목록 글(내 앱 섹션이 대신함)"
+  },
+  {
+   "from": "/content/game-news/summer-2026-game-timeline/",
+   "to": "/content/game-news/",
+   "reason": "목차·링크 모음"
+  },
+  {
+   "from": "/content/blog/games/summer-2026-game-timeline/",
+   "to": "/content/game-news/",
+   "reason": "목차·링크 모음"
+  }
+ ]
+}

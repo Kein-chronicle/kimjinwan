@@ -44,9 +44,5 @@
    "t": "p",
    "text": "검색 글은 정해진 글자 수보다 질문에 정확히 답하는지가 중요합니다. 필요한 예시와 조건을 담은 뒤 중복 문장을 줄이는 데 이 수치를 사용하세요."
   }
- ],
- "guide": {
-  "title": "Word Counter: Reading Time — 글자 수·읽는 시간 계산기",
-  "path": "/content/blog/apps/word-counter/"
- }
+ ]
 }

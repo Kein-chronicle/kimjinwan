@@ -1,9 +1,14 @@
 {
  "as_of": "2026-10-14",
- "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로 옮긴 매핑. nginx 301 용.",
+ "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로, 공개 목록에서 내린 글(data/content-withdrawn.json)을 가장 가까운 남은 페이지로 옮긴 매핑. nginx 301 용.",
  "redirects": [
   {
    "from": "/content/blog/ai/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/ai-writing-index/",
    "to": "/content/blog/",
    "status": 301
   },
@@ -28,6 +33,156 @@
    "status": 301
   },
   {
+   "from": "/content/blog/apps/animal-personality/",
+   "to": "/content/apps/animal-personality/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/app-archive/",
+   "to": "/content/apps/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/bike-tire-pressure/",
+   "to": "/content/apps/bike-tire-pressure/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/chess-clock/",
+   "to": "/content/apps/chess-clock/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/church-calendar/",
+   "to": "/content/apps/church-calendar/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/concrete-calculator/",
+   "to": "/content/apps/concrete-calculator/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/crochet-row-counter/",
+   "to": "/content/apps/crochet-row-counter/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/cut-list/",
+   "to": "/content/apps/cut-list/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/daily-challenge/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/depth-of-field/",
+   "to": "/content/apps/depth-of-field/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/dew-point/",
+   "to": "/content/apps/dew-point/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/dicefeel/",
+   "to": "/content/apps/shuffle-dice/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/dream-meaning/",
+   "to": "/content/apps/dream-meaning/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/expiration-tracker/",
+   "to": "/content/apps/expiration-tracker/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/five-shapes/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/floe-steps/",
+   "to": "/content/apps/floe-steps/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/focus-relay/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/gblog/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/house-ledger/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/ikigai-map/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/ink-fold/",
+   "to": "/content/apps/ink-fold/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/jet-lag/",
+   "to": "/content/apps/jet-lag/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/kim-howl/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/lockin-message/",
+   "to": "/content/apps/lockin-message/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/merge-cat/",
+   "to": "/content/apps/merge-cat/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/merge-whale/",
+   "to": "/content/apps/merge-whale/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/monster-survivors/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/my-whale/",
+   "to": "/content/apps/my-whale/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/note-reading/",
+   "to": "/content/apps/note-reading/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pace-calculator/",
+   "to": "/content/apps/pace-calculator/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/apps/page/2/",
    "to": "/content/blog/",
    "status": 301
@@ -43,17 +198,147 @@
    "status": 301
   },
   {
-   "from": "/content/blog/apps/page/5/",
+   "from": "/content/blog/apps/plate-calculator/",
+   "to": "/content/apps/plate-calculator/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pocket-answer/",
+   "to": "/content/apps/pocket-answer/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/pollytelly/",
    "to": "/content/blog/",
    "status": 301
   },
   {
-   "from": "/content/blog/apps/page/6/",
+   "from": "/content/blog/apps/pool-calculator/",
+   "to": "/content/apps/pool-calculator/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/reaction-time/",
+   "to": "/content/apps/reaction-time/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/reading-pace/",
+   "to": "/content/apps/reading-pace/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/save-anything/",
    "to": "/content/blog/",
    "status": 301
   },
   {
-   "from": "/content/blog/apps/page/7/",
+   "from": "/content/blog/apps/score-keeper/",
+   "to": "/content/apps/score-keeper/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/stair-calculator/",
+   "to": "/content/apps/stair-calculator/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/sudden-note/",
+   "to": "/content/apps/sudden-note/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/tournament-bracket/",
+   "to": "/content/apps/tournament-bracket/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/tradeoff-compass/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/triangle-solver/",
+   "to": "/content/apps/triangle-solver/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/turnover-crew/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/unit-price/",
+   "to": "/content/apps/unit-price/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/ventas-wallet/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/ventas/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/ventasbit/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/verse-memory/",
+   "to": "/content/apps/verse-memory/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/vigoright/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-chinese/",
+   "to": "/content/apps/vocapuff-chinese/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-english/",
+   "to": "/content/apps/vocapuff-english/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/vocapuff-japanese/",
+   "to": "/content/apps/vocapuff-japanese/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/vror/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/waye/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/whale-book/",
+   "to": "/content/apps/whale-book/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/whale-survivors/",
+   "to": "/content/apps/whale-survivors/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/word-counter/",
+   "to": "/content/apps/word-counter/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/yok/",
    "to": "/content/blog/",
    "status": 301
   },
@@ -404,7 +689,7 @@
   },
   {
    "from": "/content/blog/games/summer-2026-game-timeline/",
-   "to": "/content/game-news/summer-2026-game-timeline/",
+   "to": "/content/game-news/",
    "status": 301
   },
   {
@@ -500,6 +785,11 @@
   {
    "from": "/content/blog/games/zzz-oct3-hobbling-crow-event/",
    "to": "/content/game-news/zzz-oct3-hobbling-crow-event/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/summer-2026-game-timeline/",
+   "to": "/content/game-news/",
    "status": 301
   }
  ]

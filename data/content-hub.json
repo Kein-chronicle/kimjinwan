@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 202,
+    "value": 142,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 72,
+     "total": 71,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -428,12 +428,6 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-07/"
       },
       {
-       "title": "AI 사용기: 게임, 앱, 동료를 만들며 남긴 기록",
-       "summary": "웨일서바이버, AI 게임 공장, AI 동료, 작업실과 커리어 관리. 시도와 중단, 수정 과정을 담은 40편의 읽는 순서.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-writing-index/"
-      },
-      {
        "title": "AI 커리어 관리 1 — 이력서보다 먼저 내 작업을 모았다",
        "summary": "흩어진 프로젝트를 홈페이지와 블로그로 나누고, 실제 결과를 경력 근거로 남기는 방법.",
        "date": "2026-09-09",
@@ -523,7 +517,7 @@
       "ko": "앱을 만들고 심사에 제출하며 남긴 제작·심사 기록",
       "en": "Records of building apps and submitting them for review"
      },
-     "total": 130,
+     "total": 71,
      "url": "https://blog.kimjinwan.com/ko/apps/",
      "items": [
       {
@@ -689,24 +683,6 @@
        "url": "https://blog.kimjinwan.com/ko/apps/brightpocket/"
       },
       {
-       "title": "Daily Challenge: Tiny Actions — 계획 대신 앱이 골라주는 오늘의 행동",
-       "summary": "습관을 직접 설계하는 대신, 관심 분야를 고르면 앱이 매일 작은 행동 하나를 골라주는 자기계발 앱이다.",
-       "date": "2026-09-14",
-       "url": "https://blog.kimjinwan.com/ko/apps/daily-challenge/"
-      },
-      {
-       "title": "DiceFeel: D20 Dice Roller — 합산까지 읽어주는 테이블탑 주사위",
-       "summary": "d4부터 d100까지 최대 20개를 한 공식으로 굴리고, 결과를 촉각과 음성으로 확인하는 테이블탑 보조 앱이다.",
-       "date": "2026-09-14",
-       "url": "https://blog.kimjinwan.com/ko/apps/dicefeel/"
-      },
-      {
-       "title": "Five Shapes — 도형을 탭하는 캐주얼 퍼즐",
-       "summary": "화면에 뜬 도형을 탭해 단계를 넘기는 단순한 캐주얼 퍼즐 앱이다. 2020년 출시 이후 지금도 App Store에서 내려받을 수 있다.",
-       "date": "2026-09-14",
-       "url": "https://blog.kimjinwan.com/ko/apps/five-shapes/"
-      },
-      {
        "title": "One Thing Today: Daily Goal — 하루에 목표 하나만 남기는 위젯 앱",
        "summary": "그날의 목표를 하나만 정해 홈 화면·잠금 화면 위젯에 띄우고, 실패 표시 없이 주간 리뷰로 돌아보는 앱이다.",
        "date": "2026-09-14",
@@ -747,24 +723,6 @@
        "summary": "이번 주 설교 본문을 넣으면 그 본문을 인용한 찬송을 수록 찬송가 수 순으로 보여주는 앱이다. 운율이 같은 찬송끼리 곡조를 맞바꿔 부를 수 있는지도 알려준다.",
        "date": "2026-09-13",
        "url": "https://blog.kimjinwan.com/ko/apps/hymn-crosswalk/"
-      },
-      {
-       "title": "VocaPuff - Chinese — 매일 10개씩 외우는 중국어 단어 암기 앱",
-       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 중국어 단어를 외우는 암기 앱이다. 모르는 단어는 바로 한국어 뜻을 확인한다.",
-       "date": "2026-09-13",
-       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-chinese/"
-      },
-      {
-       "title": "VocaPuff - English — 매일 10개씩 외우는 영단어 암기 앱",
-       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 영단어를 외우는 암기 앱이다. 아는 단어와 모르는 단어를 카드에서 바로 나눈다.",
-       "date": "2026-09-13",
-       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-english/"
-      },
-      {
-       "title": "VocaPuff - Japanese — 매일 10개씩 외우는 일본어 단어 암기 앱",
-       "summary": "매일 10개씩, 전날 복습, 무한 반복 중 원하는 방식으로 일본어 단어를 외우는 암기 앱이다. 모르는 단어는 바로 한국어 뜻을 확인한다.",
-       "date": "2026-09-13",
-       "url": "https://blog.kimjinwan.com/ko/apps/vocapuff-japanese/"
       },
       {
        "title": "냠냠 성격 테스트 — 음식 캐릭터로 보는 성격 유형 테스트",
@@ -971,136 +929,10 @@
        "url": "https://blog.kimjinwan.com/ko/apps/social-image-resizer/"
       },
       {
-       "title": "Animal Personality: Duet — 상황별 동물 성격 테스트",
-       "summary": "익숙한 사람들 사이의 나와 낯선 모임에서의 나를 따로 돌아보는 앱이다. 하나의 동물로 모든 상황을 설명하지 않는 쪽으로 만들었다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/animal-personality/"
-      },
-      {
-       "title": "만들었던 앱들 — 출시와 심사, 내려간 기록까지",
-       "summary": "앱 기록 76개의 목적과 기능, 이미지, 제출·판매 중단 상태를 모았다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/app-archive/"
-      },
-      {
-       "title": "Bike Tire Pressure: Any Width — 자전거 타이어 공기압 계산기",
-       "summary": "자전거 타이어 폭과 사용 조건으로 앞뒤 공기압 범위를 살펴보는 계산기다. 실제 타이어의 최대 표시값을 입력하도록 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/bike-tire-pressure/"
-      },
-      {
-       "title": "Chess Clock: Time Controls — 증가·딜레이 규칙 체스 시계",
-       "summary": "탁자 위 대국에서 두 사람의 시간을 재는 시계다. 시간을 더하는 규칙과 시작을 늦추는 규칙을 구분한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/chess-clock/"
-      },
-      {
-       "title": "Church Calendar: East & West — 동방·서방 교회력 비교 달력",
-       "summary": "서방과 동방 교회력의 날짜를 나란히 비교하는 달력 앱이다. 서로 다른 계산 기준을 한 가지로 합쳐 보이지 않도록 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/church-calendar/"
-      },
-      {
-       "title": "Concrete Bags and Yards — 콘크리트 부피·포대 수 계산기",
-       "summary": "콘크리트 작업의 치수로 부피와 주문 단위를 계산하는 도구다. 부피 숫자만 아니라 포대 수량까지 보는 데 목적을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/concrete-calculator/"
-      },
-      {
-       "title": "Crochet Row Counter: Repeat — 뜨개질 단수·반복 카운터",
-       "summary": "뜨개질의 현재 단과 반복 위치를 함께 세는 앱이다. 중간에 쉬었다가 돌아왔을 때 어디까지 했는지 남기는 용도다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/crochet-row-counter/"
-      },
-      {
-       "title": "Cut List: Named Parts — 부품 이름으로 만드는 재료 절단 목록",
-       "summary": "이름 붙인 부품을 가지고 재료 절단 계획을 정리하는 앱이다. 숫자만 있는 목록을 실제 부품과 다시 대조하는 수고를 줄이려 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/cut-list/"
-      },
-      {
-       "title": "Depth of Field: Two Subjects — 두 피사체 심도 계산기",
-       "summary": "선명하게 담고 싶은 앞뒤 피사체의 거리에서 초점과 조리개 조건을 역으로 살펴보는 사진 도구다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/depth-of-field/"
-      },
-      {
-       "title": "Dew Point: Vent Check — 실내외 온습도 이슬점 계산기",
-       "summary": "직접 측정한 실내외 온도와 습도를 비교하는 도구다. 휴대폰이 방의 습도를 측정하는 것처럼 보이지 않도록 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/dew-point/"
-      },
-      {
-       "title": "Dream Meaning: Symbol Reader — 꿈 상징을 고르는 오프라인 해몽 앱",
-       "summary": "꿈에서 기억나는 상징과 느낌을 골라 짧은 해석을 읽는 앱이다. 글을 서버에 보내는 대신 보존된 콘텐츠로 기기에서 구성한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/dream-meaning/"
-      },
-      {
-       "title": "Expiration Tracker: Use First — 유통기한·사용기한 우선순위 기록",
-       "summary": "집에 있는 물건을 날짜 순으로 정리해 먼저 쓸 것을 확인하는 앱이다. 상품 검색 없이 이름과 표시 날짜부터 입력한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/expiration-tracker/"
-      },
-      {
-       "title": "Floe Steps — 지나온 얼음이 무너지는 경로 퍼즐",
-       "summary": "미끄러져 이동한 얼음이 무너지는 경로 퍼즐이다. 지나온 길이 다음 이동을 막기 때문에 멈출 자리를 먼저 생각해야 한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/floe-steps/"
-      },
-      {
-       "title": "Focus Relay: Team Timer — 차례를 넘기는 팀 집중 타이머",
-       "summary": "같은 시각에 모이지 않아도 집중 시간을 이어갈 수 있는 팀 타이머다. 내 차례를 마친 뒤 다음 사람에게 넘기는 방식이다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/focus-relay/"
-      },
-      {
-       "title": "GBlog — 삭제된 개인 블로그 앱 기록",
-       "summary": "GBlog라는 이름의 앱 등록 기록이다. 2020년 7월 1일 계정에서 삭제됐다는 날짜를 확인했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/gblog/"
-      },
-      {
        "title": "RandomPick: Wheel & Teams — 룰렛과 팀 나누기",
        "summary": "임의의 숫자·룰렛·팀 나누기가 필요할 때 바로 결과를 보는 작은 도구다. Give Me Random을 같은 번들 ID로 개명·재제출해 다시 다운로드할 수 있다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/apps/give-me-random/"
-      },
-      {
-       "title": "House Ledger: Maintenance — 집 수리·점검 공유 장부",
-       "summary": "함께 사는 사람들이 집의 점검과 수리 기록을 공유하는 앱이다. 누가 언제 무엇을 했는지와 다음 점검 시점을 남긴다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/house-ledger/"
-      },
-      {
-       "title": "Ikigai Map: Four Circles — 네 개의 원으로 정리하는 이키가이 지도",
-       "summary": "좋아하는 일과 잘하는 일, 돈이 되는 일과 필요한 일을 네 원에 놓아보는 앱이다. 답을 내려주는 검사보다 내가 무엇을 어느 영역에 두었는지 보이게 만드는 데 초점을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/ikigai-map/"
-      },
-      {
-       "title": "Ink Fold: Overlap makes darker — 겹칠수록 진해지는 색 퍼즐",
-       "summary": "조각을 겹쳐 칸마다 정해진 진하기를 맞추는 퍼즐이다. 겹침을 피하는 것이 아니라 필요한 만큼 겹치는 것이 규칙이다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/ink-fold/"
-      },
-      {
-       "title": "Jet Lag: Both Clocks — 출발지·도착지 시차 일정 계산기",
-       "summary": "여행 전후 시간을 양쪽 시간대로 함께 보는 일정 도구다. 날짜가 달라지는 이동에서 어느 날의 시간인지 놓치지 않는 데 초점을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/jet-lag/"
-      },
-      {
-       "title": "Kim Howl — 삭제된 개인 앱 기록",
-       "summary": "Kim Howl이라는 이름으로 등록했던 개인 앱 기록이다. 남아 있는 설명은 출시 안내 한 줄뿐이라 서비스의 세부 목적을 복원하기 어렵다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/kim-howl/"
-      },
-      {
-       "title": "Lockin Message — 코드로 보관하는 잠금 메시지",
-       "summary": "메시지를 잠그고 생성된 코드로 다시 찾는 앱이다. 내용을 바로 보내는 대신 코드로 보관하고 전달하는 방식을 시도했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/lockin-message/"
       },
       {
        "title": "Math Worksheet: Answer Key — 문제지와 답안지 자동 생성",
@@ -1109,202 +941,10 @@
        "url": "https://blog.kimjinwan.com/ko/apps/math-worksheet/"
       },
       {
-       "title": "Merge Cat — 같은 고양이를 합치는 물리 퍼즐",
-       "summary": "고양이를 떨어뜨려 같은 단계끼리 합치는 물리 퍼즐이다. 작은 캐릭터가 큰 단계로 바뀌는 과정을 중심으로 만들었다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/merge-cat/"
-      },
-      {
-       "title": "Merge Whale - 고래 합치기 — 같은 고래를 합치는 물리 퍼즐",
-       "summary": "고래를 떨어뜨려 같은 단계끼리 합치고 점수를 쌓는 게임이다. 다음 고래를 보고 놓을 위치를 고르는 방식이다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/merge-whale/"
-      },
-      {
-       "title": "몬스터 살아남기 — 자동 공격 픽셀 생존 게임",
-       "summary": "방향을 조작하며 자동 공격과 성장 선택으로 살아남는 픽셀 생존 게임이다. 짧은 한 판을 시작점으로 잡았다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/monster-survivors/"
-      },
-      {
-       "title": "My Whale - 고래 키우기 — 먹이고 진화시키는 고래 키우기 게임",
-       "summary": "작은 고래를 돌보며 성장과 진화를 지켜보는 게임이다. 짧은 돌봄 행동이 다음 변화로 이어지는 것을 중심에 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/my-whale/"
-      },
-      {
-       "title": "Sight Reading: Note Trainer! — 오선 음표·건반 초견 연습",
-       "summary": "오선의 음표를 보고 이름이나 건반으로 답하며 익히는 앱이다. 눈으로 읽는 것과 음을 듣는 것을 함께 제공한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/note-reading/"
-      },
-      {
-       "title": "Pace Calculator: Race Plan — 달리기 페이스·구간 기록 계산기",
-       "summary": "거리와 목표 시간으로 달리기 페이스와 구간 계획을 계산하는 도구다. 숫자를 확인한 뒤 공유할 수 있는 표를 남긴다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/pace-calculator/"
-      },
-      {
-       "title": "Plate Calculator: What You Own — 보유 원판 기준 바벨 중량 계산기",
-       "summary": "실제로 가진 원판과 봉으로 목표 중량을 구성하는 계산기다. 헬스장마다 다른 장비 구성을 먼저 입력한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/plate-calculator/"
-      },
-      {
-       "title": "작은 답안지 - Pocket Answer — 질문 뒤 짧은 답을 뽑는 앱",
-       "summary": "질문을 떠올리고 짧은 답을 만나는 작은 답안지 앱이다. 결정 자체를 대신해주는 서비스보다는 잠깐 생각을 환기하는 용도다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/pocket-answer/"
-      },
-      {
-       "title": "폴리텔리 - pollytelly — 위치 기반 동네 소셜 앱 기록",
-       "summary": "위치를 바탕으로 채팅과 글, 동네 공유 활동을 묶은 소셜미디어 앱이다. 여러 종류의 활동을 하나의 지도 경험으로 연결하려던 프로젝트다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/pollytelly/"
-      },
-      {
-       "title": "Pool Calculator: Own Chems — 보유 약품 기준 수영장 수질 계산기",
-       "summary": "사용자가 측정한 수질과 가지고 있는 제품의 농도로 계산하는 수영장 관리 보조 도구다. 특정 상품 목록에만 맞추지 않도록 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/pool-calculator/"
-      },
-      {
-       "title": "Reaction Time Test: Millis — 밀리초 반응속도 테스트",
-       "summary": "화면 변화에 반응하는 시간을 기록하는 도구다. 최고 기록 하나보다 여러 시도의 차이를 보여주는 데 초점을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/reaction-time/"
-      },
-      {
-       "title": "Bible Reading Plan: Pace — 마감일 기준 성경 읽기 계획",
-       "summary": "읽을 책과 마감일에 맞춰 성경 읽기 계획을 만드는 앱이다. 정해진 계획을 그대로 따르기보다 자신의 일정에서 시작한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/reading-pace/"
-      },
-      {
-       "title": "Save Anything — 삭제된 정보 저장 앱 기록",
-       "summary": "정보를 저장하고 나중에 찾아보는 용도로 등록했던 앱이다. 보관된 설명이 짧아 기능 범위를 넓혀 적지 않았다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/save-anything/"
-      },
-      {
-       "title": "Score Keeper: Card & Board — 보드게임 라운드 점수판",
-       "summary": "보드게임과 카드게임의 여러 참가자·라운드 점수를 표로 남기는 앱이다. 합계만 아니라 지난 판을 다시 볼 수 있게 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/score-keeper/"
-      },
-      {
        "title": "Seating Chart: Seat Rules — 함께·분리 조건 좌석 배치",
        "summary": "참가자와 배치 조건으로 좌석표를 만드는 앱 기록과 설치 없이 쓰는 고정 좌석 웹도구를 안내한다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/apps/seating-chart/"
-      },
-      {
-       "title": "Stair Calculator: Both Ways — 공간 기준 계단 단수 계산기",
-       "summary": "주어진 높이와 길이 조건에서 계단 배치를 비교하는 계산기다. 이미 정해진 공간 안에서 가능한 단수를 살펴보는 용도다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/stair-calculator/"
-      },
-      {
-       "title": "급노트 — 바로 쓰는 빠른 메모 앱 기록",
-       "summary": "급하게 떠오른 내용을 빠르게 남기는 메모 앱이다. 큰 문서 관리보다 바로 기록하는 용도로 만들었다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/sudden-note/"
-      },
-      {
-       "title": "Tournament Bracket: Undo Safe — 결과 수정 가능한 토너먼트 대진표",
-       "summary": "작은 대회의 대진과 결과를 관리하는 앱이다. 지난 결과를 고쳤을 때 관계없는 경기까지 사라지지 않게 하는 데 초점을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/tournament-bracket/"
-      },
-      {
-       "title": "Dilemma Compass: Priorities — 두 선택지의 우선순위 비교",
-       "summary": "두 선택지 중 무엇을 지킬지 고르며 자신의 우선순위를 돌아보는 앱이다. 남들이 무엇을 골랐는지를 보여주는 대신 내가 포기한 쪽도 남기려 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/tradeoff-compass/"
-      },
-      {
-       "title": "Triangle Solver Two Answers — 두 해까지 보여주는 삼각형 계산기",
-       "summary": "주어진 변과 각으로 가능한 삼각형을 구하는 계산기다. 답이 둘이거나 성립하지 않는 경우를 숨기지 않는 것이 핵심이다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/triangle-solver/"
-      },
-      {
-       "title": "Turnover Crew: Reset List — 공간 정리용 팀 체크리스트",
-       "summary": "여러 사람이 공간 정리 작업을 나눠 맡는 체크리스트다. 개인 체크 목록과 큰 숙박 운영 시스템 사이의 작은 협업 도구를 목표로 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/turnover-crew/"
-      },
-      {
-       "title": "Unit Price: Which Is Cheaper — 묶음·용량별 단가 비교 계산기",
-       "summary": "마트에서 묶음 수량과 용량이 다른 상품의 단가를 비교하는 앱이다. 선반에 적힌 표기를 그대로 입력하는 방식이다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/unit-price/"
-      },
-      {
-       "title": "VENTAS Modile 지갑 — 가상자산 지갑 앱 개발 기록",
-       "summary": "가상자산 지갑을 시작점으로 거래소 기능을 확장하려던 앱이다. 등록 이름의 Modile 표기는 관리 화면에 남은 이름을 그대로 기록했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/ventas-wallet/"
-      },
-      {
-       "title": "벤타스 — 가상자산 거래 앱 개발 기록",
-       "summary": "가상자산 거래 서비스를 모바일에서 사용하도록 만든 앱이다. 이 글은 투자 권유가 아니라 당시 개발했던 제품의 보관 소개다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/ventas/"
-      },
-      {
-       "title": "벤타스비트 — 가상자산 거래·입출금 앱 기록",
-       "summary": "가상자산 거래와 입출금을 모바일에서 사용하는 앱으로 등록됐다. 당시의 거래소 앱 개발 기록을 남기기 위한 소개다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/ventasbit/"
-      },
-      {
-       "title": "Scripture Memory: Your Text — 직접 붙여넣는 성경 암송 연습",
-       "summary": "사용자가 가진 본문으로 암송을 연습하는 앱이다. 특정 번역문을 앱에 묶어 넣지 않고 직접 붙여넣은 글을 사용한다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/verse-memory/"
-      },
-      {
-       "title": "VIGORIGHT - 비고라이트 — 눈 관리 정보·영상 앱 기록",
-       "summary": "눈 관련 정보를 읽고 관리 영상을 보는 앱이다. App Store Connect의 앱 이름은 비고라이트이며, 보존 설명에는 Eye Doctor라는 이름도 함께 남아 있다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/vigoright/"
-      },
-      {
-       "title": "VROR — VR 안구 헬스케어 앱 기록",
-       "summary": "VR 안구 헬스케어의 정보를 앱에서 확인하고 관리하는 용도로 등록된 프로젝트다. 당시 설명이 제시한 제품 목적을 기록으로 남겼다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/vror/"
-      },
-      {
-       "title": "웨이 - WA-YE — 지도 기반 사진·메시지 소통 앱",
-       "summary": "지도 위에서 위치와 짧은 메시지, 사진으로 소통하는 소셜 모빌리티 메신저다. 긴 채팅보다 지금 있는 곳에서 나누는 반응에 초점을 뒀다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/waye/"
-      },
-      {
-       "title": "Whale Book - 고래 사전 — 고래를 찾아 읽는 모바일 사전",
-       "summary": "고래를 찾아보고 알아가는 사전 앱이다. 고래를 주제로 만든 게임들과는 달리 정보를 읽는 용도로 묶었다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/whale-book/"
-      },
-      {
-       "title": "Whale Survivors - 픽셀 고래 살아남기 — 픽셀 고래 생존·성장 게임",
-       "summary": "고래를 움직이며 공격을 피하고 성장을 선택하는 픽셀 생존 게임이다. 웹에서 시작해 여러 형식의 전투를 실험한 프로젝트다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/whale-survivors/"
-      },
-      {
-       "title": "Word Counter: Reading Time — 글자 수·읽는 시간 계산기",
-       "summary": "글을 쓰면서 분량과 읽는 시간을 함께 확인하는 도구다. 계산하려고 옮겨 붙인 글도 기기에 남겨 다음에 다시 볼 수 있게 했다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/word-counter/"
-      },
-      {
-       "title": "YOK - 신개념 욕 추천 어플리케이션 — 상황별 표현 추천 앱 개발 기록",
-       "summary": "상황에 쓸 표현을 추천하고 사용자도 추천에 참여하는 욕 추천 앱이었다. 지금 보면 작은 발상을 서비스로 옮겼을 때 콘텐츠 기준까지 함께 고민해야 했던 사례다.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/apps/yok/"
       }
      ]
     }
@@ -1314,7 +954,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 79,
+    "value": 78,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -1854,22 +1494,6 @@
        "summary": "보류된 프로토타입을 완성된 게임으로 옮길 때 확인할 항목과 재개 순서.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/games/the-weapons-03/"
-      }
-     ]
-    },
-    {
-     "id": "etc",
-     "label": {
-      "ko": "기타",
-      "en": "Other"
-     },
-     "total": 1,
-     "items": [
-      {
-       "title": "7~9월 게임 기록 38편 — 신규 캐릭터와 업데이트 주기 한눈에 보기",
-       "summary": "여섯 게임의 두 달 자료를 캐릭터·복각·이벤트·후속 평가 순으로 모았다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/summer-2026-game-timeline/"
       }
      ]
     }

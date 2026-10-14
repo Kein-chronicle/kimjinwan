@@ -69,9 +69,5 @@
   "released": "2026-09-10",
   "updated": "2026-09-10",
   "rating": "4+"
- },
- "guide": {
-  "title": "Word Counter: Reading Time — 글자 수·읽는 시간 계산기",
-  "path": "/content/blog/apps/word-counter/"
  }
 }

@@ -16,9 +16,9 @@
      {"name": "Monster Throne", "url": "https://games.kimjinwan.com/play/monster-throne/"},
      {"name": "Whale Survivors", "url": "https://games.kimjinwan.com/play/whale-survivors/"}]},
   {"id": "apps", "kind": "app", "name": {"ko": "모바일 앱", "en": "Mobile apps"},
-   "summary": {"ko": "앱 공장으로 만들어 App Store에 업로드·심사 제출한 iOS 앱들. 출시와 심사 기록은 블로그에 남깁니다.", "en": "iOS apps I built with the app factory and uploaded to the App Store for review. I keep release and review records in the journal."},
-   "url": "https://kimjinwan.com/content/blog/apps/app-archive/",
+   "summary": {"ko": "앱 공장으로 만들어 App Store에 업로드·심사 제출한 iOS 앱들. 앱마다 소개 페이지를 콘텐츠 허브에서 볼 수 있습니다.", "en": "iOS apps I built with the app factory and uploaded to the App Store for review. Each app has its own page in the content hub."},
+   "url": "https://kimjinwan.com/content/apps/",
    "count": {"value": 39, "as_of": "2026-10-05", "source": "app-factory/uploaded/ 하위 디렉터리 39개를 ls로 센 값; 39개 모두 FROZEN.md(업로드 완료 후 동결 표식)를 가짐. af-faith 폴더는 존재하지 않아(신앙 공장은 app-factory 로 통합) 합산 대상 없음. 승인·라이브 여부는 확인하지 않아 '업로드·심사 제출'로만 표기"},
    "previews": [
-     {"name": {"ko": "만들었던 앱들 — 출시와 심사, 내려간 기록까지", "en": "Apps I built — release, review and takedown records"}, "url": "https://kimjinwan.com/content/blog/apps/app-archive/"}]}
+     {"name": {"ko": "내 앱 — 앱마다 소개 페이지", "en": "My apps — one page per app"}, "url": "https://kimjinwan.com/content/apps/"}]}
 ]
