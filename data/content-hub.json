@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 104,
+    "value": 103,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 54,
+     "total": 53,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -320,20 +320,14 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-07/"
       },
       {
-       "title": "AI 게임 공장: Swift로 옮기며 이전 공장에서 남길 것을 골랐다",
-       "summary": "기존 공정과 모바일 제출 경험을 골라 Swift 라인을 만들었다. 첫 시도 Vat Relay가 멈춘 지점까지.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-08/"
-      },
-      {
        "title": "AI 게임 공장: 게임을 고치다가 검사기도 다시 고쳤다",
        "summary": "먹빛 겹치기에서 드래그와 실패 판정을 다시 봤다. 다른 화면을 보고 통과하는 검사도 수정해야 했다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-game-factory-09/"
       },
       {
-       "title": "AI 활용기: 앱 공장을 여러 개 만들다가 하나로 합쳤다",
-       "summary": "여러 분야의 앱 공장을 공통 엔진과 프로필로 나눴다. 반복되는 제작 규칙과 제품별 판단을 구분하기.",
+       "title": "여러 제작 공정 합치기: 공통 검사·분야별 규칙·이식 검증의 경계",
+       "summary": "공통 검사를 덮어쓰지 않는 분야별 확장, 기준 변경 뒤 과거 판정 처리, 플랫폼 이식의 재검증 범위를 보관 코드와 네 실행 검사로 확인한다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-01/"
       },

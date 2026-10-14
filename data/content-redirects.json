@@ -48,6 +48,11 @@
    "status": 301
   },
   {
+   "from": "/content/blog/ai/ai-game-factory-08/",
+   "to": "/content/blog/ai/ai-workbench-01/",
+   "status": 301
+  },
+  {
    "from": "/content/blog/ai/ai-game-factory-10/",
    "to": "/content/blog/ai/ai-game-factory-09/",
    "status": 301
