@@ -883,11 +883,6 @@
    "status": 301
   },
   {
-   "from": "/content/blog/games/wuwa-35-36-story-cycle/",
-   "to": "/content/game-news/wuwa-35-36-story-cycle/",
-   "status": 301
-  },
-  {
    "from": "/content/blog/games/wuwa-35-electro-rover/",
    "to": "/content/game-news/wuwa-35-electro-rover/",
    "status": 301
@@ -1145,6 +1140,11 @@
   {
    "from": "/content/game-news/the-weapons-03/",
    "to": "/content/game-news/",
+   "status": 301
+  },
+  {
+   "from": "/content/game-news/wuwa-35-36-story-cycle/",
+   "to": "/content/game-news/wuwa-35-electro-rover/",
    "status": 301
   },
   {

@@ -871,6 +871,11 @@
    "from": "/content/game-news/limbus-rodion-kit-and-update-sep24/",
    "to": "/content/game-news/limbus-gregor-move-in-ego/",
    "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
+  },
+  {
+   "from": "/content/game-news/wuwa-35-36-story-cycle/",
+   "to": "/content/game-news/wuwa-35-electro-rover/",
+   "reason": "중복 예고·해설을 원문 검증과 적용 조건이 있는 대표 글로 통합"
   }
  ]
 }

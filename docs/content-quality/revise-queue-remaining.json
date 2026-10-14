@@ -45,39 +45,9 @@
     "note": "풀차지 5회→머신건 전환이라는 핵심은 쓸 만함. 현행 스킬 설명과 장탄 옵션 우선순위를 여러 출처로 비교한 캐릭터 가이드로 확장하고 maxwell 글과 병합."
   },
   {
-    "id": "news-limbus-gregor-move-in-ego",
-    "final": 69.5,
-    "note": "9월 3일 적용된 E.G.O 미리보기. 현행 수치로 갱신하거나 그레고르 정리글에 병합."
-  },
-  {
     "id": "news-zzz-31-returning-checklist",
     "final": 69.7,
     "note": "복귀 체크리스트 형식은 유용(초보자 가이드·시즌3 제2장·베이글 프로젝트). 3.3 기준으로 갱신해 상시 복귀 가이드로 전환."
-  },
-  {
-    "id": "news-limbus-cinq-east-honglu-preview",
-    "final": 69.8,
-    "note": "8월 17일 공식 스킬표 기반 해설. 현재 실장 이후 정보(실제 성능 평가)가 없어 구형 정보. 출시 후 공식 수치로 갱신하거나 병합."
-  },
-  {
-    "id": "news-limbus-dawn-passive-state",
-    "final": 69.8,
-    "note": "7월 문구 정정 해설로 현재 검색 수요 낮음. 파우스트·그레고르 패시브의 현행 동작 요약과 편성 메모 표로 정리하거나 캐릭터 가이드로 병합."
-  },
-  {
-    "id": "news-limbus-dimension-shredder-yisang-preview",
-    "final": 70.2,
-    "note": "7월 미리보기 해설. 현재 실장된 최종 스킬 수치로 갱신하지 않으면 낡은 정보. 갱신하거나 캐릭터 정리글로 병합."
-  },
-  {
-    "id": "news-limbus-don-aug6-ego-preview",
-    "final": 70.2,
-    "note": "8월 미리보기. 합 승패 효과 구분은 좋으나 시점 경과. 최종 수치 갱신 또는 병합."
-  },
-  {
-    "id": "news-limbus-rodion-alteration-shop-extraction",
-    "final": 70.4,
-    "note": "9/24 추출 시작 예고. 이후 공개된 스킬표·코스트로 갱신하거나 아래 rodion 글(kit-and-update-sep24)과 병합."
   },
   {
     "id": "news-wuwa-35-36-story-cycle",

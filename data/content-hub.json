@@ -714,7 +714,7 @@
    "id": "gamenews",
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
-    "value": 44,
+    "value": 43,
     "as_of": "2026-10-14",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
@@ -969,25 +969,13 @@
       "ko": "명조",
       "en": "Wuthering Waves"
      },
-     "total": 6,
+     "total": 5,
      "items": [
       {
        "title": "명조 3.7 버전 9월 30일 출시 확정 — 히신·쇄명 프리뷰 방송 정리",
        "summary": "명조 공식 유튜브가 9월 19일 진행한 3.7 버전 프리뷰 특별 방송에서 정식 출시일 9월 30일과 1차 배너 히신, 신규 전투 시스템 '협동 협주'가 공개됐다. 2차 배너 쇄명의 정확한 시점은 아직 2차 매체 보도로만 확인된다.",
        "date": "2026-09-21",
        "url": "https://blog.kimjinwan.com/ko/games/wuwa-37-livestream-release-oct/"
-      },
-      {
-       "title": "명조 3.5→3.6 — 새 지역 다음에는 무엇이 이어졌나",
-       "summary": "41일 간격의 두 버전에서 관찰한 지역·스토리·탐험 확장. 3.5(7/10)가 새 지역과 4장 초반을 열었다면 3.6(8/20)은 41일 뒤 같은 무대에서 이야기를 잇고 검 타는 이동·악기 연주 같은 탐험 기능을 더했다 — 두 버전을 무관한 새 출발로 보면 복귀 시작점을 잘못 잡는다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-36-story-cycle/"
-      },
-      {
-       "title": "명조 전도 방랑자 — 신규 모집과 별도로 확인할 변화",
-       "summary": "3.5에서 추가된 방랑자 속성과 스토리 진행을 구분한다. 전도 방랑자는 3.5 스토리를 진행하며 얻는 네 번째 공명 속성이고, 방패·검·석궁을 바꿔 쓰며 방어 성공과 연계되는 전투 방식이지 기존 속성보다 화력이 높다고 발표된 것은 아니다.",
-       "date": "2026-09-10",
-       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-electro-rover/"
       },
       {
        "title": "양양·현령과 수수 — 명조 3.5 신규 둘을 한날의 픽업으로 보면 안 된다",
@@ -1000,6 +988,12 @@
        "summary": "신규 공명자 두 명과 복각을 나눠 정리한 3.6 라인업 기록. 청초는 전반의 기류·직검, 경연은 후반의 용융·대검으로 소개됐다 — 같은 3.6 신캐라는 것 말고는 공유하는 게 없어서, ‘3.6 신캐 조합’이라는 이름만으로 둘을 함께 쓰기 좋다고 볼 근거는 없다.",
        "date": "2026-09-10",
        "url": "https://blog.kimjinwan.com/ko/games/wuwa-36-qingxiao-jingran/"
+      },
+      {
+       "title": "명조 전도 방랑자 개방과 복귀 순서: 3.5·3.6 스토리 연결",
+       "summary": "과거 공식 발표에서 확인한 전도 속성 개방 경로와 이야기 순서를 정리하고 계정 진행도·전투 체험·기간 보상의 확인 범위를 나눈다.",
+       "date": "2026-09-09",
+       "url": "https://blog.kimjinwan.com/ko/games/wuwa-35-electro-rover/"
       },
       {
        "title": "명조 3.6 복귀 — 에코를 새로 파밍하기 전에 확인할 것",
