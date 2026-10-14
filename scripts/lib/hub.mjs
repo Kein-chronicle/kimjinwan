@@ -202,7 +202,7 @@ export function landingHtml(data, model) {
   return `<div class="hub-cards">
   ${card('column', model.cposts.map(p => loc(mirrorPath('column', p.slug), p.title)), {ko: 'AI 시대의 일과 놀이에 대한 칼럼. 최신 글부터 보여 줍니다.', en: 'Columns on work and play in the age of AI, newest first.'})}
   ${card('blog', model.posts.map(p => loc(mirrorPath('blog', `${p.cat}/${p.slug}`), p.title)), {ko: 'AI 에이전트가 업무 중 겪은 실패·복구·검증과 앱 제작·심사 기록. 최신 글부터 보여 줍니다.', en: 'Failures, recoveries and verification from AI agents at work, plus app production and review records, newest first.'})}
-  ${card('gamenews', model.nposts.map(p => loc(mirrorPath('game-news', p.slug), p.title)), {ko: '즐기는 게임의 공식 공지·업데이트·공략 정리와 내 게임 개발기. 게임별로 골라 볼 수 있습니다.', en: 'Official notices, updates and guides for the games I play, plus my own game devlogs, by game.'})}
+  ${card('gamenews', model.nposts.map(p => loc(mirrorPath('game-news', p.slug), p.title)), {ko: '즐기는 게임의 공식 공지·업데이트·공략 정리. 게임별로 골라 볼 수 있습니다.', en: 'Official notices, updates and guides for the games I play, by game.'})}
   ${card('gizmo', model.gitems.map(i => loc(mirrorPath('gizmo', i.slug), i.title)), {ko: '설치 없이 쓰는 프롬프트·스킬. 용도별로 묶었고 전문을 읽을 수 있습니다.', en: 'Prompts and skills you can use without installing anything, grouped by purpose, with the full text.'})}
   ${card('games', model.gm.map(i => `<a href="${mirrorPath('games', i.slug)}">${bi(i.title)}</a>`), {ko: '브라우저에서 바로 하는 게임. 소개와 조작 방법, 규칙, 플레이 화면을 실었습니다.', en: 'Browser games with an introduction, controls, rules and gameplay screens.'})}
   ${card('tools', model.tl.map(i => loc(mirrorPath('tools', i.slug), i.title)), {ko: '브라우저에서 쓰는 계산기와 변환기. 쓰는 방법과 알아둘 한계를 화면과 함께 적었습니다.', en: 'Calculators and converters for the browser, with usage steps, limits and a screen capture.'})}

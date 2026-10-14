@@ -621,6 +621,11 @@
    "from": "/content/blog/ai/whale-survivors-04/",
    "to": "/content/blog/ai/whale-survivors-05/",
    "reason": "연재 중복·자기참조 글(내림)"
+  },
+  {
+   "from": "/content/game-news/my-games/",
+   "to": "/content/game-news/",
+   "reason": "개발 일지 6편을 모두 내려 내 게임 개발기 분류가 비었다"
   }
  ]
 }

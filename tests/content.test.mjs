@@ -176,7 +176,7 @@ test('게임 소식: 블로그와 분리됐고(옛 경로 없음) 모든 글이 
   assert.equal(new Set(slugs).size, slugs.length);
   assert.equal(news.groups.reduce((a, g) => a + g.items.length, 0), news.count.value);
   for (const g of news.groups) assert.equal(g.total, g.items.length);
-  assert.deepEqual(news.groups.map(g => g.id), ['nikke', 'limbus', 'nte', 'zzz', 'wuwa', 'ananta', 'my-games']); // 2026-10-14 '기타'(목차 글 하나뿐)는 글을 내려 사라졌다
+  assert.deepEqual(news.groups.map(g => g.id), ['nikke', 'limbus', 'nte', 'zzz', 'wuwa', 'ananta']); // 2026-10-14 '기타'(목차 글 하나뿐)와 '내 게임 개발기'(개발 일지 6편을 모두 내림)는 글이 없어 사라졌다
   const idx = out['content/game-news/index.html'];
   for (const g of news.groups) assert.ok(idx.includes(`href="/content/game-news/${g.id}/"`) && idx.includes(`>${g.total}</span>`), g.id);
   // 글 본문 속 옛 게임 경로 링크는 새 경로로 바뀐다
