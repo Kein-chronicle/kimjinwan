@@ -344,8 +344,8 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-03/"
       },
       {
-       "title": "AI 활용기: 로컬 AI 앱은 하나도 만들기 전에 멈췄다",
-       "summary": "운영비 없는 앱과 충분한 언어 모델 품질을 함께 얻을 수 있을까. 구현 전에 중단한 기획의 재개 조건.",
+       "title": "온디바이스 AI 기획 재개 조건: 과제·기기·다운로드 평가표",
+       "summary": "할 일 추출의 가상 입력 여섯 개로 품질 기준을 정하고, 목표 기기의 응답·메모리·최초 다운로드와 실패 복구를 함께 검사하는 평가 계획.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-workbench-04/"
       },
