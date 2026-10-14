@@ -61,7 +61,7 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 116,
+    "value": 115,
     "as_of": "2026-10-14",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
@@ -76,7 +76,7 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 66,
+     "total": 65,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
       {
@@ -272,16 +272,10 @@
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-01/"
       },
       {
-       "title": "AI 동료 제작기: 요카이는 제안서를 그대로 따라 하지 않게 했다",
-       "summary": "오래된 진단보다 현재 코드를 먼저 보게 했다. 제안과 다른 원인을 찾거나 수정하지 않기로 한 사례.",
+       "title": "AI가 쓴 코드 리뷰를 그대로 적용해도 될까: 적용 전에 확인할 4가지",
+       "summary": "AI가 쓴 리뷰 두 건과 적용 기록을 읽었다. 한 건은 이미 고쳐진 오류를 원인으로 짚었다. 로그와 코드 수정일 비교, 지적-코드-재현-결정 비교표를 정리했다.",
        "date": "2026-09-09",
        "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-02/"
-      },
-      {
-       "title": "AI 동료 제작기: 페어리의 검토는 정답보다 제안서에 가까웠다",
-       "summary": "대상과 시점, 지적과 피드백을 문서로 연결했다. 다른 AI의 검토도 다시 확인해야 했던 이유.",
-       "date": "2026-09-09",
-       "url": "https://blog.kimjinwan.com/ko/ai/ai-colleagues-03/"
       },
       {
        "title": "AI 동료 제작기: 웅삐를 다음 날에도 이어지는 캐릭터로 만들기",
