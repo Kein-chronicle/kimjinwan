@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
 import {fill} from './lib/template.mjs';
 import {icon, ICON_NAMES} from './lib/icons.mjs';
-import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, appBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES} from './lib/render.mjs';
+import {serviceCard, serviceFeature, serviceGroups, sortServices, collectionCard, collectionRow, mirrorPath, rewriteBlogBody, gizmoBody, gameBody, toolBody, appBody, mirrorHead, mirrorCrumbs, mirrorFoot, crumbTrail, factoryCard, stageLegend, heroStats, worksFilters, factoryNav, strengthItem, timelineItem, attachProjects, bi, esc, logo, navLinks, footMap, breadcrumb, pageFoot, SUBPAGES, HUB_SECTIONS} from './lib/render.mjs';
 import {parseProjects, pickFeatured} from './lib/projects.mjs';
 import {createHash} from 'node:crypto';
 import {GENRE_SCHEMA} from './lib/apps_authoring.mjs';
@@ -69,7 +69,7 @@ function schemaFor(page, stamp, {profile, services = [], contentHub = null}) {
       {'@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/`},
       {'@type': 'ListItem', position: 2, name: SUBPAGES.find(x => x.key === page.key).label.ko, item: url}]});
   if (page.key === 'content' && contentHub) {
-    const names = {column: '케인칼럼', blog: '블로그', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구', apps: '내 앱'};
+    const names = {column: '케인칼럼', blog: '에이전트 업무일지', gamenews: '게임 소식', gizmo: 'AI 활용 가이드', games: '웹게임', tools: '웹 도구', apps: '내 앱'};
     g.push({'@type': 'ItemList', '@id': `${url}#list-sections`, name: '콘텐츠 허브 섹션', numberOfItems: 7,
       itemListElement: ['column', 'blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'].map((id, i) => ({'@type': 'ListItem', position: i + 1, name: names[id], url: `${SITE}/content/${id === 'gamenews' ? 'game-news' : id}/`}))});
   }
@@ -81,13 +81,14 @@ const jsonFiles = dir => fs.existsSync(path.join(ROOT, dir)) ? fs.readdirSync(pa
 export function mirrorPages(data) {
   const hub = data.contentHub, grp = id => hub.sections.find(x => x.id === id).groups;
   const labelOf = (id, k) => grp(id).find(g => g.id === k).label;
+  const hubTitle = id => HUB_SECTIONS.find(s => s.id === id).title; // 에이전트 업무일지는 서브카테고리가 없는 단일 목록 — 글의 이름표는 섹션 이름
   const column = jsonFiles('content-src/column').map(f => json(f)), blog = jsonFiles('content-src/blog').map(f => json(f)), news = jsonFiles('content-src/gamenews').map(f => json(f));
   const mirrored = new Set([...column.map(c => `fiction/${c.slug}`), ...blog.map(b => `${b.category}/${b.slug}`), ...news.map(n => `games/${n.slug}`)]);
   const pages = [];
   for (const c of column) pages.push({kind: 'column', path: mirrorPath('column', c.slug), title: c.title, description: c.description, date: c.date, metaLabel: grp('column')[0].label,
     crumbs: mirrorTrail(data, 'column'), body: rewriteBlogBody(c.body, mirrored), section: grp('column')[0].label.ko});
-  for (const b of blog) pages.push({kind: 'blog', path: mirrorPath('blog', `${b.category}/${b.slug}`), title: b.title, description: b.description, date: b.date, metaLabel: labelOf('blog', b.category),
-    crumbs: mirrorTrail(data, 'blog', b.category), body: rewriteBlogBody(b.body, mirrored), section: labelOf('blog', b.category).ko});
+  for (const b of blog) pages.push({kind: 'blog', path: mirrorPath('blog', `${b.category}/${b.slug}`), title: b.title, description: b.description, date: b.date, metaLabel: hubTitle('blog'),
+    crumbs: mirrorTrail(data, 'blog'), body: rewriteBlogBody(b.body, mirrored), section: hubTitle('blog').ko});
   for (const n of news) pages.push({kind: 'gamenews', path: mirrorPath('game-news', n.slug), title: n.title, description: n.description, date: n.date, metaLabel: labelOf('gamenews', n.game),
     crumbs: mirrorTrail(data, 'gamenews', n.game), body: rewriteBlogBody(n.body, mirrored), section: labelOf('gamenews', n.game).ko});
   for (const f of jsonFiles('content-src/gizmo')) { const g = json(f);

@@ -138,7 +138,7 @@ export function heroStats({services, collections}) {
     cell('layers', services.length, {ko: '서비스', en: 'Services'}),
     cell('gamepad', n('game'), {ko: '웹게임', en: 'Web games'}),
     cell('wrench', n('tool'), {ko: '웹 도구', en: 'Web tools'}),
-    cell('book-open', n('blog'), {ko: '블로그 글', en: 'Journal posts'}),
+    cell('book-open', n('blog'), {ko: '에이전트 업무일지', en: 'Agent work log posts'}),
   ].join('');
 }
 
@@ -269,9 +269,9 @@ export const HUB_SECTIONS = [
   {id: 'column', icon: 'file-text', title: {ko: '케인칼럼', en: 'Kein Column'},
     intro: {ko: 'AI 시대의 일과 놀이에 대한 짧은 칼럼입니다. 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
       en: 'Short columns on work and play in the age of AI. Every column can be read in full right here. The columns are written in Korean.'}},
-  {id: 'blog', icon: 'book-open', title: {ko: '블로그', en: 'Journal'},
-    intro: {ko: 'AI 에이전트가 직접 쓴 업무일지와 앱을 만들고 심사에 제출한 기록을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
-      en: 'Work logs that AI agents wrote themselves and records of building and submitting apps. Every post can be read in full right here. The posts are written in Korean.'}},
+  {id: 'blog', icon: 'book-open', title: {ko: '에이전트 업무일지', en: 'Agent work log'},
+    intro: {ko: 'AI 에이전트가 업무 중 겪은 실패와 복구, 검증 과정, 그리고 앱을 만들고 심사에 제출한 기록을 모았습니다. 모든 글을 이 사이트 안에서 한 편씩 전문으로 읽을 수 있습니다.',
+      en: 'Records of failures, recoveries and verification that AI agents went through in their work, together with records of building apps and submitting them for review. Every post can be read in full right here. The posts are written in Korean.'}},
   {id: 'gamenews', icon: 'globe', title: {ko: '게임 소식', en: 'Game news'},
     intro: {ko: '즐기는 게임의 공식 공지와 업데이트, 공략 정리와 직접 만든 게임의 개발기를 출처와 날짜까지 남겼습니다. 게임별로 골라 볼 수 있고, 모든 글을 이 사이트 안에서 전문으로 읽을 수 있습니다.',
       en: 'Sourced notes on official announcements, updates and guides for the games I play, plus devlogs of the games I make. Pick a game to filter, and read every post in full here. The posts are written in Korean.'}},

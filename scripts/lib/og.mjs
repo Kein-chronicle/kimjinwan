@@ -20,7 +20,7 @@ export function pageMeta(f) {
   return {
     home: {
       title: '김진완 — 개발자 · PM',
-      description: `개발자·PM 김진완의 홈페이지. 직접 만들어 제공하는 서비스 ${f.services}곳(문서·업무, 창작, 개발 도구와 웹게임, 웹 도구, 블로그), 그 생산을 맡은 공장 ${f.factories}곳, ${f.years}년 현장 경력을 소개합니다.`,
+      description: `개발자·PM 김진완의 홈페이지. 직접 만들어 제공하는 서비스 ${f.services}곳(문서·업무, 창작, 개발 도구와 웹게임, 웹 도구, 에이전트 업무일지), 그 생산을 맡은 공장 ${f.factories}곳, ${f.years}년 현장 경력을 소개합니다.`,
       kicker: '',
       headline: '직접 만들어 제공하는 서비스 · 공장 · 기록',
       // 공유 카드는 히어로 소개 영상의 한 장면(assets/hero/jinwan-share-frame.png)이다 → 카드 글자는 영상이 그린 것.
@@ -28,7 +28,7 @@ export function pageMeta(f) {
     },
     works: {
       title: '서비스 — 직접 만들어 제공하는 서비스 · 김진완',
-      description: `김진완이 직접 만들어 제공하는 서비스 ${f.services}곳과 웹게임, 웹 도구, 블로그, 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.`,
+      description: `김진완이 직접 만들어 제공하는 서비스 ${f.services}곳과 웹게임, 웹 도구, 에이전트 업무일지, 앱을 한 페이지에 모았습니다. 분류별로 골라 보고 각 서비스의 현재 상태와 바로가기를 확인할 수 있습니다.`,
       kicker: 'WORKS',
       headline: `직접 만들어 제공하는 서비스 ${f.services}곳`,
     },
@@ -45,8 +45,8 @@ export function pageMeta(f) {
       headline: `${f.years}년, 현장에서 쌓은 경력과 프로젝트 ${f.projects}개`,
     },
     content: {
-      title: '콘텐츠 허브 — 케인칼럼·글·게임 소식·가이드·웹게임·웹 도구·내 앱 · 김진완',
-      description: `케인칼럼 ${f.columns}편, 블로그 글 ${f.posts}편, 게임 소식 ${f.news}편, AI 활용 가이드 ${f.guides}개, 웹게임 ${f.games}개, 웹 도구 ${f.tools}개, 앱스토어 앱 ${f.apps}개를 제목과 요약, 전문으로 바로 읽을 수 있게 한곳에 모았습니다. 마음에 드는 글이나 가이드로 곧장 이동하세요.`,
+      title: '콘텐츠 허브 — 케인칼럼·에이전트 업무일지·게임 소식·가이드·웹게임·웹 도구·내 앱 · 김진완',
+      description: `케인칼럼 ${f.columns}편, 에이전트 업무일지 ${f.posts}편, 게임 소식 ${f.news}편, AI 활용 가이드 ${f.guides}개, 웹게임 ${f.games}개, 웹 도구 ${f.tools}개, 앱스토어 앱 ${f.apps}개를 제목과 요약, 전문으로 바로 읽을 수 있게 한곳에 모았습니다. 마음에 드는 글이나 가이드로 곧장 이동하세요.`,
       kicker: 'CONTENT',
       headline: `글 ${f.columns + f.posts + f.news}편과 AI 활용 가이드·웹게임·웹 도구·앱 모음`,
     },

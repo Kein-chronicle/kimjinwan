@@ -23,10 +23,11 @@ const ceilDiv = n => Math.max(1, Math.ceil(n / PER_PAGE));
 const slugOf = u => u.split('/').filter(Boolean).pop();
 
 const column = sec('column'), blog = sec('blog'), news = sec('gamenews'), gizmo = sec('gizmo'), games = sec('games'), tools = sec('tools'), apps = sec('apps');
-// 데이터 섹션 순서 = 서브 메뉴 순서(단 '전체'는 케인칼럼 바로 뒤에 끼어든다 — 보조 내비 시험 참고)
+// 데이터 섹션 순서 = 서브 메뉴 순서('전체' 뒤에 이 순서로 온다 — 보조 내비 시험 참고)
 const NAV_IDS = ['column', 'blog', 'gamenews', 'gizmo', 'games', 'tools', 'apps'];
 const BASE = {column: '/content/column/', blog: '/content/blog/', gamenews: '/content/game-news/', gizmo: '/content/gizmo/', games: '/content/games/', tools: '/content/tools/', apps: '/content/apps/'};
 const SUBPATH = {column: '', blog: '', gamenews: '', gizmo: 'purpose/', games: 'genre/', tools: 'category/', apps: 'category/'};
+const SINGLE = ['column', 'blog']; // 서브카테고리 없는 단일 목록(칩·카테고리 색인 없음): 케인칼럼, 에이전트 업무일지
 const sections = {column, blog, gamenews: news,  gizmo, games, tools, apps};
 
 // 기대하는 색인 경로 집합을 데이터에서 따로 계산한다(구현과 독립)
@@ -35,7 +36,7 @@ function expectedIndexPaths() {
   const add = (base, n) => { for (let i = 1; i <= ceilDiv(n); i++) set.add(i === 1 ? base : `${base}page/${i}/`); };
   for (const id of NAV_IDS) {
     add(BASE[id], sections[id].count.value);
-    if (id === 'column') continue; // 케인칼럼은 서브카테고리 없는 단일 목록 — 카테고리 색인이 없다
+    if (SINGLE.includes(id)) continue; // 단일 목록 — 카테고리 색인이 없다(에이전트 업무일지의 ai·apps 는 출처 구분일 뿐)
     for (const g of sections[id].groups) add(`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length);
   }
   return set;
@@ -64,7 +65,6 @@ test('색인 페이지 집합이 데이터에서 계산한 기대값과 정확�
 test('경로 충돌이 없다: 상세 slug·분류 id 가 쪽·분류 경로 이름과 겹치지 않고, 출력 경로는 모두 유일하다', () => {
   for (const it of flat(blog)) assert.notEqual(slugOf(it.url), 'page');
   for (const it of flat(column)) assert.notEqual(slugOf(it.url), 'page');
-  for (const g of blog.groups) assert.ok(!['page'].includes(g.id));
   const newsSlugs = new Set(flat(news).map(it => slugOf(it.url)));
   for (const g of news.groups) { assert.ok(!newsSlugs.has(g.id) && g.id !== 'page', `game id ${g.id}`); }
   assert.ok(!newsSlugs.has('page'));
@@ -75,6 +75,7 @@ test('경로 충돌이 없다: 상세 slug·분류 id 가 쪽·분류 경로 이
   for (const g of apps.groups) assert.ok(!['page', 'category'].includes(g.id) && !flat(apps).some(it => it.slug === g.id), g.id);
   // /content/blog/apps/(앱 제작·심사 글)와 /content/apps/(내 앱)는 다른 경로다 — 어떤 출력 경로도 다른 쪽 아래에 있지 않다
   const blogApps = contentFiles.map(pathOf).filter(p => p.startsWith('/content/blog/apps/')), myApps = contentFiles.map(pathOf).filter(p => p.startsWith('/content/apps/'));
+  assert.equal(blogApps.length, flat(blog).filter(it => /\/ko\/apps\//.test(it.url)).length, '/content/blog/apps/ 아래에는 글 상세만 있다(목록 없음)');
   assert.ok(blogApps.length > 0 && myApps.length > 0);
   assert.ok(blogApps.every(p => !p.startsWith('/content/apps/')) && myApps.every(p => !p.startsWith('/content/blog/')));
   const paths = contentFiles.map(pathOf);
@@ -83,7 +84,7 @@ test('경로 충돌이 없다: 상세 slug·분류 id 가 쪽·분류 경로 이
   for (const p of expectedIndexPaths()) assert.ok(!det.has(p), 'collision ' + p);
 });
 test('색인 페이지: 자기 canonical, 쪽당 20건 이하, prev/next 가 서로 맞물린다', () => {
-  const bases = NAV_IDS.flatMap(id => [[BASE[id], sections[id].count.value], ...(id === 'column' ? [] : sections[id].groups.map(g => [`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length]))]);
+  const bases = NAV_IDS.flatMap(id => [[BASE[id], sections[id].count.value], ...(SINGLE.includes(id) ? [] : sections[id].groups.map(g => [`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length]))]);
   const ITEM = /<li class="(?:hub-row|gcard|tcard)">/g;
   for (const [base, n] of bases) {
     const total = ceilDiv(n);
@@ -108,7 +109,7 @@ test('모든 항목이 각 분류 목록의 정확히 한 쪽에 한 번씩, 전
   for (const id of NAV_IDS) {
     const s = sections[id], all = collect(BASE[id], s.count.value), want = flat(s).map(it => detailOf(id, it));
     assert.deepEqual([...all].sort(), [...want].sort(), id + ' 전체 목록');
-    if (id === 'column') continue; // 서브카테고리 색인이 없다 — 전체 목록이 곧 칼럼 전부
+    if (SINGLE.includes(id)) continue; // 서브카테고리 색인이 없다 — 전체 목록이 곧 글 전부
     const perCat = s.groups.flatMap(g => collect(`${BASE[id]}${SUBPATH[id]}${g.id}/`, g.items.length));
     assert.deepEqual([...perCat].sort(), [...all].sort(), id + ' 분류별 목록 합');
     for (const h of all) assert.ok(out[h.slice(1) + 'index.html'], h);
@@ -122,39 +123,51 @@ test('랜딩: 섹션 카드 7장(케인칼럼이 첫 장), 각 카드 대표 3�
   assert.doesNotMatch(h, /class="hub-list"/);
   assert.equal((h.match(/<h1[\s>]/g) || []).length, 1);
 });
-test('보조 내비: 케인칼럼 → 전체 → 블로그·게임 소식·AI 활용 가이드·웹게임·웹 도구·내 앱(개수 표기), 현재 위치 하나만 강조, 개수 표기', () => {
+test('보조 내비: 전체 → 케인칼럼 → 에이전트 업무일지 → 게임 소식 → AI 활용 가이드 → 웹게임 → 웹 도구 → 내 앱(개수 표기), 현재 위치 하나만 강조', () => {
   for (const f of contentFiles) {
     const h = out[f], nav = h.match(/<nav class="subnav"[\s\S]*?<\/nav>/);
     assert.ok(nav, f);
     const links = [...nav[0].matchAll(/<a href="([^"]*)"([^>]*)>/g)];
-    assert.deepEqual(links.map(m => m[1]), [BASE.column, '/content/', ...NAV_IDS.filter(id => id !== 'column').map(id => BASE[id])], f); // 케인칼럼이 '전체'보다도 앞
+    assert.deepEqual(links.map(m => m[1]), ['/content/', ...NAV_IDS.map(id => BASE[id])], f); // '전체'가 맨 앞, 케인칼럼은 그 바로 뒤
     assert.equal(links.filter(m => m[2].includes('aria-current="page"')).length, 1, f);
     for (const id of NAV_IDS) assert.ok(nav[0].includes(`href="${BASE[id]}"`) && nav[0].includes(`>${sections[id].count.value}</span>`), f + id);
   }
   const labels = out['content/index.html'].match(/<nav class="subnav"[\s\S]*?<\/nav>/)[0];
-  for (const l of ['케인칼럼', '블로그', '게임 소식', 'AI 활용 가이드', '웹게임', '웹 도구', '내 앱']) assert.ok(labels.includes(`<span data-lang-ko>${l}</span>`), l);
-  assert.ok(labels.includes('Game news') && labels.includes('Kein Column'));
-  assert.ok(labels.indexOf('케인칼럼') < labels.indexOf('전체') && labels.indexOf('전체') < labels.indexOf('블로그'), '케인칼럼 → 전체 → 블로그 순');
-  assert.ok(labels.indexOf('<a href="/content/column/"') < labels.indexOf('<a href="/content/"'), '서브 메뉴 첫 항목은 케인칼럼');
+  for (const l of ['케인칼럼', '에이전트 업무일지', '게임 소식', 'AI 활용 가이드', '웹게임', '웹 도구', '내 앱']) assert.ok(labels.includes(`<span data-lang-ko>${l}</span>`), l);
+  assert.ok(labels.includes('Game news') && labels.includes('Kein Column') && labels.includes('Agent work log'));
+  assert.ok(!labels.includes('>블로그<'), '옛 이름 블로그가 메뉴에 없다');
+  const at = l => labels.indexOf(`<span data-lang-ko>${l}</span>`);
+  assert.ok(at('전체') < at('케인칼럼') && at('케인칼럼') < at('에이전트 업무일지') && at('에이전트 업무일지') < at('게임 소식'), '전체 → 케인칼럼 → 에이전트 업무일지 → 게임 소식 순');
+  assert.ok(labels.indexOf('<a href="/content/"') < labels.indexOf('<a href="/content/column/"'), '서브 메뉴 첫 항목은 전체');
   assert.ok(labels.lastIndexOf('내 앱') > labels.lastIndexOf('웹 도구'), '내 앱은 서브메뉴 맨 끝');
 });
-test('블로그 카테고리 칩 순서: 전체 → 에이전트 업무일지 → 앱 제작·심사(색인·카테고리·쪽 모두, 이야기 칩 없음), 이름 변경 반영', () => {
-  const ORDER = ['전체', '에이전트 업무일지', '앱 제작·심사'];
-  const pagesToCheck = ['content/blog/index.html', 'content/blog/page/2/index.html', ...['ai', 'apps'].map(c => `content/blog/${c}/index.html`), 'content/blog/ai/page/2/index.html'];
-  for (const f of pagesToCheck) {
-    const bar = out[f].match(/<nav class="chipbar" aria-label="blog categories">[\s\S]*?<\/nav>/)[0];
-    assert.deepEqual([...bar.matchAll(/<span data-lang-ko>([^<]*)<\/span>/g)].map(m => m[1]), ORDER, f);
-  }
-  assert.deepEqual(blog.groups.map(g => g.id), ['ai', 'apps']);
-  assert.ok(out['content/blog/index.html'].includes('Agent work log'));
-  // 옛 이름이 화면 문구·메타·JSON-LD 어디에도 없다(글 본문 속 문장은 고치지 않는다)
+test('에이전트 업무일지: 이름 변경 반영, ai·apps 가 하나의 단일 목록(칩·카테고리 목록 없음), 글 상세 주소 보존', () => {
+  const h = out['content/blog/index.html'];
+  assert.match(h, /<title>에이전트 업무일지 전체 — 콘텐츠 허브/);
+  assert.ok(h.includes('Agent work log') && /<h1[^>]*>[\s\S]*에이전트 업무일지/.test(h));
+  assert.doesNotMatch(h, /class="chipbar"/, '서브카테고리 칩 없음');
+  assert.deepEqual(blog.groups.map(g => g.id).sort(), ['ai', 'apps'], '데이터는 출처 폴더 둘 — 화면에선 합쳐 보인다');
+  assert.equal(blog.count.value, flat(blog).length);
+  // 한 목록에 ai·apps 글이 섞여 최신순으로 나온다
+  const rowsOf = n => [...out[(n === 1 ? 'content/blog/' : `content/blog/page/${n}/`) + 'index.html'].matchAll(/<li class="hub-row"><span class="hub-meta mono">(\d{4}-\d{2}-\d{2})<\/span><a class="hub-rt" href="([^"]*)"/g)].map(m => [m[1], m[2]]);
+  const all = []; for (let n = 1; n <= ceilDiv(blog.count.value); n++) all.push(...rowsOf(n));
+  assert.equal(all.length, blog.count.value);
+  assert.deepEqual(all.map(r => r[0]), [...all.map(r => r[0])].sort().reverse(), '최신순');
+  assert.ok(all.some(r => r[1].startsWith('/content/blog/ai/')) && all.some(r => r[1].startsWith('/content/blog/apps/')), 'ai·apps 글이 한 목록에 섞여 있다');
+  for (const f of ['content/blog/ai/index.html', 'content/blog/apps/index.html', 'content/blog/ai/page/2/index.html', 'content/blog/apps/page/2/index.html']) assert.ok(!out[f], '사라진 카테고리 목록: ' + f);
+  // 글 상세: 주소는 그대로, 브레드크럼은 홈 > 콘텐츠 허브 > 에이전트 업무일지 > 글, 자기 canonical
+  const d = flat(blog)[0], dp = `content/blog/${d.url.split('/').slice(-3, -1).join('/')}/index.html`;
+  assert.ok(out[dp], dp); assert.equal(canon(out[dp]), SITE + pathOf(dp));
+  assert.match(out[dp], /에이전트 업무일지/);
+  assert.doesNotMatch(out[dp], /href="\/content\/blog\/(ai|apps)\/"/, '상세에서 카테고리 목록으로 가는 링크 없음');
+  // 옛 이름이 화면 문구·메타·JSON-LD 어디에도 없다(글 본문·제목 속 문장은 고치지 않는다)
   for (const f of contentFiles) {
-    const h = out[f], chrome = h.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
-    assert.doesNotMatch(chrome.replace(/AI 사용기:/g, ''), /AI 사용기|에이전트 작업 회고|AI field notes/, f); // 'AI 사용기:' 는 일부 글 제목의 접두어(원 글 데이터)
+    const hh = out[f], chrome = hh.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '').replace(/<h1[\s\S]*?<\/h1>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
+    assert.doesNotMatch(chrome.replace(/AI 사용기:/g, ''), /AI 사용기|에이전트 작업 회고|AI field notes|>블로그<|Journal/, f);
+    for (const ld of hh.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) for (const x of JSON.parse(ld[1])['@graph'].filter(x => x['@type'] === 'BreadcrumbList' || x['@id']?.endsWith('#list-sections'))) assert.doesNotMatch(JSON.stringify(x.itemListElement.slice(0, x['@type'] === 'BreadcrumbList' && /\/content\/(column|blog\/(ai|apps)|game-news|gizmo|games|tools|apps)\/[\w-]+\//.test(f.replace('content/', '/content/')) ? -1 : undefined).map(e => e.name)), /블로그|Journal/, f + ' JSON-LD');
   }
-  assert.doesNotMatch(JSON.stringify(blog.groups.map(g => g.label)), /AI 사용기|작업 회고/);
-  assert.match(blog.groups.find(g => g.id === 'ai').blurb.ko, /기록한 일지/);
   assert.doesNotMatch(read('docs/CONTENT_HUB_CHECKER.md'), /AI 사용기|에이전트 작업 회고/);
+  assert.match(blog.groups.find(g => g.id === 'ai').blurb.ko, /기록한 일지/);
 });
 test('게임 소식: 블로그와 분리됐고(옛 경로 없음) 모든 글이 정확히 한 게임 서브카테고리에 속한다 — 게임별 개수표', () => {
   assert.ok(!contentFiles.some(f => f.startsWith('content/blog/games/')));
@@ -196,15 +209,22 @@ test('케인칼럼: 블로그에서 독립한 단일 목록 — 옛 경로·옛 
 test('옛→새 경로 매핑(data/content-redirects.json): 정합, 모든 to 가 실제 페이지, 모든 옛 글이 새 경로로 대체된다', () => {
   const r = JSON.parse(read('data/content-redirects.json')).redirects;
   const froms = r.map(x => x.from); assert.equal(new Set(froms).size, froms.length);
-  for (const x of r) { assert.equal(x.status, 301); assert.ok(x.from.startsWith('/content/blog/games/') || x.from.startsWith('/content/blog/fiction/'), x.from); assert.ok(out[x.to.slice(1) + 'index.html'], x.to); assert.ok(!out[x.from.slice(1) + 'index.html'], '옛 경로가 아직 있다: ' + x.from); }
+  for (const x of r) { assert.equal(x.status, 301); assert.ok(/^\/content\/blog\/(games|fiction|ai|apps)\//.test(x.from), x.from); assert.ok(out[x.to.slice(1) + 'index.html'], x.to); assert.ok(!out[x.from.slice(1) + 'index.html'], '옛 경로가 아직 있다: ' + x.from); }
   const wantPosts = flat(news).map(i => `/content/blog/games/${slugOf(i.url)}/`);
   for (const f of wantPosts) assert.ok(froms.includes(f), f);
   assert.ok(froms.includes('/content/blog/games/'));
-  assert.equal(froms.filter(f => /\/page\/\d+\/$/.test(f)).length, ceilDiv(news.count.value) - 1);
+  assert.equal(froms.filter(f => f.startsWith('/content/blog/games/') && /\/page\/\d+\/$/.test(f)).length, ceilDiv(news.count.value) - 1);
   // 옛 '이야기'(blog/fiction) → 케인칼럼(/content/column/): 글마다 + 색인 + 쪽
   for (const i of flat(column)) assert.deepEqual(r.find(x => x.from === `/content/blog/fiction/${slugOf(i.url)}/`)?.to, `/content/column/${slugOf(i.url)}/`);
   assert.equal(r.find(x => x.from === '/content/blog/fiction/')?.to, '/content/column/');
-  assert.equal(r.length, (news.count.value + 1 + ceilDiv(news.count.value) - 1) + (column.count.value + 1 + ceilDiv(column.count.value) - 1));
+  // 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ + 쪽) → 단일 목록 /content/blog/
+  const nCat = c => flat(blog).filter(it => it.url.includes(`/ko/${c}/`)).length;
+  for (const c of ['ai', 'apps']) {
+    assert.equal(r.find(x => x.from === `/content/blog/${c}/`)?.to, '/content/blog/', c);
+    for (let n = 2; n <= ceilDiv(nCat(c)); n++) assert.equal(r.find(x => x.from === `/content/blog/${c}/page/${n}/`)?.to, '/content/blog/', `${c} ${n}쪽`);
+  }
+  assert.equal(r.filter(x => /^\/content\/blog\/(ai|apps)\//.test(x.from)).length, 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1, '글 상세는 옮기지 않는다');
+  assert.equal(r.length, (news.count.value + 1 + ceilDiv(news.count.value) - 1) + (column.count.value + 1 + ceilDiv(column.count.value) - 1) + 2 + ceilDiv(nCat('ai')) - 1 + ceilDiv(nCat('apps')) - 1);
 });
 const ldOf = h => JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 const MAIN = {Article: 1, VideoGame: 1, SoftwareApplication: 1, MobileApplication: 1};
@@ -339,6 +359,9 @@ test('사이트맵: 색인·상세 /content/ 페이지 전부(자기 canonical)�
   assert.equal(x, out['sitemap.xml'], 'sitemap.xml 은 build 산출물이다');
   assert.doesNotMatch(x, /\/content\/blog\/games\//);
   assert.doesNotMatch(x, /\/content\/blog\/fiction\//);
+  assert.doesNotMatch(x, /<loc>[^<]*\/content\/blog\/(ai|apps)\/(page\/\d+\/)?<\/loc>/, '사라진 카테고리 목록은 사이트맵에 없다');
+  assert.ok(x.includes(`<loc>${SITE}/content/blog/</loc>`));
+  for (const i of flat(blog)) assert.ok(x.includes(`<loc>${SITE}/content/blog/${i.url.split('/').slice(-3, -1).join('/')}/</loc>`), i.url);
   for (const i of flat(column)) assert.ok(x.includes(`<loc>${SITE}/content/column/${slugOf(i.url)}/</loc>`), slugOf(i.url));
 });
 test('직접 쓴 허브 문구(템플릿·렌더러)에 1인칭·이모지·TODO 가 없다(옮겨 온 글은 고치지 않는다)', () => {
@@ -350,6 +373,7 @@ test('랜딩 JSON-LD 는 섹션 ItemList, 색인 쪽은 CollectionPage + ItemLis
   assert.ok(land.some(x => x['@type'] === 'CollectionPage'));
   const il = land.find(x => x['@type'] === 'ItemList').itemListElement; assert.equal(il.length, NAV_IDS.length);
   assert.equal(il[0].url, `${SITE}/content/column/`, '섹션 목록도 케인칼럼이 첫 항목');
+  assert.deepEqual(il.map(x => x.name), ['케인칼럼', '에이전트 업무일지', '게임 소식', 'AI 활용 가이드', '웹게임', '웹 도구', '내 앱'], '메뉴 순서와 같다');
   assert.ok(il.some(x => x.url === `${SITE}/content/game-news/`));
   const g = ldOf(out['content/blog/page/2/index.html']);
   assert.ok(g.some(x => x['@type'] === 'CollectionPage' && x.url === `${SITE}/content/blog/page/2/`));
@@ -428,8 +452,7 @@ test('이름 변경: 사용자에게 보이는 곳은 AI 활용 가이드(영어
   assert.match(out['content/gizmo/index.html'], /<title>AI 활용 가이드 전체 — 콘텐츠 허브/);
   const lock = JSON.parse(read('scripts/og-cards.lock.json')).content.text;
   assert.doesNotMatch(lock.headline, /서비스|기즈모/); assert.match(lock.headline, /AI 활용 가이드/);
-  const blogChips = out['content/blog/index.html'].match(/<nav class="chipbar"[\s\S]*?<\/nav>/)[0];
-  assert.doesNotMatch(blogChips, /AI 활용/); // 블로그 카테고리 칩과 가이드 이름이 겹치지 않는다
+  assert.doesNotMatch(out['content/blog/index.html'], /class="chipbar"/); // 에이전트 업무일지에는 칩이 없다
 });
 
 // 허브가 직접 쓴 화면 문구(내비·제목·메타·버튼·소개)에는 '기즈모'·'Gizmo' 가 남지 않는다. 가이드 항목 자체의 설명 본문(API 가 준 글)은 고치지 않는다.

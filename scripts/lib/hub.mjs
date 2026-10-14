@@ -14,16 +14,14 @@ export const secPath = id => `/content/${PATH_NAME[id] || id}/`;
 export const pageHref = (base, n) => (n === 1 ? base : `${base}page/${n}/`);
 const slugOf = url => url.split('/').filter(Boolean).pop();
 
-// 섹션 순서 = 보조 내비 순서. 케인칼럼은 '전체'보다 앞(맨 처음)에 놓이고(contentNav), 나머지는 '전체' 뒤에 이 순서로 온다.
-export const NAV_LEAD = ['column'];
+// 섹션 순서 = 보조 내비 순서. '전체'가 맨 앞이고 나머지 섹션이 이 순서로 뒤따른다(전체 / 케인칼럼 / 에이전트 업무일지 / 게임 소식 / ...).
 export const NAV = [['column', 'column'], ['blog', 'blog'], ['gamenews', 'gamenews'], ['gizmo', 'gizmo'], ['games', 'games'], ['tools', 'tools'], ['apps', 'apps']];
 const sec = (hub, id) => hub.sections.find(s => s.id === id);
 
 // 보조 내비(콘텐츠 영역 전용). 모바일에서는 CSS 가 가로 스크롤 칩으로 만든다.
 export function contentNav(active, hub) {
   const item = id => ({href: secPath(id), label: def(id).title, n: sec(hub, id).count.value, on: active === id});
-  const items = [...NAV_LEAD.map(item), {href: '/content/', label: {ko: '전체', en: 'All'}, n: null, on: active === 'all'},
-    ...NAV.map(([id]) => id).filter(id => !NAV_LEAD.includes(id)).map(item)];
+  const items = [{href: '/content/', label: {ko: '전체', en: 'All'}, n: null, on: active === 'all'}, ...NAV.map(([id]) => id).map(item)];
   return `<nav class="subnav" aria-label="content sections"><ul>${items.map(i => `<li><a href="${i.href}"${i.on ? ' aria-current="page"' : ''}>${bi(i.label)}${i.n != null ? `<span class="subnav-n mono">${i.n}</span>` : ''}</a></li>`).join('')}</ul></nav>`;
 }
 function chipBar(label, items) {
@@ -87,18 +85,11 @@ export function hubModel(data) {
   pages.push(...listPages({kind: 'column', base: secPath('column'), tName: {ko: '케인칼럼 전체', en: 'All Kein Column'}, heading: def('column').title, lead: def('column').intro, unit: {ko: '편'}, order: {ko: '최신순'},
     items: cposts, rowOf: textRows('column', it => mirrorPath('column', it.slug)), chips: '', trail: trailColumn, jsonOf: it => ({name: it.title, url: SITE + mirrorPath('column', it.slug)}), count: column.count}));
 
-  // ── 블로그(카테고리 칩 순서 = data 의 groups 순서 = BLOG_CATS) ──
-  const trailBlog = [{label: bi(def('blog').title), href: secPath('blog'), name: '블로그'}];
+  // ── 에이전트 업무일지(섹션 id blog, 주소 /content/blog/): 서브카테고리 칩 없이 단일 목록, 최신순. 글 상세 주소는 /content/blog/<ai|apps>/<slug>/ 그대로 ──
+  const trailBlog = [{label: bi(def('blog').title), href: secPath('blog'), name: '에이전트 업무일지'}];
   const posts = blog.groups.flatMap(g => g.items.map(it => ({...it, cat: g.id, slug: slugOf(it.url)}))).sort((a, b) => b.date.localeCompare(a.date) || a.url.localeCompare(b.url));
-  const blogRow = textRows('blog', it => mirrorPath('blog', `${it.cat}/${it.slug}`));
-  const blogChips = on => chipBar('blog categories', [{href: secPath('blog'), label: {ko: '전체', en: 'All'}, n: blog.count.value, on: on === 'all'},
-    ...blog.groups.map(g => ({href: `/content/blog/${g.id}/`, label: g.label, n: g.total, on: on === g.id}))]);
-  const jsonPost = it => ({name: it.title, url: SITE + mirrorPath('blog', `${it.cat}/${it.slug}`)});
-  pages.push(...listPages({kind: 'blog', base: secPath('blog'), tName: {ko: '블로그 글 전체', en: 'All journal posts'}, heading: def('blog').title, lead: def('blog').intro, unit: {ko: '편'}, order: {ko: '최신순'},
-    items: posts, rowOf: blogRow, chips: blogChips('all'), trail: trailBlog, jsonOf: jsonPost, count: blog.count}));
-  for (const g of blog.groups)
-    pages.push(...listPages({kind: 'blog', base: `/content/blog/${g.id}/`, tName: {ko: `블로그 · ${g.label.ko}`, en: `Journal · ${g.label.en}`}, heading: g.label, lead: g.blurb, unit: {ko: '편'}, order: {ko: '최신순'},
-      items: posts.filter(p => p.cat === g.id), rowOf: blogRow, chips: blogChips(g.id), trail: [...trailBlog, {label: bi(g.label), href: `/content/blog/${g.id}/`, name: g.label.ko}], jsonOf: jsonPost, count: blog.count}));
+  pages.push(...listPages({kind: 'blog', base: secPath('blog'), tName: {ko: '에이전트 업무일지 전체', en: 'All agent work log posts'}, heading: def('blog').title, lead: def('blog').intro, unit: {ko: '편'}, order: {ko: '최신순'},
+    items: posts, rowOf: textRows('blog', it => mirrorPath('blog', `${it.cat}/${it.slug}`)), chips: '', trail: trailBlog, jsonOf: it => ({name: it.title, url: SITE + mirrorPath('blog', `${it.cat}/${it.slug}`)}), count: blog.count}));
 
   // ── 게임 소식(게임별 서브카테고리) ──
   const trailNews = [{label: bi(def('gamenews').title), href: secPath('gamenews'), name: '게임 소식'}];
@@ -184,7 +175,7 @@ export function mirrorTrail(data, kind, catKey) {
   const hub = data.contentHub, g = id => sec(hub, id).groups.find(x => x.id === catKey);
   const top = (id, name) => ({label: bi(def(id).title), href: secPath(id), name});
   if (kind === 'column') return [top('column', '케인칼럼')];
-  if (kind === 'blog') return [top('blog', '블로그'), {label: bi(g('blog').label), href: `/content/blog/${catKey}/`, name: g('blog').label.ko}];
+  if (kind === 'blog') return [top('blog', '에이전트 업무일지')];
   if (kind === 'gamenews') return [top('gamenews', '게임 소식'), {label: bi(g('gamenews').label), href: `/content/game-news/${catKey}/`, name: g('gamenews').label.ko}];
   if (kind === 'gizmo') return [top('gizmo', 'AI 활용 가이드'), {label: bi(g('gizmo').label), href: `/content/gizmo/purpose/${catKey}/`, name: g('gizmo').label.ko}];
   if (kind === 'games') return [top('games', '웹게임'), {label: bi(g('games').label), href: `/content/games/genre/${catKey}/`, name: g('games').label.ko}];
@@ -210,7 +201,7 @@ export function landingHtml(data, model) {
   const loc = (href, text) => `<a href="${esc(href)}" lang="ko">${esc(text)}</a>`;
   return `<div class="hub-cards">
   ${card('column', model.cposts.map(p => loc(mirrorPath('column', p.slug), p.title)), {ko: 'AI 시대의 일과 놀이에 대한 칼럼. 최신 글부터 보여 줍니다.', en: 'Columns on work and play in the age of AI, newest first.'})}
-  ${card('blog', model.posts.map(p => loc(mirrorPath('blog', `${p.cat}/${p.slug}`), p.title)), {ko: '에이전트 업무일지와 앱 제작·심사 기록. 최신 글부터 보여 줍니다.', en: 'Agent work logs and app production and review records, newest first.'})}
+  ${card('blog', model.posts.map(p => loc(mirrorPath('blog', `${p.cat}/${p.slug}`), p.title)), {ko: 'AI 에이전트가 업무 중 겪은 실패·복구·검증과 앱 제작·심사 기록. 최신 글부터 보여 줍니다.', en: 'Failures, recoveries and verification from AI agents at work, plus app production and review records, newest first.'})}
   ${card('gamenews', model.nposts.map(p => loc(mirrorPath('game-news', p.slug), p.title)), {ko: '즐기는 게임의 공식 공지·업데이트·공략 정리와 내 게임 개발기. 게임별로 골라 볼 수 있습니다.', en: 'Official notices, updates and guides for the games I play, plus my own game devlogs, by game.'})}
   ${card('gizmo', model.gitems.map(i => loc(mirrorPath('gizmo', i.slug), i.title)), {ko: '설치 없이 쓰는 프롬프트·스킬. 용도별로 묶었고 전문을 읽을 수 있습니다.', en: 'Prompts and skills you can use without installing anything, grouped by purpose, with the full text.'})}
   ${card('games', model.gm.map(i => `<a href="${mirrorPath('games', i.slug)}">${bi(i.title)}</a>`), {ko: '브라우저에서 바로 하는 게임. 소개와 조작 방법, 규칙, 플레이 화면을 실었습니다.', en: 'Browser games with an introduction, controls, rules and gameplay screens.'})}

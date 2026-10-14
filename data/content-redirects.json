@@ -1,7 +1,62 @@
 {
  "as_of": "2026-10-14",
- "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로 옮긴 매핑. nginx 301 용.",
+ "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로 옮긴 매핑. nginx 301 용.",
  "redirects": [
+  {
+   "from": "/content/blog/ai/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/page/2/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/page/3/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/ai/page/4/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/2/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/3/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/4/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/5/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/6/",
+   "to": "/content/blog/",
+   "status": 301
+  },
+  {
+   "from": "/content/blog/apps/page/7/",
+   "to": "/content/blog/",
+   "status": 301
+  },
   {
    "from": "/content/blog/fiction/",
    "to": "/content/column/",
