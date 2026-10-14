@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.96 발행 기록 — 2026-10-14
+
+자동 발행(scripts/publish.sh): reviewed worker-done-operator-still-busy. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.95 는 복구용 유지.
+
 ## 1.3.95 발행 기록 — 2026-10-14
 
 자동 발행(scripts/publish.sh): reviewed clean-clone-handoff-check. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.94 는 복구용 유지.
