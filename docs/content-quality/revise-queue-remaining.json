@@ -70,11 +70,6 @@
     "note": "벨로타 가이드(10/13)가 이 정보를 포함하므로 중복. 가이드로 병합하고 이 글은 리다이렉트하거나 삭제."
   },
   {
-    "id": "ai-stt-cache-request-provenance",
-    "final": 69.4,
-    "note": "STT 캐시 키에 모델·언어 포함 원칙. 일반 캐시 키 설계 글로 확장하면 가치 상승."
-  },
-  {
     "id": "news-nikke-laplace-july-operating-note",
     "final": 69.4,
     "note": "풀차지 5회→머신건 전환이라는 핵심은 쓸 만함. 현행 스킬 설명과 장탄 옵션 우선순위를 여러 출처로 비교한 캐릭터 가이드로 확장하고 maxwell 글과 병합."
