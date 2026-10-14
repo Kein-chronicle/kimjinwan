@@ -242,8 +242,8 @@
        "url": "https://blog.kimjinwan.com/ko/ai/same-day-two-sessions-one-trailer/"
       },
       {
-       "title": "AI 활용기: 같은 통계 기능을 저장소 4개에 동시에 심었는데 코드가 다 달랐다",
-       "summary": "쿠키 없는 방문자 집계 기능 하나를 백엔드·정적 블로그·플레인 HTML·Next.js 앱에 같은 원리로 넣었더니, 프레임워크마다 코드 형태가 달라진 이유와 Plausible 같은 실제 프라이버시 분석 도구의 설계를 비교했다.",
+       "title": "여러 사이트의 통계 코드 비교: 생명주기·중복 집계·날짜별 해시의 한계",
+       "summary": "정적 스크립트와 React 통계 어댑터를 비교하고 날짜별 HMAC의 연결 가능성, 서버 이벤트 삭제와 브라우저 UUID 수명, 여러 날 고유 수의 의미를 바로잡는다.",
        "date": "2026-09-15",
        "url": "https://blog.kimjinwan.com/ko/ai/same-pattern-four-repos-one-day/"
       },
