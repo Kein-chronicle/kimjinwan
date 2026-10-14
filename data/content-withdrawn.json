@@ -691,11 +691,6 @@
    "from": "/content/blog/page/7/",
    "to": "/content/blog/",
    "reason": "글이 줄어 목록 쪽 수가 줄었다"
-  },
-  {
-   "from": "/content/game-news/page/4/",
-   "to": "/content/game-news/",
-   "reason": "글이 줄어 목록 쪽 수가 줄었다"
   }
  ]
 }
