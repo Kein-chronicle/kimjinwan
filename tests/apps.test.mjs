@@ -103,7 +103,7 @@ test('내 앱: 상세 — 아이콘·한 줄 소개·스토어 버튼·스크린
 test('내 앱: 상세 본문 한국어 400자 이상, 앱마다 문장이 다르다(문장 단위 자카드 상한), 같은 문장 반복 없음', () => {
   const sets = new Map();
   for (const [slug, a] of auth) {
-    const body = text(out[`content/apps/${slug}/index.html`].match(/<div class="detail-body">([\s\S]*?)<\/div>\s*<\/article>/)[0]);
+    const body = text(out[`content/apps/${slug}/index.html`].match(/<div class="detail-body">([\s\S]*?)<\/div>\s*(?=<footer class="detail-share")/)[0]);
     assert.ok((body.match(/[가-힣]/g) || []).length >= 300, slug);
     assert.ok(bodyChars(a) >= MIN_BODY, slug);
     sets.set(slug, new Set(sentences(a)));

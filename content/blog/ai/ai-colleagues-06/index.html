@@ -38,7 +38,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/ai-colleagues-06/#article","url":"https://kimjinwan.com/content/blog/ai/ai-colleagues-06/","headline":"챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표","description":"확인·설명·바쁨·거절 입력으로 말투 변경을 비교한다. 질문·길이·반복 표현과 내용 오류를 나누고, 구현 확인을 효과 측정과 구분하는 기록 양식.","inLanguage":"ko","datePublished":"2026-09-09","dateModified":"2026-09-09","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/ai-colleagues-06/"},"image":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/ai-colleagues-06/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표","item":"https://kimjinwan.com/content/blog/ai/ai-colleagues-06/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.111">
+<link rel="stylesheet" href="/css/style.css?v=1.3.112">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -74,7 +74,7 @@
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-09</p>
       <h1 class="sec-title detail-title"><span lang="ko">챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표</span></h1>
-      <button type="button" class="btn btn-ghost share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/ai/ai-colleagues-06/" data-share-title="챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표" data-share-description="확인·설명·바쁨·거절 입력으로 말투 변경을 비교한다. 질문·길이·반복 표현과 내용 오류를 나누고, 구현 확인을 효과 측정과 구분하는 기록 양식." data-share-image="https://kimjinwan.com/assets/og/content.png?v=3b93926d62" aria-label="챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button></header>
+    </header>
     <div class="detail-body"><div><span>기록일 <time datetime="2026-06-07T00:00:00.000Z">2026. 6. 7.</time></span><span>수정 2026. 10. 13.</span></div><p>표시 날짜는 적용 피드백의 작성일입니다. 2026년 10월 14일 원문을 대조하고 가상 입력 및 평가표를 보강했습니다.</p><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>챗봇 표현 규칙을 수정한 개발자가 한 답변의 인상 대신 같은 입력 묶음으로 전후를 비교하도록 돕는다.</p></div><div><strong>핵심 내용</strong><p>규칙 추가나 질문 수 감소만으로 자연스러움이 좋아졌다고 판단하지 않고 사실 오류·요청 충족·반복을 순서대로 평가한다.</p></div><div><strong>읽고 나서</strong><p>네 상황의 입력 자료를 고정하고 변경 전후 답변 전체를 기록한다.</p></div></section><details><summary>연재 목차</summary><ol><li><a href="/content/blog/ai/ai-colleagues-02/">AI가 쓴 코드 리뷰를 그대로 적용해도 될까: 적용 전에 확인할 4가지</a></li><li><a href="/content/blog/ai/ai-colleagues-04/">챗봇이 끝난 일을 계속 말할 때: 기억·임시 상태·설정 이전을 나누는 법</a></li><li><a href="/content/blog/ai/ai-colleagues-06/" aria-current="page">챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표</a></li><li><a href="/content/blog/ai/ai-colleagues-08/">AI 동료 제작기: 사진을 만들었는데 대화에는 도착하지 않았다</a></li><li><a href="/content/blog/ai/ai-colleagues-10/">봇이 답하지 않을 때: 수신·실행·결과·송신을 나눠 확인하는 법</a></li></ol></details><details><summary>목차</summary><ul><li><a href="#한-문장보다-네-상황을-고정한다">한 문장보다 네 상황을 고정한다</a></li><li><a href="#반복을-길이질문표현으로-나눠-적는다">반복을 길이·질문·표현으로 나눠 적는다</a></li><li><a href="#변경-후-좋아진-항목과-나빠진-항목을-같은-표에-둔다">변경 후 좋아진 항목과 나빠진 항목을 같은 표에 둔다</a></li><li><a href="#6월-피드백이-확인한-범위">6월 피드백이 확인한 범위</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
 <p><strong>한 줄 요약:</strong> 챗봇 말투는 같은 상황 묶음으로 전후 답변을 비교하고, 길이·질문·반복 표현과 내용 정확성을 따로 평가한다.</p>
 </blockquote>
@@ -230,6 +230,13 @@
 <li>규칙이 구현됐다는 확인을 효과 측정으로 바꾸지 말고 표본 수·평가자·미확인 범위를 남긴다.</li>
 </ul>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/ai-colleagues-10/">봇이 답하지 않을 때: 수신·실행·결과·송신을 나눠 확인하는 법</a><p>무응답의 마지막 성공 구간과 선톡 억제 이유를 기록한다. 생성 도중 무음 전환, 중복 타이머, 송신 결과 미확인에 대한 운영표.</p></li><li><a href="/content/blog/ai/ai-colleagues-08/">AI 동료 제작기: 사진을 만들었는데 대화에는 도착하지 않았다</a><p>생성 성공과 전송 성공, 상황의 일관성은 달랐다. 사진과 음성을 붙이며 늘어난 확인 항목들.</p></li><li><a href="/content/blog/ai/ai-colleagues-02/">AI가 쓴 코드 리뷰를 그대로 적용해도 될까: 적용 전에 확인할 4가지</a><p>AI가 쓴 리뷰 두 건과 적용 기록을 읽었다. 한 건은 이미 고쳐진 오류를 원인으로 짚었다. 로그와 코드 수정일 비교, 지적-코드-재현-결정 비교표를 정리했다.</p></li></ul></aside><nav><a href="/content/blog/ai/ai-colleagues-04/">← 이전 회차</a><a href="/content/blog/ai/ai-colleagues-08/">다음 회차 →</a></nav></div>
+    <footer class="detail-share" aria-label="콘텐츠 공유">
+      <div class="detail-share-copy">
+        <p class="detail-share-label"><span data-lang-ko>함께 나누기</span><span data-lang-en>Pass it on</span></p>
+        <p class="detail-share-hint"><span data-lang-ko>필요한 사람에게 이 콘텐츠를 전해보세요.</span><span data-lang-en>Share this with someone who might find it useful.</span></p>
+      </div>
+      <button type="button" class="share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/ai/ai-colleagues-06/" data-share-title="챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표" data-share-description="확인·설명·바쁨·거절 입력으로 말투 변경을 비교한다. 질문·길이·반복 표현과 내용 오류를 나누고, 구현 확인을 효과 측정과 구분하는 기록 양식." data-share-image="https://kimjinwan.com/assets/og/content.png?v=3b93926d62" aria-label="챗봇 말투가 반복될 때: 네 상황으로 비교하는 프롬프트 평가표 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button>
+    </footer>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
 </div></main>
@@ -253,9 +260,9 @@
   <div class="share-heading"><h2 id="share-heading"><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></h2><button type="button" class="share-close" aria-label="공유 창 닫기">×</button></div>
   <p class="share-title"></p>
   <div class="share-options">
-    <button type="button" data-share-action="copy"><b aria-hidden="true">↗</b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
-    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true">●</b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
-    <a data-share-service="sms"><b aria-hidden="true">✉</b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
+    <button type="button" data-share-action="copy"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
+    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.8 5.2 4.5 6.6L5.4 21l4.3-2.6c.7.1 1.5.2 2.3.2 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg></b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
+    <a data-share-service="sms"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
     <a data-share-service="naver" target="_blank" rel="noopener noreferrer"><b class="share-naver" aria-hidden="true">N</b><span data-lang-ko>네이버 블로그</span><span data-lang-en>Naver Blog</span></a>
     <a data-share-service="x" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">𝕏</b>X</a>
     <a data-share-service="facebook" target="_blank" rel="noopener noreferrer"><b class="share-facebook" aria-hidden="true">f</b>Facebook</a>
@@ -264,6 +271,6 @@
   <label class="share-url-label"><span data-lang-ko>공유 링크</span><span data-lang-en>Share link</span><input class="share-url" readonly></label>
   <p class="share-status" role="status" aria-live="polite"></p>
 </dialog>
-<script src="/js/share-config.js?v=1.3.111" defer></script>
-<script src="/js/share.js?v=1.3.111" defer></script>
+<script src="/js/share-config.js?v=1.3.112" defer></script>
+<script src="/js/share.js?v=1.3.112" defer></script>
 </body></html>

@@ -29,19 +29,19 @@ test('모든 콘텐츠 상세: 공유 URL·제목·설명·이미지와 정적 O
     }
   }
 });
-test('허브·모든 목록에서 각 콘텐츠에 정확히 하나의 독립된 공유 버튼을 제공한다', () => {
+test('공유 UI는 상세 본문 끝에 한 번만 나오고 허브·목록에는 없다', () => {
+  const details = new Set(pages.map(p => p.path.slice(1) + 'index.html'));
   for (const [file, h] of Object.entries(out).filter(([f]) => f.startsWith('content/'))) {
     assert.doesNotMatch(h, /data-share-placeholder/);
-    const rows = [...h.matchAll(/<li class="(?:hub-row|gcard|tcard|acard)">([\s\S]*?)<\/li>/g)];
-    for (const [, row] of rows) {
-      assert.equal((row.match(/data-share-url=/g)||[]).length, 1, file);
-      const href = row.match(/href="([^"]+)"/)[1];
-      assert.ok(row.includes(`data-share-url="https://kimjinwan.com${href}"`), file);
-      assert.doesNotMatch(row, /<a\b[^>]*>(?:(?!<\/a>)[\s\S])*<button/);
+    if (details.has(file)) {
+      assert.equal((h.match(/data-share-url=/g)||[]).length, 1, file);
+      assert.match(h, /<footer class="detail-share"[\s\S]*?data-share-url=[\s\S]*?<\/footer>\s*<\/article>/, file);
+      assert.doesNotMatch(h.match(/<header class="detail-hd">[\s\S]*?<\/header>/)[0], /data-share-url=/, file);
+      assert.equal((h.match(/class="share-dialog"/g)||[]).length,1,file);
+    } else {
+      assert.doesNotMatch(h, /data-share-url=|class="share-dialog"|src="\/js\/share/, file);
     }
-    assert.equal((h.match(/class="share-dialog"/g)||[]).length,1,file);
   }
-  assert.equal((out['content/index.html'].match(/data-share-url=/g)||[]).length,21);
 });
 test('공유 메타데이터의 따옴표·태그를 이스케이프한다', () => {
   const h = shareButton({url:'https://example.com/?a=1&b=2', title:'"<img>', description:"' &", image:'https://example.com/a.png'});

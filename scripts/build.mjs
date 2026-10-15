@@ -251,10 +251,6 @@ export function buildAll({write = true} = {}) {
     ...model.pages.filter(p => p.path !== '/content/' && !/\/page\/\d+\/$/.test(p.path)).map(p => [p.path, STAMP]), ...mirrorPages(data).map(m => [m.path, m.date || STAMP])];
   out['sitemap.xml'] = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([p, d]) => `  <url><loc>${SITE}${p}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`;
   for (const file of Object.keys(out).filter(f => f.startsWith('content/'))) {
-    out[file] = out[file].replace(/<span data-share-placeholder="([^"]+)"><\/span>/g, (_, url) => {
-      if (!shares.has(url)) throw new Error(`Missing share metadata: ${url}`);
-      return shareButton(shares.get(url));
-    });
     if (out[file].includes('data-share-url=')) out[file] = out[file].replace('</body>', `${shareDialog}\n<script src="/js/share-config.js?v=${ctxBase.version}" defer></script>\n<script src="/js/share.js?v=${ctxBase.version}" defer></script>\n</body>`);
   }
   if (write) for (const [file, html] of Object.entries(out)) {

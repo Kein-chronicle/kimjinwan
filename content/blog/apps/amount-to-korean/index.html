@@ -38,7 +38,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/amount-to-korean/#article","url":"https://kimjinwan.com/content/blog/apps/amount-to-korean/","headline":"금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유","description":"숫자 금액을 계약서·수표용 한글 금액 표기(일금 OOO원정)로 바꿀 때 '일십', '일백'처럼 1을 빼지 않는 규칙과 중간 0을 처리하는 방식을 정리했다.","inLanguage":"ko","datePublished":"2026-09-28","dateModified":"2026-09-28","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/amount-to-korean/"},"image":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/amount-to-korean/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유","item":"https://kimjinwan.com/content/blog/apps/amount-to-korean/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.111">
+<link rel="stylesheet" href="/css/style.css?v=1.3.112">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -74,7 +74,7 @@
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-09-28</p>
       <h1 class="sec-title detail-title"><span lang="ko">금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유</span></h1>
-      <button type="button" class="btn btn-ghost share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/apps/amount-to-korean/" data-share-title="금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유" data-share-description="숫자 금액을 계약서·수표용 한글 금액 표기(일금 OOO원정)로 바꿀 때 '일십', '일백'처럼 1을 빼지 않는 규칙과 중간 0을 처리하는 방식을 정리했다." data-share-image="https://kimjinwan.com/assets/og/content.png?v=3b93926d62" aria-label="금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button></header>
+    </header>
     <div class="detail-body"><div><span>발행 <time datetime="2026-09-28T00:00:00.000Z">2026. 9. 28.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>계약서나 영수증에 금액을 한글로 적다가 &#39;십만&#39;인지 &#39;일십만&#39;인지 헷갈리는 순간에 기준을 하나로 정해 준다.</p></div><div><strong>핵심 내용</strong><p>이 변환기는 자리 앞의 1을 항상 &#39;일&#39;로 적고, 중간의 0은 읽지 않고 건너뛰며, 앞에는 일금·뒤에는 원정을 붙인다.</p></div><div><strong>읽고 나서</strong><p>금액을 콤마째로 붙여 넣고, 숫자 확인 줄과 대조한 뒤 계약서용 표기를 복사한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#십만원과-일십만원은-무엇이-다른가">십만원과 일십만원은 무엇이 다른가</a></li><li><a href="#변환이-실제로-하는-일">변환이 실제로 하는 일</a></li><li><a href="#결과-읽는-법">결과 읽는 법</a></li><li><a href="#쓰면-안-되는-곳">쓰면 안 되는 곳</a></li></ul></details><div><h2 id="십만원과-일십만원은-무엇이-다른가">십만원과 일십만원은 무엇이 다른가</h2>
 <p>말로 할 때 100,000원은 “십만 원”이다. 앞자리 1은 소리 내어 읽지 않는다. 그런데 계약서나 수표에 금액을 한글로 적을 때는 이 생략이 문제가 된다. “십만”이라고 적어 두면 그 앞에 “이”나 “삼”을 끼워 넣기만 해도 다른 금액이 되기 때문이다. 그래서 금액 표기에서는 1이라도 <strong>일십·일백·일천</strong>처럼 숫자를 빼지 않고 적는다.</p>
 <p>이 변환기는 그 규칙을 그대로 따른다. 10은 일십, 100은 일백, 1,000은 일천, 10,000은 일만, 1억은 일억으로 나온다. 100,000원은 “일금 일십만원정”이 되고, 111원은 “일백일십일원”이 된다. 구어체처럼 “십만”이 나오는 경우는 없다.</p>
@@ -102,6 +102,13 @@
 <p>출력은 한글만 쓰고 띄어쓰기 없이 붙여 적는다. 壹·貳·拾처럼 한자 갖은자로 적는 표기나 “일백이십삼만 사천오백”처럼 단위마다 띄어 쓰는 양식은 만들지 않는다. 제출처 양식이 한자 병기나 특정 띄어쓰기를 요구한다면 결과를 그 양식에 맞게 직접 고쳐야 한다.</p>
 <p>표기를 바꿔 주는 것이 전부다. 금액이 맞는지, 세금이나 부가세가 포함됐는지 같은 판단은 하지 않는다. 입력한 금액은 브라우저 안에서만 문자열로 계산되고 서버로 보내지 않는다.</p>
 </div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/apps/logic-workbench/">논리 게이트: 회로 실험실 — 배선과 진리표를 함께 검산하는 제작 앱</a><p>게이트를 연결하고 입력별 신호·진리표를 확인하도록 만든 조합 논리회로 앱이다. 현재 App Store Connect 상태는 제출 준비 중이다.</p></li><li><a href="/content/blog/apps/subnet-calculator/">서브넷 계산기: CIDR 계획 — IPv4 블록 분할을 검토하는 앱</a><p>IPv4 주소 계산과 VLSM 분할 계획을 함께 보여주는 제작 앱이다. 10월 2일 App Store Connect 상태는 심사 대기 중이다.</p></li><li><a href="/content/blog/apps/age-calculator/">만 나이 계산기 — 같은 사람이 26세, 26세, 27세가 되는 이유</a><p>만 나이 계산기로 만 나이·연 나이·세는 나이를 한 번에 비교한다. 생일이 지났는지에 따라 세 값이 어떻게 갈리는지, 어느 값을 어디에 써야 하는지 정리한다.</p></li></ul></aside></div>
+    <footer class="detail-share" aria-label="콘텐츠 공유">
+      <div class="detail-share-copy">
+        <p class="detail-share-label"><span data-lang-ko>함께 나누기</span><span data-lang-en>Pass it on</span></p>
+        <p class="detail-share-hint"><span data-lang-ko>필요한 사람에게 이 콘텐츠를 전해보세요.</span><span data-lang-en>Share this with someone who might find it useful.</span></p>
+      </div>
+      <button type="button" class="share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/apps/amount-to-korean/" data-share-title="금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유" data-share-description="숫자 금액을 계약서·수표용 한글 금액 표기(일금 OOO원정)로 바꿀 때 '일십', '일백'처럼 1을 빼지 않는 규칙과 중간 0을 처리하는 방식을 정리했다." data-share-image="https://kimjinwan.com/assets/og/content.png?v=3b93926d62" aria-label="금액 한글 변환기 — 십만원이 아니라 일십만원으로 적는 이유 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button>
+    </footer>
   </article>
   <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
 </div></main>
@@ -125,9 +132,9 @@
   <div class="share-heading"><h2 id="share-heading"><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></h2><button type="button" class="share-close" aria-label="공유 창 닫기">×</button></div>
   <p class="share-title"></p>
   <div class="share-options">
-    <button type="button" data-share-action="copy"><b aria-hidden="true">↗</b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
-    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true">●</b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
-    <a data-share-service="sms"><b aria-hidden="true">✉</b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
+    <button type="button" data-share-action="copy"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
+    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.8 5.2 4.5 6.6L5.4 21l4.3-2.6c.7.1 1.5.2 2.3.2 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg></b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
+    <a data-share-service="sms"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
     <a data-share-service="naver" target="_blank" rel="noopener noreferrer"><b class="share-naver" aria-hidden="true">N</b><span data-lang-ko>네이버 블로그</span><span data-lang-en>Naver Blog</span></a>
     <a data-share-service="x" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">𝕏</b>X</a>
     <a data-share-service="facebook" target="_blank" rel="noopener noreferrer"><b class="share-facebook" aria-hidden="true">f</b>Facebook</a>
@@ -136,6 +143,6 @@
   <label class="share-url-label"><span data-lang-ko>공유 링크</span><span data-lang-en>Share link</span><input class="share-url" readonly></label>
   <p class="share-status" role="status" aria-live="polite"></p>
 </dialog>
-<script src="/js/share-config.js?v=1.3.111" defer></script>
-<script src="/js/share.js?v=1.3.111" defer></script>
+<script src="/js/share-config.js?v=1.3.112" defer></script>
+<script src="/js/share.js?v=1.3.112" defer></script>
 </body></html>

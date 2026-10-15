@@ -162,7 +162,7 @@ test('에이전트 업무일지: 이름 변경 반영, ai·apps 가 하나의 �
   assert.doesNotMatch(out[dp], /href="\/content\/blog\/(ai|apps)\/"/, '상세에서 카테고리 목록으로 가는 링크 없음');
   // 옛 이름이 화면 문구·메타·JSON-LD 어디에도 없다(글 본문·제목 속 문장은 고치지 않는다)
   for (const f of contentFiles) {
-    const hh = out[f], chrome = hh.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '').replace(/<h1[\s\S]*?<\/h1>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
+    const hh = out[f], chrome = hh.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*(?=<footer class="detail-share")/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '').replace(/<h1[\s\S]*?<\/h1>/g, '').replace(/<script[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(chrome.replace(/AI 사용기:/g, ''), /AI 사용기|에이전트 작업 회고|AI field notes|>블로그<|Journal/, f);
     for (const ld of hh.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) for (const x of JSON.parse(ld[1])['@graph'].filter(x => x['@type'] === 'BreadcrumbList' || x['@id']?.endsWith('#list-sections'))) assert.doesNotMatch(JSON.stringify(x.itemListElement.slice(0, x['@type'] === 'BreadcrumbList' && /\/content\/(column|blog\/(ai|apps)|game-news|gizmo|games|tools|apps)\/[\w-]+\//.test(f.replace('content/', '/content/')) ? -1 : undefined).map(e => e.name)), /블로그|Journal/, f + ' JSON-LD');
   }
@@ -466,7 +466,7 @@ const visible = h => { const x = h.replace(/<script[\s\S]*?<\/script>/g, ''); re
 test('허브 화면 문구에 기즈모·Gizmo 가 없다(항목 본문 제외, URL 제외)', () => {
   for (const f of contentFiles) {
     let h = out[f];
-    h = h.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*<\/article>/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '');
+    h = h.replace(/<div class="detail-body">[\s\S]*?<\/div>\s*(?=<footer class="detail-share")/, '').replace(/<li class="hub-row">[\s\S]*?<\/li>/g, '');
     assert.doesNotMatch(visible(h), /기즈모|Gizmo/i, f);
   }
   assert.doesNotMatch(visible(out['content/index.html']), /기즈모|Gizmo/i);

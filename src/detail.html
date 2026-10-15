@@ -6,8 +6,15 @@
   <article class="detail" data-kind="{{mirror_kind}}">
     <header class="detail-hd">{{mirror_head}}
       <h1 class="sec-title detail-title">{{mirror_title}}</h1>
-      {{share_button}}</header>
+    </header>
     <div class="detail-body">{{mirror_body}}</div>
+    <footer class="detail-share" aria-label="콘텐츠 공유">
+      <div class="detail-share-copy">
+        <p class="detail-share-label"><span data-lang-ko>함께 나누기</span><span data-lang-en>Pass it on</span></p>
+        <p class="detail-share-hint"><span data-lang-ko>필요한 사람에게 이 콘텐츠를 전해보세요.</span><span data-lang-en>Share this with someone who might find it useful.</span></p>
+      </div>
+      {{share_button}}
+    </footer>
   </article>
   {{page_foot}}
 </div></main>

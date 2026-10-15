@@ -61,7 +61,7 @@ function listPages({kind, base, tName, heading, lead, unit, order, items, rowOf,
     ${lead ? `<p class="sec-sub">${bi(lead)}</p>` : ''}</div>
   ${chips || ''}
   ${countLine(count, {ko: `${tName.ko} ${items.length}${unit.ko} 중 ${range}번째`, en: `${tName.en}: ${range} of ${items.length}`})}
-  <ul class="${wrap === 'list' ? 'hub-list' : `hub-grid hub-grid-${wrap}`}">${slice.map((it, i) => rowOf(it, i + (n - 1) * PER_PAGE).replace(/<\/li>$/, `<span data-share-placeholder="${esc(jsonOf(it).url)}"></span></li>`)).join('\n')}</ul>
+  <ul class="${wrap === 'list' ? 'hub-list' : `hub-grid hub-grid-${wrap}`}">${slice.map((it, i) => rowOf(it, i + (n - 1) * PER_PAGE)).join('\n')}</ul>
   ${note}
   ${pager(base, n, total)}`,
     });
@@ -194,7 +194,7 @@ export function landingHtml(data, model) {
     <h2>${icon(d.icon, {size: 20})}<span>${bi(d.title)}</span></h2>
     <p class="hub-count mono">${icon('clock', {size: 13})}<span>${bi({ko: `${s.count.value}${unitOf(id)}`, en: `${s.count.value}`})}</span> · ${bi(asOf)} ${esc(s.count.as_of)}</p>
     <p class="hub-blurb">${bi(blurb)}</p>
-    <ul class="hub-prev">${items.slice(0, 3).map(i => `<li>${i}<span data-share-placeholder="${SITE}${i.match(/href="([^"]+)"/)[1]}"></span></li>`).join('')}</ul>
+    <ul class="hub-prev">${items.slice(0, 3).map(i => `<li>${i}</li>`).join('')}</ul>
     <a class="more" href="${secPath(id)}">${bi({ko: '전체 보기', en: 'See all'})}${ext}</a>
   </article>`;
   };
