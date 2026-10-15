@@ -395,8 +395,8 @@
   "status": "live",
   "featured": true,
   "summary": {
-   "ko": "브라우저에서 쓰는 벡터 그래픽 편집기. 펜·도형·문자 도구로 일러스트와 로고를 그리고, 작업은 이 브라우저에 저장하거나 .anchor 파일로 내려받아요. 가입이나 AI 연결 없이 사용할 수 있고, 기능은 계속 늘려 가는 중이에요.",
-   "en": "A vector graphics editor in the browser. Draw illustrations and logos with pen, shape and type tools, and keep work in this browser or download it as an .anchor file. No account or AI connection required; features are still being added."
+   "ko": "브라우저에서 쓰는 벡터 그래픽 편집기. 펜·도형·문자 도구로 일러스트와 로고를 그리고, 작업은 이 브라우저에 저장하거나 .anchor 파일로 내려받아요. 가입이나 AI 연결 없이 사용할 수 있어요.",
+   "en": "A vector graphics editor in the browser. Draw illustrations and logos with pen, shape and type tools, and keep work in this browser or download it as an .anchor file. No account or AI connection required."
   },
   "ai_tools": [
    "Claude Code",
