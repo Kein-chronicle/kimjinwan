@@ -20,11 +20,11 @@
       "name": "김진완",
       "role": "개발자 · PM",
       "kicker": "WORKS",
-      "headline": "직접 만들어 제공하는 서비스 14곳",
+      "headline": "직접 만들어 제공하는 서비스 15곳",
       "domain": "kimjinwan.com"
     },
-    "sha256": "6b7e763fad8e61d56c54532c4ec303f649b5de5aa54eaf75b80024a1953a6533",
-    "bytes": 58831
+    "sha256": "c1ca8c7228c313f196127926dab97bef3d5f10303352ab71dd01df938b9f0a7a",
+    "bytes": 58296
   },
   "factories": {
     "file": "assets/og/factories.png",
