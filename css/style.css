@@ -766,3 +766,29 @@ main>.wrap>.page-foot{margin:0 0 72px}
 
 /* AI requirements are separate from purpose and build tools. */
 .ai-filter-block{margin:18px 0 28px}.ai-filter-title{font-size:16px;font-weight:700;margin:0 0 10px}.ai-filter{margin-bottom:10px}.ai-filter-help,.ai-note{font-size:14px!important;line-height:1.7;color:var(--muted)}.ai-badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.ai-badges .chip{font-size:14px}.ai-no-model{border-color:#598b71!important}.ai-ai-required{border-color:#bd874c!important}.ai-note{margin:8px 0 14px!important}[hidden]{display:none!important}
+
+/* 콘텐츠 공유: 목록 링크와 독립된 버튼, 키보드 포커스를 보존하는 네이티브 대화상자. */
+.share-trigger{gap:7px;font-size:13px;margin-top:12px}
+.share-trigger[hidden],.share-options [hidden]{display:none!important}
+.gcard>.share-trigger,.tcard>.share-trigger,.acard>.share-trigger{margin:0 16px 16px}
+.hub-prev .share-trigger{display:flex;margin:8px 0 4px;padding:6px 10px}
+.share-dialog{margin:auto;width:min(440px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--text);box-shadow:0 24px 80px #0004}
+.share-dialog::backdrop{background:#0008}
+.share-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.share-heading h2{font-size:20px}
+.share-close{font:inherit;font-size:28px;background:transparent;color:var(--muted);border:0;width:44px;height:44px;cursor:pointer}
+.share-title{font-size:14px;color:var(--muted);margin:8px 0 20px;overflow-wrap:anywhere}
+.share-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.share-options button,.share-options a{font:inherit;font-size:12px;text-align:center;display:flex;align-items:center;flex-direction:column;justify-content:flex-start;gap:8px;padding:12px 4px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--text);cursor:pointer}
+.share-options b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font-size:22px;background:var(--bg2)}
+.share-options .share-kakao{background:#fee500;color:#191919}
+.share-options .share-naver{background:#03c75a;color:#fff}
+.share-options .share-facebook{background:#0866ff;color:#fff}
+.share-options small{font-size:10px;color:var(--muted)}
+.share-options button:disabled{opacity:.5;cursor:wait}
+.share-options a:hover,.share-options button:hover{border-color:var(--accent)}
+.share-dialog :focus-visible,.share-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.share-url-label{display:block;font-size:12px;color:var(--muted);margin-top:20px}
+.share-url{display:block;width:100%;font:inherit;font-size:13px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);margin-top:6px}
+.share-status{font-size:13px;min-height:22px;margin-top:10px;color:var(--accent)}
+@media(max-width:480px){.share-dialog{padding:20px}.share-options{gap:8px}}

@@ -141,7 +141,7 @@ test('내 앱: 이미지 — 파일·매니페스트·크기 예산·alt·width/
   for (const f of appFiles) {
     const h = out[f];
     for (const m of mainOf(h).matchAll(/<img [^>]*>/g)) { const t = m[0]; assert.match(t, /src="\/assets\/content\/apps\//, f); assert.match(t, /width="\d+" height="\d+"/, f); assert.match(t, /alt="[^"]{4,}"/, f); }
-    assert.doesNotMatch(mainOf(h), /mzstatic|https:\/\/[\w.-]*kimjinwan\.com\/assets/, f);
+    for (const image of mainOf(h).matchAll(/<img [^>]*src="([^"]*)"/g)) assert.doesNotMatch(image[1], /mzstatic|https:\/\/[\w.-]*kimjinwan\.com\/assets/, f);
   }
 });
 test('내 앱: 구조화 데이터 — 상세는 MobileApplication(스토어 주소·가격·버전), 목록은 CollectionPage + ItemList, 랜딩 ItemList(섹션 7개)', () => {

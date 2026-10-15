@@ -257,7 +257,7 @@ test('/content/ 아래 어떤 HTML 에도 블로그 원문 링크(blog.kimjinwan
     const h = noCode(out[f]);
     for (const m of h.matchAll(/href="(https?:\/\/[^"]*)"/g)) assert.doesNotMatch(m[1], /blog\.kimjinwan\.com\/ko\//, f);
     assert.doesNotMatch(h, /data-lang-en>Original</, f);
-    assert.doesNotMatch((h.match(/\s(?:class|id|aria-label)="[^"]*"/g) || []).join(''), /사본|미러|mirror/i, f + ' 마크업(클래스·속성)');
+    assert.doesNotMatch((h.replace(/aria-label="[^"]* 공유하기"/g, '').match(/\s(?:class|id|aria-label)="[^"]*"/g) || []).join(''), /사본|미러|mirror/i, f + ' 마크업(클래스·속성)');
   }
   for (const f of ['src/content.html', 'src/content-list.html', 'src/detail.html', 'scripts/lib/hub.mjs', 'scripts/lib/render.mjs']) assert.doesNotMatch(read(f), /원문|사본|미러/, f);
 });

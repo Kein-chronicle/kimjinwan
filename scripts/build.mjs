@@ -1,5 +1,6 @@
 // scripts/build.mjs
 import fs from 'node:fs';
+import {shareButton, shareDialog} from './lib/share.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validate} from './lib/validate.mjs';
@@ -133,7 +134,7 @@ export function mirrorPages(data) {
 }
 // 상세·색인 페이지 공용 JSON-LD. 상세는 Article(허브 주소가 mainEntityOfPage), 색인은 CollectionPage + ItemList.
 function hubSchema(m, stamp, {profile}, type) {
-  const url = `${SITE}${m.path}`, img = cardUrl('assets/og/content.png');
+  const url = `${SITE}${m.path}`, img = m.shareImage || cardUrl('assets/og/content.png');
   const trail = [{name: '홈', item: `${SITE}/`}, {name: '콘텐츠 허브', item: `${SITE}/content/`}, ...m.crumbs.map(c => ({name: c.name || c.label.replace(/<[^>]+>/g, ''), item: SITE + c.href})), ...(type === 'Article' ? [{name: m.shortTitle || m.title, item: url}] : [])];
   const g = [
     {'@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: SITE_NAME, inLanguage: ['ko', 'en'], publisher: {'@id': `${SITE}/#person`}},
@@ -196,6 +197,8 @@ export function buildAll({write = true} = {}) {
     ...Object.fromEntries(ICON_NAMES.map(n => ['ico_' + n, icon(n, {size: 18})])),
     ...Object.fromEntries(Object.entries({ext: ['arrow-up-right', 14], mail: ['mail', 18], play: ['play', 18], user: ['user', 16], layers: ['layers', 16], factory: ['factory', 16], rocket: ['rocket', 16], globe: ['globe', 16], brain: ['brain', 16], briefcase: ['briefcase', 16], users: ['users', 16], terminal: ['terminal', 22], blocks: ['blocks', 22], cpu: ['cpu', 22], plug: ['plug', 22], gamepad: ['gamepad', 24], clock: ['clock', 13], workflow: ['workflow', 18]}).map(([k, [n, z]]) => ['ico_' + k, icon(n, {size: z, cls: k === 'ext' ? 'ico-ext' : ''})])),
     head_links: '',
+    og_type: 'website',
+    og_image_meta: '<meta property="og:image:type" content="image/png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">',
     hub_column_count: String(data.contentHub.sections.find(x => x.id === 'column').count.value),
     hub_blog_count: String(data.contentHub.sections.find(x => x.id === 'blog').count.value),
     hub_gamenews_count: String(data.contentHub.sections.find(x => x.id === 'gamenews').count.value),
@@ -209,6 +212,8 @@ export function buildAll({write = true} = {}) {
   };
   const out = {};
   const model = hubModel(data);
+  const details = mirrorPages(data).map(m => ({...m, shareImage: cardUrl(m.image ? m.image.slice(1) : 'assets/og/content.png')}));
+  const shares = new Map(details.map(m => [SITE + m.path, {url: SITE + m.path, title: m.title, description: m.description, image: m.shareImage}]));
   for (const page of pagesFor(pageMeta(facts(data, projects)))) {
     const ctx = {...ctxBase, nav_links: navLinks(page.key), foot_map: footMap(page.key), breadcrumb: breadcrumb(page.key), page_foot: pageFoot(page.key), hub_subnav: contentNav('all', data.contentHub), hub_landing: landingHtml(data, model), title: esc(page.title), description: esc(page.description), canonical: `${SITE}${page.path}`, schema: schemaFor(page, STAMP, data),
       site_name: esc(SITE_NAME), og_image: cardUrl(page.image), og_image_alt: esc(page.imageAlt)};
@@ -225,11 +230,19 @@ export function buildAll({write = true} = {}) {
     out[`${m.path.slice(1)}index.html`] = fill(rd('src/content-list.html'), ctx, {...partials, head: fill(partials.head, ctx, {})});
   }
   // 상세 페이지(글·프롬프트): 허브가 원본이다 — canonical 은 자기 주소
-  for (const m of mirrorPages(data)) {
+  for (const m of details) {
     const ctx = {...ctxBase, ...shared, nav_links: navLinks('content'), foot_map: footMap('content'), title: esc(clip(m.title, 70)), description: esc(clip(m.description, 300)),
       canonical: `${SITE}${m.path}`, schema: hubSchema(m, STAMP, data, 'Article'), hub_subnav: contentNav(m.kind, data.contentHub),
       mirror_crumbs: mirrorCrumbs(m), mirror_head: mirrorHead(m), mirror_title: m.lang === 'bi' ? (typeof m.name === 'object' ? bi(m.name) : esc(m.name)) : `<span lang="ko">${esc(m.shortTitle || m.title)}</span>`,
-      mirror_kind: m.kind, mirror_body: m.body, page_foot: mirrorFoot(m),
+      mirror_kind: m.kind, mirror_body: m.body, page_foot: mirrorFoot(m), share_button: shareButton(shares.get(SITE + m.path)),
+      og_image: esc(m.shareImage), og_image_alt: esc(m.title),
+      og_type: m.schemaType ? 'website' : 'article',
+      og_image_meta: m.image ? (() => {
+        const slug = m.path.split('/').filter(Boolean).at(-1), rec = data.images[m.kind][slug];
+        const [w, h] = m.kind === 'apps' ? rec.icon : rec.hero;
+        return `<meta property="og:image:type" content="image/webp">\n<meta property="og:image:width" content="${w}">\n<meta property="og:image:height" content="${h}">`;
+      })() : ctxBase.og_image_meta,
+      head_links: `${m.date ? `<meta property="article:published_time" content="${esc(m.date)}">\n` : ''}${m.section ? `<meta property="article:section" content="${esc(m.section)}">\n` : ''}`,
       page_scripts: m.body.includes('data-copy-target=') ? '<script src="/js/copy.js" defer></script>\n' : ''};
     out[`${m.path.slice(1)}index.html`] = fill(rd('src/detail.html'), ctx, {...partials, head: fill(partials.head, ctx, {})});
   }
@@ -237,6 +250,13 @@ export function buildAll({write = true} = {}) {
   const urls = [['/', STAMP], ['/works/', STAMP], ['/factories/', STAMP], ['/career/', STAMP], ['/content/', STAMP], ['/game/', GAME_LASTMOD],
     ...model.pages.filter(p => p.path !== '/content/' && !/\/page\/\d+\/$/.test(p.path)).map(p => [p.path, STAMP]), ...mirrorPages(data).map(m => [m.path, m.date || STAMP])];
   out['sitemap.xml'] = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([p, d]) => `  <url><loc>${SITE}${p}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`;
+  for (const file of Object.keys(out).filter(f => f.startsWith('content/'))) {
+    out[file] = out[file].replace(/<span data-share-placeholder="([^"]+)"><\/span>/g, (_, url) => {
+      if (!shares.has(url)) throw new Error(`Missing share metadata: ${url}`);
+      return shareButton(shares.get(url));
+    });
+    if (out[file].includes('data-share-url=')) out[file] = out[file].replace('</body>', `${shareDialog}\n<script src="/js/share-config.js?v=${ctxBase.version}" defer></script>\n<script src="/js/share.js?v=${ctxBase.version}" defer></script>\n</body>`);
+  }
   if (write) for (const [file, html] of Object.entries(out)) {
     const dest = path.join(ROOT, file);
     fs.mkdirSync(path.dirname(dest), {recursive: true});

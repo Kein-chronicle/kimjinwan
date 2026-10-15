@@ -10,12 +10,14 @@
 <meta name="google-adsense-account" content="ca-pub-5544615855471151">
 <meta name="theme-color" content="#FAFAF7">
 <link rel="canonical" href="https://kimjinwan.com/content/blog/apps/image-size-spec-guide/">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:section" content="에이전트 업무일지">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Kein — 김진완">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
@@ -27,16 +29,16 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="“글 153편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta property="og:image:alt" content="이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법">
 <meta name="twitter:description" content="유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.">
 <meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=3b93926d62">
-<meta name="twitter:image:alt" content="“글 153편과 AI 활용 가이드·웹게임·웹 도구·앱 모음” — Kein 로고와 김진완 · 개발자 · PM, kimjinwan.com이 적힌 공유 카드">
+<meta name="twitter:image:alt" content="이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/apps/image-size-spec-guide/#article","url":"https://kimjinwan.com/content/blog/apps/image-size-spec-guide/","headline":"이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법","description":"유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다.","inLanguage":"ko","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/apps/image-size-spec-guide/"},"image":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=3b93926d62","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/apps/image-size-spec-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법","item":"https://kimjinwan.com/content/blog/apps/image-size-spec-guide/"}]}]}</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
-<link rel="stylesheet" href="/css/style.css?v=1.3.110">
+<link rel="stylesheet" href="/css/style.css?v=1.3.111">
 <script src="/js/theme-core.js"></script>
 <script>document.documentElement.classList.add('js');__theme.apply()</script>
 </head>
@@ -71,7 +73,8 @@
   <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">7</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">103</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">43</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
   <article class="detail" data-kind="blog">
     <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-10-14</p>
-      <h1 class="sec-title detail-title"><span lang="ko">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</span></h1></header>
+      <h1 class="sec-title detail-title"><span lang="ko">이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법</span></h1>
+      <button type="button" class="btn btn-ghost share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/apps/image-size-spec-guide/" data-share-title="이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법" data-share-description="유튜브 썸네일, 링크 공유 미리보기(1200×630), 증명사진(3.5×4.5cm), 앱 아이콘(1024·512px)의 규격을 확인한 출처와 함께 표로 정리하고, 비율이 다른 사진을 잘리지 않게 맞추는 계산법을 적었다." data-share-image="https://kimjinwan.com/assets/og/content.png?v=3b93926d62" aria-label="이미지 규격표: 유튜브 썸네일·링크 미리보기·증명사진·앱 아이콘 크기와 자르는 법 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button></header>
     <div class="detail-body"><div><span>발행 <time datetime="2026-10-14T00:00:00.000Z">2026. 10. 14.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>이미지를 올리기 전에 어떤 크기와 비율로 만들어야 하는지, 원본이 그 비율과 다를 때 어디가 잘리는지 스스로 계산하게 돕는다.</p></div><div><strong>핵심 내용</strong><p>규격은 픽셀 크기와 비율을 함께 본다. 원본 비율이 다르면 긴 쪽이 잘리므로 먼저 계산해 보고, 확인하지 못한 규격은 올릴 곳의 최신 안내를 따른다.</p></div><div><strong>읽고 나서</strong><p>올릴 곳의 규격을 표에서 찾고, 원본 비율과 비교해 잘리는 양을 계산한 뒤 크기를 맞춘다.</p></div></section><details><summary>목차</summary><ul><li><a href="#확인한-규격-한눈에">확인한 규격 한눈에</a></li><li><a href="#센티미터를-픽셀로-비율을-계산으로">센티미터를 픽셀로, 비율을 계산으로</a></li><li><a href="#앱-아이콘과-스크린샷-목업">앱 아이콘과 스크린샷 목업</a></li><li><a href="#흔한-실수와-한계">흔한 실수와 한계</a></li><li><a href="#바로-해-볼-도구">바로 해 볼 도구</a></li><li><a href="#출처와-기준일">출처와 기준일</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
 <p><strong>한 줄 요약:</strong> 이미지 규격은 픽셀 크기와 가로세로 비율을 함께 보고, 원본 비율이 다르면 긴 쪽이 잘리므로 올리기 전에 계산해서 얼굴과 글자가 남는지 확인하면 된다.</p>
 </blockquote>
@@ -188,4 +191,21 @@
 <script src="/js/main.js"></script>
 <script src="/js/site-metrics.js" defer></script>
 
+<dialog class="share-dialog" aria-labelledby="share-heading">
+  <div class="share-heading"><h2 id="share-heading"><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></h2><button type="button" class="share-close" aria-label="공유 창 닫기">×</button></div>
+  <p class="share-title"></p>
+  <div class="share-options">
+    <button type="button" data-share-action="copy"><b aria-hidden="true">↗</b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
+    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true">●</b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
+    <a data-share-service="sms"><b aria-hidden="true">✉</b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
+    <a data-share-service="naver" target="_blank" rel="noopener noreferrer"><b class="share-naver" aria-hidden="true">N</b><span data-lang-ko>네이버 블로그</span><span data-lang-en>Naver Blog</span></a>
+    <a data-share-service="x" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">𝕏</b>X</a>
+    <a data-share-service="facebook" target="_blank" rel="noopener noreferrer"><b class="share-facebook" aria-hidden="true">f</b>Facebook</a>
+    <button type="button" data-share-action="native" hidden><b aria-hidden="true">•••</b><span data-lang-ko>더보기</span><span data-lang-en>More</span></button>
+  </div>
+  <label class="share-url-label"><span data-lang-ko>공유 링크</span><span data-lang-en>Share link</span><input class="share-url" readonly></label>
+  <p class="share-status" role="status" aria-live="polite"></p>
+</dialog>
+<script src="/js/share-config.js?v=1.3.111" defer></script>
+<script src="/js/share.js?v=1.3.111" defer></script>
 </body></html>
