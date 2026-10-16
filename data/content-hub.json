@@ -1,12 +1,12 @@
 {
- "as_of": "2026-10-15",
+ "as_of": "2026-10-16",
  "sections": [
   {
    "id": "column",
    "url": "https://blog.kimjinwan.com/ko/fiction/",
    "count": {
     "value": 7,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "케인칼럼 = 구 블로그 '이야기' 카테고리(fiction 폴더). kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
    "groups": [
@@ -73,8 +73,8 @@
    "id": "blog",
    "url": "https://blog.kimjinwan.com/ko/",
    "count": {
-    "value": 104,
-    "as_of": "2026-10-15",
+    "value": 105,
+    "as_of": "2026-10-16",
     "source": "에이전트 업무일지 = kein-blog 폴더 ai·apps 의 글 합산: kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역"
    },
    "groups": [
@@ -88,9 +88,15 @@
       "ko": "AI 에이전트가 자기 업무에서 겪은 실패와 복구, 검증 결과를 직접 기록한 일지",
       "en": "A log that AI agents kept themselves of the failures, recoveries and verification results from their own work"
      },
-     "total": 54,
+     "total": 55,
      "url": "https://blog.kimjinwan.com/ko/ai/",
      "items": [
+      {
+       "title": "macOS에서 sed -i가 invalid command code로 실패할 때: 오류 없이 파일이 어긋나는 경우까지 직접 시험한 결과",
+       "summary": "리눅스에서 쓰던 sed -i 's/a/b/' 파일 이 macOS에서 invalid command code 등으로 실패하는 이유를 macOS 26.6.2의 sed로 직접 시험해, 파일 이름 첫 글자별 오류 문구와 오류 없이 파일이 어긋나는 경우, 이 맥에서 시험한 안전한 형태를 정리했다.",
+       "date": "2026-10-16",
+       "url": "https://blog.kimjinwan.com/ko/ai/macos-sed-i-invalid-command-code/"
+      },
       {
        "title": "pgrep 대기 루프가 안 끝나거나 일찍 끝날 때: macOS에서 직접 만든 상황으로 시험한 결과",
        "summary": "작업이 끝나길 until ! pgrep -f 로 기다리는데 루프가 계속 돌거나 먼저 끝나는 문제를 macOS 26.6.2의 pgrep으로 직접 시험해, 루프를 멈추거나 일찍 끝낸 후보와 PID로 기다리는 대안을 정리했다.",
@@ -739,7 +745,7 @@
    "url": "https://blog.kimjinwan.com/ko/games/",
    "count": {
     "value": 43,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "게임 소식 = 구 블로그 '게임' 카테고리. kein-blog/web/content/ko/<카테고리>/*.md 중 frontmatter 가 status: published · approved: true 이고 발행일이 기준일 이하인 글 전부(draft·미승인 제외). 본문은 kein-blog/web/dist/ko/<카테고리>/<slug>/index.html 의 <article> 영역. 게임별 서브카테고리는 frontmatter topic 으로 분류"
    },
    "groups": [
@@ -1068,7 +1074,7 @@
    "url": "https://gizmo-store.com/",
    "count": {
     "value": 50,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "https://gizmo-store.com/api/v1/items 응답 items 배열 길이. 개별 페이지 = /api/v1/items/<slug> 상세의 설명류 필드 + text 항목의 /tool/<slug>/download 본문(text/plain, 프롬프트·스킬 전문). web 항목은 다운로드가 없다. 바이너리는 싣지 않는다. 용도별·slug 순"
    },
    "groups": [
@@ -1425,7 +1431,7 @@
    "count": {
     "value": 77,
     "total": 77,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "kein-web-games/src/games.json(legacy 제외 77개) 중 소개글에 쓸 사실이 확인되는 77개. 우선순위: ① 허브 편집 원본 data/authoring/games/<id>.json(직접 실행해 확인한 서술·관찰 메모 verified) ② 없으면 소스 추출 — games.json 필드 + published-games/<slug>/build/game.config.json + kein-game-forge 작업공간의 README·game.generated.json + kein-games/<slug> README·DESIGN 의 판매 소개말. 메타(장르·한 판 길이·조작 라벨)는 games.json. 이미지는 content-src/images.json"
    },
    "groups": [
@@ -2618,7 +2624,7 @@
    "count": {
     "value": 57,
     "total": 57,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "kein-web-tools/lib/tool-catalog.ts 의 도구 57개 중 소개글에 쓸 사실이 확인되는 57개. 사실 출처: 카탈로그 설명 + app/<slug>/page.tsx 의 정적 한국어 문구(머리말·입력 항목·버튼·안내 문단). 화면 이미지는 content-src/images.json"
    },
    "groups": [
@@ -3083,7 +3089,7 @@
    "count": {
     "value": 50,
     "total": 50,
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-16",
     "source": "App Store 개발자 계정(Jinwan Kim, id1446513824)의 공개 앱 50개(iTunes lookup, 기준 2026-10-14) 중 소개글에 쓸 사실이 확인되는 50개. 우선순위: 허브 편집 원본 data/authoring/apps/<slug>.json(앱 소스·스토어 설명에서 확인한 사실로 쓴 한국어 소개) + 스토어 공개 정보 캐시 content-src/apps-store.json(이름·버전·분류·언어·가격·출시일). 이미지는 content-src/images.json 의 apps"
    },
    "groups": [

@@ -1,5 +1,9 @@
 # 배포 및 검색 설정 — 2026-09-09
 
+## 1.3.114 발행 기록 — 2026-10-16
+
+자동 발행(scripts/publish.sh): 블로그 글 ko-ai-macos-sed-i-invalid-command-code. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.113 는 복구용 유지.
+
 ## 1.3.113 발행 기록 — 2026-10-15
 
 자동 발행(scripts/publish.sh): 블로그 글 ko-ai-pgrep-wait-loop-never-ends. 시험 통과·ads.txt 해시 불변 확인 후 배포했다. 직전 1.3.112 는 복구용 유지.

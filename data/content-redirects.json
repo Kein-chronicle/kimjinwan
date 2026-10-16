@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-15",
+ "as_of": "2026-10-16",
  "note": "이미 배포된 /content/blog/games/… 를 게임 소식(/content/game-news/…)으로, /content/blog/fiction/… 을 케인칼럼(/content/column/…)으로, 사라진 에이전트 업무일지 카테고리 목록(/content/blog/ai/·apps/ 와 그 쪽)을 /content/blog/ 로, 공개 목록에서 내린 글(data/content-withdrawn.json)을 가장 가까운 남은 페이지로 옮긴 매핑. nginx 301 용.",
  "redirects": [
   {
