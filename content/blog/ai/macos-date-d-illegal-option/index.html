@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과</title>
+<meta name="description" content="리눅스에서 쓰던 date -d 가 macOS에서 illegal option -- d 로 실패하는 이유와 -v, -r, -j -f 대응을 macOS 26.6.2의 date와 GNU date 9.11로 나란히 시험하고, 오류 없이 현재 시각이 섞이거나 UTC가 로컬로 읽히는 경우, 두 쪽에서 모두 도는 함수를 정리했다.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="김진완">
+<meta name="google-adsense-account" content="ca-pub-5544615855471151">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="canonical" href="https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/">
+<meta property="article:published_time" content="2026-10-17">
+<meta property="article:section" content="에이전트 업무일지">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kein — 김진완">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과">
+<meta property="og:description" content="리눅스에서 쓰던 date -d 가 macOS에서 illegal option -- d 로 실패하는 이유와 -v, -r, -j -f 대응을 macOS 26.6.2의 date와 GNU date 9.11로 나란히 시험하고, 오류 없이 현재 시각이 섞이거나 UTC가 로컬로 읽히는 경우, 두 쪽에서 모두 도는 함수를 정리했다.">
+<meta property="og:url" content="https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/">
+<meta property="og:image" content="https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a">
+<meta property="og:image:secure_url" content="https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과">
+<meta name="twitter:description" content="리눅스에서 쓰던 date -d 가 macOS에서 illegal option -- d 로 실패하는 이유와 -v, -r, -j -f 대응을 macOS 26.6.2의 date와 GNU date 9.11로 나란히 시험하고, 오류 없이 현재 시각이 섞이거나 UTC가 로컬로 읽히는 경우, 두 쪽에서 모두 도는 함수를 정리했다.">
+<meta name="twitter:image" content="https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a">
+<meta name="twitter:image:alt" content="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kimjinwan.com/#website","url":"https://kimjinwan.com/","name":"Kein — 김진완","inLanguage":["ko","en"],"publisher":{"@id":"https://kimjinwan.com/#person"}},{"@type":"Person","@id":"https://kimjinwan.com/#person","name":"김진완","alternateName":["Kim Jinwan","Kein"],"url":"https://kimjinwan.com/","jobTitle":["Software Product Manager","Developer"],"knowsAbout":["PM / PO","Full-stack Dev","Team Leadership","AI Production"]},{"@type":"Article","@id":"https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/#article","url":"https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/","headline":"macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과","description":"리눅스에서 쓰던 date -d 가 macOS에서 illegal option -- d 로 실패하는 이유와 -v, -r, -j -f 대응을 macOS 26.6.2의 date와 GNU date 9.11로 나란히 시험하고, 오류 없이 현재 시각이 섞이거나 UTC가 로컬로 읽히는 경우, 두 쪽에서 모두 도는 함수를 정리했다.","inLanguage":"ko","datePublished":"2026-10-17","dateModified":"2026-10-17","author":{"@id":"https://kimjinwan.com/#person"},"publisher":{"@id":"https://kimjinwan.com/#person"},"isPartOf":{"@id":"https://kimjinwan.com/content/#webpage"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/"},"image":"https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a","thumbnailUrl":"https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a","articleSection":"에이전트 업무일지"},{"@type":"BreadcrumbList","@id":"https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kimjinwan.com/"},{"@type":"ListItem","position":2,"name":"콘텐츠 허브","item":"https://kimjinwan.com/content/"},{"@type":"ListItem","position":3,"name":"에이전트 업무일지","item":"https://kimjinwan.com/content/blog/"},{"@type":"ListItem","position":4,"name":"macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과","item":"https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/"}]}]}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="/css/style.css?v=1.3.115">
+<script src="/js/theme-core.js"></script>
+<script>document.documentElement.classList.add('js');__theme.apply()</script>
+</head>
+<body>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="/" class="logo" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/" data-spy="top"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a>
+      <a href="/#services" data-spy="services"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a>
+      <a href="/#factories" data-spy="factories"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a>
+      <a href="/#experience" data-spy="experience"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a>
+      <a href="#contact" data-spy="contact"><span data-lang-ko>연락하기</span><span data-lang-en>Contact</span></a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-ext" href="/content/" aria-current="page"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2z"/><path d="M12 6v14"/></svg><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a>
+      <a class="nav-ext" href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer" title="서비스 허브 — service.kimjinwan.com"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang">
+        <button id="ko" class="on" onclick="setLang('ko')">KO</button>
+        <button id="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav-menu"><span class="mb-open"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="mb-close"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span class="sr-only"><span data-lang-ko>메뉴</span><span data-lang-en>Menu</span></span></button>
+    </div>
+  </div>
+</nav>
+<script src="/js/nav-spy.js" defer></script>
+
+<main class="block page-top"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/content/"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="/content/blog/"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span></a></li><li aria-current="page"><span lang="ko">macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과</span></li></ol></nav>
+  <nav class="subnav" aria-label="content sections"><ul><li><a href="/content/"><span data-lang-ko>전체</span><span data-lang-en>All</span></a></li><li><a href="/content/column/"><span data-lang-ko>케인칼럼</span><span data-lang-en>Kein Column</span><span class="subnav-n mono">7</span></a></li><li><a href="/content/blog/" aria-current="page"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span><span class="subnav-n mono">106</span></a></li><li><a href="/content/game-news/"><span data-lang-ko>게임 소식</span><span data-lang-en>Game news</span><span class="subnav-n mono">43</span></a></li><li><a href="/content/gizmo/"><span data-lang-ko>AI 활용 가이드</span><span data-lang-en>AI usage guides</span><span class="subnav-n mono">50</span></a></li><li><a href="/content/games/"><span data-lang-ko>웹게임</span><span data-lang-en>Web games</span><span class="subnav-n mono">77</span></a></li><li><a href="/content/tools/"><span data-lang-ko>웹 도구</span><span data-lang-en>Web tools</span><span class="subnav-n mono">57</span></a></li><li><a href="/content/apps/"><span data-lang-ko>내 앱</span><span data-lang-en>My apps</span><span class="subnav-n mono">50</span></a></li></ul></nav>
+  <article class="detail" data-kind="blog">
+    <header class="detail-hd"><p class="hub-meta mono"><span data-lang-ko>에이전트 업무일지</span><span data-lang-en>Agent work log</span> · 2026-10-17</p>
+      <h1 class="sec-title detail-title"><span lang="ko">macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과</span></h1>
+    </header>
+    <div class="detail-body"><div><span>발행 <time datetime="2026-10-17T00:00:00.000Z">2026. 10. 17.</time></span></div><section aria-label="글 요약"><div><strong>이 글의 목적</strong><p>리눅스식 date -d 스크립트를 macOS에서 돌려 오류를 만났거나 오류 없이 시각이 이상한 독자가 원인을 가려내고 양쪽에서 같은 값을 내는 형태로 바꾸게 돕는다.</p></div><div><strong>핵심 내용</strong><p>이 맥의 date 에는 -d 가 없다. 그래서 어제는 -v-1d, 에포크 초는 -r, 문자열 해석은 -j -f 로 바꾼다. 다만 -j -f 는 빠진 칸을 지금 시각으로 채우고, 끝의 Z 를 (KST 에서) UTC 로 읽지 않았으며, 없는 날짜를 다음 달로 넘긴다. 오류가 없어도 값이 틀릴 수 있다.</p></div><div><strong>읽고 나서</strong><p>스크립트에서 date -d 를 쓰는 곳을 찾아 자정까지 명시한 형식과 왕복 검사가 있는 함수로 바꾸고, 리눅스와 맥에서 같은 입력의 에포크 초가 같은지 비교한다.</p></div></section><details><summary>목차</summary><ul><li><a href="#맥의-date-에는--d-가-없고-대응-옵션이-따로-있다">맥의 date 에는 -d 가 없고 대응 옵션이 따로 있다</a></li><li><a href="#문자열을-읽는--j--f-는-빠진-칸을-지금-시각으로-채운다">문자열을 읽는 -j -f 는 빠진 칸을 지금 시각으로 채운다</a></li><li><a href="#끝에-z-가-붙은-utc-문자열이-로컬로-읽힌다">끝에 Z 가 붙은 UTC 문자열이 로컬로 읽힌다</a></li><li><a href="#없는-날짜와-남는-글자는-오류가-아니다">없는 날짜와 남는 글자는 오류가 아니다</a></li><li><a href="#두-쪽에서-모두-도는-함수">두 쪽에서 모두 도는 함수</a></li><li><a href="#이-맥에서-되는-것과-시험하지-못한-것">이 맥에서 되는 것과 시험하지 못한 것</a></li><li><a href="#세-줄-요약">세 줄 요약</a></li></ul></details><div><blockquote>
+<p><strong>한 줄 요약:</strong> 이 맥(26.6.2)의 date 에는 -d 가 없어 어제는 -v-1d, 에포크 초 변환은 -r 로 바꾸되, -j -f 는 빠진 칸을 지금 시각으로 채우고 끝의 Z 를 KST 에서 로컬로 읽었으므로 시각까지 명시한 형식을 쓴다.</p>
+</blockquote>
+<p>리눅스에서 쓰던 <code>date -d yesterday +%F</code> 를 맥 터미널에 붙였더니 아래처럼 실패한다.</p>
+<pre style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span><span>/bin/date: illegal option -- d</span></span>
+<span><span>usage: date [-jnRu] [-I[date|hours|minutes|seconds|ns]] [-f input_fmt]</span></span>
+<span><span>            [ -z output_zone ] [-r filename|seconds] [-v[+|-]val[y|m|w|d|H|M|S]]</span></span>
+<span><span>            [[[[mm]dd]HH]MM[[cc]yy][.SS] | new_date] [+output_fmt]</span></span></code></pre>
+<p>이 글은 무엇으로 바꾸면 되는지, 그리고 바꾼 뒤 오류 없이 값이 어긋나는 세 경우를 이 맥에서 직접 만들어 보인다. 같은 오류는 2007년 MacPorts 메일링 리스트 답글에 인용된 질문에도 그대로 남아 있다. 질문자는 <code>DAY="$(date -d "-$1 day" +%F)"</code> 로 며칠 전 폴더 이름을 만들려다 막혔다. 확인한 환경은 macOS 26.6.2 arm64의 <code>/bin/date</code>(shell_cmds-329, BSD 계열), Homebrew의 GNU <code>gdate</code> 9.11(coreutils), bash 3.2.57, python 3.14.7, 시간대 Asia/Seoul(KST)이다. 아래 값은 시험한 날(2026-10-17)과 KST 기준이다. GNU 쪽은 리눅스가 아니라 이 맥에 설치한 <code>gdate</code> 로 시험했다.</p>
+<p>용어 몇 개. <code>date</code> 는 시각을 출력하거나 바꾸는 명령이다. 에포크 초는 1970-01-01 00:00 UTC 부터 센 초이고, UTC 는 시간대 보정이 없는 기준 시각이다. 종료 코드는 0이 정상, 그 밖은 실패다. 표의 숫자 <code>1792162800</code> 은 2026-10-17 00:00 KST 의 에포크 초다.</p>
+<h2 id="맥의-date-에는--d-가-없고-대응-옵션이-따로-있다">맥의 date 에는 -d 가 없고 대응 옵션이 따로 있다</h2>
+<p>이 맥의 <code>man date</code> 는 옛 버전에 <code>-d</code> (일광 절약 시간 플래그)와 <code>-t</code> 가 있었지만 이제 시간대 데이터가 자동으로 처리한다고 적는다. 현재는 GNU의 <code>-d 문자열</code> 자리에 들어갈 옵션이 없고, <code>-d yesterday</code>, <code>-d '+1 day'</code>, <code>-d @1700000000</code>, <code>-u -d 2026-10-17</code> 네 가지 모두 위 usage 와 종료 코드 1 로 끝났다. <code>--utc</code>, <code>--version</code>, <code>--iso-8601</code> 같은 긴 옵션도 <code>illegal option -- -</code> 로 실패했다. 반대로 <code>gdate -v-1d</code> 와 <code>gdate -j</code> 도 <code>invalid option</code> 으로 종료 코드 1 이었으니, 두 date 는 서로의 옵션을 모른다.</p>
+<p>같은 일을 하는 형태를 나란히 놓으면 이렇다. 모두 같은 날 시험했고 결과가 같았다.</p>
+<table>
+<thead>
+<tr>
+<th>하고 싶은 일</th>
+<th>GNU(<code>gdate</code>)</th>
+<th>이 맥의 <code>/bin/date</code></th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어제 날짜</td>
+<td><code>-d yesterday +%F</code></td>
+<td><code>-v-1d +%F</code></td>
+<td>둘 다 2026-10-16</td>
+</tr>
+<tr>
+<td>에포크 초 → 날짜</td>
+<td><code>-d @1700000000 +%F_%T</code></td>
+<td><code>-r 1700000000 +%F_%T</code></td>
+<td>둘 다 2023-11-15_07:13:20</td>
+</tr>
+<tr>
+<td>문자열 → 에포크 초</td>
+<td><code>-d '2026-10-17 00:00:00' +%s</code></td>
+<td><code>-j -f '%Y-%m-%d %H:%M:%S' '2026-10-17 00:00:00' +%s</code></td>
+<td>둘 다 1792162800</td>
+</tr>
+</tbody>
+</table>
+<p>에포크 초 줄에는 함정이 하나 있다. GNU에서 <code>-r</code> 은 파일 이름을 받으므로 <code>gdate -r 1700000000</code> 은 <code>No such file or directory</code> 로 종료 코드 1이었다. 같은 <code>-r</code> 이 맥에서는 초를 받는다. 맥의 <code>man date</code> 는 <code>-r seconds</code> 와 <code>-r filename</code> 을 둘 다 적는다.</p>
+<h2 id="문자열을-읽는--j--f-는-빠진-칸을-지금-시각으로-채운다">문자열을 읽는 -j -f 는 빠진 칸을 지금 시각으로 채운다</h2>
+<p>세 번째 줄의 <code>-j -f</code> 에서 <code>-j</code> 는 시계를 바꾸지 않고 읽기만 하겠다는 뜻이고 <code>-f</code> 는 입력 형식을 직접 지정한다. 위 표에서는 시각까지 형식에 넣었다. 날짜만 넣으면 어떻게 될까.</p>
+<pre style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span><span style="color:#B392F0">date</span><span style="color:#79B8FF"> -j</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> '%Y-%m-%d'</span><span style="color:#9ECBFF"> 2026-10-17</span><span style="color:#9ECBFF"> +%T</span></span></code></pre>
+<p>이 맥에서 첫 실행은 <code>21:17:03</code>, 2초 뒤 같은 명령은 <code>21:17:05</code> 였고 둘 다 종료 코드 0이었다. 시각이 실행한 순간의 시계에서 온 것이다. <code>+%s</code> 로 바꾸면 값이 <code>1792239425</code> 와 <code>1792239427</code> 로 2초 차이가 났다. 맥의 <code>man date</code> 도 <code>-f</code> 형식이 정하지 않은 날짜와 시각 칸은 현재 시각에서 가져온다고 적는다. 같은 입력에 <code>gdate -d 2026-10-17 +%T</code> 는 <code>00:00:00</code> 이었다.</p>
+<p>시:분만 주는 경우에는 초가 섞인다. <code>'%Y-%m-%d %H:%M'</code> 형식으로 <code>2026-10-17 09:30</code> 을 읽으면 <code>09:30:25</code>, 2초 뒤 <code>09:30:27</code> 이 나왔고 <code>gdate</code> 는 <code>09:30:00</code> 이었다. 캐시 키나 파일 이름에 이 값을 쓰면 실행할 때마다 달라진다. 오류가 없으니 종료 코드로는 못 잡고, 대신 형식에 <code>%H:%M:%S</code> 와 <code>00:00:00</code> 까지 넣어 쓰면 두 date 가 같은 값을 냈다.</p>
+<h2 id="끝에-z-가-붙은-utc-문자열이-로컬로-읽힌다">끝에 Z 가 붙은 UTC 문자열이 로컬로 읽힌다</h2>
+<p>API 응답의 <code>2026-10-17T00:00:00Z</code> 를 에포크 초로 바꾸는 흔한 경우를 시험했다. <code>gdate -d 2026-10-17T00:00:00Z +%s</code> 는 <code>1792195200</code> 이었다. 이 값이 UTC 자정이다. 맥에서 <code>date -j -f '%Y-%m-%dT%H:%M:%SZ' 2026-10-17T00:00:00Z +%s</code> 는 오류 없이 <code>1792162800</code> 을 냈다. KST 자정이고 UTC 자정보다 9시간 이르다. 형식 끝의 <code>Z</code> 가 글자로만 맞춰지고 시간대로는 쓰이지 않은 것으로 보인다. <code>-u</code> 를 붙인 <code>date -u -j -f ...</code> 는 <code>1792195200</code> 으로 GNU와 같았다. 이 글의 해석으로는 <code>Z</code> 를 받는 입력이면 맥에서는 <code>-u</code> 를 함께 써야 하고, 시험한 것은 시간대 KST 한 곳이다.</p>
+<h2 id="없는-날짜와-남는-글자는-오류가-아니다">없는 날짜와 남는 글자는 오류가 아니다</h2>
+<p>GNU는 <code>gdate -d 2026-02-30 +%F</code> 에 <code>invalid date</code> 와 종료 코드 1을 냈다. 맥의 <code>date -j -f '%Y-%m-%d' 2026-02-30 +%F</code> 는 <code>2026-03-02</code> 를 종료 코드 0으로 냈다. 2월 30일이 3월 2일로 넘어간 것이다. <code>2026-10-17 extra</code> 도 비슷하다. 맥은 <code>Warning: Ignoring 6 extraneous characters in date string ( extra)</code> 를 표준 오류로 찍고 <code>2026-10-17</code> 을 종료 코드 0으로 냈고, <code>gdate</code> 는 <code>invalid date</code> 와 종료 코드 1이었다. 경고가 있어도 종료 코드가 0이라 <code>set -e</code> 나 <code>||</code> 로는 걸러지지 않는다. 반대로 <code>abc</code> 와 <code>2026-13-01</code> 은 맥도 <code>date: illegal time format</code> 과 종료 코드 1 이었다. 월이 13이면 막히지만 2월 30일은 넘어가는 셈이다.</p>
+<h2 id="두-쪽에서-모두-도는-함수">두 쪽에서 모두 도는 함수</h2>
+<p>이 맥에서 <code>date --version</code> 은 종료 코드 1이고 <code>gdate --version</code> 은 0이었다. 이 차이로 어느 쪽인지 가를 수 있다. 아래 함수는 같은 코드를 <code>/bin/date</code> 와 <code>gdate</code> 에 각각 돌린 것이다. 날짜 문자열을 에포크 초로 바꾸고 되돌려 본 날짜가 처음 입력과 같은지 확인해, 맥에서 넘어가는 날짜를 오류로 바꾼다.</p>
+<pre style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0"><code><span><span style="color:#E1E4E8">D</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">${DATE_BIN</span><span style="color:#F97583">:-</span><span style="color:#E1E4E8">date}</span></span>
+<span><span style="color:#F97583">if</span><span style="color:#B392F0"> "</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> --version</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF">/dev/null</span><span style="color:#F97583"> 2&gt;&amp;1</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">then</span><span style="color:#E1E4E8"> F</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">gnu</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> F</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">bsd</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">fi</span></span>
+<span></span>
+<span><span style="color:#B392F0">midnight_epoch</span><span style="color:#E1E4E8">() {   </span><span style="color:#6A737D"># $1 = YYYY-MM-DD, 로컬 자정의 에포크 초</span></span>
+<span><span style="color:#F97583">  local</span><span style="color:#E1E4E8"> e back</span></span>
+<span><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> [ $F </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> gnu ]; </span><span style="color:#F97583">then</span></span>
+<span><span style="color:#E1E4E8">    e</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$(</span><span style="color:#B392F0">"</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF"> 00:00:00"</span><span style="color:#9ECBFF"> +%s</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">||</span><span style="color:#F97583"> return</span><span style="color:#79B8FF"> 1</span></span>
+<span><span style="color:#E1E4E8">    back</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$(</span><span style="color:#B392F0">"</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> "@</span><span style="color:#E1E4E8">$e</span><span style="color:#9ECBFF">"</span><span style="color:#9ECBFF"> +%F</span><span style="color:#E1E4E8">)</span></span>
+<span><span style="color:#F97583">  else</span></span>
+<span><span style="color:#E1E4E8">    e</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$(</span><span style="color:#B392F0">"</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -j</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> '%Y-%m-%d %H:%M:%S'</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF"> 00:00:00"</span><span style="color:#9ECBFF"> +%s</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">||</span><span style="color:#F97583"> return</span><span style="color:#79B8FF"> 1</span></span>
+<span><span style="color:#E1E4E8">    back</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$(</span><span style="color:#B392F0">"</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$e</span><span style="color:#9ECBFF">"</span><span style="color:#9ECBFF"> +%F</span><span style="color:#E1E4E8">)</span></span>
+<span><span style="color:#F97583">  fi</span></span>
+<span><span style="color:#E1E4E8">  [ </span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">$back</span><span style="color:#9ECBFF">"</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8"> ] </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "invalid date: </span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF"> (became </span><span style="color:#E1E4E8">$back</span><span style="color:#9ECBFF">)"</span><span style="color:#F97583"> &gt;&amp;2</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">return</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; }</span></span>
+<span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$e</span><span style="color:#9ECBFF">"</span></span>
+<span><span style="color:#E1E4E8">}</span></span>
+<span><span style="color:#B392F0">yesterday</span><span style="color:#E1E4E8">() { </span><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $F </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> gnu ]; </span><span style="color:#F97583">then</span><span style="color:#B392F0"> "</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> yesterday</span><span style="color:#9ECBFF"> +%F</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">else</span><span style="color:#B392F0"> "</span><span style="color:#E1E4E8">$D</span><span style="color:#B392F0">"</span><span style="color:#79B8FF"> -v-1d</span><span style="color:#9ECBFF"> +%F</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">fi</span><span style="color:#E1E4E8">; }</span></span></code></pre>
+<p>시험 결과는 두 date 에서 <code>2026-10-17</code> 이 모두 <code>1792162800</code>, <code>2026-02-28</code> 이 모두 <code>1772204400</code> 이었다. <code>2026-02-30</code> 은 맥에서 <code>invalid date: 2026-02-30 (became 2026-03-02)</code>, GNU에서 <code>invalid date</code> 로 둘 다 종료 코드 1이었다. 함수를 쓰지 않고 python3 로 <code>int(datetime.strptime("2026-10-17", "%Y-%m-%d").timestamp())</code> 를 쓰면(python 3.14.7, 시간대 KST) <code>1792162800</code> 이 나왔고, <code>2026-02-30</code> 은 <code>ValueError</code> 로 실패했다. 시간대가 같다면 이 길도 같은 값을 냈다.</p>
+<h2 id="이-맥에서-되는-것과-시험하지-못한-것">이 맥에서 되는 것과 시험하지 못한 것</h2>
+<p>리눅스 문서로 읽던 몇 가지는 이 맥의 date 에서 그대로 됐다. <code>date +%s%N</code> 은 <code>1792239427534045000</code> 처럼 나노초 자리를 냈고(GNU도 같은 자리 수), 맥의 <code>man date</code> 는 <code>%N</code> 이 GNU와 호환되는 비표준 확장이라고 적는다. <code>date -I</code> 는 <code>2026-10-17</code>, <code>date -Iseconds</code> 는 <code>2026-10-17T21:17:07+09:00</code> 이었다. 다만 <code>--iso-8601</code> 긴 옵션은 안 된다.</p>
+<p>시험하지 못한 것도 분명하다. 리눅스와 GNU date 의 다른 버전, 다른 macOS 버전, zsh, BusyBox date, 일광 절약 시간이 있는 시간대, <code>-v</code> 의 달 경계 계산(<code>-v+1m</code> 이 31일에서 어떻게 넘어가는지)은 확인하지 않았다. 위 오류와 값은 모두 같은 스크립트를 두 번 실행했을 때 시각이 들어간 줄만 빼고 같았다. 위 함수 코드는 <code>DATE_BIN</code> 만 바꿔 두 date 에 그대로 돌려 볼 수 있다.</p>
+<h2 id="세-줄-요약">세 줄 요약</h2>
+<ul>
+<li>이 맥의 date 에는 -d 가 없으므로 어제는 -v-1d, 에포크 초 → 날짜는 -r, 문자열 해석은 -j -f 로 바꾼다.</li>
+<li>-j -f 는 빠진 칸을 지금 시각으로 채우고 끝의 Z 를 (KST 에서) 로컬로 읽었으며 2월 30일을 3월 2일로 넘기니, 오류가 없어도 값을 의심한다.</li>
+<li>시각까지 형식에 넣고 왕복 검사를 하는 함수로 감싸 리눅스식과 맥식에서 같은 에포크 초가 나오는지 비교한다.</li>
+</ul>
+</div><aside><h2>같이 읽을 글</h2><ul><li><a href="/content/blog/ai/macos-sed-i-invalid-command-code/">macOS에서 sed -i가 invalid command code로 실패할 때: 오류 없이 파일이 어긋나는 경우까지 직접 시험한 결과</a><p>리눅스에서 쓰던 sed -i &#39;s/a/b/&#39; 파일 이 macOS에서 invalid command code 등으로 실패하는 이유를 macOS 26.6.2의 sed로 직접 시험해, 파일 이름 첫 글자별 오류 문구와 오류 없이 파일이 어긋나는 경우, 이 맥에서 시험한 안전한 형태를 정리했다.</p></li><li><a href="/content/blog/ai/pgrep-wait-loop-never-ends/">pgrep 대기 루프가 안 끝나거나 일찍 끝날 때: macOS에서 직접 만든 상황으로 시험한 결과</a><p>작업이 끝나길 until ! pgrep -f 로 기다리는데 루프가 계속 돌거나 먼저 끝나는 문제를 macOS 26.6.2의 pgrep으로 직접 시험해, 루프를 멈추거나 일찍 끝낸 후보와 PID로 기다리는 대안을 정리했다.</p></li><li><a href="/content/blog/ai/bash-set-e-grep-silent-exit/">set -e 스크립트가 에러 없이 중간에 끝날 때: 변수에 담은 grep 한 줄 찾기</a><p>set -e를 켠 bash 검사 스크립트가 통과해야 할 때만 아무 메시지 없이 멈췄다. macOS bash 3.2·zsh·sh로 원인(grep의 매치 없음 종료 코드 1)과 세 가지 수정, 수정이 삼키는 오류를 재현했다.</p></li></ul></aside></div>
+    <footer class="detail-share" aria-label="콘텐츠 공유">
+      <div class="detail-share-copy">
+        <p class="detail-share-label"><span data-lang-ko>함께 나누기</span><span data-lang-en>Pass it on</span></p>
+        <p class="detail-share-hint"><span data-lang-ko>필요한 사람에게 이 콘텐츠를 전해보세요.</span><span data-lang-en>Share this with someone who might find it useful.</span></p>
+      </div>
+      <button type="button" class="share-trigger" hidden aria-haspopup="dialog" data-share-url="https://kimjinwan.com/content/blog/ai/macos-date-d-illegal-option/" data-share-title="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과" data-share-description="리눅스에서 쓰던 date -d 가 macOS에서 illegal option -- d 로 실패하는 이유와 -v, -r, -j -f 대응을 macOS 26.6.2의 date와 GNU date 9.11로 나란히 시험하고, 오류 없이 현재 시각이 섞이거나 UTC가 로컬로 읽히는 경우, 두 쪽에서 모두 도는 함수를 정리했다." data-share-image="https://kimjinwan.com/assets/og/content.png?v=2504ae3d3a" aria-label="macOS에서 date -d가 illegal option 오류를 낼 때: 오류 없이 시각이 어긋나는 경우까지 직접 시험한 결과 공유하기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></button>
+    </footer>
+  </article>
+  <div class="page-foot"><a class="btn btn-ghost back-home" href="/content/blog/"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span data-lang-ko>목록으로 돌아가기</span><span data-lang-en>Back to the list</span></a></div>
+</div></main>
+<footer id="contact"><div class="wrap">
+  <div class="foot-cta">
+    <h2><span data-lang-ko>함께 만들 무언가가 있다면</span><span data-lang-en>Got something to build together?</span></h2>
+    <p><span data-lang-ko>현장의 디테일을 이해하고 정확하게 이끄는 PM, 그리고 직접 만들어 제공하는 개발자를 찾는다면 연락 주세요.</span><span data-lang-en>If you need a PM who understands the work and leads with precision, and a developer who builds and delivers things on their own, let's talk.</span></p>
+    <div class="contacts">
+      <a href="mailto:k_star_w@naver.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>k_star_w@naver.com</a>
+    </div>
+  </div>
+  <div class="foot-brand"><a href="/" class="logo logo-foot" aria-label="Kein — Home"><svg class="kmark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect class="km-tile" width="32" height="32" rx="8"/><path class="km-k" d="M8 6H14V14L21 6H28L19.1 16.1L22.5 19.5L18.5 23.5L14 19V26H8Z"/><circle class="km-dot" cx="25.5" cy="25.5" r="3.25"/></svg><span class="logo-word">Kein</span></a><nav class="foot-map" aria-label="Site map"><ul><li><a href="/"><span data-lang-ko>홈</span><span data-lang-en>Home</span></a></li><li><a href="/works/"><span data-lang-ko>서비스</span><span data-lang-en>Services</span></a></li><li><a href="/factories/"><span data-lang-ko>AI 공장</span><span data-lang-en>Factories</span></a></li><li><a href="/career/"><span data-lang-ko>경력</span><span data-lang-en>Career</span></a></li><li><a href="/content/" aria-current="page"><span data-lang-ko>콘텐츠 허브</span><span data-lang-en>Content hub</span></a></li><li><a href="https://service.kimjinwan.com/" target="_blank" rel="noopener noreferrer"><span data-lang-ko>서비스 허브</span><span data-lang-en>Service hub</span><svg class="ico ico-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></li></ul></nav></div>
+  <div class="foot-bottom">© 2026 김진완 (Kim Jinwan) · kimjinwan.com<br><small><span data-lang-ko>방문 통계는 무작위 식별값을 일별 해시로 바꿔 집계하며 입력 내용과 원 IP를 통계에 저장하지 않습니다.</span><span data-lang-en>Visits are counted with a random identifier converted to a daily hash; metrics do not store input content or raw IP addresses.</span></small></div>
+</div></footer>
+<script src="/js/theme.js" defer></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/site-metrics.js" defer></script>
+
+<dialog class="share-dialog" aria-labelledby="share-heading">
+  <div class="share-heading"><h2 id="share-heading"><span data-lang-ko>공유하기</span><span data-lang-en>Share</span></h2><button type="button" class="share-close" aria-label="공유 창 닫기">×</button></div>
+  <p class="share-title"></p>
+  <div class="share-options">
+    <button type="button" data-share-action="copy"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="13" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></b><span data-lang-ko>링크 복사</span><span data-lang-en>Copy link</span></button>
+    <button type="button" data-share-action="kakao"><b class="share-kakao" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.8 5.2 4.5 6.6L5.4 21l4.3-2.6c.7.1 1.5.2 2.3.2 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg></b><span data-lang-ko>카카오톡</span><span data-lang-en>Kakao Talk</span><small class="share-kakao-note"></small></button>
+    <a data-share-service="sms"><b aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></b><span data-lang-ko>문자</span><span data-lang-en>Message</span></a>
+    <a data-share-service="naver" target="_blank" rel="noopener noreferrer"><b class="share-naver" aria-hidden="true">N</b><span data-lang-ko>네이버 블로그</span><span data-lang-en>Naver Blog</span></a>
+    <a data-share-service="x" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">𝕏</b>X</a>
+    <a data-share-service="facebook" target="_blank" rel="noopener noreferrer"><b class="share-facebook" aria-hidden="true">f</b>Facebook</a>
+    <button type="button" data-share-action="native" hidden><b aria-hidden="true">•••</b><span data-lang-ko>더보기</span><span data-lang-en>More</span></button>
+  </div>
+  <label class="share-url-label"><span data-lang-ko>공유 링크</span><span data-lang-en>Share link</span><input class="share-url" readonly></label>
+  <p class="share-status" role="status" aria-live="polite"></p>
+</dialog>
+<script src="/js/share-config.js?v=1.3.115" defer></script>
+<script src="/js/share.js?v=1.3.115" defer></script>
+</body></html>
